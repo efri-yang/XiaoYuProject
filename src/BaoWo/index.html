@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/default.min.css">
+    <script src="./js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/layer/layer.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title></title>
+</head>
+
+<body class="yahei">
+    <div class="page">
+        <!-- ********公共头部 start******** -->
+        @@include("../common/view/onlineCom/_header.html")
+        <!-- ********公共头部 end******** -->
+        <div class="bw-container">
+            <div class="bw-header"></div>
+            <div class="hd-type1"></div>
+            <div class="video-drive clearfix">
+                <div class="video-box">
+                    <iframe height="290" width="470" src="http://player.youku.com/embed/XMTg0NDE4OTI3Mg==" frameborder="0" 'allowfullscreen'=""></iframe>
+                </div>
+                <div class="drive-box">
+                    <form action="" method="POST" id="J_driveform">
+                        <dl class="drive-form" id="form1">
+                            <dd>
+                                <span class="star">*</span>
+                                <label for="" class="form-title">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>：
+                                <input class="ipt-text" type="text" name="truename">
+                            </dd>
+                            <dd>
+                                <span class="star">*</span>
+                                <label for="" class="form-title">性&nbsp;&nbsp;&nbsp;&nbsp;别</label>：
+                                <span class="radio"><input type="radio" name="sex" value="0" checked="checked">男</span>
+                                <span class="radio"><input type="radio" name="sex" value="1">女</span>
+                            </dd>
+                            <dd>
+                                <span class="star">*</span>
+                                <label for="" class="form-title">手机号码</label>：
+                                <input name="phone" type="text" class="ipt-text">
+                            </dd>
+                            <dd class="clearfix">
+                                <div class="left">
+                                    <span class="star">*</span>
+                                    <label for="" class="form-title">省&nbsp;&nbsp;&nbsp;&nbsp;份</label>：
+                                </div>
+                                <div class="select-dropdown" id="J_province-dropdown">
+                                    <div class="sel-item">
+                                        <span class="txt">请选择省份</span><i></i>
+                                    </div>
+                                    <ul class="sel-list">
+                                    </ul>
+                                    <input type="hidden" name="province">
+                                </div>
+                                <div class="left">
+                                    <span class="star">*</span>
+                                    <label for="" class="form-title">城&nbsp;&nbsp;&nbsp;&nbsp;市</label>：
+                                </div>
+                                <div class="select-dropdown city-dropdown" id="J_city-dropdown">
+                                    <div class="sel-item">
+                                        <span class="txt">请选择城市</span><i></i>
+                                    </div>
+                                    <ul class="sel-list">
+                                    </ul>
+                                    <input type="hidden" name="city">
+                                </div>
+                            </dd>
+                            <dd class="clearfix">
+                                <div class="left">
+                                    <span class="star">*</span>
+                                    <label for="" class="form-title">经销商</label>：
+                                </div>
+                                <div class="select-dropdown sel-dealer" id="J_dealer-dropdown">
+                                    <div class="sel-item">
+                                        <span class="txt">请选择经销商</span><i></i>
+                                    </div>
+                                    <ul class="sel-list">
+                                    </ul>
+                                    <input type="hidden" name="dealer">
+                                </div>
+                            </dd>
+                            <dd>
+                                <div class="check-box">
+                                    <input type="checkbox" name="condition" checked><span class="star">*</span> 我已阅读并接受如下隐私条款：您的个人资料有可能会提交至宝沃厂商的授权经销商与您进一步沟通试驾、购车等事宜。
+                                </div>
+                            </dd>
+                            <dd class="text-center">
+                                <input type="submit" id="J_iptsub" class="btn-commit reset" value="确认提交">
+                            </dd>
+                        </dl>
+                    </form>
+                </div>
+            </div>
+            <div class="yhd-type2 clearfix">
+                <span class="pic1"></span>
+                <a href="#" class="pic2"></a>
+            </div>
+            <div class="bw-item-cartype">
+                <table class="tbl-thead">
+                    <tr>
+                        <th width="165"></th>
+                        <th width="99"></th>
+                        <th width="99"></th>
+                        <th width="99"></th>
+                        <th width="99"></th>
+                        <th width="99"></th>
+                        <th width="100"></th>
+                        <th width="100"></th>
+                        <th  width="117"></th>
+                      
+                    </tr>
+                    <tr>
+                        <td rowspan="2" class="clrfff hd-td">车型</td>
+                        <td colspan="4" class="clr7b162f">2WD</td>
+                        <td colspan="4" class="clr7b162f">AWD</td>
+                    </tr>
+                    <tr class="clr3b3935">
+                        <td>都市型</td>
+                        <td>风尚型</td>
+                        <td>锋锐型</td>
+                        <td>智享型</td>
+                        <td>风尚型</td>
+                        <td>锋锐型</td>
+                        <td>智享型</td>
+                        <td class="last-padding">尊享型</td>
+                    </tr>
+                    <tr class="clr272420">
+                        <td class="hd-td">价格</td>
+                        <td>15.98万元</td>
+                        <td>16.98万元</td>
+                        <td>17.98万元</td>
+                        <td>18.98万元</td>
+                        <td>18.58万元</td>
+                        <td>19.58万元</td>
+                        <td>20.58万元</td>
+                        <td class="last-padding">21.68万元</td>
+                    </tr>
+                </table>
+                <div class="carttype-scroller">
+                    <table class="tbl-tbody">
+                        <tr class="caption">
+                            <td class="hd-td">尺寸和重量</td>
+                            <td colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">长×宽×高(mm)</td>
+                            <td colspan="8">4490×1877×1675</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">轴距(mm)</td>
+                            <td colspan="8">2685</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">空载最小离地间隙(mm)</td>
+                            <td colspan="8">186</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">整备质量(Kg)</td>
+                            <td>1550</td>
+                            <td>1560</td>
+                            <td>1580</td>
+                            <td>1590</td>
+                            <td>1640</td>
+                            <td>1660</td>
+                            <td>1660</td>
+                            <td>1670</td>
+                        </tr>
+                        <tr class="caption">
+                            <td class="hd-td">发动机</td>
+                            <td colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">型式</td>
+                            <td colspan="8">25T GDI涡轮增压直喷发动机(1797cc)</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">最大功率(kw/rpm)</td>
+                            <td colspan="8">140/5500</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">最大扭矩(N·m/rpm)</td>
+                            <td colspan="8">280/1750-4500</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">综合工况油耗(L/100km)</td>
+                            <td colspan="4">6.9</td>
+                            <td colspan="4">7.3</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">排放标准</td>
+                            <td colspan="8">国5</td>
+                        </tr>
+                        <tr class="caption">
+                            <td class="hd-td">底盘和悬架</td>
+                            <td colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">变速箱</td>
+                            <td colspan="8">6速手自一体变速箱+运动模式</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">悬架系统</td>
+                            <td colspan="8">6速手自一体变速箱+运动模式</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">制动系统</td>
+                            <td colspan="8">前：通风盘式 / 后：盘式</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">转向系统</td>
+                            <td colspan="8">EPS车速感应电子助力转向系统</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">轮胎规格</td>
+                            <td>225/65R17</td>
+                            <td colspan="7">225/60R18</td>
+                        </tr>
+                        <tr class="caption">
+                            <td class="hd-td">外观设计</td>
+                            <td colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">
+                                远近光一体HID感应前大灯
+                                <p>(带弯道辅助照明)</p>
+                            </td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">LED日间行车灯</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">外后视镜电动折叠</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">外后视镜电加热
+                                <P>(带迎宾照地灯)</P>
+                            </td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">自动雨量感应式前雨刮</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">四门一键升降防夹车窗</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">防紫外线/隔热车窗玻璃</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr class="caption">
+                            <td class="hd-td">内饰装备</td>
+                            <td colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">真皮多功能方向盘(带蓝牙免提)</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">自动防眩目内后视镜</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">双温区自动恒温空调</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">后排空调出风口</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">LED内舱氛围灯</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">座椅材质</td>
+                            <td>经典织物</td>
+                            <td>法式双针皮革</td>
+                            <td>法式双针皮革</td>
+                            <td>Vienna真皮</td>
+                            <td>法式双针皮革</td>
+                            <td>法式双针皮革</td>
+                            <td>Vienna真皮</td>
+                            <td>Vienna真皮</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">驾驶席座椅电动8向调节(含2向电动腰托)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">前排座椅加热</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">后排中央扶手</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">电动开启式后备箱(带记忆功能)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">智能无钥匙进入/一键启动系统</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">定速巡航</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr class="caption">
+                            <td class="hd-td">安全系统</td>
+                            <td colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">前排双安全气囊</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">前排侧气囊</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">前后贯穿式头部气帘</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">EPB电子驻车制动+Auto Hold自动驻车系统</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">ESC车身稳定控制系统</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">EDS电子差速锁</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">HBA刹车辅助系统</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">HAC上坡辅助系统</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">HDC陡坡缓降系统</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">TPMS主动式胎压监测系统</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">后泊车雷达</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">前泊车雷达</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr class="caption">
+                            <td class="hd-td">B-Link智能互联系统</td>
+                            <td colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">4.2英寸彩色仪表显示屏</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">8英寸彩色高清中控触摸屏</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">十向多功能控制旋钮</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">手机映射</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">视频播放功能</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">高保真立体声音响系统</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">扬声器</td>
+                            <td>6</td>
+                            <td>6</td>
+                            <td>6</td>
+                            <td>8</td>
+                            <td>6</td>
+                            <td>6</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">倒车影像</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">360°鹰眼俯视监测系统</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td>—</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">行车记录仪+智能微光感应夜视系统</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">○</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="circle">○</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">云服务（实时交通+在线娱乐资讯+违章查询)*</td>
+                            <td>—</td>
+                            <td class="circle">○</td>
+                            <td class="circle">○</td>
+                            <td class="circle">●</td>
+                            <td class="circle">○</td>
+                            <td class="circle">○</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">GPS一键导航*</td>
+                            <td>—</td>
+                            <td class="circle">○</td>
+                            <td class="circle">○</td>
+                            <td class="circle">●</td>
+                            <td class="circle">○</td>
+                            <td class="circle">○</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">车载WIFI热点*</td>
+                            <td>—</td>
+                            <td class="circle">○</td>
+                            <td class="circle">○</td>
+                            <td class="circle">●</td>
+                            <td class="circle">○</td>
+                            <td class="circle">○</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">语音识别*</td>
+                            <td>—</td>
+                            <td class="circle">○</td>
+                            <td class="circle">○</td>
+                            <td class="circle">●</td>
+                            <td class="circle">○</td>
+                            <td class="circle">○</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">4G通讯模块系统</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">S0S一键救援</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                        <tr>
+                            <td class="hd-td">车辆状态查询+车况查询诊断+远程车辆控制</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                            <td class="circle">●</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="yhd-type3 clearfix">
+                <span class="pic1"></span>
+                <a href="#" class="pic2"></a>
+            </div>
+            <div class="banner-wrap">
+                <ul id="J_banner_1">
+                    <li>
+                        <img src="images/banner_001.jpg">
+                    </li>
+                    <li>
+                        <img src="images/banner_002.jpg">
+                    </li>
+                </ul>
+            </div>
+            <div class="yhd-type4">
+                <span class="pic1"></span>
+            </div>
+            <div class="brand-list">
+                <ul class="clearfix">
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="images/photo_01.jpg"></span>
+                            <div class="txt">
+                                <p class="t1">历史车型</p>
+                                <p class="t2">产品奠定传奇</p>
+                                <span class="check-btn">查看详情 ></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="images/photo_02.jpg"></span>
+                            <div class="txt">
+                                <p class="t1">传奇人物</p>
+                                <p class="t2">心怀梦想的传奇人生</p>
+                                <span class="check-btn">查看详情 ></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="images/photo_03.jpg"></span>
+                            <div class="txt">
+                                <p class="t1">标识演绎</p>
+                                <p class="t2">品牌名称的内涵</p>
+                                <span class="check-btn">查看详情 ></span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="yhd-type5">
+                <span class="pic1"></span>
+            </div>
+            <table class="dealer-tbl">
+                <thead>
+                    <tr>
+                        <th width="120"><span class="city">城市</span></th>
+                        <th width="360"><span class="name">公司名称</span></th>
+                        <th width="360"><span class="address">地址</span></th>
+                        <th width="130"><span class="phone">销售热线</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>福州</td>
+                        <td>福州三丰宝沃汽车销售服务有限公司</td>
+                        <td>福州市仓山区则徐大道631号闽丰汽车广场</td>
+                        <td>0591-86219111</td>
+                    </tr>
+                    <tr>
+                        <td>厦门</td>
+                        <td>厦门雪沃汽车销售服务有限公司</td>
+                        <td>厦门市集美区岩隆路汽车物流中心</td>
+                        <td>0592-6365035</td>
+                    </tr>
+                    <tr>
+                        <td>泉州</td>
+                        <td>福建万博新能源汽车销售服务有限公司 </td>
+                        <td>泉州市鲤城区南环路田洋路口神舟通大厦</td>
+                        <td>0595-28777666</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="bottom-car"></div>
+        </div>
+        <!-- ********公共尾部 start******** -->
+        @@include("../common/view/onlinecom/_footer.html")
+        <!-- ********公共尾部 end******** -->
+    </div>
+</body>
+
+</html>

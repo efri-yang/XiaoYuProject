@@ -1,0 +1,20 @@
+1、banner图更换
+
+
+2、广告栏目，修改成轮播形式
+
+
+3、视频下方加一个【更多视频】的入口
+
+
+4、首页底端，要加入媒体支持（图片）
+
+涉及修改内容：
+
+pc-->image：  banner2.png（新增）
+
+pc-->css： style.css
+
+pc-->js： style.js  jquery.carouFredSel-6.0.4-packed.js（新增）
+
+pc-->index.html

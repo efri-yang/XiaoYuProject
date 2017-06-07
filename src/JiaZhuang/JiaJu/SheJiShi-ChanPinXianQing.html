@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>设计师——产品详情</title>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="css/shejishi.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/layer/layer.js"></script>
+</head>
+
+<body class="yahei">
+    <!-- ****************** 头部start  *********************-->
+    @@include("./views/_headertop.html")
+    <!-- ****************** 头部end  ***********************-->
+    <!-- ****************** 搜索 start  ***********************-->
+    @@include("./views/_search.html")
+    <!-- ****************** 搜索 end  ***********************-->
+    <!-- ****************** 导航 start  ***********************-->
+    @@include("./views/_nav.html")
+    <!-- ****************** 导航 end  ***********************-->
+    <div class="zsjs-bg">
+        <div class="wrap">
+            <!-- ****************** 面包导航 start  *********************-->
+            <div class="pt15 pb15">
+                <a class="color-999" href="#" target="_blank">小鱼家装</a><span class="ml5 mr5 color-999">&gt;</span><a class="color-999" href="#" target="_blank">设计师</a><span class="ml5 mr5 color-999">&gt;</span><span class="color-green">作品详情</span>
+            </div>
+            <!-- ****************** 面包导航 end  ***********************-->
+           <div class="clear">
+                <div class="zsjs-pro-main">
+                    <div class="seat-box">
+                        <div class="caption-bar">
+                            <h1>独享主义-厦门软装设计</h1>
+                            <div class="clear">
+                                <span class="time">2017-06-02 13:31</span>
+                                <div class="para">
+                                    <span class="skim">124</span>
+                                    <span class="comment">52</span>
+                                    <span class="assist">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="zsjs-pro-aside"></div>
+           </div>
+
+            
+            
+        </div>
+    </div>
+
+
+    <!-- ****************** footer start  ***********************-->
+     @@include("./views/_footer.html")
+     <!-- ****************** footer start  ***********************-->
+
+
+     <script type="text/javascript">
+        (function(){
+            $(function(){
+                var $relateBd=$('[data-group="opus-tab-bd"]');
+                var $relateHd=$('[data-group="opus-tab-hd"]');
+                $(document).on("click",'[data-roler="tab"]',function(e){
+                    var $this=$(this);
+                    var target=$this.attr('data-target');
+                    $relateHd.removeClass("active");
+                    $this.addClass('active');
+                    $relateBd.hide();
+                    $(target).show();
+                 })
+            })
+        })()
+         
+     </script>
+</body>
+</html>

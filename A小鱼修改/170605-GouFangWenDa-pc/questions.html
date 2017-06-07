@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>鱼大叔问答</title>
+<link href="http://fangzi.xmfish.com/pages/css/v2/css/sty.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/wenda.css" type="text/css" />
+<script type="text/javascript" src="http://bbs.xmfish.com/apps/rt/www/js/jquery-1.4.2.min.js"></script>
+<script>
+
+var flag =1;
+var timer=null;
+function timerun(){
+	var s = document.getElementById("time");
+	if(s.innerHTML == 0){
+		flag =1;
+		jQuery('.code-btn').text("重新发送");
+		clearInterval(timer);
+		return false;
+	}
+		s.innerHTML = s.innerHTML * 1 - 1;
+}
+
+jQuery(document).ready(function(){
+	jQuery(".share-panel").hover( 
+		function () { 
+			jQuery(this).addClass("active"); 
+		}, 
+		function () { 
+			jQuery(this).removeClass("active"); 
+		} 
+	);
+	
+	jQuery('.next-button').click(function(){
+		jQuery('#questions').hide();
+		jQuery('#verification').show();
+	});
+	
+	jQuery('.reedit-btn').click(function(){
+		jQuery('#verification').hide();
+		jQuery('#questions').show();
+	});
+	
+	/* 输入框默认提示*/
+	jQuery(".inp-sty").each(function(){
+
+		if(jQuery(this).val()){
+			jQuery(this).siblings(".inp-note").hide();
+		}else{
+			jQuery(this).siblings(".inp-note").click(function(){
+				jQuery(this).hide().siblings("input").focus();
+			});
+		}
+		jQuery(this).focus(function(){
+			jQuery(this).siblings(".inp-note").hide();
+		});
+		jQuery(this).blur(function(){
+			var txt = jQuery(this).val();
+			if(txt){
+				jQuery(this).siblings(".inp-note").hide();
+			}else{
+				jQuery(this).siblings(".inp-note").show();
+			}
+		});
+	});
+	/* end 输入框默认提示*/
+	
+	jQuery('.code-btn').click(function(){
+		if(flag){
+			flag =0;
+			timer=setInterval("timerun();", 1000);
+			jQuery(this).html("<span id='time'>120</span>秒后重新获取");
+		}
+	});
+	
+	/*还可输入1000字*/
+	var limitNum = 1000;
+    var pattern = 0 +'/'+limitNum;
+    $('#contentwordage').html(pattern);
+    $('#content').keyup(
+    function(){
+        var remain = $(this).val().length;
+        if(remain > 1000){
+                pattern = "字数超过限制！";
+            }else{
+                pattern = remain +'/'+limitNum;
+            }
+            $('#contentwordage').html(pattern);
+        }
+    );
+});
+</script>
+</head>
+<body class="bg-f8f8f8">
+	<div class="topHead">
+        <div class="wrap clear">
+            <ul class="clear">
+                <li><a href="http://fangzi.xmfish.com/">首页</a></li>
+                <li><a href="http://fangzi.xmfish.com/web/buildings_blist.html" target="_blank">新房</a></li>
+                <li><a href="/web/sell2.html">二手房</a></li>
+                <li><a href="/web/search_hire.html">租房</a></li>
+                <li><a href="/web/search_sellb.html">商业地产</a></li>
+                <li><a href="/web/info.html" target="_blank">新闻</a></li>
+                <li><a href="http://bbs.xmfish.com/thread-htm-fid-147.html" target="_blank">论坛</a></li>
+                <li><a href="/web/tuan/line.html" target="_blank">看房团</a></li>            </ul>
+            <span><p>你好，欢迎来到小鱼房产网！请 <a href="http://www.xiaoyu.com/register">注册</a>或 <a href="/web/login.html">登录</a> | <a class="blueLink" href="/admin/login.html">经纪人登录</a></p></span>
+        </div>
+    </div>
+	<div style="height:36px;"></div>
+	<div class="header">
+		<div class="wrap clear">
+			<h2 class="xiaoquLogo"><a href="index.html"></a></h2>
+			<ul class="clear">
+				<li class="on"><a href="questions.html">提问</a></li>
+				<li><a href="mine.html">我问的</a></li>
+			</ul>
+		</div>
+	</div>
+    
+    <div class="mt20 wrap">
+        <div class="relative">
+            <div class="share-panel ulib-r5">
+                <span class="font-14"><i class="icon mr5 icon-share"></i>分享给有需要的人</span>
+                <div class="share-code mt10 text-center">
+                    <img src="upload/v-1.jpg" width="100" height="100" alt="#" />
+                    <div class="mt5 color-orange font-14">微信扫描分享</div>
+                </div>
+            </div>
+            <img class="ulib-rt10" src="img/theme.jpg" alt="#" />
+        </div>
+        <div class="ulib-rb10 pt40 pb40 bg-fff bds clear">
+            <div class="fl quiz-panel">
+            	<div class="clear">
+                	<h3 class="fl font-24 text-lighter"><i class="icon mr5 icon-quiz"></i>购房提问</h3>
+                    <span class="fr mt15 color-666">已有<span class="color-orange">500</span>条提问</span>
+                </div>
+                <div id="questions" class="mt20">
+                    <div class="control-group">
+                    	<div class="pb5">问题标题</div>
+                    	<div class="relative">
+                            <input class="inp-sty ulib-r3 yahei" type="text" value="">
+                            <span class="inp-note">请写下你的问题（5-50个文字）</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                    	<div class="pb5">问题描述（可选）</div>
+                    	<div class="relative">
+                            <textarea id="content" class="inp-sty ulib-r3 yahei" style="min-height:100px;"></textarea>
+                            <span class="inp-note">问题背景、条件等详细信息</span>
+                            <div id="contentwordage" class="contentwordage">还可输入<span class="color-orange">140</span>字</div>
+                        </div>
+                    </div>
+                    <div class="control-group mt20">
+                        <button class="reg-button next-button ulib-r3 yahei" type="button">下一步</button>
+                    </div>
+                </div>
+                <div id="verification" class="mt20" style="display:none;">
+                	<div class="control-group font-14 color-999">为了能及时接受回答，请输入真实有效的手机号码</div>
+                    <div class="control-group">
+                    	<div class="pb5">手机</div>
+                    	<div class="relative">
+                            <input class="inp-sty ulib-r3 yahei" type="text" value="">
+                            <span class="inp-note">请输入11位手机号码</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                    	<div class="pb5">验证码</div>
+                    	<div class="relative">
+                            <input class="inp-sty ulib-r3 yahei" type="text" value="">
+                            <span class="inp-note">请输入手机验证码</span>
+                            <a class="code-btn ulib-rr3" href="javascript:">获取验证码</a>
+                        </div>
+                    </div>
+                    <div class="control-group mt20 clear">
+                    	<a class="fl reedit-btn ulib-r3" href="javascript:"><i class="icon mr5 icon-reedit"></i>重新编辑</a>
+                        <button class="fr reg-button ulib-r3 yahei" type="submit">提交问题</button>
+                    </div>
+                </div>
+            </div>
+            <div class="fr faq-panel">
+            	<div class="faq-tt font-14">常见问题</div>
+                <dl class="faq-item font-14">
+                	<dt class="color-orange"><i class="icon-qorange mr10 ulib-r100">Q</i>谁是鱼大叔？</dt>
+                    <dd class="clear">
+                    	<i class="fl icon-qgray ulib-r100">A</i>
+                        <div class="pl30">鱼大叔问答是小鱼房产推出的一档真人问答栏目，意在帮助用户更好的解决在购房途中碰到的相关问题，包括但不限新房、二手房、房产投资、学区户口、配套规划等内容。所有回答皆由鱼大叔专业购房专家团队以具体问题具体分析、按需定制的方式完成。</div>
+                    </dd>
+                </dl>
+                <dl class="faq-item font-14">
+                	<dt class="color-orange"><i class="icon-qorange mr10 ulib-r100">Q</i>如何提问？</dt>
+                    <dd class="clear">
+                    	<i class="fl icon-qgray ulib-r100">A</i>
+                        <div class="pl30">无需登录，也能提问。只需将你的问题和问题描述、图片等内容通过鱼大叔产品平台发送给我们。我们的购房专家将在24小时内对于你的问题给出答复。</div>
+                    </dd>
+                </dl>
+                <dl class="faq-item font-14">
+                	<dt class="color-orange"><i class="icon-qorange mr10 ulib-r100">Q</i>如何接收回答？</dt>
+                    <dd class="clear">
+                    	<i class="fl icon-qgray ulib-r100">A</i>
+                        <div class="pl30">提交问题后，还需填写真实有效的手机号码，然后使用该手机号码登录小鱼网即可收到回答。</div>
+                    </dd>
+                </dl>
+                <div class="mt20 text-center font-14"><a class="color-blue" href="#" target="_blank">还有疑问？了解更多</a></div>
+            </div>
+        </div>   
+    </div>
+    
+</body>
+</html>

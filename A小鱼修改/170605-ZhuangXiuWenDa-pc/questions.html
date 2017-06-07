@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>鱼大叔问答</title>
+<link rel="stylesheet" type="text/css" href="http://jiaju.xiaoyu.com/css/home/home_xm.css" />
+<link rel="stylesheet" href="css/wenda.css" type="text/css" />
+<script type="text/javascript" src="http://bbs.xmfish.com/apps/rt/www/js/jquery-1.4.2.min.js"></script>
+<script>
+
+var flag =1;
+var timer=null;
+function timerun(){
+	var s = document.getElementById("time");
+	if(s.innerHTML == 0){
+		flag =1;
+		jQuery('.code-btn').text("重新发送");
+		clearInterval(timer);
+		return false;
+	}
+		s.innerHTML = s.innerHTML * 1 - 1;
+}
+
+jQuery(document).ready(function(){
+
+    jQuery(".hth-pin").hover(function(){
+        jQuery(this).addClass("active");
+    },function(){
+        jQuery(this).removeClass("active");
+    });
+
+	jQuery(".share-panel").hover( 
+		function () { 
+			jQuery(this).addClass("active"); 
+		}, 
+		function () { 
+			jQuery(this).removeClass("active"); 
+		} 
+	);
+	
+	jQuery('.next-button').click(function(){
+		jQuery('#questions').hide();
+		jQuery('#verification').show();
+	});
+	
+	jQuery('.reedit-btn').click(function(){
+		jQuery('#verification').hide();
+		jQuery('#questions').show();
+	});
+	
+	/* 输入框默认提示*/
+	jQuery(".inp-sty").each(function(){
+
+		if(jQuery(this).val()){
+			jQuery(this).siblings(".inp-note").hide();
+		}else{
+			jQuery(this).siblings(".inp-note").click(function(){
+				jQuery(this).hide().siblings("input").focus();
+			});
+		}
+		jQuery(this).focus(function(){
+			jQuery(this).siblings(".inp-note").hide();
+		});
+		jQuery(this).blur(function(){
+			var txt = jQuery(this).val();
+			if(txt){
+				jQuery(this).siblings(".inp-note").hide();
+			}else{
+				jQuery(this).siblings(".inp-note").show();
+			}
+		});
+	});
+	/* end 输入框默认提示*/
+	
+	jQuery('.code-btn').click(function(){
+		if(flag){
+			flag =0;
+			timer=setInterval("timerun();", 1000);
+			jQuery(this).html("<span id='time'>120</span>秒后重新获取");
+		}
+	});
+	
+	/*还可输入1000字*/
+	var limitNum = 1000;
+    var pattern = 0 +'/'+limitNum;
+    $('#contentwordage').html(pattern);
+    $('#content').keyup(
+    function(){
+        var remain = $(this).val().length;
+        if(remain > 1000){
+                pattern = "字数超过限制！";
+            }else{
+                pattern = remain +'/'+limitNum;
+            }
+            $('#contentwordage').html(pattern);
+        }
+    );
+});
+</script>
+</head>
+<body class="bg-f8f8f8">
+	<!--头部-->
+    <div class="home-topheader">
+        <div class="wrap clear">
+            <div class="fl clear">
+                <div class="fl relative hth-pin mr30"><a class="hth-lk" href="http://www.xmfish.com/" target="_blank">返回小鱼网首页</a></div>
+                <div class="fl relative hth-pin mr30">
+                    <a class="hth-lk" href="javascript:"><i class="icon icon-weixin"></i>家居微信</a>
+                    <div class="hth-dropdown wxcode-dropdown">
+                        <i class="icon-dropdownarrow-wrap"></i>
+                        <i class="icon-dropdownarrow"></i>
+                        <div class="text-center pt8 pb8"><img src="http://jiaju.xiaoyu.com/img/home/weixin-code3.jpg" width="120" height="120" alt="小鱼家居" /></div>
+                    </div>
+                </div>
+                <div class="fl relative hth-pin mr30"><a class="hth-lk" href="javascript:"><i class="icon icon-weibo"></i>家居微博</a></div>
+                <div class="fl relative hth-pin"><a class="hth-lk" href="javascript:"><i class="icon icon-download"></i>下载小鱼客户端</a></div>
+            </div>
+            <div class="fr hth-right clear">
+                <div class="fl relative hth-pin"><a class="hth-lk" href="#" target="_blank">家居商家入驻</a></div>
+                <div class="fl relative hth-pin ml30">
+                    <a class="hth-lk" href="javascript:">家居中心<i class="icon-grayarrow"></i></a>
+                    <div class="hth-dropdown">
+                        <i class="icon-dropdownarrow-wrap"></i>
+                        <i class="icon-dropdownarrow"></i>
+                        <ul class="hth-menu">
+                            <li><a href="#" target="_blank">家装招标</a></li>
+                            <li><a href="#" target="_blank">橱柜招标</a></li>
+                            <li><a href="#" target="_blank">合同审核</a></li>
+                            <li><a href="#" target="_blank">我的活动</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fl relative hth-pin ml30">
+                    <a class="hth-lk" href="javascript:">消息<i class="icon-grayarrow"></i></a>
+                    <div class="hth-dropdown">
+                        <i class="icon-dropdownarrow-wrap"></i>
+                        <i class="icon-dropdownarrow"></i>
+                        <ul class="hth-menu text-center">
+                            <li><a href="#" target="_blank">私信</a></li>
+                            <li><a href="#" target="_blank">通知</a></li>
+                            <li><a href="#" target="_blank">粉丝</a></li>
+                            <li><a href="#" target="_blank">@我</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fl relative hth-pin ml30">
+                    <a class="hth-lk color-orange" href="javascript:">Deweor<i class="icon-orangearrow"></i></a>
+                    <div class="hth-dropdown">
+                        <i class="icon-dropdownarrow-wrap"></i>
+                        <i class="icon-dropdownarrow"></i>
+                        <ul class="hth-menu text-center">
+                            <li><a href="#" target="_blank">论坛中心</a></li>
+                            <li><a href="#" target="_blank">论坛主页</a></li>
+                            <li><a href="#" target="_blank">我的帖子</a></li>
+                            <li><a href="javascript:">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fl relative hth-pin ml30"><a class="hth-lk" href="http://bbs.xmfish.com/login.php" target="_blank">请登录</a></div>
+                <div class="fl relative hth-pin ml30"><a class="hth-lk color-orange" href="http://www.xiaoyu.com/register" target="_blank">注册</a></div>
+            </div>
+        </div>
+    </div>
+    <!--end 头部-->
+
+    <div class="homeheader">
+        <div class="wrap clear">
+            <h2 class="homeLogo"><a href="index.html"></a></h2>
+            <ul class="clear">
+                <li class="on"><a href="questions.html">提问</a></li>
+                <li><a href="mine.html">我问的</a></li>
+            </ul>
+            <!-- 修改 yyh -->
+            <a href="http://jiaju.xiaoyu.com/home/yuncle" class="gf-qa-entry">购房问答</a>
+            <!-- 修改 yyh -->
+        </div>
+    </div>
+    
+    <div class="wrap">
+
+        <div class="mt10"><a class="color-999" href="#">小鱼家装</a><span class="ml5 mr5 color-999">></span><span class="color-green">装修问答</span></div>
+
+        <div class="mt10 relative">
+            <div class="share-panel ulib-r5">
+                <span class="font-14"><i class="icon mr5 icon-share"></i>分享给有需要的人</span>
+                <div class="share-code mt10 text-center">
+                    <img src="upload/v-1.jpg" width="100" height="100" alt="#" />
+                    <div class="mt5 color-green font-14">微信扫描分享</div>
+                </div>
+            </div>
+            <img class="ulib-rt10" src="img/theme.jpg" alt="#" />
+        </div>
+        <div class="ulib-rb10 pt40 pb40 bg-fff bds clear">
+            <div class="fl quiz-panel">
+            	<div class="clear">
+                	<h3 class="fl font-24 text-lighter"><i class="icon mr5 icon-quiz"></i>装修提问</h3>
+                    <span class="fr mt15 color-666">已有<span class="color-orange">500</span>条提问</span>
+                </div>
+                <div id="questions" class="mt20">
+                    <div class="control-group">
+                    	<div class="pb5">问题标题</div>
+                    	<div class="relative">
+                            <input class="inp-sty ulib-r3 yahei" type="text" value="">
+                            <span class="inp-note">请写下你的问题（5-50个文字）</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                    	<div class="pb5">问题描述（可选）</div>
+                    	<div class="relative">
+                            <textarea id="content" class="inp-sty ulib-r3 yahei" style="min-height:100px;"></textarea>
+                            <span class="inp-note">问题背景、条件等详细信息</span>
+                            <div id="contentwordage" class="contentwordage">还可输入<span class="color-orange">140</span>字</div>
+                        </div>
+                    </div>
+                    <div class="control-group mt20">
+                        <button class="green-button next-button ulib-r3 yahei" type="button">下一步</button>
+                    </div>
+                </div>
+                <div id="verification" class="mt20" style="display:none;">
+                	<div class="control-group font-14 color-999">为了能及时接受回答，请输入真实有效的手机号码</div>
+                    <div class="control-group">
+                    	<div class="pb5">手机</div>
+                    	<div class="relative">
+                            <input class="inp-sty ulib-r3 yahei" type="text" value="">
+                            <span class="inp-note">请输入11位手机号码</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                    	<div class="pb5">验证码</div>
+                    	<div class="relative">
+                            <input class="inp-sty ulib-r3 yahei" type="text" value="">
+                            <span class="inp-note">请输入手机验证码</span>
+                            <a class="code-btn ulib-rr3" href="javascript:">获取验证码</a>
+                        </div>
+                    </div>
+                    <div class="control-group mt20 clear">
+                    	<a class="fl reedit-btn ulib-r3" href="javascript:"><i class="icon mr5 icon-reedit"></i>重新编辑</a>
+                        <button class="fr green-button ulib-r3 yahei" type="submit">提交问题</button>
+                    </div>
+                </div>
+            </div>
+            <div class="fr faq-panel">
+            	<div class="faq-tt font-14">常见问题</div>
+                <dl class="faq-item font-14">
+                	<dt class="color-green"><i class="icon-qorange mr10 ulib-r100">Q</i>什么是装修问答？</dt>
+                    <dd class="clear">
+                    	<i class="fl icon-qgray ulib-r100">A</i>
+                        <!-- 修改 start -->
+                        <div class="pl30">装修问答是小鱼家装推出的一档真人问答栏目，意在帮助
+用户更好的解决在装修途中碰到的相关问题，包括但不限新房装修、旧房翻新、装修风水、主材鉴别、预算评估等内容。所有回答皆由小鱼家装专业装修专家团队以具体问题具体分析、按需定制的方式完成。</div>
+                        <!-- 修改 end -->
+                    </dd>
+                </dl>
+                <dl class="faq-item font-14">
+                	<dt class="color-green"><i class="icon-qorange mr10 ulib-r100">Q</i>如何提问？</dt>
+                    <dd class="clear">
+                    	<i class="fl icon-qgray ulib-r100">A</i>
+                        <div class="pl30">无需登录，也能提问。只需将你的问题和问题描述、图片等内容通过鱼大叔产品平台发送给我们。我们的装修专家将在24小时内对于你的问题给出答复。</div>
+                    </dd>
+                </dl>
+                <dl class="faq-item font-14">
+                	<dt class="color-green"><i class="icon-qorange mr10 ulib-r100">Q</i>如何接收回答？</dt>
+                    <dd class="clear">
+                    	<i class="fl icon-qgray ulib-r100">A</i>
+                        <div class="pl30">提交问题后，还需填写真实有效的手机号码，然后使用该手机号码登录小鱼网即可收到回答。</div>
+                    </dd>
+                </dl>
+                <div class="mt20 text-center font-14"><a class="color-blue" href="#" target="_blank">还有疑问？了解更多</a></div>
+            </div>
+        </div>   
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+/*icon*/
+.icon{display:inline-block;background:url("../img/icon-wendah5.png") no-repeat;background-size:10rem auto;}
+.icon-nonequestions{width:.845rem;height:.845rem;background-position:-3rem 0;}
+.icon-up{width:.313rem;height:.344rem;background-position:-2rem 0;vertical-align:-.08rem;}
+.icon-gohome{width:.532rem;height:.532rem;margin-top:.23rem;background-position:0 0;}
+.icon-gotop{width:.563rem;height:.25rem;margin-top:.33rem;background-position:-1rem 0;}
+
+.theme{background:url("../img/theme.jpg") no-repeat;background-size:100% 100%;}
+.theme-tip{position:absolute;top:.625rem;left:.625rem;background-color:rgba(0,0,0,.6);}
+.con-60{width:.938rem;}
+.con-120{width:1.875rem;}
+.con-400{width:6.25rem;}
+
+.qa-tab{padding-top:.1rem;line-height:1.2rem;}
+.qa-tab li a{display:block;position:relative;box-sizing:border-box;}
+.qa-tab li.active a{border-bottom:#ff4a00 .06rem solid;color:#888;}
+.form-item{}
+.form-item dt{line-height:1rem;}
+.form-item dd input{height:1rem;}
+
+.code-btn{display:block;position:absolute;top:50%;right:0;margin-top:-.5rem;background-color:#7790d1;color:#fff;}
+.icon-qorange,
+.icon-qgray{display:inline-block;width:.438rem;height:.438rem;text-align:center;line-height:.438rem;color:#fff;vertical-align:.04rem;}
+.icon-qorange{background-color:#ff470a;}
+.icon-qgray{background-color:#999;}
+
+.answer-con{max-height:2.4rem;line-height:.6rem;word-wrap:break-word;word-break:break-all;overflow:hidden;}
+.answer-con.active{max-height:none;}
+.reply-con{line-height:.6rem;word-wrap:break-word;word-break:break-all;}
+
+.reply-item{display:none;}
+.more-btn{display:block;background-color:#f0f7ff;color:#1c56a5;}
+.kongblue-btn{display:none;padding:.15rem .35rem;border:#cedceb 1px solid;background-color:#f0f7ff;color:#2a61ab;}
+.blue-btn{padding:.13rem .35rem;background-color:#2a61ab;border:none;color:#fff;cursor:pointer;}
+
+.gohome,
+.gotop{display:block;position:fixed;right:.5rem;width:1rem;height:1rem;background-color:rgba(0,0,0,.6);text-align:center;}
+.gohome{bottom:3.3rem;}
+.gotop{bottom:2rem;}
