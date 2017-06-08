@@ -3,6 +3,7 @@
 }
 
 
+
 /**
  * 网站共用
  */
@@ -73,14 +74,22 @@ a {
  */
 
 .zsjs-order-dialog {
-    position: fixed;
-    top: 10px;
+    display:none;
     width: 580px;
     height: 500px;
-    left: 50%;
     background: #fff;
-    margin-left: -290px;
-    display:none;
+    .closeBtn{
+        width:16px;
+        height:16px;
+        position:absolute;
+        right:20px;
+        top:20px;
+        overflow:hidden;
+        background:url("../img/shejishi/zsjs_order.png") no-repeat 0 0;
+        &:hover{
+            background-position:0 -16px;
+        }
+    }
 }
 
 .zsjs-order-aside {
@@ -174,6 +183,7 @@ a {
 		padding:0 10px;
 		color:#999999;
 		width:280px;
+        cursor:text;
 
     }
     .ipt-text{
@@ -198,6 +208,9 @@ a {
 		    &:hover {
                 background-color: darken(#28ab00, 2%);
             }
+            &.disabled{
+                background-color:#c7c6c6;
+            }
     }
     .promise-tip{
     	margin-top:15px;
@@ -205,17 +218,95 @@ a {
     	padding-left:20px;
     	color:#999;
     }
-    .closeBtn{
-    	width:16px;
-    	height:16px;
-    	position:absolute;
-    	right:20px;
-    	top:20px;
-    	overflow:hidden;
-    	background:url("../img/shejishi/zsjs_order.png") no-repeat 0 0;
-    	&:hover{
-    		background-position:0 -16px;
-    	}
+    
+    .dropdown-box{
+        position:relative;
+        z-index:10;
+        &.active{
+            .arrow{
+                background-position:0 -38px;
+            }
+        }
+        .arrow{
+            width:12px;
+            height:6px;
+            position:absolute;
+            right:9px;
+            top:50%;
+            margin-top:-3px;
+            background:url("../img/shejishi/zsjs_order.png") no-repeat 0 -32px;
+        }
+        >cite{
+            line-height:36px;
+            padding:0 19px 0 9px;
+            color:#999999;
+            width:268px;
+            cursor:text;
+            font-style:normal;
+            border:1px solid #dddddd;
+            display:block;
+            border-radius: 4px;
+            position:relative;
+            cursor:pointer;
+            @extend %text-overflow;
+            &.active{
+                color:#333;
+            }
+        }
+        >ul{
+            border:1px solid #dddddd;
+            border-top:none;
+            position:absolute;
+            display:none;
+            left:0;
+            top:35px;
+            width:296px;
+            background:#fff;
+            border-radius:0 0 4px 4px;
+            max-height:180px;
+            overflow:scroll;
+            &::-webkit-scrollbar {width: 6px;height:6px;}
+            &::-webkit-scrollbar-track-piece{background-color: #eee;margin: -2px;}
+            &::-webkit-scrollbar-thumb{background: #aaa;min-height: 150px;min-width: 150px;border-radius: 10px;}
+            &::-webkit-scrollbar-thumb:vertical:hover{background: #555555}
+            &::-webkit-scrollbar-thumb:horizontal:hover{background: #555555}
+            li{
+                border-top:1px solid #dddddd;
+                a{
+                    padding-left:10px;
+                    font-size:14px;
+                    height:35px;
+                    line-height:35px;
+                    @extend %text-overflow;
+                    overflow:hidden;
+                    display:block;
+                }
+            }
+        }
+    }
+}
+
+.zsjs-order-success{
+    display:none;
+    width:185px;
+    text-align:center;
+    float:left;
+    margin:115px 0 0 90px;
+    .tip{
+        
+        line-height:36px;
+        height:36px;
+        display:inline-block;
+        background:url("../img/shejishi/zsjs_order.png") no-repeat 0 -50px;
+        padding-left:51px;
+        font-size:24px;
+        white-space:nowrap;
+        color:#28ab00;
+    }
+    .txt{
+        margin-top:30px;
+        color:#999999;
+        font-size:14px;
     }
 }
 
@@ -283,7 +374,6 @@ a {
                 text-align: center;
                 visibility: hidden;
                 opacity: 0;
-                visibility: hidden;
                 transition: all 0.30s ease-out;
                 p {
                     font-size: 16px;
@@ -476,6 +566,11 @@ a {
                 padding: 0 10px;
                 margin-right: 5px;
                 margin-bottom: 10px;
+                &:hover{
+                    background:#28ab00;
+                    border-color:#28ab00;
+                    color:#fff;
+                }
             }
         }
         .cname {
@@ -530,6 +625,9 @@ a {
                     background-color: rgba(0, 0, 0, 0.6);
                     filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#88000000, endColorstr=#88000000);
                     text-align: center;
+                     visibility: hidden;
+                    animation-duration: 0.20s;
+                animation-fill-mode: both;
                     b {
                         padding: 0 20px;
                         border-bottom: 1px solid #fff;
@@ -542,6 +640,12 @@ a {
                         font-weight: normal;
                         max-width: 70%;
                         @extend %text-overflow;
+                    }
+                }
+                &:hover{
+                    .mask{
+                        visibility:visible;
+                        animation-name: zoomIn;                    
                     }
                 }
             }
@@ -1033,11 +1137,11 @@ a {
 /**************产品详情页*******************/
 .zsjs-pro-main{
     float:left;
-    width:818px;
+    width:820px;
     overflow:hidden;
-    background:#ffffff;
-    border:1px solid #dddddd;
     .seat-box{
+        background:#ffffff;
+        border:1px solid #dddddd;
         background:#fff;
         padding:0 29px;
     }
@@ -1074,10 +1178,690 @@ a {
                 }
             }
         }
+        .marks{
+            width:16px;
+            height:31px;
+            overflow:hidden;
+            background:url("../img/shejishi/sjs_pro_detail_icon.png") no-repeat;
+            position:absolute;
+            &.marks-lf{
+                background-position:0 0;
+                top:5px;
+                left:20px;
+            }
+            &.marks-rt{
+                background-position:0 -31px;
+                bottom:5px;
+                right:20px;
+            }
+        }
+        .intro{
+            background:#f7f7f7;
+            position:relative;
+            margin-top:23px;
+            .txt{
+                padding:20px 45px;
+                font-size:14px;
+                line-height:20px;
+                color:#333333;
+                span{
+                    margin:0 7px; 
+                }
+
+            }
+        }
+    }
+    /**
+     * 点赞
+     */
+    .fabulous{
+        width:60px;
+        height:28px;
+        line-height:28px;
+        display:block;
+        margin:30px auto 0;
+        border:1px solid #bbbbbb;
+        border-radius:5px;
+        color:#666666;
+        text-align:center;
+        b{
+            width:13px;
+            height:12px;
+            display:inline-block;
+            background:url("../img/shejishi/sjs_opus.png") no-repeat 0 -40px;
+            margin-right:5px;
+           
+        }
+        &:hover{
+            border-color:#28ab00;
+            background-color:#28ab00;
+            color:#fff;
+            b{
+                background-position:0 -60px;
+            }
+        }
+        &.pass{
+            background:#aaaaaa;
+            border-color:#aaaaaa;
+            color:#fff;
+            b{
+                background-position:0 -60px;
+            }
+        }
+    }
+
+
+    .other-pro{
+        border-top:1px solid #dddddd;
+        margin-top:40px;
+        padding-top:15px;
+        padding-bottom:18px;
+        .caption{
+            font-size:14px;
+            color:#333;
+            margin-bottom:15px;
+        }
+        .list{
+            width:780px;
+            li{
+                float:left;
+                width:240px;
+                margin-right:20px;
+                background:#fff;
+                .pic{
+                    position: relative;
+                    width: 240px;
+                    height: 140px;
+                    margin:0 auto;
+                    display:block;
+                    overflow: hidden;
+                    .mask {
+                        animation-duration: 0.20s;
+                        animation-fill-mode: both;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        visibility:hidden;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.6);
+                        filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#88000000, endColorstr=#88000000);
+                        text-align: center;
+                        b {
+                            padding: 0 20px;
+                            border-bottom: 1px solid #fff;
+                            font-size: 18px;
+                            line-height: 30px;
+                            color: #fff;
+                            position: relative;
+                            display: inline-block;
+                            margin-top: 55px;
+                            font-weight: normal;
+                            max-width: 70%;
+                            @extend %text-overflow;
+                        }
+                    }
+                    &:hover{
+                        .mask{
+                            visibility:visible;
+                            animation-name: zoomIn;                    
+                        }
+
+                    }
+                }
+                .tit{
+                    color:#222222;
+                    font-size:14px;
+                    display:block;
+                    margin-top:10px;
+                    @extend %text-overflow;
+                    &:hover{
+                        color:#28ab00;
+                    }
+                }
+                .pag{
+                    color:#666666;
+                    margin-top:3px;
+                    span,b{
+                        float:left;
+                        display:inline-block;
+                        max-width:104px;
+                        @extend %text-overflow;
+                        font-weight:normal;
+                       
+                    }
+                    span{
+                         padding-right:10px;
+                    }
+                    b{
+                        padding-left:10px;
+                    }
+                }
+            }
+        }
     }
 }
+
+//帖子模式
+.postpic-tzms{
+    color:#333333;
+    font-size:14px;
+    margin-top:20px;
+    img{
+        max-width:100%;
+    }
+}
+//
+.postpic-tpms-wrap{
+    display:none;
+    margin-top:20px;
+}
+.postpic-tpms{
+    .dir-btn{
+        background:url("../img/shejishi/postpic_icon.png") no-repeat;
+        position: absolute; 
+        top:50%;
+        width:40px;
+        height:80px;
+        margin-top:-40px;
+        &.banner-ui-prev{
+            background-position:0 0;
+            left:0;
+            &:hover{
+                 background-position:0 -160px;
+            }
+        }
+        &.banner-ui-next{
+            background-position:0 -80px;
+            right:0;
+            &:hover{
+                 background-position:0 -240px;
+            }
+        }
+    }
+}
+.banner-numlist-wrap{
+    position:relative;
+    padding-left:45px;
+    margin-top:10px;
+    padding-top:5px;
+    .num{
+        font-size:14px;
+        color:#333333;
+        position:absolute;
+        left:0;
+        top:0;
+        b{
+            color:#28ab00;
+            font-size:24px;
+            font-weight:normal;
+        }
+    }
+    .banner-numlist{
+        font-size:14px;
+        li{
+            display:none;
+            line-height:25px;
+            min-height:50px;
+            &.oncurr{
+                display:block;
+            }
+        }
+    }
+}
+
+/**
+ * 评论框
+ */
+.comments-caption{
+    height:38px;
+    line-height:38px;
+    border-bottom:2px solid #28ab00;
+    margin-top:12px;
+    .tit{
+        font-size:18px;
+        font-weight:bold;
+        margin-right:10px;
+    }
+    .count{
+        color:#999;
+    }
+}
+
+.comments-form{
+    position:relative;
+    padding-left:70px;
+    .avatar{
+        width:50px;
+        height:50px;
+        overflow:hidden;
+        position:absolute;
+        left:0;
+        top:0;
+    }
+    .form-area{
+        position:relative;
+        margin-top:20px;
+        .arrow{
+            width:11px;
+            height:11px;
+            background:url("../img/shejishi/comments_arrow.png") no-repeat;
+            position:absolute;
+            left:-10px;
+            top:11px;
+
+        }
+        textarea{
+            border:1px solid #cccccc;
+            padding:10px;
+            width:668px;
+            height:38px;
+        }
+        .lab{
+            position:absolute;
+            left:0;
+            top:0;
+            padding:10px;
+            width:668px;
+            color:#aaaaaa;
+            height:38px;
+            cursor:text;
+        }
+    }
+    .form-handle{
+        padding-top:6px;
+        .handle-l{
+            float:left;
+            color:#999999;
+            b{
+                font-weight:normal;
+                color:#28ab00;
+            }
+            a{
+                color:#28ab00;
+                &:hover{
+                    text-decoration:underline;
+                }
+            }
+        }
+        .handle-r{
+            float:right;
+            .byte{
+                color:#999999;
+                margin-right:20px;
+                b{
+                    font-weight:normal;
+                }
+            }
+            .ipt-submit{
+                width:69px;
+                height:28px;
+                background:#28ab00;
+                border-radius:3px;
+                color:#fff;
+                cursor:pointer;
+                &:hover{
+                    background:darken(#28ab00,2%);
+                }
+            }
+
+        }
+    }
+}
+
+/**
+ * 
+ */
+.comments-nodata{
+    padding:120px 0;
+    .pic{
+        width:64px;
+        height:88px;
+        overflow: hidden;
+        background:url("../img/shejishi/comment_nodata.png") no-repeat;
+        margin:0 auto;
+        display:block;
+    }
+    p{
+        text-align:center;
+        color:#666666;
+        margin-top:20px;
+    }
+}
+
+.comments-details{
+    .caption{
+        height:33px;
+        line-height:33px;
+        overflow:hidden;
+        border-bottom:1px solid #dddddd;
+        color:#000000;
+    }
+}
+.comments-list{
+    li{
+        position:relative;
+        padding:20px 0 20px 70px;
+        border-bottom:1px dashed #dddddd;
+        .time{
+            color:#aaaaaa;
+        }
+        .con-txt{
+            font-size:14px;
+        }
+        .name{
+            font-size:14px;
+            margin-bottom:3px;
+            color:#777777;
+        }
+
+    }
+    .avatar{
+        width:50px;
+        height:50px;
+        position:absolute;
+        left:0;
+        top:20px;
+        overflow:hidden;
+        img{
+            max-width:100%;
+        }
+    }
+}
+.comments-reply{
+    position:relative;
+    margin-top:18px;
+    .arrow{
+        width:16px;
+        position:absolute;
+        right:6px;
+        top:-8px;
+        height:10px;
+        background:url("../img/shejishi/comments_reply_arrow.png") no-repeat;
+    }
+    .reply-form-wrap{
+        
+        border:1px solid #dddddd;
+    }
+    .reply-form-inner{
+         border:1px solid #fff;
+         background:#f3f3f3;
+         padding:13px 17px; 
+    }
+    .item-con{
+        border:1px solid #bbbbbb;
+        border-radius:3px;
+        background:#fff;
+        position:relative;
+        padding-right:10px;
+        .para-tit{
+            height:34px;
+            line-height:34px;
+            position:absolute;
+            left:0;
+            top:0;
+            padding-left:10px;
+        }
+        .reply-txt{
+             height:34px;
+            line-height:34px;
+            width:100%;
+
+        }
+    }
+    .item-handle{
+        text-align:right;
+        margin-top:18px;
+        .byte{
+            color:#999999;
+            margin-right:10px;
+            b{
+                font-weight:normal;
+            }
+        }
+    }
+    .ipt-submit{
+            width: 69px;
+            height: 28px;
+            background: #28ab00;
+            border-radius: 3px;
+            color: #fff;
+            cursor: pointer;
+            border:none;
+            &:hover{
+                background:darken(#28ab00,2%);
+            }
+    }
+}
+.reply-result-box{
+    position:relative;
+    .arrow{
+        width:16px;
+        height:9px;
+        overflow:hidden;
+        background:"";
+    }
+}
+
+
+
 .zsjs-pro-aside{
     float:right;
     overflow:hidden;
     width:260px;
+    .seat-box{
+        border: 1px solid #dddddd;
+        background: #fff;
+        padding: 0 19px;
+    }
+    .avatar{
+        margin-top:19px;
+        .pic{
+            width:80px;
+            height:80px;
+            overflow:hidden;
+            float:left;
+            margin-right:14px;
+            img{
+                max-width:100%;
+            }
+        }
+        .name{
+            font-size:16px;
+        }
+    }
+    .charge-prices{
+        color:#666;
+        text-align:center;
+        margin-top:25px;
+        span{
+            color:#f25618;
+            font-size:20px;
+            margin-right:10px;
+        }
+    }
+    .seek-btn{
+        width:100%;
+        height: 34px;
+        line-height:34px;
+        background: #28ab00;
+        border-radius:4px;
+        color: #fff;
+        cursor: pointer;
+        display:block;
+        text-align:center;
+        font-size:16px;
+        margin-top:30px;
+        &:hover{
+            background:darken(#28ab00,2%);
+        }
+    }
+    .tel-phone{
+        margin-top:20px;
+        margin-bottom:50px;
+        width:100%;
+        height: 34px;
+        line-height:34px;
+        background: #ee8260;
+        border-radius:4px;
+        color: #fff;
+        cursor: pointer;
+        display:block;
+        text-align:center;
+        font-size:16px;
+        &:hover{
+            background:darken(#ee8260,2%);
+        }
+        span{
+            background:url("../img/shejishi/tel_phone_1.png")  no-repeat left center;
+            padding-left:15px;
+        }
+    }
+}
+
+/**
+ * 帖子和图文按钮
+ */
+.postxt-fixed-bar{
+    position:fixed;
+    left:50%;
+    top:300px;
+    margin-left:-660px;
+    a{
+        display:block;
+        width:98px;
+        height:40px;
+        line-height:40px;
+        text-align:center;
+        border-right:1px solid #aaa;
+        border-left:1px solid #aaa;
+        overflow:hidden;
+        span{
+            background:url("../img/shejishi/sjs_words_detail_icon.png") no-repeat;
+            padding-left:20px;
+            display:inline-block;
+            height:16px;
+            line-height:16px;
+        }
+        &.item1{
+            border-top:1px solid #aaa;
+            span{
+                background-position:0 0;
+            }
+        }
+        &.item2{
+            border-bottom:1px solid #aaa;
+            span{
+                background-position:0 -32px;
+                padding-left:22px;
+            }
+        }
+        &:hover,&.active{
+            background:#28ab00;
+            color:#fff;
+            border-color:#28ab00;
+            span{
+
+            }
+            &.item1{
+                span{
+                background-position:0 -16px;
+                 }
+            }
+            &.item2{
+                span{
+                    background-position:0 -48px;
+                    
+                }
+            }
+        }
+    }
+}
+
+/**
+ * 表单验证样式
+ */
+.field-invalid {
+     border-color: #a94442;
+ }
+ 
+ .field-invalidmsg {
+     color: #a94442;
+ }
+ 
+ .field-validmsg {
+     color: #3c763d;
+ }
+ 
+ .field-tooltipWrap {
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 100%;
+     z-index:9999999999999;
+ }
+ 
+ .field-tooltipInner {
+     pointer-events: none;
+     display: table;
+     position: fixed;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+ }
+ 
+ .field-tooltip {
+     display: table-cell;
+     vertical-align: middle;
+     text-align: center;
+ }
+ 
+ .field-tooltip .field-invalidmsg,
+ .field-tooltip .field-validmsg {
+     color: #fff;
+ }
+ 
+ .field-tooltip .zvalid-resultformat {
+     display: inline-block;
+     position: relative;
+     background-color: rgba(0, 0, 0, 0.8);
+     color: #fff;
+     padding: 20px 30px;
+     font-size: 18px;
+     border-radius: 6px;
+     box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+     pointer-events: auto;
+     animation-name: fieldTipBounceIn;
+     -webkit-animation-name: fieldTipBounceIn;
+     -webkit-animation-fill-mode: both;
+     animation-fill-mode: both;
+     -webkit-animation-duration: .18s;
+     animation-duration: .18s;
+ }
+ 
+ @-webkit-keyframes fieldTipBounceIn {
+     0% {
+         opacity: 0;
+         -webkit-transform: scale3d(.3, .3, .3);
+         transform: scale3d(.3, .3, .3);
+     }
+     100% {
+         opacity: 1;
+         -webkit-transform: scale3d(1, 1, 1);
+         transform: scale3d(1, 1, 1);
+     }
+ }
+ 
+ @keyframes {
+     0% {
+         opacity: 0;
+         -webkit-transform: scale3d(.3, .3, .3);
+         transform: scale3d(.3, .3, .3);
+     }
+     100% {
+         opacity: 1;
+         -webkit-transform: scale3d(1, 1, 1);
+         transform: scale3d(1, 1, 1);
+     }
 }

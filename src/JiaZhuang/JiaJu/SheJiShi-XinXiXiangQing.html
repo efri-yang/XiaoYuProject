@@ -42,7 +42,7 @@
                 </div>
                 <div class="blend-py">
                     <span class="price"><b>200-300</b>元/㎡</span>
-                    <a href="#" class="sjs-btn btn-success">预约咨询</a>
+                    <a href="index.php?id=1" class="sjs-btn btn-success" data-roler="orderdialog">预约咨询</a>
                 </div>
                 <span class="address">思明区</span>
             </div>
@@ -70,6 +70,10 @@
      <!-- ****************** footer start  ***********************-->
 
 
+<!-- ************** 预约弹出框 start  多个页面公用 做成公共模块****************-->
+    @@include("./views/_orderForm.html")
+<!-- ************** 预约弹出框 end 多个页面公用 ****************-->
+
      <script type="text/javascript">
         (function(){
             $(function(){
@@ -85,7 +89,6 @@
                  })
             })
         })()
-         
      </script>
 </body>
 </html>

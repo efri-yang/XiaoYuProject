@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="css/home.css">
     <link rel="stylesheet" type="text/css" href="css/shejishi.css">
     <script src="js/jquery.min.js"></script>
-    <script src="js/layer/layer.js"></script>
 </head>
 
 <body class="yahei">
@@ -101,10 +100,10 @@
                         <ul class="zsjs-designers-list">
                             <li class="recommend">
                                 <div class="up-area">
-                                    <div class="avatar">
+                                    <a class="avatar" href="#">
                                         <img src="./upload/zsjs_avatar.jpg" alt="" />
-                                    </div>
-                                    <p class="cname">周孝安设计事务所</p>
+                                    </a>
+                                    <p class="cname"><a href="#">周孝安设计事务所</a></p>
                                     <p class="prices">
                                         <span>500-800</span>
                                         <b>元/㎡</b>
@@ -120,7 +119,7 @@
                                         <a href="">酒店</a>
                                         <a href="">餐厅</a>
                                     </div>
-                                    <a href="#" class="sjs-btn btn-success">预约咨询</a>
+                                    <a href="index.php?id=1" class="sjs-btn btn-success" data-roler="orderdialog">预约咨询</a>
                                     <span class="address">思明区</span>
                                 </div>
                                 <div class="works-box">
@@ -153,10 +152,10 @@
                             </li>
                             <li>
                                 <div class="up-area">
-                                    <div class="avatar">
+                                    <a class="avatar" href="#">
                                         <img src="./upload/zsjs_avatar.jpg" alt="" />
-                                    </div>
-                                    <p class="cname">张永孝</p>
+                                    </a>
+                                    <p class="cname"><a href="#">张永孝</a></p>
                                     <p class="prices">
                                         <span>500-800</span>
                                         <b>元/㎡</b>
@@ -172,16 +171,16 @@
                                         <a href="">酒店</a>
                                         <a href="">餐厅</a>
                                     </div>
-                                    <a href="#" class="sjs-btn btn-success">预约咨询</a>
+                                    <a href="index.php?id=1" class="sjs-btn btn-success" data-roler="orderdialog">预约咨询</a>
                                     <span class="address">思明区</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="up-area">
-                                    <div class="avatar">
+                                    <a class="avatar" href="#">
                                         <img src="./upload/zsjs_avatar.jpg" alt="" />
-                                    </div>
-                                    <p class="cname">姚瑶</p>
+                                    </a>
+                                    <p class="cname"><a href="#">姚瑶</a></p>
                                     <p class="prices">
                                         <span>500-800</span>
                                         <b>元/㎡</b>
@@ -197,7 +196,7 @@
                                         <a href="">酒店</a>
                                         <a href="">餐厅</a>
                                     </div>
-                                    <a href="#" class="sjs-btn btn-success">预约咨询</a>
+                                    <a href="index.php?id=1" class="sjs-btn btn-success" data-roler="orderdialog">预约咨询</a>
                                     <span class="address">思明区</span>
                                 </div>
                                 <div class="works-box">
@@ -217,10 +216,10 @@
                             </li>
                             <li>
                                 <div class="up-area">
-                                    <div class="avatar">
+                                    <a class="avatar" href="#">
                                         <img src="./upload/zsjs_avatar.jpg" alt="" />
-                                    </div>
-                                    <p class="cname">姚瑶</p>
+                                    </a>
+                                    <p class="cname"><a href="#">姚瑶</a></p>
                                     <p class="prices">
                                         <span>500-800</span>
                                         <b>元/㎡</b>
@@ -236,7 +235,7 @@
                                         <a href="">酒店</a>
                                         <a href="">餐厅</a>
                                     </div>
-                                    <a href="#" class="sjs-btn btn-success">预约咨询</a>
+                                    <a href="index.php?id=1" class="sjs-btn btn-success" data-roler="orderdialog">预约咨询</a>
                                     <span class="address">思明区</span>
                                 </div>
                                 <div class="works-box">
@@ -345,51 +344,8 @@
      <!-- ****************** footer start  ***********************-->
 
 <!-- ************** 预约弹出框 start  多个页面公用 做成公共模块****************-->
-<div class="zsjs-order-dialog clear">
-	<div class="zsjs-order-aside">
-		<div class="avatar"><img src="./upload/sjs_avatar_1.jpg" /></div>
-		<p class="cname">周孝安设计事务所</p>
-		<p class="prices">设计费用：200-300元/㎡</p>
-		<div class="qrcode">
-			<div class="pic"><img src="./img/shejishi/jiaju_qrcode.jpg" /></div>
-			<p class="txt">关注小鱼家居</p>
-		</div>
-	</div>
-	<div class="zsjs-order-form">
-		<p class="caption">预约咨询</p>
-		<p class="cue">请留下您的相关信息，设计师会主动联系您</p>
-		<form action="#" method="post" >
-			<div class="para-item">
-				<label class="para-tit">联系人</label>
-				<input type="text" class="ipt-text" />
-			</div>
-			<div class="para-item">
-				<label class="para-tit">手机号码</label>
-				<input type="text" class="ipt-text" />
-			</div>
-			<div class="para-item">
-				<label class="para-tit">项目类型</label>
-				<input type="text" class="ipt-text" />
-			</div>
-			<div class="para-item unit-item">
-				<label class="para-tit">项目面积</label>
-				<input type="text" class="ipt-text" />
-				<b class="unit">㎡</b>
-			</div>
-			<div class="para-item">
-				<label class="para-tit">小区名称(选填)</label>
-				<input type="text" class="ipt-text" />
-			</div>
-			<input type="submit" class="ipt-submit" value="立即提交" />
-		</form>
-		<p class="promise-tip">我们承诺：为了您的利益以及我们的口碑，您的隐私我们将严格保密，请放下填写。</p>
-
-		<a href="javascript:void(0)" class="closeBtn"></a>
-	</div>
-</div>
-
-
-<!-- ************** 预约弹出框 end 两个页面公用 ****************-->
+    @@include("./views/_orderForm.html")
+<!-- ************** 预约弹出框 end 多个页面公用 ****************-->
 </body>
 
 </html>
