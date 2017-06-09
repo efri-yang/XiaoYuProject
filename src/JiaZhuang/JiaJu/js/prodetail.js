@@ -43,6 +43,9 @@
         $parent = this.parent();
         len = $slider_lis.length;
 
+
+        var  $checkBig=$("#J_check-big");
+
         //传进来的效果
         function getAnimWay(effect) {
             try {
@@ -94,18 +97,23 @@
                 }
                 $prevBtn.bind("mouseover", thisMouseover).bind("mouseout", thisMouseout).bind("click", prevBtnScroll);
                 $nextBtn.bind("mouseover", thisMouseover).bind("mouseout", thisMouseout).bind("click", nextBtnScroll);
+                
+               
+                
             }
         };
 
         function thisMouseover(event) {
             clearTimeout(Timer);
             var relateElem = event.relatedTarget;
+            
             if ($(relateElem).closest($parent).length > 0) {
                 return;
             } else {
+                $checkBig.stop(false, true).fadeIn();
                 if (opts.btn.dynamic) {
-                    $prevBtn.stop(false, true).fadeIn();
-                    $nextBtn.stop(false, true).fadeIn();
+                    $prevBtn.show();
+                    $nextBtn.show();
                 }
                 isLock = true;
                 animDir = 1;
@@ -114,14 +122,15 @@
 
         function thisMouseout(event) {
             var relateElem = event.relatedTarget;
+             
             if ($(relateElem).closest($parent).length > 0) {
                 return;
             } else {
-
                 if (opts.btn.dynamic) {
-                    $prevBtn.stop(false, true).fadeOut();
-                    $nextBtn.stop(false, true).fadeOut();
+                    $prevBtn.hide();
+                    $nextBtn.hide();
                 }
+                $checkBig.stop(false, true).fadeOut();
                 isLock = false;
                 isFirst = true;
                 animDir = 1;
@@ -237,6 +246,7 @@
                 $slider_lis.eq(Index).css("left", 0).siblings().css({ zIndex: opts.zIndex - 1, display: "none" });
                 $(this).css("left", 0);
                 $("#J_numcount").text(Index+1);
+                 $checkBig.attr("href",$slider_imgs.eq(Index).attr("src"));
             })
         };
 
@@ -288,6 +298,8 @@
                 $this.bind("mouseout", thisMouseout);
                 beginStart()
             }
+            //
+           $checkBig.attr("href",$slider_imgs.eq(0).attr("src"));
         };
         Init();
     }
@@ -299,8 +311,14 @@ $(function(){
         $(function(){
             var $relateBd=$('[data-group="sjpro-tab-bd"]');
             var $relateHd=$('[data-group="sjpro-tab-hd"]');
+           
+
+            
             $(document).on("click",'[data-roler="tab"]',function(e){
                 e.preventDefault();
+                if($(window).scrollTop()>260){
+                    $(window).scrollTop(260);
+                }
                 var $this=$(this);
                 var target=$this.attr('data-target');
                 $relateHd.removeClass("active");

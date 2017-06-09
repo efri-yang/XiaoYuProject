@@ -30,7 +30,25 @@ a {
         color: #28ab00;
     }
 }
-
+/**
+ * 
+ */
+.zsjs-nodata{
+    padding:120px 0;
+    .pic{
+        width:64px;
+        height:88px;
+        overflow: hidden;
+        background:url("../img/shejishi/comment_nodata.png") no-repeat;
+        margin:0 auto;
+        display:block;
+    }
+    p{
+        text-align:center;
+        color:#666666;
+        margin-top:20px;
+    }
+}
 .sjs-btn {
     display: inline-block;
     padding: 4px 25px;
@@ -341,13 +359,21 @@ a {
             float: right;
         }
     }
+    .soma-bd-scroll{
+        margin-top:20px;
+        height:560px;
+        overflow:hidden;
+        position:relative;
+        
+    }
     .soma-bd {
-        margin-top: 20px;
+        position:relative;
         li {
             border: 1px solid #dddddd;
             margin-bottom: 10px;
             position: relative;
             overflow: hidden;
+            float:left;
             &:hover {
                 .mask {
                     top: 0;
@@ -365,13 +391,13 @@ a {
             }
             .mask {
                 position: absolute;
-                left: 0;
-                top: 100%;
+                left: 0;         
                 width: 100%;
                 height: 100%;
                 background-color: rgba(0, 0, 0, 0.8);
                 filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#66000000, endColorstr=#66000000);
-                text-align: center;
+                text-align: center;  
+                top: 100%;
                 visibility: hidden;
                 opacity: 0;
                 transition: all 0.30s ease-out;
@@ -421,7 +447,7 @@ a {
         position: relative;
         .tit {
             font-size: 16px;
-            line-height: 36px;
+            line-height: 34px;
             color: #333333;
             text-align: right;
             position: absolute;
@@ -616,6 +642,9 @@ a {
                 overflow: hidden;
                 float: left;
                 margin-right: 20px;
+                img{
+                    max-width: 100%;
+                }
                 .mask {
                     position: absolute;
                     left: 0;
@@ -747,6 +776,9 @@ a {
 			border:1px solid #e4e4e4;
 			float:left;
 			margin-right:10px;
+            img{
+                max-width: 100%;
+            }
 		}
 		.cname{
 			font-size:16px;
@@ -854,6 +886,9 @@ a {
 			height:42px;
 			overflow:hidden;
 			font-size:14px;
+            &:hover{
+                color:#28ab00;
+            }
 		}
 		.time{
 			color:#999999;
@@ -1139,6 +1174,7 @@ a {
     float:left;
     width:820px;
     overflow:hidden;
+    padding-bottom: 25px;
     .seat-box{
         background:#ffffff;
         border:1px solid #dddddd;
@@ -1272,9 +1308,15 @@ a {
                     position: relative;
                     width: 240px;
                     height: 140px;
+                    line-height:140px;
                     margin:0 auto;
                     display:block;
+                    text-align:center;
                     overflow: hidden;
+                    img{
+                        max-width:100%;
+                        vertical-align:middle;
+                    }
                     .mask {
                         animation-duration: 0.20s;
                         animation-fill-mode: both;
@@ -1357,6 +1399,35 @@ a {
     margin-top:20px;
 }
 .postpic-tpms{
+    ul{
+        li{
+            text-align:center;
+            width:100%;
+            line-height:400px;
+            img{
+                max-width:100%;
+                max-height:100%;
+                vertical-align:middle;
+                display:inline-block;
+            }
+        }
+    }
+    .check-big{
+        width: 70px;
+        height: 28px;
+        line-height: 28px;
+        border-radius:5px;
+        position:absolute;
+        right:20px;
+        top:20px;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        z-index: 15;
+        display:none;
+        background-color: rgba(0, 0, 0, 0.8);
+        filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#66000000, endColorstr=#66000000);
+    }
     .dir-btn{
         background:url("../img/shejishi/postpic_icon.png") no-repeat;
         position: absolute; 
@@ -1509,27 +1580,12 @@ a {
     }
 }
 
-/**
- * 
- */
-.comments-nodata{
-    padding:120px 0;
-    .pic{
-        width:64px;
-        height:88px;
-        overflow: hidden;
-        background:url("../img/shejishi/comment_nodata.png") no-repeat;
-        margin:0 auto;
-        display:block;
-    }
-    p{
-        text-align:center;
-        color:#666666;
-        margin-top:20px;
-    }
-}
 
+.comments-box{
+    padding-bottom: 20px;
+}
 .comments-details{
+    margin-top:15px;
     .caption{
         height:33px;
         line-height:33px;
@@ -1539,10 +1595,14 @@ a {
     }
 }
 .comments-list{
+    padding-bottom: 15px;
     li{
         position:relative;
         padding:20px 0 20px 70px;
         border-bottom:1px dashed #dddddd;
+        &:last-child{
+            border-bottom:none;
+        }
         .time{
             color:#aaaaaa;
         }
@@ -1594,12 +1654,15 @@ a {
         background:#fff;
         position:relative;
         padding-right:10px;
+        padding-left: 120px;
         .para-tit{
             height:34px;
             line-height:34px;
             position:absolute;
             left:0;
             top:0;
+            max-width: 110px;
+            @extend %text-overflow;
             padding-left:10px;
         }
         .reply-txt{
@@ -1635,11 +1698,26 @@ a {
 }
 .reply-result-box{
     position:relative;
+    background:#f3f3f3;
+    border:1px solid #dddddd;
+    margin-top: 10px;
     .arrow{
         width:16px;
         height:9px;
+        position:absolute;
+        left:30px;
+        top:-8px;
         overflow:hidden;
-        background:"";
+        background:url("../img/shejishi/comments_reply_arrow.png") no-repeat;
+    }
+    .txt{
+        padding: 8px 13px;
+        line-height: 23px;
+        font-size: 14px;
+    }
+    .rlname{
+        color:#777777;
+        padding-left: 13
     }
 }
 
@@ -1725,7 +1803,7 @@ a {
 .postxt-fixed-bar{
     position:fixed;
     left:50%;
-    top:300px;
+    top:500px;
     margin-left:-660px;
     a{
         display:block;
@@ -1736,6 +1814,7 @@ a {
         border-right:1px solid #aaa;
         border-left:1px solid #aaa;
         overflow:hidden;
+        background:#fff;
         span{
             background:url("../img/shejishi/sjs_words_detail_icon.png") no-repeat;
             padding-left:20px;
@@ -1827,8 +1906,8 @@ a {
      position: relative;
      background-color: rgba(0, 0, 0, 0.8);
      color: #fff;
-     padding: 20px 30px;
-     font-size: 18px;
+     padding: 15px 25px;
+     font-size: 14px;
      border-radius: 6px;
      box-shadow: 0 0 8px rgba(0, 0, 0, .1);
      pointer-events: auto;

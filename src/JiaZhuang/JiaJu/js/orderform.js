@@ -65,7 +65,14 @@
 
 
      (function() {
-         var layerDiaIndex, url;
+         var layerDiaIndex,layerLoadIndex,url;
+         var $orderForm=$(".zsjs-order-form"),
+             $orderContainer=$('#J_zsjs-order-dialog'),
+             $orderAvatar=$orderContainer.find(".avatar-pic"),
+             $orderName=$orderContainer.find(".cname"),
+             $orderPrice=$orderContainer.find(".pri-num"),
+             $orderSuccess=$(".zsjs-order-success");
+                             
 
          //表单验证
          $("#J_orderform").mvalidate({
@@ -90,20 +97,22 @@
                  }
              },
              valid: function() {
-                 alert("可以提交表单了，开发请在这里写入代码")
-                     //开发请写这里,返回 true表示成功 返回false 表示失败
+                
+                 //开发请写这里,服务端请返回 true表示成功 返回false 表示失败
                  $.ajax({
                      url:url,
-                     data:{},
+                     data:$("#J_orderform").serialize(),
+                     type:"post",
                      beforeSend: function() {
-                         $(".ipt-submit").attr("disabled", "true").addClass("disabled");
+                         layerLoadIndex=layer.load(1, {shade: [0.1,'#fff']}) //0.1透明度的白色背景});
                      },
                      success: function(data) {
-                         $(".ipt-submit").attr("disabled", "false").removeClass("disabled");
-                         if (!!data) {
-                             $(".zsjs-order-form").show();
+                        layer.close(layerLoadIndex);
+                        if (!!data) {
+                                $orderForm.hide();
+                                $orderSuccess.show();
                          } else {
-
+                            layer.msg('亲,路途太堵,请您重新提交！');
                          }
                      }
                  })
@@ -111,15 +120,22 @@
          });
 
          //点击关闭按钮关闭弹出框
-         $("#J_zsjs-order-dialog .closeBtn").on("click", function() {
+         $orderContainer.find('.closeBtn').on("click", function() {
              layer.close(layerDiaIndex);
          })
+         
 
          //点击按钮弹出弹出框
          $(document).on("click", '[data-roler="orderdialog"]', function(event) {
              event.preventDefault();
-             var $this = $(this);
-             var url = $this.attr("href");
+             var $this = $(this),
+                 imgSrc=$this.data("img"),
+                 price=$this.data("price"),
+                 name=$this.data("name");
+            $orderAvatar.attr("src",imgSrc);
+            $orderName.html(name);
+            $orderPrice.html(price);
+             url = $this.attr("href");
              layerDiaIndex = layer.open({
                  type: 1,
                  shade: false,
@@ -128,7 +144,11 @@
                  shade: [0.6, '#000'],
                  shadeClose: true,
                  title: false, //不显示标题
-                 content: $('#J_zsjs-order-dialog')
+                 content: $('#J_zsjs-order-dialog'),
+                 end:function(){
+                    $orderForm.show();
+                    $orderSuccess.hide();
+                 }
              });
          });
 

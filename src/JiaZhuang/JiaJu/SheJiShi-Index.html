@@ -119,7 +119,7 @@
                                         <a href="">酒店</a>
                                         <a href="">餐厅</a>
                                     </div>
-                                    <a href="index.php?id=1" class="sjs-btn btn-success" data-roler="orderdialog">预约咨询</a>
+                                    <a href="http://wnworld.com/conn/test.php?id=1" class="sjs-btn btn-success" data-roler="orderdialog" data-img="./upload/zsjs_avatar.jpg" data-name="周孝安设计事务所" data-price="500-800">预约咨询</a>
                                     <span class="address">思明区</span>
                                 </div>
                                 <div class="works-box">
@@ -171,7 +171,7 @@
                                         <a href="">酒店</a>
                                         <a href="">餐厅</a>
                                     </div>
-                                    <a href="index.php?id=1" class="sjs-btn btn-success" data-roler="orderdialog">预约咨询</a>
+                                    <a href="http://wnworld.com/conn/test.php?id=1" class="sjs-btn btn-success" data-roler="orderdialog" data-img="./upload/zsjs_avatar.jpg" data-name="xxxxx事务所" data-price="1500-1800">预约咨询</a>
                                     <span class="address">思明区</span>
                                 </div>
                             </li>
@@ -278,62 +278,77 @@
 							<span class="tit">大牌商家</span>
 							<a href="#" class="more">全部</a>
                 		</div>
-                		<ul class="soma-bd">
-							<li>
-								<a href="#" class="pic">
-									<img src="./upload/sjs_dpsj_1.jpg"/>
-								</a>
-								<div class="mask">
-									<p>大金空调</p>
-									<a href="#">点击进入</a>
-								</div>
-							</li>
-							<li>
-								<a href="#" class="pic">
-									<img src="./upload/sjs_dpsj_1.jpg"/>
-								</a>
-								<div class="mask">
-									<p>大金空调</p>
-									<a href="#">点击进入</a>
-								</div>
-							</li>
-							<li>
-								<a href="#" class="pic">
-									<img src="./upload/sjs_dpsj_1.jpg"/>
-								</a>
-								<div class="mask">
-									<p>大金空调</p>
-									<a href="#">点击进入</a>
-								</div>
-							</li>
-							<li>
-								<a href="#" class="pic">
-									<img src="./upload/sjs_dpsj_1.jpg"/>
-								</a>
-								<div class="mask">
-									<p>大金空调</p>
-									<a href="#">点击进入</a>
-								</div>
-							</li>
-							<li>
-								<a href="#" class="pic">
-									<img src="./upload/sjs_dpsj_1.jpg"/>
-								</a>
-								<div class="mask">
-									<p>大金空调</p>
-									<a href="#">点击进入</a>
-								</div>
-							</li>
-							<li>
-								<a href="#" class="pic">
-									<img src="./upload/sjs_dpsj_1.jpg"/>
-								</a>
-								<div class="mask">
-									<p>大金空调</p>
-									<a href="#">点击进入</a>
-								</div>
-							</li>
-                		</ul>
+                        <div class="soma-bd-scroll">
+
+
+                    		<ul class="soma-bd clear" id="J_soma-sj-scroll">
+    							<li>
+    								<a href="#" class="pic">
+    									<img src="./upload/sjs_dpsj_1.jpg"/>
+    								</a>
+    								<div class="mask">
+    									<p>大金空调1</p>
+    									<a href="#">点击进入</a>
+    								</div>
+    							</li>
+    							<li>
+    								<a href="#" class="pic">
+    									<img src="./upload/sjs_dpsj_1.jpg"/>
+    								</a>
+    								<div class="mask">
+    									<p>大金空调22</p>
+    									<a href="#">点击进入</a>
+    								</div>
+    							</li>
+    							<li>
+    								<a href="#" class="pic">
+    									<img src="./upload/sjs_dpsj_1.jpg"/>
+    								</a>
+    								<div class="mask">
+    									<p>大金空调33</p>
+    									<a href="#">点击进入</a>
+    								</div>
+    							</li>
+    							<li>
+    								<a href="#" class="pic">
+    									<img src="./upload/sjs_dpsj_1.jpg"/>
+    								</a>
+    								<div class="mask">
+    									<p>大金空调44</p>
+    									<a href="#">点击进入</a>
+    								</div>
+    							</li>
+    							<li>
+    								<a href="#" class="pic">
+    									<img src="./upload/sjs_dpsj_1.jpg"/>
+    								</a>
+    								<div class="mask">
+    									<p>大金空调55</p>
+    									<a href="#">点击进入</a>
+    								</div>
+    							</li>
+                                <li>
+                                    <a href="#" class="pic">
+                                        <img src="./upload/sjs_dpsj_1.jpg"/>
+                                    </a>
+                                    <div class="mask">
+                                        <p>大金空调66</p>
+                                        <a href="#">点击进入</a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="pic">
+                                        <img src="./upload/sjs_dpsj_1.jpg"/>
+                                    </a>
+                                    <div class="mask">
+                                        <p>大金空调77</p>
+                                        <a href="#">点击进入</a>
+                                    </div>
+                                </li>
+                                
+                    		</ul>
+                         </div>
                 		<a href="#" class="sjs-btn btn-success more">查看全部大牌商家</a>
                 </div>
             </div>
@@ -346,6 +361,49 @@
 <!-- ************** 预约弹出框 start  多个页面公用 做成公共模块****************-->
     @@include("./views/_orderForm.html")
 <!-- ************** 预约弹出框 end 多个页面公用 ****************-->
+
+<script>
+$(function(){
+
+    //首页滚动
+    (function(){
+        var $scrollList=$("#J_soma-sj-scroll"),
+            Timer,
+            w=112,
+            Index=0,
+            $parent=$scrollList.parent();
+
+
+        var len=$scrollList.children().length;
+        if(len <=5) return;
+
+        $scrollList.append($scrollList.html());
+
+        function scollerAnim(){
+            Index++;
+            $scrollList.animate({top:"-="+w},250,function(){
+                if(Index>=len){
+                    Index=0;
+                    $scrollList.css({top:0})
+                }
+                startScroller();
+            })   
+        }
+        function startScroller(){
+             Timer=setTimeout(scollerAnim,2500);
+        }
+  
+        $scrollList.on("mouseover",function(){clearTimeout(Timer)}).on("mouseout",function(){
+           startScroller();
+        })
+
+        startScroller();
+
+
+
+    })();
+})
+</script>
 </body>
 
 </html>
