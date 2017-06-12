@@ -1,4 +1,4 @@
-/* Zepto 1.2.0 - zepto event form data ajax detect fx fx_methods assets data deferred callbacks selector touch gesture stack ios3 amd_layout fastclick init - zeptojs.com/license */
+/* Zepto 1.2.0 - zepto event form data ajax detect fx fx_methods assets data deferred callbacks selector touch gesture stack ios3 fastclick init - zeptojs.com/license */
 (function(global, factory) {
   if (typeof define === 'function' && define.amd)
     define(function() { return factory(global) })
@@ -2718,16 +2718,6 @@ window.$ === undefined && (window.$ = Zepto)
     }
 
 })()
-
-(function(global, factory) {
-  if (typeof define === 'function' && define.amd)
-    define(function() { return factory(global) })
-  else
-    factory(global)
-}(this, function(window) {
-  YIELD
-  return Zepto
-}))
 
 ;(function () {
 	'use strict';
