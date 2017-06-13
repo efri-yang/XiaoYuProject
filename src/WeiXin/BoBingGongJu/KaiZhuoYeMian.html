@@ -3,9 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-
 	<script src="../common/js/zepto/zepto.js"></script>
 	<script src="../common/js/flexible.js"></script>
+	<script type="text/javascript" src="../common/js/zepto-mvalidate.js"></script>
+	<script type="text/javascript" src="../common/js/layer_mobile/layer.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="../common/css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -17,8 +19,64 @@
 			<li class="name">香港传奇1000元代金券</li>
 			<li class="count">剩余958张</li>
 		</ul>
+		<!-- 兑奖码页面显示的模块 start -->
+		@@include("./views/_cash.html")
+		<!-- 兑奖码页面显示的模块 end -->
 		<a href="#" class="btn-kz" id="J_btn-kz">开桌博饼赢大奖</a>
-		<div class="tc-tit">活动说明</div>
+		<!--  -->
+		<div class="kz-success-box">
+			<div class="kz-success-inner">
+				<div class="intro">
+					<span>莫天仇正在参加“香港传奇1000元代金券，线上博饼0元
+抢（活动名称）”</span>的活动，博到指定积分，TA就能免费获
+得奖品哟！
+				</div>
+				<ul class="handle">
+				    <li class="score">当前积分：100 / 2000</li>
+				    <li class="time">剩余时间：<span>23:59:50</span></li>
+				</ul>
+			</div>
+			<span class="arrow arrow-tl"></span>
+			<span class="arrow arrow-tr"></span>
+			<span class="arrow arrow-bl"></span>
+			<span class="arrow arrow-br"></span>
+		</div>
+		<ul class="kz-share-handle">
+			<li><a href="#" class="btn-help" data-roler="helpopen">帮TA博饼</a></li>
+			<li><a href="#" class="btn-open" data-roler="helpopen">我要开桌</a></li>
+		</ul>
+		<div class="kz-kj-no">暂时还没有朋友帮忙博饼</div>
+		<div class="kz-kj-listbox">
+				<div class="kz-kj-con">
+					<div class="soma-hd">
+						<span class="line-lf"></span>
+						<span class="tit">博饼记录</span>
+						<span class="line-rt"></span>
+					</div>
+					<ul class="soma-bd">
+					    <li>
+							<span class="txt">莫天仇博到了到了到了到了状元，积分<b>+50</b></span>
+							<b class="time">2017-06-01 12:03:34</b>
+					    </li>
+					    <li>
+							<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+							<b class="time">2017-06-01 12:03:34</b>
+					    </li>
+					    <li>
+							<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+							<b class="time">2017-06-01 12:03:34</b>
+					    </li>
+					    <li>
+							<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+							<b class="time">2017-06-01 12:03:34</b>
+					    </li>
+					  
+					</ul>
+				</div>
+				<b class="line-top"></b>
+		</div>
+		<!--  -->
+		<div class="tc-tit" ><a name="nameintro"></a>活动说明</div>
 		<div class="activity-desc-wrap">
 			<div class="activity-desc-inner">
 			  	<div class="pic"><span></span></div>
@@ -40,6 +98,7 @@
 		</div>
 		
 		<div class="ranking-box">
+		    <a name="namerank"></a>
 			<div class="soma-hd">
 				<span>排名</span>
 				<span>昵称</span>
@@ -110,20 +169,27 @@
 		</div>
 	</div>
 	<div class="footer">
-		本活动由小鱼网提供技术支持  <a href="#">联系我们</a>
+		本活动由小鱼网提供技术支持  <a href="javascript:void(0)" id="J_contactus">联系我们</a>
 	</div>
 
 	<div class="nav-fixed">
-	    <a href="#">说明</a>
-	    <a href="#">排行</a>
-	    <a href="#" class="gotop"></a>
+	    <a href="#nameintro">说明</a>
+	    <a href="#namerank">排行</a>
+	    <a href="#" class="gotop" id="J_gotop"></a>
 	</div>
 
+    <!-- 帮他砍价或者我要开桌弹出框 start -->
+	@@include("./views/_helpOpen.html")
+	<!-- 帮他砍价或者我要开桌弹出框 end -->
+
+    <!-- 开桌成功弹出框 start -->
+	@@include("./views/_success.html")
+	<!-- 联系我们弹出框 end -->
+   
+	<!-- 联系我们弹出框 start -->
+	@@include("./views/_contact.html")
+	<!-- 联系我们弹出框 end -->
 
 
-	<!--  -->
-	
-	@@include("./views/_dialog.html")
-	<!--  -->
 </body>
 </html>

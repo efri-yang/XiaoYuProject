@@ -46,7 +46,7 @@ body {
 }
 
 .container {
-    max-width: 750px;
+    max-width:px2rem(750px);
     margin: 0 auto;
     padding: 0 px2rem(30px);
 }
@@ -54,7 +54,7 @@ body {
 .head-banner {
     text-align: center;
     img {
-        max-width: 100%;
+        width: 100%;
         vertical-align: top;
     }
 }
@@ -75,16 +75,16 @@ body {
     display: flex;
     width: 100%;
     margin-top: px2rem(25px);
-    @include font-dpr(17px);
+    @include font-dpr(16px);
     li:nth-child(1) {
         flex: 4;
-        -webkit-flex: 1;
+        -webkit-flex:4;
         text-align: left;
         color: #a54c11;
     }
     li:nth-child(2) {
         flex: 1;
-        -webkit-flex: 1;
+        -webkit-flex:4;
         text-align: right;
         color: #269f15;
     }
@@ -133,7 +133,7 @@ body {
         }
         &.arrow-br {
             right: px2rem(7px);
-            bottom: px2rem(7px);
+            bottom: px2rem(6px);
             background-position: 0 px2rem(-73px);
         }
     }
@@ -350,6 +350,9 @@ body {
     position: fixed;
     right: px2rem(30px);
     bottom: px2rem(140px);
+    z-index:50px;
+    z-index:10;
+    padding-bottom:px2rem(88px);
     a {
         display: block;
         width: px2rem(78px);
@@ -364,6 +367,10 @@ body {
         &.gotop {
             background: url("../images/back_top.png") no-repeat rgba(0, 0, 0, 0.8);
             background-size: 100% 100%;
+            display:none;
+            position:absolute;
+            left:0;
+            bottom:0;
         }
     }
 }
@@ -372,7 +379,19 @@ body {
 /**
  * 弹出框
  */
-
+.layui-m-layer2 .layui-m-layercont i{
+    background-color:rgba(0,0,0,0.8);
+    width:px2rem(50px);
+    height:px2rem(50px);
+}
+.layui-m-layer2 .layui-m-layercont p{
+    @include font-dpr(16px);
+    color:#333;
+}
+.layui-m-layer-msg .layui-m-layercont{
+    padding:px2rem(30px) px2rem(40px);
+    @include font-dpr(16px);
+}
 
 /**
  * 表单验证样式
@@ -425,7 +444,7 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     padding: px2rem(30px) px2rem(50px);
-    @include font-dpr(15px);
+    @include font-dpr(18px);
     border-radius: px2rem(20px);
     box-shadow: 0 0 8px rgba(0, 0, 0, .1);
     pointer-events: auto;
@@ -452,22 +471,27 @@ body {
 
 
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
 .ct-dialog-shadow {
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
+    opacity:0;
+    z-index:998;
     background-color: rgba(0, 0, 0, 0.6);
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.6s ease-out;
-
-    &.active{
-    	opacity:1;
-    	visibility:visible;
-
-    }
 }
 
 .ct-dialog-box {
@@ -477,9 +501,10 @@ body {
     position: absolute;
     z-index: 1;
     width: 80%;
-    max-width: 700px;
+    max-width: px2rem(700px);
     top:-100%;
     position: fixed;
+    z-index: 9999;
     .line{
     	position:absolute;
     	width:2px;
@@ -546,5 +571,363 @@ body {
         background: url("../images/dia_dz_bg.png") no-repeat top center;
         padding-bottom: 41.4%;
         background-size: 100% auto;
+    }
+}
+
+/**
+ * 开桌成功显示框
+ */
+.kz-success-box{
+    background: #fff0dc;
+    padding: px2rem(7px);
+    position: relative;
+    margin-top:px2rem(30px);
+    .kz-success-inner{
+        border: px2rem(3px) solid #f35f42;
+        padding: px2rem(20px) px2rem(20px) px2rem(30px);
+        .intro{
+             @include font-dpr(16px);
+             line-height:1.5;
+             color:#a54c11;
+             >span{
+                color:#e3453d;
+             }
+        }
+    }
+    .arrow {
+        position: absolute;
+        width: px2rem(22px);
+        height: px2rem(24px);
+        overflow: hidden;
+        background-image: url("../images/activity_arrow.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        &.arrow-tl {
+            left: px2rem(7px);
+            top: px2rem(7px);
+            background-position: 0 0;
+        }
+        &.arrow-tr {
+            right: px2rem(7px);
+            top: px2rem(7px);
+            background-position: 0 px2rem(-24px);
+        }
+        &.arrow-bl {
+            left: px2rem(7px);
+            bottom: px2rem(7px);
+            background-position: 0 px2rem(-49px);
+        }
+        &.arrow-br {
+            right: px2rem(7px);
+            bottom: px2rem(6px);
+            background-position: 0 px2rem(-73px);
+        }
+    }
+    .handle{
+        display: -webkit-flex;
+        display: flex;
+        margin-top:px2rem(30px);
+        li{
+            margin: 0 10px;
+            flex:1;
+            -webkit-flex: 1;
+            text-align:center;
+            height:px2rem(70px);
+            line-height:px2rem(70px);
+            @include font-dpr(15px);
+            border-radius:px2rem(10px);
+            color:#ffffff;
+            &.score{
+                
+                background:#ff4a4a;
+                
+            }
+            &.time{
+                background:#55ae4c;
+            }
+        }
+    }
+}
+.kz-kj-no{
+    height:px2rem(90px);
+    line-height:px2rem(90px);
+    background:url("../images/nock_btn.png") no-repeat top center;
+    background-size:100% 100%;
+    text-align:center;
+    color:#8f8e8e;
+     @include font-dpr(18px);
+     margin-top:px2rem(30px);
+}
+.kz-kj-listbox{
+    position:relative;
+    padding:0 px2rem(10px);
+    margin-top:px2rem(30px);
+    .line-top{
+        height:px2rem(15px);
+        width:100%;
+        background:#eb0100;
+        border-radius:px2rem(10px);
+        position:absolute;
+        left:0;
+        top:px2rem(-15px/2);
+        z-index: 1;
+    }
+}
+.kz-kj-con{
+    position:relative;
+    background:#fff0dc;
+    z-index: 2;
+    border-radius:0 0 px2rem(15px) px2rem(15px);
+    .soma-hd{
+        text-align:center;
+        border-bottom:1px dashed #dfb89e;
+        padding:px2rem(25px) 0;
+        .line-lf{
+            display:inline-block;
+            width:px2rem(70px);
+            height:px2rem(3px);
+            background:#ee231e;
+            vertical-align:middle;
+        }
+        .tit{
+            height:px2rem(70px);
+            line-height:px2rem(70px);
+            text-align:center;
+            @include font-dpr(18px);
+            background:#ee231e;
+            display:inline-block;
+            padding:0 px2rem(30px);
+            border-radius:px2rem(30px);
+            vertical-align:middle;
+            margin:0 px2rem(15px);
+            color:#fff;
+        }
+        .line-rt{
+            display:inline-block;
+            width:px2rem(70px);
+            height:px2rem(3px);
+            background:#ee231e;
+            vertical-align:middle;
+        }
+    }
+    .soma-bd{
+        @include font-dpr(15px);
+        li{
+            display: -webkit-flex;
+            display: flex;
+            padding:0 px2rem(15px);
+            height:px2rem(70px);
+            line-height:px2rem(70px);
+            overflow:hidden;
+            @include font-dpr(16px);
+            &:nth-child(even){
+                background:#ffe9cb;
+            }
+            .txt{
+                flex: 4;
+                -webkit-flex:4;
+                color:#a54c11;
+                @extend %text-overflow;
+                b{
+                    color:#e3453d;
+                    font-weight:normal;
+                }
+            }
+            .time{
+                font-weight:normal;
+                 flex:2;
+                -webkit-flex:2;
+                text-align:right;
+                color:#ba8659;
+            }
+           
+        }
+    }
+}
+
+
+/**
+ * 开桌弹出框
+ */
+.kz-success-dia{
+    padding:px2rem(10px);
+    .tit{
+        color:#f33529;
+        @include font-dpr(28px);
+        text-align:center;
+         margin-top:px2rem(30px);
+    }
+    .desc{
+        @include font-dpr(16px);
+        color:#666666;
+        line-height:1.5;
+        text-align:center;
+        margin-top:px2rem(30px);
+        white-space:nowrap;
+    }
+    .btn-cofirm{
+        height: px2rem(80px);
+        line-height: px2rem(80px);
+        width: 100%;
+        border: none;
+        @include font-dpr(18px);
+        color: #fff;
+        background: #f33529;
+        border-radius: px2rem(40px);
+        cursor: pointer;
+        display:block;
+        text-align:center;
+        margin-top:px2rem(30px);
+    }
+}
+
+
+.kz-share-handle{
+    display: -webkit-flex;
+    display: flex;
+    margin-top: px2rem(20px);
+    >li {
+        -webkit-flex: 1;
+        flex: 1;
+       
+        a {
+            background-size: 100% 100%;
+            display: block;
+            height: px2rem(80px);
+            line-height: px2rem(80px);
+            text-align: center;
+            color: #5d0d04;
+            @include font-dpr(18px);
+            text-decoration: none;
+            background-position:top center;
+            background-size:100% 100%;
+
+            &.btn-help{
+                margin-right:px2rem(20px);
+                background-image: url("../images/pagedir_btn.png");
+            }
+            &.btn-open{
+                color:#fff;
+                margin-left:px2rem(20px);
+                background-image: url("../images/kaizhuang_btn2.png");
+            }
+        }
+    }
+}
+
+
+/**
+ * 二维码弹出框
+ */
+.dia-qrcode-con{
+    .pic{
+        width:px2rem(270px);
+        height:px2rem(270px);
+        overflow:hidden;
+        margin:px2rem(40px) auto 0;
+        img{
+            
+            width:100%;
+        }
+    }
+    .txt{
+        text-align:center;
+        line-height:1.5;
+         @include font-dpr(16px);
+         color:#666666;
+         margin-top:px2rem(15px);
+    }
+    .btn-know{
+        height: px2rem(80px);
+        line-height: px2rem(80px);
+        width: 100%;
+        border: none;
+        @include font-dpr(18px);
+        color: #fff;
+        background: #f33529;
+        border-radius: px2rem(40px);
+        cursor: pointer;
+        display:block;
+        text-align:center;
+        margin-top:px2rem(30px);
+    }
+}
+
+/**
+ * 兑奖页面表单
+ */
+.cashcode-wrap{
+    background: #fff0dc;
+    padding: px2rem(7px);
+    position: relative;
+    margin-top: px2rem(30px);
+    .arrow {
+        position: absolute;
+        width: px2rem(22px);
+        height: px2rem(24px);
+        overflow: hidden;
+        background-image: url("../images/activity_arrow.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        &.arrow-tl {
+            left: px2rem(7px);
+            top: px2rem(7px);
+            background-position: 0 0;
+        }
+        &.arrow-tr {
+            right: px2rem(7px);
+            top: px2rem(7px);
+            background-position: 0 px2rem(-24px);
+        }
+        &.arrow-bl {
+            left: px2rem(7px);
+            bottom: px2rem(7px);
+            background-position: 0 px2rem(-49px);
+        }
+        &.arrow-br {
+            right: px2rem(7px);
+            bottom: px2rem(6px);
+            background-position: 0 px2rem(-73px);
+        }
+    }
+}
+.cashcode-inner{
+    border: px2rem(3px) solid #f35f42;
+    padding: px2rem(35px) px2rem(20px) px2rem(40px);
+    .caption{
+        @include font-dpr(22px);
+        text-align:center;
+        color:#f33529;
+    }
+    .form-tip{
+        color:#a54c11;
+        @include font-dpr(16px);
+        margin-top:px2rem(40px);
+        margin-bottom:px2rem(10px);
+    }
+    .forms{
+        .item{
+            margin-bottom:px2rem(20px);
+        }
+    }
+    .ipt-text{
+        height: px2rem(80px);
+        padding: px2rem(25px) px2rem(10px);
+        background:#fff;
+        border: 1px solid #e8cca7;
+        @include font-dpr(16px);
+        width: 100%;
+    }
+    .ipt-submit{
+        margin-top:px2rem(40px);
+        height:px2rem(90px);
+        line-height:px2rem(90px);
+        display:block;
+        width:100%;
+        border:none;
+        background:url("../images/kaizhuang_btn3.png") no-repeat top center;
+        background-size:100% 100%;
+         @include font-dpr(18px);
+         color:#fff;
     }
 }
