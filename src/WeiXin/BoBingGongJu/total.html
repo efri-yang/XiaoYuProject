@@ -7,6 +7,7 @@
 	<script src="../common/js/flexible.js"></script>
 	<script type="text/javascript" src="../common/js/zepto-mvalidate.js"></script>
 	<script type="text/javascript" src="../common/js/layer_mobile/layer.js"></script>
+	<script type="text/javascript" src="../common/js/iscroll.js"></script>
 	<script type="text/javascript" src="./js/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="../common/css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -53,25 +54,54 @@
 						<span class="tit">博饼记录</span>
 						<span class="line-rt"></span>
 					</div>
-					<ul class="soma-bd">
-					    <li>
-							<span class="txt">莫天仇博到了到了到了到了状元，积分<b>+50</b></span>
-							<b class="time">2017-06-01 12:03:34</b>
-					    </li>
-					    <li>
-							<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
-							<b class="time">2017-06-01 12:03:34</b>
-					    </li>
-					    <li>
-							<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
-							<b class="time">2017-06-01 12:03:34</b>
-					    </li>
-					    <li>
-							<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
-							<b class="time">2017-06-01 12:03:34</b>
-					    </li>
-					  
-					</ul>
+					<div class="soma-bd" id="J_iscroll-wrap">
+						<div class="iscroll-inner">
+							<ul id="J_recordlist">
+						    <li>
+								<span class="txt">莫天仇博到了到了到了到了状元，积分<b>+50</b></span>
+								<b class="time">2017-06-01 12:03:34</b>
+						    </li>
+						    <li>
+								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+								<b class="time">2017-06-01 12:03:34</b>
+						    </li>
+						    <li>
+								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+								<b class="time">2017-06-01 12:03:34</b>
+						    </li>
+						    <li>
+								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+								<b class="time">2017-06-01 12:03:34</b>
+						    </li>
+						    <li>
+								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+								<b class="time">2017-06-01 12:03:34</b>
+						    </li>
+
+						    <li>
+								<span class="txt">莫天仇博到了到了到了到了状元，积分<b>+50</b></span>
+								<b class="time">2017-06-01 12:03:34</b>
+						    </li>
+						    <li>
+								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+								<b class="time">2017-06-01 12:03:34</b>
+						    </li>
+						    <li>
+								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+								<b class="time">2017-06-01 12:03:34</b>
+						    </li>
+						    <li>
+								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+								<b class="time">2017-06-01 12:03:34</b>
+						    </li>
+						    <li>
+								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+								<b class="time">2017-06-01 12:03:34</b>
+						    </li>
+						</ul>
+						<a href="#" class="more" id="J_iscroll-more">点击查看更多</a>
+						</div>
+					</div>
 				</div>
 				<b class="line-top"></b>
 		</div>
@@ -179,15 +209,15 @@
 	</div>
 
     <!-- 帮他砍价或者我要开桌弹出框 start -->
-	@@include("./views/_helpOpen.html")
+	@@include("./views/_dia-helpOpen.html")
 	<!-- 帮他砍价或者我要开桌弹出框 end -->
 
     <!-- 开桌成功弹出框 start -->
-	@@include("./views/_success.html")
+	@@include("./views/_dia-success.html")
 	<!-- 联系我们弹出框 end -->
    
 	<!-- 联系我们弹出框 start -->
-	@@include("./views/_contact.html")
+	@@include("./views/_dia-contact.html")
 	<!-- 联系我们弹出框 end -->
 
 

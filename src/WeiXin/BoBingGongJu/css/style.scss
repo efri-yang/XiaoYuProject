@@ -711,37 +711,52 @@ body {
         }
     }
     .soma-bd{
-        @include font-dpr(15px);
-        li{
-            display: -webkit-flex;
-            display: flex;
-            padding:0 px2rem(15px);
-            height:px2rem(70px);
-            line-height:px2rem(70px);
-            overflow:hidden;
-            @include font-dpr(16px);
-            &:nth-child(even){
-                background:#ffe9cb;
-            }
-            .txt{
-                flex: 4;
-                -webkit-flex:4;
-                color:#a54c11;
-                @extend %text-overflow;
-                b{
-                    color:#e3453d;
-                    font-weight:normal;
-                }
-            }
-            .time{
-                font-weight:normal;
-                 flex:2;
-                -webkit-flex:2;
-                text-align:right;
-                color:#ba8659;
-            }
-           
-        }
+    	position:relative;
+    	height: px2rem(350px);
+    	overflow: hidden;
+    	ul{
+	        @include font-dpr(15px);
+	        li{
+	            display: -webkit-flex;
+	            display: flex;
+	            padding:0 px2rem(15px);
+	            height:px2rem(70px);
+	            line-height:px2rem(70px);
+	            overflow:hidden;
+	            @include font-dpr(16px);
+	            &:nth-child(even){
+	                background:#ffe9cb;
+	            }
+	            .txt{
+	                flex: 4;
+	                -webkit-flex:4;
+	                color:#a54c11;
+	                @extend %text-overflow;
+	                b{
+	                    color:#e3453d;
+	                    font-weight:normal;
+	                }
+	            }
+	            .time{
+	                font-weight:normal;
+	                 flex:2;
+	                -webkit-flex:2;
+	                text-align:right;
+	                color:#ba8659;
+	            }
+	           
+	        }
+	    }
+	    .more{
+	    	display: block;
+	    	width: 100%;
+	    	
+	    	text-align: center;
+	    	height: px2rem(80px);
+	    	line-height:px2rem(80px); 
+	    	@include font-dpr(14px);
+	    	color:#d91d1d;
+	    }
     }
 }
 

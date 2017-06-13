@@ -228,6 +228,33 @@ $(function(){
     })();
 
 
+   //博饼记录查看更多 
+   (function(){
+        
+        if($("#J_iscroll-wrap").length){
+            var myScroll;
+            $(window).on("load",function(){    
+             myScroll = new IScroll('#J_iscroll-wrap');
+            });
+            $("#J_iscroll-more").on("click",function(event){
+                event.preventDefault();
+                //测试
+                handleRecord();
+            });
+
+            function handleRecord(){
+                var strArr=[];
+                for(var i=0;i<10;i++){
+                    strArr.push('<li><span class="txt">'+i+'</span><b class="time">2017-06-01 12:03:34</b></li>')
+                }
+                $("#J_recordlist").append(strArr.join(""));
+                setTimeout(function () {
+                    myScroll.refresh();
+                }, 0);
+            }
+        }
+   })();
+
 
     //开桌成功
     (function(){
@@ -263,6 +290,7 @@ $(function(){
     (function(){
         var DiaHelpOpen=$("#J_dialog-helpopen").dialog();
         $(document).on("click",'[data-roler="helpopen"]',function(event){
+            
             event.preventDefault();
             DiaHelpOpen.show();
         })
