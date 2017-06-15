@@ -13,8 +13,9 @@ const server = require("./server.js");
 
 
 function scripts(){
+    var compress=conf.compress==true || conf.compress=="js";
     return gulp.src(conf.src + conf.mod + '/**/*.js')
-        .pipe(gulpif(conf.compress, uglify()))
+        .pipe(gulpif(compress, uglify()))
         .pipe(gulpif(conf.env==="d",changed(conf.dest)))
         .pipe(gulp.dest(conf.dest+conf.mod))
         .pipe(server.reload({ stream: true }));

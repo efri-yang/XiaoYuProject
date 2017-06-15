@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>博饼福袋礼品-小鱼网中秋博饼</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+<link rel="stylesheet" type="text/css" media="all" href="./css/base.css"/>
+<link rel="stylesheet" type="text/css" media="screen,projection" href="./css/style.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	var nStartX =0;
+	var nChangX =0;
+	var nDisplacement =0;
+	document.getElementById('slide-btn').addEventListener('touchstart', function (e) {
+		nStartX = e.targetTouches[0].pageX;
+	});
+	document.getElementById('slide-btn').addEventListener('touchmove', function (e) {
+		nChangX = e.changedTouches[0].pageX;
+		nDisplacement=nChangX-nStartX;
+		if(nDisplacement>2){
+			jQuery('.slide-arrow').css({
+			  "left":6+'rem'
+			});
+			$('.slide-tab').removeClass('active');
+			$('.slide-tab:eq(1)').addClass('active');
+			$('#gifts').hide();
+			$('#tickets').show();
+		}else if(nDisplacement<-2){
+			jQuery('.slide-arrow').css({
+			  "left":0+'rem'
+			});
+			$('.slide-tab').removeClass('active');
+			$('.slide-tab:eq(0)').addClass('active');
+			$('#tickets').hide();
+			$('#gifts').show();
+		}
+	});
+	
+});
+</script>
+</head>
+<body class="register-pb">
+<header class="relative">
+	<div class="winning-reminder2"><a class="font-12 color-pink" href="javascript:"><i class="icon icon-weixun"></i>181****8460</a></div>
+    <a class="award-opt font-12 color-red ulib-r10" onClick="$('#award-win,.cover-bg').show();" href="javascript:"><i class="icon-award font-10 ulib-r10">?</i>如何领奖</a>
+    <div class="gift-author text-center">
+        <div class="gift-author-avatar ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');" alt="北野太郎" /></div>
+        <p class="mt3 font-18 color-white">北野太郎北野太郎北</p>
+    </div>
+	<img src="img/gift-theme.jpg" alt="" />
+</header>
+
+<section>
+    <div class="slide-panel text-center">
+    	<div id="slide-btn" class="relative slide-btn font-12"><span class="slide-arrow ulib-r10"></span><span class="active slide-tab">福袋奖品</span><span class="slide-tab">博饼门票</span></div>
+    </div>
+    
+    <div id="gifts">
+        <div class="inner font-15">共获得<span class="color-red">8个</span>类别<span class="ml5 color-red">62</span>份礼品</div>
+        <ul class="lb-list fn-clear">
+            <li>
+                <a href="#">
+                <div class="lb-pincon">
+                    <img class="ulib-r3 lb-pinpic" src="img/k3x2.png" style="background-image:url('upload/v-4.jpg');" alt="小鱼网博饼线下门票" />
+                    <div class="mt3 text-nowrap color-white font-16">片仔癀牙膏<span class="color-yellow">x10</span></div>
+                </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <div class="lb-pincon">
+                    <img class="ulib-r3 lb-pinpic" src="img/k3x2.png" style="background-image:url('upload/v-4.jpg');" alt="小鱼网博饼线下门票" />
+                    <div class="mt3 text-nowrap color-white font-16">片仔癀牙膏<span class="color-yellow">x10</span></div>
+                </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <div class="lb-pincon">
+                    <img class="ulib-r3 lb-pinpic" src="img/k3x2.png" style="background-image:url('upload/v-4.jpg');" alt="小鱼网博饼线下门票" />
+                    <div class="mt3 text-nowrap color-white font-16">片仔癀牙膏<span class="color-yellow">x10</span></div>
+                </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <div class="lb-pincon">
+                    <img class="ulib-r3 lb-pinpic" src="img/k3x2.png" style="background-image:url('upload/v-4.jpg');" alt="小鱼网博饼线下门票" />
+                    <div class="mt3 text-nowrap color-white font-16">片仔癀牙膏<span class="color-yellow">x10</span></div>
+                </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <div class="lb-pincon">
+                    <img class="ulib-r3 lb-pinpic" src="img/k3x2.png" style="background-image:url('upload/v-4.jpg');" alt="小鱼网博饼线下门票" />
+                    <div class="mt3 text-nowrap color-white font-16">片仔癀牙膏<span class="color-yellow">x10</span></div>
+                </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <div class="lb-pincon">
+                    <img class="ulib-r3 lb-pinpic" src="img/k3x2.png" style="background-image:url('upload/v-4.jpg');" alt="小鱼网博饼线下门票" />
+                    <div class="mt3 text-nowrap color-white font-16">片仔癀牙膏<span class="color-yellow">x10</span></div>
+                </div>
+                </a>
+            </li>
+        </ul>
+        <div class="pt50 pb20"><div class="wp50"><img src="img/none.png" alt="这里啥都没有" /></div></div>
+        <div class="text-center pb20">
+            <a class="kongred-btn ulib-r10 font-14 color-red" href="index.html">参加博饼赢福袋<i class="icon icon-go3 ml3"></i></a>
+        </div>
+    </div>
+    
+    <div id="tickets" class="inner" style="display:none;">
+        <h3 class="font-12 color-gray">已获得小鱼网线下博饼门票</h3>
+        <div class="mt5">
+            <div class="prize-pin">
+                <dl class="fn-clear prize-dl">
+                    <dt class="fn-fl text-center"><i class="icon-larger icon-ticket"></i></dt>
+                    <dd>
+                        <h3 class="font-16">恒大帝景专场博饼</h3>
+                        <div class="mt2 color-red font-14"><span>8月23日</span><span>898福气</span><span>第2名</span></div>
+                        <div class="mt2 mr5 text-right color-gray font-13">有效期：至2016-10-01</div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div>
+        	<h4 class="mt5 font-15"><i class="icon-line ulib-r10"></i>门票领取详情</h4>
+            <div class="mt2 font-12 color-gray">此段文案由编辑在后台配置此段文案由编辑在后台配置此段文案由编辑在后台配置此段文案由编辑在后台配置此段文案由编辑在后台配置此段文案由编辑在后台配置此段文案由编辑在后台配置</div>
+        </div>
+        <div class="pt50 pb20"><div class="wp50"><img src="img/none.png" alt="这里啥都没有" /></div></div>
+        <div class="text-center pb20">
+            <a class="kongred-btn ulib-r10 font-14 color-red" href="index.html">参加博饼赢门票<i class="icon icon-go3 ml3"></i></a>
+        </div>
+    </div>
+</section>
+
+<a class="register-opt text-center color-red font-18"><i class="icon icon-view"></i>查看我的信息</a>
+<!--a class="register-opt text-center color-red font-18"><i class="icon icon-user"></i>登记我的信息</a-->
+
+<!--如何领奖弹窗-->
+<div class="cover-bg"></div>
+<div id="award-win" class="cover-pop">
+	<i class="cover-line"></i>
+    <div class="cover-hd text-center">
+    	<div class="cover-hd-tx font-16">如何领奖</div>
+        <img src="img/win-hd.png" alt="" />
+    </div>
+    <div class="cover-con">
+        <ol class="rule-ol font-12">
+        	<li><span class="rule-num">1）</span>请在本页面完成个人信息登记，以便领奖时核对使用。</li>
+            <li><span class="rule-num">2）</span>因为奖品类别不同所以领取方式也不同，每种奖品的详情页会告知具体的领取方式。请点击奖品类别查看所对应的领取方法。</li>
+            <li><span class="rule-num">3）</span>请在奖品有效期内尽快领取，逾期失效。由于奖品过期原因导致无法领取或其他问题，小鱼网不承担任何责任。</li>
+        </ol>
+        <p class="mt5 color-lightgray font-12">*小鱼网在法律范围内保留对本活动的最终解释权</p>
+        <p class="mt5"><a class="red-btn ulib-r10" onClick="$('.cover-bg,.cover-pop').hide();" href="javascript:">我知道了</a></p>
+    </div>
+</div>
+<!--end如何领奖弹窗-->
+
+</body>
+</html>

@@ -25,6 +25,7 @@ const server=require("./server.js");
  * 
  */
 function styles(){
+	var compress=conf.compress==true || conf.compress=="css";
 	return gulp.src(conf.src + conf.mod + '/**/*.{scss,sass,css}')
 		.pipe(gulpif(conf.env==="d",sourcemaps.init({sourcemap:true})))
 		.pipe(sass().on('error', sass.logError))
@@ -32,7 +33,7 @@ function styles(){
 		.pipe(autoprefixer({
 			browsers: ['> 1%', 'IE 7']
 		}))
-		.pipe(gulpif(conf.compress,cleanCSS()))
+		.pipe(gulpif(compress,cleanCSS()))
 		.pipe(gulp.dest(conf.dest + conf.mod))
 		.pipe(server.reload({stream:true}));
 }

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>奖品记录-小鱼网中秋博饼</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+<link rel="stylesheet" type="text/css" media="all" href="./css/base.css"/>
+<link rel="stylesheet" type="text/css" media="screen,projection" href="./css/style.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+
+function applink(fail){  
+    var clickedAt = Date.now();
+    setTimeout(function(){
+            if (Date.now() - clickedAt < 1500){    
+                    window.location = fail;    
+            }
+    }, 1000); 
+}
+function iosDownload(){
+    var ua = window.navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+    var dlink="http://mp.weixin.qq.com/mp/redirect?url=http%3A%2F%2Fitunes.apple.com%2Fcn%2Fapp%2Fxiao-yu-wang%2Fid540996315";
+    }else{
+            var dlink="http://itunes.apple.com/cn/app/xiao-yu-wang/id540996315";
+    }
+    document.getElementById("applink").onclick = applink(dlink);    
+}	
+function apkDownload(){
+    var ua = window.navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+    var dlink="http://a.app.qq.com/o/simple.jsp?pkgname=com.shengshi";
+    }else{
+            var dlink="http://bbs.xmfish.com/data/package/fish.apk";
+    }
+    document.getElementById("applink").onclick = applink(dlink);    
+}	
+function browserRedirect(){
+    var sUserAgent = navigator.userAgent.toLowerCase();
+    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+    var bIsAndroid = sUserAgent.match(/android/i) == "android";
+    if(bIsIpad || bIsIphoneOs){
+            var ifrSrc = '';
+            if(!ifrSrc){
+                    ifrSrc ="xiaoyuwang://fishurl=$push[url]";
+            }
+            var ifr = document.createElement('iframe');
+            ifr.src = ifrSrc ;
+            ifr.name = 'app' ;
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+            setTimeout(function(){
+                    document.body.removeChild(ifr);
+            },1000);
+            iosDownload();
+
+    }else if(bIsAndroid){
+            var sourceSrc = '$push[url]';
+            var ifrSrc = '';
+            if(!ifrSrc){
+                    if(sourceSrc.indexOf("read") > 0 ){
+                            ifrSrc = 'fishapp://jp.app/toopen?fishtid=$p_tid';
+                    }else{
+                            ifrSrc = 'fishapp://jp.app/toopen?fishtid=0&fishurl='+sourceSrc+'';
+                    }
+            }
+            var ifr = document.createElement('iframe');
+            ifr.src = ifrSrc ;
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+            setTimeout(function(){
+                    document.body.removeChild(ifr);
+            },1000);
+            apkDownload();
+    }
+}
+
+$(document).ready(function(){
+	
+	jQuery("#appdownload").click(function(){
+		browserRedirect();
+	});//下载客户端
+	
+	jQuery(".winning-reminder2").on('click',function(event){
+		$('.cover-bg,#code-win').show();
+	});//公众号二维码弹窗
+});
+</script>
+</head>
+<body class="dock-pb" style="background-color:#f4f4f4;">
+<header class="relative mine-header">
+	<div class="winning-reminder3"><a class="font-12 color-lightgray" href="javascript:"><i class="icon icon-win3"></i>中奖提醒</a></div>
+    <div class="mine-author text-center">
+        <div class="mine-author-avatar ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');" alt="北野太郎" /></div>
+        <p class="font-18">北野太郎北野太郎北</p>
+    </div>
+    <div class="pt20 relative fn-flex">
+        <div class="fn-flex-item col-pin text-center">
+            <div class="col-pincon">
+                <div class="font-12 color-lightgray">今日总福气</div>
+                <div class="mt2 font-15 color-red">3880</div>
+            </div>
+        </div>
+        <!--
+        <div class="fn-flex-item col-pin blsg text-center">
+            <div class="col-pincon">
+                <div class="font-12 color-lightgray">今日总排名</div>
+                <div class="mt2 font-15 color-red">23</div>
+            </div>
+        </div>
+        -->
+        <div class="fn-flex-item col-pin blsg text-center">
+            <div class="col-pincon">
+                <div class="mt5 color-lightgray font-12">已经获得博饼门票<a class="ml3 color-red" href="#">查看</a></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="mine-section">
+<ul class="mine-item">
+    <li>
+        <a class="fn-clear" href="u-prize.html">
+            <span class="fn-fl font-16">中奖纪录</span>
+            <i class="fn-fr icon icon-go"></i>
+        </a>
+    </li>
+    <li>
+        <a class="fn-clear" href="u-record.html">
+            <span class="fn-fl font-16">参加纪录</span>
+            <i class="fn-fr icon icon-go"></i>
+        </a>
+    </li>
+</ul>
+</section>
+
+<section class="mine-section">
+<ul class="mine-item">
+    <li>
+        <a class="fn-clear" href="#">
+            <span class="fn-fl font-16">关于小鱼博饼</span>
+            <i class="fn-fr icon icon-go"></i>
+        </a>
+    </li>
+    <li>
+        <a class="fn-clear" href="u-faq.html">
+            <span class="fn-fl font-16">常见问题</span>
+            <i class="fn-fr icon icon-go"></i>
+        </a>
+    </li>
+    <li>
+        <a id="appdownload" class="fn-clear" href="javascript:">
+            <span class="fn-fl font-16">下载小鱼客户端</span>
+            <i class="fn-fr icon icon-go"></i>
+        </a>
+    </li>
+</ul>
+</section>
+
+<ul class="dock clear font-13">
+	<li>
+        <a href="index.html">
+            <div class="dock-icon"><i class="icon icon-zhong"></i></div>
+            <p>首页</p>
+        </a>
+    </li>
+	<li>
+    	<a href="find.html">
+            <div class="dock-icon"><i class="icon icon-qiu"></i></div>
+            <p>发现</p>
+        </a>
+    </li>
+	<li>
+    	<a href="lb-notopen.html">
+            <div class="dock-icon"><i class="icon icon-kuai"></i></div>
+            <p>福袋</p>
+        </a>
+    </li>
+	<li class="active">
+    	<a href="u-mine.html">
+            <div class="dock-icon"><i class="icon icon-le"></i></div>
+            <p>我的</p>
+        </a>
+    </li>
+</ul>
+
+<!--公众号二维码弹窗-->
+<div class="cover-bg"></div>
+<div id="code-win" class="cover-pop">
+	<i class="cover-line"></i>
+    <div class="cover-hd text-center">
+    	<div class="cover-hd-tx font-16">关注获取中奖通知</div>
+        <img src="img/win-hd.png" alt="" />
+    </div>
+    <div class="cover-con text-center">
+    	<p class="code-con"><img src="img/code.jpg" alt="关注后可及时获取中奖通知" /></p>
+        <p class="mt5 color-gray  font-13">关注后可及时获取中奖通知</p>
+        <p class="mt5"><a class="red-btn ulib-r10" onClick="$('.cover-bg,.cover-pop').hide();" href="javascript:">我知道了</a></p>
+    </div>
+</div>
+<!--end公众号二维码弹窗-->
+
+</body>
+</html>

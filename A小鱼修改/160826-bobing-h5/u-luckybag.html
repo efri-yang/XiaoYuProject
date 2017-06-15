@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>参加记录-小鱼网中秋博饼</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+<link rel="stylesheet" type="text/css" media="all" href="./css/base.css"/>
+<link rel="stylesheet" type="text/css" media="screen,projection" href="./css/style.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+function applink(fail){  
+    var clickedAt = Date.now();
+    setTimeout(function(){
+            if (Date.now() - clickedAt < 1500){    
+                    window.location = fail;    
+            }
+    }, 1000); 
+}
+function iosDownload(){
+    var ua = window.navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+    var dlink="http://mp.weixin.qq.com/mp/redirect?url=http%3A%2F%2Fitunes.apple.com%2Fcn%2Fapp%2Fxiao-yu-wang%2Fid540996315";
+    }else{
+            var dlink="http://itunes.apple.com/cn/app/xiao-yu-wang/id540996315";
+    }
+    document.getElementById("applink").onclick = applink(dlink);    
+}	
+function apkDownload(){
+    var ua = window.navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+    var dlink="http://a.app.qq.com/o/simple.jsp?pkgname=com.shengshi";
+    }else{
+            var dlink="http://bbs.xmfish.com/data/package/fish.apk";
+    }
+    document.getElementById("applink").onclick = applink(dlink);    
+}	
+function browserRedirect() {
+    var sUserAgent = navigator.userAgent.toLowerCase();
+    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+    var bIsAndroid = sUserAgent.match(/android/i) == "android";
+    if(bIsIpad || bIsIphoneOs){
+            var ifrSrc = '';
+            if(!ifrSrc){
+                    ifrSrc ="xiaoyuwang://fishurl=$push[url]";
+            }
+            var ifr = document.createElement('iframe');
+            ifr.src = ifrSrc ;
+            ifr.name = 'app' ;
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+            setTimeout(function(){
+                    document.body.removeChild(ifr);
+            },1000);
+            iosDownload();
+
+    }else if(bIsAndroid){
+            var sourceSrc = '$push[url]';
+            var ifrSrc = '';
+            if(!ifrSrc){
+                    if(sourceSrc.indexOf("read") > 0 ){
+                            ifrSrc = 'fishapp://jp.app/toopen?fishtid=$p_tid';
+                    }else{
+                            ifrSrc = 'fishapp://jp.app/toopen?fishtid=0&fishurl='+sourceSrc+'';
+                    }
+            }
+            var ifr = document.createElement('iframe');
+            ifr.src = ifrSrc ;
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+            setTimeout(function(){
+                    document.body.removeChild(ifr);
+            },1000);
+            apkDownload();
+    }
+}
+
+$(document).ready(function() {
+	
+	jQuery("#appdownload").on('click',function(){
+		browserRedirect();
+	});
+	
+	jQuery("#open-lb").on('touchstart',function(){
+		jQuery(".open-lb").show();
+		setTimeout(function(){
+			jQuery(".open-lb").hide();
+		},2500);
+	});
+	
+});
+</script>
+</head>
+<body class="dock-pb">
+
+<header class="inner">
+	<dl class="fn-clear fn-clear shop-dl">
+        <dt class="fn-fl ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');" alt="恒大帝景专场博饼"></dt>
+        <dd>
+            <div class="font-16"><b>恒大帝景专场博饼</b></div>
+            <div class="mt2 color-red font-14"><span class="mr5">8月23日</span><span class="mr5">898福气</span><span class="mr5">第2名</span></div>
+        </dd>
+    </dl>
+</header>
+
+<section class="relative">
+	<div class="lb-tip"><img src="img/lb-1.png" alt="福袋" /></div>
+    <!--div class="lb-tip"><img src="img/lb-2.png" alt="福袋" /></div--><!--福袋打开-->
+	<img src="img/lb-themebg.jpg" alt="" />
+</section>
+
+<section class="inner">
+	<div>
+    	<dl class="fn-clear form-cell ulib-r3">
+        	<dt class="fn-fl"><i class="icon icon-tel"></i></dt>
+            <dd><input class="inp-sty ulib-r3 font-14" type="text" placeholder="请输入您的手机号"></dd>
+        </dl>
+    	<div class="mt5 fn-flex font-15">
+        	<dl class="fn-clear form-cell ulib-r3 fn-flex-item mr3" flexsize="5">
+                <dt class="fn-fl"><i class="icon icon-vcode"></i></dt>
+                <dd><input class="inp-sty ulib-r3 font-14" type="text" placeholder="输入验证码"></dd>
+            </dl>
+            <div class="fn-flex-item" flexsize="4"><a class="green-btn ulib-r10" href="javascript:">获取验证码</a></div>
+        </div>
+        <div class="mt5 text-center font-16">博饼门票已放至账户<span class="ml3 mr3 color-red">15080347427</span>中<br><a class="color-blue text-underline">修改手机</a></div>
+        <div class="mt10"><a id="open-lb" class="yellow-btn ulib-r10 font-16" href="javascript:">立即打开福袋</a></div>
+        <div class="mt10"><a class="gray-btn ulib-r10 font-16" href="javascript:">很遗憾，这个福袋已经过期</a></div>
+    </div>
+    <!--end 未打开-->    
+    <div>
+    
+    	<div class="mt5 overflowhidden">
+            <div class="mt5 fn-clear ticket-pin relative ulib-r3">
+                <dl class="fn-fr value-dl">
+                    <dt class="color-gray font-12">价值</dt>
+                    <dd class="color-red"><span class="font-16">￥</span><span class="font-25">9999</span></dd>
+                </dl>
+                <div class="goods-con">
+                    <dl class="goods-dl">
+                        <dt><span class="font-18">滴滴专车券滴滴专车券滴滴专</span><span class="ml3 font-12 ulib-r10 redtip-btn">虚拟</span></dt>
+                        <dd class="mt3 color-lightgray font-12">有效期：至2016-10-01</dd>
+                    </dl>
+                </div>
+                <i class="ticket-ql ulib-r10"></i>
+                <i class="ticket-qr ulib-r10"></i>
+            </div>
+        </div>
+        <div class="mt5 overflowhidden">
+            <div class="mt5 fn-clear ticket-pin relative ulib-r3">
+                <dl class="fn-fr value-dl">
+                    <dt class="color-gray font-12">价值</dt>
+                    <dd class="color-red"><span class="font-16">￥</span><span class="font-25">9</span></dd>
+                </dl>
+                <div class="goods-con">
+                    <dl class="goods-dl">
+                        <dt><span class="font-18">滴滴专车券</span><span class="ml3 font-12 ulib-r10 yellowtip-btn">实物</span></dt>
+                        <dd class="mt3 color-lightgray font-12">有效期：至2016-10-01</dd>
+                    </dl>
+                </div>
+                <i class="ticket-ql ulib-r10"></i>
+                <i class="ticket-qr ulib-r10"></i>
+            </div>
+        </div>
+        <div class="mt5 overflowhidden">
+            <div class="mt5 fn-clear ticket-pin relative ulib-r3">
+                <dl class="fn-fr value-dl">
+                    <dt class="color-gray font-12">价值</dt>
+                    <dd class="color-red"><span class="font-16">￥</span><span class="font-25">520</span></dd>
+                </dl>
+                <div class="goods-con">
+                    <dl class="goods-dl">
+                        <dt><span class="font-18">滴滴专车券</span><span class="ml3 font-12 ulib-r10 greentip-btn">服务</span></dt>
+                        <dd class="mt3 color-lightgray font-12">有效期：至2016-10-01</dd>
+                    </dl>
+                </div>
+                <i class="ticket-ql ulib-r10"></i>
+                <i class="ticket-qr ulib-r10"></i>
+            </div>
+        </div>
+        <div class="mt5 overflowhidden">
+            <div class="mt5 fn-clear ticket-pin relative ulib-r3">
+                <dl class="fn-fr value-dl">
+                    <dt class="color-gray font-12">价值</dt>
+                    <dd class="color-red"><span class="font-16">￥</span><span class="font-25">100</span></dd>
+                </dl>
+                <div class="goods-con">
+                    <dl class="goods-dl">
+                        <dt><span class="font-18">滴滴专车券</span><span class="ml3 font-12 ulib-r10 redtip-btn">虚拟</span></dt>
+                        <dd class="mt3 color-lightgray font-12">有效期：至2016-10-01</dd>
+                    </dl>
+                </div>
+                <i class="ticket-ql ulib-r10"></i>
+                <i class="ticket-qr ulib-r10"></i>
+            </div>
+        </div>
+        
+        <div class="mt5 text-center font-16">博饼门票已放至账户<span class="ml3 mr3 color-red">15080347427</span>中<br>登录小鱼App即可领取</div>
+        <div class="mt10"><a id="appdownload" class="yellow-btn ulib-r10 font-16" href="javascript:">立即下载小鱼APP</a></div>
+    </div>
+    <!--end 已打开-->
+    
+    <div class="pattern-panel mt10 relative">
+        <div class="lb-rule-tt"><img src="img/lb-rule-tt.jpg" alt="福袋细则" /></div>
+        <div class="mt10 font-12 pb10 ml5 mr5">
+            本活动所有礼品需要登录最新版小鱼 APP 后领取/使用。<br />
+            本活动所有礼品需要登录最新版小鱼 APP 后领取/使用。
+        </div>
+    </div>
+    
+</section>
+
+<div class="open-lb">
+    <div class="open-pop text-center">
+        <div class="openlb-mc"><img src="img/openlb-mc.gif" alt="#" /></div>
+        <div class="mt10 progress-bg ulib-r10"><div class="rate-bg ulib-r10"></div></div>
+        <div class="mt10 font-14 color-gray">打开福袋，好运自来</div>
+    </div>
+</div>
+
+<ul class="dock clear font-13">
+	<li>
+        <a href="index.html">
+            <div class="dock-icon"><i class="icon icon-zhong"></i></div>
+            <p>首页</p>
+        </a>
+    </li>
+	<li>
+    	<a href="find.html">
+            <div class="dock-icon"><i class="icon icon-qiu"></i></div>
+            <p>发现</p>
+        </a>
+    </li>
+	<li>
+    	<a href="lb-notopen.html">
+            <div class="dock-icon"><i class="icon icon-kuai"></i></div>
+            <p>福袋</p>
+        </a>
+    </li>
+	<li class="active">
+    	<a href="u-mine.html">
+            <div class="dock-icon"><i class="icon icon-le"></i></div>
+            <p>我的</p>
+        </a>
+    </li>
+</ul>
+
+</body>
+</html>

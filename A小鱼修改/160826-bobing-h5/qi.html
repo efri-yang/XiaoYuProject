@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+<meta content="yes"name="apple-mobile-web-app-capable"/>
+<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
+<meta name="format-detection"content="telphone=no"/>
+<meta name="description" content="嘉我的小鱼博饼趣事">
+<meta name="copyright" content="厦门小鱼网(auto.xmfish.com)版权所有">
+<title>我的小鱼博饼趣事</title>
+<link href="css/qi.css" rel="stylesheet">
+<link href="css/animate.min.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+<script type="text/javascript">
+	var Intervaltime =null;
+	var total = 6666666;
+	var count = 0;
+	var copies = 0;
+	function timerun(){
+		if(count  == total){
+			window.clearInterval(Intervaltime);
+			return false;
+		}
+		count=count+copies;
+		$('.join-1').html(count%10);
+		$('.join-2').html(parseInt((count%100)/10));
+		$('.join-3').html(parseInt((count%1000)/100));
+		$('.join-4').html(parseInt((count%10000)/1000));
+		$('.join-5').html(parseInt((count%100000)/10000));
+		$('.join-6').html(parseInt((count%1000000)/100000));
+		$('.join-7').html(parseInt((count%10000000)/1000000));
+		$('.join-8').html(parseInt((count%100000000)/10000000));
+		$('.join-9').html(parseInt((count%1000000000)/100000000));
+	}
+	$(document).ready(function() {
+		$('#fullpage').fullpage({
+		sectionsColor: ['#ca0000','#2c3243','#2c3243','#2c3243','#2c3243'],
+		anchors: ['firstPage','secondPage','3rdPage','fourPage','fivePage'],
+		menu:'#menu',
+		});
+		
+		if(total>=100000000){
+			count = total%198;
+			copies = parseInt(total/198);
+			$('.count-panel').html("<span class='join-num join-9'>0</span><span class='join-num join-8'>0</span><span class='join-num join-7'>0</span><span class='join-num join-6'>0</span><span class='join-num join-5'>0</span><span class='join-num join-4'>0</span><span class='join-num join-3'>0</span><span class='join-num join-2'>0</span><span class='join-num join-1'>0</span>");
+		}
+		if((total>=10000000)&&(total<100000000)){
+			count = total%198;
+			copies = parseInt(total/198);
+			$('.count-panel').html("<span class='join-num join-8'>0</span><span class='join-num join-7'>0</span><span class='join-num join-6'>0</span><span class='join-num join-5'>0</span><span class='join-num join-4'>0</span><span class='join-num join-3'>0</span><span class='join-num join-2'>0</span><span class='join-num join-1'>0</span>");
+		}
+		if((total>=1000000)&&(total<10000000)){
+			count = total%198;
+			copies = parseInt(total/198);
+			$('.count-panel').html("<span class='join-num join-7'>0</span><span class='join-num join-6'>0</span><span class='join-num join-5'>0</span><span class='join-num join-4'>0</span><span class='join-num join-3'>0</span><span class='join-num join-2'>0</span><span class='join-num join-1'>0</span>");
+		}
+		if((total>=100000)&&(total<1000000)){
+			count = total%198;
+			copies = parseInt(total/198);
+			$('.count-panel').html("<span class='join-num join-6'>0</span><span class='join-num join-5'>0</span><span class='join-num join-4'>0</span><span class='join-num join-3'>0</span><span class='join-num join-2'>0</span><span class='join-num join-1'>0</span>");
+		}
+		if((total>=10000)&&(total<100000)){
+			count = total%198;
+			copies = parseInt(total/198);
+			$('.count-panel').html("<span class='join-num join-5'>0</span><span class='join-num join-4'>0</span><span class='join-num join-3'>0</span><span class='join-num join-2'>0</span><span class='join-num join-1'>0</span>");
+		}
+		if((total>=1000)&&(total<10000)){
+			count = total%125;
+			copies = parseInt(total/125);
+			$('.count-panel').html("<span class='join-num join-4'>0</span><span class='join-num join-3'>0</span><span class='join-num join-2'>0</span><span class='join-num join-1'>0</span>");
+		}
+		if((total>=100)&&(total<1000)){
+			count = total%99;
+			copies = parseInt(total/99);
+			$('.count-panel').html("<span class='join-num join-3'>0</span><span class='join-num join-2'>0</span><span class='join-num join-1'>0</span>");
+		}
+		if((total>=10)&&(total<100)){
+			copies = 1;
+			$('.count-panel').html("<span class='join-num join-2'>0</span><span class='join-num join-1'>0</span>");
+		}
+		if(total<10){
+			copies = 1;
+			$('.count-panel').html("<span class='join-num join-1'>0</span>");
+		}
+		
+		setTimeout(function(){if(!Intervaltime){Intervaltime=window.setInterval(timerun,7);}},1200);
+		
+		jQuery(".section-opt1").on('touchstart',function(event){
+			$('.share-pop').show();
+			setTimeout(function(){$('.share-pop').fadeOut(1000);},1000);
+		});
+		
+	});
+</script>
+</head>
+<body class="yahei">
+<img src="img/tip.jpg" width="200" height="200" class="f-hide" />
+<style>
+
+</style>
+<div id="fullpage">
+	<div class="section" id="section0">
+    	<div class="wrap">
+            <div class="section-avatar animated fadeInDown"><img src="img/qi-author-bg.png" alt="我的小鱼博饼趣事" /><img class="my-author" src="upload/v-2.jpg" alt="我的小鱼博饼趣事" /></div>
+            <div class="section-tx animated fadeInUp">
+            	<div>我是第<span class="count-panel"></span>位</div>
+                <div>玩小鱼网博饼的用户</div>
+            </div>
+			<div class="section-guide"></div>
+		</div>
+	</div>
+	<div class="section" id="section1">
+    	<div class="wrap">
+        	<div class="section-avatar"><img src="img/qi-author-bg.png" alt="我的小鱼博饼趣事" /><img class="my-author" src="upload/v-2.jpg" alt="我的小鱼博饼趣事" /></div>
+            <div class="section-tx">
+            	<h3>[ 最佳朋友 ]</h3>
+                <div class="mt10">截止到<span class="color-red">2016.09.30</span></div>
+				<div>李志伟共帮我博饼<span class="color-red">32</span>次</div>
+				<div>黄晓明共帮我收货<span class="color-red">482</span>福气</div>
+            </div>
+			<div class="section-guide"></div>
+		</div>
+	</div>
+    <div class="section" id="section2">
+    	<div class="wrap">
+        	<div class="section-avatar"><img src="img/qi-author-bg.png" alt="我的小鱼博饼趣事" /><img class="my-author" src="upload/v-2.jpg" alt="我的小鱼博饼趣事" /></div>
+            <div class="section-tx">
+            	<h3>[ 助人为乐 ]</h3>
+                <div class="mt10">截止到<span class="color-red">2016.09.30</span></div>
+				<div>我共帮李志伟博饼<span class="color-red">32</span>次</div>
+				<div>我共帮黄晓明收货<span class="color-red">482</span>福气</div>
+            </div>
+			<div class="section-guide"></div>
+		</div>
+	</div>
+    <div class="section" id="section3">
+    	<div class="wrap">
+        	<div class="section-avatar"><img src="img/qi-author-bg.png" alt="我的小鱼博饼趣事" /><img class="my-author" src="upload/v-2.jpg" alt="我的小鱼博饼趣事" /></div>
+            <div class="section-tx">
+            	<h3>[ 福星高照 ]</h3>
+                <div class="mt10">截止到<span class="color-red">2016.09.30</span></div>
+				<div>我共获得<span class="color-red">32</span>点福气</div>
+				<div>我共获得<span class="color-red">482</span>个礼包</div>
+            </div>
+			<div class="section-guide"></div>
+		</div>
+	</div>
+    <div class="section" id="section4">
+    	<div class="wrap">
+        	<div class="section-avatar"><img src="img/qi-author-bg.png" alt="我的小鱼博饼趣事" /><img class="my-author" src="upload/v-2.jpg" alt="我的小鱼博饼趣事" /></div>
+            <div class="section-tx">
+				<div>博饼让团圆更有味道</div>
+				<div>小鱼网祝您中秋节，阖家团圆</div>
+            </div>
+            <div class="section-img"><img src="img/qi-bo.png" alt="我的小鱼博饼趣事" /></div>
+            <div class="section-opt1"><a class="yellow-btn" href="javascript:">炫耀我的博饼趣事</a></div>
+            <div class="section-opt2"><a class="yellow-btn" href="javascript:">马上参加博饼</a></div>
+		</div>
+	</div>
+    
+</div>
+
+
+<!--分享提示-->
+<div class="share-pop">分享给你的朋友</div>
+<!--end分享提示-->
+
+</body>
+</html>

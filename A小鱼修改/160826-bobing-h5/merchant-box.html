@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>蔚蓝海岸专场博饼-小鱼网中秋博饼</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+<link rel="stylesheet" type="text/css" media="all" href="./css/base.css"/>
+<link rel="stylesheet" type="text/css" media="screen,projection" href="./css/style.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/swipe.js"></script> 
+<script type="text/javascript">
+function liSum(wrap,list,pageUL,pageCUR){
+	var len = jQuery(wrap).find(list).length;
+	var i=1;
+	var UL = "<ul id='pagination'>";
+	for(i;i<=len;i++){
+		if(i==1){
+			UL += "<li class="+pageCUR+"><a href='javascript:void(0);'>1</a></li>";
+		}else{
+			UL += "<li><a href='javascript:void(0);'>"+i+"</a></li>";
+		}
+	}
+	UL += "</ul>";
+	jQuery(wrap).append(UL);
+	return false;
+}
+
+$(document).ready(function() {
+	liSum('.addWrap','.pic_pin','#pagination','cur');
+	var bullets = document.getElementById('pagination').getElementsByTagName('li');
+    var banner = Swipe(document.getElementById('mySwipe'), {
+        auto:4000,
+        continuous: true,
+        disableScroll:false,
+        callback: function(pos) {
+            var i = bullets.length;
+            while (i--) {
+              bullets[i].className = ' ';
+            }
+            bullets[pos].className = 'cur';
+        }
+    });//轮播
+	
+	$('.record-tab>li').on('click',function(){
+		var nodenum = $(this).index();
+		$('.record-tab>li').removeClass('active');
+		$(this).addClass('active');
+		if(nodenum == 0){
+			$('.winning-record').hide();
+			$('.ranking-today').show();
+		}
+		if(nodenum == 1){
+			$('.ranking-today').hide();
+			$('.winning-record').show();
+		}
+	});
+	
+});
+</script>
+</head>
+<body class="dock-pb">
+<header class="addWrap">
+    <div class="swipe" id="mySwipe">
+    <div class="swipe-wrap">
+        <div class="pic_pin"><a href="#"><img class="swipeimage" src="img/k25x16.png" style="background-image:url('upload/v-1.jpg');"alt="#" /></a></div>
+        <div class="pic_pin"><a href="#"><img class="swipeimage" src="img/k25x16.png" style="background-image:url('upload/v-1.jpg');"alt="#" /></a></div>
+        <div class="pic_pin"><a href="#"><img class="swipeimage" src="img/k25x16.png" style="background-image:url('upload/v-1.jpg');"alt="#" /></a></div>
+    </div>
+    </div>
+</header>
+
+<section class="inner">
+	<div class="relative">
+    	<div class="theme-author text-center relative">
+        	<div class="author-avatar ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="蔚蓝海岸专场博饼" /></div>
+            <p class="font-18">蔚蓝海岸专场博饼</p>
+        </div>
+        <div class="winning-reminder"><a class="font-15 color-coffee" href="share-code.html"><i class="icon icon-win"></i>包厢二维码</a></div>
+    </div>
+</section>
+
+<section class="bow-count">
+    <div class="inner">
+        <div class="pattern-panel relative">
+        	<ol class="rule-ol2 font-12">
+                <li><i class="icon icon-num">1</i><span class="color-red">每天最多可寻找<span class="ml3 mr3 color-red">30</span>名好友帮忙博饼</span><a onClick="$('.cover-bg,#rule-win').show();" class="ml3 color-blue text-underline" href="javascript:">详细规则</a></li>
+                <li><i class="icon icon-num">2</i><span class="color-red">本包厢每天排名前<span class="ml3 mr3 color-red">5</span>即可获得福袋</span><a class="ml3 color-blue text-underline" href="lucky-bag.html">什么是福袋？</a></li>
+            </ol>
+        </div>
+        <div class="mt10">
+        	<a class="yellow-btn ulib-r10 font-16" href="mybobing.html">立即博饼得福袋</a>
+            <a class="yellow-btn ulib-r10 font-16" href="mybobing.html">已参加，查看详情</a>
+        </div>
+        
+        <div class="mt5 text-center font-15 color-lightgray">已有<span class="color-red">42568</span>人参加</div>
+        
+    </div>
+
+    <div class="inner bts">
+    	<div class="record-panel ulib-r5">
+            <ul class="record-tab ulib-rt5 fn-clear text-center font-14">
+                <li class="active">
+                	<span>包厢排名
+                    <select class="font-13 select-sty ulib-r10">
+                        <option>今天</option>
+                        <option>昨天</option>
+                        <option>0803</option>
+                    </select>
+                    </span>
+                </li>
+                <li><span>福袋中奖名单</span></li>
+            </ul>
+            <div class="ranking-today">
+            	<div class="fn-flex color-darkred inner font-14">
+                	<div class="fn-flex-item">排名</div>
+                    <div class="fn-flex-item">昵称</div>
+                    <div class="fn-flex-item text-right" flexsize="2">最后博饼时间</div>
+                </div>
+            	<div class="my-record inner fn-clear font-14">
+                	<dl class="fn-fl fn-clear personal-dl">
+                    	<dt class="fn-fl ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" /></dt>
+                        <dd>
+                        	<div class="color-white">北野太郎</div>
+                            <div class="color-yellow">排名：158698<span class="ml5 mr5">|</span>0福气</div>
+                        </dd>
+                    </dl>
+                    <div class="fn-fr color-white mt8">23 : 31 : 12</div>
+                </div>
+                <ul class="record-ranking inner">
+                	<li class="fn-clear">
+                    	<i class="fn-fl icon icon-ranking1">1</i>
+                    	<dl class="fn-fl fn-clear personal-dl">
+                            <dt class="fn-fl ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" /></dt>
+                            <dd>
+                                <div class="color-white">小幸运</div>
+                                <div class="color-yellow"><span class="mr3">980</span>福气</div>
+                            </dd>
+                        </dl>
+                        <div class="fn-fr color-white mt8">23 : 31 : 12</div>
+                    </li>
+                    <li class="fn-clear">
+                    	<i class="fn-fl icon icon-ranking2">2</i>
+                    	<dl class="fn-fl fn-clear personal-dl">
+                            <dt class="fn-fl ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" /></dt>
+                            <dd>
+                                <div class="color-white">小幸运</div>
+                                <div class="color-yellow"><span class="mr3">980</span>福气</div>
+                            </dd>
+                        </dl>
+                        <div class="fn-fr color-white mt8">23 : 31 : 12</div>
+                    </li>
+                    <li class="fn-clear">
+                    	<i class="fn-fl icon icon-ranking3">3</i>
+                    	<dl class="fn-fl fn-clear personal-dl">
+                            <dt class="fn-fl ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" /></dt>
+                            <dd>
+                                <div class="color-white">小幸运</div>
+                                <div class="color-yellow"><span class="mr3">980</span>福气</div>
+                            </dd>
+                        </dl>
+                        <div class="fn-fr color-white mt8">23 : 31 : 12</div>
+                    </li>
+                    <li class="fn-clear">
+                    	<i class="fn-fl font-12 icon-rankingnum">4</i>
+                    	<dl class="fn-fl fn-clear personal-dl">
+                            <dt class="fn-fl ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" /></dt>
+                            <dd>
+                                <div class="color-white">小幸运</div>
+                                <div class="color-yellow"><span class="mr3">980</span>福气</div>
+                            </dd>
+                        </dl>
+                        <div class="fn-fr color-white mt8">23 : 31 : 12</div>
+                    </li>
+                    <li class="fn-clear">
+                    	<i class="fn-fl font-12 icon-rankingnum">5</i>
+                    	<dl class="fn-fl fn-clear personal-dl">
+                            <dt class="fn-fl ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" /></dt>
+                            <dd>
+                                <div class="color-white">小幸运</div>
+                                <div class="color-yellow"><span class="mr3">980</span>福气</div>
+                            </dd>
+                        </dl>
+                        <div class="fn-fr color-white mt8">23 : 31 : 12</div>
+                    </li>
+                    <li class="fn-clear">
+                    	<i class="fn-fl font-12 icon-rankingnum">6</i>
+                    	<dl class="fn-fl fn-clear personal-dl">
+                            <dt class="fn-fl ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" /></dt>
+                            <dd>
+                                <div class="color-white">小幸运</div>
+                                <div class="color-yellow"><span class="mr3">980</span>福气</div>
+                            </dd>
+                        </dl>
+                        <div class="fn-fr color-white mt8">23 : 31 : 12</div>
+                    </li>
+                </ul>
+                <div class="pt5 pb5 text-center color-darkred font-14">只显示前50名福将哦！</div>
+            </div>
+            
+            <div class="winning-record" style="display:none;">
+            	<div class="color-white text-center pt50 pb50">还没有人获奖哦，请加油！</div>
+                <dl class="fn-clear winning-dl">
+                	<dt class="fn-fl text-center">
+                    	<i class="icon icon-time"></i>
+                        <p class="color-white font-15">8月21日</p>
+                    </dt>
+                    <dd>
+                    	<div class="winning-name">
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="fn-clear winning-dl">
+                	<dt class="fn-fl text-center">
+                    	<i class="icon icon-time"></i>
+                        <p class="color-white font-15">8月21日</p>
+                    </dt>
+                    <dd>
+                    	<div class="winning-name">
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="fn-clear winning-dl">
+                	<dt class="fn-fl text-center">
+                    	<i class="icon icon-time"></i>
+                        <p class="color-white font-15">8月21日</p>
+                    </dt>
+                    <dd>
+                    	<div class="winning-name">
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                            <img class="winning-avatar ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" />
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<ul class="dock clear font-13">
+	<li class="active">
+        <a href="index.html">
+            <div class="dock-icon"><i class="icon icon-zhong"></i></div>
+            <p>首页</p>
+        </a>
+    </li>
+	<li>
+    	<a href="find.html">
+            <div class="dock-icon"><i class="icon icon-qiu"></i></div>
+            <p>发现</p>
+        </a>
+    </li>
+	<li>
+    	<a href="lb-notopen.html">
+            <div class="dock-icon"><i class="icon icon-kuai"></i></div>
+            <p>福袋</p>
+        </a>
+    </li>
+	<li>
+    	<a href="u-mine.html">
+            <div class="dock-icon"><i class="icon icon-le"></i></div>
+            <p>我的</p>
+        </a>
+    </li>
+</ul>
+
+<!--活动规则弹窗-->
+<div id="rule-win" class="cover-pop">
+	<i class="cover-line"></i>
+    <div class="cover-hd text-center">
+    	<div class="cover-hd-tx font-16">活动规则</div>
+        <img src="img/win-hd.png" alt="" />
+    </div>
+    <div class="cover-con">
+    	<dl class="rule-dl">
+        	<dt class="font-13"><i class="icon-regspot ulib-r10"></i>奖品规则</dt>
+            <dd class="font-12">
+            	<p>1、每天、每个商家包厢均会按照本包厢的福气值排名，发放福袋礼品大奖，具体获奖名次见各个商家的包厢页面。</p>
+                <p class="mt3">2、每天所有商家包厢的福气值总和排名前<span class="color-red ml3 mr3">25</span>名将获得小鱼网线下博饼门票<span class=" font-10 color-gray">（每人只能获得一次，身份证或手机号相同均视为同一个人）</span>。</p>
+            </dd>
+        </dl>
+        <dl class="rule-dl">
+        	<dt class="font-13"><i class="icon-regspot ulib-r10"></i>玩法规则</dt>
+            <dd class="font-12">
+            	<p>1、每个商家包厢，每天共有 20 次博饼机会。其中自己可博 10 次，另外 10 次需让好友帮忙，每名好友各 1 次。</p>
+                <p class="mt3">2、次日中午12点前，按照福气值排名公布当天最终获奖名单，福气值相同时按最后一次博饼的时间先后顺序排名。若有违规行为，将取消获奖资格。</p>
+            </dd>
+        </dl>
+        <p class="font-10 color-gray">*小鱼网在法律范围内保留对本活动的最终解释权</p>
+        <p class="mt5"><a class="red-btn ulib-r10" onClick="$('.cover-bg,.cover-pop').hide();" href="javascript:">我知道了</a></p>
+    </div>
+</div>
+<!--end活动规则弹窗-->
+
+</body>
+</html>

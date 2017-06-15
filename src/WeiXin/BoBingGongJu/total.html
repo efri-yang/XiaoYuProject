@@ -1,225 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-	<script src="../common/js/zepto/zepto.js"></script>
-	<script src="../common/js/flexible.js"></script>
-	<script type="text/javascript" src="../common/js/zepto-mvalidate.js"></script>
-	<script type="text/javascript" src="../common/js/layer_mobile/layer.js"></script>
-	<script type="text/javascript" src="../common/js/iscroll.js"></script>
-	<script type="text/javascript" src="./js/index.js"></script>
-	<link rel="stylesheet" type="text/css" href="../common/css/base.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-	<div class="head-banner"><img src="../BoBingGongJu/images/banner_1.jpg" /></div>
-	<div class="container">
-		<div class="tc-tit">本轮奖品</div>
-		<ul class="prizes-list">
-			<li class="name">香港传奇1000元代金券</li>
-			<li class="count">剩余958张</li>
-		</ul>
-		<!-- 兑奖码页面显示的模块 start -->
-		@@include("./views/_cash.html")
-		<!-- 兑奖码页面显示的模块 end -->
-		<a href="#" class="btn-kz" id="J_btn-kz">开桌博饼赢大奖</a>
-		<!--  -->
-		<div class="kz-success-box">
-			<div class="kz-success-inner">
-				<div class="intro">
-					<span>莫天仇正在参加“香港传奇1000元代金券，线上博饼0元
-抢（活动名称）”</span>的活动，博到指定积分，TA就能免费获
-得奖品哟！
-				</div>
-				<ul class="handle">
-				    <li class="score">当前积分：100 / 2000</li>
-				    <li class="time">剩余时间：<span>23:59:50</span></li>
-				</ul>
-			</div>
-			<span class="arrow arrow-tl"></span>
-			<span class="arrow arrow-tr"></span>
-			<span class="arrow arrow-bl"></span>
-			<span class="arrow arrow-br"></span>
-		</div>
-		<ul class="kz-share-handle">
-			<li><a href="#" class="btn-help" data-roler="helpopen">帮TA博饼</a></li>
-			<li><a href="#" class="btn-open" data-roler="helpopen">我要开桌</a></li>
-		</ul>
-		<div class="kz-kj-no">暂时还没有朋友帮忙博饼</div>
-		<div class="kz-kj-listbox">
-				<div class="kz-kj-con">
-					<div class="soma-hd">
-						<span class="line-lf"></span>
-						<span class="tit">博饼记录</span>
-						<span class="line-rt"></span>
-					</div>
-					<div class="soma-bd" id="J_iscroll-wrap">
-						<div class="iscroll-inner">
-							<ul id="J_recordlist">
-						    <li>
-								<span class="txt">莫天仇博到了到了到了到了状元，积分<b>+50</b></span>
-								<b class="time">2017-06-01 12:03:34</b>
-						    </li>
-						    <li>
-								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
-								<b class="time">2017-06-01 12:03:34</b>
-						    </li>
-						    <li>
-								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
-								<b class="time">2017-06-01 12:03:34</b>
-						    </li>
-						    <li>
-								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
-								<b class="time">2017-06-01 12:03:34</b>
-						    </li>
-						    <li>
-								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
-								<b class="time">2017-06-01 12:03:34</b>
-						    </li>
 
-						    <li>
-								<span class="txt">莫天仇博到了到了到了到了状元，积分<b>+50</b></span>
-								<b class="time">2017-06-01 12:03:34</b>
-						    </li>
-						    <li>
-								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
-								<b class="time">2017-06-01 12:03:34</b>
-						    </li>
-						    <li>
-								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
-								<b class="time">2017-06-01 12:03:34</b>
-						    </li>
-						    <li>
-								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
-								<b class="time">2017-06-01 12:03:34</b>
-						    </li>
-						    <li>
-								<span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
-								<b class="time">2017-06-01 12:03:34</b>
-						    </li>
-						</ul>
-						<a href="#" class="more" id="J_iscroll-more">点击查看更多</a>
-						</div>
-					</div>
-				</div>
-				<b class="line-top"></b>
-		</div>
-		<!--  -->
-		<div class="tc-tit" ><a name="nameintro"></a>活动说明</div>
-		<div class="activity-desc-wrap">
-			<div class="activity-desc-inner">
-			  	<div class="pic"><span></span></div>
-			  	<ul>
-			  	    <li><span>1</span>福袋内的礼品需要在小鱼App中登录领取/使用。</li>
-			  	    <li><span>2</span>领取/使用礼品是登录的手机号需为打开福袋时填写
-的手机号</li>
-			  	    <li><span>3</span>新用户请使用微信登录小鱼App，然后绑定打开福
-袋时填写的手机号即可。</li>
-			  	    <li><span>4</span>福袋有效期：至2016-09-30，请在此之前输入手
-机号打开。</li>
-					<li><span>5</span>小鱼网保留法律范围内允许的对活动的解释权。</li>
-			  	</ul>
-			</div>
-			<span class="arrow arrow-tl"></span>
-			<span class="arrow arrow-tr"></span>
-			<span class="arrow arrow-bl"></span>
-			<span class="arrow arrow-br"></span>
-		</div>
-		
-		<div class="ranking-box">
-		    <a name="namerank"></a>
-			<div class="soma-hd">
-				<span>排名</span>
-				<span>昵称</span>
-				<span>积分</span>
-			</div>
-			<ul class="soma-bd">
-			    <li>
-					<span class="avatar">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../common/js/zepto/zepto.js"></script>
+    <script src="./js/flexible.js"></script>
+    <script type="text/javascript" src="./js/zepto-mvalidate.js"></script>
+    <script type="text/javascript" src="./js/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="./js/iscroll.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="../common/css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+
+<body>
+    <div class="head-banner"><img src="../BoBingGongJu/images/banner_1.jpg" /></div>
+    <div class="container">
+        <div class="tc-tit">本轮奖品</div>
+        <ul class="prizes-list">
+            <li class="name">香港传奇1000元代金券</li>
+            <li class="count">剩余958张</li>
+        </ul>
+        <!-- 兑奖码页面显示的模块 start -->
+        @@include("./views/_cash.html")
+        <!-- 兑奖码页面显示的模块 end -->
+        <a href="#" class="btn-kz" id="J_btn-kz">开桌博饼赢大奖</a>
+        <!--  -->
+        <div class="kz-success-box">
+            <div class="kz-success-inner">
+                <div class="intro">
+                    <span>莫天仇正在参加“香港传奇1000元代金券，线上博饼0元
+抢（活动名称）”</span>的活动，博到指定积分，TA就能免费获 得奖品哟！
+                </div>
+                <ul class="handle">
+                    <li class="score">当前积分：100 / 2000</li>
+                    <li class="time">剩余时间：<span>23:59:50</span></li>
+                </ul>
+            </div>
+            <span class="arrow arrow-tl"></span>
+            <span class="arrow arrow-tr"></span>
+            <span class="arrow arrow-bl"></span>
+            <span class="arrow arrow-br"></span>
+        </div>
+        <ul class="kz-share-handle">
+            <li><a href="#" class="btn-help" id="J_btnhelpbb">帮TA博饼</a></li>
+            <li><a href="#" class="btn-open" id="J_btnopenkz">我要开桌</a></li>
+        </ul>
+        <div class="kz-kj-no">暂时还没有朋友帮忙博饼</div>
+        <div class="kz-kj-listbox">
+            <div class="kz-kj-con">
+                <div class="soma-hd">
+                    <span class="line-lf"></span>
+                    <span class="tit">博饼记录</span>
+                    <span class="line-rt"></span>
+                </div>
+                <div class="soma-bd" id="J_iscroll-wrap">
+                    <div class="iscroll-inner">
+                        <ul id="J_recordlist">
+                            <li>
+                                <span class="txt">莫天仇博到了到了到了到了状元，积分<b>+50</b></span>
+                                <b class="time">2017-06-01 12:03:34</b>
+                            </li>
+                            <li>
+                                <span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+                                <b class="time">2017-06-01 12:03:34</b>
+                            </li>
+                            <li>
+                                <span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+                                <b class="time">2017-06-01 12:03:34</b>
+                            </li>
+                            <li>
+                                <span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+                                <b class="time">2017-06-01 12:03:34</b>
+                            </li>
+                            <li>
+                                <span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+                                <b class="time">2017-06-01 12:03:34</b>
+                            </li>
+                            <li>
+                                <span class="txt">莫天仇博到了到了到了到了状元，积分<b>+50</b></span>
+                                <b class="time">2017-06-01 12:03:34</b>
+                            </li>
+                            <li>
+                                <span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+                                <b class="time">2017-06-01 12:03:34</b>
+                            </li>
+                            <li>
+                                <span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+                                <b class="time">2017-06-01 12:03:34</b>
+                            </li>
+                            <li>
+                                <span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+                                <b class="time">2017-06-01 12:03:34</b>
+                            </li>
+                            <li>
+                                <span class="txt">莫天仇博到了状元，积分<b>+50</b></span>
+                                <b class="time">2017-06-01 12:03:34</b>
+                            </li>
+                        </ul>
+                        <a href="#" class="more" id="J_iscroll-more">点击查看更多</a>
+                    </div>
+                </div>
+            </div>
+            <b class="line-top"></b>
+        </div>
+        <!--  -->
+        <div class="tc-tit">
+            <a name="nameintro"></a>活动说明</div>
+        <div class="activity-desc-wrap">
+            <div class="activity-desc-inner">
+                <div class="pic"><span></span></div>
+                <ul>
+                    <li><span>1</span>福袋内的礼品需要在小鱼App中登录领取/使用。</li>
+                    <li><span>2</span>领取/使用礼品是登录的手机号需为打开福袋时填写 的手机号
+                    </li>
+                    <li><span>3</span>新用户请使用微信登录小鱼App，然后绑定打开福 袋时填写的手机号即可。
+                    </li>
+                    <li><span>4</span>福袋有效期：至2016-09-30，请在此之前输入手 机号打开。
+                    </li>
+                    <li><span>5</span>小鱼网保留法律范围内允许的对活动的解释权。</li>
+                </ul>
+            </div>
+            <span class="arrow arrow-tl"></span>
+            <span class="arrow arrow-tr"></span>
+            <span class="arrow arrow-bl"></span>
+            <span class="arrow arrow-br"></span>
+        </div>
+        <div class="ranking-box">
+            <a name="namerank"></a>
+            <div class="soma-hd">
+                <span>排名</span>
+                <span>昵称</span>
+                <span>积分</span>
+            </div>
+            <ul class="soma-bd">
+                <li>
+                    <span class="avatar">
 						<b class="rank">1</b>
 						<div class="pic"><img src="./upload/avatar_1.jpg" /></div>
 					</span>
-					<span class="name">你博到状元</span>
-					<span class="score">1000</span>
-			    </li>
-			    <li>
-					<span class="avatar">
+                    <span class="name">你博到状元</span>
+                    <span class="score">1000</span>
+                </li>
+                <li>
+                    <span class="avatar">
 						<b class="rank">2</b>
 						<div class="pic"><img src="./upload/avatar_1.jpg" /></div>
 					</span>
-					<span class="name">你博到状元你博到状元到状元到状元你博到状元</span>
-					<span class="score">100</span>
-			    </li>
-			    <li>
-					<span class="avatar">
+                    <span class="name">你博到状元你博到状元到状元到状元你博到状元</span>
+                    <span class="score">100</span>
+                </li>
+                <li>
+                    <span class="avatar">
 						<b class="rank">3</b>
 						<div class="pic"><img src="./upload/avatar_1.jpg" /></div>
 					</span>
-					<span class="name">你博到状元</span>
-					<span class="score">1000</span>
-			    </li>
-			    <li>
-					<span class="avatar">
+                    <span class="name">你博到状元</span>
+                    <span class="score">1000</span>
+                </li>
+                <li>
+                    <span class="avatar">
 						<b class="rank">4</b>
 						<div class="pic"><img src="./upload/avatar_1.jpg" /></div>
 					</span>
-					<span class="name">你博到状元</span>
-					<span class="score">1000</span>
-			    </li>
-			     <li>
-					<span class="avatar">
+                    <span class="name">你博到状元</span>
+                    <span class="score">1000</span>
+                </li>
+                <li>
+                    <span class="avatar">
 						<b class="rank">5</b>
 						<div class="pic"><img src="./upload/avatar_1.jpg" /></div>
 					</span>
-					<span class="name">你博到状元</span>
-					<span class="score">1000</span>
-			    </li>
-			     <li>
-					<span class="avatar">
+                    <span class="name">你博到状元</span>
+                    <span class="score">1000</span>
+                </li>
+                <li>
+                    <span class="avatar">
 						<b class="rank">6</b>
 						<div class="pic"><img src="./upload/avatar_1.jpg" /></div>
 					</span>
-					<span class="name">你博到状元</span>
-					<span class="score">1000</span>
-			    </li>
-			     <li>
-					<span class="avatar">
+                    <span class="name">你博到状元</span>
+                    <span class="score">1000</span>
+                </li>
+                <li>
+                    <span class="avatar">
 						<b class="rank">7</b>
 						<div class="pic"><img src="./upload/avatar_1.jpg" /></div>
 					</span>
-					<span class="name">你博到状元你博到状元你博到状元你博到状元</span>
-					<span class="score">1000</span>
-			    </li>
-			</ul>
-			<ul class="pagination-dir">
-			    <li><a href="#">上一页</a></li>
-			    <li><a href="#">下一页</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="footer">
-		本活动由小鱼网提供技术支持  <a href="javascript:void(0)" id="J_contactus">联系我们</a>
-	</div>
-
-	<div class="nav-fixed">
-	    <a href="#nameintro">说明</a>
-	    <a href="#namerank">排行</a>
-	    <a href="#" class="gotop" id="J_gotop"></a>
-	</div>
-
+                    <span class="name">你博到状元你博到状元你博到状元你博到状元</span>
+                    <span class="score">1000</span>
+                </li>
+            </ul>
+            <ul class="pagination-dir">
+                <li><a href="#">上一页</a></li>
+                <li><a href="#">下一页</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        本活动由小鱼网提供技术支持 <a href="javascript:void(0)" id="J_contactus">联系我们</a>
+    </div>
+    <div class="nav-fixed">
+        <a href="#nameintro">说明</a>
+        <a href="#namerank">排行</a>
+        <a href="#" class="gotop" id="J_gotop"></a>
+    </div>
     <!-- 帮他砍价或者我要开桌弹出框 start -->
-	@@include("./views/_dia-helpOpen.html")
-	<!-- 帮他砍价或者我要开桌弹出框 end -->
-
+    @@include("./views/_dia-helpOpen.html")
+    <!-- 帮他砍价或者我要开桌弹出框 end -->
     <!-- 开桌成功弹出框 start -->
-	@@include("./views/_dia-success.html")
-	<!-- 联系我们弹出框 end -->
-   
-	<!-- 联系我们弹出框 start -->
-	@@include("./views/_dia-contact.html")
-	<!-- 联系我们弹出框 end -->
+    @@include("./views/_dia-success.html")
+    <!-- 开桌成功弹出框 end -->
+    <!-- 联系我们弹出框 start -->
+    @@include("./views/_dia-contact.html")
+    <!-- 联系我们弹出框 end -->
 
+    <!-- 博饼游戏弹出框 start -->
+    @@include("./views/_bobinggame.html")
+    <!-- 博饼游戏弹出框 end -->
+
+    
 
 </body>
+
 </html>

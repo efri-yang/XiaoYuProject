@@ -1,0 +1,484 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>自己的博饼-小鱼网中秋博饼</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+<link rel="stylesheet" type="text/css" media="all" href="./css/base.css"/>
+<link rel="stylesheet" type="text/css" media="screen,projection" href="./css/style.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/swipe.js"></script> 
+<script type="text/javascript">
+function liSum(wrap,list,pageUL,pageCUR){
+	var len = jQuery(wrap).find(list).length;
+	var i=1;
+	var UL = "<ul id='pagination'>";
+	for(i;i<=len;i++){
+		if(i==1){
+			UL += "<li class="+pageCUR+"><a href='javascript:void(0);'>1</a></li>";
+		}else{
+			UL += "<li><a href='javascript:void(0);'>"+i+"</a></li>";
+		}
+	}
+	UL += "</ul>";
+	jQuery(wrap).append(UL);
+	return false;
+}
+
+var currClientWidth,swipeHeight,bowHeight;
+function cHeight(){
+	currClientWidth = document.documentElement.clientWidth;
+	if (currClientWidth > 750) currClientWidth = 750;
+	if (currClientWidth < 320) currClientWidth = 320;
+	swipeHeight = ((16 * currClientWidth) /25).toFixed(0);
+	bowHeight = ((4 * currClientWidth) /3).toFixed(0);
+}
+//计算高度
+
+function bowfadeIn(){
+	$('.addWrap').css('height','0');
+	$('.bow-count,.author-opt,.dock').hide();
+	$('.mybow-panel').show().animate({height:bowHeight},"500");
+	$('.mybow-panel').css('overflow','inherit')
+	$('body,html').animate({scrollTop:'0'},"500");
+	$('body,html').css('background','#fd3f3f');
+	setTimeout(function(){$('.bowl').show().addClass('active');},500);
+	setTimeout(function(){result();},1500);//输出结果
+}
+//显示博饼场景
+
+function bowfadeOut(){
+	$('.addWrap').animate({height:swipeHeight},"500");
+	$('.mybow-panel').animate({height:'0'},"500");
+	$('.bow-count,.author-opt,.dock').show();
+	$('body,html').css('background','#fff8f0');
+}
+//隐藏博饼场景
+
+var flag=0;//标志位
+var resultArray = new Array("1","2","3","4","5","6","对堂！为TA增加<span>60</span>个福气","5");
+//博饼结果数组
+
+function result(){
+	jQuery("#audiors").attr('src','img/audio'+resultArray[7]+'.mp3');
+	document.getElementById('audiott').load();
+	document.getElementById('audiors').load();
+	document.getElementById('audiott').play();
+	
+	$('.dice').show().addClass('active');
+	for (var i=0; i < 6; i++){
+		$('.dice'+[i+1]).children('img').attr('src', 'img/dice'+resultArray[i]+'.png');
+	};
+	
+	setTimeout(function(){
+		document.getElementById('audiors').play();
+		//播放数组的指定音频
+		
+		$('.bow-note,.yellow-3dbtn,.bobing-btn,.bobing-count').fadeIn(300);
+		$('.result').html(resultArray[6]);
+		
+	},1200);
+	flag=0;
+	
+};//博饼结果函数
+
+function diceReset(){
+	$('.result').hide();
+	$('.dice').hide().removeClass('active');
+	flag=1;
+};//清除上一博饼状态
+
+$(document).ready(function() {
+	
+	cHeight();
+	
+	liSum('.addWrap','.pic_pin','#pagination','cur');
+	var bullets = document.getElementById('pagination').getElementsByTagName('li');
+    var banner = Swipe(document.getElementById('mySwipe'),{
+        auto:4000,
+        continuous: true,
+        disableScroll:false,
+        callback: function(pos) {
+            var i = bullets.length;
+            while (i--) {
+              bullets[i].className = ' ';
+            }
+            bullets[pos].className = 'cur';
+        }
+    });//轮播
+
+	if(flag){
+		bowfadeIn();
+	}
+	
+	jQuery("#bobing").on('click',function(event){
+		$('.yellow-3dbtn,.bobing-btn,.bobing-count').hide();
+		diceReset();
+		bowfadeIn();
+		setTimeout(function(){
+			result();
+			$('.result,.yellow-3dbtn,.bobing-btn,.bobing-count').show();
+		},1200);
+	});//立即博饼
+	
+	jQuery(".bobing-btn").on('click',function(event){
+		diceReset();
+		if(flag){
+			setTimeout(function(){
+				result();
+				$('.result').show();
+			},100);
+		}
+	});//再博一次
+	
+	if(!flag){
+		$('.mybow-panel').hide()
+		$('.bow-count,.author-opt,.dock').show();
+	}
+
+	jQuery(".mybow-panel").on('click','.yellow-3dbtn',function(event){
+		bowfadeOut();
+	});//博饼结果函数
+	
+	jQuery(".yellow-3dbtn2").on('click',function(event){
+		bowfadeIn();
+	});//显示结果函数
+	
+	jQuery(".winning-reminder>a.color-coffee,#winning_note").on('click',function(event){
+		$('.cover-bg,#code-win').show();
+	});//公众号二维码弹窗
+	
+	jQuery(".mybow-panel").on('click','.icon-rule',function(event){
+		$('.cover-bg,#fuqi-win').show();
+	});
+	jQuery(".view-rule").on('click',function(event){
+		$('.cover-bg,#rule-win').show();
+	});
+	//规则弹窗
+	
+	jQuery(".share-btn").on('click',function(event){
+		$('.share-pop').show();
+		setTimeout(function(){$('.share-pop').fadeOut(1000);},1000);
+	});
+});
+</script>
+</head>
+<body class="dock-pb">
+<header class="addWrap">
+    <div class="swipe" id="mySwipe">
+    <div class="swipe-wrap">
+        <div class="pic_pin"><a href="#"><img class="swipeimage" src="img/k25x16.png" style="background-image:url('upload/v-1.jpg');"alt="#" /></a></div>
+        <div class="pic_pin"><a href="#"><img class="swipeimage" src="img/k25x16.png" style="background-image:url('upload/v-1.jpg');"alt="#" /></a></div>
+        <div class="pic_pin"><a href="#"><img class="swipeimage" src="img/k25x16.png" style="background-image:url('upload/v-1.jpg');"alt="#" /></a></div>
+    </div>
+    </div>
+</header>
+
+<section class="relative mybow-panel">
+	<audio src="img/audiott.mp3" id="audiott"></audio>
+    <audio src="" id="audiors"></audio>
+	<img src="img/mybowbg.jpg" alt="" />
+    <div>
+        <div class="bow-note">
+            <a class="icon icon-rule" href="javascript:"></a>
+            <div class="result ulib-r10 font-16"></div>
+        </div>
+        <div class="bowl">
+            <img src="img/bowl.png" alt="" />
+            <em class="dice dice1"><img src="img/dice1.png" alt="" /></em>
+            <em class="dice dice2" style="top:45%;left:55%;"><img src="img/dice2.png" alt="" /></em>
+            <em class="dice dice3" style="top:54%;left:45%;"><img src="img/dice3.png" alt="" /></em>
+            <em class="dice dice4" style="top:41%;left:40%;"><img src="img/dice4.png" alt="" /></em>
+            <em class="dice dice5" style="top:58%;left:60%;"><img src="img/dice5.png" alt="" /></em>
+            <em class="dice dice6" style="top:62%;left:35%;"><img src="img/dice6.png" alt="" /></em>
+        </div>
+        <a class="yellow-3dbtn font-13" href="javascript:">收起<i class="icon icon-up"></i></a>
+        <a class="icon bobing-btn" href="javascript:"></a>
+        <div class="bobing-count color-pink text-center">今天还可博<span class="color-white ml3 mr3">9</span>次；已增加<span class="color-white ml3 mr3">10</span>福气</div>
+    </div>
+</section>
+
+<section class="inner author-opt">
+	<div class="relative">
+    	<div class="theme-author text-center relative">
+        	<div class="author-avatar ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');"alt="北野太郎" /></div>
+            <p class="font-18">北野太郎</p>
+        </div>
+        <div class="winning-reminder"><a class="font-15 color-coffee" href="javascript:"><i class="icon icon-win"></i>中奖提醒</a></div>
+        <a class="award-opt view-rule font-12 color-coffee ulib-r10" href="javascript:"><i class="icon-viewrule font-10 ulib-r10">?</i>活动规则</a>
+    </div>
+</section>
+
+<section class="bow-count">
+    <div class="inner">
+        <div class="pattern-panel relative fn-flex">
+        	<div class="fn-flex-item col-pin text-center">
+                <div class="col-pincon">
+                    <div class="font-15">880</div>
+                    <div class="mt2 color-lightgray font-12">自己可博</div>
+                </div>
+            </div>
+        	<div class="fn-flex-item col-pin bls text-center">
+                <div class="col-pincon">
+                    <div class="font-15">880</div>
+                    <div class="mt2 color-lightgray font-12">好友可博</div>
+                </div>
+            </div>
+            <div class="fn-flex-item col-pin bls text-center">
+                <div class="col-pincon">
+                    <div class="font-15">880</div>
+                    <div class="mt2 color-lightgray font-12">今日福气</div>
+                </div>
+            </div>
+            <div class="fn-flex-item col-pin bls text-center">
+                <div class="col-pincon">
+                    <div class="relative font-15"><span class="font-12">暂无排名</span></div>
+                    <div class="mt2 color-lightgray font-12">包厢排名</div>
+                </div>
+            </div>
+        </div>
+        <div class="mt10 fn-flex font-15">
+            <div class="fn-flex-item mr3" flexsize="3"><a id="bobing" class="yellow-btn ulib-r10" href="javascript:">立即博饼</a></div>
+            <div class="fn-flex-item" flexsize="2"><a class="green-btn share-btn ulib-r10" href="javascript:">找朋友</a></div>
+        </div>
+        <div class="mt10 fn-flex font-15">
+            <div class="fn-flex-item mr3 pt9 color-lightgray font-12 text-center" flexsize="3">自己已博完，剩下的交给朋友吧</div>
+            <div class="fn-flex-item" flexsize="2"><a id="share2" class="green-btn share-btn ulib-r10" href="javascript:">找朋友</a></div>
+        </div>
+        <div class="mt10 font-12 color-lightgray text-center">
+        	<div class="mt2">今日已博完，明天继续奋战吧</div>
+            <div class="mt2">设置中奖提醒，及时获取中奖通知<a id="winning_note" class="ml5 font-14 color-coffee" href="javascript:">立即设置</a></div>
+        </div>
+    </div>
+
+    <div class="mt5 wavered">
+    	<div class="inner">
+            <div class="wave-hd text-center relative">
+                <div class="font-17 wave-hdtx">
+                    博饼记录
+                    <select class="font-15 select-sty ulib-r10">
+                        <option>今天</option>
+                        <option>昨天</option>
+                        <option>0803</option>
+                    </select>
+                </div>
+            </div>
+            <div class="color-darkred font-12 pt20 pb20">今天还没有博饼</div>
+            <div class="color-darkred fn-clear">
+                <div class="fn-fl font-15"><span class="color-yellow">7</span>人已博</div>
+                <div class="fn-fr font-12">每人每天可帮我博一次</div>
+            </div>
+            
+            <div class="mt5 pattern2-panel relative fn-flex text-center color-yellow font-15">
+                <div class="fn-flex-item">544福气</div>
+                <div class="fn-flex-item">第15名</div>
+                <div class="fn-flex-item">未获奖</div>
+            </div>
+            
+            <div class="mt5 color-darkred text-center font-15">共6条记录</div>
+        </div>
+	</div>
+    <div>
+        <table class="borecord-tb font-15">
+            <tbody>
+                <tr>
+                    <td><span class="author-avatar2 ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');" alt="EVAN" /></span>EVAN</td>
+                    <td class="text-right color-lightgray">已博 10 次，共 50 福气</td>
+                </tr>
+                <tr>
+                    <td><span class="author-avatar2 ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');" alt="EVAN" /></span>EVAN</td>
+                    <td class="text-right color-lightgray">50福气</td>
+                </tr>
+                <tr>
+                    <td><span class="author-avatar2 ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');" alt="EVAN" /></span>EVAN</td>
+                    <td class="text-right color-lightgray">50福气</td>
+                </tr>
+                <tr>
+                    <td><span class="author-avatar2 ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');" alt="EVAN" /></span>EVAN</td>
+                    <td class="text-right color-lightgray">50福气</td>
+                </tr>
+                <tr>
+                    <td><span class="author-avatar2 ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');" alt="EVAN" /></span>EVAN</td>
+                    <td class="text-right color-lightgray">50福气</td>
+                </tr>
+                <tr>
+                    <td><span class="author-avatar2 ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');" alt="EVAN" /></span>EVAN</td>
+                    <td class="text-right color-lightgray">50福气</td>
+                </tr>
+                <tr>
+                    <td><span class="author-avatar2 ulib-r10"><img class="ulib-r10" src="img/k1x1.png" style="background-image:url('upload/v-2.jpg');" alt="EVAN" /></span>EVAN</td>
+                    <td class="text-right color-lightgray">50福气</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+<ul class="dock clear font-13">
+	<li class="active">
+        <a href="index.html">
+            <div class="dock-icon"><i class="icon icon-zhong"></i></div>
+            <p>首页</p>
+        </a>
+    </li>
+	<li>
+    	<a href="find.html">
+            <div class="dock-icon"><i class="icon icon-qiu"></i></div>
+            <p>发现</p>
+        </a>
+    </li>
+	<li>
+    	<a href="lb-notopen.html">
+            <div class="dock-icon"><i class="icon icon-kuai"></i></div>
+            <p>福袋</p>
+        </a>
+    </li>
+	<li>
+    	<a href="u-mine.html">
+            <div class="dock-icon"><i class="icon icon-le"></i></div>
+            <p>我的</p>
+        </a>
+    </li>
+</ul>
+
+<!--分享提示-->
+<div class="share-pop text-right">朋友都在这里，你懂的</div>
+<!--end分享提示-->
+
+<!--公众号二维码弹窗-->
+<div class="cover-bg"></div>
+<div id="code-win" class="cover-pop">
+	<i class="cover-line"></i>
+    <div class="cover-hd text-center">
+    	<div class="cover-hd-tx font-16">关注获取中奖通知</div>
+        <img src="img/win-hd.png" alt="" />
+    </div>
+    <div class="cover-con text-center">
+    	<p class="code-con"><img src="img/code.jpg" alt="长安识别二维码 关注公众号，及时接收获奖通知" /></p>
+        <p class="mt5 font-13">长安识别二维码<br />关注公众号，及时接收获奖通知</p>
+        <p class="mt5"><a class="red-btn ulib-r10" onClick="$('.cover-bg,.cover-pop').hide();" href="javascript:">我知道了</a></p>
+    </div>
+</div>
+<!--end公众号二维码弹窗-->
+
+<!--活动规则弹窗-->
+<div id="rule-win" class="cover-pop">
+	<i class="cover-line"></i>
+    <div class="cover-hd text-center">
+    	<div class="cover-hd-tx font-16">活动规则</div>
+        <img src="img/win-hd.png" alt="" />
+    </div>
+    <div class="cover-con">
+    	<dl class="rule-dl">
+        	<dt class="font-13"><i class="icon-regspot ulib-r10"></i>奖品规则</dt>
+            <dd class="font-12">
+            	<p>1、每天、每个商家包厢均会按照本包厢的福气值排名，发放福袋礼品大奖，具体获奖名次见各个商家的包厢页面。</p>
+                <p class="mt3">2、每天所有商家包厢的福气值总和排名前<span class="color-red ml3 mr3">25</span>名将获得小鱼网线下博饼门票<span class=" font-10 color-gray">（每人只能获得一次，身份证或手机号相同均视为同一个人）</span>。</p>
+            </dd>
+        </dl>
+        <dl class="rule-dl">
+        	<dt class="font-13"><i class="icon-regspot ulib-r10"></i>玩法规则</dt>
+            <dd class="font-12">
+            	<p>1、每个商家包厢，每天共有 20 次博饼机会。其中自己可博 10 次，另外 10 次需让好友帮忙，每名好友各 1 次。</p>
+                <p class="mt3">2、次日中午12点前，按照福气值排名公布当天最终获奖名单，福气值相同时按最后一次博饼的时间先后顺序排名。若有违规行为，将取消获奖资格。</p>
+            </dd>
+        </dl>
+        <p class="font-10 color-gray">*小鱼网在法律范围内保留对本活动的最终解释权</p>
+        <p class="mt5"><a class="red-btn ulib-r10" onClick="$('.cover-bg,.cover-pop').hide();" href="javascript:">我知道了</a></p>
+    </div>
+</div>
+<!--end活动规则弹窗-->
+
+<!--福气规则弹窗-->
+<div id="fuqi-win" class="cover-pop">
+	<i class="cover-line"></i>
+    <div class="cover-hd text-center">
+    	<div class="cover-hd-tx font-16">福气规则</div>
+        <img src="img/win-hd.png" alt="" />
+    </div>
+    <div class="cover-con" style="padding-left:0;padding-right:0;">
+    	<table class="fuqirule-tb">
+        	<thead class="font-12">
+            	<tr>
+                	<th>名称</th>
+                    <th>示例</th>
+                    <th>福气值</th>
+                </tr>
+            </thead>
+            <tbody class="font-9">
+            	<tr>
+                	<td>状元插金花</td>
+                    <td><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini1.png" alt="#" /><img src="img/dicemini1.png" alt="#" /></td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                	<td>六勃红</td>
+                    <td><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /></td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                	<td>六勃黑</td>
+                    <td><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /></td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                	<td>五红</td>
+                    <td><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini0.png" alt="#" /></td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                	<td>五子带一秀</td>
+                    <td><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini4.png" alt="#" /></td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                	<td>五子</td>
+                    <td><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini0.png" alt="#" /></td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                	<td>状元</td>
+                    <td><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini0.png" alt="#" /><img src="img/dicemini0.png" alt="#" /></td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                	<td>对堂</td>
+                    <td><img src="img/dicemini1.png" alt="#" /><img src="img/dicemini2.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini5.png" alt="#" /><img src="img/dicemini6.png" alt="#" /></td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                	<td>三红</td>
+                    <td><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini0.png" alt="#" /><img src="img/dicemini0.png" alt="#" /><img src="img/dicemini0.png" alt="#" /></td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                	<td>四进</td>
+                    <td><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini3.png" alt="#" /><img src="img/dicemini0.png" alt="#" /><img src="img/dicemini0.png" alt="#" /></td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                	<td>二举</td>
+                    <td><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini0.png" alt="#" /><img src="img/dicemini0.png" alt="#" /><img src="img/dicemini0.png" alt="#" /><img src="img/dicemini0.png" alt="#" /></td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                	<td>一秀</td>
+                    <td><img src="img/dicemini4.png" alt="#" /><img src="img/dicemini0.png" alt="#" /><img src="img/dicemini0.png" alt="#" /><img src="img/dicemini0.png" alt="#" /><img src="img/dicemini0.png" alt="#" /><img src="img/dicemini0.png" alt="#" /></td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="mt5 wp50"><a class="red-btn ulib-r10" onClick="$('.cover-bg,.cover-pop').hide();" href="javascript:">我知道了</a></p>
+    </div>
+</div>
+<!--end福气规则弹窗-->
+
+</body>
+</html>
