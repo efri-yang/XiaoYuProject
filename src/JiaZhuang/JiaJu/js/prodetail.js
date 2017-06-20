@@ -162,7 +162,7 @@
         function paginationInit() {
             var strLis = "",$paginationWrap;
             if (opts.pagination.show) {
-                if (len > 1) {
+               
                     $numPagination=$('<span class="num"><b id="J_numcount">1</b>/'+len+'</span>')
                     $pagination = $('<ul></ul>');
                     $pagination.addClass(opts.pagination.className);
@@ -175,12 +175,14 @@
 
                     $pagination_lis = $pagination.find("li");
                     $pagination_lis.eq(Index).addClass("oncurr");
-                    $pagination_lis.each(function() {
-                        $(this).bind(opts.pagination.evtType, paginationEvt);
-                        $(this).bind("mouseover", thisMouseover).bind("mouseout", thisMouseout);
+                    if(len>1){
+                        $pagination_lis.each(function() {
+                            $(this).bind(opts.pagination.evtType, paginationEvt);
+                            $(this).bind("mouseover", thisMouseover).bind("mouseout", thisMouseout);
 
-                    })
-                }
+                        })
+                    }
+               
             }
         };
 
@@ -289,10 +291,11 @@
             //初始化ul
             $this.css({ width: opts.width, height: opts.height, position: "relative" });
             //获取效果的方式
+            paginationInit();
             if (len > 1) {
                 animationWay = getAnimWay(opts.effect);
                 btnInit();
-                paginationInit();
+                
                 descInit();
                 $this.bind("mouseover", thisMouseover);
                 $this.bind("mouseout", thisMouseout);

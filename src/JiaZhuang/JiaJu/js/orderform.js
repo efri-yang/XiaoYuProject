@@ -97,7 +97,6 @@
                  }
              },
              valid: function() {
-                
                  //开发请写这里,服务端请返回 true表示成功 返回false 表示失败
                  $.ajax({
                      url:url,
