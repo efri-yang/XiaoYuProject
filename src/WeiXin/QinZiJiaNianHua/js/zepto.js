@@ -2741,8 +2741,13 @@ window.$ === undefined && (window.$ = Zepto)
             }
         };
     });
-    $.support.touch = !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof window.DocumentTouch)
-    
+    $.support.touch = !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof window.DocumentTouch);
+    $.device=(function(){
+        return {
+            ios:!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+            android:navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Adr') > -1
+        }
+    })();
     $.fn.show = function(){
         var elementDisplay = {};
         function defaultDisplay(nodeName) {

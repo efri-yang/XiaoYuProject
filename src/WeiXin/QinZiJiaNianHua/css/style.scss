@@ -1,14 +1,25 @@
+@import "./scss/_normalize.scss";
+@import "./scss/_base.scss";
+/**
+ * 
+ */
+
+@import "./_iconfont.scss";
+
 %text-overflow {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-
-a {
-    text-decoration: none;
+%btn-nosel{
+	-ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
-
 @function px2rem($px, $base-font-size:75px) {
     @if (unitless($px)) {
         @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
@@ -29,6 +40,8 @@ a {
         font-size: $font-size * 3;
     }
 }
+
+
 .container {
     max-width: px2rem(750px);
     margin: 0 auto;
@@ -37,8 +50,32 @@ a {
 .bgb3e8ff{
 	background: #b3e8ff;
 }
+a {
+    text-decoration: none;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
 
 
+@mixin border-out() {
+    border:px2rem(4px) solid #73bfe2;
+	border-radius:px2rem(20px);
+}
+@mixin border-in() {
+    border:px2rem(10px) solid #cbedf9;
+	background:#e1f6fc;
+	border-radius:px2rem(20px);
+}
+
+
+@import "./scss/_validate.scss";
 /**
  * 底部
  */
@@ -47,41 +84,102 @@ a {
 	height:px2rem(197px);
 	background:url("../images/footer_bg.png") no-repeat center center;
 	background-size:100% 100%;
-	position:fixed;
+	position:absolute;
 	left:0;
 	bottom:0;
 	width:100%;
+	z-index:10;
+	padding-top:px2rem(107px);
 	ul{
 		display: -webkit-flex;
     	display: flex;
+
     	li{
     		flex:1;
+    		a{
+    			display:block;
+    			width:px2rem(167px);
+    			height:px2rem(80px);
+    			margin:0 auto;
+    			background-repeat:no-repeat;
+    			background-size:100% 100%;
+    			transition:all 0.5s ease-out;
+    			position:relative;
+    			top:0;
+    		}
+    		&:nth-child(1){
+				a{
+					background-image:url("../images/ft_btn_sy.png");
+				}
+    		}
+    		&:nth-child(2){
+				a{
+					background-image:url("../images/ft_btn_hdsm.png");
+				}
+    		}
+    		&:nth-child(3){
+				a{
+					background-image:url("../images/ft_btn_hjdj.png");
+				}
+    		}
+    		&:nth-child(4){
+				a{
+					background-image:url("../images/ft_btn_jnhbm_hover.png");
+				}
+    		}
+    		&.active{
+				a{
+					top:px2rem(-20px);
+				}
+    		}
     	}
 	}
 }
+
 /**
- * 活动说明
+ * iscroll 公共样式
  */
-.activity-wrap{
+.iscroll-full-container{
 	position:absolute;
 	left:0;
 	top:0;
 	right:0;
 	bottom:px2rem(105px);
-	padding:px2rem(50px) px2rem(30px) px2rem(80px);
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
-	-webkit-box-flex: 1;
-	background:#b3e8ff;
+
+}
+.iscroll-scroller{
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+	padding-bottom:px2rem(80px);
+}
+/**
+ * 活动说明
+ */
+.activity-wrap{
+	padding:px2rem(50px) px2rem(30px) 0;
 }
 .activity-inner{
 	margin-top: px2rem(50px);
-	border:px2rem(4px) solid #73bfe2;
-	border-radius:px2rem(20px);
+	@include border-out;
 	.activity-desc{
-		border:px2rem(10px) solid #cbedf9;
-		background:#e1f6fc;
-		border-radius:px2rem(20px);
+		@include border-in;
 		padding:px2rem(10px);
 	}
 	.caption{
@@ -141,4 +239,481 @@ a {
 			
 		}
 	}
+}
+
+
+/**
+ * 获奖、登记
+ */
+.award-container{
+	padding:px2rem(40px) px2rem(30px) 0;
+}
+.award-forms-wrap{
+	@include border-out;
+}
+.award-forms-inner{
+	@include border-in;
+	
+}
+.award-forms{
+	padding:px2rem(30px) px2rem(10px) px2rem(45px);
+	@include font-dpr(16px);
+	>.item{
+		margin-bottom:px2rem(20px);
+		color:#1681b3;
+		&.item-ages{
+			p{
+				float:left;
+				width:31%;
+				padding:px2rem(13px) 0;
+				&:nth-child(3n){
+					width:38%;
+				}
+			}
+		}
+	}
+	.ipt-submit{
+		width:px2rem(449px);
+		height:px2rem(83px);
+		overflow:hidden;
+		display:block;
+		margin:0 auto;
+		background:url("../images/btn_djhjxx.png") no-repeat center center;
+		border:none;
+		background-size:100% 100%;
+	}
+}
+.ipt-com-text{
+	height:px2rem(80px);
+	padding:px2rem(30px) px2rem(15px);
+	width:100%;
+	border:px2rem(3px) solid #57afd8;
+	border-radius:px2rem(15px);
+	@include font-dpr(16px);
+	color:#1681b3;
+}
+.ipt-com-radio{
+	-webkit-appearance: none;
+    width:px2rem(35px);
+    height:px2rem(35px);
+    border:px2rem(3px) solid #57afd8;
+    text-align: center;
+    vertical-align: top;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .125);
+    background:#fff;
+    border-radius:50%;
+    margin-right:px2rem(5px);
+    &:checked{
+    	border:none;
+    	background:none;
+    	&:before{
+    		content: "\e6c5";
+		    font-size:px2rem(38px);
+		    line-height:px2rem(35px);
+		    vertical-align: top;
+		    margin-left: -2px;
+		    color:#57afd8;
+		    
+    	}
+    }
+}
+.ipt-com-chkbox{
+	-webkit-appearance: none;
+    width:px2rem(35px);
+    height:px2rem(35px);
+    border:px2rem(3px) solid #57afd8;
+    text-align: center;
+    vertical-align: top;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .125);
+    background:#fff;
+    margin-right:px2rem(5px);
+    &:checked{
+    	border:none;
+    	background:none;
+    	&:before{
+    		content: "\e639";
+		    font-size:px2rem(42px);
+		    line-height:px2rem(42px);
+		    vertical-align: middle;
+		    margin-left:px2rem(-4px);
+		    color:#57afd8;
+    	}
+    }
+}
+
+/**
+ * 已经获得的奖品
+ */
+.award-get-wrap{
+	margin-top:px2rem(65px);
+	@include border-out;
+}
+.award-get-inner{
+	@include border-in;
+}
+.award-get{
+	.caption{
+		width: px2rem(424px);
+		height:px2rem(107px);
+		overflow:hidden;
+		margin:px2rem(-40px) auto 0;
+		position:relative;
+		background:url("../images/tit_yhdjp.png") no-repeat  center center;
+		background-size: 100% 100%;
+	}
+	.list{
+		padding:px2rem(30px) px2rem(30px);
+		li{
+			float:left;
+			padding:0 px2rem(15px);
+			line-height:1.5;
+			color:#1681b3;
+			@include font-dpr(16px);
+		}
+	}
+}
+
+
+/**
+ * 奖品列表
+ */
+.award-pro-wrap{
+	margin-top:px2rem(65px);
+	@include border-out;
+}
+.award-pro-inner{
+	@include border-in;
+}
+.award-pro{
+	.caption{
+		width: px2rem(424px);
+		height:px2rem(107px);
+		overflow:hidden;
+		margin:px2rem(-40px) auto 0;
+		position:relative;
+		background:url("../images/tit_jplb.png") no-repeat  center center;
+		background-size: 100% 100%;
+	}
+	.list{
+		padding:px2rem(30px) px2rem(5px);
+		li{
+			float:left;
+			padding:0 px2rem(8px);
+			
+			width:33.33%;
+			color:#1681b3;
+			margin-bottom:px2rem(30px);
+			@include font-dpr(16px);
+			.area-up{
+				background:#c6eeff;
+				padding:px2rem(10px) 0;
+				border-radius:px2rem(15px);
+			}
+			.pic{
+				position: relative;
+				width:px2rem(130px);
+				height:px2rem(130px);
+				margin:0 auto;
+				overflow:hidden;
+				img{
+					position: absolute;
+				    left: 50%;
+				    top: 50%;
+				    -webkit-transform: translate(-50%,-50%);
+				    -ms-transform: translate(-50%,-50%);
+				    -moz-transform: translate(-50%,-50%);
+				    max-width:100%;
+				}
+			}
+			.company{
+				text-align:center;
+				margin-top:px2rem(5px);
+				@include font-dpr(14px);
+				
+			}
+			.count{
+				text-align:center;
+				margin-top:px2rem(5px);
+				@include font-dpr(14px);
+			}
+			.name{
+				text-align:center;
+				margin-top:px2rem(8px);
+				@include font-dpr(16px);
+			}
+		}
+	}
+}
+
+/**
+ * 游戏说明
+ */
+.award-gameintro-wrap{
+	margin-top:px2rem(65px);
+	@include border-out;
+}
+
+.award-gameintro-inner{
+	@include border-in;
+}
+.award-gameintro{
+	padding:0 px2rem(10px);
+	.caption{
+		width: px2rem(424px);
+		height:px2rem(107px);
+		overflow:hidden;
+		margin:px2rem(-40px) auto 0;
+		position:relative;
+		background:url("../images/tit_yxgzsm.png") no-repeat  center center;
+		background-size: 100% 100%;
+	}
+	.list{
+		@include font-dpr(16px);
+		line-height: 1.5;
+		margin-top:px2rem(40px);
+		padding-bottom: px2rem(20px);
+		color:#1681b3;
+		li{
+			position:relative;
+			padding-left: px2rem(45px);
+			margin-bottom: px2rem(20px);
+			>.num{
+				width:px2rem(34px);
+				height:px2rem(34px);
+				line-height:px2rem(34px);
+				text-align: center;
+				overflow:hidden;
+				background:#1681b3;
+				border-radius: px2rem(5px);
+				position: absolute;
+				left:0;
+				top:px2rem(7px);
+				color:#ffffff;
+			}
+		}
+	}
+	.tip{
+		border:px2rem(3px) dashed #1681b3;
+		border-radius:px2rem(15px);
+		background:#c8eeff;
+		@include font-dpr(16px);
+		color:#1681b3;
+		padding:px2rem(20px) px2rem(10px);
+		margin-bottom:px2rem(40px);
+	}
+}
+
+/**
+ * 嘉年华页面
+ */
+.jnh-banner{
+	text-align:center;
+	img{
+		max-width:100%;
+	}
+}
+
+.jnh-form-wrap{
+	margin:px2rem(30px) px2rem(30px) 0;
+	@include border-out;
+}
+.jnh-form-inner{
+	@include border-in;
+}
+.jnh-form{
+	padding:px2rem(30px) px2rem(15px);
+	.item{
+		margin-bottom:px2rem(20px);
+		@include font-dpr(16px);
+		color:#1681b3;
+	}
+	.item-time{
+		padding-top:px2rem(15px);
+		padding-bottom:px2rem(10px);
+		p{
+			margin-bottom:px2rem(25px);
+		}
+	}
+	.ipt-submit{
+		width:px2rem(449px);
+		height:px2rem(83px);
+		overflow:hidden;
+		background:url("../images/btn_tjbm.png") no-repeat center center;
+		background-size:100% 100%;
+		border:none;
+		margin:0 auto;
+		display:block;
+		@extend %btn-nosel;
+		transition:all 0.3s ease-out;
+		&:active{
+			transform:scale(1.1,1.1);
+		}
+	}
+}
+/**
+ * 首页
+ */
+
+html,body{
+	width:100%;
+	height:100%;
+}
+
+@keyframes startbtnzoom {
+  from {
+    transform:translateY(0px);
+  }
+  50%{
+  	transform:translateY(-5px);
+  }
+
+  to {
+    transform:translateY(0px);
+  }
+}
+
+.home-game{
+	background:url("../images/game_bg.jpg") no-repeat  center center;
+	background-size:100% 100%;
+	width:100%;
+	height:100%;
+
+	.handle-list{
+		position:absolute;
+		width:100%;
+		top:px2rem(30px);
+		li{
+			float:left;
+			width:50%;
+			a{
+				display:block;
+				width:px2rem(284px);
+				height:px2rem(74px);
+				margin:0 auto;
+				background-size:auto 100%;
+				background-repeat:no-repeat;
+				background-position:  center center;
+			}
+			&:nth-child(1){
+				a{
+					background-image:url("../images/btn_mflqofo.png");
+				}
+			}
+			&:nth-child(2){
+				a{
+					background-image:url("../images/btn_mflqswisse.png");
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+.game-start-btn{
+	width:px2rem(150px);
+	height:px2rem(150px);
+	overflow:hidden;
+	position:absolute;
+	bottom:px2rem(140px);
+	right:px2rem(30px);
+	background:url("../images/game_start_btn.png") no-repeat center center;
+	background-size:100% 100%;
+	animation-name:startbtnzoom;
+}
+
+@import "./scss/_dice.scss";
+
+.dialog-qz-box{
+	position:fixed;
+	left:50%;
+	margin-left:px2rem(-638px/2);
+	top:50%;
+	margin-top:px2rem(-850px/2);
+	width:px2rem(638px);
+	height:px2rem(675px);
+	background:url("../images/dia_bg.png") no-repeat;
+	background-size:100% 100%;
+	padding-top:px2rem(270px);
+
+	.dice-box{
+		border:px2rem(6px) solid #fdec3d;
+		background:#d98d0b;
+		width:px2rem(218px);
+		height:px2rem(218px);
+		overflow:hidden;
+		border-radius:px2rem(20px);
+		box-shadow:0 0 10px 0px #d98f06;
+		margin:px2rem(50px) auto 0;
+		.pic{
+			width:px2rem(176px);
+			height:px2rem(174px);
+			overflow:hidden;
+			display:block;
+			margin: px2rem(20px) auto 0;
+			b{
+				width:px2rem(176px);
+				height:px2rem(1044px);
+				overflow:hidden;
+				background-repeat:no-repeat;
+				background-size:100% auto;
+				display:block;
+				background-image: url("../images/dices_bg.png");
+				animation-duration: 1s;
+  				animation-fill-mode: both;
+				&.dice1{
+					animation-name:dicedance1;
+				}
+				&.dice2{
+					animation-name:dicedance2;
+				}
+				&.dice3{
+					animation-name:dicedance3;
+				}
+				&.dice4{
+					animation-name:dicedance4;
+				}
+				&.dice5{
+					animation-name:dicedance5;
+				}
+				&.pic6{
+					animation-name:dicedance4;
+				}
+			}
+		}
+	}
+	.close-dice{
+		width:px2rem(97px);
+		height:px2rem(78px);
+		overflow:hidden;
+		background: url("../images/dia_close_1.png") no-repeat center center;
+		background-size:100% 100%;
+		position:absolute;
+		left:50%;
+		margin-left:px2rem(-97px/2);
+		bottom:px2rem(0px);
+	}
+}
+.dialog-qz-shadow{
+	position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity:0;
+    z-index: 998;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition:all 0.6s ease-out;
+    &.in{
+		opacity:1;
+    }
+    &.out{
+    	opacity:0;
+    }
 }
