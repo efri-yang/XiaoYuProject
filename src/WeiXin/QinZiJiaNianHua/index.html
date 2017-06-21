@@ -6,12 +6,14 @@
     <script type="text/javascript" src="js/zepto.js"></script>
     <script type="text/javascript" src="js/flexible.js"></script>
     <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/layer_mobile/layer.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/common.js"></script>
 </head>
 
 <body class="bgb3e8ff home-game">
     
-    <a href="#" class="game-start-btn animated infinite"></a>
+    <a href="#" class="game-start-btn animated infinite" id="J_game-start"></a>
     <ul class="handle-list">
         <li><a href="#"></a></li>
         <li><a href="#"></a></li> 
@@ -33,21 +35,52 @@
         </ul>
     </div>
 
-    <div class="dialog-qz-box">
-         <div class="dice-box"><span class="pic" id="J_diceresult"></span></div>
-         <a href="#" class="close-dice"></a>
-
-         <button id="x1">单机1</button>
-         <button>单机2</button>
+    <div class="dialog-qz-box" id="J_dialog-qz-box">
+        <div class="dia-dice-box">
+            <div class="dice-box">
+                <span class="pic" id="J_diceresult"></span>
+            </div>
+            <p class="tip"></p>
+        </div>
+         <a href="#" class="close-dice" data-roler='close'></a>
     </div>
-
     <script type="text/javascript">
+
     $(function(){
 
-            $("#x1").on("click",function(){
-                
-                $("<b class='dice1'></b>").appendTo($("#J_diceresult"))
+            var DiceDia=$("#J_dialog-qz-box").dialogs({
+                shadeClose:false,
+                afterHide:function(){
+                    $("#J_diceresult").html("")
+                }
+            });
+            $("#J_game-start").on("click",function(){
+                $.ajax({
+                    url:"http://wnworld.com/conn/dice.php",
+                    data:"",
+                    dataType:"json",
+                    beforeSend:function(){
+                        //弹出加载层
+                        layer.open({type: 2,shade:false});
+                    },
+                    success:function(data){
+                        layer.closeAll();
+                        //0 1 23456 0代表的是没有次数的时候
+                        if(!!data){
+                            DiceDia.show(function(){
+                                $("#J_diceresult").html('<b class="dice'+data+'"></b>');
+                            });
+                        }else{
+                            layer.open({
+                                content: '次数用光啦！通过分享可以获取机会！'
+                                ,btn: '我知道了'
+                            });
+                        }
+                    }
+                })
+               
             })
+           
     })
     </script>
 </body>

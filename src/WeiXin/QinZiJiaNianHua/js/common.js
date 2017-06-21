@@ -160,64 +160,78 @@
     var Dialog = (function() {
         function Dialog(element, options) {
             this.$element = $(element);
-            this.opts = $.extend({}, $.fn.dialog.defaults, options);
+            this.opts = $.extend({}, $.fn.dialogs.defaults, options);
         }
         Dialog.prototype = {
             test: 100,
             _init: function() {
-               
+               var _this=this;
+               this.$element.on("touchmove", function(event) {
+                    event.stopPropagation();
+                    return false;
+                });
+               this.$element.find("[data-roler='close']").on("click",function(e){
+                    e.preventDefault();
+                    _this.hide();
+               })
             },
-            _shadowShow: function() {
-                var _this=this;
-                this.$shadow = $('<div class="dialog-qz-shadow"></div>');
+            _shadeShow: function() {
+                this.$shadow = $('<div class="dialog-qz-shadow in"></div>');
                 this.$shadow.appendTo($("body"));
+                this._shadeEvent();
+            },
+            _shadeHide:function() {
+                var _this=this;
+                this.$shadow.removeClass("in").addClass('out');
+                this._mainHide();
+                this.$shadow.animationEnd(function(){
+                    _this.$shadow.remove();
+                })
+            },
+            _shadeEvent:function(){
+                var _this=this;
                 if(!!this.opts.shadeClose){
                     this.$shadow.on("click",function(){
-                        _this.$shadow.removeClass('in').addClass('out');
-                        _this.$shadow.transitionEnd(function(){
-                            _this.$shadow.remove();
-                        })
+                       _this._shadeHide();
+                    }).on("touchstart touchmove", function(event) {
+                        _this._shadeHide();
+                        event.stopPropagation();
+                        return false;
+                    })
+                }else{
+                    this.$shadow.on("touchstart touchmove", function(event) {
+                        event.stopPropagation();
+                        return false;
                     })
                 }
-
-            },
-            _shadowHide: function() {
-                
-
             },
             _mainShow: function(fn) {
-                var self = this;
-                !!self.opts.beforeShow && self.opts.beforeShow();
-                self.$element.animate({ top: self.pos.top }, 250, "ease-out", function() {
-                    !!self.opts.afterShow && self.opts.afterShow();
-                    if (!!fn) {
-                        setTimeout(fn, 0)
-                    }
+                var _this=this;
+                !!this.opts.beforeShow && this.opts.beforeShow();
+                this.$element.addClass('dia-in').transitionEnd(function(){
+                    _this.opts.afterShow && _this.opts.afterShow();
+                    !!fn && setTimeout(fn, 0);
                 });
             },
             _mainHide: function(fn) {
-                var self = this;
-                !!self.opts.beforeHide && self.opts.beforeHide();
-                self.$element.animate({ top: self.pos.nTop }, 250, "ease-out", function() {
-                    !!self.opts.afterHide && self.opts.afterHide();
-                    if (!!fn) {
-                        setTimeout(fn, 0)
-                    }
-                });
+                var _this = this;
+                this.opts.beforeHide && this.opts.beforeHide();
+                this.$element.removeClass('dia-in').transitionEnd(function(){
+                    _this.opts.afterHide && _this.opts.afterHide();
+                    !!fn && setTimeout(fn, 0);
+                })
             },
             show: function(fn) {
-                var self = this;
-                if (self.opts.shadow) {
-                    self._shadowShow();
+                if(this.opts.shade){
+                    this._shadeShow();
                 }
-                self._mainShow(fn);
+                this._mainShow(fn);
             },
             hide: function(fn) {
-                var self = this;
-                if (self.opts.shadow) {
-                    self._shadowHide();
+                if (this.opts.shade) {
+                    this._shadeHide();
                 }
-                self._mainHide(fn);
+                this._mainHide(fn);
 
             }
         }
@@ -243,7 +257,7 @@
         })
     };
 
-    $.fn.dialog.defaults = {
+    $.fn.dialogs.defaults = {
         shade: true,
         shadeClose: true,
         beforeShow: function(){},
@@ -260,48 +274,48 @@
 
 
 
-$(function() {
+// $(function() {
 
-    $(window).on("load", function() {
-        var homeIscroll = new IScroll("#J_iscroll-full-container", {
-            scrollbars: true,
-            mouseWheel: true
-        });
-    });
-});
+//     $(window).on("load", function() {
+//         var homeIscroll = new IScroll("#J_iscroll-full-container", {
+//             scrollbars: true,
+//             mouseWheel: true
+//         });
+//     });
+// });
 
 
-//嘉年华页面
-(function() {
-    $(function() {
+// //嘉年华页面
+// (function() {
+//     $(function() {
     	
-        $("#J_jnh-form").mvalidate({
-            type: 1,
-            onKeyup: true,
-            sendForm:true,//验证通过后是否提交表单
-            firstInvalidFocus:false,
-            descriptions: {
-                username: {
-                    required: '请输入姓名',
-                },
-                phone: {
-                    required: '请输入手机号码',
-                    pattern: '您输入的手机号码格式不正确'
-                },
-                wechat: {
-                    required: '请输入微信号'
-                },
-                age: {
-                    required: '请输入参与活动宝宝的年龄',
-                    pattern: '您输入的年龄格式不正确'
-                },
-                times:{
-                    required: '请选择参与的时间'
-                }
-            },
-            valid:function(e){
-            	e.preventDefault();
-            }
-        })
-    })
-})();
+//         $("#J_jnh-form").mvalidate({
+//             type: 1,
+//             onKeyup: true,
+//             sendForm:true,//验证通过后是否提交表单
+//             firstInvalidFocus:false,
+//             descriptions: {
+//                 username: {
+//                     required: '请输入姓名',
+//                 },
+//                 phone: {
+//                     required: '请输入手机号码',
+//                     pattern: '您输入的手机号码格式不正确'
+//                 },
+//                 wechat: {
+//                     required: '请输入微信号'
+//                 },
+//                 age: {
+//                     required: '请输入参与活动宝宝的年龄',
+//                     pattern: '您输入的年龄格式不正确'
+//                 },
+//                 times:{
+//                     required: '请选择参与的时间'
+//                 }
+//             },
+//             valid:function(e){
+//             	e.preventDefault();
+//             }
+//         })
+//     })
+// })();
