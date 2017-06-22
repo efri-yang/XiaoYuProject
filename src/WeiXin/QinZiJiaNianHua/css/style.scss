@@ -84,7 +84,7 @@ a {
 	height:px2rem(197px);
 	background:url("../images/footer_bg.png") no-repeat center center;
 	background-size:100% 100%;
-	position:absolute;
+	position:fixed;
 	left:0;
 	bottom:0;
 	width:100%;
@@ -258,7 +258,7 @@ a {
 .award-forms{
 	padding:px2rem(30px) px2rem(10px) px2rem(45px);
 	@include font-dpr(16px);
-	>.item{
+	.item{
 		margin-bottom:px2rem(20px);
 		color:#1681b3;
 		&.item-ages{
@@ -607,6 +607,18 @@ html,body{
   }
 }
 
+@keyframes humanZoom{
+  0%{
+    transform:scale(0.9,0.9);
+  }
+  50%{
+  	transform:scale(1.1,1.1);
+  }
+  100%{
+  	transform:scale(0.75,0.75);
+  }
+}
+
 .home-game{
 	background:url("../images/game_bg.jpg") no-repeat  center center;
 	background-size:100% 100%;
@@ -641,6 +653,135 @@ html,body{
 			}
 		}
 	}
+
+	.gift-item{
+		width:px2rem(81px);
+		height: px2rem(94px);
+		overflow:hidden;
+		background:url("../images/gift_bg.png") no-repeat center center;
+		background-size:100% 100%;
+		position:absolute;
+		transition:all 0.5s ease-out;
+        &.open{
+        	z-index:10;
+        	bottom:100% !important;
+        }
+		&.gift1{
+			left:38%;
+			bottom:24%;
+		}
+		&.gift2{
+			left:57%;
+			bottom:30%;
+		}
+		&.gift3{
+			left:56.5%; //第三个
+			bottom:40%;
+			visibility:hidden;
+		}
+		&.gift4{
+			left:61%;
+			bottom:50.5%;
+		}
+		&.gift5{
+			left:43.5%;
+			bottom:56%;
+			visibility:hidden;
+		}
+		&.gift6{
+			left:23%;
+			bottom:61%;
+		}
+		&.gift7{
+			left:43%;
+			bottom:65.7%;
+		}
+		&.gift8{
+			left:62.5%;
+			bottom:69%;
+		}
+		&.gift9{
+			left:69.8%;
+			bottom:76%;
+			visibility:hidden;
+		}
+		&.gift10{
+			left:60.5%;
+			bottom:82.5%;
+		}
+		&.gift11{
+			left:42.5%;
+			bottom:86.2%;
+		}
+		&.gift12{
+			left:25%;
+			bottom:83%;
+		}	
+	}
+
+	.human{
+		width:px2rem(113px);
+		height:px2rem(143px);
+		position:absolute;
+		background:url("../images/btn_human.png") no-repeat center center;
+		background-size:100% 100%;
+		left:13%;
+		bottom:15%;
+		animation-name:startbtnzoom;
+	    animation-duration: 1s;
+  		animation-fill-mode: both;
+		transition:all 1s ease-out;
+		animation-iteration-count: infinite;
+		z-index:10;
+		&[data-run='1']{
+			left:38%;
+			bottom:24%;
+		}
+		&[data-run='2']{
+			left:57%;
+			bottom:30%;
+		}
+		&[data-run='3']{
+			left:56.5%;
+			bottom:40%;
+		}
+		&[data-run='4']{
+			left:61%;
+			bottom:50.5%;
+		}
+		&[data-run='5']{
+			left:43.5%;
+			bottom:56%;
+		}
+		&[data-run='6']{
+			left:23%;
+			bottom:61%;
+		}
+		&[data-run='7']{
+			left:43%;
+			bottom:65.7%;
+		}
+		&[data-run='8']{
+			left:62.5%;
+			bottom:69%;
+		}
+		&[data-run='9']{
+			left:69.8%;
+			bottom:76%;
+		}
+		&[data-run='10']{
+			left:60.5%;
+			bottom:82.5%;
+		}
+		&[data-run='11']{
+			left:42.5%;
+			bottom:86.2%;
+		}
+		&[data-run='12']{
+			left:25%;
+			bottom:83%;
+		}
+	}
 }
 
 
@@ -666,12 +807,12 @@ html,body{
 	left:50%;
 	margin-left:px2rem(-638px/2);
 	top:50%;
-	margin-top:px2rem(-850px/2);
+	margin-top:px2rem(-780px/2);
 	width:px2rem(638px);
-	height:px2rem(675px);
+	height:px2rem(599px);
 	background:url("../images/dia_bg.png") no-repeat;
 	background-size:100% 100%;
-	padding-top:px2rem(270px);
+	padding:px2rem(200px) px2rem(80px) 0;
 	visibility:hidden;
 	z-index:9999;
 	opacity: 0;
@@ -720,6 +861,7 @@ html,body{
 				background-size:100% auto;
 				display:block;
 				background-image: url("../images/dices_bg.png");
+				background-position:0 px2rem(174px);
 				animation-duration: 1s;
   				animation-fill-mode: both;
 				&.dice1{
@@ -737,8 +879,8 @@ html,body{
 				&.dice5{
 					animation-name:dicedance5;
 				}
-				&.pic6{
-					animation-name:dicedance4;
+				&.dice6{
+					animation-name:dicedance6;
 				}
 			}
 		}
@@ -794,5 +936,98 @@ html,body{
     }
     &.out{
     	animation-name:fadeOut;
+    }
+}
+
+
+/**
+ *未中奖弹出框
+ */
+.dia-noprize-box{
+	.txt-1{
+		width:px2rem(171px);
+		height:px2rem(59px);
+		background:url("../images/txt_hyh.png") no-repeat center center;
+		background-size:100% 100%;
+		margin:px2rem(5px) auto 0;
+	}
+	.txt-2{
+		width:px2rem(408px);
+		height:px2rem(47px);
+		background:url("../images/txt_zjzl.png") no-repeat center center;
+		background-size:100% 100%;
+		margin:px2rem(5px) auto 0;
+	}
+	.txt-guide{
+		margin-top:px2rem(10px);
+		padding:px2rem(10px) px2rem(20px);
+		border:px2rem(3px) dashed #f79920;
+		border-radius:px2rem(15px);
+		color:#b3470d;
+		line-height:1.3;
+		@include font-dpr(16px);
+	}
+	.handle-guide{
+		margin-top:px2rem(20px);
+		display: -webkit-flex;
+    	display: flex;
+		a{
+			flex:1;
+			display:block;
+			height:px2rem(78px);
+			background-size:auto 100%;
+			background-repeat:no-repeat;
+			background-position:center center;
+			&:nth-child(1){
+				margin-right:px2rem(5px);
+				background-image:url("../images/btn_bmxx.png");
+			}
+			&:nth-child(2){
+				margin-left:px2rem(5px);
+				background-image:url("../images/btn_green_gb.png");
+			}
+		}
+	}
+}
+
+/**
+ * 中奖弹出框
+ */
+.dia-hadprize-box{
+	.txt-1{
+		width:px2rem(155px);
+		height:px2rem(58px);
+		background:url("../images/txt_gxn.png") no-repeat center center;
+		background-size:100% 100%;
+		margin:px2rem(50px) auto 0;
+	}
+	.txt-prize{
+		text-align:center;
+		margin-top:px2rem(30px);
+		color:#4a1500;
+		line-height:1.5;
+		@include font-dpr(16px);
+	}
+	.btn-reg{
+		width:px2rem(449px);
+		height:px2rem(83px);
+		position:absolute;
+		left:50%;
+		bottom:px2rem(80px);
+		margin-left:px2rem(-449px/2);
+		overflow:hidden;
+		background:url("../images/btn_djhjxx.png") no-repeat center center;
+		background-size:100% 100%;
+	}
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .award-pro-inner  .award-pro .list li .name{
+   	  @include font-dpr(14px);
+    }
+    .award-forms .item.item-ages p{
+    	@include font-dpr(14px);
     }
 }

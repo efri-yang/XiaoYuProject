@@ -3,14 +3,13 @@
 
 <head>
     <title>活动说明</title>
+     <meta charset=utf-8>
     <script type="text/javascript" src="js/zepto.js"></script>
     <script type="text/javascript" src="js/flexible.js"></script>
-    <script type="text/javascript" src="js/iscroll.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">  
 </head>
-
 <body class="bgb3e8ff">
     <div class="iscroll-full-container" id="J_iscroll-full-container">
         <div class="iscroll-scroller">
@@ -53,20 +52,32 @@
     </div>
     <div class="footer">
         <ul>
-            <li>
-                <a href="#"></a>
-            </li>
-            <li class="active">
-                <a href="#"></a>
-            </li>
-            <li>
-                <a href="#"></a>
-            </li>
-            <li>
-                <a href="#"></a>
-            </li>
-        </ul>
+                <li>
+                    <a href="index.html"></a>
+                </li>
+                <li class="active">
+                    <a href="intro.html"></a>
+                </li>
+                <li>
+                    <a href="huoJiangDengJi.html"></a>
+                </li>
+                <li>
+                    <a href="jiaNianHuaBaoMing.html"></a>
+                </li>
+            </ul>
     </div>
+
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(window).on("load", function() {
+                var homeIscroll = new IScroll("#J_iscroll-full-container", {
+                    scrollbars: true,
+                    mouseWheel: true
+                });
+            });
+        })
+    </script>
 </body>
 
 </html>

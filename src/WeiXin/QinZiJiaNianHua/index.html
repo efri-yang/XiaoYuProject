@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>活动说明</title>
+    <meta charset=utf-8>
     <script type="text/javascript" src="js/zepto.js"></script>
     <script type="text/javascript" src="js/flexible.js"></script>
-    <script type="text/javascript" src="js/iscroll.js"></script>
     <script type="text/javascript" src="js/layer_mobile/layer.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">  
 </head>
 
 <body class="bgb3e8ff home-game">
+    <span class="gift-item gift1"></span>
+    <span class="gift-item gift2"></span>
+    <span class="gift-item gift3"></span>
+    <span class="gift-item gift4"></span>
+    <span class="gift-item gift5"></span>
+    <span class="gift-item gift6"></span>
+    <span class="gift-item gift7"></span>
+    <span class="gift-item gift8"></span>
+    <span class="gift-item gift9"></span>
+    <span class="gift-item gift10"></span>
+    <span class="gift-item gift11"></span>
+    <span class="gift-item gift12"></span>
+
+    
+    
     
     <a href="#" class="game-start-btn animated infinite" id="J_game-start"></a>
+    <!-- 
+        data-run 表示的是用户走了几步，开始记得初始化
+     -->
+    <span class="human" id="J_human" data-run="0"></span>
     <ul class="handle-list">
         <li><a href="#"></a></li>
         <li><a href="#"></a></li> 
@@ -21,68 +39,61 @@
     <div class="footer">
         <ul>
             <li class="active">
-                <a href="#"></a>
+                <a href="index.html"></a>
             </li>
             <li>
-                <a href="#"></a>
+                <a href="intro.html"></a>
             </li>
             <li>
-                <a href="#"></a>
+                <a href="huoJiangDengJi.html"></a>
             </li>
-            <li class="active">
-                <a href="#"></a>
+            <li>
+                <a href="jiaNianHuaBaoMing.html"></a>
             </li>
         </ul>
     </div>
-
-    <div class="dialog-qz-box" id="J_dialog-qz-box">
+    <!-- 骰子弹出框 start-->
+    <div class="dialog-qz-box" id="J_dialog-dice-box">
         <div class="dia-dice-box">
             <div class="dice-box">
-                <span class="pic" id="J_diceresult"></span>
+                <span class="pic"><b id="J_dice"></b></span>
             </div>
             <p class="tip"></p>
         </div>
-         <a href="#" class="close-dice" data-roler='close'></a>
     </div>
-    <script type="text/javascript">
+    <!-- 骰子弹出框 end -->
 
-    $(function(){
+    <!-- 未中奖弹出框 start -->
+    <div class="dialog-qz-box" id="J_dialog-noprize-box">
+        <div class="dia-noprize-box">
+            <div class="txt-1"></div>
+            <div class="txt-2"></div>
+            <div class="txt-guide">亲子嘉年华火热报名中，线下活动赢取万元大奖。</div>
+            <div class="handle-guide">
+                <a href="jiaNianHuaBaoMing.html"></a>
+                <a href="#" data-roler="close"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 未中奖弹出框 end -->
 
-            var DiceDia=$("#J_dialog-qz-box").dialogs({
-                shadeClose:false,
-                afterHide:function(){
-                    $("#J_diceresult").html("")
-                }
-            });
-            $("#J_game-start").on("click",function(){
-                $.ajax({
-                    url:"http://wnworld.com/conn/dice.php",
-                    data:"",
-                    dataType:"json",
-                    beforeSend:function(){
-                        //弹出加载层
-                        layer.open({type: 2,shade:false});
-                    },
-                    success:function(data){
-                        layer.closeAll();
-                        //0 1 23456 0代表的是没有次数的时候
-                        if(!!data){
-                            DiceDia.show(function(){
-                                $("#J_diceresult").html('<b class="dice'+data+'"></b>');
-                            });
-                        }else{
-                            layer.open({
-                                content: '次数用光啦！通过分享可以获取机会！'
-                                ,btn: '我知道了'
-                            });
-                        }
-                    }
-                })
-               
-            })
-           
-    })
-    </script>
+
+    <!-- 中奖弹出框 start -->
+    <div class="dialog-qz-box" id="J_dialog-hadprize-box">
+        <div class="dia-hadprize-box">
+            <div class="txt-1"></div>
+            <div class="txt-prize">
+                获得<b class="prize-name">星巴克咖啡券价值30元</b> 
+            </div>
+            <a href="#" class="btn-reg"></a>
+        </div>
+    </div>
+
+    <!-- 中奖弹出框 start -->
+
+
+    
+    <script type="text/javascript" src="js/game.js"></script>
 </body>
 
 </html>
