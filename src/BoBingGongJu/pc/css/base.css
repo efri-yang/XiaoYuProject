@@ -33,12 +33,11 @@ content: '';
 content: none;
 }
 a {
-color:#333;
+color:#0066cc;
 text-decoration: none;
 }
 a:hover {
-color:#004f98;
-text-decoration:  none;
+text-decoration:underline;
 }
 fieldset, img {
 border: none;
@@ -92,5 +91,44 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 .fr{
 	float: right;
 }
+
+.mt5{ 
+	margin-top:5px;
+}
+.mt10{ 
+	margin-top:10px;
+}
+.mt15{ 
+	margin-top:15px;
+}
+.mt20{ 
+	margin-top:20px;
+}
+.mt25{ 
+	margin-top: 25px;
+}
+.mt30{ 
+	margin-top: 30px;
+}
+
+.mb5{ 
+	margin-bottom:5px;
+}
+.mb10{ 
+	margin-bottom:10px;
+}
+.mb15{ 
+	margin-bottom:15px;
+}
+.mb20{ 
+	margin-bottom:20px;
+}
+.mb25{ 
+	margin-bottom:25px;
+}
+.mb30{ 
+	margin-bottom:30px;
+}
+
 
 

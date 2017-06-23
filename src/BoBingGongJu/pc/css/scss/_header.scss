@@ -1,0 +1,215 @@
+.header {
+    background: #13182d;
+    height: 76px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 0px 10px 0px #13182c;
+    z-index: 10;
+}
+
+.header-logo {
+    width: 150px;
+    height: 28px;
+    overflow: hidden;
+    float: left;
+    display: block;
+    margin-top: 23px;
+    background: url("../images/logo.png") no-repeat center center;
+}
+
+.nav {
+    float: left;
+    margin-left: 40px;
+    display: inline;
+    li {
+        float: left;
+        width: 127px;
+        position: relative;
+        &.active {
+            a {
+                background: #d90b24;
+                color: #fff;
+            }
+        }
+        a {
+            width: 100%;
+            height: 76px;
+            line-height: 76px;
+            display: block;
+            font-size: 16px;
+            color: #fff;
+            transition: all 0.25s ease-out;
+            text-align: center;
+            position: relative;
+            color: #c1c1c1;
+            z-index: 11;
+            background: #14182c;
+            i {
+                width: 12px;
+                height: 7px;
+                position: absolute;
+                right: 13px;
+                top: 50%;
+                margin-top: -3px;
+                background: url("../images/arrow_c1c1c1.png") no-repeat;
+                transition: all 0.3s ease-out;
+            }
+            &:hover {
+                background: #d90b24;
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+        .nav-sub {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background: #14182c;
+            box-shadow: 0 0 10px 0px #14182c;
+            visibility: hidden;
+            top: -400px;
+            z-index: 10;
+            transition: all 0.2s ease-out;
+            a {
+                width: 100%;
+                height: 60px;
+                line-height: 60px;
+                display: block;
+                font-size: 16px;
+                color: #fff;
+                transition: none;
+                text-align: center;
+                position: relative;
+                color: #c1c1c1;
+                &:last-child {
+                    span {
+                        background: none;
+                    }
+                }
+                span {
+                    display: block;
+                    height: 100%;
+                    margin: 0 10px;
+                    background: url("../images/lineborder_h_2.jpg") repeat-x left bottom;
+                }
+                &:hover {
+                    background: #d90b24;
+                    color: #fff;
+                    text-decoration: none;
+                    >span {
+                        background: none;
+                        top: 76px;
+                    }
+                }
+            }
+        }
+        &:hover {
+            a {
+                i {
+                    transform: rotate(180deg);
+                }
+            }
+            .nav-sub {
+                visibility: visible;
+                top: 76px;
+            }
+        }
+    }
+}
+
+.avatar-authority {
+	float:right;
+	position:relative;
+	
+	.avatar-box{
+		padding:18px 23px 18px 0;
+		position:relative;
+		line-height:40px;
+		cursor:pointer;
+		background: #14182c;
+		z-index:20;
+		.pic{
+			border:2px solid #e6e2e0;
+			border-radius:50%;
+			float:left;
+			width:36px;
+			height:36px;
+			overflow:hidden;
+			background:#fff;
+			margin-right: 10px;
+		}
+		.name{
+			float:left;
+			color:#e6e2e0;
+			font-size:16px;
+			font-weight:bold;
+		}
+		.arrow{
+			width: 12px;
+            height: 7px;
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            margin-top: -3px;
+            background: url("../images/arrow_c1c1c1.png") no-repeat;
+            transition: all 0.25s ease-out;
+		}
+	}
+	.list{
+			position: absolute;
+            left: 0;
+            width: 100%;
+            background: #14182c;
+            box-shadow: 0 0 10px 0px #14182c;
+            visibility: visible;
+            top:-400px;
+            z-index:10;
+            transition: all 0.2s ease-out;
+            visibility:hidden;
+            a {
+                width: 100%;
+                height: 60px;
+                line-height: 60px;
+                display: block;
+                font-size: 16px;
+                color: #fff;
+                transition: none;
+                text-align: center;
+                position: relative;
+                color: #c1c1c1;
+                &:last-child {
+                    span {
+                        background: none;
+                    }
+                }
+                span {
+                    display: block;
+                    height: 100%;
+                    margin: 0 10px;
+                    background: url("../images/lineborder_h_2.jpg") repeat-x left bottom;
+                }
+                &:hover {
+                    background: #d90b24;
+                    color: #fff;
+                    text-decoration: none;
+                    >span {
+                        background: none;
+                        top: 76px;
+                    }
+                }
+            }
+	}
+	&:hover{
+		.avatar-box{
+			.arrow{
+				transform: rotate(180deg);
+			}
+		}
+		.list{
+			visibility:visible;
+			top:76px;
+		}
+	}
+}

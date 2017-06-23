@@ -1,0 +1,355 @@
+@import "./scss/_funVar.scss";
+@import "./scss/_header.scss";
+@import "./scss/_footer.scss";
+
+/**
+ * 公共样式
+ */
+body{
+	background:#f52d44;
+}
+.container{
+	width:1020px;
+	margin:0 auto;	
+}
+.container-main{
+	background:#d90b24;
+	width:1020px;
+	padding: 0 18px;
+	margin:-304px  auto 0;
+	position:relative;
+	.main-inner{
+		background:#fff;
+		position:relative;
+		top:-2px;
+		box-shadow:0 3px 10px 0px #2a0e0c;
+		padding:0 20px; 
+	}
+}
+
+.btn-clrf52d44{
+	background:#f52d44;
+	&:hover{
+    	background-color: darken(#f52d44,8%);
+    }
+}
+.btn-coms{
+	display: inline-block;
+    padding: 6px 35px;
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    color:#fff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition:all 0.3s ease-out;
+    &:hover{
+    	text-decoration: none;
+    }
+    &.disabled{
+    	background:#cacaca;
+    	cursor:default;
+    	&:hover{
+    		background:#cacaca;
+    	}
+    }
+}
+/****** 首页 start*********/
+.home-banner{
+	height:982px;
+	background: url("../images/home_banner.png") no-repeat top center;
+}
+.home-container{
+	position:relative;
+}
+.home-main{
+	padding:20px 0 80px;
+}
+.home-logo-scroll{
+	background:#fffaed;
+	border:1px solid #f3e1b1;
+	padding:35px 24px;
+	ul{
+		li{
+			float: left;
+			margin: 0 8px;
+			display:inline;
+			a{
+				display:block;
+				width:170px;
+				height:47px;
+				overflow: hidden;
+				img{
+					max-width: 100%;
+					max-height: 100%;
+				}
+			}
+		}
+	}
+}
+
+.tit-type-1{
+	width:482px;
+	height:57px;
+	overflow:hidden;
+	margin-left: auto;
+	margin-right: auto;
+	background:url("../images/tit_type1_bg.png") no-repeat top center;
+	.txt-zgm{
+		width:239px;
+		height:34px;
+		overflow:hidden;
+		margin:11.5px auto 0; 
+		background:url("../images/tit_txt_zgm.png") no-repeat center center;
+	}
+	.txt-wzw{
+		width:276px;
+		height:35px;
+		overflow:hidden;
+		margin:11px auto 0; 
+		background:url("../images/tit_txt_wzw.png") no-repeat center center;
+	}
+	.txt-vip{
+		width:109px;
+		height:28px;
+		overflow:hidden;
+		margin:14.5px auto 0; 
+		background:url("../images/tit_txt_vip.png") no-repeat center center;
+	}
+}
+.tit-type-2{
+	height:55px;
+	line-height:55px;
+	padding:0 15px;
+	background:url("../images/tit-type-2.jpg") repeat-x;
+	.tit{
+		font-size:20px;
+		color:#fff;
+	}
+	.more{
+		float:right;
+		color:#fff;
+	}
+}
+.h-knot-box{
+	border:2px solid #ea2e2f;
+	position:relative;
+	padding:20px;
+	.knot{
+		width:26px;
+		height:27px;
+		position:absolute;
+		&.knot-tl{
+			top:-2px;
+			left:-2px;
+			background:url("../images/knot_tl.png") no-repeat top center;
+		}
+		&.knot-tr{
+			top:-2px;
+			right:-2px;
+			background:url("../images/knot_tr.png") no-repeat top center;
+		}
+		&.knot-bl{
+			left:-2px;
+			bottom:-2px;
+			background:url("../images/knot_bl.png") no-repeat top center;
+		}
+		&.knot-br{
+			right:-2px;
+			bottom:-2px;
+			background:url("../images/knot_br.png") no-repeat top center;
+		}
+	}	
+}
+.h-zgm-intry{
+	background:#fffaed;
+	border:1px solid #f3e1b1;
+	padding:10px;
+	.zgm-pic{
+		img{
+			max-width:100%;
+			vertical-align:top;
+		}
+	}
+	.zgm-intro{
+		padding:10px 145px 0px 0;
+		position:relative;
+		p{
+			@extend %text-overflow;
+			color:#ea2e2f;
+			line-height: 38px;
+		}
+		a{
+			position:absolute;
+			right:0;
+			top:10px;
+		}
+	}
+}
+.h-wzw-intry{
+	width:954px;
+	li{
+		float:left;
+		width:440px;
+		background:#fffaed;
+		border:1px solid #f3e1b1;
+		padding:10px;
+		margin-right:15px;
+		.pic{
+			display:block;
+			width:100%;
+			height:234px;
+			overflow: hidden;
+			img{
+				max-width:100%;
+				transition:all 0.25s ease-out;
+			}
+			&:hover{
+				img{
+					transform:scale(1.05,1.05);
+				}
+			}
+		}
+		.intro{
+			padding:10px 145px 0px 0;
+			position:relative;
+			p{
+				@extend %text-overflow;
+				color:#ea2e2f;
+				line-height: 38px;
+			}
+			a{
+				position:absolute;
+				right:0;
+				top:10px;
+			}
+			}
+	}
+}
+.h-vip-intry{
+	width:945px;
+	li{
+		position:relative;
+		float:left;
+		margin:4.5px 9px 4.5px 0;
+		display:inline;
+		.pic{
+			width:178px;
+			height:118px;
+			overflow:hidden;
+			display:block;
+			border:1px solid #f3e1b1;
+			background:#fffaed;
+		}
+		.btn-coms{
+			padding:2px 5px;
+			position:absolute;
+			right:10px;
+			top:10px;
+		}
+	}
+}
+.h-activity-rule{
+	color:#a87446;
+	font-size:14px;
+	background:#fffaed;
+	padding:15px;
+	border:1px solid #f3e1b1;
+	ul{
+		
+		li{
+			position:relative;
+			padding-left:33px;
+			margin-bottom:12px;
+			.num{
+				width:18px;
+				height:18px;
+				line-height:18px;
+				background:#f52d44;
+				position:absolute;
+				left:0;
+				top:2px;
+				color:#fff;
+				text-align:center;
+			}
+			.txt{
+				line-height:23px;
+			}
+		}
+	}
+}
+.h-lj-pk{
+	border:2px solid #e5464a;
+	padding:20px 10px;
+	.qrcode{
+		width:167px;
+		padding:4px 4px 0 76px;
+		height:175px;
+		float:left;
+		background:url("../images/h_lj_qrcode.png") no-repeat top center;
+		.pic{
+			width:167px;
+			height:167px;
+			display:block;
+			overflow:hidden;
+			background:url("../images/h_lj_qrcode_pic.jpg") no-repeat top center;
+		}
+	}
+	.mid{
+		float:left;
+		margin-left:25px;
+		display:inline;
+		.tit{
+			display:inline-block;
+			height:41px;
+			line-height:41px;
+			padding:0 30px;
+			background:#ffde97;
+			border-radius:30px;
+			color:#fd2f2c;
+			font-size:20px;
+			font-weight: bold;
+			position:relative;
+			margin-left:20px;
+			margin-top:35px;
+			i{
+				position:absolute;
+				width:56px;
+				left:-20px;
+				top:-21px;
+				height:62px;
+				background:url("../images/hongbao_pic.png") no-repeat;
+			}
+		}
+		.txt1{
+			color:#666666;
+			font-size:16px;
+			margin-top:15px;
+		}
+		.txt2{
+			color:#e6142c;
+			font-size:16px;
+			font-weight:bold;
+			margin-top:8px;
+		}
+	}
+	.tip-car{
+		width:207px;
+		height:194px;
+		margin-right:15px;
+		background:url("../images/h_lj_car.png") no-repeat top center;
+		float:right;
+	}
+
+}
+
+/****** 首页 end*********/

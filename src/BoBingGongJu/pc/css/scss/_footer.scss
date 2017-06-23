@@ -1,0 +1,53 @@
+.footer{
+	background:#3d3d3d;
+	padding:15px 0;
+	.ft-logo{
+		width:150px;
+		height:28px;
+		overflow:hidden;
+		float: left;
+		margin-top: 52px;
+		display:block;
+		background:url("../images/logo.png") no-repeat center center; 
+	}
+	.ft-middle{
+		float:left;
+		width:510px;
+		margin-left:100px;
+		margin-top:20px;
+		display:inline;
+		color:#ffffff;
+		text-align: center;
+		
+	}
+	.ft-nav{
+		border-bottom:1px solid #2c2c2c; 
+		line-height: 25px;
+		padding:8px 0;
+		a{
+			color:#ffffff;
+			margin:0 10px;
+		}	
+	}
+	.copyright{
+		padding:8px 0;
+		border-top:1px solid #555555; 
+		text-align:center;
+	}
+	.ft-qrcode{
+		float:right;
+		.pic{
+			width:109px;
+			height:109px;
+			overflow:hidden;
+			padding:4px;
+			background:url("../images/qrcode_pic.jpg") no-repeat center center #2c2c2c;
+			border-radius: 5px;
+		}
+		p{
+			margin-top:2px;
+			text-align:center;
+			color:#dcdcdc;
+		}
+	}
+}
