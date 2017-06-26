@@ -513,7 +513,7 @@ a {
 .jnh-banner{
 	text-align:center;
 	img{
-		max-width:100%;
+		width:100%;
 	}
 }
 
@@ -945,18 +945,18 @@ html,body{
  */
 .dia-noprize-box{
 	.txt-1{
-		width:px2rem(171px);
-		height:px2rem(59px);
+		width:px2rem(283px);
+		height:px2rem(55px);
 		background:url("../images/txt_hyh.png") no-repeat center center;
 		background-size:100% 100%;
-		margin:px2rem(5px) auto 0;
+		margin:px2rem(20px) auto 0;
 	}
 	.txt-2{
-		width:px2rem(408px);
-		height:px2rem(47px);
+		width:px2rem(421px);
+		height:px2rem(45px);
 		background:url("../images/txt_zjzl.png") no-repeat center center;
 		background-size:100% 100%;
-		margin:px2rem(5px) auto 0;
+		margin:0 auto 0;
 	}
 	.txt-guide{
 		margin-top:px2rem(10px);

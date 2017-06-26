@@ -129,6 +129,37 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 .mb30{ 
 	margin-bottom:30px;
 }
+.pb10{
+	padding-bottom:10px;
+}
+.pb20{
+	padding-bottom:20px;
+}
+.pb30{
+	padding-bottom:30px;
+}
+.pb40{
+	padding-bottom:40px;
+}
+.pb50{
+	padding-bottom:50px;
+}
+.pb70{
+	padding-bottom:70px;
+}
+.pb90{
+	padding-bottom:90px;
+}
+
+.align-l{
+	text-align: left;
+}
+.align-c{
+	text-align: center;
+}
+.align-r{
+	text-align: right;
+}
 
 
 
