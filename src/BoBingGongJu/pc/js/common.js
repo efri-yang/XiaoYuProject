@@ -1,7 +1,7 @@
 //模拟下拉框
 
 function dropdownPlugin(className) {
-    
+
     $(document).on("mouseover", '[data-roler="dropdown"]', function() {
         $(this).addClass("active");
     }).on("mouseout", '[data-roler="dropdown"]', function(event) {
@@ -13,11 +13,11 @@ function dropdownPlugin(className) {
             $(this).children("ul").hide();
         }
     });
-    $(document).on("click", className+' [data-roler="dropdown"] > cite', function() {
+    $(document).on("click", className + ' [data-roler="dropdown"] > cite', function() {
         var $this = $(this);
         $this.siblings("ul").show();
     });
-    $(document).on("click", className+' [data-roler="dropdown"] > ul li a', function(event) {
+    $(document).on("click", className + ' [data-roler="dropdown"] > ul li a', function(event) {
         event.preventDefault();
         var $this = $(this);
         dropdownHandle($this);
@@ -41,7 +41,8 @@ function dropdownPlugin(className) {
 }
 
 
-;(function($) {
+;
+(function($) {
     $.fn.bannerSlider = function(options) {
         var defaults = {
             width: 950,
@@ -331,51 +332,84 @@ function dropdownPlugin(className) {
     }
 })(jQuery);
 
+;
+(function($) {
 
-function __dealCssEvent(eventNameArr, callback) {
-        var events = eventNameArr,
-            i, dom = this; // jshint ignore:line
+    function LoadImage(ImgD, width, height, t) {
+        var smallWidth = $(ImgD).width();
+        var smallHeight = $(ImgD).height();
+        //    alert(smallWidth+":"+width+"|"+smallHeight+":"+height);
+        var iwidth = width; //定义允许图片宽度
+        var iheight = height; //定义允许图片高度
+        if (smallWidth > 0 && smallHeight > 0) {
 
-        function fireCallBack(e) {
-            /*jshint validthis:true */
-            if (e.target !== this) return;
-            callback.call(this, e);
-            for (i = 0; i < events.length; i++) {
-                dom.off(events[i], fireCallBack);
-            }
-        }
-        if (callback) {
-            for (i = 0; i < events.length; i++) {
-                dom.on(events[i], fireCallBack);
+            if (smallWidth / smallHeight >= iwidth / iheight) {
+                if (smallWidth > iwidth) {
+                    $(ImgD).width(iwidth).height((smallHeight * iwidth) / smallWidth).css("padding", Math.floor(Math.abs((iheight - $(ImgD).height()) / 2)) + "px 0px");
+                } else {
+                    $(ImgD).width(smallWidth).height(smallHeight).css("padding", Math.floor(Math.abs((iheight - $(ImgD).height()) / 2)) + "px " + Math.floor(Math.abs((iwidth - $(ImgD).width()) / 2)) + "px");
+                }
+            } else {
+                if (smallHeight > iheight) {
+                    $(ImgD).width((smallWidth * iheight) / smallHeight).height(iheight).css("padding", "0px " + Math.floor(Math.abs((iwidth - $(ImgD).width()) / 2)) + "px");
+                } else {
+                    $(ImgD).width(smallWidth).height(smallHeight).css("padding", Math.floor(Math.abs((iheight - $(ImgD).height()) / 2)) + "px " + Math.floor(Math.abs((iwidth - $(ImgD).width()) / 2)) + "px");
+                }
             }
         }
     }
-    $.fn.animationEnd = function(callback) {
-        __dealCssEvent.call(this, ['webkitAnimationEnd', 'animationend'], callback);
-        return this;
-    };
-    $.fn.transitionEnd = function(callback) {
-        __dealCssEvent.call(this, ['webkitTransitionEnd', 'transitionend'], callback);
-        return this;
-    };
-
-
-    $.extend({
-            supportCSS3: function() {
-                var body, i, style, transition, vendor;
-                body = document.body || document.documentElement;
-                style = body.style;
-                transition = "transition";
-                vendor = ["Moz", "Webkit", "Khtml", "O", "ms"];
-                transition = transition.charAt(0).toUpperCase() + transition.substr(1);
-                i = 0;
-                while (i < vendor.length) {
-                    if (typeof style[vendor[i] + transition] === "string") {
-                        return vendor[i];
-                    }
-                    i++;
-                }
-                return false;
-            }
+    $.fn.LoadImage = function(options) {
+        var opt = options;
+        return this.each(function(index, el) {
+            LoadImage(el, opt.width, opt.height);
         })
-       
+    }
+})(jQuery);
+
+
+function __dealCssEvent(eventNameArr, callback) {
+    var events = eventNameArr,
+        i, dom = this; // jshint ignore:line
+
+    function fireCallBack(e) {
+        /*jshint validthis:true */
+        if (e.target !== this) return;
+        callback.call(this, e);
+        for (i = 0; i < events.length; i++) {
+            dom.off(events[i], fireCallBack);
+        }
+    }
+    if (callback) {
+        for (i = 0; i < events.length; i++) {
+            dom.on(events[i], fireCallBack);
+        }
+    }
+}
+$.fn.animationEnd = function(callback) {
+    __dealCssEvent.call(this, ['webkitAnimationEnd', 'animationend'], callback);
+    return this;
+};
+$.fn.transitionEnd = function(callback) {
+    __dealCssEvent.call(this, ['webkitTransitionEnd', 'transitionend'], callback);
+    return this;
+};
+
+
+$.extend({
+    supportCSS3: function() {
+        var body, i, style, transition, vendor;
+        body = document.body || document.documentElement;
+        style = body.style;
+        transition = "transition";
+        vendor = ["Moz", "Webkit", "Khtml", "O", "ms"];
+        transition = transition.charAt(0).toUpperCase() + transition.substr(1);
+        i = 0;
+        while (i < vendor.length) {
+            if (typeof style[vendor[i] + transition] === "string") {
+                return vendor[i];
+            }
+            i++;
+        }
+        return false;
+    }
+})
