@@ -863,7 +863,97 @@ body {
 
 
 /****** 礼品兑换页面 start*********/
+.dh-tab-hd{
+    font-size:0;
+    text-align:center;
+    margin-bottom:30px;
+    a{
+        width:221px;
+        height:50px;
+        line-height:50px;
+        background:#efefef;
+        text-align:center;
+        display:inline-block;
+        font-size:18px;
+        color:#959595;
+        &:hover{
+            
+            text-decoration:none;
+        }
+        &.active{
+            background:#f3424c;
+            color:#fff;
+            cursor:default;
+        }
+    }
+}
+.dp-tab-box{
+    .step-progress{
+        background:#fbfbfb;
+        border:1px solid #efefef;
+        padding:18px 100px;
+        position:relative;
+        text-align:center;
+        .step-items{
+            padding:0 75px;
+            .item{
+                float:left;
+                width:156px;
+                span{
+                    display:block;
+                    width:8px;
+                    margin:0 auto;
+                    height:8px;
+                    border:6px solid #f25354;
+                    border-radius:100%;
+                    background:#fff;
+                    position:relative;
+                    z-index:10;
+                }
+                p{
+                    text-align:center;
+                    font-size:14px;
+                    color:#808080;
+                    margin-top:12px;
+                }
+            }
+        }
+        .line{
+            position:absolute;
+            
+            top:0;
+             left:100px;
+             right:100px;
+            height:10px;
+            top:23px;
+            border-radius:10px;
 
+            background:#f24c53;
+
+        }
+    }
+}
+.dp-fl-list{
+    li{
+        float:left;
+        border:1px solid #efefef;
+    }
+    .soma-hd{
+        height:53px;
+        line-height:53px;
+        background:#ffde97;
+        padding:0 10px;
+        .tit{
+            color:#c0631e;
+            font-size:20px;
+        }
+        .amount{
+            float:right;
+            color:#c0631e;
+            font-weight:normal;
+        }
+    }
+}
 .dh-score-box {
     background: #fffaed;
     border: 1px solid #f3e1b1;
