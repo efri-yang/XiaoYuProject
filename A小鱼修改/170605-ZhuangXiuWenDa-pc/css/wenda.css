@@ -164,3 +164,61 @@
 	margin-top: 8px;
 	background: url("../img/gf_entry_icon.jpg") no-repeat left center;
 }
+
+/**
+ * 20170712 add by yyh
+ */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.clearfix {
+	display: inline-table;
+}/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}
+.hot-question{
+	border:1px solid #dddddd;
+	padding:35px;
+	background:#fff;
+	margin-top:20px; 
+}
+.hot-question .soma-hd{
+	padding-bottom: 15px;
+	height:27px;
+	border-bottom: 1px solid #e4e4e4;
+}
+.hot-question .tit{
+	height:27px;
+	line-height:27px;
+	margin-left:25px;
+	background: url("../img/hot_tit.jpg") no-repeat left center;
+	padding-left:34px; 
+	float: left;
+	color:#333333;
+	font-size:24px; 
+}
+.hot-question .soma-bd{
+	overflow:hidden;
+	padding: 15px 0;
+}
+.hot-question .soma-bd .soma-bd-area{
+	width: 932px; 
+	padding-bottom: 30px;
+}
+.hot-question .soma-bd .faq-item{
+	float: left;
+	border-right:#ddd 1px solid;
+	width:415px; 
+	padding: 0 25px;
+}
+
+

@@ -167,7 +167,7 @@
 						<span class="tit">活动规则</span>
 						<a href="#" class="more">更 多>></a>
                     </div>
-                    <div class="h-activity-rule">
+                    <div class="rule-coms">
 						<ul>
 						    <li>
 								<span class="num">1</span>
@@ -246,31 +246,88 @@
     @@include("./views/_footer.html")
     <!-- footer end -->
 
+
+    <!-- start 右侧栏  -->
+    <div class="h-sidebar-fixed">
+        <ul class="list">
+            <li class="item-1">
+                <a href="#"></a>
+                <span class="txt">我的博饼<i></i></span>
+            </li>
+            <li class="item-2">
+                <a href="#"></a>
+                <span class="txt">我的博饼<i></i></span>
+            </li>
+            <li class="item-3">
+               <a href="#"></a>
+               <span class="txt">大牌福利<i></i></span>
+            </li>
+            <li class="item-4">
+               <a href="#"></a>
+               <span class="txt">我的门票<i></i></span>
+            </li>
+            <li class="item-5">
+                <a href="#"></a>
+                <span class="txt">我的礼品<i></i></span>
+            </li>
+            <li class="item-6">
+                <a href="#"></a>
+                <span class="txt">登记信息<i></i></span>
+            </li>
+        </ul>
+
+        <a href="#" class="backtop" id="J_backtop"></a>
+    </div>
+    <!-- end 右侧栏 -->
+
     <script type="text/javascript">
         $(function(){
             (function(){
-                var $container=$(".home-logo-scroll");
+                var $container=$(".home-logo-scroll").eq(0);
                 var $ul=$container.children("ul");
                 var $li=$ul.children("li");
                 var w=$li.outerWidth();
                 var len=$li.length;
                 var totalW=w*len;
                 var step=0;
+                var Timer;
                 if($li.length <=5) return;
                 $ul.append($ul.html());
                 $ul.css("width",totalW*2);
+
                 function scrolling(){
-                    
                     if(step>=totalW){
                         step=0;
                     }else{
                         step++;
                     }
                     $ul.css({left:-step});
-                    setTimeout(scrolling,50);
+                    Timer=setTimeout(scrolling,50);
                 }
-                Timer=setTimeout(scrolling,50)
-            })()
+                Timer=setTimeout(scrolling,50);
+                $container.on("mouseover",function(){
+                   clearTimeout(Timer);
+                }).on("mouseout",function(){
+                    Timer=setTimeout(scrolling,50);
+                })
+            })();
+
+            (function(){
+                var $backTop=$("#J_backtop");
+                $backTop.on("click",function(event){
+                    event.preventDefault();
+                    $(window).scrollTop(0);
+                })
+                $(window).on("scroll",function(){
+                    var scrolltop=$(this).scrollTop();
+                    if(scrolltop >= 700){
+                        $backTop.stop(false,true).fadeIn();
+                    }else{
+                        $backTop.stop(false,true).fadeOut();
+                    }
+                })
+            })();
+
         })
     </script>
 </body>

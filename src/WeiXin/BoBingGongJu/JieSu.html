@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="../common/js/zepto/zepto.js"></script>
-    <script src="./js/flexible.js"></script>
+    <script type="text/javascript" src="../common/js/zepto/zepto.js"></script>
+    <script type="text/javascript" src="./js/flexible.js"></script>
     <script type="text/javascript" src="./js/zepto-mvalidate.js"></script>
     <script type="text/javascript" src="./js/layer_mobile/layer.js"></script>
     <script type="text/javascript" src="./js/iscroll.js"></script>
@@ -18,11 +18,12 @@
 <body>
     <div class="head-banner"><img src="../BoBingGongJu/images/banner_1.jpg" /></div>
     <div class="container">
-        <div class="tc-tit">本轮奖品</div>
-        <ul class="prizes-list">
-            <li class="name">香港传奇1000元代金券</li>
-            <li class="count">剩余958张</li>
-        </ul>
+       <div class="prizes-infor">
+            <h1 class="name">香港传奇1000元代金券</h1>
+            <span class="remain">剩余份数：958</span>
+            <p class="prize">价值：126元</p>
+            <p class="score">所需积分：3258</p>
+        </div>
         
         <!--  -->
             @@include("./views/_cash.html");

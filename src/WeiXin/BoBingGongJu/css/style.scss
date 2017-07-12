@@ -69,25 +69,55 @@ body {
     text-align: center;
 }
 
-.prizes-list {
-    display: -webkit-flex;
-    display: flex;
-    width: 100%;
-    margin-top: px2rem(25px);
-    @include font-dpr(16px);
-    li:nth-child(1) {
-        flex: 4;
-        -webkit-flex: 4;
-        text-align: left;
-        color: #a54c11;
+.prizes-infor{
+    position:relative;
+    padding:px2rem(25px) 0 px2rem(15px);
+    .name{
+        @include font-dpr(18px);
+        color:#a54c11;
+        font-weight:normal;
+        padding-right:px2rem(240px);
     }
-    li:nth-child(2) {
-        flex: 1;
-        -webkit-flex: 4;
-        text-align: right;
-        color: #269f15;
+    .remain{
+        position:absolute;
+        @include font-dpr(16px);
+        right:0;
+        top:px2rem(25px);
+        color:#269f15;
+    }
+    .prize{
+        color:#9d9d9d;
+        @include font-dpr(14px);
+        text-decoration:line-through;
+        margin-top:px2rem(10px);
+    }
+    .score{
+        color:#ee231e;
+        @include font-dpr(14px);
+         margin-top:px2rem(10px);
+       
     }
 }
+
+// .prizes-list {
+//     display: -webkit-flex;
+//     display: flex;
+//     width: 100%;
+//     margin-top: px2rem(25px);
+//     @include font-dpr(16px);
+//     li:nth-child(1) {
+//         flex: 4;
+//         -webkit-flex: 4;
+//         text-align: left;
+//         color: #a54c11;
+//     }
+//     li:nth-child(2) {
+//         flex: 1;
+//         -webkit-flex: 4;
+//         text-align: right;
+//         color: #269f15;
+//     }
+// }
 
 .btn-kz {
     height: px2rem(90px);
