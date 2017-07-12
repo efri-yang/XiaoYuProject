@@ -51,23 +51,20 @@ font-family: "Courier New", Courier, monospace;
 small {
 font-size: 12px;
 }
-.clearfix:after {
-visibility: hidden;
-display: block;
-font-size: 0;
-content: " ";
-clear: both;
-height: 0;
-}
-.clearfix {
-display: inline-table;
-}/* Hides from IE-mac \*/
-* html .clearfix {
-height: 1%;
-}
-.clearfix {
-display: block;
-}
+.clearfix:after{ 
+visibility:hidden; 
+display:block; 
+font-size:0; 
+content:" "; 
+clear:both; 
+height:0; 
+} 
+.clearfix { *zoom:1;}
+.clearfix { display: inline-table; } 
+/* Hides from IE-mac \*/ 
+* html .clearfix { *height: 1%; } 
+.clearfix { display: block; } 
+/* End hide from IE-mac */ 
 html {
 overflow-y: scroll;
 }
@@ -109,6 +106,48 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 }
 .mt30{ 
 	margin-top: 30px;
+}
+
+.pt15{
+	padding-top: 15px;
+}
+
+.pl5{
+	padding-left: 5px;
+}
+.pl10{
+	padding-left: 10px;
+}
+.pl15{
+	padding-left: 15px;
+}
+.pl20{
+	padding-left: 20px;
+}
+.pl25{
+	padding-left: 25px;
+}
+.pl30{
+	padding-left: 30px;
+}
+
+.pr5{
+	padding-right: 5px;
+}
+.pr10{
+	padding-right: 10px;
+}
+.pr15{
+	padding-right: 15px;
+}
+.pr20{
+	padding-right: 20px;
+}
+.pr25{
+	padding-right: 25px;
+}
+.pr30{
+	padding-right: 30px;
 }
 
 .mb5{ 
@@ -159,6 +198,9 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 }
 .align-r{
 	text-align: right;
+}
+.undis{
+	display:none;
 }
 
 

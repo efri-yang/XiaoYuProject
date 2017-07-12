@@ -36,6 +36,10 @@
                             <li>
                                 <a href="#"><img src="upload/logo_1.jpg" /></a>
                             </li>
+                            <li>
+                                <a href="#"><img src="upload/logo_1.jpg" /></a>
+                            </li>
+                            
                         </ul>
                     </div>
                     <!-- 商家logo end -->
@@ -48,7 +52,7 @@
                             <div class="zgm-pic"><a href=""><img src="./upload/entry_1.jpg" /></a></div>
                             <div class="zgm-intro">
                                 <p>本活动王中王场地有建发湾悦城提供</p>
-                                <a href="#" class="btn-coms btn-clrf52d44">今日未博</a>
+                                <a href="YongXiaoYuBi.html" class="btn-coms btn-clrf52d44">今日未博</a>
                             </div>
                         </div>
                         <span class="knot knot-tl"></span>
@@ -67,14 +71,14 @@
                             	<a href="#" class="pic"><img src="upload/entry_2.jpg" /></a>
 								<div class="intro">
 	                                <p>本活动王中王场地有建发湾悦城提供</p>
-	                                <a href="#" class="btn-coms btn-clrf52d44">今日未博</a>
+	                                <a href="YongXiaoYuBi.html" class="btn-coms btn-clrf52d44">今日未博</a>
 	                            </div>
                             </li>
                             <li>
                             	<a href="#" class="pic"><img src="upload/entry_2.jpg" /></a>
 								<div class="intro">
 	                                <p>本活动王中王由东方雪铁龙提供</p>
-	                                <a href="#" class="btn-coms btn-clrf52d44">今日未博</a>
+	                                <a href="YongXiaoYuBi.html" class="btn-coms btn-clrf52d44">今日未博</a>
 	                            </div>
                             </li>
                         </ul>
@@ -241,6 +245,34 @@
     <!-- footer start -->
     @@include("./views/_footer.html")
     <!-- footer end -->
+
+    <script type="text/javascript">
+        $(function(){
+            (function(){
+                var $container=$(".home-logo-scroll");
+                var $ul=$container.children("ul");
+                var $li=$ul.children("li");
+                var w=$li.outerWidth();
+                var len=$li.length;
+                var totalW=w*len;
+                var step=0;
+                if($li.length <=5) return;
+                $ul.append($ul.html());
+                $ul.css("width",totalW*2);
+                function scrolling(){
+                    
+                    if(step>=totalW){
+                        step=0;
+                    }else{
+                        step++;
+                    }
+                    $ul.css({left:-step});
+                    setTimeout(scrolling,50);
+                }
+                Timer=setTimeout(scrolling,50)
+            })()
+        })
+    </script>
 </body>
 
 </html>
