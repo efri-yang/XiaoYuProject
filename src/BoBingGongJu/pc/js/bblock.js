@@ -96,15 +96,15 @@ $(function() {
             },
             close: function() {
                 var _this = this;
-                _this.$elem.fadeOut(250);
+               _this.$elem.css({ left: initLeft, top: initTop});
                 setTimeout(function() {
                     _this.reset();
-                }, 250)
+                },0)
             },
             reset: function() {
                 var _this = this;
                 this.$elem.removeClass('open');
-                _this.$elem.css({ left: initLeft, top: initTop });
+                _this.$elem.css({ left: initLeft, top: initTop});
             }
         }
     })();
