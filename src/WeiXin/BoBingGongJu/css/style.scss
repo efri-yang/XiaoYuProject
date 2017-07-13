@@ -748,8 +748,6 @@ body {
     }
     .soma-bd {
         position: relative;
-        height: px2rem(350px);
-        overflow: hidden;
         ul {
             @include font-dpr(15px);
             li {
@@ -790,6 +788,7 @@ body {
             line-height: px2rem(80px);
             @include font-dpr(14px);
             color: #d91d1d;
+            border-top:1px dashed #f3d1bb;
         }
     }
 }
@@ -1010,6 +1009,18 @@ body {
     position: absolute;
     left: 0;
     top: 0;
+    span{
+        width:px2rem(280px);
+        height:px2rem(140px);
+        position:absolute;
+        left:50%;
+        margin-left:px2rem(-280px/2);
+        margin-top:px2rem(230px);
+        background-repeat:no-repeat;
+        background-position: center center;
+        background-size:100% 100%;
+       
+    }
 }
 
 .bowl{

@@ -252,9 +252,9 @@ $(function() {
     (function() {
 
         if ($("#J_iscroll-wrap").length) {
-            $(window).on("load", function() {
-                myScroll = new IScroll('#J_iscroll-wrap');
-            });
+            // $(window).on("load", function() {
+            //     myScroll = new IScroll('#J_iscroll-wrap');
+            // });
             $("#J_iscroll-more").on("click", function(event) {
                 event.preventDefault();
                 //测试
@@ -267,9 +267,9 @@ $(function() {
                     strArr.push('<li><span class="txt">' + i + '</span><b class="time">2017-06-01 12:03:34</b></li>')
                 }
                 $("#J_recordlist").append(strArr.join(""));
-                setTimeout(function() {
-                    myScroll.refresh();
-                }, 0);
+                // setTimeout(function() {
+                //     myScroll.refresh();
+                // }, 0);
             }
         }
     })();

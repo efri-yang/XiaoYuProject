@@ -71,12 +71,15 @@
             if (effect == effectArray[0]) {
                 $slider_lis.css("position", "absolute").eq(Index).css({ zIndex: opts.zIndex, display: "block" }).siblings().css({ zIndex: opts.zIndex - 1 }).hide();
 
+                
+
             } else if (effect == effectArray[1]) {
                 $slider_lis.css({ position: "absolute", opacity: 0, zIndex: opts.zIndex - 1 }).eq(Index).css("zIndex", opts.Index).animate({ "opacity": 1 });
                 if (isIE6) {
                     $slider_lis.css("display", "none").eq(Index).css("display", "block")
                 }
             }
+            $slider_lis.eq(Index).find("img").LoadImage({width:760,height:400});
         }
 
         function btnInit() {
@@ -249,6 +252,7 @@
                 $(this).css("left", 0);
                 $("#J_numcount").text(Index+1);
                  $checkBig.attr("href",$slider_imgs.eq(Index).attr("src"));
+                 $slider_lis.eq(Index).find("img").LoadImage({width:760,height:400});
             })
         };
 
@@ -309,6 +313,43 @@
 })(jQuery);
 
 
+
+(function($) {
+
+    function LoadImage(ImgD, width, height, t) {
+        var smallWidth = $(ImgD).width();
+        var smallHeight = $(ImgD).height();
+        //    alert(smallWidth+":"+width+"|"+smallHeight+":"+height);
+        var iwidth = width; //定义允许图片宽度
+        var iheight = height; //定义允许图片高度
+        if (smallWidth > 0 && smallHeight > 0) {
+            if (smallWidth / smallHeight >= iwidth / iheight) {
+                 
+                if (smallWidth > iwidth) {
+                    $(ImgD).width(iwidth).height((smallHeight * iwidth) / smallWidth).css("padding", Math.floor(Math.abs((iheight - $(ImgD).height()) / 2)) + "px 0px");
+                } else {
+                   
+                    $(ImgD).width(smallWidth).height(smallHeight).css("padding", Math.floor(Math.abs((iheight - $(ImgD).height()) / 2)) + "px " + Math.floor(Math.abs((iwidth - $(ImgD).width()) / 2)) + "px");
+                }
+            } else {
+                
+                if (smallHeight > iheight) {
+                    $(ImgD).width((smallWidth * iheight) / smallHeight).height(iheight).css("padding", "0px " + Math.floor(Math.abs((iwidth - $(ImgD).width()) / 2)) + "px");
+                } else {
+                    $(ImgD).width(smallWidth).height(smallHeight).css("padding",Math.floor(Math.abs((iheight - $(ImgD).height()) / 2)) + "px " + Math.floor(Math.abs((iwidth - $(ImgD).width()) / 2)) + "px");
+                }
+            }
+        }
+    }
+    $.fn.LoadImage = function(options) {
+        var opt = options;
+        return this.each(function(index, el) {
+            LoadImage(el, opt.width, opt.height);
+        })
+    }
+})(jQuery);
+
+
 $(function(){
     (function(){
         $(function(){
@@ -355,4 +396,9 @@ $(function(){
         }
     });
 
+    $(".postxt-fixed-bar .item2").on("click",function(){
+        setTimeout(function(){
+            $("#J_banner_1 img").LoadImage({width:760,height:400})
+        })
+    })
 })
