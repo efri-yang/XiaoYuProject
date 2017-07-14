@@ -1,0 +1,214 @@
+.pm-tab-hd{
+	display:flex;
+	margin-top:px2rem(30px);
+	border:1px solid #b5161a;
+	border-radius:px2rem(50px);
+	overflow:hidden;
+	li{
+		 flex:1;
+		 a{
+		 	display:block;
+		 	height:px2rem(75px);
+		 	line-height: px2rem(75px);
+		 	text-align:center;
+		 	color:#b5161a;
+		 	@include font-dpr(16px);
+		 }
+		 &.active{
+		 	a{
+		 		background:#b5161a;
+		 		color:#fff;
+		 	}
+		 }
+	}
+}
+
+.pm-datetime-box{
+	text-align:center;
+	margin-top:px2rem(30px);
+	.lab{
+		@include font-dpr(16px);
+		color:#ffdebb;
+		margin-right:px2rem(10px);
+	}
+	.item-sel{
+		display:inline-block;
+		min-width: px2rem(250px);
+		.coms-field-select{
+			height:px2rem(60px);
+			background: #ffdebb url(../images/select_arrow_1.png) no-repeat 100% center;
+			color:#e8343a;
+			border-radius:px2rem(30px);
+			border:none;
+		}
+	}
+}
+.pm-module-tbl{
+	border-radius:px2rem(15px);
+	overflow:hidden;
+	background:#ffffff;
+	display:none;
+	margin-top:px2rem(30px);
+	&.active{
+		display:block;
+	}
+	.more{
+		height:px2rem(80px);
+		line-height:px2rem(80px);
+		@include font-dpr(14px);
+		color:#ad6f03;
+		text-align:center;
+		display:block;
+	}
+	.tbl-column{
+		display:flex;
+		text-align:center;
+		li{
+			@extend %text-overflow;
+			&:nth-child(1){
+				flex:1
+			}
+			&:nth-child(2){
+				flex:2
+			}
+			&:nth-child(3){
+				flex:1
+			}
+		}
+	}
+	.tbl-thead{
+		@include font-dpr(16px);
+		color:#8a5100;
+		background:#ffe574;
+		height:px2rem(90px);
+		font-weight:bold;
+		line-height:px2rem(90px);
+		border-bottom:1px solid #e5c175;
+	}
+	.tbl-tfoot{
+		@include font-dpr(16px);
+		background:#fffaed;
+		color:#ad6f03;
+		height:px2rem(110px);
+		line-height:px2rem(110px);
+		border-bottom:1px solid #f3e1b1;
+	}
+	.tbl-tbody{
+		height:px2rem(500px);
+		overflow:hidden;
+		&.open{
+			height:auto;
+		}
+		li{
+			display:flex;
+		    text-align:center;
+			height:px2rem(100px);
+		    line-height:px2rem(100px);
+		    overflow:hidden;
+		    @include font-dpr(16px);
+		    border-bottom:1px solid #efefef;
+		    &:nth-child(1){
+		    	.num{
+		    		b{
+		    			width:px2rem(39px);
+			    		height:px2rem(66px);
+			    		background:url("../images/pm_rank_num_1.png") no-repeat center center;
+			    		background-size:100% 100%;
+			    		display:inline-block;
+			    		text-indent: -9999px;
+			    		margin:0 auto;
+			    		vertical-align: middle;
+		    		}
+		    	}
+		    }
+		    &:nth-child(2){
+		    	.num{
+		    		b{
+		    			width:px2rem(39px);
+			    		height:px2rem(66px);
+			    		background:url("../images/pm_rank_num_2.png") no-repeat center center;
+			    		background-size:100% 100%;
+			    		display:inline-block;
+			    		text-indent: -9999px;
+			    		margin:0 auto;
+			    		vertical-align: middle;
+		    		}
+		    	}
+		    }
+		    &:nth-child(3){
+		    	.num{
+		    		b{
+		    			width:px2rem(39px);
+			    		height:px2rem(66px);
+			    		background:url("../images/pm_rank_num_3.png") no-repeat center center;
+			    		background-size:100% 100%;
+			    		display:inline-block;
+			    		text-indent: -9999px;
+			    		margin:0 auto;
+			    		vertical-align: middle;
+		    		}
+		    	}
+		    }
+		    .num{
+				flex:1;
+				b{
+					font-weight:normal;
+				}
+		    }
+		    .name{
+				flex:2;
+				color:#3c3c3c;
+				@extend %text-overflow;
+
+		    }
+		    .score{
+				flex:1;
+				color:#999999;
+		    }
+		}
+	}
+
+}
+.pm-module-prizer{
+	border-radius:px2rem(15px);
+	overflow:hidden;
+	background:#ffffff;
+	margin-top:px2rem(30px);
+	.caption{
+		@include font-dpr(16px);
+		color:#8a5100;
+		background:#ffe574;
+		height:px2rem(90px);
+		font-weight:bold;
+		line-height:px2rem(90px);
+		border-bottom:1px solid #e5c175;
+		text-align:center;
+	}
+	.list{
+		li{
+			@include font-dpr(14px);
+			display:flex;
+			padding:px2rem(10px) 0;
+			border-bottom:1px dashed #e5e5e5;
+			.time{
+				color:#888888;
+				text-align:center;
+				flex:1;
+				line-height:1.3;
+				padding:px2rem(10px) 0;
+			}
+			.name{
+				flex:2;
+				border-left:1px solid #ececec;
+				line-height:1.3;
+				color:#666666;
+				padding:px2rem(10px);
+				span{
+					padding:0 px2rem(10px);
+					display:inline-block;
+				}
+
+			}
+		}
+	}
+}

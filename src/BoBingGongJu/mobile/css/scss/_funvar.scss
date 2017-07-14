@@ -1,3 +1,4 @@
+
 @function px2rem($px, $base-font-size:75px) {
     @if (unitless($px)) {
         @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
@@ -18,3 +19,10 @@
         font-size: $font-size * 3;
     }
 }
+
+%text-overflow {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
