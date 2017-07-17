@@ -1,0 +1,37 @@
+.hdgz-caption{
+	padding:px2rem(30px) 0;
+	border-bottom:1px solid #ececec;
+	.tit{
+		border-left:px2rem(7px) solid #e8343a;
+		@include font-dpr(20px);
+		height:px2rem(34px);
+		line-height:px2rem(34px);
+		padding-left: px2rem(20px);
+		color:#333333;
+	}
+}
+.hdgz-desc{
+	padding:px2rem(30px) px2rem(28px) 0;
+	@include font-dpr(16px);
+	line-height:1.4;
+	color:#666666;
+	p{
+		margin-bottom:px2rem(30px);
+	}
+	a{
+		color:#007eff;
+	}
+	.sub-tit{
+		@include font-dpr(18px);
+		color:#e8343a;
+		margin-bottom:px2rem(20px);
+	}
+	.three-tit{
+		@include font-dpr(14px);
+		margin-bottom:px2rem(20px);
+	}
+	.clr-e8343a{
+		color:#e8343a
+	}
+}
+

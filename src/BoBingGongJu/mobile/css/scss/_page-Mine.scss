@@ -51,7 +51,7 @@
 	border-top:1px solid #efefef;
 	border-bottom:1px solid #efefef;
 	background:#fff;
-	padding:px2rem(0) px2rem(30px);
+	padding:0 px2rem(30px);
 	li{
 		position:relative;
 		padding:px2rem(10px) 0 px2rem(20px);
@@ -82,6 +82,7 @@
 		color:#999999;
 		margin-top:px2rem(6px);
 		@include font-dpr(14px);
+		padding-right:px2rem(200px);
 		@extend %text-overflow;
 	}
 	.guide-dj{

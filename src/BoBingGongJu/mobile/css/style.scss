@@ -22,52 +22,50 @@
 
 @import "./scss/_page-DaPaiFuLiChouJiang.scss";
 
-.zjjl-tab-hd-wrap{
-    background:#ed4a3d;
-    padding:px2rem(20px) px2rem(30px);
-    .zjjl-tab-hd{
-        display:flex;
-        border:1px solid #b5161a;
-        border-radius:px2rem(50px);
-        overflow:hidden;
-        li{
-             flex:1;
-             a{
-                display:block;
-                height:px2rem(75px);
-                line-height: px2rem(75px);
-                text-align:center;
-                color:#b5161a;
-                @include font-dpr(16px);
-             }
-             &.active{
-                a{
-                    background:#b5161a;
-                    color:#fff;
-                }
-             }
+@import "./scss/_page-ZhongJiangJiLu.scss";
+
+
+@import "./scss/_page-HuoDongGuiZe.scss";
+
+
+
+@import "./scss/_page-ShangWuHeZuo.scss";
+
+.swhz-top-tip{
+        background:#fffaed;
+        border-bottom: 1px solid #f3e1b1;
+        padding:px2rem(30px);
+        position:relative;
+        .txt-1{
+            @include font-dpr(16px);
+            color:#b76d04;
+            
         }
-    }
 }
-
-
-.zjjl-nodata-tip{
-    padding: px2rem(100px) 0;
-    .pic{
-        width:px2rem(213px);
-        height: px2rem(199px);
-        overflow:hidden;
-        background: url("../images/zjjl_nodata_tip.png") no-repeat center center;
-        background-size: 100% 100%;
-        margin: 0 auto;
-    }
-    .txt{
-        color:#d6d6d6;
-        @include font-dpr(18px);
-        text-align:center;
-        margin-top: px2rem(25px);
-    }
-
+.swhz-form-box{
+	 @include font-dpr(16px);
+	 color:#666666;
+	padding:px2rem(30px) px2rem(30px) 0;
+	.item{
+		margin-bottom: px2rem(30px);
+	}
+	.item-checkbox{
+		position:relative;
+		padding-left: px2rem(260px);
+		.para-tit{
+			position:absolute;
+			left:0;
+			top:0;
+		}
+		.para-val{
+			position:relative;
+			z-index:10;
+			label{
+				display:block;
+				padding-bottom:px2rem(15px);
+			}
+		}
+	}
 }
 
 
