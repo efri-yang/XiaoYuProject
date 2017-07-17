@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中奖登记</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+	    <div class="djxx-top-tip">
+			<p class="txt-1">您已登记个人信息</p>
+			<p class="txt-2">* 9月30日之后将关闭编辑修改功能</p>
+			<a href="ZhongJiangDengJi-Bianji.html" class="edit">编辑 >></a>		
+		</div>
+		<div class="djxx-box">
+			
+			<form action="" method="post" id="J_djxx-form">
+				<div class="item">
+					<input type="text" class="coms-field-text" value="杨艺辉" disabled />
+				</div>
+				<div class="item">
+					<input type="number" class="coms-field-text" value="18559160494"   disabled  />
+				</div>
+				<div class="item">
+					<input type="number" class="coms-field-text" placeholder="请输入身份证号码" value="350623198912275858" disabled />
+				</div>
+				<div class="item item-radio">
+				    <span class="para-tit">领取方式:</span>
+					<label>
+						<input type="radio" checked class="coms-field-radio iconfont" name="getways" disabled>自取
+					</label>
+					<label>
+						<input type="radio" class="coms-field-radio iconfont" name="getways" data-target="#J_item-yj" disabled>邮寄到付
+					</label>
+				</div>
+				<div class="item item-zq active" id="J_item-zq">
+						<span class="para-tit">自取地址:</span>
+						厦门思明区软件园二期望海路59号501室
+				</div>
+				<div class="item item-yj" id="J_item-yj">
+					<input type="text" class="coms-field-text" disabled value="某某某地址" >
+				</div>
+			</form>
+		</div>
+		
+	</div>
+
+	
+	
+</body>
+</html>

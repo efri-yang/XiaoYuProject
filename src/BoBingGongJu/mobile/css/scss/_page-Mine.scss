@@ -1,0 +1,207 @@
+//我的博饼记录 和被人的博饼记录
+.mine-avatar{
+	padding:px2rem(30px) px2rem(30px) px2rem(30px) px2rem(146px);
+	border-bottom: 1px solid #efefef;
+	position:relative;
+	min-height:px2rem(166px); 
+	.avatar{
+		width:px2rem(106px);
+		height: px2rem(106px);
+		overflow:hidden;
+		border-radius:50%;
+        position:absolute;
+        left:px2rem(30px);
+        top:px2rem(30px);
+		img{
+			max-width: 100%;
+		}
+	}
+	.name{
+		color:#333333;
+		@include font-dpr(16px);
+		color:#333333;
+		margin-top: px2rem(6px);
+		margin-bottom: px2rem(10px);
+		font-weight:bold;
+	}
+	.avatar-para{
+		position:relative;
+		width:100%;
+		min-height:px2rem(106px); 
+		.avatar-para-inner{
+			position: absolute;
+		    left:0%;
+		    top: 50%;
+		    -webkit-transform: translate(0%,-50%);
+		    -ms-transform: translate(0%,-50%);
+		    -moz-transform: translate(0%,-50%);
+		}
+	}
+	.score{
+		color:#ec584e;
+		margin-right:px2rem(25px);
+		@include font-dpr(14px);
+	}
+	.rank{
+		color:#ec584e;
+		@include font-dpr(14px);
+	}
+}
+.mine-mp-list{
+	border-top:1px solid #efefef;
+	border-bottom:1px solid #efefef;
+	background:#fff;
+	padding:px2rem(0) px2rem(30px);
+	li{
+		position:relative;
+		padding:px2rem(10px) 0 px2rem(20px);
+		border-bottom:1px dashed #e5e5e5;
+		&:last-child{
+			border-bottom:none;
+		}
+	}
+	.txt-1{
+		@include font-dpr(14px);
+		line-height:px2rem(75px);
+		height:px2rem(62px);
+		color:#e8343a;
+		padding-right:px2rem(200px);
+		@extend %text-overflow;
+		b{
+			width:px2rem(62px);
+			height:px2rem(65px);
+			overflow:hidden;
+			background:url("../images/mine_mp_1.png") no-repeat left top;
+			background-size:100% 100%;
+			vertical-align:top;
+			display:inline-block;
+			margin-right:px2rem(10px);
+		}
+	}
+	.txt-2{
+		color:#999999;
+		margin-top:px2rem(6px);
+		@include font-dpr(14px);
+		@extend %text-overflow;
+	}
+	.guide-dj{
+		padding:px2rem(20px) px2rem(25px);
+		position:absolute;
+		right:px2rem(0px);
+		background:#3190e8;
+		color:#fff;
+		border-radius:px2rem(6px);
+		@include font-dpr(12px);
+	    top: 50%;
+	    -webkit-transform: translate(0,-40%);
+	    -ms-transform: translate(0,-40%);
+	    -moz-transform: translate(0,-40%);
+	    &:active{
+	    	background-color:darken(#3190e8,10%);
+	    }
+
+	}
+}
+.mine-nav{
+	border-top:1px solid #efefef;
+	li{
+		a{
+			display:block;
+			padding:px2rem(20px) px2rem(30px) px2rem(20px) px2rem(115px);
+			line-height:px2rem(70px);
+			position:relative;
+			border-bottom:1px solid #efefef;
+			&:active{
+				background:#f4f4f4;
+			}
+		}
+		.pic{
+			width:px2rem(70px);
+			height:px2rem(70px);
+			overflow:hidden;
+			background-repeat:no-repeat;
+			background-position:center center;
+			background-size: 100% 100%;
+			position:absolute;
+			left:px2rem(30px);
+			top:px2rem(20px);
+			
+		}
+		.txt{
+			color:#666666;
+			@include font-dpr(18px);
+			display:inline-block;
+		}
+	}
+	&.list-1{
+		.item-1{
+			.pic{
+				background-image:url("../images/mine_nav_wdbb.png"); 
+			}
+		}
+		.item-2{
+			.pic{
+				background-image:url("../images/mine_nav_xxbbmp.png"); 
+			}
+		}
+		.item-3{
+			.pic{
+				background-image:url("../images/mine_nav_dpflcj.png"); 
+			}
+		}
+		.item-4{
+			.pic{
+				background-image:url("../images/mine_nav_zjjl.png"); 
+			}
+		}
+	}
+
+	&.list-2{
+		.item-1{
+			.pic{
+				background-image:url("../images/mine_nav_hdgz.png"); 
+			}
+		}
+		.item-2{
+			.pic{
+				background-image:url("../images/mine_nav_ygzm.png"); 
+			}
+		}
+		.item-3{
+			.pic{
+				background-image:url("../images/mine_nav_swhz.png"); 
+			}
+		}
+		.item-4{
+			.pic{
+				background-image:url("../images/mine_nav_gyxybb.png"); 
+			}
+		}
+	}
+}
+.mine-qhzh{
+	display:block;
+	height:px2rem(90px);
+	line-height:px2rem(90px);
+	color:#888888;
+	background:#f2f2f2;
+	text-align:center;
+	@include font-dpr(18px);
+	margin: px2rem(40px) px2rem(30px) 0;
+	border:1px solid #d7d7d7;
+	border-radius: px2rem(5px);
+	&:active{
+		background-color:darken(#f2f2f2,10%);
+	}
+	.pic{
+		width:px2rem(39px);
+		height:px2rem(39px);
+		overflow:hidden;
+
+		background-size:100% 100%;
+		display:inline-block;
+		vertical-align: middle;
+		background:url("../images/mine_qhzh.png") no-repeat center center;
+		margin-right:px2rem(15px);
+	}
+}

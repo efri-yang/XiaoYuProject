@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排名</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="zjjl-tab-hd-wrap">
+            <ul class="zjjl-tab-hd">
+                <li class="active"><a href="#tab-dhjp" data-toggle="tab">兑换奖品</a></li>
+                <li><a href="#tab-bbmp" data-toggle="tab">博饼门票</a></li>
+            </ul>
+        </div>
+
+        <div class="zjjl-tab-bd" id="tab-dhjp">
+			 <div class="zjjl-nodata-tip">
+				<div class="pic"></div>
+				<p class="txt">还没有兑换过奖品</p>
+			 </div>
+        
+        </div>
+		<div class="zjjl-tab-bd" id="tab-bbmp">
+				vvvvvvv
+		</div>
+
+
+		
+	</div>
+
+	 <script type="text/javascript">
+    $(function() {
+      
+        $(".zjjl-tab-hd a").on("click", function(e) {
+            e.preventDefault()
+            $(this).tab('show')
+        });
+    })
+    </script>
+
+	
+
+	
+</body>
+</html>

@@ -1,3 +1,6 @@
+.undis{
+    display:none;
+}
 .mtr10{
     margin-top:px2rem(10px);
 }
@@ -19,12 +22,23 @@
 .prr20{
     padding-right:px2rem(20px);
 }
+
+.plr30{
+    padding-left:px2rem(30px);
+}
+.prr30{
+    padding-right:px2rem(30px);
+}
 .pbr155{
     padding-bottom:px2rem(155px); 
 }
+.pbr40{
+    padding-bottom:px2rem(40px); 
+}
 
-
-
+.border-top-r20{
+    border-top:px2rem(20px) solid #f8f8f8;
+}
 .align-r{
     text-align:right;
 }
@@ -139,15 +153,14 @@
     -webkit-appearance: none !important;
     -webkit-border-radius: 0;
     border-radius: 0;
-    border: 1px solid #CCC;
-    padding:0 px2rem(20px);
-    height:px2rem(88px);
+    border:1px solid #ececec;
+    padding:px2rem(20px) px2rem(10px);
     width: 100%;
     color: #666;
     @include font-dpr(16px);
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    background: #fff url(../images/select_arrow_1.png) no-repeat 100% center;
+    background: #fff url(../images/coms_field_select_arrow.png) no-repeat 100% center;
 }
 
 .coms-cbtn {
@@ -187,11 +200,17 @@
 	background-color:#f2f2f2;
 	color: #888888;
   	border-color: #f2f2f2;
+    &:active{
+        background-color:darken(#f2f2f2,10%);
+    }
 }
 .cbtn-danger{
 	background-color:#e8343a;
 	color: #fff;
   	border-color: #e8343a;
+    &:active{
+        background-color:darken(#e8343a,10%);
+    }
 }
 
 
