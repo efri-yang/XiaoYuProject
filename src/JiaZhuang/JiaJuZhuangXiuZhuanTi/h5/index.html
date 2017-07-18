@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="js/zepto.js"></script>
+	<script src="js/flexible.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/swiper/js/swiper.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+</head>
+<body>
+	<div class="banner-entry">
+			<span class="arrow"></span>
+    </div>
+	<div class="container">
+		<div class="tit-type-1"><span class="tit">热门家访<i></i></span></div>
+
+		<ul class="pro-list clearfix">
+		    <li>
+				<a href="#" class="pic"><img src="images/pro_1.jpg"><span class="num">56456人看过</span></a>
+				<div class="auther-desc clearfix">
+					<a href="" class="avatar"><img src="images/pro_1.jpg"></a>
+					<span class="uname"><a href="#">王小姐</a></span>
+					<span class="desc">山水新座  三室一厅  118平</span>
+				</div>
+				<p class="name"><a href="#">创意无限家居室内简约工作区</a></p>
+		    </li>
+		 	<li>
+				<a href="#" class="pic"><img src="images/pro_1.jpg"><span class="num">56456人看过</span></a>
+				<div class="auther-desc clearfix">
+					<a href="" class="avatar"><img src="images/pro_1.jpg"></a>
+					<span class="uname"><a href="#">王小姐</a></span>
+					<span class="desc">山水新座  三室一厅  118平</span>
+				</div>
+				<p class="name"><a href="#">创意无限家居室内简约工作区</a></p>
+		    </li>
+		 
+		</ul>
+    </div>
+    <div class="container wqjcft-box">
+		<div class="tit-type-1"><span class="tit">往期精彩家访<i></i></span></div>
+		<ul class="list clearfix">
+		    <li><a href="#">
+					<div class="pic"><img src="images/pro_1.jpg" /></div>
+					<p class="txt">创意无限家居室内简约工作区</p>
+		    </a></li>
+		    <li><a href="#">
+					<div class="pic"><img src="images/pro_1.jpg" /></div>
+					<p class="txt">创意无限家居室内简约工作区</p>
+		    </a></li>
+		    <li><a href="#">
+					<div class="pic"><img src="images/pro_1.jpg" /></div>
+					<p class="txt">创意无限家居室内简约工作区</p>
+		    </a></li>
+		    <li><a href="#">
+					<div class="pic"><img src="images/pro_1.jpg" /></div>
+					<p class="txt">创意无限家居室内简约工作区</p>
+		    </a></li>
+		</ul>
+    </div>
+
+    <div class="container gmsj-box">
+		<div class="tit-type-1"><span class="tit">冠名商家<i></i></span></div>
+
+		<div class="gs-intro-box">
+				<div class="tit-type-2"><span><strong>本期冠名：钜诚装饰</strong><i></i></span></div>
+				<div class="gs-desc">
+						<p class="tit">公司简介</p>
+						<div class="detail">
+							<p>钜诚装饰—是一家坚持做口碑的装饰企业，成立于2008年，以平价、服务、质量获得客户的认可。至今，我们共服务2600多户业主，其中大部分是老客户或老客户介绍，真正做到了家家皆样板 户户留口碑。  2006年、有一支名叫小何的施工队活跃在厦门......</p>
+
+<p>2008年、我们入驻小鱼网，获得装修客户的一致好评</p>
+
+<p>2009年、经过客户口口相传，找我们的客户越来越多，小何施工队形成了一定的规模；并于年底正式注册为--厦门钜诚装饰设计工程有限公司</p>
+
+<p>2010年、小何开始以‘钜诚装饰’品牌服务于每一位信任钜诚</p>
+						</div>
+				</div>
+		</div>
+
+
+		<div class="jxal-box">
+			<div class="tit-type-2"><span><strong>精选案列</strong> <i></i></span></div>
+
+			<div class="banner-scroller-box">
+				<div class="swiper-container banner-container" id="J_banner-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide"><a href="#"><img src="images/pro_2.jpg" /></a></div>
+			            <div class="swiper-slide"><a href="#"><img src="images/pro_2.jpg" /></a></div>
+			            <div class="swiper-slide"><a href="#"><img src="images/pro_2.jpg" /></a></div>
+			        </div>
+			        <div class="swiper-button-prev"></div>
+    				<div class="swiper-button-next"></div>
+    				<ul class="swiper-desc" id="J_swiper-desc">
+    				    <li class="active">创意无限家居室内简约工作区</li>
+    				    <li>创意22222</li>
+    				    <li>创意33333</li>
+    				</ul>
+		    	</div>
+
+			</div>
+		</div>
+    </div>
+
+    <script src="js/swiper/js/swiper.jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+	<script type="text/javascript">
+			$(function(){
+				var winH=$(window).height();
+				$(".banner-entry").css("height",winH);
+				var bannerLen=$("#J_swiper-desc").children().length;
+
+				var swiper = new Swiper('#J_banner-container',{
+					prevButton:'.swiper-button-prev',
+					nextButton:'.swiper-button-next',
+					loop:true,
+					onSlideChangeEnd: function(swiper){
+						var index=swiper.activeIndex%bannerLen;
+				      $(".swiper-desc li").eq(index).addClass("active").siblings().removeClass('active')
+				    }
+				});
+
+			})
+	
+	</script>
+</body>
+</html>
