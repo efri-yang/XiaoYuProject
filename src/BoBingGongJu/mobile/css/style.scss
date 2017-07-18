@@ -31,3 +31,174 @@
 
 @import "./scss/_page-ShangWuHeZuo.scss";
 
+.bb-top-bar{
+	background:#fff;
+	padding:px2rem(20px) px2rem(30px);
+	box-shadow:0 0 20px 0px #333; 
+	position:relative;
+	z-index:1; 
+	.score{
+		color:#e42e43;
+		font-size: px2rem(26px);
+		display:inline-block;
+		line-height: px2rem(60px);
+		margin-right:px2rem(20px);
+		i{
+			width: px2rem(28px);
+			height: px2rem(28px);
+			overflow: hidden;
+			display: inline-block;
+			vertical-align: middle;
+			background:url("../images/jrbbf_icon.png") no-repeat top center;
+			background-size: 100% 100%;
+			margin-top: -2px;
+			margin-right: px2rem(8px);
+		}
+	}
+	.rank{
+		color:#28b28b;
+		font-size: px2rem(26px);
+		
+		i{
+			width: px2rem(28px);
+			height: px2rem(28px);
+			display: inline-block;
+			vertical-align: middle;
+			background:url("../images/jrpm_icon.png") no-repeat center center;
+			background-size: 100% 100%;
+			margin-top: -2px;
+			margin-right: px2rem(8px);
+		}
+	}
+	.entry-btn{
+		height:px2rem(60px);
+		line-height: px2rem(60px);
+		padding:0 px2rem(20px);
+		background:#3190e8;
+		border-radius: px2rem(10px);
+		font-size:px2rem(28px);
+		float: right;
+		color:#fff;
+		&:active{
+			background-color: darken(#3190e8,5%);
+		}
+	}
+}
+
+.bb-main-box{
+	background:url("../images/bb_ysz_bg.png") no-repeat top center #e8343a;
+	position:relative;
+	background-size:100% 100%;
+	height:px2rem(800px);
+	padding-top:px2rem(190px);
+	.entery-gzsj{
+		height:px2rem(50px);
+		line-height:px2rem(50px);
+		padding:0 px2rem(20px);
+		border:2px solid #fff7a5;
+		border-radius:px2rem(30px);
+		position:absolute;
+		top:px2rem(30px);
+		left:px2rem(30px);
+		color:#fff7a5;
+		@include font-dpr(14px);
+	}
+	.entery-hdgz{
+		position:absolute;
+		top:px2rem(30px);
+		height:px2rem(50px);
+		line-height:px2rem(50px);
+		right:px2rem(30px);
+		@include font-dpr(14px);
+		color:#ffefa9;
+		i{
+			width:px2rem(29px);
+			height:px2rem(29px);
+			background:url("../images/entery_hdgz_icon.png") no-repeat top center;
+			background-size:100% 100%;
+			display:inline-block;
+			vertical-align:middle;
+			margin-left: px2rem(10px);
+		}
+	}
+}
+.bb-guide-tip{
+	background:#bb3131;
+	height:px2rem(70px);
+	line-height:px2rem(70px);
+	border-radius:px2rem(40px);
+	position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    top:px2rem(90px);
+    color:#fff;
+    padding:0 px2rem(30px);
+    span{
+    	display:block;
+    	height:100%;
+    }
+    &.nobegin{
+    	span{
+    		width:px2rem(254px);
+    		background-size:100% auto;
+    		background:url("../images/bb_guide_wks.png") no-repeat center center;
+    	}
+    }
+}
+
+.bb-rock-box{
+	.bb-bowl{
+		width:px2rem(508px);
+		height:px2rem(440px);
+		overflow:hidden;
+		display:block;
+		background:url("../images/bb_bowl.png") no-repeat center center;
+		background-size:100% 100%;
+		margin:0 auto;
+	}
+}
+
+.bb-para-box{
+	font-size:px2rem(26px);
+	text-align:center;
+	margin-top:px2rem(20px);
+	>span{
+		display:inline-block;
+	}
+	.amount{
+		color:#fff;
+		margin-right:px2rem(10px);
+	}
+	.add-btn{
+		background:#fcdb6a;
+		height:px2rem(40px);
+		line-height:px2rem(40px);
+		border-radius:px2rem(30px);
+		padding:0 px2rem(20px);
+		color:#fd3f3f;
+		font-size:px2rem(28px);
+		&:active{
+			background-color:darken(#fcdb6a,10%);
+		}
+	}
+	.xyb{
+		color:#fff;
+		margin-left:px2rem(30px);
+	}
+	.zyb-btn{
+		background:#bb3131;
+		height:px2rem(40px);
+		line-height:px2rem(40px);
+		border-radius:px2rem(30px);
+		padding:0 px2rem(20px);
+		color:#fff;
+		font-size:px2rem(28px);
+		margin-left:px2rem(10px);
+		&:active{
+			background-color:darken(#bb3131,10%);
+		}
+	}
+
+}
