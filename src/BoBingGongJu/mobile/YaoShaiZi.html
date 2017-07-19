@@ -21,17 +21,12 @@
 			<div class="bb-guide-tip nobegin"><span></span></div>
 			
 			<div class="bb-rock-box">
-				 <div class="bb-bowl">
-						<span class="dice active dice1"><img src="images/dices1.png"></span>
-						<span class="dice active dice2"><img src="images/dices2.png"></span>
-						<span class="dice active dice3"><img src="images/dices3.png"></span>
-						<span class="dice active dice4"><img src="images/dices4.png"></span>
-						<span class="dice active dice5"><img src="images/dices5.png"></span>
-						<span class="dice active dice6"><img src="images/dices6.png"></span>
+				 <div class="bb-bowl" id="J_bowl-box">
+						
 				 </div>
 				 <a href="#" class="dir-prev"><span></span></a>
 				 <a href="#" class="dir-next"><span></span></a>
-				 <span class="plam-hand"></span>
+				 <span class="plam-hand" id="J_plam-hand"></span>
 
 			</div>
 			<div class="bb-para-box">
@@ -44,48 +39,43 @@
 			    <input type="hidden" value="0" class="slideunlock-lockable">
 				<span class="line"></span>
 				<div class="slideunlock-slider">
-				    <span class="real-w" id="J_real-w"></span>
 					<span class="slideunlock-bg" id="J_slideunlock-bg"></span>
-					<span class="slideunlock-btn"><span></span></span>
+					<span class="slideunlock-btn"><b><span></span></b></span>
 					<span class="slideunlock-txt">按住往右拉>></span>
 				</div>
-			</div>
-			
-            <script type="text/javascript">
-				 	$(function(){
-				 		$("#x1").on("click",function(){
-				 			$(".bb-bowl").html('<span class="dice active dice1"><img src="images/dices1.png"></span><span class="dice active dice2"><img src="images/dices2.png"></span><span class="dice active dice3"><img src="images/dices3.png"></span><span class="dice active dice4"><img src="images/dices4.png"></span><span class="dice active dice5"><img src="images/dices5.png"></span><span class="dice active dice6"><img src="images/dices6.png"></span>')
-				 		})
-				 	})
-				 </script>
+			</div> 
 		</div>
-		
+		<div class="border-top-r20">
+			<div class="bb-caption-1">
+				<span class="tit">博饼包厢</span>
+			</div>
+			<ul class="bb-bx-list clearfix">
+                    <li class="active">
+						<a href="#" class="pic"><img src="upload/h_m_pic3.png"></a>
+						<p class="align-r mtr10"><a href="javascript:void(0)" class="coms-cbtn cbtn-danger">当前包厢</a></p>
+                    </li>
+                    <li>
+						<a href="#" class="pic"><img src="upload/h_m_pic4.png"></a>
+						<p class="align-r mtr10"><a href="javascript:void(0)" class="coms-cbtn cbtn-danger disabled">今日未博</a></p>
+                    </li>
+
+                    <li>
+						<a href="#" class="pic"><img src="upload/h_m_pic3.png"></a>
+						<p class="align-r mtr10"><a href="" class="coms-cbtn cbtn-danger">今日未博</a></p>
+                    </li>
+                    
+                </ul>
+		</div>
+
+		<div class="border-top-r20">
+			<div class="bb-qfl">
+				<a href="#"></a>
+			</div>
+		</div>
+
+		<div style="height:300px"></div>
 	</div>
 	<script type="text/javascript" src="js/jquery.slideunlock.js"></script>
-
-	<script type="text/javascript">
-		$(function(){
-				    
-					var slider = new SliderUnlock(".slideunlock-slider", {
-						labelTip: "按住往右拉>>",
-            			successLabelTip: "开始！",
-            			max:parseInt($("#J_real-w").width()),
-            			duration:0   // 动画效果执行时间，默认200ms
-					}, function(){
-			            
-			        }, function(){
-			            
-			        });
-			        slider.init();
-
-
-		       
-
-		})
-
-	</script>
-	
-
-	
+    <script type="text/javascript" src="js/bbrock.js"></script>
 </body>
 </html>

@@ -40,8 +40,10 @@ function SliderUnlock(elm, options, success, always) {
     _self.swipestart = opts.swipestart;
     //最小值 (Minimum value)
     _self.min = opts.min;
+
+    _self.btnW=$(".slideunlock-btn").width();
     //最大值 (Maximum value)
-    _self.max = opts.max;
+    _self.max = opts.max-_self.btnW;
     //当前滑动条所处的位置 (The location of the current slider)
     _self.index = opts.index;
     //是否滑动成功 (Whether the slide is successful)
@@ -52,8 +54,6 @@ function SliderUnlock(elm, options, success, always) {
     _self.success = success;
     //always
     _self.always = always;
-
-    _self.btnW=$(".slideunlock-btn").width();
 }
  
 /**
@@ -129,7 +129,8 @@ SliderUnlock.prototype.handerIn = function () {
     var _self = this;
     _self.swipestart = true;
     _self.min = 0;
-    _self.max = _self.elm.width();
+    _self.max = _self.elm.width()-_self.btnW;
+    
 }
 
 /**
@@ -171,7 +172,7 @@ SliderUnlock.prototype.handerMove = function (event, type) {
 SliderUnlock.prototype.move = function () {
     var _self = this;
 
-    if ((_self.index + 0) >=_self.max-192) {
+    if ((_self.index + 0) >=_self.max) {
         _self.index = _self.max - 0;
         //停止 (stop)
         _self.swipestart = false;
@@ -219,14 +220,13 @@ SliderUnlock.prototype.reset = function () {
 SliderUnlock.prototype.backgroundTranslate = function () {
     var _self = this;
 
-    var w=(_self.index >=_self.max) ? (_self.max-_self.btnW) : _self.index;
-    var bgW=(_self.index >=_self.max) ?  _self.index :(_self.btnW+_self.index);
+    
    
-    _self.elm.find(".slideunlock-btn").css("left",w+"px")
+    _self.elm.find(".slideunlock-btn").css("left",_self.index)
         .next('.slideunlock-txt').css("opacity", 1 - (parseInt($(".slideunlock-btn").css("left")) / _self.max));
     _self.elm.find(".slideunlock-bg").animate({
             opacity: 1,
-            width:bgW
+            width:_self.btnW+_self.index
         },0);
 }
 
