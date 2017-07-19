@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网上车展鱼你看车</title>
+<link type="text/css" rel="stylesheet" href="css/showh5.css" />
+<script type="text/javascript" src="js/flexible.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/swiper.js"></script>
+<script type="text/javascript">
+
+jQuery(document).ready(function(){
+	
+	/*中奖名单*/
+	var noticenode =jQuery('.winning-list').children('li').length;
+	var listheight =jQuery('.winning-con').height();
+	var ulscrollTop =0;
+	jQuery('.winning-list').append(jQuery(".winning-list li:first").clone());
+	setInterval(function(){
+		if(ulscrollTop==-listheight*(noticenode+1)){
+			jQuery('.winning-list').css('top', 0);
+			ulscrollTop=-listheight;
+		}
+		jQuery('.winning-list').animate({top:ulscrollTop+'px'}, 500, function() {
+			if(!(ulscrollTop==-listheight*(noticenode+1))){
+				ulscrollTop=ulscrollTop-listheight;
+			}
+		});
+	},3000);
+	
+	//商品滚动
+    if($('.swipe').length)
+    {
+        $('.swipe').swipe({
+            speed:1000,
+            continuous:true,
+            auto:8000,
+            disableScroll:true,
+            stopPropagation:true,
+            callback:function(index,elem)
+            {},
+            initCallback:function(container){
+                
+            }
+        });
+    }
+	
+	jQuery(".signup-btn").click(function(){
+		jQuery('#reg').show();
+	});
+	
+	jQuery(".icon-addsccar").click(function(){
+		var carmodels ='<li class="fn-clear"><select class="fn-fl sccar-select font-22"><option>品牌</option></select><select class="fn-fr sccar-select font-22"><option>车型</option></select></li>';
+		jQuery('.sccar-form-com').addClass('active');
+		if(jQuery('.sccar-models>li').length<5){
+			jQuery('.sccar-models').append(carmodels);
+		}
+	});
+		
+	jQuery(".diy-sccar-con").click(function(){
+		jQuery('.diy-sccar-ppo').show();
+	});
+	
+	jQuery('.diy-sccar-pin').click(function(){
+		if(!jQuery(this).is('.active')){
+			jQuery(this).addClass('active');
+		}else{
+			jQuery(this).removeClass('active');
+		}
+	});
+	
+	var diyselected = '';
+	jQuery('.diy-sccar-checked').click(function(){
+		jQuery('.diy-sccar-ppo').hide();
+		diyselected = '';
+		jQuery(".diy-sccar-pin").each(function(){
+			if(jQuery(this).is('.active'))  
+			diyselected += jQuery(this).text() + " ";  
+		 }); 
+		 if(diyselected){ 
+		 	if(diyselected.length>15){
+				jQuery(".diy-sccar-selected").addClass('active');
+			}else{
+				jQuery(".diy-sccar-selected").removeClass('active');
+			}
+			jQuery(".diy-sccar-selected").html(diyselected);
+		 }else{
+			 jQuery(".diy-sccar-selected").html('车型可多选');
+		 }
+	});
+	
+	jQuery('.filter-pin').click(function(){
+		jQuery(this).addClass('active').siblings('.filter-pin').removeClass('active');
+	});
+	
+});
+</script>
+</head>
+<body  class="pb220">
+
+<div class="theme">
+    <img src="img/h5-theme.jpg" alt="#" />
+    <div class="pl20 pr20 pb40">
+        <div class="relative winning-user ulib-r5">
+            <h2 class="icon icon-winning-tt">中奖用户</h2>
+            <div class="relative winning-con overflowhidden">
+                <ul class="winning-list font-22">
+                    <li class="fn-clear">
+                        <div class="winning-cell"><span>郑**</span><span class="ml10">138****0976</span><span class="ml10">10元红包</span></div>
+                        <div class="winning-cell"><span>杨**</span><span class="ml10">159****3765</span><span class="ml10">50元红包</span></div>
+                        <div class="winning-cell"><span>王**</span><span class="ml10">156****3345</span><span class="ml10">50元红包</span></div>
+                        <div class="winning-cell"><span>吴*</span><span class="ml10">189****0976</span><span class="ml10">30元红包</span></div>
+                    </li>
+                    <li class="fn-clear">
+                        <div class="winning-cell"><span>章**</span><span class="ml10">133****0566</span><span class="ml10">30元红包</span></div>
+                        <div class="winning-cell"><span>曾*</span><span class="ml10">151****5311</span><span class="ml10">20元红包</span></div>
+                        <div class="winning-cell"><span>黄*</span><span class="ml10">150****3695</span><span class="ml10">50元红包</span></div>
+                        <div class="winning-cell"><span>吴**</span><span class="ml10">180****0226</span><span class="ml10">30元红包</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-1">
+	<div class="inner20 pb40">
+    	<ul class="show-brand fn-clear font-24">
+        	<li>
+            	<img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li>
+            <li>
+            	<img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li>
+            <li>
+            	<img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li>
+            <li>
+            	<img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li>
+            <li>
+            	<img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li>
+            <li>
+            	<img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li>
+            <li>
+            	<img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li>
+            <li>
+            	<img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li>
+             <li>
+                <img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li> <li>
+                <img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li> <li>
+                <img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li> <li>
+                <img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li> <li>
+                <img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li> <li>
+                <img class="img-cover" src="img/k9x4.png" style="background-image:url('upload/v-1.jpg');" alt="奔驰" />
+                <div class="brand-name">奔驰</div>
+            </li>
+        </ul>
+	</div>
+</div>
+
+<div class="panel-2">
+    <div class="inner20 pb40">
+    	<div class="panel-2shadow">
+        	
+            <ul class="car_list fn-clear">
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+
+                    </ul>
+        </div>
+    </div>
+</div>
+
+<div class="panel-3">
+    <div class="inner20 pb40">
+    	<div class="panel-3shadow">
+        
+        	<ul class="car_list fn-clear">
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                    </ul>
+        
+        </div>
+    </div>
+</div>
+
+<div class="panel-4">
+    <div class="inner20 pb40">
+    	<div class="panel-4shadow">
+        	
+           <ul class="car_list fn-clear">
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                        <li>
+                            <a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pl10 text-nowrap"><span class="color-red"><span class="font-20">优惠价：</span><b class="font-26">8.30万</b></span></div>
+                            <div class="pl10 text-nowrap"><span class="text-through font-20 color-666">指导价：10.97万</span></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red signup-btn font-22 color-fff ulib-r100" href="javascript:void(0)">报名抢红包</a></div>
+                        </li>
+                    </ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="panel-5">
+    <div class="pt20 pb40 pl60 pr60">
+    	<div class="reg-panel ulib-r5">
+            <div class="car-subsidy-tt relative fn-clear">
+                <div class="fn-fl fn-clear font-50">
+                    <span class="icon icon-sccar-num">4</span>
+                    <span class="icon icon-sccar-num">5</span>
+                    <span class="icon icon-sccar-num">7</span>
+                    <span class="icon icon-sccar-num">8</span>
+                </div>
+                <div class="fn-fl sccar-unit font-24">人已领取购车补贴</div>
+            </div>
+            <div class="sccar-form-com">
+                <div class="pt15 font-22 color-fff">登记意向车型参与购车团购<a class="icon ml10 icon-addsccar" href="javascript:"></a></div>
+                <ul class="pt5 sccar-models">
+                    <li class="fn-clear">
+                        <select class="fn-fl sccar-select font-22">
+                            <option>品牌</option>
+                            <option>车型</option>
+                        </select>
+                        <select class="fn-fr sccar-select font-22">
+                            <option>车型</option>
+                            <option>车型</option>
+                        </select>
+                    </li>
+                </ul>
+                <div class="pt10 font-22 color-fff">没有意向车型？我还考虑</div>
+                <div class="pt5 fn-clear">
+                    <select class="fn-fl sccar-select font-22">
+                        <option>预算区间</option>
+                    </select>
+                    <div class="fn-fr diy-sccar relative font-22">
+                        <div class="diy-sccar-con">
+                            <div class="diy-sccar-selected">车型可多选</div>
+                        </div>
+                        <div class="diy-sccar-ppo">
+                            <span class="sccar-arrow"></span>
+                            <div class="diy-sccar-select">
+                            	<div class="fn-clear">
+                                    <a class="diy-sccar-pin" href="javascript:">小型车</a>
+                                    <a class="diy-sccar-pin" href="javascript:">紧凑型车</a>
+                                    <a class="diy-sccar-pin" href="javascript:">中型车</a>
+                                    <a class="diy-sccar-pin" href="javascript:">中大型车</a>
+                                    <a class="diy-sccar-pin" href="javascript:">大型车</a>
+                                    <a class="diy-sccar-pin" href="javascript:">中大型SUV</a>
+                                    <a class="diy-sccar-pin" href="javascript:">中型SUV</a>
+                                    <a class="diy-sccar-pin" href="javascript:">MPV</a>
+                                    <a class="diy-sccar-pin" href="javascript:">紧凑型SUV</a>
+                                </div>
+                                <div class="inner10 text-center"><a class="btn block btn-red font-22 color-fff ulib-r100 diy-sccar-checked" href="javascript:void(0)">确定</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt15"><input class="input_sccar font-22" type="text" placeholder="您的姓名"></div>
+                <div class="pt15"><input class="input_sccar font-22" type="text" placeholder="您的联系方式"></div>
+            </div>
+            <a class="sccar-form-opt pt20 pb20 font-28" href="javascript:">报名领取990元购车补贴</a>
+    	</div>
+    </div>
+</div>
+
+<div class="panel-6">
+    <div class="inner20 pb40">
+    	<div class="panel-6shadow">
+        	
+            <div class="swipe"> 
+            <div class="swipe-wrap">
+                <div class="pin">
+                	<ul class="car_list fn-clear">
+                    	<li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#">上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                        <li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                        <li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                        <li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pin">
+                	<ul class="car_list fn-clear">
+                    	<li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                        <li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                        <li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                        <li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pin">
+                	<ul class="car_list fn-clear">
+                    	<li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                        <li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                        <li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                        <li>
+                        	<a href="#" ><img class="img-cover" src="img/k35x18.png" style="background-image:url('upload/v-2.jpg');" alt="上汽大众  全新一代迈腾经典款经典款我看看多长" /></a>
+                            <div class="pt10 pl10 text-nowrap tip-height font-24"><a href="#" >上汽大众  全新一代迈腾经典款</a></div>
+                            <div class="pt5 pb20 text-center"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)">立即预约</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="show-foot font-20">&copy;2003-2016 小鱼网  版权所有，并保留所有权利</div>
+
+<div class="fixed-bottom">
+	<div class="inner20 font-22">
+    	<div class="color-fff">筛选品牌：</div>
+        <div class="fn-clear">
+        	<a class="filter-pin ulib-r5 active" href="javascript:void(0);">不限</a>
+        	<a class="filter-pin ulib-r5" href="javascript:void(0);">吉利吉利车</a>
+            <a class="filter-pin ulib-r5" href="javascript:void(0);">吉利吉利车</a>
+            <a class="filter-pin ulib-r5" href="javascript:void(0);">吉利吉利车</a>
+            <a class="filter-pin ulib-r5" href="javascript:void(0);">吉利吉利车</a>
+            <a class="filter-pin ulib-r5" href="javascript:void(0);">吉利吉利车</a>
+            <a class="filter-pin ulib-r5" href="javascript:void(0);">吉利吉利车</a>
+            <a class="filter-pin ulib-r5" href="javascript:void(0);">吉利吉利车</a>
+            <a class="filter-pin ulib-r5" href="javascript:void(0);">吉利吉利车</a>
+            <a class="filter-pin ulib-r5" href="javascript:void(0);">吉利吉利车</a>
+            <a class="filter-pin ulib-r5" href="javascript:void(0);">吉利吉利车</a>
+        </div>
+    </div>
+</div>
+
+<div id="reg" class="pop-cover">
+	<div class="pop-wrap ulib-r5">
+    	<a class="icon icon-reg-close" href="javascript:" onclick="jQuery('#reg').hide();"></a>
+    	<div><img src="img/h5-win-tt-1.png" alt="立即报名" /></div>
+        <div class="pt20 pb30 section ulib-rb10" style="margin-top:-1px;">
+        	<div class="text-center font-26">报名车型的名称</div>
+            <table class="reg-tb font-24">
+            	<tbody>
+                	<tr>
+                        <th>姓名</th>
+                        <td><input class="input_reg font-24 ulib-r5" type="text" placeholder="请输入您的姓名"></td>
+                    </tr>
+                    <tr>
+                        <th>手机号</th>
+                        <td><input class="input_reg font-24 ulib-r5" type="text" placeholder="请输入您的手机号码"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                	<tr>
+                        <th></th>
+                        <td><label><input type="checkbox" checked />我已阅读并同意此</label><a class="color-blue text-underline" href="javascript:" onclick="jQuery('#agreement').show();jQuery('#reg').hide();">《服务协议》</a></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="text-center pt20"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)" onclick="jQuery('#reg').hide();jQuery('#packet').show();"><b>报名抢红包</b></a></div>
+        </div>
+    </div>
+</div>
+
+<div id="agreement" class="pop-cover">
+	<div class="pop-wrap">
+    	<a class="icon icon-reg-close" href="javascript:" onclick="jQuery('#agreement').hide();jQuery('#reg').show();"></a>
+    	<div><img src="img/h5-win-tt-2.png" alt="服务协议" /></div>
+        <div class="pt10 pb30 section ulib-rb10 font-20" style="margin-top:-1px;">
+            <div class="agreement-tx ml10 mr10 inner10 ulib-r5">
+                <p>参与活动前请详细阅读活动规则及相关条款。凡参与本次活动，则视为同意活动规则及免责声明条款：</p>
+                <ol>
+                    <li>1.为保证活动的顺利进行，参与用户须确保已年满18周岁，具备完全民事行为能力。用户须妥善保管自己的用户名、密码等注册信息，因注册信息有误、遗忘遗失密码造成用户损失的，小鱼汽车不承担任何责任。</li>
+                    <li>2.小鱼汽车可以根据本活动的实际举办情况对活动规则进行变动或调整。小鱼汽车有权随时调整活动页面的车辆信息，并更新活动车辆，且无需承担任何责任。</li>
+                    <li>3.活动期间，因参与用户操作不当或参与用户所在区域网络故障、电信运营商故障等非小鱼汽车所能控制的原因导致的参与用户无法参与活动、或者参与失败，小鱼汽车不予负责。</li>
+                    <li>4.小鱼汽车依法运营此次购车行动，如遇不可抗力因素（不可抗力是指不能控制、不可预见或不能避免的事件）导致本次活动无法进行时或需要暂停举办的，包括但不限于（活动受恶劣天气影响需停办、活动受政府机关指令要求停办、活动遭受严重网络攻击出现宕机或系统故障需要暂停举办的），在法律允许的范围内，小鱼汽车有权决定取消、终止、修改或暂停本活动，小鱼汽车及活动参与经销商无需为此承担赔偿责任或进行任何形式的补偿。</li>
+                    <li>5.小鱼汽车不对用户的保险贷款申请提供任何担保，用户绑定的银行卡的账户安全风险及账户资金风险由用户自行承担。</li>
+                    <li>6.小鱼汽车仅作为提供商家汽车资源信息的第三方平台，不对商家的产品品质提供任何担保，请用户保持审慎进行购买。</li>
+                    <li>7.用户应按中国法律之规定，自行完成购车，期间产生的任何税费均由用户个人自行承担。</li>
+                    <li>8.用户与线下各厂商经销商因购车（含线下提车、异地购车、车辆置换、售后服务等相关事宜）而产生的纠纷，应由双方按照法律规定或购车合同约定解决，与小鱼汽车无关，小鱼汽车不参与解决此类纠纷，也不承担任何责任。</li>
+                    <li>9.用户因自身主观过错或恶意（如不按正常流程操作、填写信息不真实、不完整等类似情形）致使其不能领取活动奖品的，小鱼汽车免除提供相应优惠奖项的责任。</li>
+                    <li>10.由于第三方网站或第三人通过技术手段恶意攻击或篡改致使活动信息发生错误，小鱼汽车不负任何法律或经济责任，活动信息以小鱼汽车公布版本为准。</li>
+                    <li>11.活动奖品的质量、售后服务、退货、换货，获奖者可以自行与该奖品的提供商联系解决，与小鱼汽车无关。</li>
+                    <li>12.任何人或任何网站以小鱼汽车名义从事类似活动或恶意通知用户领奖，均为假冒，请用户谨慎辨别真假。如因相信前述非小鱼汽车提供的活动信息而造成用户损失的，由用户自行承担，与小鱼汽车无关。</li>
+                    <li>13.本次活动涉及的价格及优惠政策均为经销商、厂商、厂商代理提供，如价格或优惠政策有调整，请以活动现场实际价格或优惠政策为准。</li>
+                    <li>14.小鱼汽车有权通过电话等其他方式与参与用户本人核实购车详情，并保留对用户申请奖励的审核权、否决权。参与用户、申请人因奖励发放产生任何争议的，小鱼汽车不予负责；经小鱼汽车与参与用户电话或其他方式确认，对于奖励申请有异议的，小鱼汽车有权驳回申请人的申请，且无需承担任何责任。</li>
+                    <li>15.本声明所述的小鱼汽车为包含小鱼汽车品牌旗下全部关联公司的整体。</li>
+                </ol>
+            </div>
+            <div class="text-center pt20"><a class="btn btn-red font-22 color-fff ulib-r100" href="javascript:void(0)" onclick="jQuery('#agreement').hide();jQuery('#reg').show();"><b>我知道了</b></a></div>
+        </div>
+    </div>
+</div>
+
+<div id="packet" class="pop-cover">
+	<div class="pop-wrap">
+    	<div class="packet text-center">
+        	<a class="open-opt ulib-r5 font-32" href="javascript:" onclick="jQuery('#packet').hide();jQuery('#open-packet').show();">点击拆红包</a>
+        </div>
+    </div>
+</div>
+
+<div id="open-packet" class="pop-cover">
+	<div class="pop-wrap">
+    	<a class="icon icon-packet-close" href="javascript:" onclick="jQuery('#open-packet').hide();"></a>
+    	<div class="open-packet text-center">
+        	<div class="packet-tt font-34">恭喜您获得</div>
+            <div class="packet-note font-40">很可爱的小熊抱枕</div>
+            <div class="packet-tx font-22">稍后将以短信形式发送至您的手机<br />到店看车凭短信即可使用</div>
+            <div class="packet-info font-24">姓名：王小双<br />手机号：18754854876</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
