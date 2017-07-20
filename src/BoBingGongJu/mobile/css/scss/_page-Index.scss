@@ -41,7 +41,7 @@
 			vertical-align:top;
 		}
 	}
-	>.coms-cbtn{
+	.coms-cbtn{
 		position:absolute;
 		left:px2rem(30px);
 		top:px2rem(30px);
@@ -65,16 +65,16 @@
 		&:nth-child(2n+1){
 			margin-right: px2rem(12px);
 		}
-		>p{
-			.coms-cbtn{
-				padding:px2rem(10px) px2rem(25px);
-				&.disabled{
-					background-color:#b4b4b4;
-					border-color:#b4b4b4;
-					color:#fefefe;
-				}
+		
+		.coms-cbtn{
+			padding:px2rem(10px) px2rem(25px);
+			&.disabled{
+				background-color:#b4b4b4;
+				border-color:#b4b4b4;
+				color:#fefefe;
 			}
 		}
+		
 		.pic{
 			width:px2rem(306px);
 			height:px2rem(198px);
@@ -102,20 +102,20 @@
 		&:nth-child(3n+3){
 			margin-right:0;
 		}
-		>p{
-			.coms-cbtn{
-				position:absolute;
-				top:px2rem(10px);
-				right:px2rem(10px);
-				padding:px2rem(5px) px2rem(10px);
-				@include font-dpr(14px);
-				&.disabled{
-					background-color:#b4b4b4;
-					border-color:#b4b4b4;
-					color:#fefefe;
-				}
+		
+		.coms-cbtn{
+			position:absolute;
+			top:px2rem(10px);
+			right:px2rem(10px);
+			padding:px2rem(5px) px2rem(10px);
+			@include font-dpr(14px);
+			&.disabled{
+				background-color:#b4b4b4;
+				border-color:#b4b4b4;
+				color:#fefefe;
 			}
 		}
+		
 		.pic{
 			height:100%;
 			overflow:hidden;

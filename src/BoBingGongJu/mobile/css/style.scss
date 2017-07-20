@@ -37,29 +37,51 @@
 @import "./scss/_page-JiangPinXiangQing.scss";
 
 
-.djjg-tip-box{
-	text-align: center;
-	padding-top: px2rem(20px);
-	padding-bottom: px2rem(10px);
-	.pic{
-		width:px2rem(357px);
-		height: px2rem(353px);
-		overflow: hidden;
-		margin: 0 auto;
-		background: url("../images/djjg_tip.png") no-repeat top center;
-		background-size: 100% 100%;
 
-	}
-	.txt-1{
-		color:#fd2f2c;
-		@include font-dpr(20px);
-		margin-top: px2rem(10px);
-	}
-	.txt-2{
-		color:#d78400;
+@import "./scss/_page-DengLu.scss";
+
+
+.pk-home-body{
+	background:url("../images/pk_home_bg.png") no-repeat top center;
+	background-size: 100% 100%;
+}
+.pk-home-rule{
+	position:absolute;
+	left:0;
+	bottom:px2rem(180px);
+	width: 100%;
+	text-align:center;
+	a{
 		@include font-dpr(16px);
-		margin-top: px2rem(15px);
+		color:#194581;
 	}
 }
-
-
+.pk-home-footer{
+	display: flex;
+	position:fixed;
+	left:0;
+	bottom:0;
+	width: 100%;
+	li{
+		flex:1;
+		a{
+			height:px2rem(118px);
+			line-height: px2rem(118px);
+			display:block;
+			@include font-dpr(18px);
+			text-align:center;
+		}
+		&.item-1{
+			a{
+				background:#ffd511;
+				color:#631c09;
+			}
+		}
+		&.item-2{
+			a{
+				background:#d20007;
+				color:#fff;
+			}
+		}
+	}
+}

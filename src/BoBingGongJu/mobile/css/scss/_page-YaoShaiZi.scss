@@ -118,6 +118,24 @@
 
 .bb-rock-box {
     position: relative;
+    .bb-bowl-logo{
+        position:absolute;
+        left:50%;
+        margin-left:px2rem(-100px);
+
+        top:38%;
+        width:px2rem(200px);
+        height:px2rem(160px);
+        line-height:px2rem(160px);
+        text-align:center;
+        
+        overflow:hidden;
+        img{
+            max-width:100%;
+            max-height:100%;
+            vertical-align:middle;
+        }
+    }
     .bb-bowl {
         width: px2rem(508px);
         height: px2rem(440px);
@@ -193,6 +211,7 @@
                 }
             }
         }
+        
     }
     .dir-prev {
         padding: px2rem(34px) px2rem(12px);

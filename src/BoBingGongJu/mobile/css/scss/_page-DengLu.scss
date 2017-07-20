@@ -1,0 +1,248 @@
+
+.djjg-tip-box{
+	text-align: center;
+	padding-top: px2rem(20px);
+	padding-bottom: px2rem(10px);
+	.pic{
+		width:px2rem(357px);
+		height: px2rem(353px);
+		overflow: hidden;
+		margin: 0 auto;
+		background: url("../images/djjg_tip.png") no-repeat top center;
+		background-size: 100% 100%;
+
+	}
+	.txt-1{
+		color:#fd2f2c;
+		@include font-dpr(20px);
+		margin-top: px2rem(10px);
+	}
+	.txt-2{
+		color:#d78400;
+		@include font-dpr(16px);
+		margin-top: px2rem(15px);
+	}
+}
+
+.djjg-qrcode{
+    margin-top:px2rem(50px);
+    .qrcode-pic{
+        width:px2rem(354px);
+        height:px2rem(354px);
+        overflow:hidden;
+        margin:0 auto;
+        background: url("../images/qrcode_1.jpg") no-repeat top center;
+        background-size:100% 100%;
+    }
+    .txt{
+        text-align:center;
+        color:#666666;
+        margin-top:px2rem(10px);
+        @include font-dpr(18px);
+    }
+}
+
+
+.wxlogin-logo{
+    padding-top:px2rem(85px);
+    .pic{
+        width:px2rem(138px);
+        height:px2rem(138px);
+        overflow:hidden;
+        margin:0 auto;
+        background:url("../images/xiaoyu_logo.png") no-repeat 0 0;
+        background-size:100% 100%;
+    }
+    .txt{
+        text-align:center;
+        @include font-dpr(22px);
+        color:#393939;
+        margin-top:px2rem(15px);
+    }
+}
+.wxlogin-form{
+    margin:px2rem(60px) px2rem(30px) 0;
+    border-top:1px solid #ececec;
+    padding-top:px2rem(30px);
+    .txt-1{
+        color:#333333;
+        @include font-dpr(18px);
+    }
+    .para-val{
+        margin-top:px2rem(20px);
+        @include font-dpr(16px);
+        color:#bdbdbd;
+    }
+    .para-submit{
+        margin-top:px2rem(150px);
+        input{
+             @include font-dpr(20px);
+        }
+    }
+}
+
+.sjyz-avatar{
+    padding-top:px2rem(90px);
+    .pic{
+        width:px2rem(151px);
+        height:px2rem(151px);
+        overflow:hidden;
+        margin:0 auto;
+        border-radius: 100%;
+        img{
+            width:100%;
+            height:100%;
+        }
+    }
+    .txt-tip{
+        color:#333333;
+        text-align:center;
+        @include font-dpr(18px);
+        max-width: px2rem(360px);
+
+        text-align:center;
+        margin:px2rem(10px) auto 0;
+
+        line-height: 1.3;
+    }
+}
+
+.sjyz-form{
+    padding:0 px2rem(30px);
+    margin-top:px2rem(70px);
+    .item{
+        position:relative;
+        margin-bottom: px2rem(20px);
+    }
+    .item-submit{
+        margin-top:px2rem(100px);
+        .coms-cbtn{
+            background:#ff8403;
+            padding:px2rem(15px) px2rem(50px);
+            @include font-dpr(20px);
+            color:#fff;
+            &:active{
+                background-color:darken(#ff8403,5%);
+            }
+        }
+    }
+    .yzn-btn{
+        color:#349dff;
+        border:1px solid #4ba8ff;
+        border-radius:px2rem(10px);
+        padding:px2rem(10px) px2rem(10px);
+        @include font-dpr(16px);
+        position:absolute;
+        right:0;
+        top:50%;
+        margin-top:px2rem(-30px);
+        &:active{
+            background:#4ba8ff;
+            color:#fff;
+        }
+    }
+    .ipt-text{
+        display:block;
+        width: 100%;
+        height:px2rem(88px);
+        padding:px2rem(8px) px2rem(25px);
+        background-image: none;
+        border:none;
+        border-bottom: 1px solid #f0f0f0;
+        @include font-dpr(16px);
+        color: #333333;
+        border-radius: 0;
+        background-color:none;
+        -webkit-appearance: none;
+    }
+}
+.loginxyw-caption{
+    @include font-dpr(22px);
+    text-align:center;
+    color:#393939;
+    margin-top:px2rem(100px);
+}
+.loginxyw-form{
+    margin:px2rem(80px) px2rem(30px) 0;
+    .item{
+        position:relative;
+        margin-bottom: px2rem(20px);
+        .para-icon{
+            position:absolute;
+            left:0;
+            top:50%;
+            &.login-icon{
+                width:px2rem(32px);
+                height:px2rem(36px);
+                overflow:hidden;
+                margin-top:px2rem(-18px);
+                background:url("../images/login_icon_1.png") no-repeat top center;
+                background-size:100% 100%;
+            }
+
+            &.pwd-icon{
+                width:px2rem(34px);
+                height:px2rem(39px);
+                overflow:hidden;
+                margin-top:px2rem(-20px);
+                background:url("../images/pwd_icon_1.png") no-repeat top center;
+                background-size:100% 100%;
+            }
+
+        }
+    }
+    .item-submit{
+        margin-top:px2rem(80px);
+        input{
+            @include font-dpr(18px);
+        }
+    }
+    .ipt-text{
+        display:block;
+        width: 100%;
+        height:px2rem(98px);
+        padding:px2rem(13px) px2rem(25px) px2rem(13px) px2rem(50px);
+        background-image: none;
+        border:none;
+        border-bottom: 1px solid #f0f0f0;
+        @include font-dpr(18px);
+        color: #333333;
+        border-radius: 0;
+        background-color:none;
+        -webkit-appearance: none;
+    }
+}
+
+.loginxyw-wx{
+    margin-top:px2rem(60px);
+    .caption{
+        position:relative;
+        text-align:center;
+        margin:0 px2rem(80px);
+        i{
+            height:2px;
+            background:#efefef;
+            position:absolute;
+            left:0;
+            top:50%;
+            width:100%;
+            margin-top:-1px;
+        }
+        span{
+            color:#c1c1c1;
+            @include font-dpr(16px);
+            padding:0 px2rem(20px);
+            background:#fff;
+            position:relative;
+        }
+    }
+    .pic{
+        width:px2rem(130px);
+        height:px2rem(130px);
+        overflow:hidden;
+        margin: px2rem(50px) auto 0;
+        display:block;
+        background:url("../images/wx_icon_1.png") no-repeat;
+        background-size:100% 100%;
+    }
+}
