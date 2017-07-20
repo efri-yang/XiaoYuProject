@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兑奖结果</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="djjg-tip-box">
+            <div class="pic"></div>
+            <p class="txt-1">兑换成功</p>
+            <p class="txt-2">请登记个人信息，以便顺利领取礼品</p>
+        </div>
+        <div class="djxx-box">
+            
+            <form action="" method="post" id="J_djxx-form">
+                <div class="item">
+                    <input type="text" class="coms-field-text" placeholder="请输入您的真实姓名" data-required="true" data-descriptions="nickname" />
+                </div>
+                <div class="item">
+                    <input type="number" class="coms-field-text" placeholder="请输入11位手机号码" data-pattern="^0?1[3|4|5|8][0-9]\d{8}$" data-required="true" data-descriptions="phone"  />
+                </div>
+                <div class="item">
+                    <input type="number" class="coms-field-text" placeholder="请输入身份证号码" data-required="true" data-pattern="/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/" data-descriptions="cardid" />
+                </div>
+                <div class="item item-radio">
+                    <span class="para-tit">领取方式:</span>
+                    <label>
+                        <input type="radio" checked class="coms-field-radio iconfont" name="getways" data-target="#J_item-zq" data-required="true" data-descriptions="getways">自取
+                    </label>
+                    <label>
+                        <input type="radio" class="coms-field-radio iconfont" name="getways" data-target="#J_item-yj" data-required="true" data-descriptions="getways">邮寄到付
+                    </label>
+                </div>
+                <div class="item item-zq active" id="J_item-zq">
+                        <span class="para-tit">自取地址:</span>
+                        厦门思明区软件园二期望海路59号501室
+                </div>
+                <div class="item item-yj undis" id="J_item-yj">
+                    <input type="text" class="coms-field-text" placeholder="请输入详细收货地址" >
+                </div>
+                <div class="item-tip-box">* 此份信息也将用于领取博饼门票（如有需要），请保证信息真实性</div>
+                <div class="item-submit">
+                    <input type="submit" value="保 存" class="coms-cbtn cbtn-danger cbtn-full">
+                </div>
+
+            </form>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/zepto-mvalidate.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".djxx-box input[name='getways']").eq(0).on("showtab",function(){
+                $("#J_item-yj").find("input[type='text']").removeAttr("data-required").removeAttr("data-descriptions")
+            });
+            $(".djxx-box input[name='getways']").eq(1).on("showtab",function(){
+                $("#J_item-yj").find("input[type='text']").attr({"data-required":true,"data-descriptions":"getaddress"})
+            });
+            
+            $(".djxx-box input[name='getways']").on("click",function(){
+                $(this).tab('show');  
+                validateFunc();
+            });
+
+            function validateFunc(){
+                $("#J_djxx-form").mvalidateDestroy().mvalidate({
+                 type: 1,
+                 onKeyup: true,
+                 sendForm: false,
+                 firstInvalidFocus: false,
+                 descriptions: {
+                    nickname: {
+                         required: '请输入真实姓名！'
+                     },
+                     phone: {
+                         required: '请输入手机号码',
+                         pattern: '您输入的手机号码格式不正确'
+                     },
+                     cardid: {
+                         required: '请输入身份证号码',
+                         pattern: '您输入的身份证格式不正确'
+                     },
+                     getways: {
+                         required: '请输入项目的面积',
+                         pattern: '您输入的项目面积格式不正确'
+                     },
+                     getaddress:{
+                         required: '请输入收货地址',
+                     }
+                 }
+             });
+            }
+            validateFunc();
+        })
+
+
+    </script>
+  
+
+    
+</body>
+</html>

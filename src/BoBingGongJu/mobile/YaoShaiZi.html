@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>掷骰子</title>
@@ -8,74 +9,132 @@
     <script type="text/javascript" src="js/common.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
-	<div class="container">
-		<div class="bb-top-bar">
-			<span class="score"><i></i>今日博饼分:0 </span>
-			<span class="rank"><i></i>今日排名:100名以外</span>
-			<a href="#" class="entry-btn">查看排名</a>
-		</div>
-		<div class="bb-main-box">
-			<a href="#" class="entery-gzsj">关注商家</a>
-			<a href="#" class="entery-hdgz">活动规则<i></i></a>
-			<div class="bb-guide-tip nobegin"><span></span></div>
-			
-			<div class="bb-rock-box">
-				 <div class="bb-bowl" id="J_bowl-box">
-						
-				 </div>
-				 <a href="#" class="dir-prev"><span></span></a>
-				 <a href="#" class="dir-next"><span></span></a>
-				 <span class="plam-hand" id="J_plam-hand"></span>
-
-			</div>
-			<div class="bb-para-box">
-				<span class="amount">剩余次数：0</span>
-				<span class="add-btn">增加次数</span>
-				<span class="xyb">小鱼币：2450</span>
-				<span class="zyb-btn">赚鱼币</span>
-			</div>
-			<div class="bb-drap-bar">
-			    <input type="hidden" value="0" class="slideunlock-lockable">
-				<span class="line"></span>
-				<div class="slideunlock-slider">
-					<span class="slideunlock-bg" id="J_slideunlock-bg"></span>
-					<span class="slideunlock-btn"><b><span></span></b></span>
-					<span class="slideunlock-txt">按住往右拉>></span>
+    <div class="container pbr155">
+        <div class="bb-top-bar">
+            <span class="score"><i></i>今日博饼分:0 </span>
+            <span class="rank"><i></i>今日排名:100名以外</span>
+            <a href="#" class="entry-btn">查看排名</a>
+        </div>
+        <div class="bb-main-box">
+            <a href="#" class="entery-gzsj">关注商家</a>
+            <a href="#" class="entery-hdgz">活动规则<i></i></a>
+            <div class="bb-guide-tip nobegin"><span></span></div>
+            <div class="bb-rock-box">
+                <div class="bb-bowl" id="J_bowl-box">
+                </div>
+                <a href="#" class="dir-prev"><span></span></a>
+                <a href="#" class="dir-next"><span></span></a>
+                <span class="plam-hand" id="J_plam-hand"></span>
+            </div>
+            <div class="bb-para-box">
+                <span class="amount">剩余次数：0</span>
+                <span class="add-btn">增加次数</span>
+                <span class="xyb">小鱼币：2450</span>
+                <span class="zyb-btn">赚鱼币</span>
+            </div>
+            <div class="bb-drap-bar">
+                <input type="hidden" value="0" class="slideunlock-lockable">
+                <span class="line"></span>
+                <div class="slideunlock-slider">
+                    <span class="slideunlock-bg" id="J_slideunlock-bg"></span>
+                    <span class="slideunlock-btn"><b><span></span></b>
+                    </span>
+                    <span class="slideunlock-txt">按住往右拉>></span>
+                </div>
+            </div>
+        </div>
+        <div class="bb-usexyb clearfix">
+				<span class="tit">用小鱼币博饼</span>
+				<div class="sel-box">
+						<select class="sel coms-field-select">
+                                <option>一倍博饼分 / 5个小鱼币</option>
+                                <option>一倍博饼分 / 5个小鱼币</option>
+                                <option>一倍博饼分 / 5个小鱼币</option>
+                                <option>2017-09-03</option>
+                            </select>
 				</div>
-			</div> 
-		</div>
-		<div class="border-top-r20">
-			<div class="bb-caption-1">
-				<span class="tit">博饼包厢</span>
-			</div>
-			<ul class="bb-bx-list clearfix">
-                    <li class="active">
-						<a href="#" class="pic"><img src="upload/h_m_pic3.png"></a>
-						<p class="align-r mtr10"><a href="javascript:void(0)" class="coms-cbtn cbtn-danger">当前包厢</a></p>
-                    </li>
-                    <li>
-						<a href="#" class="pic"><img src="upload/h_m_pic4.png"></a>
-						<p class="align-r mtr10"><a href="javascript:void(0)" class="coms-cbtn cbtn-danger disabled">今日未博</a></p>
-                    </li>
+        </div>
+        <div class="border-top-r20">
+            <div class="bb-caption-1">
+                <span class="tit">博饼包厢</span>
+            </div>
+            <ul class="bb-bx-list clearfix">
+                <li class="active">
+                    <a href="#" class="pic"><img src="upload/h_m_pic3.png"></a>
+                    <p class="align-r mtr10"><a href="javascript:void(0)" class="coms-cbtn cbtn-danger">当前包厢</a></p>
+                </li>
+                <li>
+                    <a href="#" class="pic"><img src="upload/h_m_pic4.png"></a>
+                    <p class="align-r mtr10"><a href="javascript:void(0)" class="coms-cbtn cbtn-danger disabled">今日未博</a></p>
+                </li>
+                <li>
+                    <a href="#" class="pic"><img src="upload/h_m_pic3.png"></a>
+                    <p class="align-r mtr10"><a href="" class="coms-cbtn cbtn-danger">今日未博</a></p>
+                </li>
+            </ul>
+        </div>
+        <div class="border-top-r20">
+            <div class="bb-qfl">
+                <a href="#">
+					<img src="images/bb_qfl.jpg" />
+				</a>
+            </div>
+        </div>
+        <div class="border-top-r20">
+            <div class="bb-lqxyb">
+                <a href="#">
+					<img src="upload/bb_pro_1.jpg">
+					<span class="mask">点击广告，领取5个小鱼币（限一次）</span>
+				</a>
+            </div>
+        </div>
+        <div class="border-top-r20">
+            <div class="bb-enregister-box">
+                <div class="soma-hd">
+                    <span class="tit">商家优惠促销</span>
+                    <span class="tip">登记信息可领取5个小鱼币（限一次）</span>
+                </div>
+                <div class="caption-1">美容意向登记</div>
+                <div class="caption-2"><span>优惠内容：凭此券登记信息可到店领取1000元整容大礼包</span></div>
+                <div class="bb-enregister-form">
+                    <form>
+                        <div class="item">
+                            <input type="text" class="coms-field-text" placeholder="姓名">
+                        </div>
+                        <div class="item">
+                            <input type="number" class="coms-field-text" placeholder="手机">
+                        </div>
+                        <div class="item">
+                            <input type="number" class="coms-field-text" placeholder="职业">
+                        </div>
+                        <div class="item">
+								<span class="para-tit">意向(多选):</span>
+								<div class="para-val">
+									<label class="lab"><input type="checkbox" class="coms-field-checkbox iconfont">双眼皮</label>
 
-                    <li>
-						<a href="#" class="pic"><img src="upload/h_m_pic3.png"></a>
-						<p class="align-r mtr10"><a href="" class="coms-cbtn cbtn-danger">今日未博</a></p>
-                    </li>
-                    
-                </ul>
-		</div>
+									<label class="lab"><input type="checkbox" class="coms-field-checkbox iconfont">隆胸</label>
 
-		<div class="border-top-r20">
-			<div class="bb-qfl">
-				<a href="#"></a>
-			</div>
-		</div>
+									<label class="lab"><input type="checkbox" class="coms-field-checkbox iconfont">双眼皮</label>
 
-		<div style="height:300px"></div>
-	</div>
-	<script type="text/javascript" src="js/jquery.slideunlock.js"></script>
+									<label class="lab"><input type="checkbox" class="coms-field-checkbox iconfont">隆胸</label>
+								</div>
+                        </div>
+                        <div class="item item-submit">
+								<input type="submit" class="coms-cbtn cbtn-danger cbtn-full" value="提交">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- footer start -->
+    @@include("./views/_footer.html")
+    <!-- footer end -->
+
+    <script type="text/javascript" src="js/jquery.slideunlock.js"></script>
     <script type="text/javascript" src="js/bbrock.js"></script>
 </body>
+
 </html>

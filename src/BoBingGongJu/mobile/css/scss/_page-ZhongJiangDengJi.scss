@@ -37,6 +37,11 @@
 			margin-right: 40px;
 		}
 	}
+    .item-tip-box{
+        color:#c05457;
+        margin-top:px2rem(10px);
+        @include font-dpr(14px);
+    }
 	.item-zq{
 		position:relative;
 		display:none;

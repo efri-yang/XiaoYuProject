@@ -289,68 +289,31 @@
     }
 })(jQuery);
 
- function LoadImage(ImgD, width, height, t) {
-    var smallWidth = $(ImgD).width();
-    var smallHeight = $(ImgD).height();
-    //    alert(smallWidth+":"+width+"|"+smallHeight+":"+height);
-    var iwidth = width; //定义允许图片宽度
-    var iheight = height; //定义允许图片高度
-    if (smallWidth > 0 && smallHeight > 0) {
-        if (smallWidth / smallHeight >= iwidth / iheight) {
-             
-            if (smallWidth > iwidth) {
-                $(ImgD).width(iwidth).height((smallHeight * iwidth) / smallWidth).css("padding", Math.floor(Math.abs((iheight - $(ImgD).height()) / 2)) + "px 0px");
-            } else {
-               
-                $(ImgD).width(smallWidth).height(smallHeight).css("padding", Math.floor(Math.abs((iheight - $(ImgD).height()) / 2)) + "px " + Math.floor(Math.abs((iwidth - $(ImgD).width()) / 2)) + "px");
-            }
-        } else {
-            
-            if (smallHeight > iheight) {
-                $(ImgD).width((smallWidth * iheight) / smallHeight).height(iheight).css("padding", "0px " + Math.floor(Math.abs((iwidth - $(ImgD).width()) / 2)) + "px");
-            } else {
-                $(ImgD).width(smallWidth).height(smallHeight).css("padding",Math.floor(Math.abs((iheight - $(ImgD).height()) / 2)) + "px " + Math.floor(Math.abs((iwidth - $(ImgD).width()) / 2)) + "px");
-            }
-        }
-    }
-}
-
-(function($) {
-
-   
-    $.fn.LoadImage = function(options) {
-        var opt = options;
-        return this.each(function(index, el) {
-            LoadImage(el, opt.width, opt.height);
-        })
-    }
-})(jQuery);
-
 
 
 
 
 $(function() {
     $("#J_banner_1").bannerSlider({
-        width:475, //宽 (如果100%的时候请传入字符串)
-        height:345, //高
-        auto:true, //是否能自动滚
-        effect: "slider", //效果
+        width:"100%", //宽 (如果100%的时候请传入字符串)
+        height: 640, //高
+        auto: true, //是否能自动滚
+        effect: "fade", //效果
         Pause: 3000, //停顿时间-两个动画滚动间隔的时间
         animTime:350,
         //一张图滚动的时间
         zIndex: 10, //设置层级相互遮盖
         parentClass: "banner-wrap",
         pagination: {
-            show: false,
+            show: true,
             className: "banner-numlist"
         },
         btn: {
             show: true,
-            dynamic:true //是否有鼠标移动上去显示箭头的效果
+            dynamic: true //是否有鼠标移动上去显示箭头的效果
         },
         describe: {
-            show: true
+            show: false
         }
     });
-});
+})

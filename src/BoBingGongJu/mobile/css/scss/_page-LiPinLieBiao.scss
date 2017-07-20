@@ -67,6 +67,9 @@
 		margin-top:px2rem(20px);
 		
 		padding-top: px2rem(10px);
+		>a{
+			display:block;
+		}
 		&:nth-child(2n+1){
 			margin-right:px2rem(20px);
 		}
