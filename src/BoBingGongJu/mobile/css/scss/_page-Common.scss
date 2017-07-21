@@ -467,3 +467,73 @@
     line-height:1.3;
     @include font-dpr(18px); 
 }
+
+
+.coms-dialog-box{
+    background:#fff;
+    padding:px2rem(30px);
+    position:fixed;
+    z-index: 10000;
+    border-radius: px2rem(20px);
+    visibility:hidden;
+    opacity: 0;
+    width:px2rem(550px);
+    left:50%;
+    top:50%;
+    margin-left: px2rem(-550px/2);
+    transition:all 0.20s ease-out;
+    transform: scale3d(.3, .3, .3);
+    &.dia-in{
+        visibility:visible;
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+    .soma-close{
+        width:px2rem(60px);
+        height:px2rem(60px);
+        overflow:hidden;
+        position:absolute;
+        right:0;
+        top:0;
+        margin-top:px2rem(-60px/2);
+        margin-right:px2rem(-60px/2);
+        background:url("../images/close_btn_1.png") no-repeat;
+        background-size:100% 100%;
+
+    }
+    .soma-caption{
+        color:#333333;
+        @include font-dpr(20px);
+        text-align:center;
+        margin-top:px2rem(10px);
+    }
+    .soma-desc{
+        color:#7c7c7c;
+        margin-top:px2rem(20px);
+        @include font-dpr(16px);
+        line-height:1.3;
+    }
+    .guide-btn{
+        margin-top:px2rem(30px);
+    }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

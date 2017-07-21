@@ -918,21 +918,23 @@
 }
 
 .bb-bx-list{
+    padding-top:px2rem(20px);
     padding-bottom:px2rem(20px);
-    li{
-        float:left;
-        background: #fffaed;
-        border:1px solid #f3e1b1;
-        padding: px2rem(10px);
-        width:px2rem(210px);
-        height:px2rem(186px);
-        position:relative;
-        margin-top:px2rem(20px);
-        margin-right:px2rem(20px);
-        &:nth-child(3n+3){
-            margin-right:0;
+    .swiper-slide{
+       
+         
+         width:30%;
+        a{
+            background: #fffaed;
+            border:1px solid #f3e1b1;
+            padding: px2rem(10px);
+            width:px2rem(200px);
+            height:px2rem(186px);
+            position:relative;
+            display:block;
         }
-        >p{
+        
+        .txt{
             .coms-cbtn{
                 position:absolute;
                 top:px2rem(10px);

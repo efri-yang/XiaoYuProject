@@ -56,5 +56,15 @@ $(function(){
 	$("#J_coms-buy-cancel").on("click",function(event){
 		event.preventDefault();
 		ExchangeObj.hide();
+	});
+
+
+	//奖品详情
+	var DialogBuy = $("#J_jpxq-dialog-buy").dialogs({
+        shadeClose:true
+    });
+	$("#J_purchase-btn").on("click",function(){
+		DialogBuy.show();
+		console.dir("xx")
 	})
 })

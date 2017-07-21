@@ -85,3 +85,50 @@
 		}
 	}
 }
+.bb-dialog-addcount{
+	margin-top:-23%;
+}
+.bb-dialog-xyb{
+	margin-top:-20%;
+}
+
+
+
+
+
+.dialog-qz-shadow{
+	position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 998;
+    background-color: rgba(0, 0, 0, 0.8); 
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-duration: .25s;
+    animation-timing-function:ease-out;
+    &.in{
+    	animation-name:fadeIn;
+    }
+    &.out{
+    	animation-name:fadeOut;
+    }
+}
+
+.bb-dialog-qrcode{
+	margin-top:-38%;
+	.qrocde{
+		width:px2rem(250px);
+		height:px2rem(250px);
+		margin:px2rem(20px) auto 0 ;
+		background:url("../images/qrcode_1.jpg") no-repeat;
+		background-size:100% 100%;
+	}
+	.qrocde-txt{
+		text-align:center;
+		color:#7c7c7c;
+		@include font-dpr(16px);
+	}
+}
+

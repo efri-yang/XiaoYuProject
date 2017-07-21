@@ -87,4 +87,48 @@ $(function() {
     	}
     });
     slider.init();
+
+
+    //
+    //
+    var swiper1 = new Swiper('#J_bb-swiper-container', {
+       
+        slidesPerView: 'auto',
+        paginationClickable: true,
+        spaceBetween:0
+    });
+
+
+    //
+    //
+     var DialogCount = $("#J_bb-dialog-addcount").dialogs({
+        shadeClose:true
+    });
+
+    $("#J_para-amount").on("click",function(event){
+        event.preventDefault();
+        DialogCount.show();
+    });
+
+    //
+    var DialogXYM = $("#J_bb-dialog-xyb").dialogs({
+        shadeClose:true
+    });
+
+    $("#J_para-zyb").on("click",function(event){
+        event.preventDefault();
+        DialogXYM.show();
+    });
+
+    //
+    //
+    var DialogEWM = $("#J_bb-dialog-qrcode").dialogs({
+        shadeClose:true
+    });
+
+    $("#J_entery-gzsj").on("click",function(event){
+        event.preventDefault();
+        DialogEWM.show();
+    })
+    
 })

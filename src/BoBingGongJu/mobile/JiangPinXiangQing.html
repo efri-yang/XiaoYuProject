@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>排名</title>
+    <title>奖品详情</title>
     <script type="text/javascript" src="js/zepto.js"></script>
     <script type="text/javascript" src="js/flexible.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
@@ -42,6 +42,27 @@
         <li><a href="#" id="J_purchase-btn">8折购买</a></li>
         <li><a href="#" id="J_exchange-btn">立即兑换</a></li>
     </ul>
+
+    <!-- 弹出框 start -->
+    <div class="coms-dialog-box jpxq-dialog-buy" id="J_jpxq-dialog-buy">
+         <div class="soma-caption">购买本商品登记</div>
+         <div class="soma-desc">
+                <p>亲爱的YUYU，您对本商品具有兴趣是我们的荣幸，请留下您的信息，我们 销售员将会第一时间与您联系。</p>
+                <p>凭此登记信息您将享受本商品专属5折优惠，折扣：￥50，原价：￥250</p>
+         </div>
+         <div class="soma-form">
+                <div class="item">
+                    <input type="text" class="coms-field-text" placeholder="姓名" />
+                </div>
+                <div class="item">
+                    <input type="text" class="coms-field-text" placeholder="手机" />
+                </div>
+                <div class="item"><input type="submit" value="提交" class="coms-cbtn cbtn-danger cbtn-full"></div>
+         </div>
+         <a href="#" data-roler='close' class="soma-close"></a>
+    </div>
+
+    <!-- 弹出框  end -->
     <script src="js/layer_mobile/layer.js"></script>
     <script src="js/jpxq.js"></script>
     @@include("./views/_buyDialog.html")

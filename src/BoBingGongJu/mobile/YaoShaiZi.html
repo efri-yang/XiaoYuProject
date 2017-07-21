@@ -18,7 +18,7 @@
             <a href="PaiMing.html" class="entry-btn">查看排名</a>
         </div>
         <div class="bb-main-box">
-            <a href="#" class="entery-gzsj">关注商家</a>
+            <a href="#" class="entery-gzsj" id="J_entery-gzsj">关注商家</a>
             <a href="HuoDongGuiZe.html" class="entery-hdgz">活动规则<i></i></a>
             <div class="bb-guide-tip nobegin"><span></span></div>
             <div class="bb-rock-box">
@@ -33,9 +33,9 @@
             </div>
             <div class="bb-para-box">
                 <span class="amount">剩余次数：0</span>
-                <span class="add-btn">增加次数</span>
+                <span class="add-btn" id="J_para-amount">增加次数</span>
                 <span class="xyb">小鱼币：2450</span>
-                <span class="zyb-btn">赚鱼币</span>
+                <span class="zyb-btn" id="J_para-zyb">赚鱼币</span>
             </div>
             <div class="bb-drap-bar">
                 <input type="hidden" value="0" class="slideunlock-lockable">
@@ -63,20 +63,82 @@
             <div class="bb-caption-1">
                 <span class="tit">博饼包厢</span>
             </div>
-            <ul class="bb-bx-list clearfix">
-                <li class="active">
-                    <a href="#" class="pic"><img src="upload/h_m_pic3.png"></a>
-                    <p class="align-r mtr10"><a href="javascript:void(0)" class="coms-cbtn cbtn-danger">当前包厢</a></p>
-                </li>
-                <li>
-                    <a href="#" class="pic"><img src="upload/h_m_pic4.png"></a>
-                    <p class="align-r mtr10"><a href="javascript:void(0)" class="coms-cbtn cbtn-danger disabled">今日未博</a></p>
-                </li>
-                <li>
-                    <a href="#" class="pic"><img src="upload/h_m_pic3.png"></a>
-                    <p class="align-r mtr10"><a href="" class="coms-cbtn cbtn-danger">今日未博</a></p>
-                </li>
-            </ul>
+            <div class="swiper-container" id="J_bb-swiper-container">
+                 <div class="swiper-wrapper bb-bx-list clearfix">
+                        <div class="swiper-slide active">
+                            <a href="javascript:void(0)">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">当前包厢</span></p>
+                            </a>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger disabled">今日未博</span></p>
+                            </a>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger disabled">今日未博</span></p>
+                            </a>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger disabled">今日未博</span></p>
+                            </a>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger disabled">今日未博</span></p>
+                            </a>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        
+                    </div>
+            </div>
         </div>
         <div class="border-top-r20">
             <div class="bb-qfl">
@@ -136,6 +198,43 @@
     @@include("./views/_footer.html")
     <!-- footer end -->
 
+    <!-- 如何赚取小鱼币 start -->
+    <div class="coms-dialog-box bb-dialog-addcount" id="J_bb-dialog-addcount">
+         <div class="soma-caption">如何增加次数?</div>
+         <div class="soma-desc">将包厢页面发给朋友或者到朋友圈中即可增
+加一次博饼，每个包厢每天限2次。</div>
+         <p class="guide-btn"><a href="#" class="coms-cbtn cbtn-danger cbtn-full" data-roler='close'>确定</a></p>
+         <a href="#" data-roler='close' class="soma-close"></a>
+    </div>
+
+    <!-- 如何赚取小鱼币 end -->
+
+
+    <!-- 如何赚取小鱼币 start -->
+    <div class="coms-dialog-box bb-dialog-xyb" id="J_bb-dialog-xyb">
+         <div class="soma-caption">如何赚取小鱼币？</div>
+         <div class="soma-desc">点击包厢内的广告或登记商家优惠促销信息即可赚到鱼币</div>
+         <p class="guide-btn"><a href="#" class="coms-cbtn cbtn-danger cbtn-full" data-roler='close'>确定</a></p>
+         <a href="#" data-roler='close' class="soma-close"></a>
+    </div>
+
+    <!-- 如何赚取小鱼币 end -->
+
+
+     <!-- 小鱼二维码 start -->
+    <div class="coms-dialog-box bb-dialog-qrcode" id="J_bb-dialog-qrcode">
+         <div class="soma-caption">关注公众号</div>
+         <div class="soma-desc">第一时间掌握商家最新优惠信息</div>
+         <div class="qrocde"></div>
+         <p class="qrocde-txt">长按识别关注</p>
+         <p class="guide-btn"><a href="#" class="coms-cbtn cbtn-danger cbtn-full" data-roler='close'>确定</a></p>
+         <a href="#" data-roler='close' class="soma-close"></a>
+    </div>
+
+    <!-- 小鱼二维码 end -->
+
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+    <script src="js/swiper/js/swiper.jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.slideunlock.js"></script>
     <script type="text/javascript" src="js/bbrock.js"></script>
 </body>
