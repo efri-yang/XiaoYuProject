@@ -149,7 +149,7 @@
                })
             },
             _shadeShow: function() {
-                this.$shadow = $('<div class="dialog-qz-shadow in"></div>');
+                this.$shadow = $('<div class="designer-dialog-shadow in"></div>');
                 this.$shadow.appendTo($("body"));
                 this._shadeEvent();
             },
@@ -239,3 +239,45 @@
         afterHide: function() {}
     }
 })(window.jQuery || window.Zepto, window, document)
+
+//返回顶部
+
+;(function() {
+    $(function() {
+        var $goTop=$(".gotop")
+        var throttle = function(fn, delay, atleast) {
+            var timer = null;
+            var previous = null;
+
+            return function() {
+                var now = +new Date();
+
+                if (!previous) previous = now;
+
+                if (now - previous > atleast) {
+                    fn();
+                    // 重置上一次开始时间为本次结束时间
+                    previous = now;
+                } else {
+                    clearTimeout(timer);
+                    timer = setTimeout(function() {
+                        fn();
+                    }, delay);
+                }
+            }
+        }
+
+        var scrollTopDetect = throttle(function() {
+            var scrolltop = $(this).scrollTop();
+            if (scrolltop >= 500) {
+                $goTop.addClass("active");
+            } else if(scrolltop <= 500){
+                $goTop.removeClass("active");
+            }
+        },200,10);
+
+        $(window).on("scroll",function(){
+            scrollTopDetect();
+        })  
+    })
+})()
