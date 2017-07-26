@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>案例</title>
+    <script src="js/zepto.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <a name="gotop" class="gotop-placeholder"></a>
+        <div class="user-infor">
+            <span class="avatar"><img src="upload/avatar_1.jpg"></span>
+            <p class="name">北大装饰设计</p>
+            <p class="phone"><i></i>联系电话：15080347486</p>
+            <p class="address"><i></i>营业地址：厦门市软件园二期望海路59号之一501室</p>
+            <ul class="guide-btn">
+                <li><a href="#" id="J_yxdj-btn">意向登记</a></li>
+                <li><a href="ShangJiaXiangQing.html">商家简介</a></li>
+            </ul>
+        </div>
+        <div class="border-top-r30">
+            <div class="shop-tab-hds-wrap">
+                <ul class="shop-tab-hds">
+                    <li class="active"><a href="N-case.html">案例</a></li>
+                    <li><a href="N-SheJiShi.html">设计师</a></li>
+                    <li><a href="N-YouHuiHuoDong.html">优惠活动</a></li>
+                    <li><a href="N-VRKanFang.html">VR看房</a></li>
+                </ul>
+            </div>
+            <div class="shop-tab-bd-scroll">
+                <ul class="case-search-box">
+                    <li>
+                        <select class="coms-field-select">
+                            <option>不限时间</option>
+                            <option>2017-09-01</option>
+                            <option>2017-09-02</option>
+                            <option>2017-09-03</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="coms-field-select">
+                            <option>不限时间</option>
+                            <option>2017-09-01</option>
+                            <option>2017-09-02</option>
+                            <option>2017-09-03</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul class="case-search-result" id="J_case-search-result">
+                    <li>
+                        <a href="#">
+                            <span class="pic"><img src="upload/pro_3.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                            <p class="para-type">中式三室80-120m 二厅</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                            <p class="para-type">中式三室80-120m 二厅</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                            <p class="para-type">中式三室80-120m 二厅</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                            <p class="para-type">中式三室80-120m 二厅</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                            <p class="para-type">中式三室80-120m 二厅</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                            <p class="para-type">中式三室80-120m 二厅</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                            <p class="para-type">中式三室80-120m 二厅</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                            <p class="para-type">中式三室80-120m 二厅</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <ul class="fixed-bar-guide">
+        <li class="gohome"><a href="index.html"></a></li>
+        <li class="goback"><a href="javascript:void(0)"></a></li>
+        <li class="gotop"><a href="#gotop"></a></li>
+    </ul>
+    <!--  -->
+    @@include("./views/_DengJiForm.html")
+    <script src="js/zepto-mvalidate.js"></script>
+    <script type="text/javascript" src="js/dropload/dropload.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/dropload/dropload.css">
+    <script type="text/javascript">
+    $(function() {
+
+        var itemCurrPage = 1;
+        var itemPageNum = 8;
+        var dropload = $('.shop-tab-bd-scroll').dropload({
+            scrollArea: window,
+            loadDownFn: function(me) {
+
+                // 加载菜单一的数据
+                $.ajax({
+                    type: 'GET',
+                    // data:{page:item1CurrPage,num:item1PageNum},
+                    url: './',
+                    dataType: 'json',
+                    success: function(data) {
+                        var data = {
+                            "lists": [{
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_3.jpg",
+                                    "href": "AnLiXiangQing.html",
+                                    "style": "1中式三室80-120m 二厅1"
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_2.jpg",
+                                    "href": "AnLiXiangQing.html",
+                                    "style": "2中式三室80-120m 二厅"
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_2.jpg",
+                                    "href": "AnLiXiangQing.html",
+                                    "style": "3中式三室80-120m 二厅"
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_2.jpg",
+                                    "href": "AnLiXiangQing.html",
+                                    "style": "4中式三室80-120m 二厅"
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_2.jpg",
+                                    "href": "AnLiXiangQing.html",
+                                    "style": "5中式三室80-120m 二厅"
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_2.jpg",
+                                    "href": "AnLiXiangQing.html",
+                                    "style": "6中式三室80-120m 二厅"
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_2.jpg",
+                                    "href": "AnLiXiangQing.html",
+                                    "style": "7中式三室80-120m 二厅"
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_2.jpg",
+                                    "href": "AnLiXiangQing.html",
+                                    "style": "8中式三室80-120m 二厅"
+                                },
+                            ]
+                        }
+                        itemCurrPage++;
+                        var result = "";
+                        for (var i = 0; i < data.lists.length; i++) {
+                            result += '<li><a href="' + data.lists[i].href + '"><span class="pic"><img src="' + data.lists[i].pic + '" /></span><p class="name">' + data.lists[i].title + '</p><p class="para-type">' + data.lists[i].style + '</p></a></li>'
+                        }
+                        setTimeout(function() { //测试用 后端可以删除timeout的函数
+                            $("#J_case-search-result").append(result);
+
+                            me.resetload();
+                            if (!data.lists.length || data.lists.length < itemPageNum) {
+
+                                // 锁定
+                                me.lock();
+                                // 无数据
+                                me.noData();
+                            }
+
+                        }, 2000)
+
+                    },
+                    error: function(xhr, type) {
+                        console.dir('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            }
+        });
+    })
+    </script>
+</body>
+
+</html>

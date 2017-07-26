@@ -128,7 +128,9 @@
     border-top: px2rem(30px) solid #f4f4f4;
 }
 
-
+.zsj-tab-scrollwrap{
+    padding: 0 px2rem(30px);
+}
 
 
 
@@ -875,7 +877,9 @@
 /**
  * Lines
  */
-
+.shop-tab-bd-scroll{
+    padding: 0 px2rem(30px);
+}
 .shop-tab-bd-scroll .dropload-up,.dropload-down{
    
     @include font-dpr(16px);

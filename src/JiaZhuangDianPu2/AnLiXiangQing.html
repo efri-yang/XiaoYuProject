@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="js/zepto.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <a name="gotop" class="gotop-placeholder"></a>
+        <ul class="shop-tab-hds">
+            <li class="active"><a href="N-Case.html">案例</a></li>
+            <li><a href="N-SheJiShi.html">设计师</a></li>
+            <li><a href="N-YouHuiHuoDong.html">优惠活动</a></li>
+            <li><a href="N-VRKanFang.html">VR看房</a></li>
+        </ul>
+        <div class="shop-tab-bds active" id="J_shop-case">
+            <table class="casedetail-tbl">
+                <thead>
+                    <tr>
+                        <th width="width:16%"></th>
+                        <th width="width:34%"></th>
+                        <th width="width:16%"></th>
+                        <th width="width:34%"></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td class="para-tit">装饰公司:</td>
+                    <td class="para-val">钜诚装饰</td>
+                    <td class="para-tit">设计风格:</td>
+                    <td class="para-val">北欧</td>
+                </tr>
+                <tr>
+                    <td class="para-tit">设计人员：</td>
+                    <td class="para-val">张文杰</td>
+                    <td class="para-tit">色 调:</td>
+                    <td class="para-val">白色</td>
+                </tr>
+                <tr>
+                    <td class="para-tit">案例人员：</td>
+                    <td class="para-val">四室</td>
+                    <td class="para-tit">装修用途：</td>
+                    <td class="para-val">新房自住</td>
+                </tr>
+                <tr>
+                    <td class="para-tit">装修面积：</td>
+                    <td class="para-val">120-200m</td>
+                    <td class="para-tit">装修费用：</td>
+                    <td class="para-val">7.7</td>
+                </tr>
+            </table>
+            <div class="casedetail-desc">
+				<p>幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
+                <p>幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
+                <p>幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
+                <p>幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
+            </div>
+            <div class="swiper-container casedetail-swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="upload/pro_1.jpg" /></div>
+                    <div class="swiper-slide"><img src="upload/pro_1.jpg" /></div>
+                </div>
+                <div class="swiper-button-next"><b></b></div>
+                <div class="swiper-button-prev"><b></b></div>
+            </div>
+            <ul class="casedetail-swiper-guide">
+                <li><a href="#">上个案例</a></li>
+                <li><a href="#">下个案例</a></li>
+            </ul>
+        </div>
+    </div>
+    <ul class="fixed-bar-guide">
+        <li class="gohome"><a href="index.html"></a></li>
+        <li class="goback"><a href="#"></a></li>
+        <li class="gotop"><a href="#gotop"></a></li>
+    </ul>
+    <script src="js/swiper/js/swiper.jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+    <script type="text/javascript">
+    $(function() {
+      
+        var swiper1 = new Swiper('.casedetail-swiper-container', {
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 0
+        });
+
+
+       
+
+
+    })
+    </script>
+</body>
+
+</html>

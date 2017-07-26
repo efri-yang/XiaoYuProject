@@ -52,6 +52,11 @@
 
         var item3LoadEnd = false;
 
+
+        var item4LoadEnd = false;
+        var item4CurrPage = 0;
+        var item4PageNum =8;
+
         var desigerScroll = function() {
             new Swiper('.designer-swiper-container', {
                 scrollbarHide: true,
@@ -244,6 +249,86 @@
                             me.$domDown.html("");
                         }
                     })
+                }else if(itemIndex=='3'){
+
+                    $.ajax({
+                        type: 'GET',
+                        // data:{page:item1CurrPage,num:item1PageNum},
+                        url: './',
+                        dataType: 'json',
+                        success: function(data) {
+
+                            var data = {
+                                "lists": [{
+                                        "title": "Apple 苹果 iPhone 6s",
+                                        "pic": "upload/pro_2.jpg",
+                                        "href": "AnLiXiangQing.html"
+                                        
+                                    },
+                                    {
+                                        "title": "Apple 苹果 iPhone 6s",
+                                        "pic": "upload/pro_2.jpg",
+                                        "href": "AnLiXiangQing.html"
+                                        
+                                    },{
+                                        "title": "Apple 苹果 iPhone 6s",
+                                        "pic": "upload/pro_3.jpg",
+                                        "href": "AnLiXiangQing.html"
+                                        
+                                    },{
+                                        "title": "Apple 苹果 iPhone 6s",
+                                        "pic": "upload/pro_3.jpg",
+                                        "href": "AnLiXiangQing.html"
+                                        
+                                    },{
+                                        "title": "Apple 苹果 iPhone 6s",
+                                        "pic": "upload/pro_3.jpg",
+                                        "href": "AnLiXiangQing.html"
+                                        
+                                    },{
+                                        "title": "Apple 苹果 iPhone 6s",
+                                        "pic": "upload/pro_3.jpg",
+                                        "href": "AnLiXiangQing.html"
+                                        
+                                    },{
+                                        "title": "Apple 苹果 iPhone 6s",
+                                        "pic": "upload/pro_3.jpg",
+                                        "href": "AnLiXiangQing.html"
+                                        
+                                    },{
+                                        "title": "Apple 苹果 iPhone 6s",
+                                        "pic": "upload/pro_3.jpg",
+                                        "href": "AnLiXiangQing.html"
+                                        
+                                    }
+                                ]
+                            }
+                            item4CurrPage++;
+                            var result = "";
+                            for (var i = 0; i < data.lists.length; i++) {
+                                result += '<li><a href="' + data.lists[i].href + '"><span class="pic"><img src="' + data.lists[i].pic + '" /></span><p class="name">' + data.lists[i].title + '</p></a></li>'
+                            }
+                            setTimeout(function() { //测试用 后端可以删除timeout的函数
+                                $(".vrkf-list-box").append(result);
+
+                                me.resetload();
+                                if (!data.lists.length || data.lists.length < item1PageNum) {
+                                    item4LoadEnd = true;
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData();
+                                }
+
+                            }, 2000)
+
+                        },
+                        error: function(xhr, type) {
+                            console.dir('Ajax error!');
+                            // 即使加载出错，也得重置
+                            me.resetload();
+                        }
+                    });
                 }
             }
         });
@@ -289,6 +374,19 @@
         $('a[href="#J_shop-yhhd"]').on('showntab', function(e) {
             var $this = $(this);
             if (!item3LoadEnd) {
+                // 解锁
+                dropload.unlock();
+                dropload.noData(false);
+            } else {
+                // 锁定
+                dropload.lock('down');
+                dropload.noData();
+            }
+        });
+
+         $('a[href="#J_shop-vrkf"]').on('showntab', function(e) {
+            var $this = $(this);
+            if (!item4LoadEnd) {
                 // 解锁
                 dropload.unlock();
                 dropload.noData(false);
