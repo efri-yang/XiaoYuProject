@@ -1,4 +1,26 @@
+.dropload-scroll-box .dropload-up,.dropload-down{
+   
+    @include font-dpr(16px);
+   
+}
+.dropload-scroll-box .dropload-down{
+    height:px2rem(100px);
+}
+.dropload-scroll-box .dropload-refresh,.dropload-scroll-box .dropload-update,.dropload-scroll-box .dropload-load,.dropload-scroll-box .dropload-noData{
+    height: px2rem(100px);
+    line-height:px2rem(100px);
+    color:#666;
+   
+}
 
+ .dropload-load .loading{
+  
+    height:px2rem(30px) !important;
+    width:px2rem(30px) !important;
+    border-radius: 100%;
+    margin:px2rem(12px);
+    border: px2rem(2px) solid #666;
+}
 .swiper-pagination-bullet{
     width:px2rem(20px) !important;
     height:px2rem(20px) !important;
