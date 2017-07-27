@@ -137,7 +137,7 @@
         width: 25px;
         height: 45px;
         top: 50%;
-        margin-top: -71px;
+        margin-top: -35px;
         overflow: hidden;
         position: absolute;
         background-image: url("../images/bb_arrow_icons.png");
@@ -240,7 +240,7 @@
         position:absolute;
         left:-273px;
         top:-202px;
-        width:273px;
+        width:273px; 
         height:202px;
         background:url("../images/hand_normal.png") no-repeat top center;
         &.open{
@@ -248,8 +248,58 @@
             top:5px;
             background:url("../images/hand_open.png") no-repeat top center;
         }
+        &.swing {
+            transform-origin: left center;
+            animation-name: swing;
+            animation-duration: 0.75s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+        }
     }
 }
+
+@keyframes swing {
+  25% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  50% {
+    transform: rotate3d(0, 0, 1, -15deg);
+  }
+
+  75% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, -15deg);
+  }
+
+ 
+}
+// 
+// @keyframes swing {
+//   20% {
+//     transform: rotate3d(0, 0, 1, 15deg);
+//   }
+
+//   40% {
+//     transform: rotate3d(0, 0, 1, -10deg);
+//   }
+
+//   60% {
+//     transform: rotate3d(0, 0, 1, 5deg);
+//   }
+
+//   80% {
+//     transform: rotate3d(0, 0, 1, -5deg);
+//   }
+
+//   to {
+//     transform: rotate3d(0, 0, 1, 0deg);
+//   }
+// }
+
 
 @keyframes r1ac {
     0% {

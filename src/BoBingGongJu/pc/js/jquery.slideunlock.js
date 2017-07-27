@@ -29,7 +29,8 @@ function SliderUnlock(elm, options, success, always) {
         index: typeof (options.index) !== 'undefined' || !isNaN(options.index) ? options.index : 0,
         IsOk: typeof (options.isOk) !== 'undefined' ? options.isOk : false,
         lableIndex: typeof (options.lableIndex) !== 'undefined' || !isNaN(options.lableIndex) ? options.lableIndex : 0,
-        isRun:false
+        isRun:false,
+        handInCallBack:typeof (options.handInCallBack) !== 'undefined' ? options.handInCallBack : null
     }
 
     //$elm
@@ -52,6 +53,8 @@ function SliderUnlock(elm, options, success, always) {
     _self.success = success;
     //always
     _self.always = always;
+
+    _self.handInCallBack=opts.handInCallBack;
 }
 
 /**
@@ -131,6 +134,7 @@ SliderUnlock.prototype.handerIn = function () {
     _self.swipestart = true;
     _self.min = 0;
     _self.max = _self.elm.width();
+    !!_self.handInCallBack && _self.handInCallBack();
 }
 
 /**

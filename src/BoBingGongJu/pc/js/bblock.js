@@ -82,46 +82,49 @@ $(function() {
 
             move: function(index) {
                 var _this = this,
-                    posTop = index * (207 / 254),
-                    posLeft = index * (380 / 254);
-
+                    posTop = index * ((207+25) / 254),
+                    posLeft = index * ((380+80) / 254);
                 _this.$elem.css({ left: initLeft + posLeft, top: initTop + posTop });
             },
             open: function() {
                 var _this = this;
-                this.$elem.addClass('open');
+                this.$elem.removeClass('swing').addClass('open');
                 setTimeout(function() {
                     _this.close();
-                }, 750)
+                },100)
             },
             close: function() {
                 var _this = this;
-               _this.$elem.css({ left: initLeft, top: initTop});
-                setTimeout(function() {
-                    _this.reset();
-                },0)
+               _this.$elem.animate({left: initLeft, top: initTop},250,function(){
+                   _this.$elem.removeClass('open');
+               }); 
             },
-            reset: function() {
-                var _this = this;
-                this.$elem.removeClass('open');
-                _this.$elem.css({ left: initLeft, top: initTop});
+            rotating:function(){
+                this.$elem.addClass('swing')
             }
         }
     })();
     //博饼动画
     var moonCake = (function() {
+
         return {
             slider: "",
             //拖拽到最右边的时候
             dropEnd: function() {
                 var _this = this;
-                Plam.open();
                 $.ajax({
                     url: 'http://wnworld.com/conn/bbgj.php',
                     type:"post",
                     data:{},
                     dataType: "json",
+                    beforeSend:function(){
+                       Plam.rotating();
+                    },
                     success: function(data) {
+                        Plam.open();
+                        if(Math.random()<0.5){//假设没有次数的时候
+
+                        }
                         Dice.show(data.dices);
                         if($.supportCSS3()){
                             $("#J_bowl-box .dice").eq(0).animationEnd(function() {
@@ -149,19 +152,19 @@ $(function() {
 
     (function() {
         $(function(){
-            var $slideunlockBg = $("#J_slideunlock-bg"),
-            Timer;
+            var $slideunlockBg = $("#J_slideunlock-bg");
 
             var slider = moonCake.slider = new SliderUnlock(".slideunlock-slider", {
                 labelTip: "向右拖拽",
-                successLabelTip: "博饼开始，祝你好运！"
+                successLabelTip: "博饼开始，祝你好运！",
+                handInCallBack:function(){
+                    $("#J_bowl-box").html("");
+                    $(".bb-rock-result").hide();
+                }
             }, function() {
                 //拖拽成功后执行下面的函数
                 moonCake.dropEnd();
             }, function() {
-                if (slider.index == 254) {
-                    $("#J_slideunlock-lable-tip").text("松开博起来");
-                }
                 Plam.move(slider.index);
             });
             slider.init();
