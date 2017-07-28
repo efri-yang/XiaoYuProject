@@ -790,11 +790,15 @@
 }
 
 .yhhd-detail {
-    line-height: 1.3;
+    
     padding: px2rem(30px) 0;
     @include font-dpr(16px);
     img{
         max-width:100%;
+    }
+    .text-desc{
+        line-height: 1.3;
+        margin-top:30px;
     }
 }
 
@@ -900,4 +904,60 @@
     border-radius: 100%;
     margin:px2rem(12px);
     border: px2rem(2px) solid #666;
+}
+
+
+
+  .yhhd-advert-1{
+        img{
+            width:100%;
+        }
+    }
+.yhhd-page-box{
+   padding:px2rem(10px) 0 0;
+   .tip-para{
+        .tit{
+            color:#333;
+            @include font-dpr(16px);
+            line-height:1.5;
+        }
+        .time{
+            line-height:1.4;
+            @include font-dpr(14px);
+        }
+   }
+   .btn-bm{
+        height: px2rem(90px);
+            line-height: px2rem(90px);
+            border-radius: px2rem(10px);
+            @include font-dpr(18px);
+            background:#ff6000;
+            border:none;
+            width: 100%;
+            color: #fff;
+            display:block;
+            text-align:center;
+            margin-top:px2rem(20px);   
+   }
+   .forms-box{
+    margin-top:px2rem(30px);
+    display:none;
+        .item{
+            margin-bottom:px2rem(30px);
+        }
+        .ipt-submit {
+            height: px2rem(90px);
+            line-height: px2rem(90px);
+            border-radius: px2rem(10px);
+            @include font-dpr(18px);
+            background:#ff6000;
+            border:none;
+            width: 100%;
+            color: #fff;
+            margin-top: px2rem(20px);
+            &:active {
+                background: darken(#ff6000, 5%);
+            }
+        }
+   }
 }

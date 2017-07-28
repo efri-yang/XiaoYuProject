@@ -38,8 +38,39 @@
                     <p class="txt">暂无优惠活动</p>
                 </div>
                 <div class="yhhd-detail">
-                    <p>阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬 阿斯蒂芬阿斯蒂芬阿斯蒂芬</p>
+                    <!--  -->
+                    <div class="yhhd-advert-1"><img src="upload/pro_5.jpg"></div>
+                    <div class="yhhd-page-box">
+                        <div class="tip-para">
+                            <p class="tit">夏季年中钜惠，半包装修低至399每平</p>
+                            <div class="time">
+                                <p>开始时间：2017-07-03 16:13</p>
+                                <p>结束时间：2017-09-03 16:13</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-bm">我要报名</a>
+                        <div class="forms-box">
+                            <form>
+                                <div class="item">
+                                    <input type="text" class="coms-field-text" placeholder="姓名">
+                                </div>
+                                <div class="item">
+                                    <input type="text" class="coms-field-text" placeholder="联系电话">
+                                </div>
+                                <div class="item">
+                                    <input type="number" class="coms-field-text" placeholder="预算">
+                                </div>
+                                <div class="item">
+                                    <input type="submit" value="提交" class="ipt-submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="text-desc">
+                        <p>阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬 阿斯蒂芬阿斯蒂芬阿斯蒂芬</p>
                     <p><img src="upload/pro_3.jpg" /></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,8 +84,16 @@
     <!--  -->
     @@include("./views/_DengJiForm.html")
     <script src="js/zepto-mvalidate.js"></script>
-    
-    
+    <script type="text/javascript">
+    $(function() {
+        $(".btn-bm").on("click", function(event) {
+            event.preventDefault();
+            $(".yhhd-page-box .forms-box").show();
+            $(this).hide();
+
+        })
+    })
+    </script>
 </body>
 
 </html>
