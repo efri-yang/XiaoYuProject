@@ -87,6 +87,7 @@ $(function() {
                 _this.$elem.css({ left: initLeft + posLeft, top: initTop + posTop });
             },
             open: function() {
+
                 var _this = this;
                 this.$elem.removeClass('swing').addClass('open');
                 setTimeout(function() {
@@ -114,13 +115,15 @@ $(function() {
                 var _this = this;
                 $.ajax({
                     url: 'http://wnworld.com/conn/bbgj.php',
-                    type:"post",
+                    type:"get",
                     data:{},
                     dataType: "json",
                     beforeSend:function(){
                        Plam.rotating();
+
                     },
                     success: function(data) {
+                        alert("xxx")
                         Plam.open();
                         if(Math.random()<0.5){//假设没有次数的时候
 
@@ -135,6 +138,9 @@ $(function() {
                             $(".bb-rock-result").html(data.titles + " +" + data.score + "博饼分!").fadeIn();                            
                             moonCake.slider.reset();
                         }
+                    },
+                    error:function(){
+                        alert("xxx")
                     }
                     
                     

@@ -283,3 +283,13 @@ body {
         color: #888;
     }
 }
+.layui-layer-title{
+    background:#f52d44 !important;
+    color:#fff  !important;
+}
+.layui-layer-close{
+    width:15px !important;
+    height:15px !important;
+    background:url("../images/layer_close.png") no-repeat top center !important;
+}
+
