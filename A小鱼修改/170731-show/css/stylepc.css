@@ -1168,4 +1168,43 @@
      font-size: 20px;
  }
 
+/**
+ * 20170731 change by yyh
+ */
+.fixed-scroll{
+     height:95px;
+    
+     overflow-y:scroll; 
+     scrollbar-face-color:#e3e3e3; /*滚动条3D表面（ThreedFace）的颜色*/
+    scrollbar-highlight-color:#fff; /*滚动条3D界面的亮边（ThreedHighlight）颜色*/
+    scrollbar-shadow-color:#eeeeee; /*滚动条3D界面的暗边（ThreedShadow）颜色*/
+    scrollbar-3dlight-color:#eeeeee; /*滚动条亮边框颜色*/
+    scrollbar-arrow-color:#000; /*滚动条方向箭头的颜色 */
+    scrollbar-track-color:#fff; /*滚动条的拖动区域(TrackBar)颜色*/
+    scrollbar-darkshadow-color:#fff; /*滚动条暗边框（ThreedDarkShadow）颜色*/
 
+     
+       
+     /*定义滚动条轨道 内阴影+圆角*/  
+    
+       
+     /*定义滑块 内阴影+圆角*/  
+     
+}
+.fixed-scroll::-webkit-scrollbar {
+  width: 4px;
+  height: 10px;
+}
+.fixed-scroll::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: #9598a7;
+}
+.fixed-scroll::-webkit-scrollbar-track {
+  background: #e3e3e3;
+}
+.fixed-scroll::-ms-clear{
+   display: none;
+}
+.fixed-scroll::-ms-reveal{
+   display: none;
+}

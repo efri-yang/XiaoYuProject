@@ -1,0 +1,136 @@
+@import "./scss/_normalize.scss";
+@import "./scss/_base.scss";
+@import "./scss/_funvar.scss";
+
+.mtr10{
+    margin-top:px2rem(10px);
+}
+.mtr20{
+    margin-top:px2rem(20px);
+}
+.mtr30{
+    margin-top:px2rem(30px);
+}
+.mtr40{
+    margin-top:px2rem(40px);
+}
+.mtr50{
+    margin-top:px2rem(50px);
+}
+
+
+.mbr30{
+    margin-bottom:px2rem(30px);
+}
+
+.plr20{
+    padding-left:px2rem(20px);
+}
+.prr20{
+    padding-right:px2rem(20px);
+}
+
+.plr30{
+    padding-left:px2rem(30px);
+}
+.prr30{
+    padding-right:px2rem(30px);
+}
+.pbr155{
+    padding-bottom:px2rem(155px); 
+}
+.pbr40{
+    padding-bottom:px2rem(40px); 
+}
+.container{
+    width:px2rem(750px);
+    margin:0 auto;
+    overflow:hidden;
+}
+
+
+.fix-bottom-btn{
+   
+    
+    
+    display:flex;
+    position: fixed;
+    left:0;
+    bottom: 0;
+    right: 0;
+    box-shadow:0 0 15px 0 #000;
+    li{
+        flex:1;
+        a{
+            text-align:center;
+            display:block;
+            height:px2rem(130px);
+            line-height: px2rem(130px);
+            @include font-dpr(20px);
+        }
+        &.item-1{
+            a{
+                background:#ffe574;
+               
+                color:#8a5100;
+                &:active{
+                    background-color:darken(#ffe574,10%);
+                }
+            }
+        }
+        &.item-2{
+            a{
+                background:#e8343a;
+                 color:#fff;
+                &:active{
+                    background-color:darken(#e8343a,10%);
+                }
+            }
+        }
+    }
+   
+    
+}
+.bg-clr1e324b{
+    background-color:#1e324b;
+}
+.bg-clr440000{
+    background:#440000;
+}
+
+.bg-clr4c2601{
+    background:#4c2601;
+}
+.bg-clr4d391e{
+    background:#4d391e;
+}
+.container-pd{
+    padding:0 px2rem(24px) px2rem(160px);
+}
+
+.item-img{
+    text-align:center;
+    a{
+        display:block;
+    }
+    img{
+        width:100%;
+    }
+}
+
+.index-list{
+    padding-top: px2rem(30px);
+    li{
+        border-bottom:1px solid #a4a5a5;
+        padding:px2rem(30px) px2rem(50px);
+        &:last-child{
+            border-bottom:none;
+        }
+        a{
+            display:block;
+        }
+        img{
+            width:100%;
+        }
+    }
+}
