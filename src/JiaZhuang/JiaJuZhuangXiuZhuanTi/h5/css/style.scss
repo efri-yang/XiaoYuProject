@@ -502,3 +502,93 @@ body {
         background-color:darken(#2caa6b,5%)
     } 
 }
+
+
+.designer-dialog-shadow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 998;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-duration: .25s;
+    animation-timing-function: ease-out;
+
+    &.in {
+        animation-name: fadeIn;
+    }
+    &.out {
+        animation-name: fadeOut;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.jias-dia-box{
+    background: #fff;
+    padding:  px2rem(30px);
+    position: fixed;
+    z-index: 10000;
+    border-radius: px2rem(5px);
+    width: 80%;
+    left: 50%;
+    height:70%;
+    top:15%;
+    margin-left: -40%;
+    transition: all 0.20s ease-out;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+    &.dia-in {
+        visibility: visible;
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+    .desc{
+       
+        @include font-dpr(14px);
+        overflow:scroll;
+    }
+    .jias-dia-wrap{
+        position:relative;
+        height:100%;
+        width:100%;
+        overflow:hidden;
+    }
+    .jias-dia-scroll{
+        position:absolute;
+        left:0;
+        top:0;
+    }
+    >.close {
+        width: px2rem(42px);
+        height: px2rem(40px);
+        overflow: hidden;
+        position: absolute;
+        right: px2rem(30px);
+        top: px2rem(20px);
+        background: url("../images/dialog_close_icon.png") no-repeat top center;
+        background-size: 100% 100%;
+    }
+}

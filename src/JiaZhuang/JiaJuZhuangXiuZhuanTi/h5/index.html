@@ -51,7 +51,7 @@
 								<p style="color:#888888;font-size:0.3rem; margin-top:10px;">*凡当天到场的会员可以获得课堂笔记一份和强辉瓷砖提供的10000元大礼一份！
 *现场参与互动即可获得精美礼品一份，数量有限哦~</p>
 							</div>
-							<a href="#" class="guide-btn">查看本期讲师介绍</a>
+							<a href="#" class="guide-btn" id="J_jias-intro">查看本期讲师介绍</a>
 						</div>
 					</div>
 				</div>
@@ -149,7 +149,39 @@
 
     <a href="#" class="wybm-btn-fixed">我要报名</a>
 
+    <div class="jias-dia-box" id="J_jias-dia-box">
+    		<div id="wrapper" class="jias-dia-wrap">
+				<div id="scroller" class="jias-dia-scroll">
+					<div class="desc">
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p><p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p><p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p><p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p><p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p><p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p><p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p><p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+					</div>
+				</div>
+    		</div>
+			
+    </div>
+
     <script src="js/swiper/js/swiper.jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
 	<script type="text/javascript">
 			$(function(){
@@ -166,6 +198,20 @@
 				      $(".swiper-desc li").eq(index).addClass("active").siblings().removeClass('active')
 				    }
 				});
+
+				$jiasDia=$("#J_jias-dia-box").dialogs({
+					afterShow:function(){
+						var myScroll = new IScroll('#wrapper',{
+							scrollbars:true
+						});
+
+					}
+				})
+				$("#J_jias-intro").on("click",function(event){
+					event.preventDefault();
+					$jiasDia.show();
+
+				})
 
 			})
 	
