@@ -112,13 +112,15 @@
 				<div class="gs-desc">
 						<p class="tit">公司简介</p>
 						<div class="detail">
-							<p>钜诚装饰—是一家坚持做口碑的装饰企业，成立于2008年，以平价、服务、质量获得客户的认可。至今，我们共服务2600多户业主，其中大部分是老客户或老客户介绍，真正做到了家家皆样板 户户留口碑。  2006年、有一支名叫小何的施工队活跃在厦门......</p>
+							<p>钜诚装饰——是一家坚持做口碑的装饰企业，成立于2008年，以平价、服务、质量获得客户的认可。至今，我们共服务了2600多户业主，其中大部分是老客户或老客户介绍，真正做到了家家皆样板 户户留口碑。2006年、有一支名叫小何的施工队活跃在厦门......</p>
 
 <p>2008年、我们入驻小鱼网，获得装修客户的一致好评</p>
 
 <p>2009年、经过客户口口相传，找我们的客户越来越多，小何施工队形成了一定的规模；并于年底正式注册为--厦门钜诚装饰设计工程有限公司</p>
 
-<p>2010年、小何开始以‘钜诚装饰’品牌服务于每一位信任钜诚</p>
+<p>2010年、小何开始以‘钜诚装饰’品牌服务于每一位信任钜诚的客户，并且正式成立专业设计6人团队；</p>
+
+<p>2011年、公司坚持做口碑，以优质的服务与质量取得了广大客户的....</p>
 						</div>
 				</div>
 		</div>
@@ -153,7 +155,7 @@
     		<div id="wrapper" class="jias-dia-wrap">
 				<div id="scroller" class="jias-dia-scroll">
 					<div class="desc">
-						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
+						<p style="font-size: 20px">sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
 						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
 						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
 						<p>sdfasdf撒打发斯蒂芬阿斯蒂芬发生地方asdf</p>
@@ -178,6 +180,72 @@
     		</div>
 			
     </div>
+
+
+    <div class="desiger-dialog-box" id="J_desiger-dialog-box">
+        <div class="forms-box">
+            <form id="J_desiger-form">
+                <div class="item">
+                    <input type="text" class="coms-field-text" placeholder="姓名" data-required="true" data-descriptions="username">
+                </div>
+                <div class="item">
+                    <input type="text" class="coms-field-text" placeholder="电话" data-required="true" data-pattern="^0?1[3|4|5|7|8][0-9]\d{8}$" data-descriptions="phone">
+                </div>
+                <div class="item">
+                    <input type="number" class="coms-field-text" placeholder="小区名称" data-required="true" data-descriptions="xqmc">
+                </div>
+                <div class="item">
+                    <input type="number" class="coms-field-text" placeholder="微信号码" data-required="true" data-descriptions="wxhm">
+                </div>
+                <div class="item">
+                    <input type="submit" value="提交" class="ipt-submit">
+                </div>
+            </form>
+        </div>
+        <span class="close" data-roler='close'></span>
+</div>
+<script src="js/zepto-mvalidate.js"></script>
+<script type="text/javascript">
+    //意向登记 弹出框
+    $(function() {
+        var DialogDesigner = $("#J_desiger-dialog-box").dialogs({
+            shadeClose: true
+        });
+        $(".wybm-btn-fixed").on("click",function(event){
+            event.preventDefault();
+            DialogDesigner.show();
+        })
+        
+        var validateFunc=function() {
+            $("#J_desiger-form").mvalidateDestroy().mvalidate({
+                type: 1,
+                onKeyup: true,
+                sendForm: false, //验证通过的时候是否自动提交表单
+                firstInvalidFocus: false,
+                descriptions: {
+                    username: {
+                        required: '请输入真实姓名！'
+                    },
+                    phone: {
+                        required: '请输入手机号码',
+                        pattern: '您输入的手机号码格式不正确'
+                    },
+                    xqmc: {
+                        required: '请输入小区名称'
+                       
+                    },
+                    wxhm:{
+                        required: '请输入微信号码'
+                    }
+                },
+                valid: function() {
+                    alert("验证通过！后端可以开始处理了")
+                }
+            });
+        }
+        validateFunc();
+    })
+</script>
 
     <script src="js/swiper/js/swiper.jquery.js"></script>
     <script type="text/javascript" src="js/common.js"></script>

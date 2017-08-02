@@ -13,14 +13,16 @@
 <body>
     <div class="container">
         <a name="gotop" class="gotop-placeholder"></a>
-        <ul class="shop-tab-hds">
-            <li class="active"><a href="N-Case.html">案例</a></li>
-            <li><a href="N-SheJiShi.html">设计师</a></li>
-            <li><a href="N-YouHuiHuoDong.html">优惠活动</a></li>
-            <li><a href="N-VRKanFang.html">VR看房</a></li>
-        </ul>
-        <div class="shop-tab-bds active" id="J_shop-case">
-            <table class="casedetail-tbl">
+        <div class="shop-tab-hds-wrap">
+                <ul class="shop-tab-hds">
+                    <li class="active"><a href="N-sjsj-Case.html">设计案例</a></li>
+                    <li><a href="N-sjsj-YouHuiHuoDong.html">优惠活动</a></li>
+                    <li><a href="N-sjsj-VRKanFang.html">VR看房</a></li>
+                    <li><a href="N-sjsj-ShangPinXiangQing.html">商家简介</a></li>       
+                </ul>
+            </div>
+        <div class="shop-tab-bds active pbfoot" id="J_shop-case">
+            <!-- <table class="casedetail-tbl">
                 <thead>
                     <tr>
                         <th width="width:16%"></th>
@@ -55,11 +57,11 @@
                 </tr>
             </table>
             <div class="casedetail-desc">
-				<p>幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
+				<p style="font-size: 20px">幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
                 <p>幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
                 <p>幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
                 <p>幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
-            </div>
+            </div> -->
             <div class="swiper-container casedetail-swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><img src="upload/pro_1.jpg" /></div>
@@ -79,6 +81,9 @@
         <li class="goback"><a href="#"></a></li>
         <li class="gotop"><a href="#gotop"></a></li>
     </ul>
+    <!--  -->
+    @@include("./views/_DengJiForm.html")
+    <script type="text/javascript" src="js/zepto-mvalidate.js"></script>
     <script src="js/swiper/js/swiper.jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
     <script type="text/javascript">

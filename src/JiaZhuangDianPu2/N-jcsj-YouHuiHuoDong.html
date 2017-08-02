@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>优惠活动</title>
+    <script src="js/zepto.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <a name="gotop" class="gotop-placeholder"></a>
+        <!-- <div class="user-infor">
+            <span class="avatar"><img src="upload/avatar_1.jpg"></span>
+            <p class="name">北大装饰设计</p>
+            <p class="phone"><i></i>联系电话：15080347486</p>
+            <p class="address"><i></i>营业地址：厦门市软件园二期望海路59号之一501室</p>
+            <ul class="guide-btn">
+                <li><a href="#">户型解析</a></li>
+                <li><a href="ShangJiaXiangQing.html">商家简介</a></li>
+            </ul>
+        </div>
+        <div class="border-top-r30"> -->
+            <ul class="zsj-tab-hds">
+                <li><a href="N-jcsj-ShangPin.html">本店商品</a></li>
+                <li class="active"><a href="N-jcsj-YouHuiHuoDong.html">优惠活动</a></li>
+                <li><a href="N-jcsj-VRJianCai.html">VR建材</a></li>
+                <li><a href="N-jcsj-ShangJiaJianJie.html">商家简介</a></li>       
+            </ul>
+            <div class="shop-tab-bd-scroll pbfoot">
+                <div class="coms-nodata-tip">
+                    <span class="pic"></span>
+                    <p class="txt">暂无优惠活动</p>
+                </div>
+                <div class="yhhd-detail">
+                    <!--  -->
+                    <div class="yhhd-advert-1"><img src="upload/pro_5.jpg"></div>
+                    <div class="yhhd-page-box">
+                        <div class="tip-para">
+                            <p class="tit">夏季年中钜惠，半包装修低至399每平</p>
+                            <div class="time">
+                                <p>开始时间：2017-07-03 16:13</p>
+                                <p>结束时间：2017-09-03 16:13</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-bm">我要报名</a>
+                        <div class="forms-box">
+                            <form>
+                                <div class="item">
+                                    <input type="text" class="coms-field-text" placeholder="姓名">
+                                </div>
+                                <div class="item">
+                                    <input type="text" class="coms-field-text" placeholder="联系电话">
+                                </div>
+                                <div class="item">
+                                    <input type="number" class="coms-field-text" placeholder="预算">
+                                </div>
+                                <div class="item">
+                                    <input type="submit" value="提交" class="ipt-submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="text-desc">
+                        <p>阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬阿斯蒂芬进水的发斯蒂芬撒地方阿斯蒂芬 阿斯蒂芬阿斯蒂芬阿斯蒂芬</p>
+                    <p><img src="upload/pro_3.jpg" /></p>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+    <!--  -->
+    <ul class="fixed-bar-guide">
+        <li class="gohome"><a href="index.html"></a></li>
+        <li class="goback"><a href="#"></a></li>
+        <li class="gotop"><a href="#gotop"></a></li>
+    </ul>
+    <!--  -->
+    @@include("./views/_DengJiForm.html")
+    <script src="js/zepto-mvalidate.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $(".btn-bm").on("click", function(event) {
+            event.preventDefault();
+            $(".yhhd-page-box .forms-box").show();
+            $(this).hide();
+
+        })
+    })
+    </script>
+</body>
+
+</html>

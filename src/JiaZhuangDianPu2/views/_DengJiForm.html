@@ -1,4 +1,5 @@
- <div class="desiger-dialog-box" id="J_desiger-dialog-box">
+<a href="#" class="fixbottom-btn" id="J_fixbottom">户型解析</a>
+<div class="desiger-dialog-box" id="J_desiger-dialog-box">
         <div class="forms-box">
             <form id="J_desiger-form">
                 <div class="item">
@@ -11,20 +12,23 @@
                     <input type="number" class="coms-field-text" placeholder="预算" data-required="true" data-pattern="^[0-9]*$" data-descriptions="money">
                 </div>
                 <div class="item">
+                    <input type="number" class="coms-field-text" placeholder="户型" data-required="true" data-descriptions="hux">
+                </div>
+                <div class="item">
                     <input type="submit" value="提交" class="ipt-submit">
                 </div>
             </form>
         </div>
         <span class="close" data-roler='close'></span>
-    </div>
-
+</div>
+<script src="js/zepto-mvalidate.js"></script>
 <script type="text/javascript">
     //意向登记 弹出框
     $(function() {
         var DialogDesigner = $("#J_desiger-dialog-box").dialogs({
             shadeClose: true
         });
-        $("#J_yxdj-btn").on("click",function(event){
+        $("#J_fixbottom").on("click",function(event){
             event.preventDefault();
             DialogDesigner.show();
         })
@@ -46,6 +50,9 @@
                     money: {
                         required: '请输入预算',
                         pattern: '您输入的预算格式不正确'
+                    },
+                    hux:{
+                        required: '请输入户型',
                     }
                 },
                 valid: function() {

@@ -215,6 +215,9 @@
     @include font-dpr(16px);
     line-height: 1.3;
     padding: px2rem(20px) 0 0;
+    *{
+        @include font-dpr(16px);
+    }
 }
 
 .casedetail-swiper-container {
@@ -237,6 +240,9 @@
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+        img{
+            width:100%;
+        }
     }
     .swiper-button-prev {
         background: none;
@@ -397,12 +403,15 @@
 }
 
 .sjdetail-box {
-    padding: px2rem(30px);
+    padding: px2rem(30px) px2rem(30px) px2rem(180px) !important;
     color: #666666;
     @include font-dpr(16px);
     line-height: 1.35;
     img {
         max-width: 100%;
+    }
+    *{
+         @include font-dpr(16px);
     }
 }
 
@@ -604,7 +613,7 @@
     border-radius: px2rem(5px);
     width: 80%;
     left: 50%;
-    top: 25%;
+    top: 20%;
     margin-left: -40%;
     transition: all 0.20s ease-out;
     visibility: hidden;
@@ -1042,4 +1051,25 @@
             color:#000;
         }
     }
+}
+
+.fixbottom-btn{
+    height:px2rem(115px);
+    line-height:px2rem(115px);
+    background:#019a58;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    @include font-dpr(20px);
+    color:#fff;
+    box-shadow:0 0 8px 0 #000;
+    z-index: 100;
+    &:active{
+        background-color:darken(#019a58,5%);
+    }
+}
+
+.pbfoot{
+    padding-bottom:px2rem(120px);
 }
