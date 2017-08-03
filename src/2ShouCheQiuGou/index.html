@@ -46,18 +46,23 @@
 				    	</select>
 				    </li>
 				    <li>
-						<select class="coms-field-select">
-							<option value="">- 选择车型 -</option>
-							<option value="1">小型车</option>
-							<option value="1">紧凑型车</option>
-							<option value="1">中型车</option>
-							<option value="1">中大型车</option>
-							<option value="1">大型车</option>
-							<option value="1">中大型SUV</option>
-							<option value="1">中型SUV</option>
-							<option value="1">MPV</option>
-							<option value="1">紧凑型SUV</option>
-				    	</select>
+				    	<div class="cart-type-box">
+							<div class="sel-field-el">- 选择车型 -</div>
+							<input type="hidden" id="J_cart-hidden">
+							<div class="sel-item-box">
+								<a href="#" data-val="小型车" data-id="1">小型车</a>
+								<a href="#" data-val="紧凑型车" data-id="2">紧凑型车</a>
+								<a href="#" data-val="中型车" data-id="3">中型车</a>
+								<a href="#" data-val="中大型车" data-id="4">中大型车</a>
+								<a href="#" data-val="大型车" data-id="5">大型车</a>
+								<a href="#" data-val="中大型SUV" data-id="6">中大型SUV</a>
+								<a href="#" data-val="中型SUV" data-id="7">中型SUV</a>
+								<a href="#" data-val="MPV" data-id="8">MPV</a>
+								<a href="#" data-val="紧凑型SUV">紧凑型SUV</a>
+								<span class="arrow-up"></span>
+							</div>
+				    	</div>
+						
 				    </li>
 				</ul>
 			</div>
@@ -126,6 +131,81 @@
             });
         }
         validateFunc();
+
+        var CartType=function(){
+        	this.arr=[];
+        	this.add=function(obj){
+        		if(this.indexOf(obj.id)==false){
+        			this.arr.push(obj);
+        		}
+        		
+        	}
+        	this.indexOf=function(id){
+        		var posIndex=false;
+        		$.each(this.arr,function(index,obj){
+        			if(obj.id==id){
+        				posIndex=index;
+        				return;
+        			}
+        		})
+        		return posIndex;
+        	}
+        	this.remove=function(id){
+        		var index=this.indexOf(id);
+        		if(index !==false){
+        			this.arr.splice(index,1)
+        		}
+        	}
+        	this.joinId=function(){
+        		var arr=[];
+        		$.each(this.arr,function(index,obj){
+        			arr.push(obj.id);
+        		})
+        		return arr.join(",")
+        	},
+        	this.joinText=function(){
+        		var arr=[];
+        		$.each(this.arr,function(index,obj){
+        			arr.push(obj.text);
+        		})
+        		return arr.join(",")
+        	}	
+        }
+
+        var cart=new CartType();
+
+        (function(){	
+        	$(".sel-field-el").on("click",function(){
+        		if($(".cart-type-box").hasClass("open")){
+        			$(".cart-type-box").removeClass("open");
+        		}else{
+        			$(".cart-type-box").addClass("open");
+        		}	
+        	})
+        	$(".sel-item-box a").on("click",function(event){
+        		var obj={};
+	        	event.preventDefault();
+	        	var $this=$(this);
+	        	obj.id=$this.data("id");
+	        	obj.text=$this.data("val");
+	    		if($this.hasClass('active')){
+	    			$this.removeClass('active');
+	    			cart.remove(obj.id);	
+	    		}else{
+	    			$this.addClass('active');
+	    			cart.add(obj);
+	    		}
+	    		
+	    		if(cart.arr.length){
+	    			$(".sel-field-el").html(cart.joinText());
+	    		}else{
+	    			$(".sel-field-el").html("- 选择车型 -")
+	    		}
+	    		$("#J_cart-hidden").val(cart.joinId()) //隐藏域要去选项的id 开发自己选择
+
+	    		//$("#J_cart-hidden").val(cart.joinId()) //隐藏域要去选项的文本 开发自己选择
+	    	})
+        })()
 	})
 	</script>
 </body>

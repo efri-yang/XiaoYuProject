@@ -1,0 +1,65 @@
+
+@import "./_funVar.scss";
+body{
+	background: url("../images/body_bg.jpg") no-repeat top center;
+}
+
+.container{
+	width:1100px;
+	margin:0 auto;
+}
+
+.nav-list{
+	height: 60px;
+	line-height: 60px;
+	margin-top:420px; 
+	background:url("../images/nav_bg.png") no-repeat top center;
+
+	li{
+		float: left;
+		width:220px;
+		background:url("../images/nav_line.jpg") no-repeat right center;
+		&:last-child{
+			background:none;
+		}
+		a{
+			height: 60px;
+			text-align: center;
+			line-height: 60px;
+			display:block;
+			color:#ff285e;
+			font-size:18px;
+		}
+	}
+}
+
+
+
+.banner-wrap{
+	padding:6px;
+	height:388px;
+	overflow:hidden;
+	float:left;
+	.banner-box{
+		overflow:hidden;
+		height:376px;
+		.list{
+			height:376px;
+			width:628px;
+			li{
+				a{
+					display:block;
+					height:376px;
+				}
+			}
+		}	
+	}
+}
+
+
+.banner-box .banner-numlist { bottom:10px;text-align: center; width: 100%; z-index: 30; position: absolute;}
+.banner-box .banner-numlist li { width: 12px; height: 12px; border-radius: 50%; background: #999999; margin: 0 5px; display: inline-block; *display:inline;
+*zoom:1;cursor:pointer; overflow:hidden;}
+.banner-box .banner-numlist li span{ text-indent:-9999px; display:inline-block}
+.banner-box .banner-numlist li.oncurr { background: #ffffff }
+

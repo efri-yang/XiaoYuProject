@@ -200,13 +200,72 @@ body{
     @extend %text-overflow;
 }
 
+.sel-field-el{
+    border-radius: 0;
+    border:1px solid #ececec;
+    padding:px2rem(20px) px2rem(60px) px2rem(20px) px2rem(10px);
+    width: 100%;
+    color: #323232;
+    @include font-dpr(16px);
+    background: #fff url(../images/coms_field_select_arrow.png) no-repeat 100% center;
+    @extend %text-overflow;
+    max-width:px2rem(300px);
+}
+.cart-type-box{
+    position:relative;
+    &.open{
+       .sel-item-box{
+        display:block;
+       }
+    }
+}
+.sel-item-box{
+    position:absolute;
+    right:0;
+    top:px2rem(100px);
+    background:#fff;
+    width:px2rem(630px);
+    padding:px2rem(20px);
+    z-index: 100;
+    display:none;
+    a{
+        display:inline-block;
+        height:px2rem(58px);
+        line-height:px2rem(58px);
+        overflow:hidden;
+        padding:0 px2rem(18px);
+        font-size:px2rem(28px);
+        background:#f0f0f0;
+        color:#4c4c4c;
+        margin-bottom:px2rem(10px);
+        margin-right:px2rem(2px);
+        border:1px solid #f0f0f0;
+        &.active{
+            background:#ff4800;
+            background:#fff;
+            border:1px solid #ff530f;
+        }
+    }
+    .arrow-up{
+        width:0; 
+        height:0; 
+        border-left:15px solid transparent;
+        border-right:15px solid transparent;
+        border-bottom:15px solid #fff;
+        position:absolute;
+        right:px2rem(20px);
+        top:px2rem(-15px);
+    }
+}
 .para-list{
     display:flex;
     padding:0  px2rem(15px);
     margin-top:px2rem(10px);
+   
     li{
         flex:1;
         padding:0 px2rem(15px);
+
     }
 }
 
