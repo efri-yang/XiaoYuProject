@@ -3,16 +3,16 @@
         <div class="forms-box">
             <form id="J_desiger-form">
                 <div class="item">
-                    <input type="text" class="coms-field-text" placeholder="姓名" data-required="true" data-descriptions="username">
+                    <input type="text" class="coms-field-text" placeholder="姓名" data-required="true" data-descriptions="username" value="xxx">
                 </div>
                 <div class="item">
-                    <input type="text" class="coms-field-text" placeholder="联系电话" data-required="true" data-pattern="^0?1[3|4|5|8][0-9]\d{8}$" data-descriptions="phone">
+                    <input type="text" class="coms-field-text" placeholder="联系电话" data-required="true" data-pattern="^0?1[3|4|5|8][0-9]\d{8}$" data-descriptions="phone" value="18552916049">
                 </div>
                 <div class="item">
-                    <input type="number" class="coms-field-text" placeholder="预算" data-required="true" data-pattern="^[0-9]*$" data-descriptions="money">
+                    <input type="number" class="coms-field-text" placeholder="预算" data-required="true" data-pattern="^[0-9]*$" data-descriptions="money" value="100">
                 </div>
                 <div class="item">
-                    <input type="number" class="coms-field-text" placeholder="户型" data-required="true" data-descriptions="hux">
+                    <input type="text" class="coms-field-text" placeholder="户型" data-required="true" data-descriptions="hux" value="xxx">
                 </div>
                 <div class="item">
                     <input type="submit" value="提交" class="ipt-submit">
@@ -22,6 +22,7 @@
         <span class="close" data-roler='close'></span>
 </div>
 <script src="js/zepto-mvalidate.js"></script>
+<script type="text/javascript" src="js/layer_mobile/layer.js"></script>
 <script type="text/javascript">
     //意向登记 弹出框
     $(function() {
@@ -56,7 +57,19 @@
                     }
                 },
                 valid: function() {
-                    alert("验证通过！后端可以开始处理了")
+                     var layer1=layer.open({type: 2,shade:false,time:20000});
+                     setTimeout(function(){
+                            layer.close(layer1);
+                             DialogDesigner.hide();
+                            layer.open({
+                            style: 'border:none; background-color:rgba(0,0,0,0.8); color:#fff;',
+                            content:'稍后会有客服给您致电，请告知客服您希望由***装修公司来提供服务',
+                            anim:"scale",
+
+                            shade:false,
+                            time: 2//2秒后自动关闭
+                          });
+                         },2000)
                 }
             });
         }

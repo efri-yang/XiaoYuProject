@@ -609,7 +609,7 @@
     background: #fff;
     padding: px2rem(90px) px2rem(30px) px2rem(30px);
     position: fixed;
-    z-index: 10000;
+    z-index: 999;
     border-radius: px2rem(5px);
     width: 80%;
     left: 50%;
@@ -1072,4 +1072,25 @@
 
 .pbfoot{
     padding-bottom:px2rem(120px);
+}
+
+
+
+
+.layui-m-layercont{
+    padding:px2rem(80px) px2rem(60px);
+    line-height:1.5 !important;
+    @include font-dpr(18px); 
+}
+
+.layui-m-layermain  .layui-m-layercont i{
+    width:px2rem(40px) !important;
+    height:px2rem(40px) !important;
+    background-color:rgba(0,0,0,0.8) !important;
+}
+
+.layui-m-layer-msg .layui-m-layercont{
+    padding:px2rem(100px) px2rem(80px);
+    line-height:1.5;
+    @include font-dpr(18px); 
 }
