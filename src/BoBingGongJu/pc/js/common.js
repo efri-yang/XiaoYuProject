@@ -530,20 +530,24 @@ $.fn.transitionEnd = function(callback) {
 
 
 $.extend({
-    supportCSS3: function() {
-        var body, i, style, transition, vendor;
-        body = document.body || document.documentElement;
-        style = body.style;
-        transition = "transition";
-        vendor = ["Moz", "Webkit", "Khtml", "O", "ms"];
-        transition = transition.charAt(0).toUpperCase() + transition.substr(1);
-        i = 0;
-        while (i < vendor.length) {
-            if (typeof style[vendor[i] + transition] === "string") {
-                return vendor[i];
-            }
-            i++;
-        }
-        return false;
-    }
+    supportCSS3:(function() {
+       var div = document.createElement('div'),
+          vendors = 'Ms O Moz Webkit'.split(' '),
+          len = vendors.length;
+     
+       return function(prop) {
+          if ( prop in div.style ) return true;
+     
+          prop = prop.replace(/^[a-z]/, function(val) {
+             return val.toUpperCase();
+          });
+     
+          while(len--) {
+             if ( vendors[len] + prop in div.style ) {
+                return true;
+             } 
+          }
+          return false;
+       }
+    })()
 })

@@ -76,6 +76,8 @@ $(function() {
     //手掌对象
     var Plam = (function() {
         var initTop = -207,
+            Timer,
+            countStep=0;
             initLeft = -333;
         return {
             $elem: $("#J_plam"),
@@ -87,7 +89,6 @@ $(function() {
                 _this.$elem.css({ left: initLeft + posLeft, top: initTop + posTop });
             },
             open: function() {
-
                 var _this = this;
                 this.$elem.removeClass('swing').addClass('open');
                 setTimeout(function() {
@@ -101,7 +102,9 @@ $(function() {
                }); 
             },
             rotating:function(){
-                this.$elem.addClass('swing')
+
+               this.$elem.addClass('swing');
+                
             }
         }
     })();
@@ -114,22 +117,21 @@ $(function() {
             dropEnd: function() {
                 var _this = this;
                 $.ajax({
-                    url: 'http://wnworld.com/conn/bbgj.php',
+                    url: 'http://wnworld.com/BoBingGongJu/pc/php/bbgj.php',
                     type:"get",
-                    data:{},
                     dataType: "json",
                     beforeSend:function(){
                        Plam.rotating();
-
                     },
                     success: function(data) {
-                        alert("xxx")
+
+                      
                         Plam.open();
                         if(Math.random()<0.5){//假设没有次数的时候
 
                         }
                         Dice.show(data.dices);
-                        if($.supportCSS3()){
+                        if($.supportCSS3("transform")){
                             $("#J_bowl-box .dice").eq(0).animationEnd(function() {
                                 $(".bb-rock-result").html(data.titles + " +" + data.score + "博饼分!").fadeIn();
                                 moonCake.slider.reset();
@@ -139,8 +141,10 @@ $(function() {
                             moonCake.slider.reset();
                         }
                     },
-                    error:function(){
-                        alert("xxx")
+                    error:function(XMLHttpRequest, textStatus, errorThrown){
+                        console.dir(XMLHttpRequest.status);
+                         console.dir(XMLHttpRequest.readyState);
+                        console.dir(textStatus);
                     }
                     
                     
