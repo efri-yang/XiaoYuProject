@@ -154,9 +154,9 @@
             if (opts.pagination.show) {
                 if (len > 1) {
                     $pagination = $('<ul></ul>');
-                    $pagination.addClass(opts.pagination.className).css({ "zIndex": opts.zIndex + 1, "position": "absolute" })
+                    $pagination.addClass(opts.pagination.className).css({ "zIndex": opts.zIndex +10, "position": "absolute" })
                     for (var i = 0; i < len; i++) {
-                        strLis += "<li><span>" + (i + 1) + "</span></li>";
+                        strLis += "<li><span></span></li>";
                     }
                     $pagination.append(strLis);
                     $pagination.appendTo($parent)

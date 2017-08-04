@@ -38,6 +38,7 @@ text-decoration: none;
 }
 a:hover {
 text-decoration:none;
+color:#ff285e;
 }
 fieldset, img {
 border: none;
@@ -106,6 +107,15 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 }
 .mt30{ 
 	margin-top: 30px;
+}
+.mt50{ 
+	margin-top: 50px;
+}
+.mt60{ 
+	margin-top: 60px;
+}
+.mt70{ 
+	margin-top: 70px;
 }
 
 .pt15{
