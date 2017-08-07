@@ -66,6 +66,7 @@
         function animWayInit(effect) {
             if (effect == effectArray[0]) {
                 $slider_lis.css("position", "absolute").eq(Index).css({ zIndex: opts.zIndex, display: "block" }).siblings().css({ zIndex: opts.zIndex - 1 }).hide();
+                
 
             } else if (effect == effectArray[1]) {
                 $slider_lis.css({ position: "absolute", opacity: 0, zIndex: opts.zIndex - 1 }).eq(Index).css("zIndex", opts.Index).animate({ "opacity": 1 });
@@ -73,6 +74,8 @@
                     $slider_lis.css("display", "none").eq(Index).css("display", "block")
                 }
             }
+            
+
         }
 
         function btnInit() {
@@ -222,6 +225,7 @@
                     $slider_lis.css("display", "none").eq(Index).css("display", "block")
                 }
             }
+            $(".qjggz-intro").children('.qjggz-item').eq(Index).addClass('active').siblings().removeClass('active');
 
 
 

@@ -15,12 +15,14 @@ body{
 .nav-list{
 	height: 60px;
 	line-height: 60px;
+	overflow:hidden;
 	margin-top:420px; 
 	background:url("../images/nav_bg.png") no-repeat top center;
 
 	li{
 		float: left;
-		width:220px;
+		// width:220px;
+		width:33.33%;
 		background:url("../images/nav_line.jpg") no-repeat right center;
 		&:last-child{
 			background:none;
@@ -171,18 +173,27 @@ body{
 .qjggz-intro{
 	color:#333;
 	font-size:14px;
-	line-height:24px;
+	
 	padding-top:20px;
-	width:440px;
-	height:404px;
+	
 	float:right;
 	overflow:hidden;
-	p{
-		text-indent:2em;
+	.qjggz-item{
+		line-height:24px;
+		display:none;
+		width:440px;
+	height:380px;
+		p{
+			text-indent:2em;
+		}
+		img{
+			max-width: 100%;
+		}
+		&.active{
+			display:block;
+		}
 	}
-	img{
-		max-width: 100%;
-	}
+	
 }
 
 .qjgzs-box{

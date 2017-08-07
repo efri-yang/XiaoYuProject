@@ -367,137 +367,137 @@ function dropdownPlugin(className) {
 })(jQuery);
 
 
-(function($){
-  'use strict';
+(function($) {
+    'use strict';
 
-  // TAB CLASS DEFINITION
-  // ====================
+    // TAB CLASS DEFINITION
+    // ====================
 
-  var Tab = function (element) {
-    // jscs:disable requireDollarBeforejQueryAssignment
-    this.element = $(element)
-    // jscs:enable requireDollarBeforejQueryAssignment
-  }
-
-  Tab.VERSION = '3.3.7'
-
-  Tab.TRANSITION_DURATION = 150
-
-  Tab.prototype.show = function () {
-    var $this    = this.element
-    var $ul      = $this.closest('ul:not(.dropdown-menu)')
-    var selector = $this.data('target')
-
-    if (!selector) {
-      selector = $this.attr('href')
-      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    var Tab = function(element) {
+        // jscs:disable requireDollarBeforejQueryAssignment
+        this.element = $(element)
+        // jscs:enable requireDollarBeforejQueryAssignment
     }
 
-    if ($this.parent('li').hasClass('active')) return
+    Tab.VERSION = '3.3.7'
 
-    var $previous = $ul.find('.active:last a')
-    var hideEvent = $.Event('hide.bs.tab', {
-      relatedTarget: $this[0]
-    })
-    var showEvent = $.Event('show.bs.tab', {
-      relatedTarget: $previous[0]
-    })
+    Tab.TRANSITION_DURATION = 150
 
-    $previous.trigger(hideEvent)
-    $this.trigger(showEvent)
+    Tab.prototype.show = function() {
+        var $this = this.element
+        var $ul = $this.closest('ul:not(.dropdown-menu)')
+        var selector = $this.data('target')
 
-    if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
+        if (!selector) {
+            selector = $this.attr('href')
+            selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+        }
 
-    var $target = $(selector)
+        if ($this.parent('li').hasClass('active')) return
 
-    this.activate($this.closest('li'), $ul)
-    this.activate($target, $target.parent(), function () {
-      $previous.trigger({
-        type: 'hidden.bs.tab',
-        relatedTarget: $this[0]
-      })
-      $this.trigger({
-        type: 'shown.bs.tab',
-        relatedTarget: $previous[0]
-      })
-    })
-  }
+        var $previous = $ul.find('.active:last a')
+        var hideEvent = $.Event('hide.bs.tab', {
+            relatedTarget: $this[0]
+        })
+        var showEvent = $.Event('show.bs.tab', {
+            relatedTarget: $previous[0]
+        })
 
-  Tab.prototype.activate = function (element, container, callback) {
-    var $active    = container.find('> .active')
-    var transition = callback
-      && $.support.transition
-      && ($active.length && $active.hasClass('fade') || !!container.find('> .fade').length)
+        $previous.trigger(hideEvent)
+        $this.trigger(showEvent)
 
-    function next() {
-      $active
-        .removeClass('active')
-        .find('> .dropdown-menu > .active')
-          .removeClass('active')
-        .end()
-        .find('[data-toggle="tab"]')
-          .attr('aria-expanded', false)
+        if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
 
-      element
-        .addClass('active')
-        .find('[data-toggle="tab"]')
-          .attr('aria-expanded', true)
+        var $target = $(selector)
 
-      if (transition) {
-        element[0].offsetWidth // reflow for transition
-        element.addClass('in')
-      } else {
-        element.removeClass('fade')
-      }
-
-      if (element.parent('.dropdown-menu').length) {
-        element
-          .closest('li.dropdown')
-            .addClass('active')
-          .end()
-          .find('[data-toggle="tab"]')
-            .attr('aria-expanded', true)
-      }
-
-      callback && callback()
+        this.activate($this.closest('li'), $ul)
+        this.activate($target, $target.parent(), function() {
+            $previous.trigger({
+                type: 'hidden.bs.tab',
+                relatedTarget: $this[0]
+            })
+            $this.trigger({
+                type: 'shown.bs.tab',
+                relatedTarget: $previous[0]
+            })
+        })
     }
 
-    $active.length && transition ?
-      $active
-        .one('bsTransitionEnd', next)
-        .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
-      next()
+    Tab.prototype.activate = function(element, container, callback) {
+        var $active = container.find('> .active')
+        var transition = callback &&
+            $.support.transition &&
+            ($active.length && $active.hasClass('fade') || !!container.find('> .fade').length)
 
-    $active.removeClass('in')
-  }
+        function next() {
+            $active
+                .removeClass('active')
+                .find('> .dropdown-menu > .active')
+                .removeClass('active')
+                .end()
+                .find('[data-toggle="tab"]')
+                .attr('aria-expanded', false)
+
+            element
+                .addClass('active')
+                .find('[data-toggle="tab"]')
+                .attr('aria-expanded', true)
+
+            if (transition) {
+                element[0].offsetWidth // reflow for transition
+                element.addClass('in')
+            } else {
+                element.removeClass('fade')
+            }
+
+            if (element.parent('.dropdown-menu').length) {
+                element
+                    .closest('li.dropdown')
+                    .addClass('active')
+                    .end()
+                    .find('[data-toggle="tab"]')
+                    .attr('aria-expanded', true)
+            }
+
+            callback && callback()
+        }
+
+        $active.length && transition ?
+            $active
+            .one('bsTransitionEnd', next)
+            .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
+            next()
+
+        $active.removeClass('in')
+    }
 
 
-  // TAB PLUGIN DEFINITION
-  // =====================
+    // TAB PLUGIN DEFINITION
+    // =====================
 
-  function Plugin(option) {
-    return this.each(function () {
-      var $this = $(this)
-      var data  = $this.data('bs.tab')
+    function Plugin(option) {
+        return this.each(function() {
+            var $this = $(this)
+            var data = $this.data('bs.tab')
 
-      if (!data) $this.data('bs.tab', (data = new Tab(this)))
-      if (typeof option == 'string') data[option]()
-    })
-  }
+            if (!data) $this.data('bs.tab', (data = new Tab(this)))
+            if (typeof option == 'string') data[option]()
+        })
+    }
 
-  var old = $.fn.tab
+    var old = $.fn.tab
 
-  $.fn.tab= Plugin
-  $.fn.tab.Constructor = Tab
+    $.fn.tab = Plugin
+    $.fn.tab.Constructor = Tab
 
 
-  // TAB NO CONFLICT
-  // ===============
+    // TAB NO CONFLICT
+    // ===============
 
-  $.fn.tab.noConflict = function () {
-    $.fn.tab = old
-    return this
-  }
+    $.fn.tab.noConflict = function() {
+        $.fn.tab = old
+        return this
+    }
 })(jQuery);
 
 
@@ -530,24 +530,154 @@ $.fn.transitionEnd = function(callback) {
 
 
 $.extend({
-    supportCSS3:(function() {
-       var div = document.createElement('div'),
-          vendors = 'Ms O Moz Webkit'.split(' '),
-          len = vendors.length;
-     
-       return function(prop) {
-          if ( prop in div.style ) return true;
-     
-          prop = prop.replace(/^[a-z]/, function(val) {
-             return val.toUpperCase();
-          });
-     
-          while(len--) {
-             if ( vendors[len] + prop in div.style ) {
-                return true;
-             } 
-          }
-          return false;
-       }
+    supportCSS3: (function() {
+        var div = document.createElement('div'),
+            vendors = 'Ms O Moz Webkit'.split(' '),
+            len = vendors.length;
+
+        return function(prop) {
+            if (prop in div.style) return true;
+
+            prop = prop.replace(/^[a-z]/, function(val) {
+                return val.toUpperCase();
+            });
+
+            while (len--) {
+                if (vendors[len] + prop in div.style) {
+                    return true;
+                }
+            }
+            return false;
+        }
     })()
-})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;(function($, window, document, undefined) {
+    var SlideLock = (function() {
+        function SlideLock(element, options) {
+            this.$element = $(element);
+            this.opts = $.extend({}, $.fn.slideLock.defaults, options);
+            this._init()
+        }
+        SlideLock.prototype = {
+            _init:function(){
+                var _this=this;
+                this.originLeft=this.$element.offset().left;
+                this.btnW=this.$element.outerWidth();
+                this.slideW=this.$element.parent().outerWidth()-this.btnW;
+                this.isMousedown=false;
+                this.stepOpacity=1/this.slideW;
+
+                this.$slideBg=$(this.opts.slideBgId);
+                this.$slideTip=$(this.opts.slideTipId);
+                this.$slideStatu=$(this.opts.slideStatuId);
+
+                this.$element.on("mousedown",function(event){
+                    _this.isMousedown=true;
+                    _this.dx=event.clientX-_this.originLeft;
+                })
+                this.$element.on("mousemove",function(event){
+                    if(!!_this.isMousedown){
+                        _this.diffX=event.clientX -_this.originLeft -_this.dx;
+                        if(_this.diffX >= _this.slideW){
+                            _this.diffX=_this.slideW;
+                        }else if(_this.diffX <=0){
+                            _this.diffX=0;
+                        }
+                        _this._btnMove(_this.diffX);
+                        _this._bgMove(_this.diffX+_this.btnW);
+                        _this._tipMove(_this.diffX*_this.stepOpacity);
+                        _this._statuMove(_this.diffX);
+                    }
+                });
+                this.$element.on("mouseup",function(event){
+                     _this.isMousedown=false;
+                     if(_this.diffX >= (_this.slideW/2)){
+                            _this.diffX=_this.slideW;
+                     }else{
+                        _this.diffX=0;
+                    }
+                    _this._btnMove(_this.diffX,true);
+                    _this._bgMove(_this.diffX+_this.btnW,true);
+                    _this._tipMove(_this.diffX*_this.stepOpacity);
+                })
+            },
+            _btnMove:function(diffX,isAnim){
+
+                if(!!isAnim){
+                    this.$element.animate({left:diffX},200);
+                }else{
+                    
+                    this.$element.css({"left":diffX});
+                }
+            },
+            _bgMove:function(diffX,isAnim){
+                if(!!isAnim){
+                    this.$slideBg.animate({width:diffX},200);
+                    
+                }else{
+                    this.$slideBg.css({"width":diffX});
+                }
+            },
+            _tipMove:function(opacity){
+                this.$slideTip.css("opacity",1-opacity);
+            },
+            _statuMove:function(diffX){
+                if(diffX >= this.slideW/2){
+                    this.$slideStatu.html("松开博起来").fadeIn();
+                }else{
+                    this.$slideStatu.html("").fadeOut();
+                }
+                
+            },
+            reset:function(){
+
+            }
+        }
+        return SlideLock;
+    })();
+    $.fn.slideLock = function(options) {
+        var self = this;
+        return this.each(function() {
+            var $this = $(this),
+                instance = $this.data("slidelock");
+            if (!instance) {
+                var instance = new SlideLock(this, options);
+                instance._init();
+                $this.data('slidelock', instance);
+            }
+        })
+    };
+    $.fn.slideLock.defaults = {
+       slideBgId:"#J_slideunlock-bg",
+       slideTipId:"#J_slideunlock-lable-tip",
+       slideStatuId:"#J_slideunlock-statu",
+       success:function(){},
+       mousedown:function(){},
+       mousemove:function(){},
+
+        
+    }
+})(window.jQuery, window, document);
