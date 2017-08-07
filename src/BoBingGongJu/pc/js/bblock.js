@@ -18,7 +18,7 @@ $(function() {
                 title: false, //不显示标题
                 area: ['540px', '574px'],
                 content: $('#J_bb-dia-qrcode')
-                    //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+                //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
             });
         });
         $("#J_bb-dia-qrcode .close,#J_bb-dia-qrcode .close-qrcode").on("click", function(event) {
@@ -42,7 +42,7 @@ $(function() {
                 title: false, //不显示标题
                 area: ['540px', '361px'],
                 content: $('#J_bb-dia-zyb')
-                    //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+                //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
             });
 
             $("#J_bb-dia-zyb .close,#J_bb-dia-zyb .close-qrcode").on("click", function(event) {
@@ -52,6 +52,136 @@ $(function() {
 
         });
     })();
+
+
+
+    ;
+    (function($, window, document, undefined) {
+        var SlideLock = (function() {
+            function SlideLock(element, options) {
+                this.$element = $(element);
+                this.opts = $.extend({}, $.fn.slideLock.defaults, options);
+                this._init()
+            }
+            SlideLock.prototype = {
+                _init: function() {
+                    var _this = this;
+                    this.originLeft = this.$element.offset().left;
+                    this.btnW = this.$element.outerWidth();
+                    this.slideW = this.$element.parent().outerWidth() - this.btnW;
+                    this.isMousedown = false;
+                    this.hadSuccess = false;
+                    this.stepOpacity = 1 / this.slideW;
+
+                    this.$slideBg = $(this.opts.slideBgId);
+                    this.$slideTip = $(this.opts.slideTipId);
+                    this.$slideStatu = $(this.opts.slideStatuId);
+
+                    this.$element.on("mousedown", function(event) {
+                        _this.isMousedown = true;
+                        _this.dx = event.clientX - _this.originLeft;
+                    })
+                    this.$element.on("mousemove", function(event) {
+                        if (!!_this.isMousedown && !_this.hadSuccess) {
+                            _this.diffX = event.clientX - _this.originLeft - _this.dx;
+                            if (_this.diffX >= _this.slideW) {
+                                _this.diffX = _this.slideW;
+                            } else if (_this.diffX <= 0) {
+                                _this.diffX = 0;
+                            }
+                            _this._btnMove(_this.diffX);
+                            _this._bgMove(_this.diffX + _this.btnW);
+                            _this._tipMove(_this.diffX * _this.stepOpacity);
+                            _this._statuMove(_this.diffX);
+                            Plam.move(_this.diffX);
+                            !!_this.opts.mousemove && _this.opts.mousemove.call(_this, _this.diffX);
+                        }
+                    });
+                    this.$element.on("mouseup mouseout", function(event) {
+                        event.stopPropagation();
+                        _this.isMousedown = false;
+                        if (!_this.hadSuccess) {
+                            if (_this.diffX >= (_this.slideW / 2)) {
+                                _this.diffX = _this.slideW;
+                            } else {
+                                _this.diffX = 0;
+                            }
+                        
+
+                            _this._btnMove(_this.diffX, true);
+                            _this._bgMove(_this.diffX + _this.btnW, true);
+                            _this._tipMove(_this.diffX * _this.stepOpacity);
+                            Plam.move(_this.diffX,true);
+                        }
+
+                    });
+
+                },
+                _btnMove: function(diffX, isAnim) {
+                    _this = this;
+                    if (!!isAnim) {
+                        if (diffX >= _this.slideW && !this.hadSuccess) {
+                            this.hadSuccess = true;
+                            this.$element.animate({ left: diffX }, 200, function() {
+                                !!_this.opts.success && _this.opts.success();
+                                _this.$slideStatu.html("祝您好运！")
+                            });
+                        } else {
+                            this.$element.animate({ left: diffX }, 200);
+                        }
+
+                    } else {
+                        this.$element.css({ "left": diffX });
+                    }
+                },
+                _bgMove: function(diffX, isAnim) {
+                    if (!!isAnim) {
+                        this.$slideBg.animate({ width: diffX }, 200);
+
+                    } else {
+                        this.$slideBg.css({ "width": diffX });
+                    }
+                },
+                _tipMove: function(opacity) {
+                    this.$slideTip.css("opacity", 1 - opacity);
+                },
+                _statuMove: function(diffX) {
+                    if (diffX >= this.slideW / 2) {
+                        this.$slideStatu.html("松开博起来").fadeIn();
+                    } else {
+                        this.$slideStatu.html("").fadeOut();
+                    }
+
+                },
+                reset: function() {
+
+                }
+            }
+            return SlideLock;
+        })();
+        $.fn.slideLock = function(options) {
+            var self = this;
+            return this.each(function() {
+                var $this = $(this),
+                    instance = $this.data("slidelock");
+                if (!instance) {
+                    var instance = new SlideLock(this, options);
+                    instance._init();
+                    $this.data('slidelock', instance);
+                }
+            })
+        };
+        $.fn.slideLock.defaults = {
+            slideBgId: "#J_slideunlock-bg",
+            slideTipId: "#J_slideunlock-lable-tip",
+            slideStatuId: "#J_slideunlock-statu",
+            success: function() {},
+            mousedown: function() {},
+            mousemove: function() {}
+
+
+        }
+    })(window.jQuery, window, document);
 
 
     //骰子对象
@@ -77,34 +207,39 @@ $(function() {
     var Plam = (function() {
         var initTop = -207,
             Timer,
-            countStep=0;
-            initLeft = -333;
+            countStep = 0;
+        initLeft = -333;
         return {
             $elem: $("#J_plam"),
 
-            move: function(index) {
+            move: function(index,isAnim) {
                 var _this = this,
-                    posTop = index * ((207+25) / 254),
-                    posLeft = index * ((380+80) / 254);
-                _this.$elem.css({ left: initLeft + posLeft, top: initTop + posTop });
+                    posTop = index * ((207 + 25) / 254),
+                    posLeft = index * ((380 + 80) / 254);
+                    if(!isAnim){
+                        _this.$elem.css({ left: initLeft + posLeft, top: initTop + posTop });
+                     }else{
+                        _this.$elem.animate({ left: initLeft + posLeft, top: initTop + posTop },200);
+                     }
+               
             },
             open: function() {
                 var _this = this;
                 this.$elem.removeClass('swing').addClass('open');
                 setTimeout(function() {
                     _this.close();
-                },100)
+                }, 100)
             },
             close: function() {
                 var _this = this;
-               _this.$elem.animate({left: initLeft, top: initTop},250,function(){
-                   _this.$elem.removeClass('open');
-               }); 
+                _this.$elem.animate({ left: initLeft, top: initTop }, 250, function() {
+                    _this.$elem.removeClass('open');
+                });
             },
-            rotating:function(){
+            rotating: function() {
 
-               this.$elem.addClass('swing');
-                
+                this.$elem.addClass('swing');
+
             }
         }
     })();
@@ -118,36 +253,36 @@ $(function() {
                 var _this = this;
                 $.ajax({
                     url: 'http://wnworld.com/BoBingGongJu/pc/php/bbgj.php',
-                    type:"get",
+                    type: "post",
                     dataType: "json",
-                    beforeSend:function(){
-                       Plam.rotating();
+                    beforeSend: function() {
+                        Plam.rotating();
                     },
                     success: function(data) {
 
-                      
+
                         Plam.open();
-                        if(Math.random()<0.5){//假设没有次数的时候
+                        if (Math.random() < 0.5) { //假设没有次数的时候
 
                         }
                         Dice.show(data.dices);
-                        if($.supportCSS3("transform")){
+                        if ($.supportCSS3("transform")) {
                             $("#J_bowl-box .dice").eq(0).animationEnd(function() {
                                 $(".bb-rock-result").html(data.titles + " +" + data.score + "博饼分!").fadeIn();
-                                moonCake.slider.reset();
+
                             })
-                        }else{
-                            $(".bb-rock-result").html(data.titles + " +" + data.score + "博饼分!").fadeIn();                            
-                            moonCake.slider.reset();
+                        } else {
+                            $(".bb-rock-result").html(data.titles + " +" + data.score + "博饼分!").fadeIn();
+
                         }
                     },
-                    error:function(XMLHttpRequest, textStatus, errorThrown){
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
                         console.dir(XMLHttpRequest.status);
-                         console.dir(XMLHttpRequest.readyState);
+                        console.dir(XMLHttpRequest.readyState);
                         console.dir(textStatus);
                     }
-                    
-                    
+
+
                 })
 
 
@@ -161,23 +296,35 @@ $(function() {
 
 
     (function() {
-        $(function(){
-            var $slideunlockBg = $("#J_slideunlock-bg");
+        $(function() {
+            $("#J_slideunlock-btn").slideLock({
+                success: function() {
 
-            var slider = moonCake.slider = new SliderUnlock(".slideunlock-slider", {
-                labelTip: "向右拖拽",
-                successLabelTip: "博饼开始，祝你好运！",
-                handInCallBack:function(){
-                    $("#J_bowl-box").html("");
-                    $(".bb-rock-result").hide();
+                    moonCake.dropEnd();
+                },
+                mousemove: function(index) {
+                    setTimeout(function() {
+
+                    }, 250)
                 }
-            }, function() {
-                //拖拽成功后执行下面的函数
-                moonCake.dropEnd();
-            }, function() {
-                Plam.move(slider.index);
-            });
-            slider.init();
+            })
+
+            // var $slideunlockBg = $("#J_slideunlock-bg");
+
+            // var slider = moonCake.slider = new SliderUnlock(".slideunlock-slider", {
+            //     labelTip: "向右拖拽",
+            //     successLabelTip: "博饼开始，祝你好运！",
+            //     handInCallBack:function(){
+            //         $("#J_bowl-box").html("");
+            //         $(".bb-rock-result").hide();
+            //     }
+            // }, function() {
+            //     //拖拽成功后执行下面的函数
+            //     moonCake.dropEnd();
+            // }, function() {
+            //     Plam.move(slider.index);
+            // });
+            // slider.init();
         })
     })();
 
