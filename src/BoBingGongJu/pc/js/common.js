@@ -332,10 +332,7 @@ function dropdownPlugin(className) {
     }
 })(jQuery);
 
-
-(function($) {
-
-    function LoadImage(ImgD, width, height, t) {
+function LoadImage(ImgD, width, height, t) {
         var smallWidth = $(ImgD).width();
         var smallHeight = $(ImgD).height();
         //    alert(smallWidth+":"+width+"|"+smallHeight+":"+height);
@@ -358,6 +355,9 @@ function dropdownPlugin(className) {
             }
         }
     }
+;(function($) {
+
+    
     $.fn.LoadImage = function(options) {
         var opt = options;
         return this.each(function(index, el) {

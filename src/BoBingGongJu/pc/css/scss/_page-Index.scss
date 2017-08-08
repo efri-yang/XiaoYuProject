@@ -153,19 +153,69 @@
         float: left;
         margin: 4.5px 9px 4.5px 0;
         display: inline;
+        &.disable{
+            a{
+                cursor:default;
+                &:hover{
+                    .mask{
+                        visibility:hidden;
+                        opacity:0;
+                    }
+
+                }
+            }
+            .btn-tip{
+                background: #cacaca;
+                cursor: default;
+            }
+        }
+        a{
+            display:block;
+            position:relative;
+            height:100%;
+            &:hover{
+                .mask{
+                    visibility:visible;
+                    opacity:1;
+                }
+
+            }
+
+        }
+        .mask{
+            position:absolute;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            background:url("../images/shade_1.png") repeat top center;
+            visibility:hidden;
+            opacity: 0;
+            transition:all 0.25s ease-out;
+            .btn-start{
+                padding:5px 0px;
+                font-size:16px;
+                font-weight:normal;
+                display:block;
+                width:120px;
+                text-align:center;
+                margin:60px auto 0;
+            }
+        }
         .pic {
-            width: 178px;
-            height: 118px;
+            width: 225px;
+            height: 150px;
             overflow: hidden;
             display: block;
             border: 1px solid #f3e1b1;
             background: #fffaed;
         }
-        .btn-coms {
+        .btn-tip{
             padding: 2px 5px;
             position: absolute;
             right: 10px;
             top: 10px;
+            font-size:12px;
         }
     }
 }

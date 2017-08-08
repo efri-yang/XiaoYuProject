@@ -1,6 +1,6 @@
 .header {
     background: #13182d;
-    height: 76px;
+    height:50px;
     position: fixed;
     left: 0;
     top: 0;
@@ -10,12 +10,12 @@
 }
 
 .header-logo {
-    width: 150px;
-    height: 28px;
+    width: 119px;
+    height: 22px;
     overflow: hidden;
     float: left;
     display: block;
-    margin-top: 23px;
+    margin-top:15px;
     background: url("../images/logo.png") no-repeat center center;
 }
 
@@ -35,10 +35,10 @@
         }
         a {
             width: 100%;
-            height: 76px;
-            line-height: 76px;
+            height: 50px;
+            line-height: 50px;
             display: block;
-            font-size: 16px;
+            font-size: 14px;
             color: #fff;
             transition: all 0.25s ease-out;
             text-align: center;
@@ -74,10 +74,10 @@
             transition: all 0.2s ease-out;
             a {
                 width: 100%;
-                height: 60px;
-                line-height: 60px;
+                height: 50px;
+                line-height: 50px;
                 display: block;
-                font-size: 16px;
+                font-size: 14px;
                 color: #fff;
                 transition: none;
                 text-align: center;
@@ -113,7 +113,7 @@
             }
             .nav-sub {
                 visibility: visible;
-                top: 76px;
+                top: 49px;
             }
         }
     }
@@ -124,7 +124,7 @@
 	position:relative;
 	
 	.avatar-box{
-		padding:18px 23px 18px 0;
+		padding:5px 23px 0 0;
 		position:relative;
 		line-height:40px;
         height:40px;
@@ -140,12 +140,16 @@
 			overflow:hidden;
 			background:#fff;
 			margin-right: 10px;
+            img{
+                width:100%;
+                height:100%;
+            }
 		}
 		.name{
 			float:left;
 			color:#e6e2e0;
-			font-size:16px;
-			font-weight:bold;
+			font-size:14px;
+			
 		}
 		.arrow{
 			width: 12px;
@@ -153,7 +157,7 @@
             position: absolute;
             right: 5px;
             top: 50%;
-            margin-top: -3px;
+            margin-top: 0px;
             background: url("../images/arrow_c1c1c1.png") no-repeat;
             transition: all 0.25s ease-out;
 		}
@@ -171,10 +175,10 @@
             visibility:hidden;
             a {
                 width: 100%;
-                height: 60px;
-                line-height: 60px;
+                height: 50px;
+                line-height: 50px;
                 display: block;
-                font-size: 16px;
+                font-size: 14px;
                 color: #fff;
                 transition: none;
                 text-align: center;
@@ -196,8 +200,7 @@
                     color: #fff;
                     text-decoration: none;
                     >span {
-                        background: none;
-                        top: 76px;
+                        background: none;  
                     }
                 }
             }
@@ -210,7 +213,7 @@
 		}
 		.list{
 			visibility:visible;
-			top:76px;
+			top:47px;
 		}
 	}
 }

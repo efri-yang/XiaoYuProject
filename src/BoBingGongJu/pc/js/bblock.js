@@ -190,9 +190,11 @@ $(function() {
             show: function(dices) {
                 var str = this._render(dices);
                 $("#J_bowl-box").html(str);
+                $("#J_jp-play-rock").trigger("click");
+                $(".bowl-box .loaded").hide();
+                
             },
             _render: function(dices) {
-
                 var strArr = [];
                 for (var i = 0; i < dices.length; i++) {
                     var num = i + 1;
@@ -202,6 +204,33 @@ $(function() {
             }
         }
     })();
+
+    //声音
+    var VoiceTip=function(rank){
+        switch(rank){
+            case 6 :
+                $("#J_jp-play6").trigger("click");
+                break;
+            case 5 :
+                $("#J_jp-play5").trigger("click");
+                break;
+            case 4 :
+                $("#J_jp-play4").trigger("click");
+                break;
+            case 3:
+                $("#J_jp-play3").trigger("click");
+                break;
+            case 2:
+                $("#J_jp-play2").trigger("click");
+                break;
+            case 1:
+                $("#J_jp-play1").trigger("click");
+                break;
+            case 0:
+                $("#J_jp-play0").trigger("click");
+                break;
+        }
+    }
 
     //手掌对象
     var Plam = (function() {
@@ -259,22 +288,25 @@ $(function() {
                         Plam.rotating();
                     },
                     success: function(data) {
-
-
+                        var data={"dices":[5,6,3,5,4,3],"score":8,"titles":"\u72b6\u5143\u63d2\u91d1\u82b1","rank":6}
                         Plam.open();
-                        if (Math.random() < 0.5) { //假设没有次数的时候
+                        // if (Math.random() < 0.5) { //假设没有次数的时候
 
-                        }
+                        // }
+                        // console.dir(data.dices);
                         Dice.show(data.dices);
                         if ($.supportCSS3("transform")) {
                             $("#J_bowl-box .dice").eq(0).animationEnd(function() {
                                 $(".bb-rock-result").html(data.titles + " +" + data.score + "博饼分!").fadeIn();
+                                VoiceTip(data.rank);
 
                             })
                         } else {
                             $(".bb-rock-result").html(data.titles + " +" + data.score + "博饼分!").fadeIn();
-
+                            VoiceTip(data.rank);
                         }
+                        $("#J_slideunlock-btn2").removeAttr("disabled")
+
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrown) {
                         console.dir(XMLHttpRequest.status);
@@ -295,18 +327,30 @@ $(function() {
     })();
 
 
+
+
+
+
     (function() {
         $(function() {
-            $("#J_slideunlock-btn").slideLock({
+             
+
+            
+
+            $("#J_slideunlock-btn1").slideLock({
                 success: function() {
-
                     moonCake.dropEnd();
-                },
-                mousemove: function(index) {
-                    setTimeout(function() {
-
-                    }, 250)
                 }
+            });
+
+            $("#J_slideunlock-btn2").on("click",function(){
+                    $("#J_bowl-box").html("");
+                    $(".bb-rock-result").hide();
+                    $(".bowl-box .loaded").fadeIn();
+                    $(this).attr("disabled","disabled");
+                    moonCake.dropEnd();
+
+                    
             })
 
             // var $slideunlockBg = $("#J_slideunlock-bg");
@@ -327,6 +371,144 @@ $(function() {
             // slider.init();
         })
     })();
+
+    $(function(){
+            $("#jquery_jplayer_0").jPlayer({
+                ready: function (event) {
+                    $(this).jPlayer("setMedia", {
+                        m4a: "./js/jplayer/audio0.mp3"
+                    });
+                },
+                cssSelectorAncestor: "#jp_container_0",
+                swfPath: "./js/jplayer",
+                supplied: "m4a, oga",
+                wmode: "window",
+                useStateClassSkin: true,
+                autoBlur: false,
+                smoothPlayBar: true,
+                keyEnabled: true,
+                remainingDuration: true,
+                toggleDuration: true
+            });
+
+            $("#jquery_jplayer_1").jPlayer({
+                ready: function (event) {
+                    $(this).jPlayer("setMedia", {
+                        m4a: "./js/jplayer/audio1.mp3"
+                    });
+                },
+                cssSelectorAncestor: "#jp_container_1",
+                swfPath: "./js/jplayer",
+                supplied: "m4a, oga",
+                wmode: "window",
+                useStateClassSkin: true,
+                autoBlur: false,
+                smoothPlayBar: true,
+                keyEnabled: true,
+                remainingDuration: true,
+                toggleDuration: true
+            });
+
+            $("#jquery_jplayer_2").jPlayer({
+                ready: function (event) {
+                    $(this).jPlayer("setMedia", {
+                        m4a: "./js/jplayer/audio2.mp3"
+                    });
+                },
+                cssSelectorAncestor: "#jp_container_2",
+                swfPath: "./js/jplayer",
+                supplied: "m4a, oga",
+                wmode: "window",
+                useStateClassSkin: true,
+                autoBlur: false,
+                smoothPlayBar: true,
+                keyEnabled: true,
+                remainingDuration: true,
+                toggleDuration: true
+            });
+
+            $("#jquery_jplayer_3").jPlayer({
+                ready: function (event) {
+                    $(this).jPlayer("setMedia", {
+                        m4a: "./js/jplayer/audio3.mp3"
+                    });
+                },
+                cssSelectorAncestor: "#jp_container_3",
+                swfPath: "./js/jplayer",
+                supplied: "m4a, oga",
+                wmode: "window",
+                useStateClassSkin: true,
+                autoBlur: false,
+                smoothPlayBar: true,
+                keyEnabled: true,
+                remainingDuration: true,
+                toggleDuration: true
+            });
+            $("#jquery_jplayer_4").jPlayer({
+                ready: function (event) {
+                    $(this).jPlayer("setMedia", {
+                        m4a: "./js/jplayer/audio4.mp3"
+                    });
+                },
+                cssSelectorAncestor: "#jp_container_4",
+                swfPath: "./js/jplayer",
+                supplied: "m4a, oga",
+                wmode: "window",
+                useStateClassSkin: true,
+                autoBlur: false,
+                smoothPlayBar: true,
+                keyEnabled: true,
+                remainingDuration: true,
+                toggleDuration: true
+            });
+            $("#jquery_jplayer_5").jPlayer({
+                ready: function (event) {
+                    $(this).jPlayer("setMedia", {
+                        m4a: "./js/jplayer/audio5.mp3"
+                    });
+                },
+                cssSelectorAncestor: "#jp_container_5",
+                swfPath: "./js/jplayer",
+                supplied: "m4a, oga",
+                wmode: "window",
+                useStateClassSkin: true,
+                autoBlur: false,
+                smoothPlayBar: true,
+                keyEnabled: true,
+                remainingDuration: true,
+                toggleDuration: true
+            });
+
+            $("#jquery_jplayer_6").jPlayer({
+                ready: function (event) {
+                    $(this).jPlayer("setMedia", {
+                        m4a: "./js/jplayer/audio6.mp3"
+                    });
+                },
+                cssSelectorAncestor: "#jp_container_6",
+                swfPath: "./js/jplayer",
+                supplied: "m4a, oga",
+                wmode: "window"
+            });
+
+            $("#jquery_jplayer_rock").jPlayer({
+                ready: function (event) {
+                    $(this).jPlayer("setMedia", {
+                        m4a: "./js/jplayer/audiott.mp3"
+                    });
+                },
+                cssSelectorAncestor: "#jp_container_rock",
+                swfPath: "./js/jplayer",
+                supplied: "m4a, oga",
+                wmode: "window",
+                useStateClassSkin: true,
+                autoBlur: false,
+                smoothPlayBar: true,
+                keyEnabled: true,
+                remainingDuration: true,
+                toggleDuration: true
+            });
+    })
 
 
 

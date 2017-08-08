@@ -72,8 +72,11 @@
                     </div>
                     <div class="clearfix">
                         <div class="bb-advert-company mt20">
-                            <a href="#" class="pic"><img src="upload/bb_advert.jpg" /></a>
-                            <span class="tip">点击广告，领取5个小鱼币（限一次）</span>
+                            <a href="#" class="pic">
+                                <img src="upload/bb_advert.jpg" />
+                                 <span class="tip">点击广告，领取5个小鱼币（限一次）</span>
+                            </a>
+                           
                         </div>
                         <div class="bb-rock-box">
                             <div class="bb-rock-result">一秀 +1博饼分</div>
@@ -82,12 +85,14 @@
                                 <a href="#" class="arrow prev"></a>
                                 <a href="#" class="arrow next"></a>
                                 <div class="bowl-box">
+                                     <span class="loaded"></span>
                                      <span class="company-logo"><img src="images/bowl_logo.png" /></span>
                                      <div class="bowl"  id="J_bowl-box"></div>
                                 </div>
 
                                 <span class="hand-normal" id="J_plam"></span>
                             </div>
+
                             
 
 
@@ -124,13 +129,45 @@
                                 <input type="hidden" value="1" class="slideunlock-lockable" />
                                 <div class="slideunlock-slider unselectable">
                                     <span class="slideunlock-bg" id="J_slideunlock-bg"></span>
-                                    <span class="slideunlock-label" id="J_slideunlock-btn">搏一搏</span>
+                                    <span class="slideunlock-label" id="J_slideunlock-btn1">搏一搏</span>
                                     <span class="slideunlock-lable-tip" id="J_slideunlock-lable-tip"><b><i></i>向右滑动博饼</b></span>
                                     <span class="slideunlock-statu" id="J_slideunlock-statu"></span>
                                 </div>
                             </div>
+                            <button class="slideunlock-label-2" type="button" id="J_slideunlock-btn2">搏一搏</button>
+                            <div class="undis">
+                                     <!-- 声音 -->
+    <div id="jquery_jplayer_0" class="jp-jplayer"></div>
+    <div id="jp_container_0" class="jp-audio" role="application" aria-label="media player"><button class="jp-play" id="J_jp-play0" role="button" tabindex="0"></button></div>
+
+    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+    <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><button class="jp-play" id="J_jp-play1" role="button" tabindex="1"></button></div>
+
+    <div id="jquery_jplayer_2" class="jp-jplayer"></div>
+    <div id="jp_container_2" class="jp-audio" role="application" aria-label="media player"><button class="jp-play" id="J_jp-play2" role="button" tabindex="2"></button></div>
+
+
+    <div id="jquery_jplayer_3" class="jp-jplayer"></div>
+    <div id="jp_container_3" class="jp-audio" role="application" aria-label="media player"><button class="jp-play" id="J_jp-play3" role="button" tabindex="3"></button></div>
+
+    <div id="jquery_jplayer_4" class="jp-jplayer"></div>
+    <div id="jp_container_4" class="jp-audio" role="application" aria-label="media player"><button class="jp-play" id="J_jp-play4" role="button" tabindex="4"></button></div>
+
+    <div id="jquery_jplayer_5" class="jp-jplayer"></div>
+    <div id="jp_container_5" class="jp-audio" role="application" aria-label="media player"><button class="jp-play" id="J_jp-play5" role="button" tabindex="5"></button></div>
+
+    <div id="jquery_jplayer_6" class="jp-jplayer"></div>
+    <div id="jp_container_6" class="jp-audio" role="application" aria-label="media player"><button class="jp-play" id="J_jp-play6" role="button" tabindex="6"></button></div>
+
+    <div id="jquery_jplayer_rock" class="jp-jplayer"></div>
+    <div id="jp_container_rock" class="jp-audio" role="application" aria-label="media player"><button class="jp-play" id="J_jp-play-rock" role="button" tabindex="7"></button></div>
+    <button id="x1">单机</button>
+
+    <!--  声音-->
+                            </div>
                         </div>
                     </div>
+
                     <div class="tit-type-4 mt10">
                         <span class="tit">商家优惠促销</span>
                         <span class="sub-tit">登陆信息可领取5个小鱼币（限一次）</span>
@@ -447,9 +484,13 @@
         <span class="bg-up"></span>
     </div>
     <!-- 赚鱼刺币弹出框 end -->
+
+   
    <!--  <script type="text/javascript" src="js/jquery.slideunlock.js"></script> -->
     <script type="text/javascript" src="js/layer/layer.js"></script>
+    <script type="text/javascript" src="js/jplayer/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="js/bblock.js"></script>
+  
 
 
 </body>

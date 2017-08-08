@@ -25,17 +25,17 @@
                     <div class="sub-container">
                         <div class="aside-box">
                             <ul class="aside-hdgz-list">
-                                <li class="active"><a href="#" onclick="$('#section-1').animatescroll();"><span>博饼总规则</span></a></li>
-                                <li><a href="#" onclick="$('#section-2').animatescroll();"><span>赚取小鱼币规则</span></a></li>
-                                <li><a href="#" onclick="$('#section-3').animatescroll();"><span>增加博饼次数规则</span></a></li>
-                                <li><a href="#" onclick="$('#section-4').animatescroll();"><span>礼品兑换规则</span></a></li>
-                                <li><a href="#" onclick="$('#section-5').animatescroll();"><span>线下博饼门票领取规则</span></a></li>
-                                <li><a href="#" onclick="$('#section-6').animatescroll();"><span>大牌福利抽奖规则</span></a></li>
+                                <li class="active"><a href="javascript:void(0)"><span>博饼总规则</span></a></li>
+                                <li><a href="javascript:void(0)" ><span>赚取小鱼币规则</span></a></li>
+                                <li><a href="javascript:void(0)" ><span>增加博饼次数规则</span></a></li>
+                                <li><a href="javascript:void(0)"><span>礼品兑换规则</span></a></li>
+                                <li><a href="javascript:void(0)" ><span>线下博饼门票领取规则</span></a></li>
+                                <li><a href="javascript:void(0)" ><span>大牌福利抽奖规则</span></a></li>
                             </ul>
                         </div>
                         <div class="sub-main-box">
 
-                            <div class="tit-type-5" id="section-1">   
+                            <div class="tit-type-5">   
                                 <span class="tit">博饼总规则</span>
                             </div>
                             <div class="intro-type-1">
@@ -54,7 +54,7 @@
                                 </p>
                                 <p><span class="num">10、</span> 小鱼网在法律允许的范围内，保留对本次活动的最终解释。</p>
                             </div>
-                            <div class="tit-type-5" id="section-2">
+                            <div class="tit-type-5" >
                                 <a name="J_zjbbcs"></a>
                                 <span class="tit">赚取小鱼币规则</span>
                             </div>
@@ -70,7 +70,7 @@
                                 <p><span class="num">2、</span>增加的博饼次数只可在分享的包厢页中使用，如分享欧菲包厢则只增加欧菲包厢的博饼次数。</p>
                                 <p><span class="num">3、</span>每天每个包厢最多可额外获得1次博饼次数。</p>
                             </div>
-                            <div class="tit-type-5" id="section-4">
+                            <div class="tit-type-5">
                                 <span class="tit">礼品兑换规则</span>
                             </div>
                             <div class="intro-type-1">
@@ -93,7 +93,7 @@
                                 </p>
                                 </p>
                             </div>
-                            <div class="tit-type-5" id="section-5">
+                            <div class="tit-type-5" >
                                 <span class="tit">线下博饼门票领取规则</span>
                             </div>
                             <div class="intro-type-1">
@@ -102,7 +102,7 @@
                                 <p><span class="num">2、</span>已登记信息的用户请耐心等待具体领取地址的通知，通知将会以手机短信、论坛私信通知、论坛置顶帖子告示、APP 推送等方式传达，请注意查收。
                                 </p>
                             </div>
-                             <div class="tit-type-5" id="section-6">
+                             <div class="tit-type-5">
                                 <span class="tit">大牌福利抽奖规则</span>
                             </div>
                             <div class="intro-type-1">
@@ -130,12 +130,16 @@
         <!-- footer end -->
         
 
-    <script type="text/javascript" src="js/animatescroll.js"></script>
+  
     <script type="text/javascript">
         $(function(){
+            var $titType=$(".sub-main-box .tit-type-5")
             $(".aside-hdgz-list li").on("click",function(){
                 $(this).addClass("active").siblings().removeClass("active");
-            })
+                var index=$(".aside-hdgz-list li").index(this);
+                var scrollTop=$titType.eq(index).offset().top-70;
+                $(window).scrollTop(scrollTop);
+            });
             $(window).on("scroll",function(){
                 var scrollTop=$(this).scrollTop();
                 if(scrollTop>130){
@@ -145,6 +149,7 @@
                 }
 
             })
+           
         })
     </script>
 </body>

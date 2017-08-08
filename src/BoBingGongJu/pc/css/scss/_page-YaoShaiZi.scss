@@ -36,26 +36,26 @@
     padding: 0 20px;
     margin-top: 15px;
     .tit {
-        color: #f52d44;
-        font-size: 20px;
-        font-weight: bold;
+        color: #333333;
+        font-size:18px;
+       
         max-width: 450px;
         @extend %text-overflow;
         float: left;
     }
     .score {
-        color: #f52d44;
+        color: #888888;
         font-size: 14px;
         margin-left: 30px;
         padding-left: 23px;
-        background: url("../images/bb_company_score.png") no-repeat left center;
+        // background: url("../images/bb_company_score.png") no-repeat left center;
     }
     .rank {
-        color: #28b28b;
+        color: #888888;
         font-size: 14px;
         margin-left: 30px;
         padding-left: 23px;
-        background: url("../images/bb_company_rank.png") no-repeat left center;
+        // background: url("../images/bb_company_rank.png") no-repeat left center;
     }
     .more {
         color: #0066cc;
@@ -65,26 +65,43 @@
 
 .bb-advert-company {
     background: #f52d44;
-    padding: 12px;
     width: 340px;
+    height:450px;
     text-align: center;
     float: left;
+    position:relative;
+
     .pic {
         width: 340px;
         height: 450px;
         overflow: hidden;
         display: block;
+        img{
+            width:100%;
+            height:100%;
+        }
+
+        .tip {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            line-height: 450px;
+            color: #fff;
+            background:url("../images/shade_1.png");
+            visibility:hidden;
+            opacity:0;
+            transition:all 0.35s ease-out;
+        }
+        &:hover{
+            .tip{
+                 visibility:visible;
+                 opacity:1;
+            }
+        }
+
     }
-    .tip {
-        display: inline-block;
-        height: 35px;
-        line-height: 35px;
-        border: 2px solid #fff089;
-        border-radius: 30px;
-        padding: 0 20px;
-        color: #fff089;
-        margin-top: 15px;
-    }
+    
 }
 
 .bb-rock-box {
@@ -116,7 +133,7 @@
     width: 60px;
     height: 20px;
     line-height: 20px;
-    border: 1px solid #59a9ec;
+    // border: 1px solid #59a9ec;
     text-align: center;
     border-radius: 10px;
     padding-left: 20px;
@@ -179,6 +196,19 @@
         position: relative;
         z-index:5;
         background: url("../images/bowl_bg.png") no-repeat top center;
+        .loaded{
+            width:60px;
+            height:60px;
+            left:50%;
+            top:50%;
+            margin-left:-30px;
+            position:absolute;
+            background:url("../images/loading.gif") no-repeat center center;
+            z-index:10;
+            display:none;
+
+
+        }
         .dice {
             position: absolute;
             width: 51px;
@@ -926,7 +956,7 @@
     left:50%;
     top:170px;
     width:145px;
-    margin-left:530px;
+    margin-left:550px;
     border:4px solid #fff;
     border-radius:8px;
     background:#fff;
@@ -1039,6 +1069,22 @@
     }
 }
 
+
+.slideunlock-label-2 {
+            width: 180px;
+            height: 54px;
+            line-height: 42px;
+            color: #ffe075;
+            display:block;
+            margin:23px auto 0;
+            border-radius: 30px;
+            border: 3px solid #fde2a8;
+            box-shadow: 0 0px 8px 1px #d81e28;
+            z-index: 11;
+            background: url("../images/tit-type-2.jpg") repeat-x top center;
+            text-align: center;
+            cursor: pointer;
+        }
 /***---------------------------------------------------------------------------------*/
 .bb-rock-slide {
     width: 382px;
