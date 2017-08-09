@@ -60,6 +60,7 @@
 								<a href="#" data-val="MPV" data-id="8">MPV</a>
 								<a href="#" data-val="紧凑型SUV">紧凑型SUV</a>
 								<span class="arrow-up"></span>
+								<p class="btncomfirm" id="J_btncomfirm">确认</p>
 							</div>
 				    	</div>
 						
@@ -196,15 +197,21 @@
 	    			cart.add(obj);
 	    		}
 	    		
-	    		if(cart.arr.length){
+	    		 //隐藏域要去选项的id 开发自己选择
+
+	    		//$("#J_cart-hidden").val(cart.joinText()) //隐藏域要去选项的文本 开发自己选择
+	    		//
+	    	});
+
+	    	$("#J_btncomfirm").on("click",function(){
+    			if(cart.arr.length){
 	    			$(".sel-field-el").html(cart.joinText());
 	    		}else{
 	    			$(".sel-field-el").html("- 选择车型 -")
 	    		}
-	    		$("#J_cart-hidden").val(cart.joinId()) //隐藏域要去选项的id 开发自己选择
-
-	    		//$("#J_cart-hidden").val(cart.joinText()) //隐藏域要去选项的文本 开发自己选择
-	    	})
+	    		$("#J_cart-hidden").val(cart.joinText());
+	    		$(".cart-type-box").removeClass('open');
+    		})
         })()
 	})
 	</script>

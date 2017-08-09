@@ -80,7 +80,10 @@
         }
     }
 }
-
+.today-tbody-scroller,.total-tbody-scroller{
+    height: 230px;
+    overflow:hidden;
+}
 .score-rank-ftbl {
     text-align: center;
     color: #666666;

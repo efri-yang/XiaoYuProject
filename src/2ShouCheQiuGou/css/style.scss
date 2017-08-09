@@ -256,6 +256,30 @@ body{
         right:px2rem(20px);
         top:px2rem(-15px);
     }
+    .btncomfirm{
+        padding:px2rem(15px) 0;
+        width:px2rem(280px);
+        margin:px2rem(10px) auto 0;
+        @include font-dpr(16px);
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border-radius:px2rem(50px);
+         display: block;
+       
+        color: #fff;
+        background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, from(rgb(166, 34, 226)), to(rgb(216, 34, 186)), to(rgb(51, 102, 0)));
+    }
 }
 .para-list{
     display:flex;

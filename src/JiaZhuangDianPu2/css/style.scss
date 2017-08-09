@@ -222,7 +222,7 @@
 
 .casedetail-swiper-container {
     width: 100%;
-    height:px2rem(466px);
+    height:px2rem(520px);
     overflow:hidden;
     margin-top: px2rem(30px);
     .swiper-slide {
@@ -277,6 +277,35 @@
         }
     }
 }
+
+/**
+ * 
+ */
+.pswp__counter{
+    @include font-dpr(16px);
+    top:px2rem(30px) !important;
+    right:px2rem(30px) !important;
+}
+.pswp__button--close{
+   width:px2rem(80px) !important;
+   height:px2rem(80px) !important;
+   border-radius:100%;
+   overflow:hidden;
+   top:px2rem(30px) !important;
+   right:px2rem(30px) !important;
+   background:url("../images/dialog_close_icon2.png") no-repeat top center  !important ;
+   background-size:100% 100% !important;
+}
+.pswp__bg{
+    background-color:rgba(0,0,0,0.9) !important;
+}
+.pswp__top-bar{
+    background:none !important;
+}
+
+/**
+ * 
+ */
 
 .casedetail-swiper-guide {
     margin-top: px2rem(30px);
@@ -469,19 +498,22 @@
         }
         &.gohome {
             a {
-                background: url("../images/fixed_icon_1.png") no-repeat center center rgba(0, 0, 0, 0.8);
+                background: url("../images/fixed_icon_1.png") no-repeat center center rgba(0, 0, 0, 0.4);
+                 background-size: 100% 100%;
             }
         }
         &.goback {
             a {
-                background: url("../images/fixed_icon_2.png") no-repeat center center rgba(0, 0, 0, 0.8);
+                background: url("../images/fixed_icon_2.png") no-repeat center center rgba(0, 0, 0, 0.4);
+                 background-size: 100% 100%;
             }
         }
         &.gotop {
             
             a {
                  display:none;
-                background: url("../images/fixed_icon_3.png") no-repeat center center rgba(0, 0, 0, 0.8);
+                background: url("../images/fixed_icon_3.png") no-repeat center center rgba(0, 0, 0, 0.4);
+                 background-size: 100% 100%;
             }
             &.active{
                 a{
@@ -1063,19 +1095,30 @@
 }
 
 .fixbottom-btn{
-    height:px2rem(115px);
-    line-height:px2rem(115px);
+    height:px2rem(90px);
+    line-height:px2rem(90px);
     background:#019a58;
     position:fixed;
     bottom:0;
     width:100%;
     text-align:center;
-    @include font-dpr(20px);
+    @include font-dpr(18px);
     color:#fff;
-    box-shadow:0 0 8px 0 #000;
+    // box-shadow:0 0 8px 0 #000;
     z-index: 100;
     &:active{
         background-color:darken(#019a58,5%);
+    }
+    i{
+        width:px2rem(37px);
+        height:px2rem(37px);
+        overflow:hidden;
+        background:url("../images/fixed_cart.png") no-repeat top center;
+        background-size:100% 100%;
+        display:inline-block;
+        vertical-align:middle; 
+        margin-top:px2rem(-7px);
+        margin-right:px2rem(10px);
     }
 }
 

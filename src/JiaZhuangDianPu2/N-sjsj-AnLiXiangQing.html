@@ -22,7 +22,7 @@
                 </ul>
             </div>
         <div class="shop-tab-bds active pbfoot" id="J_shop-case">
-            <!-- <table class="casedetail-tbl">
+            <table class="casedetail-tbl">
                 <thead>
                     <tr>
                         <th width="width:16%"></th>
@@ -40,23 +40,20 @@
                 <tr>
                     <td class="para-tit">设计人员：</td>
                     <td class="para-val">张文杰</td>
-                    <td class="para-tit">色 调:</td>
-                    <td class="para-val">白色</td>
-                </tr>
-                <tr>
-                    <td class="para-tit">案例人员：</td>
-                    <td class="para-val">四室</td>
-                    <td class="para-tit">装修用途：</td>
-                    <td class="para-val">新房自住</td>
-                </tr>
-                <tr>
-                    <td class="para-tit">装修面积：</td>
-                    <td class="para-val">120-200m</td>
                     <td class="para-tit">装修费用：</td>
                     <td class="para-val">7.7</td>
+                    
                 </tr>
+                <tr>
+                    
+                    <td class="para-tit">装修用途：</td>
+                    <td class="para-val">新房自住</td>
+                    <td class="para-tit"></td>
+                    <td class="para-val"></td>
+                </tr>
+               
             </table>
-            <div class="casedetail-desc">
+            <!-- <div class="casedetail-desc">
 				<p style="font-size: 20px">幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
                 <p>幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
                 <p>幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
@@ -65,7 +62,10 @@
             <div class="swiper-container casedetail-swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><img src="upload/pro_1.jpg" /></div>
-                    <div class="swiper-slide"><img src="upload/pro_1.jpg" /></div>
+                    <div class="swiper-slide"><img src="upload/pro_2.jpg" /></div>
+                    <div class="swiper-slide"><img src="upload/pro_3.jpg" /></div>
+                    <div class="swiper-slide"><img src="upload/pro_4.jpg" /></div>
+                    <div class="swiper-slide"><img src="upload/pro_6.jpg" /></div>
                 </div>
                 <div class="swiper-button-next"><b></b></div>
                 <div class="swiper-button-prev"><b></b></div>
@@ -83,9 +83,81 @@
     </ul>
     <!--  -->
     @@include("./views/_DengJiForm.html")
+<!-- ************************************************** -->
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <div class="pswp__container">
+            <!-- don't modify these 3 pswp__item elements, data is added later on -->
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+               
+
+                
+
+                
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+</div>
+<!-- ************************************************** -->
     <script type="text/javascript" src="js/zepto-mvalidate.js"></script>
     <script src="js/swiper/js/swiper.jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="js/photoswipe/photoswipe.css">
+    <link rel="stylesheet" type="text/css" href="js/photoswipe/default-skin/default-skin.css">
+    <script type="text/javascript" src="js/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="js/photoswipe/photoswipe-ui-default.min.js"></script>
+
     <script type="text/javascript">
     $(function() {
       
@@ -96,8 +168,65 @@
             spaceBetween: 0
         });
 
+        var openPhotoSwipe = function(index) {
+            var pswpElement = document.querySelectorAll('.pswp')[0];
+
+            // build items array
+            var items = [
+                {
+                    src: 'upload/pro_1.jpg',
+                    w: 1200,//开发将原图的大小计算后放到这里
+                    h: 810
+                   
+                },
+                {
+                    src: 'https://placekitten.com/1200/900',
+                    w: 332,//开发将原图的大小放到这里
+                    h: 264
+                   
+                },
+                {
+                    src: 'upload/pro_3.jpg',
+                    w: 689,//开发将原图的大小放到这里
+                    h: 327
+                   
+                },
+                {
+                    src: 'upload/pro_4.jpg',
+                     w:280,
+                    h: 280
+                   
+                },
+                 {
+                    src: 'upload/pro_6.jpg',
+                    w: 1200,
+                    h: 810
+                   
+                }
+            ];
+            
+            // define options (if needed)
+            var options = {
+                     // history & focus options are disabled on CodePen        
+                history: false,
+                focus: false
+
+                
+                
+            };
+            options.index=index;
+            
+            var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+            gallery.init();
+        };
 
        
+        $(".casedetail-swiper-container .swiper-slide").on("click",function(){
+            var index=$(".casedetail-swiper-container .swiper-slide").index(this);
+            openPhotoSwipe(index);
+        })
+
+        
 
 
     })
