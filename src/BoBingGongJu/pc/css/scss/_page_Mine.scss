@@ -29,6 +29,10 @@
         border-radius: 100%;
         overflow: hidden;
         margin: 45px auto 0;
+        img{
+            width:100%;
+            max-height: 100%;
+        }
     }
     .name {
         color: #333333;

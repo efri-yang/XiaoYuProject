@@ -265,11 +265,61 @@
     @@include("./views/_footer.html")
     <!-- footer end -->
 
+
+    <div class="dia-gmdj-box" id="J_dia-gmdj-box">
+        <!-- <p class="txt-1">亲爱的YUYU，您对本商品具有兴趣是我们的荣幸，请留下您的信息，我们的销售人员将会第一时间
+与您联系</p>
+<p class="txt-1">凭此登记信息您将享受本商品专属5折优惠，折扣：<b class="money">￥50</b>，原价：<b  class="money">￥250</b></p> -->
+         <p class="qfl-txt-result">你已完成抢福利，抽奖码：<strong>XXXX</strong>。期待好运的降临吧~</p>
+        <div class="forms">
+             <!-- 未登记的时候 -->
+            <!-- <div class="clearfix">
+                <div class="item">
+                    <label class="lab">姓名：</label>
+                    <input type="text" class="ipt-text ipt-name">
+                </div>
+                <div class="item">
+                    <label class="lab">电话：</label>
+                    <input type="text" class="ipt-text ipt-phone">
+                </div>
+            </div>
+
+            <div class="handle-btn">
+                <a href="#" class="btn-coms btn-clrf52d44">立即登记</a>
+            </div> -->
+            <!-- 登记的时候 -->
+           <div class="clearfix">
+                 <div class="item">
+                    <label class="lab">姓名：</label>
+                    <input type="text" class="ipt-text ipt-name" disabled value="某某某">
+                </div>
+                <div class="item">
+                    <label class="lab">电话：</label>
+                    <input type="text" class="ipt-text ipt-phone" disabled value="13850269633">
+                </div>
+           </div>
+
+        </div>
+     </div>
+    <script type="text/javascript" src="js/layer/layer.js"></script>
     <script type="text/javascript">
             $(function(){
                 $('.dh-tab-hd a').click(function (e) {
                       e.preventDefault()
                       $(this).tab('show')
+                });
+
+                $(document).on("click",".dp-fl-list .qfl-btn",function(event){
+                    event.preventDefault();
+                     layer.open({
+                      type: 1,
+                      shade: [0.8, '#000'],
+                      area:"660px",
+                      shadeClose:true,
+                      title:"抢福利", //不显示标题
+                      content:$("#J_dia-gmdj-box"), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+                      
+                    });
                 })
             })
     </script>
