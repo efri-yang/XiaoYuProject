@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>问题表单</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container container-pfoot">
+        <form action="ZhuanJiaXuanZe-list.html" method="post">
+        <div class="qform-box">
+            <div class="item">
+                <input type="text" class="ipt-text" placeholder="标题（10字以上，描述完整清晰）">
+            </div>
+            <div class="item">
+                <div class="item-textarea-1" data-mf="textarea">
+                    <div class="tip">
+                        <p>详情（选填）</p>
+                        <p>描述清晰将帮助您的问题得到更快、更好的解答；</p>
+                        <p>恶搞的提问将不会被回答；</p>
+                        <p>每人每天有3次免费提问机会。</p>
+                    </div>
+                    <textarea class="ipt-textarea"></textarea>
+                </div>
+            </div>
+            <div class="item-sector clearfix">
+                <span class="tit">内科</span>
+                <div class="nmtw clearfix">
+                    <span class="lab">匿名提问</span>
+                    <div class="switch" id="J_switch">
+                        <ul>
+                            <li class="active" data-val="1">是</li>
+                            <li data-val="0">否</li>
+                        </ul>
+                        <span class="switch-btn" id="J_switch-btn"></span>
+                        <input type="hidden" value="1" id="J_nmtw-hidden">
+                    </div>
+                </div>
+            </div>
+            <div class="border-top-30">
+                <ul class="qform-upload clearfix">
+                    <li>
+                        <img src="" class="pic">
+                        <a href="javascript:;" class="file">
+                            <input type="file" class="ipt-file">
+                        </a>
+                    </li>
+                    <li>
+                        <img src="" class="pic">
+                        <a href="javascript:;" class="file">
+                            <input type="file" class="ipt-file">
+                        </a>
+                    </li>
+                    <li>
+                        <img src="" class="pic">
+                        <a href="javascript:;" class="file">
+                            <input type="file" class="ipt-file">
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="item item-submit"><input type="submit" class="coms-cbtn cbtn-full cbtn-success ipt-submit"></div>
+        </div>
+        </form>
+    </div>
+    @@include("./views/_fixedbar.html")
+    <script type="text/javascript">
+    $('[data-mf="textarea"] .tip').on("click", function() {
+        var $this = $(this);
+        $this.hide();
+        $this.siblings('.ipt-textarea').focus();
+    });
+    $('[data-mf="textarea"] .ipt-textarea').on("focus", function() {
+        var $this = $(this);
+        $this.siblings(".tip").hide();
+    }).on("blur", function() {
+        var $this = $(this);
+        var val = $.trim($this.val());
+        if (val == "") {
+
+            $this.siblings(".tip").show();
+        }
+    });
+
+
+    (function() {
+        var $switchBtn = $("#J_switch-btn");
+        var $nmtwHidden = $("#J_nmtw-hidden");
+        $("#J_switch ul  li").on("click", function() {
+            var $this = $(this);
+            $this.addClass("active").siblings().removeClass('active');
+            var id = $this.attr("data-val");
+            if (id == 1) {
+                $switchBtn.removeClass("no");
+                $nmtwHidden.val(1);
+            } else {
+                $switchBtn.addClass("no");
+                $nmtwHidden.val(0)
+            }
+        })
+    })();
+
+    (function() {
+        var path,
+            FileReader = window.FileReader;
+        $(".qform-upload .ipt-file").each(function() {
+            var clip=$(this).parents("li").find(".pic");
+            $(this).on("change", function() {
+                if (FileReader) { //chrome浏览器处理  
+                    var reader = new FileReader(),
+                        file = this.files[0];
+                    reader.onload = function(e) {
+                        clip.attr("src", e.target.result); //这里是把图片转成64位数据存入<img>中的src里  
+                        clip.css("display", "block");
+                    };
+                    reader.readAsDataURL(file);
+
+                } else {
+                    path = $(this).val();
+                    if (/"\w\W"/.test(path)) {
+                        path = path.slice(1, -1);
+                    }
+                    clip.attr("src", path);
+                    clip.css("display", "block");
+                }
+
+            })
+        })
+        
+    })();
+    </script>
+</body>
+
+</html>

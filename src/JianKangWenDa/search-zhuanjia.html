@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>搜索专家</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="pseach-tab-hd">
+            <ul class="list">
+                <li><a href="search-wenti.html">搜索问题</a></li>
+                <li class="active"><a href="search-zhuanjia.html">搜索专家</a></li>
+            </ul>
+        </div>
+
+        <div class="pseach-form">
+            
+            <label class="lab">
+                <input type="search" class="ipt-search" placeholder="请输入您要搜索的问题关键字">
+                <i class="cion"></i>
+            </label>
+        </div>
+
+        <div class="tit-type-1">
+            <span class="tit">热门专家</span>
+        </div>
+        <div class="dropload-scroll-box">
+                <ul class="hot-expert-list">
+                    <li>
+                        <a href="#">
+                            <div class="avatar"><img src="upload/avatar_5.jpg"></div>
+                            <p class="name">07/林医生</p>
+                            <p class="txt-1">厦门中医骨伤科主治医生5555555</p>
+                            <p class="txt-1">擅长：正骨、骨折骨伤</p>
+                            <p class="reply-count">123回答</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="avatar"><img src="upload/avatar_5.jpg"></div>
+                            <p class="name">07/林医生林医生林医生林医生林医生林医生林医生</p>
+                            <p class="txt-1">厦门中医骨伤科主治医生5555555</p>
+                            <p class="txt-1">擅长：正骨、骨折骨伤</p>
+                            <p class="reply-count">123回答</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="avatar"><img src="upload/avatar_5.jpg"></div>
+                            <p class="name">07/林医生</p>
+                            <p class="txt-1">厦门中医骨伤科主治医生5555555</p>
+                            <p class="txt-1">擅长：正骨、骨折骨伤</p>
+                            <p class="reply-count">123回答</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="avatar"><img src="upload/avatar_5.jpg"></div>
+                            <p class="name">07/林医生林医生林医生林医生林医生林医生林医生</p>
+                            <p class="txt-1">厦门中医骨伤科主治医生5555555</p>
+                            <p class="txt-1">擅长：正骨、骨折骨伤</p>
+                            <p class="reply-count">123回答</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="avatar"><img src="upload/avatar_5.jpg"></div>
+                            <p class="name">07/林医生</p>
+                            <p class="txt-1">厦门中医骨伤科主治医生5555555</p>
+                            <p class="txt-1">擅长：正骨、骨折骨伤</p>
+                            <p class="reply-count">123回答</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="avatar"><img src="upload/avatar_5.jpg"></div>
+                            <p class="name">07/林医生林医生林医生林医生林医生林医生林医生</p>
+                            <p class="txt-1">厦门中医骨伤科主治医生5555555</p>
+                            <p class="txt-1">擅长：正骨、骨折骨伤</p>
+                            <p class="reply-count">123回答</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="avatar"><img src="upload/avatar_5.jpg"></div>
+                            <p class="name">07/林医生</p>
+                            <p class="txt-1">厦门中医骨伤科主治医生5555555</p>
+                            <p class="txt-1">擅长：正骨、骨折骨伤</p>
+                            <p class="reply-count">123回答</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="avatar"><img src="upload/avatar_5.jpg"></div>
+                            <p class="name">07/林医生林医生林医生林医生林医生林医生林医生</p>
+                            <p class="txt-1">厦门中医骨伤科主治医生5555555</p>
+                            <p class="txt-1">擅长：正骨、骨折骨伤</p>
+                            <p class="reply-count">123回答</p>
+                        </a>
+                    </li>
+                    
+                </ul>
+        </div>
+        
+        
+        
+        
+    </div>
+    @@include("./views/_fixedbar.html")
+    
+    <script type="text/javascript" src="js/dropload/dropload.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/dropload/dropload.css">
+    <script type="text/javascript">
+    $(function() {
+       
+
+       
+
+        (function() {
+            var itemCurrPage = 1;
+            var itemPageNum = 8;
+
+            var initCount=8;//开发请将首次加载的条数附在这里,如果只有两条数据的时候就不需要下拉加载更多 
+            if(initCount >=itemPageNum){
+                var dropload = $('.dropload-scroll-box').dropload({
+                scrollArea: window,
+                domDown : {
+                    domNoData  : '<div class="dropload-noData">òᆺó被你看光啦！</div>'
+                },
+                loadDownFn: function(me) {
+
+                    // 加载菜单一的数据
+                    $.ajax({
+                        type: 'GET',
+                        // data:{page:item1CurrPage,num:item1PageNum},
+                        url: './',
+                        dataType: 'json',
+                        success: function(data) {
+                            var data = {
+                                "lists": [{
+                                        "avatar":"upload/avatar_5.jpg",
+                                        "name": "111111111111111？",
+                                        "job": "厦门中医骨伤科主治医生",
+                                        "goods":"正骨、骨折骨伤",
+                                        "count":123,
+                                        "href": ""
+                                    },
+                                    {
+                                        "avatar":"upload/avatar_5.jpg",
+                                        "name": "111111111111111？",
+                                        "job": "厦门中医骨伤科主治医生",
+                                        "goods":"正骨、骨折骨伤",
+                                        "count":123,
+                                        "href": ""
+                                    },
+                                    {
+                                        "avatar":"upload/avatar_5.jpg",
+                                        "name": "111111111111111？",
+                                        "job": "厦门中医骨伤科主治医生",
+                                        "goods":"正骨、骨折骨伤",
+                                        "count":123,
+                                        "href": ""
+                                    },
+                                    {
+                                        "avatar":"upload/avatar_5.jpg",
+                                        "name": "111111111111111？",
+                                        "job": "厦门中医骨伤科主治医生",
+                                        "goods":"正骨、骨折骨伤",
+                                        "count":123,
+                                        "href": ""
+                                    },
+                                    {
+                                        "avatar":"upload/avatar_5.jpg",
+                                        "name": "111111111111111？",
+                                        "job": "厦门中医骨伤科主治医生",
+                                        "goods":"正骨、骨折骨伤",
+                                        "count":123,
+                                        "href": ""
+                                    }
+                                ]
+                            }
+                            itemCurrPage++;
+                            var result = "";
+                            for (var i = 0; i < data.lists.length; i++) {
+                                result += '<li><a href="#"><div class="avatar"><img src="'+data.lists[i].avatar+'"></div><p class="name">'+data.lists[i].name+'</p><p class="txt-1">'+data.lists[i].job+'</p><p class="txt-1">擅长：'+data.lists[i].goods+'</p><p class="reply-count">'+data.lists[i].count+'回答</p></a></li>';
+                            }
+                            setTimeout(function() { //测试用 后端请删除timeout的函数
+                                $(".hot-expert-list").append(result);
+                                if (!data.lists.length || data.lists.length < itemPageNum) {
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData(); 
+                                }
+                                me.resetload();
+
+                            }, 2000)
+
+                        },
+                        error: function(xhr, type) {
+                            console.dir('Ajax error!');
+                            // 即使加载出错，也得重置
+                            me.resetload();
+                        }
+                    });
+                }
+            });
+            }
+            
+
+        })()
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container container-pfoot">
+        <div class="swiper-container h-swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#"><img src="upload/b_1.jpg" /></a></div>
+                <div class="swiper-slide"><a href="#"><img src="upload/b_2.jpg" /></a></div>
+                <div class="swiper-slide"><a href="#"><img src="upload/b_3.jpg" /></a></div>
+                <div class="swiper-slide"><a href="#"><img src="upload/b_4.jpg" /></a></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <ul class="swiper-desc" id="J_h-banner-desc">
+                <li>描述001描述001描述001描述001描述001描述001描述001</li>
+                <li>描述002</li>
+                <li>描述003</li>
+                <li>描述004</li>
+            </ul>
+        </div>
+        <div class="tit-type-1 mtr20">
+            <span class="tit">业内专家</span>
+        </div>
+        <div class="h-expert-box">
+            <div class="swiper-container h-expert-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="item-expert">
+                            <div class="avatar"><img src="upload/avatar_1.jpg" /></div>
+                            <p class="name">07/林医生</p>
+                            <p class="desc">厦门中医骨伤科主治医生5555555</p>
+                            <p class="reply-count">123回答</p>
+                            <a href="#" class="check-btn">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="item-expert">
+                            <div class="avatar"><img src="upload/avatar_1.jpg" /></div>
+                            <p class="name">07/林医生</p>
+                            <p class="desc">厦门中医骨伤科主治医生5555555</p>
+                            <p class="reply-count">123回答</p>
+                            <a href="#" class="check-btn">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="item-expert">
+                            <div class="avatar"><img src="upload/avatar_1.jpg" /></div>
+                            <p class="name">07/林医生</p>
+                            <p class="desc">厦门中医骨伤科主治医生5555555</p>
+                            <p class="reply-count">123回答</p>
+                            <a href="#" class="check-btn">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="item-expert">
+                            <div class="avatar"><img src="upload/avatar_1.jpg" /></div>
+                            <p class="name">07/林医生</p>
+                            <p class="desc">厦门中医骨伤科主治医生5555555</p>
+                            <p class="reply-count">123回答</p>
+                            <a href="#" class="check-btn">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+            <p class="pbtn"><a href="#" class="coms-cbtn cbtn-default cbtn-full">查看全部专家</a></p>
+        </div>
+        <div class="border-top-30">
+        	<div class="border-top-1"></div>
+            <div class="tit-type-1 mtr20">
+                <span class="tit">热门问答</span>
+            </div>
+            <div class="dropload-scroll-box">
+                <ul class="hot-answer-list">
+                    <li>
+                        <a href="#">
+                            <p class="tit">经常性的膝盖疼，应该做什么检查？经常性的膝盖疼，应该做什么检查经常性的膝盖疼，应该做什么检查</p>
+                            <span class="count"><i></i>2568</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="tit">经常性的膝盖疼，应该做什么检查？</p>
+                            <span class="count"><i></i>2568</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ul class="h-footer">
+        <li class="item-1 active"><a href="WenTi-From.html"><i></i>提问</a></li>
+        <li class="item-2 "><a href="search-wenti.html"><i></i>搜索</a></li>
+    </ul>
+    <script type="text/javascript" src="js/swiper/js/swiper.jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css" />
+    <script type="text/javascript" src="js/dropload/dropload.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/dropload/dropload.css">
+    <script type="text/javascript">
+    $(function() {
+        var swiper1 = new Swiper('.h-swiper-container', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 1,
+            paginationClickable: true,
+            spaceBetween: 30,
+            loop: true,
+            onSlideChangeEnd: function(swiper) {
+                $("#J_h-banner-desc").children().eq(swiper.activeIndex - 1).addClass("active").siblings().removeClass('active');
+            }
+        });
+
+        var swiper2 = new Swiper('.h-expert-swiper', {
+            scrollbar: '.swiper-scrollbar',
+            scrollbarHide: true,
+            slidesPerView: 'auto',
+            centeredSlides: false,
+            spaceBetween: 0,
+            grabCursor: true
+        });
+
+        (function() {
+            var itemCurrPage = 1;
+            var itemPageNum = 8;
+            var dropload = $('.dropload-scroll-box').dropload({
+                scrollArea: window,
+                domDown : {
+                	domNoData  : '<div class="dropload-noData">òᆺó被你看光啦！</div>'
+                },
+                loadDownFn: function(me) {
+
+                    // 加载菜单一的数据
+                    $.ajax({
+                        type: 'GET',
+                        // data:{page:item1CurrPage,num:item1PageNum},
+                        url: './',
+                        dataType: 'json',
+                        success: function(data) {
+                            var data = {
+                                "lists": [{
+                                        "title": "111111111111111？",
+                                        "count": "2580",
+                                        "href": ""
+                                    },
+                                    {
+                                        "title": "222222222222222",
+                                        "count": "2580",
+                                        "href": ""
+                                    },
+                                    {
+                                        "title": "33333333333333333",
+                                        "count": "2580",
+                                        "href": ""
+                                    },
+                                    {
+                                        "title": "444444444444444444",
+                                        "count": "2580",
+                                        "href": ""
+                                    },
+                                    {
+                                        "title": "555555555555555555",
+                                        "count": "2580",
+                                        "href": ""
+                                    }
+                                ]
+                            }
+                            itemCurrPage++;
+                            var result = "";
+                            for (var i = 0; i < data.lists.length; i++) {
+                                result += '<li><a href="'+data.lists[i].href+'"><p class="tit">'+data.lists[i].title+'</p><span class="count"><i></i>'+data.lists[i].count+'</span></a></li>'
+                            }
+                            setTimeout(function() { //测试用 后端请删除timeout的函数
+                                $(".hot-answer-list").append(result);
+                                if (!data.lists.length || data.lists.length < itemPageNum) {
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData(); 
+                                }
+                                me.resetload();
+
+                            }, 2000)
+
+                        },
+                        error: function(xhr, type) {
+                            console.dir('Ajax error!');
+                            // 即使加载出错，也得重置
+                            me.resetload();
+                        }
+                    });
+                }
+            });
+
+        })()
+    })
+    </script>
+</body>
+
+</html>

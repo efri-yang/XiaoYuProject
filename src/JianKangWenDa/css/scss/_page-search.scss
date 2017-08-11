@@ -1,0 +1,60 @@
+.pseach-tab-hd{
+	
+	background:#f7f7f7;
+	padding:px2rem(30px) px2rem(25px);
+	border-bottom:1px solid #f2f2f2;
+	.list{
+		display:flex;
+		border:1px solid #15cc82;
+		border-radius:px2rem(10px);
+		overflow:hidden;
+		li{
+			flex:1;
+			a{
+				background:#fff;
+				display:block;
+				height:px2rem(66px);
+				line-height:px2rem(66px);
+				text-align:center;
+				@include font-dpr(16px);
+				color:#15cc82;
+			}
+			&.active {
+				a{
+					background:#15cc82;
+					color:#fff;
+				}
+			}
+		}
+	}	
+}
+.pseach-form{
+	padding:px2rem(30px) px2rem(25px);
+	border-bottom:1px solid #f2f2f2;
+	.lab{
+		position:relative;
+		.cion{
+			position:absolute;
+			width:px2rem(32px);
+			height:px2rem(32px);
+			left:px2rem(15px);
+			top:50%;
+			margin-top:px2rem(-18px);
+			overflow:hidden;
+			background:url("../images/seach_icon_2.png") no-repeat top center;
+			background-size:100% 100%;
+		}
+	}
+	.ipt-search{
+		padding:px2rem(20px) px2rem(20px) px2rem(20px) px2rem(55px);
+		border:1px solid #e7e7e7;
+		width:100%;
+		-webkit-appearance: none;
+		border-radius:px2rem(10px);
+		background:#f7f7f7;
+		@include font-dpr(15px);
+		color:#333333;
+
+	}
+}
+

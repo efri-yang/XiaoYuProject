@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>专家主页</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container container-pfoot">
+       	<ul class="hot-expert-list type-1">
+                    <li>
+                        <a href="#">
+                            <div class="avatar"><img src="upload/avatar_5.jpg"></div>
+                            <p class="name">07/林医生</p>
+                            <p class="txt-1">厦门中医骨伤科主治医生</p>
+                            <p class="txt-1">擅长：正骨、骨折骨伤折骨折骨</p>
+                            <p class="reply-count">123回答</p>
+                        </a>
+                        <!-- 取消关注 添加样式 .follow -->
+                        <span class="handlebtn-1">关注</span>
+                    </li>
+        </ul>
+		<div class="border-top-30">
+			<div class="border-top-1"></div>
+			<div class="tit-type-1">
+	            <span class="tit">详细介绍	</span>
+	        </div>
+	        <div class="pexpert-intro">
+					<div class="txt">
+						<p>  毕业于安徽医科大学临床医学专业，从事皮肤性病工作近30年，先后在安医附院皮肤性病科及中国医学科学院南京皮研所皮内及性病科进修，现淮北市人民医院皮肤性病科主任医师，每年参加省市疾控性病防控培训，对经典性传播疾病有丰富临床经验。</p>
+					</div>
+					<a href="#" class="coms-cbtn cbtn-default cbtn-full checkbtn">加载全部<i></i></a>
+	        </div>
+	        <div class="dropload-scroll-box">
+           		<ul class="pexpert-q-list">
+       		         <li class="border-top-30">
+						<div class="item">
+							<p class="nickname">匿名用户</p>
+							<p class="q-txt">经常性的膝盖疼，应该做什么检查？经常性的膝盖
+疼，应该做什么检查？</p>
+							<div class="a-tit clearfix">
+								<span class="tit">专家回答：</span>
+								<span class="time">2017.05.12</span>
+							</div>
+							<div class="a-desc">
+									<p>颈椎病：由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就会造成颈椎骨质增生，以及颈椎间盘突出。骨质增生和椎间盘突出压迫到颈部神经、肌肉、韧带等就会产生脖子痛。</p>
+							</div>
+
+							<a href="#" class="coms-cbtn cbtn-default cbtn-full checkbtn">加载全部<i></i></a>
+							
+						</div>
+       		         </li>
+
+
+       		         <li class="border-top-30">
+						<div class="item">
+							<p class="nickname">匿名用户</p>
+							<p class="q-txt">经常性的膝盖疼，应该做什么检查？经常性的膝盖
+疼，应该做什么检查？</p>
+							<div class="a-tit clearfix">
+								<span class="tit">专家回答：</span>
+								<span class="time">2017.05.12</span>
+							</div>
+							<div class="a-desc">
+									<p>补上语音的东西</p>
+							</div>
+
+							<a href="#" class="coms-cbtn cbtn-default cbtn-full checkbtn">加载全部<i></i></a>
+							
+						</div>
+       		         </li>
+       		         
+       		     </ul>     
+        	</div>
+		</div>
+      
+
+        
+        
+        
+    
+    </div>
+
+     <ul class="coms-footer">
+        <li class="active"><a href="#">向TA提问</a></li>
+    </ul>
+    @@include("./views/_fixedbar.html")
+    
+    <script type="text/javascript" src="js/dropload/dropload.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/dropload/dropload.css">
+    <script type="text/javascript">
+    $(function() {
+       
+
+       
+
+        // (function() {
+        //     var itemCurrPage = 1;
+        //     var itemPageNum = 8;
+        //     var dropload = $('.dropload-scroll-box').dropload({
+        //         scrollArea: window,
+        //         domDown : {
+        //         	domNoData  : '<div class="dropload-noData">òᆺó被你看光啦！</div>'
+        //         },
+        //         loadDownFn: function(me) {
+
+        //             // 加载菜单一的数据
+        //             $.ajax({
+        //                 type: 'GET',
+        //                 // data:{page:item1CurrPage,num:item1PageNum},
+        //                 url: './',
+        //                 dataType: 'json',
+        //                 success: function(data) {
+        //                     var data = {
+        //                         "lists": [{
+        //                                 "title": "111111111111111？",
+        //                                 "count": "2580",
+        //                                 "href": ""
+        //                             },
+        //                             {
+        //                                 "title": "222222222222222",
+        //                                 "count": "2580",
+        //                                 "href": ""
+        //                             },
+        //                             {
+        //                                 "title": "33333333333333333",
+        //                                 "count": "2580",
+        //                                 "href": ""
+        //                             },
+        //                             {
+        //                                 "title": "444444444444444444",
+        //                                 "count": "2580",
+        //                                 "href": ""
+        //                             },
+        //                             {
+        //                                 "title": "555555555555555555",
+        //                                 "count": "2580",
+        //                                 "href": ""
+        //                             }
+        //                         ]
+        //                     }
+        //                     itemCurrPage++;
+        //                     var result = "";
+        //                     for (var i = 0; i < data.lists.length; i++) {
+        //                         result += '<li><a href="'+data.lists[i].href+'"><p class="tit">'+data.lists[i].title+'</p><span class="count"><i></i>'+data.lists[i].count+'</span></a></li>'
+        //                     }
+        //                     setTimeout(function() { //测试用 后端请删除timeout的函数
+        //                         $(".hot-answer-list").append(result);
+        //                         if (!data.lists.length || data.lists.length < itemPageNum) {
+        //                             // 锁定
+        //                             me.lock();
+        //                             // 无数据
+        //                             me.noData(); 
+        //                         }
+        //                         me.resetload();
+
+        //                     }, 2000)
+
+        //                 },
+        //                 error: function(xhr, type) {
+        //                     console.dir('Ajax error!');
+        //                     // 即使加载出错，也得重置
+        //                     me.resetload();
+        //                 }
+        //             });
+        //         }
+        //     });
+
+        // })()
+    })
+    </script>
+</body>
+
+</html>
