@@ -9,7 +9,7 @@ const conf=require("./config");
 
 var delDest=(conf.env==="d") ? conf.dest : (conf.dest + conf.mod);
 
-// var delDest=conf.dest + conf.mod;
+var delDest=conf.dest + conf.mod;
 
 function clean(){
 	return del(delDest);

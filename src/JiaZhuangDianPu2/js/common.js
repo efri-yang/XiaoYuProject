@@ -244,7 +244,7 @@
 
 ;(function() {
     $(function() {
-        var $goTop=$(".gotop")
+        var $goTop=$(".return-top")
         var throttle = function(fn, delay, atleast) {
             var timer = null;
             var previous = null;
