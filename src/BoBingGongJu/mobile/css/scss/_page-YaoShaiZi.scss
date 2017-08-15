@@ -58,6 +58,24 @@
     background-size: 100% 100%;
     padding-bottom: px2rem(40px);
     padding-top: px2rem(190px);
+    .boyibo-btn{
+        display:block;
+        margin: px2rem(30px) auto 0;
+        border:none;
+        background:none;
+        b {
+                width: px2rem(272px);
+                height: px2rem(85px);
+                background: url("../images/slideunlock_btn_2.png") no-repeat left top;
+                background-size: 100% 100%;
+                border: px2rem(6px) solid #fcd79b;
+                display: block;
+                margin: 0 auto;
+                border-radius: px2rem(50px);
+            }
+        
+        
+    }
     .entery-gzsj {
         height: px2rem(50px);
         line-height: px2rem(50px);
@@ -118,6 +136,17 @@
 
 .bb-rock-box {
     position: relative;
+    .loading{
+        width:px2rem(60px);
+        height:px2rem(60px);
+        background:url("../images/loading.gif") no-repeat top center;
+        background-size:100% 100%;
+        position:absolute;
+        left:50%;
+        top:50%;
+        margin-left:px2rem(-20px);
+        display:none;
+    }
     .bb-bowl-logo{
         position:absolute;
         left:50%;

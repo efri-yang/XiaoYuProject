@@ -173,6 +173,7 @@ SliderUnlock.prototype.move = function () {
     var _self = this;
 
     if ((_self.index + 0) >=_self.max) {
+       
         _self.index = _self.max - 0;
         //停止 (stop)
         _self.swipestart = false;

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+			$(document).ready(function() {
+
+	var flag=0;//标志位
+	var audioSprite;
+	var spriteData;
+	var resultArray = new Array("1","1","4","4","4","4","1","哇！状元插金花，太强大了","6");
+	//博饼结果数组
+
+	$('#pop_close,.closex').click(function() {
+		document.getElementById('audio').load();
+		audioSprite = document.getElementById('audio');
+		spriteData = {
+		    l0: {
+		        start: 2.0,
+		        length: 2.8
+		    },
+		    l1: {
+		        start: 5.2,
+		        length: 2.4
+		    },
+		    l2: {
+		        start: 8.0,
+		        length: 2.7
+		    },
+		    l3: {
+		        start: 14.6,
+		        length: 3.4
+		    },
+		    l4: {
+		        start: 11.0,
+		        length: 3.5
+		    },
+		    l5: {
+		        start: 18.0,
+		        length: 2.8
+		    },
+		    l6: {
+		        start: 22.8,
+		        length: 3.2
+		    }
+		};//音频切割
+	    $(this).parents('.cover').css('display', 'none');
+	    flag=1;
+	});//关闭弹出窗加载音频
+
+	$('#bobing').click(function() {
+		result();//输出结果
+	});//点击触发
+
+	var SHAKE_THRESHOLD = 800;
+	var last_update = 0;
+	var x = y = z = last_x = last_y = last_z = 0;
+	if(window.DeviceMotionEvent) {
+		window.addEventListener('devicemotion', deviceMotionHandler, false);
+	} else {
+		alert('本设备不支持摇一摇，请使用博饼按钮');
+	}
+	function deviceMotionHandler(eventData) {
+		var acceleration = eventData.accelerationIncludingGravity;
+		var curTime = new Date().getTime();
+		if((curTime - last_update) > 100) {
+			var diffTime = curTime - last_update;
+			last_update = curTime;
+			x = acceleration.x;
+			y = acceleration.y;
+			z = acceleration.z;
+			var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+			if(speed > SHAKE_THRESHOLD) {
+				result();
+			};
+			last_x = x;
+			last_y = y;
+			last_z = z;
+		};
+	};//摇一摇触发
+
+	function result(){
+		if (flag) {
+			audioSprite.currentTime = 0;
+			audioSprite.play();
+			$('.dice').show().addClass('active');
+			for (var i=0; i < 6; i++){
+				$('.dice'+[i+1]).children('img').attr('src', 'img/dice'+resultArray[i]+'.png');
+			};
+			setTimeout(function(){
+				var idAudio = 'l'+resultArray[8];
+				//播放数组的指定音频
+				audioSprite.currentTime = spriteData[idAudio].start;
+				audioSprite.play();
+				// alert(idAudio);
+				var handler = function() {
+					if (this.currentTime >= spriteData[idAudio].start + spriteData[idAudio].length) {
+						this.pause();
+					}
+				};
+				audioSprite.addEventListener('timeupdate', handler, false);
+				//自动停止音频流逻辑
+				$('.result').css('display','block');
+				
+			},1800);
+			$('.result').find('.icon').children('img').attr('src', 'img/phiz-'+resultArray[6]+'.png');
+			$('.result-tx').html(resultArray[7]);
+			flag=0;
+		}
+	};//博饼结果函数
+	
+	function diceReset(){
+		$('.result').css('display','none');
+		$('.dice').removeClass('active');
+		flag=1;
+	};//清除已摇状态函数
+
+
+	//倍数
+	$('.bobing-multiple li').click(function(event) {
+		$(this).addClass('on').siblings('li').removeClass('on');
+		var multipleHtml = $(this).find('a').attr('title');
+		$('.bobing-multiple-desc p').html(multipleHtml);
+	});
+
+});
+
+	</script>
+</body>
+</html>

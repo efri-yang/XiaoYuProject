@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+</head>
+
+<body>
+    <div class="swiper-container zs-swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide item-1"><span class="arrow"><b></b></span></div>
+            <div class="swiper-slide item-2"><span class="arrow"><b></b></span></div>
+            <div class="swiper-slide item-3"><span class="arrow"><b></b></span></div>
+            <div class="swiper-slide item-4"><span class="arrow"><b></b></span></div>
+            <div class="swiper-slide item-5"><span class="arrow"><b></b></span></div>
+            <div class="swiper-slide item-6"><span class="arrow"><b></b></span></div>
+            <div class="swiper-slide item-7"><span class="arrow"><b></b></span></div>
+            <div class="swiper-slide item-8"><span class="arrow"><b></b></span></div>
+            <div class="swiper-slide item-9">
+				<div class="form-box">
+					<div class="item">
+						<input type="text"  class="ipt-text" placeholder="请输入您的姓名">
+					</div>
+					<div class="item">
+						<input type="text"  class="ipt-text" placeholder="请输入您的手机号码">
+					</div>
+					<div class="item">
+						<input type="submit" class="ipt-submit" value="立即报名">
+					</div>
+				</div>
+				<div class="qr-pic"><img src="images/qrcode.jpg"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/swiper/js/swiper.jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./js/swiper/css/swiper.css">
+    <script>
+   
+function fixPagesHeight() {
+	$('.swiper-slide,.swiper-container').css({
+		height: $(window).height(),
+	})
+}
+
+fixPagesHeight();
+
+
+var mySwiper = new Swiper('.swiper-container', {
+
+    direction: 'vertical',
+	mousewheelControl: true,
+	watchSlidesProgress: true,
+	onInit: function(swiper) {
+		swiper.myactive = 0;
+		
+	},
+	onProgress: function(swiper) {
+		for (var i = 0; i < swiper.slides.length; i++) {
+			var slide = swiper.slides[i];
+			var progress = slide.progress;
+			var translate, boxShadow;
+
+			translate = progress * swiper.height * 0.8;
+			scale = 1 - Math.min(Math.abs(progress * 0.2), 1);
+			boxShadowOpacity = 0;
+
+			slide.style.boxShadow = '0px 0px 10px rgba(0,0,0,' + boxShadowOpacity + ')';
+
+			if (i == swiper.myactive) {
+				es = slide.style;
+				es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + (translate) + 'px,0) scale(' + scale + ')';
+				es.zIndex=0;
+
+
+			}else{
+				es = slide.style;
+				es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform ='';
+				es.zIndex=1;
+				
+			}
+
+		}
+
+	},
+
+
+	onTransitionEnd: function(swiper, speed) {
+		for (var i = 0; i < swiper.slides.length; i++) {
+		//	es = swiper.slides[i].style;
+		//	es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = '';
+
+		//	swiper.slides[i].style.zIndex = Math.abs(swiper.slides[i].progress);
+
+			
+		}
+
+		swiper.myactive = swiper.activeIndex;
+
+	},
+	onSetTransition: function(swiper, speed) {
+
+		for (var i = 0; i < swiper.slides.length; i++) {
+			//if (i == swiper.myactive) {
+
+				es = swiper.slides[i].style;
+				es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
+			//}
+		}
+
+	}
+
+});
+
+    </script>
+</body>
+
+</html>

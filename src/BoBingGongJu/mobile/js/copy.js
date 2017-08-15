@@ -5,12 +5,10 @@ $(function() {
     var Dice = (function() {
         return {
             $container: $("#J_bowl-box"),
-            show: function(dices,rank) {
+            show: function(dices) {
                 var str = this._render(dices);
                 this.$container.html(str);
-                $(".dice1").animationEnd(function(){
-                    Voice.play(rank);
-                })
+
 
             },
             _render: function(dices) {
@@ -66,83 +64,65 @@ $(function() {
 
     var Voice=(function(){
         var spriteData = {
-            tt:{
-                start:0,
-                length:1
-            },
-            0: {
+            l0: {
                 start: 2.0,
                 length: 2.8
             },
-            1: {
+            l1: {
                 start: 5.2,
                 length: 2.4
             },
-            2: {
+            l2: {
                 start: 8.0,
                 length: 2.7
             },
-            3: {//四进
-                start: 11.0,
-                length: 3.5
-            },
-            4: {//三红
+            l3: {
                 start: 14.6,
                 length: 3.4
             },
-            
-            5: {//对堂
+            l4: {
+                start: 11.0,
+                length: 3.5
+            },
+            l5: {
                 start: 18.0,
                 length: 2.8
             },
-            6: {//状元
+            l6: {
                 start: 22.8,
                 length: 3.2
             }
         };
-
-        var index=0;
-
-        var handler=function(){
-            if (this.currentTime >= spriteData[index].start + spriteData[index].length) {
-                this.pause();
-            }
-        }
-        audioElem=document.getElementById("J_audio");
-        audioElem.addEventListener('timeupdate', handler, false);
         
-        var play=function(rank){
-            audioElem.currentTime = spriteData[rank].start;
-            index=rank;
-            audioElem.play(rank);
-
-        };
-
-        var pause=function(){
-             audioElem.pause();
-        }
-
-
-        return {
-            play:play,
-            pause:pause
-        }
-    })();
+    })()
 
     (function() {
         $(window).on("load", function() {
             var realW = $(".slideunlock-slider").width() - $(".slideunlock-btn").width();
-            var drapSuccess = false;
-            var shakeSuccess = false;
+            var flagSuccess = false;
             var $lockable=$(".slideunlock-lockable");
-         
+            var audioTT=$("#J_audiott").get(0);
 
             var slider = new SliderUnlock(".slideunlock-slider", {
                 labelTip: "按住往右拉>>",
                 successLabelTip: "开始！",
                 duration: 0 // 动画效果执行时间，默认200ms
             }, function() {
-                clickDrapShake("drap");
+                $.ajax({
+                    url: 'http://wnworld.com/BoBingGongJu/pc/php/bbgj.php',
+                    type: 'post',
+                    dataType: 'json',
+                    beforeSend: function() {
+                        Plam.rotating(); //拳头抖动
+                    },
+                    success: function(data) {
+                        flagSuccess = true;
+                        Plam.open(150); //放开拳头
+                        Dice.show(data.dices); //动画骰子
+
+
+                    }
+                })
 
             }, function() {
                 
@@ -158,90 +138,47 @@ $(function() {
 
             $(".slideunlock-btn").on("touchstart", function() {
                 if ($lockable.val() == 0) {
-                    Voice.play("tt");
-                    Voice.pause();
+                    audioTT.play();
+                    audioTT.pause();
                     var Timer = setInterval(function() {
-                        if (drapSuccess == true) {
+                        if (flagSuccess == true) {
                             clearInterval(Timer);
-                            Voice.play("tt");
-                            drapSuccess=false;
+                            audioTT.play();
+                            flagSuccess=false;
                         }
-                    },50);
-
-                    var Timer2 = setInterval(function() {
-                        if (shakeSuccess == true) {
-                            clearInterval(Timer2);
-                            Voice.play("tt");
-                            shakeSuccess=false;
-                        }
-                    },50);
-
-                    
+                    },100);
                 }
             });
 
+            $("#J_boyibo-btn").on("click",function(){
 
+                audioTT.play();
+                audioTT.pause();
+               var Timer = setInterval(function() {
+                    if (flagSuccess == true) {
+                        clearInterval(Timer);
+                        audioTT.play();
+                        flagSuccess=false;
+                    }
+                },100);
 
-
-            //点击的时候
-            //
-            function clickDrapShake(type){
-                $(".bb-guide-tip").hide();
-                $("#J_bowl-box").html("");
                 $.ajax({
                     url: 'http://wnworld.com/BoBingGongJu/pc/php/bbgj.php',
                     type: 'post',
                     dataType: 'json',
                     beforeSend: function() {
-                        if(type=="drap"){
-                            Plam.rotating(); //拖拽的时候需要拳头抖动
-                        }else{
-                            $(".bb-bowl .loading").fadeIn();//点击和摇一摇的时候显示加载按钮
-                        }
                         
                     },
                     success: function(data) {
-                        if(type=="shake"){
-                            shakeSuccess=true;
-                        }else{
-                            drapSuccess = true;
-                        }
-                        if(type=="drap"){
-                            Plam.open(150); //拖拽的时候需要放开拳头
-                        }else{
-                            $(".bb-bowl .loading").hide();
-                        }
-                        $(".bb-guide-tip").fadeIn();//点击和摇一摇的时候隐藏加载按钮
-                        Dice.show(data.dices,data.rank); //动画骰子
+                        flagSuccess = true;
+                        
+                        Dice.show(data.dices); //动画骰子
+
+
                     }
                 })
-            }
+            })
 
-            $("#J_boyibo-btn").on("click",function(){
-                drapSuccess=false;
-                Voice.play("tt");
-                Voice.pause();
-                var Timer = setInterval(function() {
-                        if (drapSuccess == true) {
-                            clearInterval(Timer);
-                            Voice.play("tt");
-                            drapSuccess=false;
-                        }
-                },100);
-                clickDrapShake("click");
-            });
-
-
-            //摇一摇
-            var myShakeEvent = new Shake({
-                threshold: 15
-            });
-            myShakeEvent.start();
-            window.addEventListener('shake',function(){
-                Voice.play("tt");
-                Voice.pause();
-                clickDrapShake("shake");
-            }, false);
         })
 
     })()

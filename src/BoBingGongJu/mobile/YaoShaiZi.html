@@ -23,6 +23,7 @@
             <div class="bb-guide-tip nobegin"><span></span></div>
             <div class="bb-rock-box">
                 <div class="bb-bowl">
+                        <span class="loading"></span>
                         <div class="bb-bowl-logo"><img src="images/bb_bowl_logo.png"></div>
                         <div class="dice-box" id="J_bowl-box"></div>
                 </div>
@@ -47,8 +48,15 @@
                     <span class="slideunlock-txt">按住往右拉>></span>
                 </div>
             </div>
+            <button class="boyibo-btn" id="J_boyibo-btn"><b></b></button>
         </div>
-        <button id="x1">单机</button>
+      
+       <!-- 声音 start -->
+       <audio src="images/voice/audio.mp3" preload id="J_audio"></audio>
+       
+       
+     <!-- 声音 end -->
+
        
         <div class="bb-usexyb clearfix">
 				<span class="tit">用小鱼币博饼</span>
@@ -235,20 +243,10 @@
 
     <!-- 小鱼二维码 end -->
 
-    <!-- 声音 start -->
-   <!--  <audio src="images/voice/audio0.mp3"  id="J_audio0"></audio>
-    <audio src="images/voice/audio1.mp3" id="J_audio1"></audio>
-    <audio src="images/voice/audio2.mp3"  id="J_audio2"></audio>
-    <audio src="images/voice/audio3.mp3"  id="J_audio3"></audio>
-    <audio src="images/voice/audio4.mp3"  id="J_audio4"></audio>
-    <audio src="images/voice/audio5.mp3" id="J_audio5"></audio>
-    <audio src="images/voice/audio6.mp3"  id="J_audio6"></audio> -->
-    <audio src="images/voice/audiott.mp3"  id="J_audiott"></audio>
-
-     <!-- 声音 end -->
-
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>    
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
     <script src="js/swiper/js/swiper.jquery.min.js"></script>
+    <script type="text/javascript" src="js/shake.js"></script>
     <script type="text/javascript" src="js/jquery.slideunlock.js"></script>
     <script type="text/javascript" src="js/bbrock.js"></script>
 </body>
