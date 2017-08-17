@@ -291,6 +291,7 @@
         width: px2rem(378px);
         height: px2rem(280px);
         overflow: hidden;
+        visibility:hidden;
         background: url("../images/hand_normal.png") no-repeat top center;
         background-size: 100% 100%;
         &.open {
@@ -415,20 +416,31 @@
 
 .bb-usexyb{
 	padding:0 px2rem(30px);
-	@include font-dpr(14px);
+	@include font-dpr(13px);
+    text-align:center;
 	.tit{
-		float:left;
-		color:#333333;
+		
+		color:#fff;
 		line-height:px2rem(78px);
+        margin-right:px2rem(15px);
 	}
-	.sel-box{
-		float:right;
-		max-width:70%;
-		select{
-			border:none;
-			@include font-dpr(14px);
-		}
-	}
+  
+    .sel-real{
+        -webkit-appearance: none !important;
+        display:inline-block;
+        width:px2rem(360px);
+        margin-top:px2rem(30px);
+        border:2px solid #fcdb6a;
+        height:px2rem(50px);
+        line-height:px2rem(50px);
+        border-radius:px2rem(30px);
+        @include font-dpr(13px);
+        color:#fcdb6a;
+        padding:0 px2rem(15px);
+        background:url("../images/select_arrow_2.png") no-repeat right center #e8343a;
+        background-size:auto 100%;
+    }
+	
 }
 
 .slideunlock-slider {
@@ -986,8 +998,8 @@
                 position:absolute;
                 top:px2rem(10px);
                 right:px2rem(10px);
-                padding:px2rem(5px) px2rem(10px);
-                @include font-dpr(14px);
+                padding:px2rem(3px) px2rem(7px);
+                @include font-dpr(12px);
                 &.disabled{
                     background-color:#b4b4b4;
                     border-color:#b4b4b4;
@@ -1000,6 +1012,7 @@
             overflow:hidden;
             display:block;
             position:relative;
+            text-align:center;
             img{
                 position: absolute;
                 left: 50%;
@@ -1007,7 +1020,7 @@
                 -webkit-transform: translate(-50%,-50%);
                 -ms-transform: translate(-50%,-50%);
                 -moz-transform: translate(-50%,-50%);
-                max-width: 100%;
+                width: 100%;
             }
         }
         &.active{
@@ -1102,7 +1115,7 @@
 			display:inline-block;
 			padding:px2rem(10px) px2rem(30px);
 			color:#d78400;
-			@include font-dpr(14px);
+			@include font-dpr(12px);
 			
 		}
 	}
@@ -1115,19 +1128,20 @@
 		margin-bottom:px2rem(30px);
 		display:flex;
 		.para-tit{
-			flex:3;
+			flex:4;
 			color:#666666;
-			@include font-dpr(16px);
+			@include font-dpr(14px);
 		}
 		.para-val{
-			flex:7;
-			@include font-dpr(16px);
+			flex:11;
+			@include font-dpr(14px);
 			color:#888;
 			.lab{
 				white-space: nowrap;
 				display:inline-block;
-				margin-right:px2rem(12px);
+				margin-right:px2rem(20px);
 				margin-bottom:px2rem(12px);
+                color:#888;
 			}
 		}
 

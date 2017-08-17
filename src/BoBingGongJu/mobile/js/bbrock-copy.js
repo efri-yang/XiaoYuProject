@@ -104,14 +104,17 @@ $(function() {
         var initTop = -$plam.height(),
             initLeft = -$plam.width(),
             slideW = parseInt($(".slideunlock-slider").width() - $(".slideunlock-btn").width());
-
         return {
             $elem: $plam,
             move: function(index) {
                 var _this = this,
                     posTop = Math.abs(index * ((initTop - 40) / slideW)),
                     posLeft = Math.abs(index * ((initLeft - 130) / slideW));
-                _this.$elem.css({ left: initLeft + posLeft, top: initTop + posTop });
+                    _this.$elem.css({ left: initLeft + posLeft, top: initTop + posTop,visibility:"visible"});
+                if(index==0){
+
+                        _this.$elem.css("visibility","hidden");
+                }
             },
             rotating: function() {
                 this.$elem.addClass('swing')
@@ -129,6 +132,7 @@ $(function() {
                 setTimeout(function() {
                     _this.$elem.animate({ left: initLeft, top: initTop }, 100, function() {
                         _this.$elem.removeClass('open');
+                         _this.$elem.css("visibility","hidden");
                     });
                 }, 250)
             }

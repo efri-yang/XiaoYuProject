@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>专家-主页</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body class="bg-clrf7f7f7">
+    <div class="container">
+        <div class="pexpert-h-page">
+            <div class="pexpert-avatar-top">
+                <div class="pic"><img src="upload/avatar_5.jpg"></div>
+                <div class="soma-bd">
+                    <p class="name">无敌被的窝君</p>
+                    <span class="follow-count">关注人数：12</span>
+                    <span class="a-count">已回答问题：100</span>
+                </div>
+                <a href="ZhuanJia-intro.html" class="btn-check"><i></i>我的主页</a>
+            </div>
+            <div class="coms-nodata-tip">
+                <span class="pic"></span>
+                <p class="txt">暂无待回答问题</p>
+            </div>
+            <div class="dropload-scroll-box">
+                <ul class="pexpert-h-q-list">
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？做什么检查做什么检查做做什么</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="#" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                    <li>
+                        <p class="txt-q">头疼头疼头疼，我应该做什么检查？</p>
+                        <a href="ZhuanJia-HuiDa-WenZi.html" class="btn-a">回答该问题</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+    @@include("./views/_fixedbar.html")
+    <script type="text/javascript" src="js/dropload/dropload.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/dropload/dropload.css">
+     <script type="text/javascript">
+    $(function() {
+
+
+
+
+       (function() {
+            var itemCurrPage = 1;
+            var itemPageNum = 8;
+
+            var initCount=15;//开发请将首次加载的条数附在这里,如果只有两条数据的时候就不需要下拉加载更多 
+            if(initCount >=itemPageNum){
+                var dropload = $('.dropload-scroll-box').dropload({
+                scrollArea: window,
+                domDown : {
+                    domNoData  : '<div class="dropload-noData">òᆺó被你看光啦！</div>'
+                },
+                loadDownFn: function(me) {
+
+                    // 加载菜单一的数据
+                    $.ajax({
+                        type: 'GET',
+                        // data:{page:item1CurrPage,num:item1PageNum},
+                        url: './',
+                        dataType: 'json',
+                        success: function(data) {
+                            var data = {
+                                "lists": [{
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":""
+                                        
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":""
+                                        
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":""
+                                        
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":""
+                                        
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":""
+                                        
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":""
+                                        
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":""
+                                        
+                                    }
+                                ]
+                            }
+                            itemCurrPage++;
+                            var result = "";
+                            for (var i = 0; i < data.lists.length; i++) {
+                                result += '<li><p class="txt-q">'+data.lists[i].title+'</p><a href="'+data.lists[i].chref+'" class="btn-a">回答该问题</a></li>  ';
+                            }
+                            setTimeout(function() { //测试用 后端请删除timeout的函数
+                                $(".pexpert-h-q-list").append(result);
+                                if (!data.lists.length || data.lists.length < itemPageNum) {
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData(); 
+                                }
+                                me.resetload();
+
+                            }, 2000)
+
+                        },
+                        error: function(xhr, type) {
+                            console.dir('Ajax error!');
+                            // 即使加载出错，也得重置
+                            me.resetload();
+                        }
+                    });
+                }
+                });
+            }
+        })()
+    })
+    </script>
+</body>
+
+</html>

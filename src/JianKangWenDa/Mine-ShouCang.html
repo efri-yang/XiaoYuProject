@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的收藏</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container container-pfoot">
+       	<div class="mine-home">
+            <div class="mine-avatar-top">
+                <div class="pic"><img src="upload/avatar_5.jpg"></div>
+                <p class="txt">无敌被的窝君</p>
+            </div>
+        </div>
+        <div class="dropload-scroll-box">
+            <ul class="mine-collect-list">
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？做什么检查做什么检查做什么检查做什么</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？做什么检查做什么检查做什么检查做什么</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？做什么检查做什么检查做什么检查做什么</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？做什么检查做什么检查做什么检查做什么</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？做什么检查做什么检查做什么检查做什么</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？做什么检查做什么检查做什么检查做什么</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？做什么检查做什么检查做什么检查做什么</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+                <li>
+                    <a href="#" class="txt-q">头疼头疼头疼，我应该做什么检查？</a>
+                    <a href="#" class="btn-collect">取消收藏</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="h-footer">
+        <li class="item-1 active"><a href="WenTi-From.html"><i></i>提问</a></li>
+        <li class="item-2 "><a href="search-wenti.html"><i></i>搜索</a></li>
+    </ul>
+     @@include("./views/_fixedbar.html")
+
+     <script type="text/javascript" src="js/dropload/dropload.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/dropload/dropload.css">
+    <script type="text/javascript">
+    $(function() {
+
+
+
+
+       (function() {
+            var itemCurrPage = 1;
+            var itemPageNum = 8;
+
+            var initCount=15;//开发请将首次加载的条数附在这里,如果只有两条数据的时候就不需要下拉加载更多 
+            if(initCount >=itemPageNum){
+                var dropload = $('.dropload-scroll-box').dropload({
+                scrollArea: window,
+                domDown : {
+                    domNoData  : '<div class="dropload-noData">òᆺó被你看光啦！</div>'
+                },
+                loadDownFn: function(me) {
+
+                    // 加载菜单一的数据
+                    $.ajax({
+                        type: 'GET',
+                        // data:{page:item1CurrPage,num:item1PageNum},
+                        url: './',
+                        dataType: 'json',
+                        success: function(data) {
+                            var data = {
+                                "lists": [{
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":"",
+                                        "chref":""
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":"",
+                                        "chref":""
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":"",
+                                        "chref":""
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":"",
+                                        "chref":""
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":"",
+                                        "chref":""
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":"",
+                                        "chref":""
+                                    },
+                                    {
+                                       
+                                        "title":"头疼头疼头疼，我应该做什么检查？",
+                                        "href":"",
+                                        "chref":""
+                                    }
+                                ]
+                            }
+                            itemCurrPage++;
+                            var result = "";
+                            for (var i = 0; i < data.lists.length; i++) {
+                                result += '<li><a href="'+data.lists[i].href+'" class="txt-q">'+data.lists[i].title+'</a><a href="'+data.lists[i].chref+'" class="btn-collect">取消收藏</a></li>  ';
+                            }
+                            setTimeout(function() { //测试用 后端请删除timeout的函数
+                                $(".mine-collect-list").append(result);
+                                if (!data.lists.length || data.lists.length < itemPageNum) {
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData(); 
+                                }
+                                me.resetload();
+
+                            }, 2000)
+
+                        },
+                        error: function(xhr, type) {
+                            console.dir('Ajax error!');
+                            // 即使加载出错，也得重置
+                            me.resetload();
+                        }
+                    });
+                }
+                });
+            }
+        })()
+    })
+    </script>
+
+
+    
+    
+</body>
+
+</html>

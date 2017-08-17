@@ -45,7 +45,8 @@
 		position:absolute;
 		left:px2rem(30px);
 		top:px2rem(30px);
-		padding:px2rem(10px) px2rem(25px);
+		padding:px2rem(8px) px2rem(20px);
+		@include font-dpr(12px);
 		&.disabled{
 			background-color:#b4b4b4;
 			border-color:#b4b4b4;
@@ -67,7 +68,8 @@
 		}
 		
 		.coms-cbtn{
-			padding:px2rem(10px) px2rem(25px);
+			padding:px2rem(8px) px2rem(20px);
+			@include font-dpr(12px);
 			&.disabled{
 				background-color:#b4b4b4;
 				border-color:#b4b4b4;
@@ -108,7 +110,7 @@
 			top:px2rem(10px);
 			right:px2rem(10px);
 			padding:px2rem(5px) px2rem(10px);
-			@include font-dpr(14px);
+			@include font-dpr(12px);
 			&.disabled{
 				background-color:#b4b4b4;
 				border-color:#b4b4b4;
@@ -128,7 +130,7 @@
 			    -webkit-transform: translate(-50%,-50%);
 			    -ms-transform: translate(-50%,-50%);
 			    -moz-transform: translate(-50%,-50%);
-			    max-width: 100%;
+			    width: 100%;
 			}
 		}
 	}

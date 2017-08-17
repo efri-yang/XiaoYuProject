@@ -40,7 +40,7 @@ $(function() {
                 var _this = this,
                     posTop = Math.abs(index * ((initTop - 40) / slideW)),
                     posLeft = Math.abs(index * ((initLeft - 130) / slideW));
-                _this.$elem.css({ left: initLeft + posLeft, top: initTop + posTop });
+                _this.$elem.css({ left: initLeft + posLeft, top: initTop + posTop,visibility:"visible"});
             },
             rotating: function() {
                 this.$elem.addClass('swing')
@@ -58,6 +58,7 @@ $(function() {
                 setTimeout(function() {
                     _this.$elem.animate({ left: initLeft, top: initTop }, 100, function() {
                         _this.$elem.removeClass('open');
+                        _this.$elem.css("display","none");
                     });
                 }, 250)
             }
