@@ -67,13 +67,19 @@ input::-ms-input-placeholder {
         }
         &.gohome {
             a {
-                background: url("../images/fixed_icon_1.png") no-repeat center center rgba(0, 0, 0, 0.4);
+                background: url("../images/fixed_icon_1.png") no-repeat center center rgba(0, 0, 0, 0.2);
                 background-size: 100% 100%;
             }
         }
         &.goback {
             a {
-                background: url("../images/fixed_icon_2.png") no-repeat center center rgba(0, 0, 0, 0.4);
+                background: url("../images/fixed_icon_2.png") no-repeat center center rgba(0, 0, 0, 0.2);
+                background-size: 100% 100%;
+            }
+        }
+        &.gousercenter{
+            a {
+                background: url("../images/fixed_icon_4.png") no-repeat center center rgba(0, 0, 0, 0.2);
                 background-size: 100% 100%;
             }
         }
@@ -81,7 +87,7 @@ input::-ms-input-placeholder {
 
             a {
                 display: none;
-                background: url("../images/fixed_icon_3.png") no-repeat center center rgba(0, 0, 0, 0.4);
+                background: url("../images/fixed_icon_3.png") no-repeat center center rgba(0, 0, 0, 0.2);
                 background-size: 100% 100%;
             }
             &.active {
@@ -166,6 +172,24 @@ input::-ms-input-placeholder {
 }
 
 [data-dpr="2"] .expert-voice-box {
+    .soma-bd{
+        .voice-bar{
+            
+            .vicon{
+                width:28px;
+                height:45px;
+                background:url("../images/yy_icon_list2.png") no-repeat right 0;
+            }
+            &.active{
+                .vicon{
+                    animation: animateVicon1 steps(4,end) 1s infinite;/*80帧*/
+                }
+            }
+        }
+    }
+}
+
+[data-dpr="1"] .expert-voice-box {
     .soma-bd{
         .voice-bar{
             

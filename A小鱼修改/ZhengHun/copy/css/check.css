@@ -1,0 +1,279 @@
+/**
+  * 头部需要的样式
+  */
+  a {
+     color: #333;
+ }
+ 
+ a:hover {
+     text-decoration: underline;
+     color: #0383cc;
+ }
+ 
+ #fish-top-skin {
+     width: 100%;
+     height: 318px;
+     background: url('http://www.xmfish.com/images/chanel/www/index2/2014theme-6.1.jpg') no-repeat center 0;
+ }
+ 
+ .xmfish-theme {
+     position: absolute;
+     display: block;
+     top: 40px;
+     left: 50%;
+     width: 227px;
+     height: 80px;
+     margin-left: 232px;
+     background: url('http://www.xmfish.com/images/chanel/www/index2/xmfish-spring-theme.png') no-repeat 0 0;
+     _background: none;
+     _filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop, src='http://www.xmfish.com/images/chanel/www/index2/xmfish-spring-theme.png');
+     text-indent: -999em;
+     overflow: hidden;
+     z-index: 2;
+ }
+ 
+ .t_2014_subject {
+     position: absolute;
+     top: 0;
+     left: 50%;
+     width: 300px;
+     margin-left: -480px;
+ }
+ 
+ .t_2014_subject h2 {
+     position: relative;
+     z-index: 0;
+ }
+ 
+ .t_2014_subject h2 a {
+     display: block;
+     position: absolute;
+     top: 71px;
+     width: 145px;
+     height: 30px;
+     background: url('http://www.xmfish.com/images/chanel/www/index2/xiaoyulogo-145-30.png');
+     background-image: -webkit-image-set('http://www.xmfish.com/images/chanel/www/index2/xiaoyulogo-145-30.png') 1x, url('http://www.xmfish.com/images/chanel/www/index2/xiaoyulogo-290-60.png') 2x);
+     background-image: -moz-image-set('http://www.xmfish.com/images/chanel/www/index2/xiaoyulogo-145-30.png') 1x, url('http://www.xmfish.com/images/chanel/www/index2/xiaoyulogo-290-60.png') 2x);
+     background-image: -ms-image-set('http://www.xmfish.com/images/chanel/www/index2/xiaoyulogo-145-30.png') 1x, url('http://www.xmfish.com/images/chanel/www/index2/xiaoyulogo-290-60.png') 2x);
+     background-image: -o-image-set('http://www.xmfish.com/images/chanel/www/index2/xiaoyulogo-145-30.png') 1x, url('http://www.xmfish.com/images/chanel/www/index2/xiaoyulogo-290-60.png') 2x);
+     background-repeat: no-repeat;
+     background-size: 100% auto;
+     _background: none;
+     _filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop, src='http://www.xmfish.com/images/chanel/www/index2/xiaoyulogo-145-30.png');
+     overflow: hidden;
+     text-indent: -999em;
+     z-index: 0;
+ }
+ 
+ .header1 div.wrap {
+     width: 1000px;
+ }
+ 
+ .t_2014_subject h3 {
+     position: relative;
+     z-index: 0;
+ }
+ 
+ .t_2014_subject h3 a {
+     display: block;
+     position: absolute;
+     top: 71px;
+     width: 145px;
+     height: 30px;
+     background: url('http://www.xmfish.com/images/chanel/www/index2/campaign/xiaoyulogo_160818_white.png');
+     background-image: -webkit-image-set('http://www.xmfish.com/images/chanel/www/index2/campaign/xiaoyulogo_160818_white.png') 1x, url('http://www.xmfish.com/images/chanel/www/index2/campaign/xiaoyulogo_160818_white2X.png') 2x);
+     background-image: -moz-image-set('http://www.xmfish.com/images/chanel/www/index2/campaign/xiaoyulogo_160818_white.png') 1x, url('http://www.xmfish.com/images/chanel/www/index2/campaign/xiaoyulogo_160818_white2X.png') 2x);
+     background-image: -ms-image-set('http://www.xmfish.com/images/chanel/www/index2/campaign/xiaoyulogo_160818_white.png') 1x, url('http://www.xmfish.com/images/chanel/www/index2/campaign/xiaoyulogo_160818_white2X.png') 2x);
+     background-image: -o-image-set('http://www.xmfish.com/images/chanel/www/index2/campaign/xiaoyulogo_160818_white.png') 1x, url('http://www.xmfish.com/images/chanel/www/index2/campaign/xiaoyulogo_160818_white2X.png') 2x);
+     background-repeat: no-repeat;
+     background-size: 100% auto;
+     _background: none;
+     _filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop, src='http://www.xmfish.com/images/chanel/www/index2/campaign/xiaoyulogo_160818_white.png');
+     overflow: hidden;
+     text-indent: -999em;
+     z-index: 0;
+ }
+ 
+ .switch_city {
+     position: absolute;
+     top: 74px;
+     left: 155px;
+     width: 100%;
+ }
+ 
+ .reletive {
+     position: relative;
+ }
+ 
+ .t_2014_tab_star {
+     position: absolute;
+     top: -3px;
+     right: 1px;
+     color: #f50;
+     font-size: 14px;
+     -webkit-animation: animations 3s ease-out;
+     -moz-animation: animations 3s ease-out;
+     -o-animation: animations 3s ease-out;
+     -ms-animation: animations 3s ease-out;
+     animation: animations 3s ease-out;
+     -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+     -o-animation-iteration-count: infinite;
+     -ms-animation-iteration-count: infinite;
+     animation-iteration-count: infinite;
+     font-style: normal;
+ }
+ 
+ #head {
+     margin-top: -185px;
+ }
+ 
+ #breadCrumb {
+     zoom: 1;
+     height: 30px;
+     border: 1px solid #c1d8ea;
+     background: #f5fafe;
+     padding: 0 5px 0 10px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+     overflow: hidden;
+ }
+ 
+ #breadCrumb a {
+     line-height: 30px;
+     color:#333;
+ }
+  #breadCrumb a:hover{
+  	text-decoration: underline;
+    color: #0383cc;
+  }
+ 
+ #breadCrumb .fr {
+     padding-top: 7px;
+ }
+ 
+ #breadCrumb .fr a {
+     line-height: 18px;
+ }
+ 
+ #breadCrumb .fr .link_down {
+     margin-top: -1px;
+ }
+ 
+ #breadCrumb em {
+     font-family: Simsun;
+     margin: 0 5px;
+ }
+ 
+ #breadCrumb img.breadHome {
+     float: left;
+     margin: 6px 5px 0 0;
+ }
+ /**
+ *页面完整样式
+ */
+ 
+ .main {
+     margin-top: 8px;
+     margin-bottom: 60px;
+ }
+
+ .module .border {
+    border: 1px solid #0673b5;
+}
+ .module .hd-caption {
+     margin: 0 20px;
+     border-bottom: 1px solid #0673b5;
+     padding-bottom: 15px;
+     text-align: center;
+ }
+ 
+ .module .hd-caption .title {
+     font-size: 18px;
+     margin-bottom: 5px;
+     margin-top: 35px;
+ }
+ 
+ .module .hd-caption .title .tip {
+     text-align: center;
+     color: #666;
+ }
+ 
+ .module .checking-tbl-wrap {
+     padding: 0 20px;
+ }
+ 
+ .module .checking-tbl-wrap .btn-edit {
+     width: 92px;
+     height: 27px;
+     display: block;
+     margin: 0px auto 50px;
+     border: none;
+     background: url("../img/icons.png") no-repeat 0px -81px;
+ }
+ 
+ .checking-tbl {
+     width: 100%;
+     border: 1px solid #c1d8ea;
+     margin-top: 20px;
+     margin-bottom: 30px;
+     table-layout: fixed;
+ }
+ 
+ .checking-tbl caption {
+     font-size: 18px;
+     color: #000;
+     height: 80px;
+     line-height: 80px;
+     border: 1px solid #c1d8ea;
+     border-bottom: none;
+ }
+ 
+ .checking-tbl td {
+     border: 1px solid #c1d8ea;
+     height: 40px;
+     padding: 10px 0;
+     color: #000000;
+ }
+ 
+ .checking-tbl .c-lab {
+     display: inline-block;
+     min-width: 80px;
+     text-align: left;
+     vertical-align: top;
+     padding-left: 45px;
+ }
+ 
+ .checking-tbl .tit-type1 {
+     font-size: 18px;
+ }
+ 
+ .checking-tbl .algin-c {
+     text-align: center;
+ }
+ 
+ .checking-tbl .c-param {
+     padding-left: 30px;
+     display: inline-block;
+     max-width: 270px;
+     vertical-align: middle;
+ }
+ 
+ .checking-tbl .personal-pic .pic {
+     display: inline-block;
+     margin: 0 2px;
+     width: 136px;
+     height: 136px;
+     vertical-align: middle;
+     text-align:center;
+ }
+ 
+ .checking-tbl .personal-pic .pic img {
+     max-width: 100%;
+ }
+ 
+ .self-intro {
+     padding: 0 50px;
+     min-height: 70px;
+     line-height: 25px;
+ }

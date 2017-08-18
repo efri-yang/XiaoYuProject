@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>小鱼问答</title>
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/flexible.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+
+var flag =1;
+var timer=null;
+function timerun(){
+	var s = document.getElementById("time");
+	if(s.innerHTML == 0){
+		flag =1;
+		jQuery('.code-btn').text("重新发送");
+		clearInterval(timer);
+		return false;
+	}
+		s.innerHTML = s.innerHTML * 1 - 1;
+}
+
+jQuery(document).ready(function(){
+
+     $('.nav-btn').click(function(){
+        $(this).hide();
+        $('.close-btn').show();
+        $('.nav-cover').show();
+    });
+    $('.close-btn').click(function(){
+        $(this).hide();
+        $('.nav-btn').show();
+        $('.nav-cover').hide();
+    });
+	
+	$('.gotop').on("touchstart",function(e){
+		$('body,html').animate({scrollTop:0},1000);
+	});
+	
+	jQuery(".qa-tab>li").click(function(){
+		var nodenum = jQuery(this).index();
+		jQuery('.qa-tab>li').removeClass('active');
+		jQuery(this).addClass('active');
+		jQuery('.qa-item').hide();
+		jQuery('.qa-item').eq(nodenum).show();
+	});
+	
+	jQuery('#problem').keyup(
+    function(){
+        if(jQuery(this).val().length > 0){
+            	jQuery('.gostep2').addClass('active');
+            }
+        }
+    );
+	
+	jQuery('#verification').keyup(
+    function(){
+        if(jQuery(this).val().length > 5){
+            	jQuery('.submit-btn').addClass('active');
+            }
+        }
+    );
+	
+	jQuery('.code-btn').click(function(){
+		if(flag){
+			flag =0;
+			timer=setInterval("timerun();", 1000);
+			jQuery(this).html("<span id='time'>120</span>秒后重新获取");
+		}
+	});
+	
+	jQuery('.gostep1').click(function(){
+		jQuery('.step1').show();
+		jQuery('.step2,.step3').hide();
+	});
+	
+	jQuery('.gostep2').click(function(){
+		if(jQuery(this).is('.active')){
+			jQuery('.step2').show();
+			jQuery('.step1,.step3').hide();
+		}
+	});
+	
+	jQuery('.gostep3').click(function(){
+		jQuery('.step3').show();
+		jQuery('.step1,.step2').hide();
+	});
+	
+	jQuery('.more-btn').click(function(){
+		jQuery(this).hide();
+		jQuery(this).parents(".section").find('.answer-con').addClass('active');
+		jQuery(this).parents(".section").find('.reply-item').show();
+		jQuery(this).parents(".section").find('.kongblue-btn').show();
+	});
+	
+	jQuery('.kongblue-btn').click(function(){
+		jQuery(this).hide();
+		jQuery(this).parents(".section").find('.answer-con').removeClass('active');
+		jQuery(this).parents(".section").find('.reply-item').hide();
+		jQuery(this).parents(".section").find('.more-btn').show();
+	});
+	
+});
+
+</script>
+</head>
+<body>
+
+<header class="section top-nav bbs inner20 fn-clear">
+    <h1 class="fn-fl iconn icon-logo"></h1>
+    <div class="fn-fl subtitle ml20 pl20 font-36 color-666 bls">家装宝</div>
+    <a class="fn-fr nav-btn font-20" href="javascript:"><i class="iconn icon-nav"></i><p>导航</p></a>
+    <a class="fn-fr close-btn font-20" href="javascript:"><i class="iconn icon-close"></i><p>关闭</p></a>
+</header>
+
+<section class="theme relative inner40">
+	<div class="ulib-r100 theme-tip pt5 pb5 pl20 pr20 font-20 color-fff">已有<span class="pl5 pr5 color-orange">500</span>人提问</div>
+    <div class="text-center">
+    	<div class="inline-block con-120"><img class="img-cover ulib-r100" src="img/k1x1.png" style="background-image:url('img/portrait.jpg');" alt="#" /></div>
+        <div class="mt15 font-32 color-fff">装修问答</div>
+        <div class="inline-block mt20 con-400"><img src="img/t-note.png" alt="装修有问题，尽管找我们，24小时内必回复！" /></div>
+    </div>
+</section>
+
+<section class="mt20">
+	<ul class="section qa-tab bbs text-center font-30 fn-flex">
+    	<li class="fn-flex-item active"><a href="javascript:">提问</a></li>
+        <li class="fn-flex-item"><a href="javascript:">我问的</a></li>
+    </ul>
+    
+    <div class="qa-item">
+        <div class="section">
+            <div class="step1">
+                <div><textarea id="problem" class="wp100 inner20 font-26" placeholder="请写下你的问题（5-50个文字）" style="height:3rem;"></textarea></div>
+                <div class="bts pt20 pb20 text-center"><a class="btn btn-green gostep2 pt10 pb10 pl40 pr40 ulib-r5 font-30 color-fff" href="javascript:">下一步</a></div>
+            </div>
+            <div class="step2" style="display:none;">
+                <div><textarea class="wp100 inner20 font-26" placeholder="请写下问题背景、条件等详细信息（可跳过）" style="height:3rem;"></textarea></div>
+                <div class="bts pt20 pb20 text-center"><a class="btn gostep1 mr40 pt10 pb10 pl40 pr40 ulib-r5 font-30 color-666">上一步</a><a class="btn btn-green gostep3 active ml40 pt10 pb10 pl40 pr40 ulib-r5 font-30 color-fff">下一步</a></div>
+            </div>
+            <div class="step3" style="display:none;">
+                <div class="pt20 pb20 text-center font-24 color-aaa">为了能及时接受回答，请输入真实有效的手机号码</div>
+                <div class="inner20 pt0">
+                    <dl class="bbs form-item pt20 pb10 fn-clear">
+                        <dt class="fn-fl mt5 font-28">手机</dt>
+                        <dd class="pl120"><input class="mt0 mb5 wp100 font-28" type="tel" placeholder="11位手机号" /></dd>
+                    </dl>
+                    <dl class="bbs form-item pt20 pb10 fn-clear">
+                        <dt class="fn-fl mt5 font-28">验证码</dt>
+                        <dd class="pl120 relative"><input id="verification" class="mt0 mb5 font-28" type="number" /><a class="code-btn pt10 pb10 pl20 pr20 ulib-r5 font-24" href="javascript:">获取验证码</a></dd>
+                    </dl>
+                </div>
+                <div class="bts pt20 pb20 text-center"><a class="btn gostep2 active mr40 pt10 pb10 pl40 pr40 ulib-r5 font-30 color-666">上一步</a><a class="btn btn-green
+                 submit-btn ml40 pt10 pb10 pl40 pr40 ulib-r5 font-30 color-fff">提交问题</a></div>
+            </div>
+        </div>
+        <div class="mt20 section">
+            <div class="pt20 pb20 text-center font-28 color-666">常见问题</div>
+            <dl class="font-28 bbs inner30">
+                <dt class="color-green"><i class="icon-green mr10 ulib-r100 font-24">Q</i>什么是装修问答？</dt>
+                <dd class="fn-clear pt20">
+                    <i class="fn-fl mt5 icon-qgray ulib-r100 font-24">A</i>
+                    <div class="pl40">装修问答是小鱼家装推出的一档真人问答栏目，意在帮助用户更好的解决在装修途中碰到的相关问题，包括但不限新房装修、旧房翻新、装修风水、主材鉴别、预算评估等内容。所有回答皆由小鱼家装专业装修专家团队以具体问题具体分析、按需定制的方式完成。</div>
+                </dd>
+            </dl>
+            <dl class="font-28 bbs inner30">
+                <dt class="color-green"><i class="icon-green mr10 ulib-r100 font-24">Q</i>如何提问？</dt>
+                <dd class="fn-clear pt20">
+                    <i class="fn-fl mt5 icon-qgray ulib-r100 font-24">A</i>
+                    <div class="pl40">无需登录，也能提问。只需将你的问题和问题描述、图片等内容通过鱼大叔产品平台发送给我们。我们的装修专家将在24小时内对于你的问题</div>
+                </dd>
+            </dl>
+            <dl class="font-28 bbs inner30">
+                <dt class="color-green"><i class="icon-green mr10 ulib-r100 font-24">Q</i>如何接收回答？</dt>
+                <dd class="fn-clear pt20">
+                    <i class="fn-fl mt5 icon-qgray ulib-r100 font-24">A</i>
+                    <div class="pl40">提交问题后，还需填写真实有效的手机号码，我们将通过短信发送回答内容给你。同时你也可以使用该手机号码登录小鱼网查看回答。</div>
+                </dd>
+            </dl>
+            <div class="pt20 pb20 text-center"><a class="font-28 color-blue" href="#">还有疑问？了解更多</a></div>
+        </div>
+    </div>
+    
+    <div class="qa-item" style="display:none;">
+    	
+        <div class="inner20 pl30 font-24 color-999">共有3条提问</div>
+        
+        <div class="section">
+        	<div class="pt30 pl30 pr30">
+                <h3 class="font-36 text-lighter">买二手房好还是新房好呢？</h3>
+                <div class="mt20 font-28">手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来资。手里有200万，计划买来投资。手里有200万，计划买来投资。</div>
+                <div class="mt20 font-28 color-999">提问于 2017-03-13  16:35</div>
+                <div class="mt10 text-center bts pt60 pb60">
+                    <!-- <div class="inline-block con-120"><img class="img-cover ulib-r100" src="img/k1x1.png" style="background-image:url('img/portrait2.jpg');" alt="#" /></div> -->
+                    <div class="font-28 color-999">小编正在努力撰写答案中，请耐心等待…</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt20 section">
+        	<div class="pt30">
+            	<div class="pl30 pr30">
+                    <h3 class="font-36 text-lighter">买二手房好还是新房好呢？</h3>
+                    <div class="mt20 font-28">手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来资。手里有200万，计划买来投资。手里有200万，计划买来投资。</div>
+                    <div class="mt20 font-28 color-999">提问于 2017-03-13  16:35</div>
+                    <div class="mt10 bts pt20 pb30 fn-clear">
+                        <div class="fn-fl con-60"><img class="img-cover bds ulib-r100" src="img/k1x1.png" style="background-image:url('img/portrait2.jpg');" alt="#" /></div>
+                        <div class="pl70 font-28">
+                            <div class="color-green">家装小编</div>
+                            <div class="color-999">回答于 2017-03-13  18:35</div>
+                            <div class="mt10 answer-con">手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来资。手里有200万，计划买来投资。手里有200万买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来资。手里有200万，计划买来投资。手里有2，计划买来投资。手里有200万手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来资。手里有200万，计划买来投资。手里有200万买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来投资。手里有200万，计划买来资。手里有200万，计划买来投资。手里有2，计划买来投资。手里有200万，计划买来…划买来…，计划买来…划买来…</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reply-item">
+                	<div class="pl30 pr30">
+                        <div class="mt10 bts pt20 pb20 fn-clear">
+                            <div class="fn-fl con-60"><img class="img-cover bds ulib-r100" src="img/k1x1.png" style="background-image:url('img/portrait2.jpg');" alt="#" /></div>
+                            <div class="pl70 font-28">
+                                <div class="color-green">莫莫</div>
+                                <div class="color-999">追问于 2017-03-13  18:35</div>
+                                <div class="mt20 reply-con">手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有2</div>
+                            </div>
+                        </div>
+                        <div class="mt10 bts pt20 pb20 fn-clear">
+                            <div class="fn-fl con-60"><img class="img-cover bds ulib-r100" src="img/k1x1.png" style="background-image:url('img/portrait2.jpg');" alt="#" /></div>
+                            <div class="pl70 font-28">
+                                <div class="color-green">莫莫</div>
+                                <div class="color-999">追问于 2017-03-13  18:35</div>
+                                <div class="mt20 reply-con">手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买手手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买手手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买手手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有2</div>
+                            </div>
+                        </div>
+                        <div class="mt10 bts pt20 pb20 fn-clear">
+                           <div class="fn-fl con-60"><img class="img-cover bds ulib-r100" src="img/k1x1.png" style="background-image:url('img/portrait2.jpg');" alt="#" /></div>
+                            <div class="pl70 font-28">
+                                <div class="color-green">莫莫</div>
+                                <div class="color-999">回答于 2017-03-13  18:35</div>
+                                <div class="mt20 reply-con">手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有200万，计划买来投资手里有2</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt10 pb20 bts">
+                        <div class="relative">
+                            <textarea id="content" class="inner20 wp100 font-28 yahei" style="height:3rem;" placeholder="还有疑惑？在此写下你的问题可以继续追问哟"></textarea>
+                        </div>
+                        <div class="mt10 text-center">
+                            <a class="kongblue-btn ulib-r5 font-28" href="javascript:"><i class="icon mr10 icon-up"></i>收起</a>
+                            <button class="blue-btn ml20 ulib-r5 font-28">立即追问</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="ulib-rb5 bts bbs more-btn pt10 pb10 text-center font-28" href="javascript:">显示全部</a>
+        </div>
+        
+    	<div class="text-center pt200 pb200">
+        	<i class="icon icon-nonequestions"></i>
+        	<div class="color-aaa">你还没提过问题</div>
+        </div>
+    </div>
+    
+</section>
+
+<section class="nav-cover">
+    <div class="wrap pt200">
+        <div class="text-center font-28">
+            <a href="#">
+                <i class="iconn icon-home"></i>
+                <p class="color-fff">首页</p>
+            </a>
+        </div>
+        <div class="mt30 overflowhidden">
+            <ul class="classification-list2 fn-clear font-28">
+                <li>
+                    <a href="#">
+                        <span class="red-tip2 font-20">免费</span>
+                        <i class="iconn icon-jzb"></i>
+                        <p class="mt5">家装宝</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="iconn icon-jzrj"></i>
+                        <p>家装日记</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="iconn icon-zxfz"></i>
+                        <p>装修互助</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="iconn icon-zxtl"></i>
+                        <p>装修讨论</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="iconn icon-xbjf"></i>
+                        <p>小编家访</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://marry.xmfish.com/h5/index">
+                        <i class="iconn icon-zgr"></i>
+                        <p>找工人</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

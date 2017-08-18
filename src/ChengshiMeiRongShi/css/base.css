@@ -65,6 +65,10 @@ height:0;
 /* Hides from IE-mac \*/ 
 * html .clearfix { *height: 1%; } 
 .clearfix { display: block; } 
+.clearfix {
+display: block;
+*height:1%;
+}
 /* End hide from IE-mac */ 
 html {
 overflow-y: scroll;
