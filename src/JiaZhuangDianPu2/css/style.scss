@@ -498,13 +498,13 @@
         }
         &.gohome {
             a {
-                background: url("../images/fixed_icon_1.png") no-repeat center center rgba(0, 0, 0, 0.4);
+                background: url("../images/fixed_icon_1.png") no-repeat center center rgba(0, 0, 0, 0.2);
                  background-size: 100% 100%;
             }
         }
         &.goback {
             a {
-                background: url("../images/fixed_icon_2.png") no-repeat center center rgba(0, 0, 0, 0.4);
+                background: url("../images/fixed_icon_2.png") no-repeat center center rgba(0, 0, 0, 0.2);
                  background-size: 100% 100%;
             }
         }
@@ -512,7 +512,7 @@
             
             a {
                  display:none;
-                background: url("../images/fixed_icon_3.png") no-repeat center center rgba(0, 0, 0, 0.4);
+                background: url("../images/fixed_icon_3.png") no-repeat center center rgba(0, 0, 0, 0.2);
                  background-size: 100% 100%;
             }
             &.active{

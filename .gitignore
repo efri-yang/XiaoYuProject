@@ -1,4 +1,4 @@
-.idea
+﻿.idea
 node_modules/
 .git
 build/
@@ -8,5 +8,6 @@ A小鱼日常/
 dev/
 APSD/
 dist/
+192168026/
 *.dat
 *.sass-cache
