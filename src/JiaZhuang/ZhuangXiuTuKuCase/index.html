@@ -157,6 +157,17 @@
         </div>
         <span class="close" data-roler="close"></span>
 	</div>
+
+    <div class="zxtkc-search-box">
+        <span class="mask"></span>
+        <div class="search-forms">
+            <div class="item">
+                <input type="search" class="ipt-text" placeholder="请输入搜索关键字" />
+                <a href="#" class="ipt-submit"></a>
+            </div>
+        </div>
+        <span class="cancel">取消</span>
+    </div>
 	<script type="text/javascript" src="zxtkjs/dropload/dropload.js"></script>
     <link rel="stylesheet" type="text/css" href="zxtkjs/dropload/dropload.css">
     <script type="text/javascript" src="zxtkjs/layer_mobile/layer.js"></script>
@@ -278,6 +289,14 @@
                 }
             });
         })();
+
+
+        $(".zxtkc-search-entry").on("click",function(){
+            $(".zxtkc-search-box").show();                
+        });
+        $(".zxtkc-search-box .cancel").on("click",function(event){
+             $(".zxtkc-search-box").hide();          
+        })
     })
     </script>
 </body>

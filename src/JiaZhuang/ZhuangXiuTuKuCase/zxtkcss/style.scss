@@ -390,6 +390,63 @@
     @include font-dpr(18px); 
 }
 
+.zxtkc-search-box{
+	position: fixed;
+	left:0;
+	top:0;
+	right: 0;
+	bottom: 0;
+	padding:px2rem(35px) px2rem(125px) px2rem(35px) px2rem(35px);
+	display:none;  
+	.cancel{
+		position:absolute;
+		right: px2rem(35px);
+		color:#333333;
+		top:px2rem(60px);
+		@include font-dpr(14px); 
+		z-index: 1;
+	}
+	.mask{
+		position:absolute;
+		left:0;
+		top:0;
+		right: 0;
+		bottom: 0;
+		background: #fff;
+		z-index: 1;
+	}
+	.search-forms{
+		position: relative;
+		z-index: 2;
+		.item{
+			position: relative;
+		}
+		.ipt-submit{
+			position: absolute;
+			width: px2rem(38px);
+			height: px2rem(38px);
+			overflow:hidden;
+			background:url("../zxtkimg/search_icon_2.png") no-repeat top center;
+			border:none;
+			background-size: 100% 100%;
+			position: absolute;
+			right:px2rem(25px);
+			top:50%;
+			margin-top:px2rem(-38px/2); 
+		}
+		.ipt-text{
+			padding:px2rem(20px) px2rem(100px) px2rem(20px) px2rem(20px); 
+			border:2px solid #e2e2e2;
+			width: 100%;
+			border-radius: px2rem(40px);
+			 -webkit-appearance:none;
+			 box-sizing: border-box;
+			 @include font-dpr(14px);
+		}
+
+	}
+}
+
 
 
 
