@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>案例</title>
+    <script src="js/zepto.js"></script>
+    <script src="js/flexible2.0.js"></script>
+    <script src="js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/vrkfj.css">
+</head>
+
+<body>
+    <div class="container">
+       
+        
+            <div class="shop-tab-hds-wrap">
+                <ul class="shop-tab-hds">
+                    <li class="active"><a href="N-sjsj-Case.html">完工图</a></li>
+                    <li><a href="">隐蔽工程</a></li>
+                    <li><a href="">商家店铺</a></li>    
+                </ul>
+            </div>
+            <div class="dropload-scroll-box">
+               
+                <ul class="vrkt-list clearfix">
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="upload/pro_3.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                            
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                          
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                          
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                           
+                        </a>
+                    </li>
+                     <li>
+                        <a href="">
+                            <span class="pic"><img src="upload/pro_3.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                            
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                          
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                          
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                           
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                          
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="pic"><img src="upload/pro_2.jpg" /></span>
+                            <p class="name">首开领翔国际【大观装饰】</p>
+                           
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        <!-- </div> -->
+    </div>
+    <!--  -->
+    @@include("./views/_fixedbar.html")
+    <!--  -->
+   
+
+    <script type="text/javascript" src="js/dropload/dropload.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/dropload/dropload.css">
+    <script type="text/javascript">
+    $(function() {
+
+        var itemCurrPage = 1;
+        var itemPageNum = 10;
+        var dropload = $('.dropload-scroll-box').dropload({
+            scrollArea: window,
+            domDown : {
+                    domNoData  : '<div class="dropload-noData">òᆺó被你看光啦！</div>'
+            },
+            loadDownFn: function(me) {
+
+                // 加载菜单一的数据
+                $.ajax({
+                    type: 'GET',
+                    // data:{page:item1CurrPage,num:item1PageNum},
+                    url: './',
+                    dataType: 'json',
+                    success: function(data) {
+                        var data = {
+                            "lists": [{
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_3.jpg",
+                                    "href": "AnLiXiangQing.html"
+                                    
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_3.jpg",
+                                    "href": "AnLiXiangQing.html"
+                                    
+                                },
+                               {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_3.jpg",
+                                    "href": "AnLiXiangQing.html"
+                                    
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_3.jpg",
+                                    "href": "AnLiXiangQing.html"
+                                    
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_3.jpg",
+                                    "href": "AnLiXiangQing.html"
+                                    
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_3.jpg",
+                                    "href": "AnLiXiangQing.html"
+                                    
+                                },
+                                {
+                                    "title": "Apple 苹果 iPhone 6s",
+                                    "pic": "upload/pro_3.jpg",
+                                    "href": "AnLiXiangQing.html"
+                                    
+                                }
+                            ]
+                        }
+                        itemCurrPage++;
+                        var result = "";
+                        for (var i = 0; i < data.lists.length; i++) {
+                            result += '<li><a href="' + data.lists[i].href + '"><span class="pic"><img src="' + data.lists[i].pic + '" /></span><p class="name">' + data.lists[i].title + '</p></a></li>'
+                        }
+                        setTimeout(function() { //测试用 后端可以删除timeout的函数
+                            $(".vrkt-list").append(result);
+
+                             me.resetload();
+                            if (!data.lists.length || data.lists.length < itemPageNum) {
+
+                                // 锁定
+                                me.lock();
+                                // 无数据
+                                me.noData();
+
+                                me.resetload();
+                            }
+
+                        }, 2000)
+
+                    },
+                    error: function(xhr, type) {
+                        console.dir('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            }
+        });
+    })
+    </script>
+</body>
+
+</html>
