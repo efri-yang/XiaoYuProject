@@ -22,7 +22,7 @@
 		 	height:px2rem(75px);
 		 	line-height: px2rem(75px);
 		 	text-align:center;
-		 	color:#b5161a;
+		 	color:#fff;
 		 	@include font-dpr(16px);
 		 }
 		 &.active{
@@ -178,6 +178,7 @@
 	        -webkit-align-items: center;
 	        align-items: center;
 	        height:px2rem(220px);
+	        line-height:px2rem(220px); 
 			a{
 				border-right:1px solid #e5e5e5;
 				border-bottom:1px solid #e5e5e5;
@@ -186,8 +187,10 @@
 				padding:px2rem(10px);
 				overflow:hidden;
 				display:block;
+				text-align: center;
 				img{
 					max-width:100%;
+					vertical-align: middle;
 				}
 			}
 		}

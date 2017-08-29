@@ -40,7 +40,22 @@
 			color:#e8343a;
 			border-radius:px2rem(30px);
 			border:none;
-			padding:px2rem(10px) px2rem(25px);
+			padding:px2rem(10px) px2rem(50px) px2rem(10px) px2rem(25px);
+		}
+	}
+}
+[data-dpr="1"] .pm-datetime-box{
+	.item-sel{
+		.coms-field-select{
+			background: #ffdebb url(../images/select_arrow_dpr1.png) no-repeat 100% center;
+		}
+	}
+}
+
+[data-dpr="3"] .pm-datetime-box{
+	.item-sel{
+		.coms-field-select{
+			background: #ffdebb url(../images/select_arrow_dpr3.png) no-repeat 100% center;
 		}
 	}
 }

@@ -27,14 +27,9 @@
                         <div class="lpxq-banner">
                             
                                 <ul id="J_banner_1">
+                                   
                                     <li>
-                                        <a href="#" target="_blank"><img src="upload/pro_slide_1.jpg"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank"><img src="upload/pro_slide_2.jpg"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank"><img src="upload/pro_slide_1.jpg"></a>
+                                        <a href="#" target="_blank"><img src="upload/bb_advert.jpg" onload="LoadImage(this,383,258)"></a>
                                     </li>
                                     
                                 </ul>
@@ -169,28 +164,29 @@
     <script type="text/javascript" src="js/layer/layer.js"></script>
     <script type="text/javascript">
       $(function() {
-        $("#J_banner_1").bannerSlider({
-            width: 383, //宽 (如果100%的时候请传入字符串)
-            height:258, //高
-            auto: false, //是否能自动滚
-            effect: "slider", //效果
-            Pause: 10000, //停顿时间-两个动画滚动间隔的时间
-            animTime:250,
-            //一张图滚动的时间
-            zIndex: 10, //设置层级相互遮盖
-            parentClass: "lpxq-banner",
-            pagination: {
-                show: false,
-                className: "banner-numlist"
-            },
-            btn: {
-                show: true,
-                dynamic: false //是否有鼠标移动上去显示箭头的效果
-            },
-            describe: {
-                show: false
-            }
-        });
+        // $("#J_banner_1").bannerSlider({
+        //     width: 383, //宽 (如果100%的时候请传入字符串)
+        //     height:258, //高
+        //     auto: false, //是否能自动滚
+        //     effect: "slider", //效果
+        //     Pause: 10000, //停顿时间-两个动画滚动间隔的时间
+        //     animTime:250,
+        //     //一张图滚动的时间
+        //     zIndex: 10, //设置层级相互遮盖
+        //     parentClass: "lpxq-banner",
+        //     LoadScale:true,
+        //     pagination: {
+        //         show: false,
+        //         className: "banner-numlist"
+        //     },
+        //     btn: {
+        //         show: true,
+        //         dynamic: false //是否有鼠标移动上去显示箭头的效果
+        //     },
+        //     describe: {
+        //         show: false
+        //     }
+        // });
 
         (function(){
             $("#J_ljdh").on("click",function(){

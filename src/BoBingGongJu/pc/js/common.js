@@ -318,6 +318,9 @@ function dropdownPlugin(className) {
             //初始化ul
             $this.css({ width: opts.width, height: opts.height, position: "relative" });
             //获取效果的方式
+            $.each($slider_lis,function(index,el){
+                !!opts.LoadScale && $(el).find("img").LoadImage({width:opts.width,height:opts.height});
+            })
             if (len > 1) {
                 animationWay = getAnimWay(opts.effect);
                 btnInit();
@@ -356,8 +359,6 @@ function LoadImage(ImgD, width, height, t) {
         }
     }
 ;(function($) {
-
-    
     $.fn.LoadImage = function(options) {
         var opt = options;
         return this.each(function(index, el) {
