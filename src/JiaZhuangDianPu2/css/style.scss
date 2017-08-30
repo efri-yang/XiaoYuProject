@@ -190,7 +190,7 @@
 .casedetail-tbl {
     border: 1px solid #e4e4e4;
     width: 100%;
-    margin-top: px2rem(30px);
+    margin-top: px2rem(20px);
     table-layout: fixed;
     td {
         padding: px2rem(20px);
@@ -224,7 +224,25 @@
     width: 100%;
     height:px2rem(610px);
     overflow:hidden;
-    margin-top: px2rem(30px);
+    margin-top: px2rem(20px);
+    .tag{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        padding: 0 px2rem(20px);
+
+        span{
+            padding:px2rem(6px) px2rem(12px);
+            color:#fff;
+            border-radius:px2rem(6px); 
+            font-size:px2rem(24px); 
+            margin: 0 px2rem(5px) px2rem(10px);
+            float: left;
+            background-color: rgba(0,0,0,0.8); 
+        }
+    }
     .swiper-slide {
         text-align: center;
         font-size: 18px;
@@ -1152,4 +1170,41 @@
     padding:px2rem(100px) px2rem(80px);
     line-height:1.5;
     @include font-dpr(18px); 
+}
+
+.casedetail-small-wrap{
+    position:relative;
+    margin-left:px2rem(-350px);
+}
+.casedetail-swiper-small-container{
+    margin-top:px2rem(15px);
+    width: 100%;
+    overflow: hidden;
+
+    .swiper-wrapper{
+        .swiper-slide{
+            float:left;
+            width:px2rem(236px);
+            overflow: hidden;
+            padding:0 px2rem(8);
+            .pic{
+                border:px2rem(3px) solid #fff;
+                width:px2rem(220px);
+                height: px2rem(195px);
+                line-height:px2rem(195px); 
+                
+                img{
+                    max-width: 100%;
+                    vertical-align: middle;
+                    max-height: 100%;
+                } 
+            }
+            &.swiper-slide-active{
+                .pic{
+                    border-color:#019a58; 
+                }
+            }
+            
+        }
+    }
 }

@@ -172,7 +172,9 @@
 	<div class="dialog-box guize-dialog-box" id="J_guize-dialog">
 		<div class="dia-hd">规则</div>
 		<div class="dia-bd">
+			
 			<div class="rule-intro-box">
+				<div class="tip">*每个用户每天可投5票</div>
 				<p><span class="circle">●</span> 严禁恶意刷屏行为，一经发现取消评选资格；</p>
 			    <p><span class="circle">●</span> 投票结束后，将有工作人员电话通知参与线下
 决赛暨颁奖仪式；</p>
@@ -187,6 +189,7 @@
     		var swiper = new Swiper('.swiper-container',{
     			pagination: '.banner-2-swiper-pagination',
         		paginationClickable: true,
+        		autoplay :2000,
     		});
     		$DiaJP=$("#J_prize-dialog").dialogs();
     		$DiaRule=$("#J_guize-dialog").dialogs();
