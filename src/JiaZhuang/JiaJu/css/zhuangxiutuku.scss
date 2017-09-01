@@ -706,6 +706,15 @@
 }
 .tkalxq-title{
 	margin-top: 8px;
+	.list{
+		float: left;
+		li{
+			display: none;
+			&.active{
+				display: block;
+			}
+		}
+	}
 	.tit{
 		color:#333333; 
 		font-size:18px;

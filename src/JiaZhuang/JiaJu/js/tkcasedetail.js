@@ -103,6 +103,7 @@
                 $this.stop(false, true).fadeOut(200, function() {
                     $this.attr("src", bigSrc).fadeIn();
                     $(".staff-tag-list li").eq(currIndex).fadeIn().siblings().hide();
+                    $(".tkalxq-title .list").children().eq(currIndex).show().siblings().hide();
                 });
                 if (opts.isTitShow) {
                     $bigPicTit.animate({ top: opts.bigPicWrapH }, 200, function() {
