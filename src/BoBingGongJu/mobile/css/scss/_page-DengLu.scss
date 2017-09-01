@@ -136,6 +136,7 @@
         right:0;
         top:50%;
         margin-top:px2rem(-30px);
+        background: none;
         &:active{
             background:#4ba8ff;
             color:#fff;
@@ -244,5 +245,264 @@
         display:block;
         background:url("../images/wx_icon_1.png") no-repeat;
         background-size:100% 100%;
+    }
+}
+
+.login-choice-item{
+    display: flex;
+    padding: px2rem(140px) px2rem(21px) 0;
+    li{
+        flex:1;
+        width: 50%;
+        padding: 0 px2rem(28px);
+    }
+    .item{
+        border:1px solid #c1c1c1;
+        display: block;
+        padding: px2rem(47px) 0 px2rem(50px);
+        .pic{
+            width:px2rem(109px);
+            height: px2rem(109px);
+            overflow: hidden;
+            background-position:center center;
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+        }
+        .txt{
+            margin-top:px2rem(30px); 
+            font-size:px2rem(32px); 
+            text-align: center;
+            color:#333333; 
+        }
+
+        &.item-1{
+            .pic{
+             background-image: url("../images/wechat_logo_1.png");
+            }
+        }
+
+        &.item-2{
+            .pic{
+                background-image: url("../images/xiaoyu_logo.png");
+            }
+            
+        }
+
+    }
+
+}
+
+
+.lrform-avatar{
+    margin-top:px2rem(87px); 
+    .pic{
+        width: px2rem(138px);
+        height:px2rem(138px);
+        overflow:hidden;
+        border-radius:100%; 
+        margin: 0 auto;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .txt{
+        text-align: center;
+        margin-top:px2rem(15px); 
+        @include font-dpr(16px);
+    }
+}
+
+.lr-zh-form{
+    margin-top:px2rem(100px); 
+    padding: 0 px2rem(30px);
+    .item{
+        position: relative;
+        .cicon{
+                position: absolute;
+                left:0;
+                top: 50%;
+                -webkit-transform: translate(0,-50%);
+                -ms-transform: translate(0,-50%);
+                -moz-transform: translate(0,-50%);
+                margin-top:px2rem(-3px); 
+        }
+        .ipt-text{
+            border: none;
+            border-bottom: 1px solid #c1c1c1;
+            display: block;
+            width: 100%;
+            height:px2rem(88px);
+            padding:px2rem(8px) px2rem(25px) px2rem(8px) px2rem(50px);
+            background-image: none;
+           
+            @include font-dpr(16px);
+            color:#333333;
+            border-radius:0;
+           
+            -webkit-appearance:none;
+        }
+        &.item-1{
+           .cicon{
+                width:px2rem(32px);
+                height: px2rem(36px);
+                background: url("../images/login_icon_1.png") no-repeat;
+                background-size: 100% 100%;
+           } 
+        }
+        &.item-2{
+            margin-top:px2rem(15px); 
+           .cicon{
+                width:px2rem(34px);
+                height: px2rem(39px);
+                background: url("../images/pwd_icon_1.png") no-repeat;
+                background-size: 100% 100%;
+           } 
+        }
+    }
+    .item-submit{
+        margin-top:px2rem(80px); 
+        .coms-cbtn{
+            background:#ff8403;
+            color:#fff; 
+            &:active{
+                background-color: darken(#ff8403,5%);
+            }
+        }
+    }
+}
+.lr-zh-item-tip{
+        color:#666666;
+        white-space: nowrap;
+        @include font-dpr(16px);
+        position: absolute; 
+        left:50%;
+        bottom: 10%;        
+        -webkit-transform: translate(-50%,0);
+        -ms-transform: translate(-50%,0);
+        -moz-transform: translate(-50%,0);
+        
+    }
+
+.lr-form-dialog{
+    width:70%;
+    position: fixed;
+    left:15%;
+    top:40%;
+    margin-top: 0;
+    background:#fff;
+    border-radius: px2rem(20px);
+    padding:px2rem(30px); 
+    z-index:1001;
+    @include font-dpr(16px);
+    visibility: hidden;
+    transition:all 0.15s ease-out;
+    transform: scale3d(0, 0, 0);
+    &.dia-in{
+        visibility:visible;
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+    .soma-hd{
+        color:#333333;
+        @include font-dpr(18px);
+        text-align: center; 
+    }
+    .soma-bd{
+        text-align: center;
+        color:#7c7c7c;
+        @include font-dpr(16px);
+        padding-top:px2rem(30px);  
+    }
+    .soma-ft{
+        padding-top:px2rem(50px); 
+        a{
+            background-image: -webkit-gradient(linear,100% 100%, 0% 0%, from(#FF6A6C), to(#ff9911), color-stop(1.0,#FF6A6C));
+            color:#fff;
+            @include font-dpr(16px); 
+        }
+    }
+    .close{
+        position: absolute;
+        right: 0;
+        top:0;
+        width: px2rem(50px);
+        height: px2rem(50px);
+        margin-right:  px2rem(-25px);
+        margin-top:  px2rem(-25px);
+        overflow: hidden;
+        background:url("../images/close_btn_1.png") no-repeat top center;
+        background-size: 100% 100%;
+
+    }
+}
+
+.lrform-choice-2{
+    margin-top:px2rem(100px); 
+    padding: 0 px2rem(30px);
+    .btnwx,.btnzh{
+        background:#009ddb;
+        color:#fff;  
+    }
+    .list{
+        margin-top:px2rem(45px); 
+        li{
+            position: relative;
+            line-height: 1.4;
+            padding-left:  px2rem(50px);
+            font-size: px2rem(26px);
+            color:#7c7c7c;
+            margin-bottom:px2rem(15px);  
+        }
+        .num{
+            width: px2rem(32px);
+            height:px2rem(32px);
+            line-height:px2rem(32px);
+            font-size: px2rem(24px);
+            text-align: center; 
+            color:#7c7c7c; 
+            background:#f3f3f3;
+            border:1px solid #dbdbdb;
+            position:absolute; 
+            left:0;
+            top:0;
+        }
+    }
+}
+
+.lrform-nc{
+    margin-top: px2rem(100px);
+    padding: 0 px2rem(30px);
+    .ipt-text{
+         border: none;
+            border-bottom: 1px solid #c1c1c1;
+            display: block;
+            width: 100%;
+            height:px2rem(88px);
+            padding:px2rem(8px) 0;
+            background-image: none;
+           
+            @include font-dpr(18px);
+            color:#333333;
+            border-radius:0;
+           
+            -webkit-appearance:none;
+    }
+    .item-tip{
+        color:#7c7c7c; 
+         @include font-dpr(14px);
+         margin-top:px2rem(10px); 
+    }
+    .item-submit{
+        margin-top:px2rem(160px); 
+    }
+    .ipt-submit{
+        background-color:#e8333a;
+        color: #fff;
+        @include font-dpr(18px);
+        &:active{
+            background-color:daken(#e8333a,5%);
+        } 
     }
 }

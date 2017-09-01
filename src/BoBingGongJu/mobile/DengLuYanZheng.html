@@ -29,6 +29,32 @@
         </div>
         
     </div>
+
+    <!--  -->
+    <div class="lr-form-dialog" id="J_lr-form-dialog">
+        <p class="soma-hd">绑定失败</p>
+        <div class="soma-bd">
+            该小鱼账号已绑定其他微信号
+        </div>
+        <div class="soma-ft">
+            <a href="#" class="handle coms-cbtn cbtn-full" data-roler="close">关闭</a>
+        </div>
+        <span class="close" data-roler="close"></span>
+    </div>
+    <!--  -->
+    <script type="text/javascript">
+        $(function(){
+             var DialogEWM = $("#J_lr-form-dialog").dialogs({
+                shadeClose: true
+            });
+
+            $(".item-submit").on("click",function(){
+                DialogEWM.show();
+            }).trigger("click");
+
+            
+        })
+    </script>
     
    
 </body>
