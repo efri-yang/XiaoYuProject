@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="handle-btn">
                                     <a href="#" class="btn-coms btn-clr28b28b" id="J_ljdh">立即兑换</a>
-                                    <a href="#" class="btn-coms btn-clrffb500" id="J_djzj">登记中奖信息</a>
+                                    <!-- <a href="#" class="btn-coms btn-clrffb500" id="J_djzj">登记中奖信息</a> -->
                                     <a href="#" class="btn-coms btn-clr59a9ec">8折购买商品</a>
                                 </div>
                         </div>
@@ -107,8 +107,50 @@
     <!-- footer end -->
     <!--  -->
     <div class="dia-ljdh-box" id="J_dia-ljdh-box">
+    	<!-- 信息为填写 -->
+    	<div class="dia-ljdh-form">
+			<p class="hd-tit">领奖信息</p>
+			<div class="form-item">
+				<label class="lab">姓名</label>
+                <input type="text" class="ipt-text">
+			</div>
+			<div class="form-item">
+				<label class="lab">手机</label>
+                <input type="text" class="ipt-text">
+			</div>
+			<div class="form-item">
+				<label class="lab">身份证号码</label>
+                <input type="text" class="ipt-text">
+			</div>
+
+			<div class="form-item-lqfs">
+                <span class="para-tit">礼品领取方式：</span>
+                <label class="lab"><input type="radio"  checked="" name="getway">自取</label>
+                <label class="lab"><input type="radio" name="getway">邮寄</label>   
+            </div>
+
+            <div class="form-item-address J_toggle-address">
+                <span class="para-tit">自取地址：</span>
+                <label>厦门思明区软件园二期望海路59号501室厦门小鱼网</label>
+            </div>
+            <div class="form-item-address address-zdy J_toggle-address undis">
+                <span class="para-tit">请输入收货地址：</span>
+                <textarea class="address"></textarea>
+            </div>
+    	</div>
+    	<!-- 信息已经填写 -->
+		<div class="dia-ljdh-form">
+			<p class="hd-tit">领奖信息</p>
+			<div class="dia-ljdh-intro">
+				<span class="intro-item">姓名：小鱼</span>
+				<span class="intro-item">电话：15803578758</span>
+				<span class="intro-item">身份证：350628789508230525</span>
+				<span class="intro-item">自取：厦门市软件园二期望海路59号之1-501</span>
+			</div>
+		</div>
+    	<!-- 信息已经填写 end-->
+    	<p class="tjsl-hd-tit">兑换数量</p>
         <div class="item clearfix">
-            <label class="lab">兑换数量：</label>
             <div class="para-val">
                 <span class="reduce"></span>
                 <input type="text" class="ipt-text" value="1" />
@@ -131,8 +173,8 @@
 与您联系</p>
 <p class="txt-1">凭此登记信息您将享受本商品专属5折优惠，折扣：<b class="money">￥50</b>，原价：<b  class="money">￥250</b></p>
         <div class="forms">
-            <!--  未登记的时候
-            <div class="clearfix">
+            <!--  未登记的时候 -->
+            <!-- <div class="clearfix">
                 <div class="item">
                     <label class="lab">姓名：</label>
                     <input type="text" class="ipt-text ipt-name">
@@ -194,7 +236,7 @@
                       type: 1,
                       shade: [0.8, '#000'],
                       shadeClose:true,
-                      area:"502px",
+                      area:"540px",
                       title:"兑换确认", //不显示标题
                       content:$("#J_dia-ljdh-box") //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
                       
@@ -202,19 +244,56 @@
             });
         })();
 
-        (function(){
-            $("#J_djzj").on("click",function(){
-                layer.open({
-                  type: 1,
-                  shade: [0.8, '#000'],
-                  area:"660px",
-                  shadeClose:true,
-                  title:"购买本商品登记", //不显示标题
-                  content:$("#J_dia-gmdj-box"), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        // (function(){
+        //     $("#J_djzj").on("click",function(){
+        //         layer.open({
+        //           type: 1,
+        //           shade: [0.8, '#000'],
+        //           area:"660px",
+        //           shadeClose:true,
+        //           title:"购买本商品登记", //不显示标题
+        //           content:$("#J_dia-gmdj-box"), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
                   
-                });
-            })
-        })()
+        //         });
+        //     })
+        // })();
+
+        //自取 邮寄单机效果
+            (function(){
+                 var $relateItem=$("#J_dia-ljdh-box .J_toggle-address"),
+                     $radios=$("#J_dia-ljdh-box input[name='getway']");
+                 $radios.on("click",function(){
+                    var $this=$(this),
+                        index=$radios.index($this);
+                       
+                        $relateItem.hide().eq(index).show();  
+                })
+            })();
+
+            (function(){
+            	var $tab=$(".dia-ljdh-form .form-item > .lab");
+            	var $input=$(".dia-ljdh-form .form-item > .ipt-text");
+            	$tab.each(function(){
+            		var $this=$(this);
+            		var $ipt=$this.siblings('.ipt-text');
+            		$this.on("click",function(){
+            			$this.hide();
+            			$ipt.focus();
+            		})
+            	});
+            	$input.each(function(index, el) {
+            		var $this=$(this);
+            		var $lab=$this.siblings('.lab');
+            		$this.on("foucs",function(){
+            			$lab.hide();
+            		}).on("blur",function(){
+            			var val=$(this).val();
+            			if(!$.trim(val)){
+            				$lab.show();
+            			}
+            		})
+            	});
+            })()
     });
     </script>
 </body>

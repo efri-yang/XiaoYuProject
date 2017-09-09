@@ -309,6 +309,79 @@
     }
 }
 
+.h-wyzdbx-intry{
+    background: #fffaed;
+    border: 1px solid #f3e1b1;
+    padding: 10px;
+    position: relative;
+    &.disable{
+            .btn-coms{
+                background: #cacaca;
+                cursor: default;
+            }
+            a{
+                cursor: default;
+            }
+        }
+    a {
+        display: block;
+        height: 100%;
+        &:hover {
+            text-decoration: none;
+            .zgm-intro {
+                text-decoration: none;
+                p {
+                    text-decoration: none;
+                }
+            }
+            .mask {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    .zgm-pic {
+        img {
+            max-width: 100%;
+            vertical-align: top;
+        }
+    }
+    .zgm-intro {
+        padding: 10px 145px 0px 0;
+        position: relative;
+        p {
+            @extend %text-overflow;
+            color: #ea2e2f;
+            line-height: 38px;
+        }
+        span {
+            position: absolute;
+            right: 0;
+            top: 10px;
+        }
+    }
+    .mask {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: url("../images/shade_1.png") repeat top center;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.25s ease-out;
+        .btn-start {
+            padding: 5px 0px;
+            font-size: 16px;
+            font-weight: normal;
+            display: block;
+            width: 120px;
+            text-align: center;
+            margin: 166px auto 0;
+        }
+    }
+}
+
 .h-lj-pk {
     border: 2px solid #e5464a;
     padding: 20px 10px;

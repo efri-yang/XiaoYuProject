@@ -116,35 +116,60 @@
 			padding-bottom: px2rem(20px);
 			float: left;
 			margin:0 px2rem(10px) px2rem(20px);
+			a{
+				display: block;
+				position: relative;
+			}
 			.pic{
 				width:100%;
 				height:px2rem(232px);
 				overflow:hidden;
+				position: relative;
 				img{
 					width:100%;
 					height:100%;
+				}
+				.tags{
+					position: absolute;
+					left:px2rem(15px);
+					bottom: px2rem(15px);
+					background-color: rgba(0,0,0,0.7);
+					border-radius: px2rem(15px);
+					text-align: center;
+					padding: px2rem(5px) px2rem(10px);
+					min-width: px2rem(130px);
+					font-size: px2rem(24px);
+					color: #fff;
 				}
 			}
 			.name{
 				color:#444444;
 				padding:px2rem(10px) px2rem(10px) 0;
-				@include font-dpr(14px);
+				font-size: px2rem(26px);
 				line-height: 1.31;
 				-webkit-line-clamp: 2;
 				display: -webkit-box;
 			    overflow: hidden;
+			    height: px2rem(82px);
 			    text-overflow: ellipsis;
 			    -webkit-box-orient: vertical;
 			}
-			.score{
-				@include font-dpr(14px);
-				padding:px2rem(8px) px2rem(10px) 0;
-				color:#fc583d;
-			}
+			
 			.amount{
-				@include font-dpr(14px);
+				font-size: px2rem(24px);
 				color:#28b28b;
 				padding:px2rem(8px) px2rem(10px) 0;
+			}
+
+			.dzm-btn{
+				position: absolute;
+				right: px2rem(10px);
+				background: #59a9ec;
+				bottom: px2rem(-5px);
+				color: #fff;
+				border-radius: px2rem(15px);
+				font-size: px2rem(24px);
+				padding:  px2rem(5px) px2rem(10px);
 			}
 
 		}
@@ -225,6 +250,45 @@
 	    	background-color:darken(#3190e8,10%);
 	    }
 
+	}
+}
+
+
+.dzm-dialog-box{
+	top:25%;
+	padding-bottom: px2rem(50px);
+	min-height: px2rem(400px);
+	visibility: hidden;
+	.tip{
+		margin-top: px2rem(20px);
+		color: #888888;
+		font-size: px2rem(26px);
+		padding:0 px2rem(10px);
+		white-space: nowrap;
+	}
+	.list{
+		margin-top: px2rem(10px);
+		li{
+			width:px2rem(220px);
+			height: px2rem(100px);
+			border:1px solid #e2e2e2;
+			background:#f7f7f7;
+			text-align: center;
+			padding-top: px2rem(15px);
+			float: left;
+			margin:px2rem(20px) px2rem(10px) 0; 
+			.tit{
+				color:#333333;
+				font-size: px2rem(30px); 
+			}
+			.num{
+				color: #666666;
+				line-height: 1.4;
+				font-size: px2rem(28px); 
+			}
+		}
+		
+		
 	}
 }
 

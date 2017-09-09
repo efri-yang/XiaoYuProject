@@ -357,11 +357,12 @@
         border: 1px solid #e5e5e5;
         margin-bottom: 15px;
         .name {
-            color: #444444;
+            color: #666;
             line-height: 20px;
             height: 40px;
-            padding: 0 10px;
+            padding:5px 10px;
             display: block;
+            font-size: 16px;
             &:hover {
                 color: #fc583d;
                 text-decoration: none;
@@ -370,20 +371,49 @@
         .pic {
             width: 226px;
             height: 154px;
+            line-height: 154px;
             overflow:hidden;
             text-align:center;
             display:block;
+            text-align: center;
+            position: relative;
             img {
                 max-width: 100%;
             }
+            .mask{
+                position: absolute;
+                left:10px;
+                bottom:8px;
+                background-color:#000000;
+                filter:Alpha(opacity=70);
+                background-color:rgba(0,0,0,0.7);
+                height: 25px;
+                line-height: 25px;
+                min-width: 64px;
+                padding: 0 10px;
+                border-radius: 15px;
+                color: #fff;
+            }
         }
-        .score {
-            float: left;
+       
+        .times {
+           float: left;
             color: #28b28b;
         }
-        .times {
+        .dzm-btn{
+            width: 120px;
+            line-height:21px;
+            line-height: 21px;
+            overflow: hidden;
+            text-align: center;
+            color:#fff;
             float: right;
-            color: #fc583d;
+            background:#59a9ec;
+            border-radius: 15px;
+            cursor: pointer;
+            &:hover{
+                background-color: darken(#59a9ec,5%);
+            } 
         }
     }
 }
@@ -549,6 +579,40 @@
         border: 1px solid #e1e1e1;
         &:disabled {
             color: #b1b1b1;
+        }
+    }
+}
+
+
+.dia-dzm-box{
+    background: #fff;
+    padding:10px 0 30px;
+    width: 533px;
+    .caption{
+        color:#666666;
+        font-size: 14px;
+        padding: 0  20px; 
+    }
+    .list{
+        padding:0 10px;
+        li{
+            margin:15px 10px 0;
+            display: inline;
+            float: left;
+            width: 149px;
+            height: 68px;
+            overflow: hidden;
+            border:1px solid #e2e2e2;
+            background: #f7f7f7;
+            text-align: center;
+            .tit{
+                margin-top: 13px;
+                color: #333333;
+            }
+            .num{
+                color: #666666;
+            }
+
         }
     }
 }

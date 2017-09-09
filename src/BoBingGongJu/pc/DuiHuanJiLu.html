@@ -37,27 +37,30 @@
 
                             <ul class="djjl-pro-list clearfix">
                                 <li>
-                                    <a href="#" class="pic"><img src="upload/djjl_pro_1.jpg" /></a>
-                                    <a class="name" href="">绿巨能 小火箭急速车载快充急速车载快充</a>
-                                    <div class="clearfix mt10 mb10 pl10 pr10">
-                                        <span class="score">35博饼分</span>
-                                        <span class="times">已兑换：3</span>
+                                    <a href="#" class="pic"><img src="upload/djjl_pro_1.jpg" /><span class="mask">小鱼币</span></a>
+                                    <a class="name" href="">绿巨能 小火箭急载快充</a>
+                                    <div class="clearfix  mb10 pl10 pr10">
+                                       
+                                        <span class="times">共3份</span>
+                                        
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="upload/djjl_pro_1.jpg" />
+                                    <a href="#" class="pic"><img src="upload/djjl_pro_1.jpg" /><span class="mask">虚拟奖品</span></a>
                                     <a class="name" href="">绿巨能 小火箭急速车载快充急速车载快充</a>
-                                    <div class="clearfix mt10 mb10 pl10 pr10">
-                                        <span class="score">35博饼分</span>
-                                        <span class="times">已兑换：3</span>
+                                    <div class="clearfix  mb10 pl10 pr10">
+                                       
+                                        <span class="times">共3份</span>
+                                        <span class="dzm-btn">点击查看电子码</span>
+
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="upload/djjl_pro_1.jpg" />
+                                    <a href="#" class="pic"><img src="upload/djjl_pro_1.jpg" /><span class="mask">实物奖品</span></a>
                                     <a class="name" href="">绿巨能 小火箭急速车载快充急速车载快充</a>
-                                    <div class="clearfix mt10 mb10 pl10 pr10">
-                                        <span class="score">35博饼分</span>
-                                        <span class="times">已兑换：3</span>
+                                    <div class="clearfix  mb10 pl10 pr10">
+                                        
+                                        <span class="times">共3份</span>
                                     </div>
                                 </li>
 
@@ -117,13 +120,55 @@
         <!-- footer start -->
         @@include("./views/_footer.html")
         <!-- footer end -->
-      
+      <!--  -->
+      <div class="dia-dzm-box" id="J_dia-dzm-box">
+            <p class="caption">具体使用方法请查看对应奖品的详情页</p>
+            <ul class="list clearfix">
+                <li>
+                   <p class="tit">电子码</p>
+                   <p class="num">215488232</p>
+                </li>
+                <li>
+                   <p class="tit">电子码</p>
+                   <p class="num">215488232</p>
+                </li>
+                <li>
+                   <p class="tit">电子码</p>
+                   <p class="num">215488232</p>
+                </li>
+                <li>
+                   <p class="tit">电子码</p>
+                   <p class="num">215488232</p>
+                </li>
+                <li>
+                   <p class="tit">电子码</p>
+                   <p class="num">215488232</p>
+                </li>
+                <li>
+                   <p class="tit">电子码</p>
+                   <p class="num">215488232</p>
+                </li>
+            </ul>
+      </div>
 
+      <!--  -->
+   <script type="text/javascript" src="js/layer/layer.js"></script>
     <script type="text/javascript">
         $(function(){
             //下拉列表插件调用
             dropdownPlugin(".search-condition-box .time");
             dropdownPlugin(".search-condition-box .baoxiang");
+
+
+            layer.open({
+                      type:1,
+                      shade: [0.8, '#000'],
+                      shadeClose:true,
+                      area:"533px",
+                      title:"奖品电子码", //不显示标题
+                      content:$("#J_dia-dzm-box") //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+                      
+                    });
         })
     </script>
 </body>
