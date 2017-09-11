@@ -65,12 +65,11 @@
                 arrowH: 35,
                 scroW: 103,
                 dir: "left",
-                index:0,
                 isTitShow: true,
                 isBigBtnShow: true //是否显示标题                                                  
             }
             var opts = $.extend(defaultsId, $.fn.staffGallery.defaults, option);
-            var Index = opts.index,
+            var Index = 0,
                 $smallPrev = $("#" + opts.smallPrevId),
                 $smallNext = $("#" + opts.smallNextId),
                 $container = $("#" + opts.containerId),
@@ -105,7 +104,6 @@
                     $this.attr("src", bigSrc).fadeIn();
                     $(".staff-tag-list li").eq(currIndex).fadeIn().siblings().hide();
                     $(".tkalxq-title .list").children().eq(currIndex).show().siblings().hide();
-
                 });
                 if (opts.isTitShow) {
                     $bigPicTit.animate({ top: opts.bigPicWrapH }, 200, function() {
@@ -155,10 +153,7 @@
                 }
                 $smallPrev.eq(Index).addClass(opts.smallDisPrevClass);
                 if (totalLen <= opts.viewLen) {
-                    $bigPrevBtn.hide();
-                    $bigNextBtn.hide();
-                    $smallNext.hide();
-                    $smallPrev.hide();
+
                 } else {
                     if (opts.dir == "left") {
                         $smallListInner.width(totalLen * opts.scroW)
@@ -172,8 +167,6 @@
                 } else {
                     $smallListWrap.css({ "height": opts.viewLen * opts.scroW, "position": "relative", "overflow": "hidden" });
                 }
-
-
 
 
 
@@ -225,10 +218,7 @@
                     $smallNext.removeClass(opts.smallDisNextClass);
                 }
                 if (currIndex == 0) {
-                    $(".staff-prevPage").show();
                     $smallPrev.addClass(opts.smallDisPrevClass);
-                }else{
-                    $(".staff-prevPage").hide();
                 }
                 slideIndexChange(Index, opts.dir);
 
@@ -240,13 +230,7 @@
                     $smallPrev.removeClass(opts.smallDisPrevClass);
                 }
                 if (Index == (totalLen - 1)) {
-
-                    $smallNext.addClass(opts.smallDisNextClass);
-
-                    $(".staff-nextPage").show();
-                }else{
-                    $(".staff-nextPage").hide();
-                    $smallNext.removeClass(opts.smallDisNextClass);
+                    $smallNext.addClass(opts.smallDisNextClass)
                 }
 
                 if (Index <= opts.fixLen - 1) {
@@ -277,7 +261,7 @@
 
 
             //单击小图的左按钮  
-            $smallPrev.on("click", function() {
+            $smallPrev.bind("click", function() {
                 if (Index == 0) { return false }
                 Index--;
                 prevBtnHander(Index)
@@ -286,14 +270,14 @@
 
 
             //单击小图的右按钮  
-            $smallNext.on("click", function() {
+            $smallNext.bind("click", function() {
                 if (Index == (totalLen - 1)) { return false }
                 Index++;
                 NextBtnHander(Index);
                 return false;
             });
             $smallDataItems.each(function() {
-                $(this).on("click", function() {
+                $(this).bind("click", function() {
                     var lastIndex = Index
                     Index = $smallDataItems.index(this);
                     if (Index == 0) { $smallPrev.addClass(opts.smallDisPrevClass); }
@@ -315,17 +299,15 @@
                 $bigNext.css("top", (opts.bigPicWrapH - bigNextH) / 2);
                 $bigPrev.css("top", (opts.bigPicWrapH - bigPrevH) / 2)
                 //单击大图的右按钮
-                $bigNext.on("click", function() {
-
+                $bigNext.bind("click", function() {
                     Index++;
-                    console.dir("Index:"+Index+',totalLen:'+totalLen);
                     if (Index != 0) { $bigPrev.show(); }
                     if (Index == totalLen - 1) { $(this).hide() }
                     NextBtnHander(Index)
                     return false;
                 })
                 //单击大图的左按钮
-                $bigPrev.on("click", function() {
+                $bigPrev.bind("click", function() {
 
                     Index--;
                     if (Index != totalLen - 1) { $bigNext.show(); }
@@ -334,7 +316,7 @@
                     return false
                 });
                 //大图 $bigWrap hover的时候的效果
-                $bigPicWrap.on("mouseover", function(event) {
+                $bigPicWrap.bind("mouseover", function(event) {
                     var relateElem = event.relatedTarget;
                     if ($(relateElem).closest($bigPicWrap).length > 0) {
                         return;
@@ -344,19 +326,19 @@
                         } else if (Index == 0) {
                             $bigNext.stop(false, true).fadeIn()
                         } else {
-                            // $bigPrev.stop(false, true).fadeIn();
-                            // $bigNext.stop(false, true).fadeIn()
+                            $bigPrev.stop(false, true).fadeIn();
+                            $bigNext.stop(false, true).fadeIn()
                         }
                         $checkBig.stop(false, true).fadeIn();
                     }
-                }).on("mouseout", function(event) {
+                }).bind("mouseout", function(event) {
                     var relateElem = event.relatedTarget;
                     if ($(relateElem).closest($bigPicWrap).length > 0) {
                         return;
                     } else {
-                        // $bigPrev.stop(false, true).fadeOut();
+                        $bigPrev.stop(false, true).fadeOut();
 
-                        // $bigNext.stop(false, true).fadeOut();
+                        $bigNext.stop(false, true).fadeOut();
                         $checkBig.stop(false, true).fadeOut();
                     }
 
@@ -364,56 +346,14 @@
             }
 
         }
-
-         $.fn.staffGallery.defaults = {
-                smallPrevId: "J_staff-smallPrev",
-                smallNextId: "J_staff-smallNext",
-                smallListInnerId: "J_staff-smallListInner",
-                smallDisPrevClass: "staff-dis-smallPrev",
-                smallDisNextClass: "staff-dis-smallNext",
-                smallDataClass: "staff-smallItem",
-                smallWrapId: "J_staff-smallWrap",
-                bigPicTitClass: "staff-bigPicTit",
-                arrowId: "J_staff-arrow",
-                bigPicWrapId: "J_staff-bigWrap",
-                bigPrevClass: "staff-bigPrev",
-                bigNextClass: "staff-bigNext",
-                bigPicWrapW: 666,
-                bigPicWrapH: 483,
-                fixLen: 4, //第几张固定
-                viewLen: 6, //滚动可见的长度
-                arrowH: 35,
-                scroW: 103,
-                dir: "left",
-                index:0,
-                isTitShow: true,
-                isBigBtnShow: true //是否显示标题                                                  
-            }
-        $.fn.staffGalleryDestory=function(){
-                var $this=this;
-                $("#J_staff-bigWrap").off('mouseover').off('mouseout');
-                $(".staff-bigNext").off("click");
-                $(".staff-bigPrev").off("click");
-                $("#J_staff-smallPrev").off("click");
-                $("#J_staff-smallNext").off("click");
-                $("#J_staff-smallListInner .staff-smallItem").each(function() {
-                    $(this).off("click");
-                });
-                return this;
-        }
     })(jQuery);
 
  $(function() {
 
-        var currIndex=0,
-            fixLen=3,
-            viewlen=4,
-            initIndex=0,
-            oldTotalLen=$(".staff-smallList").children().length;
-        function initGallery(index,fixLen){
-            $("#J_staff-bigPic").staffGalleryDestory().staffGallery({
-                        index:index,
-                        fixLen:fixLen,//固定在第几张
+      
+       
+         $("#J_staff-bigPic").staffGallery({
+                        fixLen:3,//固定在第几张
                         isTitShow:false,
                         isBigBtnShow:true,
                         bigPicWrapW:752,//大图的宽度
@@ -422,90 +362,13 @@
                         scroW:190,//li的宽度+边框+margin
                         dir:"left"//滚动方向向左                                  
                                  
-            });
-        }
-        initGallery(initIndex,fixLen);
+        });
+
+
          $(".wechat-qrcode").hover(function(){
             $(this).addClass("active");
          },function(){
             $(this).removeClass("active");
-         });
-          
-
-
-         $(".staff-nextPage").on("click",function(event){
-                var rand=Math.floor(Math.random()*5);
-                $(this).hide();
-                if(rand==0){
-                    console.log('没有数据啦！')
-                    var data={lists:[]}  //ajax 返回的数据
-                }else{
-                    var data={lists:[{},{},{}]}  //ajax 返回的数据
-                $('<li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">7</a></li><li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">8</a></li><li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">9</a></li>').appendTo(".staff-smallList");
-
-                    oldTotalLen=oldTotalLen+data.lists.length;
-                    initIndex=oldTotalLen-viewlen;
-                    initGallery(initIndex,4);
-                   
-                    $(".staff-bigNext").fadeIn();
-                    $(".staff-bigPrev").fadeIn();
-                    $("#J_staff-smallPrev").fadeIn();
-                    $("#J_staff-smallNext").fadeIn();
-                    $(".staff-bigNext").trigger("click");
-                }
-                
-                
-               
-
-                if(data.lists.length==0){
-                    $(".staff-nextPage").remove();
-                    $(".staff-bigNext").hide();
-                    $("#J_staff-smallNext").addClass('staff-dis-smallNext');
-                }
-
-         });
-
-
-
-
-         if(currIndex==0){
-            $(".staff-prevPage").show();
-         }else{
-            $(".staff-prevPage").hide();
-         }
-
-         $(".staff-prevPage").on("click",function(event){
-
-                event.preventDefault();
-                var rand=Math.floor(Math.random()*10);
-                $(this).hide();
-                if(rand==0){
-                    console.log('没有数据啦！')
-                    var data={lists:[]}  //ajax 返回的数据
-                }else{
-                    var data={lists:[{},{},{}]}  //ajax 返回的数据
-                $('<li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">-3</a></li><li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">-2</a></li><li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">-1</a></li>').prependTo(".staff-smallList");
-
-                   
-                    
-                    initGallery(data.lists.length,1);
-                   
-                    $(".staff-bigNext").fadeIn();
-                    $(".staff-bigPrev").fadeIn();
-                    $("#J_staff-smallPrev").fadeIn();
-                    $("#J_staff-smallNext").fadeIn();
-                    $(".staff-bigPrev").trigger("click");
-                }
-                
-                
-               
-
-                if(data.lists.length==0){
-                    $(".staff-prevPage").remove();
-                    $(".staff-bigPrev").hide();
-                    $("#J_staff-smallPrev").addClass('staff-dis-smallPrev');
-                }
-
          })
 
 

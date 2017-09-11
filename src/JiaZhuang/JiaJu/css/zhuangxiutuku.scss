@@ -854,3 +854,22 @@
 
 .staff-small-Arrow{ position:absolute; left:0; top:0; width:190px; height:120px; overflow:hidden}
 .staff-small-Arrow b{ display:block;border:3px solid #28ab00; display:block; width:174px; height:114px;margin:0 5px}
+
+
+.staff-nextPage{
+	display: none;
+	background:url("../img/zhuangxiutuku/arrow_right.png") no-repeat top center;right:10px;
+}
+.staff-prevPage{
+	
+	background:url("../img/zhuangxiutuku/arrow_left.png") no-repeat top center;left:10px;
+}
+.staff-smallWrap{
+	.staff-nextPage{
+		right: 20px;
+	}
+	.staff-prevPage{
+		left:20px;
+		
+	}
+}
