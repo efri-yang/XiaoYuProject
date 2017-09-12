@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+    <style type="text/css">
+    .checkbox,
+.radiobox {
+    width: 1.8em;
+    height: 1.8em;
+}
+.checkbox input[type=checkbox],
+.radiobox input[type=radio] {
+    -webkit-appearance: none;
+    background-color: transparent;
+    outline: 0 !important;
+    border: 0;
+    font-size: 1em !important;
+}
+.checkbox input[type=checkbox]:before,
+.radiobox input[type=radio]:before {
+    display: inline-block;
+    text-align: center;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 1.8em;
+    font-weight: thin;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: rgb(212, 212, 212);
+}
+.checkbox input[type=checkbox]:checked:before,
+.radiobox input[type=radio]:checked:before {
+    color: rgb(76, 184, 184);
+}
+.checkbox input[type=checkbox]:before {
+    content: "\f096";
+}
+.checkbox input[type=checkbox]:checked:before {
+    content: "\f14a";
+}
+.radiobox input[type=radio]:before {
+    content: "\f1db";
+}
+.radiobox input[type=radio]:checked:before {
+    content: "\f192";
+}
+    </style>
+        <div class="checkbox">
+            <input type="checkbox" checked="checked">
+        </div>
+        <div class="radiobox">
+            <input type="radio" name="1" />
+            <input type="radio" name="1" checked="checked" />
+        </div>
+    </body>
+</html>

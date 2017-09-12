@@ -276,6 +276,115 @@
     </div>
    
     <script type="text/javascript" src="js/tkcasedetail.js"></script>
+    <script type="text/javascript">
+            $(function() {
+
+        var currIndex=0,
+            fixLen=3,
+            viewlen=4,
+            initIndex=0,
+            oldTotalLen=$(".staff-smallList").children().length;
+        function initGallery(index,fixLen){
+            $("#J_staff-bigPic").staffGalleryDestory().staffGallery({
+                        index:index,
+                        fixLen:fixLen,//固定在第几张
+                        isTitShow:false,
+                        isBigBtnShow:true,
+                        bigPicWrapW:752,//大图的宽度
+                        bigPicWrapH:482,//大图高度  
+                        viewLen:4,//滚动可见的长度
+                        scroW:190,//li的宽度+边框+margin
+                        dir:"left"//滚动方向向左                                  
+                                 
+            });
+        }
+        initGallery(initIndex,fixLen);
+         $(".wechat-qrcode").hover(function(){
+            $(this).addClass("active");
+         },function(){
+            $(this).removeClass("active");
+         });
+          
+
+
+         $(".staff-nextPage").on("click",function(event){
+                var rand=Math.floor(Math.random()*5);
+                $(this).hide();
+                if(rand==0){
+                    console.log('没有数据啦！')
+                    var data={lists:[]}  //ajax 返回的数据
+                }else{
+                    var data={lists:[{},{},{}]}  //ajax 返回的数据
+                $('<li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">7</a></li><li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">8</a></li><li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">9</a></li>').appendTo(".staff-smallList");
+
+                    oldTotalLen=oldTotalLen+data.lists.length;
+                    initIndex=oldTotalLen-viewlen;
+                    initGallery(initIndex,4);
+                   
+                    $(".staff-bigNext").fadeIn();
+                    $(".staff-bigPrev").fadeIn();
+                    $("#J_staff-smallPrev").fadeIn();
+                    $("#J_staff-smallNext").fadeIn();
+                    $(".staff-bigNext").trigger("click");
+                }
+                
+                
+               
+
+                if(data.lists.length==0){
+                    $(".staff-nextPage").remove();
+                    $(".staff-bigNext").hide();
+                    $("#J_staff-smallNext").addClass('staff-dis-smallNext');
+                }
+
+         });
+
+
+
+
+         if(currIndex==0){
+            $(".staff-prevPage").show();
+         }else{
+            $(".staff-prevPage").hide();
+         }
+
+         $(".staff-prevPage").on("click",function(event){
+
+                event.preventDefault();
+                var rand=Math.floor(Math.random()*10);
+                $(this).hide();
+                if(rand==0){
+                    console.log('没有数据啦！')
+                    var data={lists:[]}  //ajax 返回的数据
+                }else{
+                    var data={lists:[{},{},{}]}  //ajax 返回的数据
+                $('<li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">-3</a></li><li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">-2</a></li><li><a href="upload/zxtkalxq_2.jpg" class="staff-smallItem">-1</a></li>').prependTo(".staff-smallList");
+
+                   
+                    
+                    initGallery(data.lists.length,1);
+                   
+                    $(".staff-bigNext").fadeIn();
+                    $(".staff-bigPrev").fadeIn();
+                    $("#J_staff-smallPrev").fadeIn();
+                    $("#J_staff-smallNext").fadeIn();
+                    $(".staff-bigPrev").trigger("click");
+                }
+                
+                
+               
+
+                if(data.lists.length==0){
+                    $(".staff-prevPage").remove();
+                    $(".staff-bigPrev").hide();
+                    $("#J_staff-smallPrev").addClass('staff-dis-smallPrev');
+                }
+
+         })
+
+
+    })
+    </script>
 </body>
 
 </html>

@@ -73,6 +73,7 @@
 						<p class="name">数名</p>
 					</div>
 				</li>
+
    	  		</ul>
    		</div>
    		<div class="section-tab-bd  section-tab-zbdw" id="J_tab-zbdw">
@@ -121,11 +122,56 @@
    
    <div class="fixed-bottom-placehold"></div>
 
-   <a href="#" class="fixed-ljbm-btn">立即报名</a>
+   <a href="#" class="fixed-ljbm-btn" id="J_fixed-ljbm-btn">立即报名</a>
 
-    
+   <!-- 日记报名弹出框 star -->
+	<div class="rjbm-dialog" id="J_rjbm-dialog">
+		<div class="forms-box">
+			<div class="item">
+				<input type="text" class="ipt-text" placeholder="姓名" />
+			</div>
+			<div class="item">
+				<input type="text" class="ipt-text" placeholder="手机号码" />
+			</div>
+			<ul class="item item-xyid clearfix">
+				<li>
+					<label><input type="radio" class="ipt-radio" name="toggleid" checked data-target="#J_tabxyid">有小鱼ID</label>
+				</li>
+				<li><label><input type="radio" class="ipt-radio" name="toggleid" data-target="#J_tabempty">无小鱼ID</label></li>
+			</ul>
+			<div class="item tab-bd-xyid active" id="J_tabxyid">
+				<input type="text" class="ipt-text" placeholder="输入小鱼ID" />
+			</div>
+			<div class="item tab-bd-xyid " id="J_tabempty"></div>
 
-    
+			<div class="item">
+				<input type="submit" class="ipt-submit" value="提交报名">
+			</div>
+		</div>
+	</div>
+
+   <!-- 日记报名弹出框 end -->
+
+    <script type="text/javascript">
+    	$(function(){
+    		var mDialogIndex;
+    		$(".rjbm-dialog input[name='toggleid']").on("click",function(){
+                $(this).tab('show');                 
+			});
+
+			$("#J_fixed-ljbm-btn").on("click",function(){
+				mDialogIndex=mDialog.open({
+					duration:150,
+					width:"80%",
+					content:$("#J_rjbm-dialog")
+				});
+			});
+
+			$(".ipt-submit").on("click",function(){
+				mDialog.close(mDialogIndex);
+			})
+    	})
+    </script>
     
 
 
@@ -143,7 +189,7 @@
 				$(".section-tab-hd a[data-toggle='tab']").click(function(event) {
 		            event.preventDefault();
 		            itemIndex = $(".section-tab-hd a[data-toggle='tab']").index(this);
-		            $(this).tab('show');
+		            $(this).tab('show');                  
 		        });
 				
 			})

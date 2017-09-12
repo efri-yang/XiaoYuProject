@@ -152,10 +152,10 @@
         left:50%;
         margin-left:px2rem(-100px);
 
-        top:38%;
+        top:46.5%;
         width:px2rem(200px);
-        height:px2rem(160px);
-        line-height:px2rem(160px);
+        height:px2rem(98.66px);
+        line-height:px2rem(98.66px);
         text-align:center;
         
         overflow:hidden;
@@ -988,7 +988,7 @@
             border:1px solid #f3e1b1;
             padding: px2rem(10px);
             width:px2rem(200px);
-            height:px2rem(186px);
+            height:px2rem(133.3px);
             position:relative;
             display:block;
         }
@@ -1149,4 +1149,145 @@
 	.item-submit{
 		padding-top:px2rem(20px);
 	}
+}
+
+
+.bb-enregister-box-zdy{
+    padding-top:px2rem(30px);
+    .soma-hd{
+        .tip{
+            color:#aeaeae;
+            font-size:px2rem(28px);
+        }
+        .tit{
+            height:px2rem(60px);
+            line-height:px2rem(60px);
+            padding:0 px2rem(20px);
+            background-image:-webkit-gradient(linear,0% 100%, 100% 100%, from(#FF804F), to(#FF1C29), color-stop(1.0,#336600));
+            
+            display:inline-block;
+            border-radius:0 px2rem(30px) px2rem(30px) 0;
+            color:#fff;
+            @include font-dpr(14px);
+        }
+    }
+    .caption-1{
+        color:#fff;
+       font-size: px2rem(36px);
+        text-align:center;
+        margin-top:px2rem(28px);
+        height:px2rem(68px);
+        line-height: px2rem(56px);
+        background: url("../images/zdy_form_caption.png") no-repeat top center;
+        background-size: auto 100% 
+    }
+    .caption-2{
+        text-align:left;
+        padding:0 px2rem(30px);
+        margin-top:px2rem(20px);
+        span{
+            background:#ffefcc;
+            border-radius:px2rem(30px);
+            line-height:1.2;
+            border:1px solid #ffde97;
+            border-radius:px2rem(8px);
+            display:inline-block;
+            padding:px2rem(10px) px2rem(30px);
+            color:#d78400;
+            @include font-dpr(12px);
+            
+        }
+    }
+}
+
+.bb-enregister-form-zdy{
+    margin-top:px2rem(30px);
+    padding:0 px2rem(30px);
+    .item{
+        margin-bottom:px2rem(30px);
+        display:flex;
+        .para-tit{
+            flex:4;
+            color:#666666;
+            @include font-dpr(14px);
+        }
+        .para-val{
+            flex:11;
+            @include font-dpr(14px);
+            color:#888;
+            .lab{
+                white-space: nowrap;
+                display:inline-block;
+                margin-right:px2rem(20px);
+                margin-bottom:px2rem(12px);
+                color:#888;
+            }
+        }
+
+    }
+    .item-submit{
+        padding-top:px2rem(20px);
+    }
+    .item-yzm{
+        position: relative;
+        .coms-field-text{
+            width:px2rem(450px); 
+        }
+        .btn-getyzm{
+            position: absolute;
+            right: 0;
+            top:0;
+            background: #4bd4a1;
+            padding-left:0;
+            height:px2rem(88px); 
+            width:px2rem(200px); 
+            padding-right:0;
+            color:#fff;
+            font-size:px2rem(28px);  
+            &:disabled{
+                background:#f8f8f8;
+                color:#b0b0b1; 
+            } 
+        }
+    }
+}
+
+.bb-enregister-form-zdyjg{
+    border-top:1px dashed #d6d6d6;
+     margin:px2rem(30px) px2rem(30px) 0;
+     .tip-1{
+        text-align: center;
+        font-size:px2rem(32px);
+        line-height: px2rem(42px);
+        color:#4bd4a1;  
+        margin-top:px2rem(30px); 
+        i{
+            width:px2rem(42px);
+            height:px2rem(42px);
+            overflow: hidden;
+            background: url("../images/zdy_form_dg.png") no-repeat top center;
+            background-size: 100% 100%;
+            display: inline-block;
+            vertical-align: top; 
+            margin-right: px2rem(10px); 
+        }
+     }
+     .qrcode-1{
+        text-align: center;
+        margin-top:px2rem(35px);
+        .pic{
+            width:px2rem(294px);
+            height: px2rem(294px);
+            overflow: hidden;
+            margin: 0 auto;
+            img{
+                width: 100%;
+                height: 100%;
+            } 
+        }
+        .txt{
+            color:#999999;
+            font-size:px2rem(28px);  
+        }
+     }
 }
