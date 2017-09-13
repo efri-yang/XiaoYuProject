@@ -150,18 +150,18 @@
     .bb-bowl-logo{
         position:absolute;
         left:50%;
-        margin-left:px2rem(-100px);
+        margin-left:px2rem(-75px);
 
-        top:46.5%;
-        width:px2rem(200px);
-        height:px2rem(98.66px);
-        line-height:px2rem(98.66px);
+        top:50%;
+        width:px2rem(150px);
+        height:px2rem(74px);
+        line-height:px2rem(74px);
         text-align:center;
         
         overflow:hidden;
         img{
-            max-width:100%;
-            max-height:100%;
+            width:100%;
+            height:100%;
             vertical-align:middle;
         }
     }
@@ -1042,7 +1042,8 @@
         background:url("../images/bb_qfl.jpg") no-repeat top center;
         background-size:100% auto;
         img{
-        	max-width:100%;
+        	width:100%;
+            vertical-align: top;
         }
     }
 }
@@ -1057,7 +1058,8 @@
         background-size:auto 100%;
         position:relative;
         img{
-        	max-width:100%;
+        	width:100%;
+            vertical-align: top;
         }
         .mask{
         	background-color:rgba(0,0,0,0.5);

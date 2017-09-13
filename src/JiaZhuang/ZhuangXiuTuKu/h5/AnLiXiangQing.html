@@ -86,8 +86,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-button-next"><b></b></div>
-                <div class="swiper-button-prev"><b></b></div>
+                <div class="swiper-button-next" id="J_swiper-button-next"><b></b></div>
+                <div class="swiper-button-prev" id="J_swiper-button-prev"><b></b></div>
+
+                <a href="#" class="next-page" id="J_next-page"><b></b></a>
+                <a href="#" class="prev-page"  id="J_prev-page"><b></b></a>
             </div>
             <!-- <ul class="casedetail-swiper-guide">
                 <li><a href="#">上个案例</a></li>
@@ -98,7 +101,7 @@
     <div class="casedetail-small-wrap">
         <div class="swiper-container casedetail-swiper-small-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide active">
+                <div class="swiper-slide">
                     <div class="pic"><img src="upload/pro_6.jpg"></div>
                 </div>
                 <div class="swiper-slide">
@@ -181,12 +184,7 @@
         var currIndex = 0;
         var $slideSmall = $(".casedetail-swiper-small-container .swiper-slide");
 
-        var swiper1 = new Swiper('.casedetail-swiper-container', {
-            paginationClickable: true,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            spaceBetween: 0
-        });
+
 
 
 
@@ -254,13 +252,46 @@
             openPhotoSwipe(index);
         });
 
+
+        function toggleIndex(index){
+            if(index==$(".casedetail-swiper-small-container .swiper-slide").length-1){
+                    $("#J_swiper-button-next").hide();
+                    $("#J_next-page").show();
+                }else {
+                    $("#J_swiper-button-next").show();
+                    $("#J_next-page").hide();
+                }
+            if(index==0){
+                $("#J_swiper-button-prev").hide();
+                    $("#J_prev-page").show();
+            }else{
+                $("#J_swiper-button-prev").show();
+                $("#J_prev-page").hide();
+            }
+        }
+
+         var swiper1 = new Swiper('.casedetail-swiper-container', {
+            initialSlide :0,
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 0
+        });
+         
         var swiper2 = new Swiper('.casedetail-swiper-small-container', {
-            scrollbarHide: true,
-            slidesPerView: 'auto',
-            centeredSlides: true,
+            initialSlide :0,
             spaceBetween: 0,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            touchRatio: 0.2,
             slideToClickedSlide: true,
-            grabCursor: true
+            onInit:function(swiper){
+                toggleIndex(swiper.activeIndex);
+            },
+            onTransitionEnd: function(swiper){
+                 toggleIndex(swiper.activeIndex);
+            }
+
 
         });
 

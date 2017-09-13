@@ -35,375 +35,233 @@
     (function($) {
         $.fn.staffGallery = function(option) {
 
-            var defaultsId = {
-                bigPrevId: "J_staff-bigPrev",
-                bigNextId: "J_staff-bigNext",
-                bigPicTitId: "J_staff-bigPicTit",
-                bigPicTxtId: "J_staff-bigPicTxt",
-                smallListWrapId: "J_staff-smallListWrap",
-                containerId: "J_staff-conBox"
-
-
-            }
+           
             $.fn.staffGallery.defaults = {
                 smallPrevId: "J_staff-smallPrev",
                 smallNextId: "J_staff-smallNext",
-                smallListInnerId: "J_staff-smallListInner",
                 smallDisPrevClass: "staff-dis-smallPrev",
                 smallDisNextClass: "staff-dis-smallNext",
-                smallDataClass: "staff-smallItem",
                 smallWrapId: "J_staff-smallWrap",
-                bigPicTitClass: "staff-bigPicTit",
-                arrowId: "J_staff-arrow",
+                smallListId:"J_staff-smallList",
+
+               
                 bigPicWrapId: "J_staff-bigWrap",
                 bigPrevClass: "staff-bigPrev",
                 bigNextClass: "staff-bigNext",
                 bigPicWrapW: 666,
                 bigPicWrapH: 483,
-                fixLen: 4, //第几张固定
-                viewLen: 6, //滚动可见的长度
-                arrowH: 35,
-                scroW: 103,
-                dir: "left",
-                index:0,
-                isTitShow: true,
-                isBigBtnShow: true //是否显示标题                                                  
+                index:0                                             
             }
-            var opts = $.extend(defaultsId, $.fn.staffGallery.defaults, option);
-            var Index = opts.index,
+            var opts = $.extend($.fn.staffGallery.defaults, option);
+            var oldIndex=opts.index,
+                Index = !!opts.index ? (opts.index-1) : 0,
                 $smallPrev = $("#" + opts.smallPrevId),
                 $smallNext = $("#" + opts.smallNextId),
-                $container = $("#" + opts.containerId),
-                $smallListInner = $("#" + opts.smallListInnerId),
-                $arrow = $("#" + opts.arrowId),
-                $bigPicWrap = $("#" + opts.bigPicWrapId);
-            $smallListWrap = $("#" + opts.smallListWrapId);
-            $smallWrap = $("#" + opts.smallWrapId)
+                $smallWrap = $("#" + opts.smallWrapId),
+                $smallList=$("#"+opts.smallListId),
 
-            var nextDistance = opts.viewLen - opts.fixLen,
-                $smallDataItems = $smallListInner.find("." + opts.smallDataClass);
-            totalLen = $smallDataItems.length;
+               
+                $bigPicWrap = $("#" + opts.bigPicWrapId);
+               
+          
+
+            var 
+                $smallDataItems = $smallList.find(".staff-smallItem");
+                totalLen = $smallDataItems.length;
             var bigSrc,
-                bigTit,
-                $bigPicTit,
-                $bigNext,
-                $bigPrev,
-                $bigPicTit,
-                $bigPicTxt,
+                isAnim=false,
+                
+               
+                $bigPrevBtn,
+                $bigNextBtn,
                 $this = this;
 
             var  $checkBig=$("#J_check-big");
 
 
+            $smallDataItems.each(function(index, el) {
+                $(el).on("click",function(event){
+                    event.preventDefault();
+                    oldIndex=Index;
+                    Index=$smallDataItems.index(this); 
+                    changeBigImg();
+                    smallListAnim();
+
+                })    
+            });
 
             //获取图片信息和操作图片函数
-            var changeBigImg = function(currIndex) {
-                bigSrc = $smallDataItems.eq(currIndex).attr("href");
+            var changeBigImg = function() {
+                isAnim=true;
+                bigSrc = $smallDataItems.eq(Index).attr("href");
                 $checkBig.attr("href",bigSrc);
-                bigTit = $smallDataItems.eq(currIndex).attr("data-title");
-                $this.stop(false, true).fadeOut(200, function() {
+                $smallDataItems.eq(Index).parent().addClass('active').siblings().removeClass('active');
+                $this.stop(false, true).fadeOut(100, function() {
                     $this.attr("src", bigSrc).fadeIn();
-                    $(".staff-tag-list li").eq(currIndex).fadeIn().siblings().hide();
-                    $(".tkalxq-title .list").children().eq(currIndex).show().siblings().hide();
-
+                    $(".staff-tag-list li").eq(Index).fadeIn().siblings().hide();
+                    $(".tkalxq-title .list").children().eq(Index).show().siblings().hide();
+                    isAnim=false;
+                    
                 });
-                if (opts.isTitShow) {
-                    $bigPicTit.animate({ top: opts.bigPicWrapH }, 200, function() {
-                        if ($.trim(bigTit) != "") {
-                            $bigPicTxt.text(bigTit);
-                            $bigPicTit.show();
-                        } else {
-                            $bigPicTit.hide();
-                        }
-                        $bigPicTit.stop(false, true).animate({ top: opts.bigPicWrapH - opts.arrowH })
-                    })
 
+                if(Index==0){
+                    $(".staff-prevPage").show();
+                   
+                    $smallPrev.hide();
+                    $bigPrevBtn.hide();
+                }else{
+                    $(".staff-prevPage").hide();
+                  
+                    $smallPrev.show();
+                    $bigPrevBtn.show();
+                }
 
+                if(Index==totalLen-1){
+                    $(".staff-nextPage").show();
+                    $bigNextBtn.hide();
+                    $smallNext.hide();
+
+                }else{
+                    $(".staff-nextPage").hide();
+                    $bigNextBtn.show();
+                    $smallNext.show();
                 }
             };
+
+
+            var smallListAnim=function(){
+                    $smallList.children("li").eq(Index).addClass('active').siblings().removeClass('active');
+                    if(Index > oldIndex){ //下一张  3
+                        if(Index >= 3 && Index!=totalLen-1){
+                           $smallList.animate({left:-(Index-3+1)*opts.scroW+"px"},200);
+                        }
+                    }else if(Index < oldIndex){ //上一张 2
+                        if(Index!=0 && (Index+4) <=totalLen){
+                            $smallList.animate({left:-(Index-1)*opts.scroW+"px"},200);
+                            
+                        }
+                    }
+            }
 
 
             //初始化
             var Init = function() {
-                if (opts.dir == "left") {
-                    $smallWrap.css({overflow: "hidden" });
-                }
+                
                 $this.parent().css({ width: opts.bigPicWrapW - 2, height: opts.bigPicWrapH - 2, overflow: "hidden" })
-                if (totalLen == 1) {
-                    $smallWrap.hide();
-
-                }
+               
                 $bigPicWrap.css({ width: opts.bigPicWrapW, height: opts.bigPicWrapH, overflow: "hidden", position: "relative" })
                 bigSrc = $smallDataItems.eq(Index).attr("href");
-                bigTit = $smallDataItems.eq(Index).attr("data-title");
                 $this.attr("src", bigSrc);
                 $checkBig.attr("href",bigSrc);
+                $smallList.width(totalLen * opts.scroW)
                 $(".staff-tag-list li").eq(Index).fadeIn().siblings().hide();
-                if (opts.isTitShow) { //如果显示标题的话
-                    var $bigPicTxtDom = $('<div class="' + opts.bigPicTitClass + '" id="' + opts.bigPicTitId + '"><span></span><b id="' + opts.bigPicTxtId + '"></b></div>')
-                    $bigPicTxtDom.appendTo($bigPicWrap);
-                    $bigPicTit = $("#" + opts.bigPicTitId);
-                    $bigPicTxt = $("#" + opts.bigPicTxtId);
-                    $bigPicTit.css({ top: opts.bigPicWrapH - opts.arrowH }).hide();
-                    changeBigImg(Index)
-                }
+
+                
                 if (opts.isBigBtnShow) { //如果显示大图按钮的话
-                    var $bigPrevBtn = $("<a href='#' class='" + opts.bigPrevClass + "' id='" + opts.bigPrevId + "'></a>");
-                    var $bigNextBtn = $("<a href='#' class='" + opts.bigNextClass + "' id='" + opts.bigNextId + "'></a>");
+                    
+                    $bigPrevBtn = $("<a href='#' class='" + opts.bigPrevClass + "' id='J_staffbigPrev'></a>");
+                    $bigNextBtn = $("<a href='#' class='" + opts.bigNextClass + "' id='J_staffbigNext'></a>");
                     $bigPrevBtn.appendTo($bigPicWrap);
                     $bigNextBtn.appendTo($bigPicWrap);
                 }
-                $smallPrev.eq(Index).addClass(opts.smallDisPrevClass);
-                if (totalLen <= opts.viewLen) {
+
+                if(Index==0){
+                    $(".staff-prevPage").show();
+                   
+                    $smallPrev.hide();
                     $bigPrevBtn.hide();
+                }else{
+                    $(".staff-prevPage").hide();
+                  
+                    $smallPrev.show();
+                    $bigPrevBtn.show();
+                }
+
+                if(Index==totalLen-1){
+                    $(".staff-nextPage").show();
                     $bigNextBtn.hide();
                     $smallNext.hide();
-                    $smallPrev.hide();
-                } else {
-                    if (opts.dir == "left") {
-                        $smallListInner.width(totalLen * opts.scroW)
-                    } else {
-                        $smallListInner.height(totalLen * opts.scroW)
-                    }
-                }
-                $smallListInner.css({ "position": "absolute", "overflow": "hidden" });
-                if (opts.dir == "left") {
-                    $smallListWrap.css({ "position": "relative", "overflow": "hidden" });
-                } else {
-                    $smallListWrap.css({ "height": opts.viewLen * opts.scroW, "position": "relative", "overflow": "hidden" });
-                }
 
-
-
-
-
-            };
-            Init()
-
-            //处理index 范围的函数
-            var slideIndexChange = function(currIndex, Dir) {
-                if (Dir == "left") {
-                    if (totalLen < opts.viewLen) {
-                        $arrow.stop(false, true).animate({ left: currIndex * opts.scroW }, 200);
-                        $smallListInner.animate({ left: 0 * opts.scroW })
-                    } else {
-                        if (currIndex >= 0 && currIndex <= opts.fixLen - 1) { //0-3
-                            $arrow.stop(false, true).animate({ left: currIndex * opts.scroW }, 200);
-                            $smallListInner.animate({ left: 0 * opts.scroW })
-                        } else if (currIndex > (opts.fixLen - 1) && currIndex < (totalLen - nextDistance)) { //4
-
-                            $arrow.stop(false, true).animate({ left: (opts.fixLen - 1) * opts.scroW }, 200);
-                            $smallListInner.animate({ left: -(currIndex - opts.fixLen + 1) * opts.scroW })
-                        } else if (currIndex >= (totalLen - nextDistance)) { //5-7  
-
-                            $arrow.stop(false, true).animate({ left: (opts.viewLen - (totalLen - currIndex)) * opts.scroW }, 200);
-                            $smallListInner.animate({ left: -(totalLen - opts.viewLen) * opts.scroW })
-                        }
-                    }
-                } else if (Dir == "top") {
-                    if (totalLen < opts.viewLen) {
-                        $arrow.stop(false, true).animate({ top: currIndex * opts.scroW }, 200);
-                        $smallListInner.animate({ left: 0 * opts.scroW })
-                    } else {
-                        if (currIndex >= 0 && currIndex <= opts.fixLen - 1) { //0-3
-                            $arrow.stop(false, true).animate({ top: currIndex * opts.scroW }, 200);
-                            $smallListInner.animate({ top: 0 * opts.scroW })
-                        } else if (currIndex > (opts.fixLen - 1) && currIndex < (totalLen - nextDistance)) { //4
-                            $arrow.stop(false, true).animate({ top: (opts.fixLen - 1) * opts.scroW }, 200);
-                            $smallListInner.animate({ top: -(currIndex - opts.fixLen + 1) * opts.scroW })
-                        } else if (currIndex >= (totalLen - nextDistance)) { //5-7   
-                            $arrow.stop(false, true).animate({ top: (opts.viewLen - (totalLen - currIndex)) * opts.scroW }, 200);
-                            $smallListInner.animate({ top: -(totalLen - opts.viewLen) * opts.scroW })
-                        }
-                    }
-                }
-            }
-
-            //单击prev按钮的事件函数
-            var prevBtnHander = function(currIndex) {
-                if (currIndex != totalLen - 1) {
-                    $smallNext.removeClass(opts.smallDisNextClass);
-                }
-                if (currIndex == 0) {
-                    $(".staff-prevPage").show();
-                    $smallPrev.addClass(opts.smallDisPrevClass);
-                }else{
-                    $(".staff-prevPage").hide();
-                }
-                slideIndexChange(Index, opts.dir);
-
-                changeBigImg(Index)
-            };
-            //单击next按钮的事件函数
-            var NextBtnHander = function(currIndex) {
-                if (Index != 0) {
-                    $smallPrev.removeClass(opts.smallDisPrevClass);
-                    $(".staff-prevPage").hide();
-                }else{
-                    $(".staff-prevPage").show();
-                }
-                if (Index == (totalLen - 1)) {
-
-                    $smallNext.addClass(opts.smallDisNextClass);
-
-                    $(".staff-nextPage").show();
                 }else{
                     $(".staff-nextPage").hide();
-                    $smallNext.removeClass(opts.smallDisNextClass);
+                    $bigNextBtn.show();
+                    $smallNext.show();
                 }
+                
+                
+               
+               
+                $smallWrap.css({ "position": "relative", "overflow": "hidden" });
+                
 
-                if (Index <= opts.fixLen - 1) {
-                    if (opts.dir == "left") {
-                        $arrow.stop(false, true).animate({ left: "+=" + opts.scroW }, 200)
-                    } else {
-                        $arrow.stop(false, true).animate({ top: "+=" + opts.scroW }, 200)
-                    }
-                } else {
-                    if ((totalLen - Index - nextDistance) <= 0) {
-                        if (opts.dir == "left") {
-                            $arrow.stop(false, true).animate({ left: "+=" + opts.scroW }, 200);
-                        } else {
-                            $arrow.stop(false, true).animate({ top: "+=" + opts.scroW }, 200);
-                        }
-                    } else {
-                        if (opts.dir == "left") {
-                            $smallListInner.animate({ left: -(Index - opts.fixLen + 1) * opts.scroW })
-                        } else {
-                            $smallListInner.animate({ top: -(Index - opts.fixLen + 1) * opts.scroW })
-                        }
+                $smallList.children().eq(Index).addClass("active").siblings().removeClass('active');
 
+                if(totalLen > 4){
+                    if(Index >2){
+                        if(Index+3 <totalLen){
+                            $smallList.animate({left:-(Index-2)*opts.scroW+"px"},200);
+                        }else{
+                             $smallList.animate({left:-(totalLen-4)*opts.scroW+"px"},200);
+                        }
+                        
                     }
                 }
-                changeBigImg(Index)
-
             };
+            Init();
+
+            $bigNextBtn.on("click",function(event){
+                 event.preventDefault();
+                 if(isAnim) return;
+                 oldIndex=Index;
+                 Index++;
+                changeBigImg();
+                smallListAnim();
+
+            });
+
+            $bigPrevBtn.on("click",function(event){
+                event.preventDefault();
+                if(isAnim) return;
+                oldIndex=Index;
+                Index--;
+                changeBigImg();
+                smallListAnim();
+
+            })
+
+           
+           
+            
 
 
             //单击小图的左按钮  
-            $smallPrev.on("click", function() {
-                if (Index == 0) { return false }
+            $smallPrev.on("click", function(event) {
+                event.preventDefault();
+                
+                if(isAnim) return;
+                oldIndex=Index;
                 Index--;
-                prevBtnHander(Index)
-                return false
+                changeBigImg();
+                smallListAnim();
             });
 
 
             //单击小图的右按钮  
             $smallNext.on("click", function() {
-                if (Index == (totalLen - 1)) { return false }
+                event.preventDefault();
+                if(isAnim) return;
+                 oldIndex=Index;
                 Index++;
-                NextBtnHander(Index);
-                return false;
+                changeBigImg();
+                smallListAnim();
             });
-            $smallDataItems.each(function() {
-                $(this).on("click", function() {
-                    var lastIndex = Index
-                    Index = $smallDataItems.index(this);
-                    if (Index == 0) { $smallPrev.addClass(opts.smallDisPrevClass); }
-                    if (Index == totalLen - 1) { $smallNext.addClass(opts.smallDisNextClass) }
-                    if (Index != 0) { $smallPrev.removeClass(opts.smallDisPrevClass); }
-                    if (Index != totalLen - 1) { $smallNext.removeClass(opts.smallDisNextClass) }
-                    var distanceIndex = Math.abs(lastIndex - Index);
-                    changeBigImg(Index);
-                    slideIndexChange(Index, opts.dir);
-                    return false;
-                })
-            })
-
-            if (opts.isBigBtnShow && totalLen != 1) {
-                $bigNext = $("#" + opts.bigNextId);
-                var bigNextH = $bigNext.height();
-                $bigPrev = $("#" + opts.bigPrevId);
-                var bigPrevH = $bigPrev.height();
-                $bigNext.css("top", (opts.bigPicWrapH - bigNextH) / 2);
-                $bigPrev.css("top", (opts.bigPicWrapH - bigPrevH) / 2)
-                //单击大图的右按钮
-                $bigNext.on("click", function() {
-
-                    Index++;
-                    console.dir("Index:"+Index+',totalLen:'+totalLen);
-                    if (Index != 0) { $bigPrev.show(); }
-                    if (Index == totalLen - 1) { $(this).hide() }
-                    NextBtnHander(Index)
-                    return false;
-                })
-                //单击大图的左按钮
-                $bigPrev.on("click", function() {
-
-                    Index--;
-                    if (Index != totalLen - 1) { $bigNext.show(); }
-                    if (Index == 0) { $(this).hide() }
-                    prevBtnHander(Index);
-                    return false
-                });
-                //大图 $bigWrap hover的时候的效果
-                $bigPicWrap.on("mouseover", function(event) {
-                    var relateElem = event.relatedTarget;
-                    if ($(relateElem).closest($bigPicWrap).length > 0) {
-                        return;
-                    } else {
-                        if (Index == totalLen - 1) {
-                            $bigPrev.stop(false, true).fadeIn();
-                        } else if (Index == 0) {
-                            $bigNext.stop(false, true).fadeIn()
-                        } else {
-                            // $bigPrev.stop(false, true).fadeIn();
-                            // $bigNext.stop(false, true).fadeIn()
-                        }
-                        $checkBig.stop(false, true).fadeIn();
-                    }
-                }).on("mouseout", function(event) {
-                    var relateElem = event.relatedTarget;
-                    if ($(relateElem).closest($bigPicWrap).length > 0) {
-                        return;
-                    } else {
-                        // $bigPrev.stop(false, true).fadeOut();
-
-                        // $bigNext.stop(false, true).fadeOut();
-                        $checkBig.stop(false, true).fadeOut();
-                    }
-
-                });
-            }
+            
+           
 
         }
 
-         $.fn.staffGallery.defaults = {
-                smallPrevId: "J_staff-smallPrev",
-                smallNextId: "J_staff-smallNext",
-                smallListInnerId: "J_staff-smallListInner",
-                smallDisPrevClass: "staff-dis-smallPrev",
-                smallDisNextClass: "staff-dis-smallNext",
-                smallDataClass: "staff-smallItem",
-                smallWrapId: "J_staff-smallWrap",
-                bigPicTitClass: "staff-bigPicTit",
-                arrowId: "J_staff-arrow",
-                bigPicWrapId: "J_staff-bigWrap",
-                bigPrevClass: "staff-bigPrev",
-                bigNextClass: "staff-bigNext",
-                bigPicWrapW: 666,
-                bigPicWrapH: 483,
-                fixLen: 4, //第几张固定
-                viewLen: 6, //滚动可见的长度
-                arrowH: 35,
-                scroW: 103,
-                dir: "left",
-                index:0,
-                isTitShow: true,
-                isBigBtnShow: true //是否显示标题                                                  
-            }
-        $.fn.staffGalleryDestory=function(){
-                var $this=this;
-                $("#J_staff-bigWrap").off('mouseover').off('mouseout');
-                $(".staff-bigNext").off("click");
-                $(".staff-bigPrev").off("click");
-                $("#J_staff-smallPrev").off("click");
-                $("#J_staff-smallNext").off("click");
-                $("#J_staff-smallListInner .staff-smallItem").each(function() {
-                    $(this).off("click");
-                });
-                return this;
-        }
+   
+        
     })(jQuery);
 
  
