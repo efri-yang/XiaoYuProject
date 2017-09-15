@@ -115,7 +115,7 @@
 			position:absolute;
 			top:px2rem(10px);
 			right:px2rem(10px);
-			padding:px2rem(5px) px2rem(10px);
+			padding:px2rem(3px) px2rem(5px);
 			@include font-dpr(12px);
 			&.disabled{
 				background-color:#b4b4b4;

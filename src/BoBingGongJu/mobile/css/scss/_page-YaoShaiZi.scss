@@ -63,16 +63,21 @@
         margin: px2rem(30px) auto 0;
         border:none;
         background:none;
-        b {
-                width: px2rem(272px);
-                height: px2rem(85px);
-                background: url("../images/slideunlock_btn_2.png") no-repeat left top;
-                background-size: 100% 100%;
-                border: px2rem(6px) solid #fcd79b;
-                display: block;
-                margin: 0 auto;
-                border-radius: px2rem(50px);
-            }
+        width: px2rem(295px);
+        height: px2rem(94px);
+        overflow: hidden;
+        background-image: url("../images/slideunlock_btn_2.png");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 100% auto;
+        >b{
+            display: none;
+        }
+        &.disabled,&:disabled{
+              
+            background-position:0 px2rem(-94px);
+               
+        }
         
         
     }

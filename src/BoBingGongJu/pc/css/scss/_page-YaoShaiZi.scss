@@ -1062,19 +1062,20 @@
 
 
 .slideunlock-label-2 {
-    width: 180px;
-    height: 54px;
-    line-height: 42px;
-    color: #ffe075;
+    width: 223px;
+    height: 70px;
+    
     display: block;
     margin: 23px auto 0;
-    border-radius: 30px;
-    border: 3px solid #fde2a8;
-    box-shadow: 0 0px 8px 1px #d81e28;
     z-index: 11;
-    background: url("../images/tit-type-2.jpg") repeat-x top center;
-    text-align: center;
+    background: url("../images/bb_btn_1.png") no-repeat top center;
+   
     cursor: pointer;
+    border:none;
+    &.disabled,&:disabled{
+        background-position: 0 -70px;
+        cursor: default;
+    }
 }
 
 
