@@ -367,10 +367,17 @@ body {
             font-size: px2rem(23px);
             line-height: 1.2;
             margin-top: px2rem(8px);
+            height:px2rem(80px); 
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
         }
         .more{
             color:#26af86;
-            margin-left: px2rem(30px); 
+            margin-top:px2rem(15px);
+            display: block; 
         }
     }
 }

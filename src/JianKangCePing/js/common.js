@@ -126,10 +126,12 @@
 
   // TAB NO CONFLICT
   // ===============
-})(window.jQuery || window.Zepto)
+})(window.jQuery || window.Zepto);
 
 
-;(function($, window, document, undefined) {
+
+
+(function($, window, document, undefined) {
     var mDialog = {
         v: '0.0.1',
         stack: {},
@@ -145,7 +147,7 @@
             shade: true,
             width: "auto",
             height: "auto",
-            maxWidth: "85%",
+            maxWidth: "90%",
             maxHeight: "80%",
             animIn: "mDialogZoomIn",
             animOut: "mDialogZoomOut",
@@ -153,8 +155,6 @@
             content: "",
             closeBtn: true,
             buttons: {},
-            baseViewWidth:750,
-            baseViewHeight:1344,
             onBeforeShow: function() {},
             onShow: function() {},
             onBeforeClose: function() {},
@@ -251,15 +251,13 @@
     };
 
     var deviceUtil=(function(){
-        var UA = window.navigator.userAgent,win=window,
+        var UA = window.navigator.userAgent,
             isAndroid = /android|adr/gi.test(UA),
             isIOS = /iphone|ipod|ipad/gi.test(UA) && !isAndroid,
-            isIPhone=win.navigator.appVersion.match(/iphone/gi),
             isMobile = isAndroid || isIOS,
             isSupportTouch = "ontouchend" in document ? true : false;
         return {
-            tapEvent: isMobile && isSupportTouch ? 'touchstart' : 'click',
-            isIPhone:isIPhone
+            tapEvent: isMobile && isSupportTouch ? 'touchstart' : 'click'
         }
     })();
 
@@ -331,7 +329,7 @@
         if ($.isArray(opts.buttons) && !!opts.buttons.length) {
             $.each(opts.buttons, function(index, obj) {
                 obj.class = !!obj.class ? obj.class : "";
-                var $btn = $('<a href="#" class="mDialog-btn ' + obj.className + '">' + obj.text + '</a>');
+                var $btn = $('<a href="#" class="mDialog-btn ' + obj.class + '">' + obj.text + '</a>');
                 if (!!obj.callback) {
                     $btn.on(deviceUtil.tapEvent, function(event) {
                         event.preventDefault();
@@ -348,7 +346,7 @@
         //maxWidth、maxHeight 传递进来的值可能是  auto  80%  400px  8rem;
         //width、height  传递进来的值可能是  auto  80%  400px  8rem;
 
-        var elemW, elemH, winW, winH, realW, realH, maxW,maxH,titleH = 0,
+        var elemW, elemH, winW, winH, realW, realH, titleH = 0,
             contentH = 0,
             footerH = 0,
             fullClassName = "mDialog-layer-main-full",
@@ -360,54 +358,40 @@
         winW = $(window).width();
         winH = $(window).height();
         dpr = document.documentElement.getAttribute('data-dpr');
-  
+
+        if (dpr) {
+            if (winW > 540 && dpr == 1) {
+                standardRatio = 540;
+            } else {
+                standardRatio = winW;
+            }
+        } else {
+            standardRatio = winW;
+        }
 
 
         elemW = $elem.outerWidth();
-        opts.maxWidth = !!opts.maxWidth ? ((opts.maxWidth == "auto") ? "85%" : opts.maxWidth) : "85%";
-        maxW=ExtraFunc.isPx(opts.maxWidth) ?  ExtraFunc.getNumber(opts.maxWidth) : winW*ExtraFunc.getNumber(opts.maxWidth)/100;
-        
+        realW = !!opts.width ? ((opts.width == "auto") ? elemW : opts.width) : elemW;
+        maxW = !!opts.maxWidth ? ((opts.maxWidth == "auto") ? "90%" : opts.maxWidth) : "90%";
 
-        if(opts.width=="auto" || !opts.width){
-            realW=(elemW > maxW) ? maxW : elemW;
-            standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
-        }else if(ExtraFunc.isPercent(opts.width)){
-            realW=winW*ExtraFunc.getNumber(opts.width)/100;
-            if(realW > maxW){  
-                realW=maxW;
-            }
-            standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
-
-        }else if(ExtraFunc.isPx(opts.width)){  
-            realW=ExtraFunc.getNumber(opts.width);
-            if(isFlexible){
-                if(realW > opts.baseViewWidth*ExtraFunc.getNumber(opts.maxWidth)/100){
-                    realW=maxW;
-                    standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
-                }else{
-                    standardRatio=opts.baseViewWidth;
-                }
-            }else{
-                realW=(realW >winW) ? maxW : realW;
-            } 
+        if (ExtraFunc.isPercent(realW)) {
+            realW = winW * ExtraFunc.getNumber(realW) / 100; //转成 数字类型
+        } else if (ExtraFunc.isPx(realW)) {
+            realW = ExtraFunc.getNumber(realW); //转成 数字类型
         }
 
-        console.dir("winW的px:  "+winW);
-        console.dir("maxW的px:  "+maxW);
-        console.dir("elemW(传进来的宽度)的px:  "+elemW);
-        console.dir("standardRatio:  "+standardRatio)
-       
-        console.dir("realW(最终的宽度)的px:  "+realW);
-        
-       
-        
-       
-
-
-        if(isFlexible){
-           realW=realW/standardRatio*10;
+        if (ExtraFunc.isPercent(maxW)) {
+            maxW = winW * ExtraFunc.getNumber(maxW) / 100; //转成px
+        } else if (ExtraFunc.isPx(maxW)) {
+            maxW = ExtraFunc.getNumber(maxW); //转成px
         }
-        console.dir("realW从px转化成rem:  "+realW);
+
+        //宽高都是100%，那么默认的忽略\
+        realW = (realW >= maxW) ? maxW : realW;
+        if (isFlexible) { //转rem
+            realW = realW / standardRatio * 10;
+        }
+       
         $elem.css({
             left: "50%",
             width: realW + unitRemPx,
@@ -415,91 +399,46 @@
         })
 
 
-
-
-       
-       
-       
-       
-        
-
-
         elemH = $elem.outerHeight();
-        opts.maxHeight = !!opts.maxHeight ? ((opts.maxHeight == "auto") ? "80%" : opts.maxHeight) : "80%";
-        maxH=ExtraFunc.isPx(opts.maxHeight) ?  ExtraFunc.getNumber(opts.maxHeight) : winH*ExtraFunc.getNumber(opts.maxHeight)/100;
-        
-        console.dir("winH的px:  "+winH);
-        console.dir("elemH的px:  "+elemH);
-        console.dir("maxH的px:  "+maxH);
-        
-       
-        
-        if(opts.height=="auto" || !opts.height){
-            realH=(elemH > maxH) ? maxH : elemH;
-            standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
-        }else if(ExtraFunc.isPercent(opts.height)){
-            realH=winH*ExtraFunc.getNumber(opts.height)/100;
-            if(realH > maxH){
-                realH=maxH;
-            }
-            standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
-        }else if(ExtraFunc.isPx(opts.height)){
-            realH=ExtraFunc.getNumber(opts.height);
-            if(isFlexible){
-                if(realH > opts.baseViewHeight*ExtraFunc.getNumber(opts.maxHeight)/100){
-                    realH=maxH;
-                    standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
-                }else{
-                    standardRatio=opts.baseViewWidth;
-                }
-            }else{
-                realH=(realH > maxH) ? maxH : realH;
-            }
+        realH = !!opts.height ? ((opts.height == "auto") ? elemH : opts.height) : elemH;
+        maxH = !!opts.maxHeight ? ((opts.maxHeight == "auto") ? "80%" : opts.maxHeight) : "80%";
+        if (ExtraFunc.isPercent(realH)) {
+            realH = winH * ExtraFunc.getNumber(realH) / 100; //转成px
+        } else if (ExtraFunc.isPx(realH)) {
+            realH = ExtraFunc.getNumber(realH); //转成px
+        }
+        if (ExtraFunc.isPercent(maxH)) {
+            maxH = winH * ExtraFunc.getNumber(maxH) / 100; //转成px number 类型
+        } else if (ExtraFunc.isPx(maxH)) {
+            maxH = ExtraFunc.getNumber(maxH); //转成px
         }
 
-        console.dir("standardRatio:  "+standardRatio);
-        console.dir("realH(最终的宽度)的px:  "+realH);
-
-
+        // elemH 大于规定的高度 heiht 那么也要启动 限制
       
 
-
-
-
-
-      
-        !!$title && !!$title.length && (titleH = $title.outerHeight());
-        !!$footer && !!$footer.length  && (footerH = $footer.outerHeight());
-        mainH = ((realH - titleH - footerH) > 0) ? (realH - titleH - footerH) : 0;
-
-        console.dir("titleH:"+titleH);
-        console.dir("mainH:"+mainH);
-        console.dir("footerH:"+footerH);
-        if(isFlexible){
-           realH=realH/standardRatio*10;
-           mainH=mainH/standardRatio*10;
-        }
-        console.dir("mainH:"+mainH)
-
-        console.dir("realH(最终的)的rem:  "+realH);
-
-        if((realH > maxH) || elemH > realH){
+        if (realH >= maxH) {
+            realH = maxH;
             $main.addClass(fullClassName);
         }
-        if(opts.width==opts.height &&  opts.width=="100%"){
-           $elem.addClass('mDialog-layer-container-full')
+        if (realH < elemH || realH == winH) {
+            $main.addClass(fullClassName);
         }
-
-        
        
-        $main.css({ 
-            height: mainH + unitRemPx 
-        });
+        !!$title && !!$title.length && (titleH = $title.outerHeight());
+        !!$footer && !!$footer.length  && (footerH = $footer.outerHeight());
+            
+
+
+        mainH = ((realH - titleH - footerH) > 0) ? (realH - titleH - footerH) : 0;
+
+        $main.css({ height: (isFlexible ? (mainH / standardRatio * 10) : mainH) + unitRemPx })
+
+        if (isFlexible) { //转rem
+            realH = realH / standardRatio * 10;
+        }
         $elem.css({
             height: realH + unitRemPx
         });
-
-        
 
         if (opts.top || parseInt(opts.top) == 0) {
             $elem.css({
@@ -759,7 +698,7 @@
         var _this = this;
         sindex = !!index ? index : this.opts.uid;
         $.each(mDialog.stack[sindex], function(index, obj) {
-            obj.removeSelf();
+            obj.removeSelf.call();
             if (index == mDialog.stack[sindex].length - 1) {
                 delete mDialog.stack[sindex];
             }
@@ -807,7 +746,7 @@
             }
         ]
         mDialog.open(options, "comfirm")
-    };
+    }
 
 
     mDialog.msg = function(opts) {
@@ -816,25 +755,10 @@
         options.shade = !!opts.shade ? opts.shade : false;
         options.pause = !!opts.pause ? opts.pause : 2000;
         mDialog.open(options, "msg")
-    };
+    }
 
     mDialog.close = function(obj) {
         obj.close();
-    };
-
-    mDialog.closeAll=function(){    
-        $.each(mDialog.stack, function(index1, obj1) {
-            $.each(obj1,function(index2,obj2){
-                obj2.removeSelf();
-                if (index2 == mDialog.stack[index1].length - 1) {
-                    delete mDialog.stack[index1];
-                }
-            })   
-        }); 
-    };
+    }
     window.mDialog = mDialog;
 })(window.jQuery || window.Zepto, window, document)
-
-
-
-

@@ -238,4 +238,11 @@
         beforeHide: function(){},
         afterHide: function() {}
     }
-})(window.jQuery || window.Zepto, window, document)
+})(window.jQuery || window.Zepto, window, document);
+
+
+$(function(){
+   $("#J_coms-zxkf-btn").on("click",function(event){
+
+   })
+})

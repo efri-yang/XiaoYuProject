@@ -1,0 +1,488 @@
+// @function px2rem($px, $base-font-size:75px) {
+//     @if (unitless($px)) {
+//         @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+//         @return px2rem($px + 0px); // That may fail.
+//     }
+//     @else if (unit($px)==rem) {
+//         @return $px;
+//     }
+//     @return ($px / $base-font-size) * 1rem;
+// }
+
+// @mixin font-dpr($font-size) {
+//     font-size: $font-size;
+//     [data-dpr="2"] & {
+//         font-size: $font-size * 2;
+//     }
+//     [data-dpr="3"] & {
+//         font-size: $font-size * 3;
+//     }
+// }
+
+
+/******************************************************************
+ * mDialog 默认的动画效果
+ */
+
+/**
+ * 淡入效果
+ */
+@keyframes mDialogFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.mDialogFadeIn{
+    animation-name: mDialogFadeIn;
+}
+
+
+/**
+ * 淡出效果
+ */
+@keyframes mDialogFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.mDialogFadeOut{
+    animation-name: mDialogFadeOut;
+}
+
+/**
+ * 类似zoomIn
+ */
+@keyframes mDialogZoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.mDialogZoomIn{
+    animation-name: mDialogZoomIn;
+}
+
+/**
+ * 类似zoomOut
+ */
+@keyframes mDialogZoomOut {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.mDialogZoomOut{
+    animation-name: mDialogZoomOut;
+}
+
+/**
+ * 类似苹果确认提示框效果，也是comfirm的默认的效果
+ */
+@keyframes mDialogBigIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        opacity: 1;
+        transform:scale(1, 1);
+    }
+}
+
+.mDialogBigIn{
+    animation-name: mDialogBigIn;
+}
+/**
+ * 类似苹果确认提示框效果，也是comfirm的默认的效果
+ */
+@keyframes mDialogBigOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform:scale(1.2, 1.2);
+    }
+}
+
+.mDialogBigOut{
+    animation-name: mDialogBigOut;
+}
+
+
+
+/******************************************************************
+ * mDialog container 容器
+ */
+
+.mDialog-layer-container{
+    visibility: hidden;
+    position: fixed;
+    animation-timing-function:ease-out;
+    box-sizing:border-box;
+    *{
+        box-sizing:border-box;
+    }
+    //窗口是占满屏幕的时候,那么就不需要圆角
+    &.mDialog-layer-container-full{
+        >.mDialog-layer-title{
+            border-radius:0;
+        }
+        >.mDialog-layer-main{
+            border-radius:0;
+        }
+        >.mDialog-layer-btns{
+            border-radius:0;
+        }
+    }
+}
+
+/******************************************************************
+ * mDialog title 标题
+ */
+.mDialog-layer-title{
+    border-radius:px2rem(20px) px2rem(20px) 0 0;
+    background:#F5f5f5;
+    clear:both; 
+    border-bottom:1px solid #d5d5d5;
+    padding:px2rem(20px);
+    overflow: hidden; 
+    @include font-dpr(18px);
+}
+
+
+/******************************************************************
+ * mDialog main 主题内容
+ */
+.mDialog-layer-main{
+    word-break:break-all;
+    word-wrap:break-word;
+    overflow:hidden;
+    @include font-dpr(16px);
+    &:after{
+        content:"";
+        display:table;
+        clear:both;
+    }
+    &.mDialog-layer-main-full{
+        >div{
+            height: 100%;
+            overflow: hidden;
+        }  
+    }
+
+    >div{
+        position: relative;
+    }
+}
+
+/******************************************************************
+ * mDialog btns 底部按钮集
+ */
+.mDialog-layer-btns{
+    clear:both; 
+    border-top:1px solid #e8e8e8;
+    display: flex;
+    background:#fff;
+    border-radius:0 0 px2rem(20px) px2rem(20px);
+    >.mDialog-btn{
+        flex:1;
+        text-align: center;
+        position:relative;
+        color:#007aff;  
+        @include font-dpr(18px);
+        padding:px2rem(20px) 0;
+        &:after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            border-left: 1px solid #d5d5d5;
+            color: #d5d5d5;
+           
+        }
+        &:active{
+            background-color:rgba(0,0,0,0.05);  
+        }
+        &:first-child{
+            &:after{
+                border-left:0;
+            }  
+        }
+    }  
+}
+
+
+/******************************************************************
+ * mDialog close 关闭按钮
+ */
+
+.mDialog-close{
+    position: absolute;
+    width: px2rem(65px);
+    height:px2rem(65px);
+    overflow: hidden;  
+    right:0;
+    top:0;
+    margin-top:px2rem(-65px/2);
+    margin-right:px2rem(-65px/2);  
+    border-radius:100%;
+    background-color:rgba(0,0,0,1);
+    &:before{
+        transform: rotate(45deg);
+        content: '';
+        position: absolute;
+        top: 50%;
+        left:px2rem(10px);
+        right:px2rem(10px);
+        background: #fff;
+        height:px2rem(6px);
+        margin-top:px2rem(-6px/2);
+        border-radius:px2rem(8px); 
+    }
+    &:after{
+        transform: rotate(-45deg);
+        content: '';
+        position: absolute;
+        top: 50%;
+        left:px2rem(10px);
+        right:px2rem(10px);
+        background: #fff;
+        height:px2rem(6px);
+        margin-top:px2rem(-6px/2);
+        border-radius:px2rem(8px); 
+    }   
+}
+
+
+
+/******************************************************************
+ * mDialog 遮罩层
+ */
+.mDialog-shade {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+    &.in{
+        animation-name: mDialogFadeIn;
+    }
+    &.out{
+        animation-name: mDialogFadeOut;
+    }
+}
+
+
+
+
+/******************************************************************
+ * mDialog open方法 content是内容
+ */
+
+.mDialog-default-section{
+    background:#fff;
+    @include font-dpr(16px);
+    padding:px2rem(20px);
+}
+
+
+
+/******************************************************************
+ * mDialog msg 信息提示框
+ */
+
+.mDialog-msg-section{
+    background-color:rgba(0,0,0,0.9);
+    border-radius:px2rem(20px);
+    padding:px2rem(30px);
+    color:#fff; 
+}
+
+/******************************************************************
+ * mDialog 加载提示框 
+ */
+@-webkit-keyframes line-spin-fade-loader {
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes line-spin-fade-loader {
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.mDialog-loading-section {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius:px2rem(15px);
+    padding:px2rem(30px) px2rem(60px);
+    overflow:hidden;
+    .loading-txt{
+        @include font-dpr(16px);
+        color:#fff;
+        text-align:center;
+        margin-top:px2rem(20px);
+        white-space: nowrap;
+    }
+    .loading-icon {
+        position: relative;
+        width:px2rem(124px);
+        height: px2rem(124px);
+        margin:0 auto;
+        >div {
+            background-color: #fff;
+            border-radius: px2rem(4px);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            position: absolute;
+            width: px2rem(8px);
+            height: px2rem(36px);
+            margin-left: px2rem(-4px);
+            &:nth-child(1) {
+                top:px2rem(88px);
+                left:50%;
+                
+                -webkit-animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+            }
+            &:nth-child(2) {
+                top:px2rem(80.38px);
+                left:px2rem(80.38px);
+                
+                -webkit-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                transform-origin:top center;
+                -webkit-animation: line-spin-fade-loader 1.2s 0.24s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.24s infinite ease-in-out;
+            }
+            &:nth-child(3) {
+                top:px2rem(64px);
+                left:px2rem(88px);       
+                transform-origin:top center; 
+                transform: rotate(-90deg);
+                -webkit-animation: line-spin-fade-loader 1.2s 0.36s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.36s infinite ease-in-out;
+            }
+            &:nth-child(4) {
+                top:px2rem(43.62px);
+                left:px2rem(88px);
+               
+                transform: rotate(-135deg);
+                
+                transform-origin:top center; 
+                -webkit-animation: line-spin-fade-loader 1.2s 0.48s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.48s infinite ease-in-out;
+            }
+            &:nth-child(5) {
+                top: 0px;
+                 left:50%;
+               
+                -webkit-animation: line-spin-fade-loader 1.2s 0.6s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.6s infinite ease-in-out;
+            }
+            &:nth-child(6) {
+                top:px2rem(43.62px);
+                left:px2rem(43.62px);
+                transform-origin:top center; 
+                transform: rotate(135deg);
+                
+                -webkit-animation: line-spin-fade-loader 1.2s 0.72s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.72s infinite ease-in-out;
+            }
+            &:nth-child(7) {
+                top:px2rem(62px);
+                left:px2rem(36px);
+               margin-left: px2rem(-4px);
+                transform: rotate(90deg);
+                transform-origin:top center; 
+                -webkit-animation: line-spin-fade-loader 1.2s 0.84s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.84s infinite ease-in-out;
+            }
+            &:nth-child(8) {
+                top:px2rem(80.38px);
+                left:px2rem(43.62px);
+                margin-left: px2rem(-4px);
+                transform: rotate(45deg);
+                transform-origin:top center; 
+                -webkit-animation: line-spin-fade-loader 1.2s 0.96s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.96s infinite ease-in-out;
+            }
+        }
+    }
+    &.loading-notext{
+        padding:px2rem(60px);
+    }
+}
+
+/******************************************************************
+ * mDialog confirm 确认框 
+ */
+
+.mDialog-confirm-section{
+    background:#fff;
+    padding:px2rem(40px) px2rem(30px);
+    border-radius:px2rem(20px) px2rem(20px) 0 0;
+    
+}
+
+
+
+/******************************************************************
+ * mDialog iscroll 可添加的样式
+ */
+
+.mDialog-iscroll-wrapper{
+    position: relative;
+    height: 100%;
+    &.mDialog-iscroll-scroller{
+        position: relative;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    }
+}
+
