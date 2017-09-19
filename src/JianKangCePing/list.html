@@ -11,15 +11,15 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<div class="container">
+	<div class="container pdfooter">
 		<div class="p-list-container">
-			<ul class="list">
+			<ul class="list" id="J_list">
 				<li>
 					<div class="intro-avatar clearfix">
 						<div class="pic"><img src="./upload/1.jpg" /></div>
 						<p class="name">许婧颖<span>(消化科)</sapn></p>
 						<p class="jobtitle">康复功能训练师</p>
-						<a class="guide-see" href="">免费看诊</a>
+						<a class="guide-see" href="#" data-roler="yybtn">免费看诊</a>
 					</div>
 					<div class="coms-intro-text">
 						<p>• 体育学硕士学位</p>
@@ -53,7 +53,7 @@
 						<div class="pic"><img src="./upload/1.jpg" /></div>
 						<p class="name">许婧颖<span>(消化科)</sapn></p>
 						<p class="jobtitle">康复功能训练师</p>
-						<a class="guide-see" href="">免费看诊</a>
+						<a class="guide-see" href="#" data-roler="yybtn">免费看诊</a>
 					</div>
 					<div class="coms-intro-text">
 						<p>• 体育学硕士学位</p>
@@ -83,9 +83,44 @@
 					<div class="guide-more">医师简介>></div>
 				</li>
 			</ul>
+
+			<div class="qrcode-box">
+				<div class="pic">
+					<img src="./images/qrcode_1.jpg">
+				</div>
+				<p class="txt">长按加小编客服，任何问题欢迎骚扰小编，为您排忧解答</p>
+			</div>
 		</div>
 
 	</div>
+	@@include("./views/_footer.html")
+
+    @@include("./views/_yuyue.html")
+
+	<script type="text/javascript">
+		$(function(){
+			$("#J_list").children().each(function(){
+				var $this=$(this);
+				$this.find(".guide-more").on("click",function(){
+					var $this=$(this);
+					$this.hide();
+					$this.siblings(".coms-intro-text").show();
+					$this.siblings(".guide-sq").show();
+				});
+				$this.find(".guide-sq").on("click",function(){
+					var $this=$(this);
+					$this.hide();
+					$this.siblings(".coms-intro-text").hide();
+					$this.siblings(".guide-more").show();
+				});
+
+				
+			});
+		})
+	</script>
+
+
+
 	
 </body>
 </html>

@@ -8,6 +8,7 @@
     <script src="zxtkjs/zepto.js"></script>
     <script src="zxtkjs/flexible2.0.js"></script>
     <script src="zxtkjs/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="zxtkcss/style.css">
     <link rel="stylesheet" type="text/css" href="zxtkcss/tkdetail.css">
 </head>
 
@@ -23,7 +24,8 @@
                 </ul>
             </div> -->
         <div class="shop-tab-bds active" id="J_shop-case">
-            <table class="casedetail-tbl">
+            <div class="tk-tbl-list">
+                <table class="casedetail-tbl">
                 <thead>
                     <tr>
                         <th width="width:16%"></th>
@@ -34,7 +36,7 @@
                 </thead>
                 <tr>
                     <td class="para-tit">装饰公司:</td>
-                    <td class="para-val">钜诚装饰</td>
+                    <td class="para-val">111</td>
                     <td class="para-tit">设计人员：</td>
                     <td class="para-val">张文杰</td>
                 </tr>
@@ -45,6 +47,78 @@
                     <td class="para-val">新房自住</td>
                 </tr>
             </table>
+            
+
+
+            <table class="casedetail-tbl">
+                <thead>
+                    <tr>
+                        <th width="width:16%"></th>
+                        <th width="width:34%"></th>
+                        <th width="width:16%"></th>
+                        <th width="width:34%"></th>
+                    </tr>
+                </thead>
+                <tbody><tr>
+                    <td class="para-tit">装饰公司:</td>
+                    <td class="para-val">222</td>
+                    <td class="para-tit">设计人员：</td>
+                    <td class="para-val">张文杰</td>
+                </tr>
+                <tr>
+                    <td class="para-tit">设计风格:</td>
+                    <td class="para-val">北欧</td>
+                    <td class="para-tit">装修费用：</td>
+                    <td class="para-val">新房自住</td>
+                </tr>
+            </tbody></table>
+
+            <table class="casedetail-tbl">
+                <thead>
+                    <tr>
+                        <th width="width:16%"></th>
+                        <th width="width:34%"></th>
+                        <th width="width:16%"></th>
+                        <th width="width:34%"></th>
+                    </tr>
+                </thead>
+                <tbody><tr>
+                    <td class="para-tit">装饰公司:</td>
+                    <td class="para-val">3333</td>
+                    <td class="para-tit">设计人员：</td>
+                    <td class="para-val">张文杰</td>
+                </tr>
+                <tr>
+                    <td class="para-tit">设计风格:</td>
+                    <td class="para-val">北欧</td>
+                    <td class="para-tit">装修费用：</td>
+                    <td class="para-val">新房自住</td>
+                </tr>
+            </tbody></table>
+
+            <table class="casedetail-tbl">
+                <thead>
+                    <tr>
+                        <th width="width:16%"></th>
+                        <th width="width:34%"></th>
+                        <th width="width:16%"></th>
+                        <th width="width:34%"></th>
+                    </tr>
+                </thead>
+                <tbody><tr>
+                    <td class="para-tit">装饰公司:</td>
+                    <td class="para-val">4444</td>
+                    <td class="para-tit">设计人员：</td>
+                    <td class="para-val">张文杰</td>
+                </tr>
+                <tr>
+                    <td class="para-tit">设计风格:</td>
+                    <td class="para-val">北欧</td>
+                    <td class="para-tit">装修费用：</td>
+                    <td class="para-val">新房自住</td>
+                </tr>
+            </tbody></table>
+            </div>
             <!-- <div class="casedetail-desc">
                 <p style="font-size: 20px">幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
                 <p>幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗幸福了吗</p>
@@ -126,7 +200,11 @@
         <li class="gotop"><a href="#gotop"></a></li>
     </ul>
     <!--  -->
+
     
+    @@include("./views/_fixedbar.html")
+    @@include("./views/_DengJiForm.html")
+
     <!-- ************************************************** -->
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -254,6 +332,7 @@
 
 
         function toggleIndex(index){
+
             if(index==$(".casedetail-swiper-small-container .swiper-slide").length-1){
                     $("#J_swiper-button-next").hide();
                     $("#J_next-page").show();
@@ -268,6 +347,7 @@
                 $("#J_swiper-button-prev").show();
                 $("#J_prev-page").hide();
             }
+            $(".tk-tbl-list .casedetail-tbl").eq(index).addClass("active").siblings().removeClass("active");
         }
 
          var swiper1 = new Swiper('.casedetail-swiper-container', {

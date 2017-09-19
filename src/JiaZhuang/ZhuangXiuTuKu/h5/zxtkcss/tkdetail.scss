@@ -15,6 +15,13 @@
     }
 }
 
+.tk-tbl-list{
+    margin-top: px2rem(20px);
+    height: px2rem(150px);
+    background:#f60; 
+    position: relative;
+}
+
 /**
  * 案例详情
  */
@@ -25,8 +32,15 @@
 .casedetail-tbl {
     border: 1px solid #e4e4e4;
     width: 100%;
-    margin-top: px2rem(20px);
-    table-layout: fixed;
+   
+    table-layout:fixed;
+    visibility: hidden;
+    position: absolute;
+    left:0;
+    top:0;
+    &.active{
+       visibility: visible;
+    }
     td {
         padding: px2rem(20px);
         @include font-dpr(14px);

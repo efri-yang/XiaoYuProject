@@ -1,0 +1,38 @@
+	<div class="coms-yuyue-dialog" id="J_coms-yuyue-dialog">
+		<div class="soma-hd">我要预约吴耀南医生</div>
+		<div class="forms-box">
+			<div class="item">
+				<input type="text" class="ipt-text" placeholder="姓名" />
+			</div>
+			<div class="item">
+				<input type="text" class="ipt-text"  placeholder="性别" />
+			</div>
+			<div class="item">
+				<input  type="text" class="ipt-text"  placeholder="电话" />
+			</div>
+			<div class="item">
+				<input type="submit" class="ipt-submit" value="提交" />
+			</div>
+		</div>
+		<span class="close"></span>
+	</div>
+
+
+	<script type="text/javascript">
+	(function(){
+		$(function(){
+			$(document).on("click",'[data-roler="yybtn"]',function(event){
+					event.preventDefault();
+					var Dia=mDialog.open({
+						width:"80%",
+						closeBtn:false,
+						content:$("#J_coms-yuyue-dialog")
+					});
+					$("#J_coms-yuyue-dialog .close").on("click",function(){
+						Dia.close();
+					})
+			})	
+		})
+	})();
+
+	</script>
