@@ -1,5 +1,5 @@
 	<div class="coms-yuyue-dialog" id="J_coms-yuyue-dialog">
-		<div class="soma-hd">我要预约吴耀南医生</div>
+		<div class="soma-hd">我要预约<span id="ysname"></span>医生</div>
 		<div class="forms-box">
 			<div class="item">
 				<input type="text" class="ipt-text" placeholder="姓名" />
@@ -23,10 +23,14 @@
 		$(function(){
 			$(document).on("click",'[data-roler="yybtn"]',function(event){
 					event.preventDefault();
+					var name=$(this).data("name");
 					var Dia=mDialog.open({
 						width:"80%",
 						closeBtn:false,
-						content:$("#J_coms-yuyue-dialog")
+						content:$("#J_coms-yuyue-dialog"),
+						onShow:function(){
+							$("#J_coms-yuyue-dialog #ysname").html(name);
+						}
 					});
 					$("#J_coms-yuyue-dialog .close").on("click",function(){
 						Dia.close();

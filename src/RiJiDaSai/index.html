@@ -8,6 +8,7 @@
     <script src="js/zepto.js"></script>
     <script src="js/flexible.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/touch.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
@@ -215,7 +216,7 @@ $.fn.scrollTo =function(options){
         $(".banner-entry").css("height", winH);
 
         
-        $(".banner-entry").on("touchmove",function(e){
+        $(".banner-entry").on("touchstart",function(e){
         	// event.preventDefault();
         	// event.stopPropagation();
         	e.preventDefault();
