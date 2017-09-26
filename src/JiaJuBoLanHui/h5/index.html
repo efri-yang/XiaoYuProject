@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<title>投票</title>
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/flexible2.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container container-page-box">
+		<p class="img-pic"><img src="./images/banner_1.jpg"></p>
+		<p class="img-pic"><img src="./images/pic_2.png"></p>
+		<p class="img-pic mtr20"><img src="./images/pic_1.png"></p>
+
+		<div class="forms-box">
+			<div class="caption"></div>
+			<div class="item">
+				<input type="text" class="ipt-text" placeholder="姓名">
+			</div>
+			<div class="item">
+				<input type="text" class="ipt-text" placeholder="电话">
+			</div>
+			<div class="item">
+				<input type="text" class="ipt-text" placeholder="小区名称">
+			</div>
+			<div class="item">
+				<input type="text" class="ipt-text" placeholder="微信号码">
+			</div>
+			<div class="tip">温馨提示：报名成功后，小编会在活动开始前联系你，请务必保持电话通畅哦~</div>
+
+			
+			<input type="submit" class="ipt-submit" value="提交">
+			
+		</div>
+
+
+		<p class="img-pic mtr30"><img src="./images/pic_3.png"></p>
+		<div class="caption-tit-4 mtr30"></div>
+		<p class="img-pic mtr20"><img src="./images/pic_4.png"></p>
+		<div class="caption-tit-1 mtr30"></div>
+		<p class="img-pic mtr20"><img src="./images/tbl_1.png"></p>
+		<p class="img-pic"><img src="./images/tbl_2.png"></p>
+		<p class="img-pic"><img src="./images/tbl_3.png"></p>
+		<p class="img-pic"><img src="./images/tbl_4.png"></p>
+
+
+		<div class="caption-tit-2 mtr30"></div>
+		<p class="img-pic mtr20"><img src="./images/tbl_21.png"></p>
+		<p class="img-pic"><img src="./images/tbl_22.png"></p>
+		<p class="img-pic"><img src="./images/tbl_23.png"></p>
+		<div style="height:1rem"></div>
+    </div>	
+
+     <ul class="fixed-bar-guide">
+    <li class="gohome"><a href=""></a></li>
+    <li class="gototop"><a href="#gotop"></a></li>
+</ul>
+<script type="text/javascript">
+(function() {
+    $(function() {
+        var $goTop=$(".gototop");
+        var throttle = function(fn, delay, atleast) {
+            var timer = null;
+            var previous = null;
+
+            return function() {
+                var now = +new Date();
+
+                if (!previous) previous = now;
+
+                if (now - previous > atleast) {
+                    fn();
+                    // 重置上一次开始时间为本次结束时间
+                    previous = now;
+                } else {
+                    clearTimeout(timer);
+                    timer = setTimeout(function() {
+                        fn();
+                    }, delay);
+                }
+            }
+        }
+
+        var scrollTopDetect = throttle(function() {
+            var scrolltop = $(this).scrollTop();
+            if (scrolltop >= 500) {
+                $goTop.addClass("active");
+            } else if(scrolltop <= 500){
+                $goTop.removeClass("active");
+            }
+        },200,10);
+        $('<a name="gotop" style="visibility:hidden;"></a>').prependTo($("body"));
+        $(window).on("scroll",function(){
+            scrollTopDetect();
+        })  
+    })
+})()
+</script>	
+
+
+
+
+</body>
+</html>

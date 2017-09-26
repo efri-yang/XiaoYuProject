@@ -70,3 +70,52 @@
 		}
 	}
 }
+
+
+.fixed-bar-guide {
+
+    position: fixed;
+    z-index: 100;
+    right: px2rem(30px);
+    bottom: px2rem(100px);
+    li {
+        width: px2rem(69px);
+        height: px2rem(69px);
+        overflow: hidden;
+        border-radius: 100%;
+        margin-bottom: px2rem(20px);
+        a {
+
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+        }
+        &.gohome {
+            a {
+                background: url("../images/fixed_icon_1.png") no-repeat center center rgba(0, 0, 0, 0.2);
+                 background-size: 100% 100%;
+            }
+        }
+        &.goback {
+            a {
+                background: url("../images/fixed_icon_2.png") no-repeat center center rgba(0, 0, 0, 0.2);
+                 background-size: 100% 100%;
+            }
+        }
+        &.gototop {
+            
+            a {
+                 display:none;
+                background: url("../images/fixed_icon_3.png") no-repeat center center rgba(0, 0, 0, 0.2);
+                 background-size: 100% 100%;
+            }
+            &.active{
+                a{
+                    display:block;
+                }
+            }
+        }
+    }
+}
+

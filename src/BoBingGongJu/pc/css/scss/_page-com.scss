@@ -300,3 +300,51 @@ body {
     background:url("../images/layer_close.png") no-repeat top center !important;
 }
 
+.tongji-num-box{
+    padding:10px 0 25px;
+    .item{
+        text-align: center;
+        float: left;
+        width:33%;
+        border-right:1px solid #cccccc;
+        .count{
+            span{
+                width: 18px;
+                height: 18px;
+                line-height: 18px;
+                text-align: center;
+                color: #fff;
+                display: inline-block;
+                border-radius: 3px;
+                margin: 0 1px;
+                font-family: "宋体";
+                font-weight: bold;
+            }
+        }
+        .txt{
+            font-size: 14px;
+            color:#333333;
+            text-align:center; 
+            margin-top:5px; 
+        }
+        &.last{
+            border-right: 0;
+        }
+        &.item-1{
+            span{
+                background:#f98a90; 
+            }
+        }
+        &.item-2{
+            span{
+                background:#f5a17d; 
+            }
+        }
+        &.item-3{
+            span{
+                background:#92b3dc; 
+            }
+        }
+    }
+}
+

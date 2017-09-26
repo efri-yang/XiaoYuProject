@@ -588,6 +588,7 @@
             //判断 content的内容是不是页面的元素内容
             if (opts.content instanceof $ || $.zepto.isZ(opts.content)) {
 
+
                 //如果内容是jquery 或者zepto 对象，实行把容器包起来
                 $container = $('<div class="' + containerClassName + '"></div>');
                 $title = $(title);
@@ -669,9 +670,9 @@
         setElemPos($container, opts, $title, $main, $footerButton);
 
         !!opts.onBeforeShow && opts.onBeforeShow();
-
         $container.css({ "zIndex": mDialog.zIndex + 1, "visibility": "visible" });
         if (opts.animIn) {
+
             setAnim($container, opts.animIn, opts.animOut, opts.duration, "in", function() {
                 opts.onShow();
                 !!opts.pause && setTimeout(function() {
@@ -833,7 +834,7 @@
         }); 
     };
     window.mDialog = mDialog;
-})(window.jQuery || window.Zepto, window, document)
+})(window.jQuery || window.Zepto, window, document);
 
 
 

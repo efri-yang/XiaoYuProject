@@ -671,3 +671,32 @@
         }
     }
 }
+
+.tongji-num-box{
+    background:#000000;
+    height:px2rem(50px);
+    line-height:px2rem(50px);   
+    li{
+        float: left;
+        text-align: center;
+        font-size:px2rem(23px); 
+        width: 33.33%;
+        text-align: center;
+        color:#fff; 
+        &:nth-child(1){
+            span{
+                color:#eb9092; 
+            }
+        }
+        &:nth-child(2){
+            span{
+                color:#eaa483; 
+            }
+        }
+        &:nth-child(3){
+            span{
+                color:#98b3d8; 
+            }
+        }
+    }
+}

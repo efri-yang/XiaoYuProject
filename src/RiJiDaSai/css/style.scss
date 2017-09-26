@@ -207,6 +207,7 @@ body {
     &.active{
         display: block;
     }
+    
 }
 
 .section-tab-hdsm{
@@ -386,7 +387,9 @@ body {
     background:#fff;
     border-radius:px2rem(10px);
     padding:px2rem(50px) px2rem(40px) px2rem(40px);
-    display: none;
+    display:block;
+    visibility: hidden;
+    position: absolute;
     .forms-box{
         .item{
             margin-bottom:px2rem(20px); 

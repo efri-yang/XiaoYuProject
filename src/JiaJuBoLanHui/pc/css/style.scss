@@ -98,7 +98,7 @@
 
 
 .section-c2{
-	background: #ffbc03;
+	background: #ffcc00;
 	padding: 35px 0 80px;
 	.caption{
 		height: 71px;
@@ -130,6 +130,27 @@
 	}
 
 }
+
+
+.section-c4{
+	background: #ffbc03;
+	padding: 35px 0 30px;
+	.caption{
+		height: 71px;
+		margin-bottom: 25px;
+		background: url("../images/tit_3.png") no-repeat top center;
+	}
+	.tbl{
+		text-align: center;
+		img{
+			vertical-align: top;
+		}
+	}
+	.pic-1{
+		text-align: center;
+	}
+}
+
 
 
 
