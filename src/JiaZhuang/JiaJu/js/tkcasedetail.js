@@ -50,7 +50,9 @@
                 bigNextClass: "staff-bigNext",
                 bigPicWrapW: 666,
                 bigPicWrapH: 483,
-                index:0                                             
+                index:0,
+                init:function(){},
+                animEnd:function(){}                                             
             }
             var opts = $.extend($.fn.staffGallery.defaults, option);
             var oldIndex=opts.index,
@@ -100,6 +102,7 @@
                     $this.attr("src", bigSrc).fadeIn();
                     $(".staff-tag-list li").eq(Index).fadeIn().siblings().hide();
                     $(".tkalxq-title .list").children().eq(Index).show().siblings().hide();
+                    !!opts.animEnd && opts.animEnd.call($this,Index)
                     isAnim=false;
                     
                 });
@@ -206,6 +209,7 @@
                         
                     }
                 }
+                !!opts.init && opts.init.call($this,Index)
             };
             Init();
 

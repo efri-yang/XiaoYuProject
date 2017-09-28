@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>专家-主页</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="pexpert-awz-intro">
+             <p class="txt-q">经常性的膝盖性的膝盖性的膝盖性的膝盖疼，应该做什么检查？</p>
+             <!-- disabled -->
+             <div class="txt-intro">  由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就会造成颈椎骨质增生，以及颈椎间盘突出。骨质增生和椎间盘突出压迫到颈部神经、肌肉、韧带等就会产生脖子痛。</div>
+             <ul class="img-list" id="J_img-list">
+                <li><img src="./upload/avatar_5.jpg"></li>
+                <li><img src="./upload/avatar_5.jpg"></li>
+                <li><img src="./upload/avatar_5.jpg"></li>
+                <li><img src="./upload/pic_1.png"></li>
+             </ul>
+        </div>
+    </div>
+    <ul class="pexpert-footer">
+        <li class="item-1 active"><a href="ZhuanJia-HuiDa-WenZi.html">回答问题</a></li>
+        <li class="item-2 "><a href="ZhuanJia-HuiDa-YuYing.html">退回问题</a></li>
+    </ul>
+
+
+    <!-- ************************************************** -->
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Background of PhotoSwipe. 
+         It's a separate element, as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+            <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+            <div class="pswp__container">
+                <!-- don't modify these 3 pswp__item elements, data is added later on -->
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ************************************************** -->
+    
+
+
+    <link rel="stylesheet" type="text/css" href="js/photoswipe/photoswipe.css">
+    <link rel="stylesheet" type="text/css" href="js/photoswipe/default-skin/default-skin.css">
+    <script type="text/javascript" src="js/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="js/photoswipe/photoswipe-ui-default.min.js"></script>
+
+    <script type="text/javascript">
+    $(function() {
+       
+      
+        var items = [{
+                    src: 'upload/avatar_5.jpg'
+                },
+                {
+                     src: 'upload/avatar_5.jpg'
+                },
+                {
+                     src: 'upload/avatar_5.jpg'
+
+                },
+                {
+                    src: 'upload/pic_1.png'                   
+                }
+            ];
+
+             $.each(items,function(index, obj) {
+                 var img = new Image();
+                 img.src = obj.src;
+                 img.onload = function(){
+                    img.onload = null;
+                    obj.w=img.width;
+                    obj.h=img.height;
+                 }
+            });
+           
+
+
+
+
+        var openPhotoSwipe = function(index) {
+            var pswpElement = document.querySelectorAll('.pswp')[0];
+
+            // build items array
+            // define options (if needed)
+            var options = {
+                // history & focus options are disabled on CodePen        
+                history: false,
+                focus: false,
+            };
+
+            if(window.devicePixelRatio==3){
+                $.each(items,function(index, obj) {
+                        obj.w=obj.w*2;
+                        obj.h=obj.h*2;
+                });
+            }
+            options.index = index;
+
+            var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+            gallery.init();
+        };
+
+
+        $("#J_img-list li").on("click", function() {
+            var index = $("#J_img-list li").index(this);
+            openPhotoSwipe(index);
+        });
+    });
+
+    </script>
+  
+    
+</body>
+
+</html>

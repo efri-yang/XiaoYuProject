@@ -772,6 +772,43 @@
 	}
 }
 
+.tkal-sjrk{
+	
+	li{
+		border:1px solid #e4e4e4;
+		padding: 20px;
+		margin-top: 25px;
+	}
+	.pic{
+		width: 79px;
+		height: 79px;
+		margin: 0 auto;
+		text-align: center;
+		line-height: 79px;
+		overflow: hidden;
+		border:1px solid #eeeeee;
+	}
+	.name{
+		text-align: center;
+		font-size: 16px;
+		color:#333333;
+		margin-top: 5px; 
+	}
+	.guide-btn{
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		color:#fff;
+		font-size: 18px;
+		display: block; 
+		background-color:#28ab00;
+		margin-top: 15px;
+		&:hover{
+			background: darken(#28ab00,5%);
+		} 
+	}
+}
+
 
 
 .staff-bigPrev{position:absolute;top:50%;margin-top:-28px;left:10px;background:url("../img/zhuangxiutuku/arrow_left.png") no-repeat top center; width:31px; height: 56px;}
@@ -802,8 +839,9 @@
         font-size: 14px;
         text-align: center;
         z-index: 55;
-        display:none;
+        
         background-color: rgba(0, 0, 0, 0.8);
+        z-index: 20;
         filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#66000000, endColorstr=#66000000);
     }
 
@@ -847,7 +885,7 @@
 .staff-smallWrap{ margin:15px auto 0; position:relative; width: 752px;
 overflow: hidden;}
 .staff-smallList{
-	background:#f60;
+	
 	position: relative;
 }
 .staff-smallList li{ float:left; width:180px; height:120px; overflow:hidden;display:inline;margin-right:10px;}

@@ -261,8 +261,36 @@
     $(function() {
         var currIndex = 0;
         var $slideSmall = $(".casedetail-swiper-small-container .swiper-slide");
+        var items = [{
+                    src: 'upload/pro_1.jpg'
+                },
+                {
+                    src: 'https://placekitten.com/1200/900'
+                },
+                {
+                    src: 'upload/pro_3.jpg'
 
+                },
+                {
+                    src: 'upload/pro_4.jpg'                   
+                },
+                {
+                    src: 'upload/pro_6.jpg'
+                    
 
+                }
+            ];
+
+             $.each(items,function(index, obj) {
+                 var img = new Image();
+                 img.src = obj.src;
+                 img.onload = function(){
+                    img.onload = null;
+                    obj.w=img.width;
+                    obj.h=img.height;
+                 }
+            });
+           
 
 
 
@@ -271,52 +299,11 @@
             var pswpElement = document.querySelectorAll('.pswp')[0];
 
             // build items array
-            var items = [{
-                    src: 'upload/pro_1.jpg',
-                    w: 1200, //开发将原图的大小计算后放到这里
-                    h: 810
-
-                },
-                {
-                    src: 'https://placekitten.com/1200/900',
-                    w: 332, //开发将原图的大小放到这里
-                    h: 264
-
-                },
-                {
-                    src: 'upload/pro_3.jpg',
-                    w: 689, //开发将原图的大小放到这里
-                    h: 327
-
-                },
-                {
-                    src: 'upload/pro_4.jpg',
-                    w: 280,
-                    h: 280
-
-                },
-                {
-                    src: 'upload/pro_6.jpg',
-                    w: 1200,
-                    h: 810
-
-                }
-            ];
-            if (window.devicePixelRatio == 3) {
-                for (var i = 0; i < items.length; i++) {
-                    items[i].width * 2;
-                    items[i].height * 2;
-                }
-            }
             // define options (if needed)
             var options = {
                 // history & focus options are disabled on CodePen        
                 history: false,
                 focus: false,
-
-
-
-
             };
             options.index = index;
 

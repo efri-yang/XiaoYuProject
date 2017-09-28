@@ -245,6 +245,19 @@
                 <!-- 这个模块和之前的是一样的，所以这里只是拷贝 start -->
             </div>
             <!-- ************************************* -->
+
+            <ul class="tkal-sjrk">
+               <li>
+                     <div class="pic"><img src="./upload/a_1.jpg"></div>
+                    <p class="name">厦门十德好康设计装饰公司</p>
+                    <a href="#" class="guide-btn">进入店铺</a>
+               </li>
+               <li>
+                     <div class="pic"><img src="./upload/a_1.jpg"></div>
+                    <p class="name">厦门十德好康设计装饰公司</p>
+                    <a href="#" class="guide-btn">进入店铺</a>
+               </li>
+            </ul>
         </div>
     </div>
     <!-- ****************** footer start  ***********************-->
@@ -278,6 +291,12 @@
                                bigPicWrapH:482,//大图高度  
                                viewLen:4,//滚动可见的长度
                                scroW:190,//li的宽度+边框+margin
+                               init:function(index){
+                                    $(".tkal-sjrk li").eq(index).show().siblings().hide();
+                               },
+                               animEnd:function(index){
+                                  $(".tkal-sjrk li").eq(index).show().siblings().hide();
+                               }
                                                   
 
                    });

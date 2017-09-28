@@ -72,7 +72,7 @@ body{
         padding: px2rem(30px) px2rem(20px) px2rem(40px); 
         .caption{
             height: px2rem(83px);
-            background: url("../images/tit_3.png") no-repeat top center;
+            background: url("../images/tit_4.png") no-repeat top center;
             background-size: auto 100%;
             margin-bottom:px2rem(30px); 
         }
@@ -115,16 +115,22 @@ body{
         height: px2rem(64px);
         background: url("../images/tit_1.png") no-repeat top center;
         background-size:auto 100%;
+         margin-top:px2rem(50px); 
+        margin-bottom:px2rem(30px); 
     }
     .caption-tit-2{
         height: px2rem(52px);
         background: url("../images/tit_2.png") no-repeat top center;
         background-size:auto 100%;
+         margin-top:px2rem(50px); 
+        margin-bottom:px2rem(30px); 
     }
     .caption-tit-4{
         height:px2rem(64px);
         background: url("../images/tit_3.png") no-repeat top center;
         background-size: auto 100%;
+        margin-top:px2rem(50px); 
+        margin-bottom:px2rem(30px); 
     }
 }
 
