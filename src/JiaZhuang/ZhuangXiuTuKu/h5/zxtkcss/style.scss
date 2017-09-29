@@ -71,9 +71,10 @@
 }
 .zxtkc-tab-item{
 	display: none;
-	padding: 0 px2rem(20px) px2rem(30px);
-	border-bottom: 1px solid #eaeaea;
-	height:px2rem(191px);
+	padding: 0 px2rem(20px) 0;
+	
+	height:px2rem(175px);
+
 	overflow: hidden;
 	&.active{
 		display: block;
@@ -101,6 +102,8 @@
 }
 .zxtkc-list-wrap{
 	padding-bottom: 130px;
+	border-top:1px solid #eee; 
+	margin-top:px2rem(10px); 
 }
 .zxtkc-list{
 	padding:0 px2rem(15px); 

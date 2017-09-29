@@ -81,12 +81,11 @@
 		}
 	}
 	.area-rt{
-		width: 653px;
-		height: 456px;
-		background: url("../images/pic_2.png") no-repeat top center;
-		position: absolute;
-		right:-40px;
-		bottom:0px;
+		width: 553px;
+		height: 531px;
+		background: url("../images/pic_4.jpg") no-repeat top center;
+		float: right;
+		border: 6px solid #fff;
 	}
 }
 
@@ -96,6 +95,21 @@
 	background: url("../images/pic_2.jpg") no-repeat top center;
 }
 
+.section-c1-4{
+	height: 550px;
+	margin-top: 25px;
+	position: relative;
+	background: url("../images/pic_5.png") no-repeat top center;
+	.video-item{
+		border:10px solid #2c2c2c;
+		width: 752px;
+		height:470px;
+		overflow: hidden;
+		position: absolute;
+		top:28px; 
+		right: 28px;
+	}
+}
 
 .section-c2{
 	background: #ffcc00;

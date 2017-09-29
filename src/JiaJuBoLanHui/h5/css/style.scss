@@ -65,7 +65,7 @@ body{
         }
     }
     .forms-box{
-        margin: px2rem(25px) px2rem(25px) 0;
+        margin: px2rem(35px) px2rem(25px) 0;
         border:1px solid #ed841d;
         background: #ffad1d;
         border-radius:px2rem(30px);
@@ -131,6 +131,29 @@ body{
         background-size: auto 100%;
         margin-top:px2rem(50px); 
         margin-bottom:px2rem(30px); 
+    }
+    .video-box{
+        margin: px2rem(40px) px2rem(25px) 0;
+        position: relative;
+        .maskbg{
+            position: absolute;
+            left:0;
+            right: 0;
+            bottom: 0;
+            top:0;
+            background: #ffb813;
+            transform:rotate(3deg);
+        }
+        .video-item{
+            position: relative;
+            z-index: 1;
+            border:px2rem(10px) solid #2c2c2c;
+            width: 100%;
+            font-size: 0;
+            *{
+                width: 100%;
+            }
+        }
     }
 }
 

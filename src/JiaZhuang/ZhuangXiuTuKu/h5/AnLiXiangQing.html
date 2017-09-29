@@ -342,7 +342,15 @@
             paginationClickable: true,
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
-            spaceBetween: 0
+            spaceBetween: 0,
+            onTouchEnd: function(swiper){
+                if(swiper.isEnd && swiper.translate < 0){
+                    alert("下一页跳转写在这里！");
+                }else if(swiper.isBeginning && swiper.translate > 0){
+                    alert("上一页跳转写在这里！")
+                }
+
+            }
         });
          
         var swiper2 = new Swiper('.casedetail-swiper-small-container', {
