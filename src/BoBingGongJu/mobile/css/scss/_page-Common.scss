@@ -700,3 +700,59 @@
         }
     }
 }
+
+
+@keyframes marquee {
+    0% { left: 0; }
+    5%{left: 0;}
+    100% { left: -41.333rem; }
+}
+
+.coms-lqmp-topbar{
+    background-color:rgba(0,0,0,0.8);
+    height:px2rem(50px);
+    line-height:px2rem(50px);
+    position: fixed;
+    left:0;
+    top:0; 
+    overflow: hidden;
+    width: 100%;
+    padding:0 px2rem(60px) 0 px2rem(230px);
+    .tit{
+        position: absolute;
+        left:0;
+        top:0;
+        background: #ed1e1d;
+        font-size: px2rem(23px);
+        padding:0 px2rem(15px);
+        color:#fff; 
+    }  
+    .lqmp-txt{
+        color:#fff;
+        // overflow: hidden;
+        position: relative;
+       
+        overflow: hidden;
+        .lqmp-scoller{
+            position: relative;
+            left:0;
+            top:0;
+            width: px2rem(3100px);
+            animation:  marquee 40s linear 0s infinite;
+            white-space: nowrap;
+          
+        }
+    }
+    .close{
+        position: absolute;
+        right:px2rem(10px);
+        top:50%;
+        margin-top:px2rem(-15px);
+        width:px2rem(30px);
+        height:px2rem(30px);
+        overflow:hidden;
+        background: url("../images/close_lqjp_btn.png") no-repeat top center;
+        background-size: 100% 100%; 
+        cursor:pointer;
+    }
+}

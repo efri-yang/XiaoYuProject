@@ -469,6 +469,44 @@
 
         })
     </script>
+
+
+
+    <!-- 领奖 start -->
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <div class="coms-lgtz-box">
+        <div class="container">
+            <div class="lgtz-list">
+                <span class="tit">博饼门票领取通知</span>
+                <div class="bd">
+                    <ul>
+                        <li>小鱼网10月22日湾悦城线下博饼门票领取信息：&nbsp;&nbsp;&nbsp;&nbsp;1. 小鱼网领票时间：10月11日~10月20日(上班期间：9:30~17:30)&nbsp;&nbsp;&nbsp;&nbsp;小鱼网地址：厦门市思明区望海路59号楼之一5楼。&nbsp;&nbsp;&nbsp;&nbsp;2.  湾悦城领票时间：10月21日(10:00~20:00)至10月22日(10:00~12:00前)，湾悦城地址：厦门市湖里区日圆二里1号。</li>
+                    </ul>
+                </div>
+
+                <span class="close"></span>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            $(".lgtz-list").slide({
+                mainCell:".bd ul",
+                autoPlay:true,
+                effect:"leftMarquee",
+                interTime:50,
+                trigger:"click"
+            });
+
+            $(".coms-lgtz-box .close").on("click",function(){
+                $(".coms-lgtz-box").hide();
+            })
+
+
+        })
+    </script>
+    <!--  领奖 end-->
 </body>
 
 </html>

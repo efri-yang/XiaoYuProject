@@ -348,3 +348,56 @@ body {
     }
 }
 
+
+
+.coms-lgtz-box{
+    background-color: rgba(0,0,0,0.8);
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    left:0;
+    bottom:0;
+    width: 100%; 
+    z-index: 100;
+    .lgtz-list{
+        position: relative;
+        padding-left: 162px;
+        padding-right: 40px;
+        overflow: hidden;
+        .tit{
+            position: absolute;
+            left:0;
+            top:0;
+            width: 162px;
+            text-align: center;
+            background:#c72c2f;
+            color:#fff;
+            font-size: 16px;  
+        }
+        .bd{
+            padding-left: 15px;
+            overflow: hidden;
+           
+        }
+        .close{
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            right: 0;
+            top:50%;
+            margin-top:-12px;
+            cursor: pointer;
+            background: url("../images/close_lqjp_btn.png") no-repeat top center; 
+
+        }
+        ul{
+
+            li{
+                color:#fff; 
+                float: left;
+                white-space: nowrap;
+                
+            }
+        }      
+    }
+}
