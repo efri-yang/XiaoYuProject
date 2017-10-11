@@ -58,3 +58,31 @@
 	}
 }
 
+
+.pseach-keshifl{
+	padding:px2rem(10px) px2rem(5px) px2rem(15px); 
+	li{
+		float: left;
+		width:25%;
+		padding:px2rem(10px) px2rem(10px); 
+		a{
+			display: block;
+			height: px2rem(70px);
+			line-height:px2rem(70px);
+			text-align: center;
+			font-size:px2rem(26px); 
+			border:1px solid #d7d7d7;
+			border-radius:px2rem(35px);
+			color:#535353; 
+			@extend %text-overflow;  
+		}
+		&.active,&:active{
+			a{
+				background:#15cc82;
+				color:#fff;
+				border-color:#15cc82;  
+			}
+		}
+	}
+}
+
