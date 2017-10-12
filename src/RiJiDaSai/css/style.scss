@@ -338,6 +338,7 @@ body {
             a{
                 display: block;
                 padding: px2rem(30px) 0;
+                min-height:px2rem(237px); 
                 border-bottom: 1px dashed #d4d4d4;
             }
             &:last-child{
@@ -368,17 +369,24 @@ body {
             font-size: px2rem(23px);
             line-height: 1.2;
             margin-top: px2rem(8px);
-            height:px2rem(80px); 
+            height:px2rem(86px); 
             overflow: hidden;
             -webkit-line-clamp: 3;
             text-overflow: ellipsis;
             display: -webkit-box;
             -webkit-box-orient: vertical;
+
+            *{
+                 color: #003333 !important;
+                font-size: px2rem(23px) !important;
+                line-height: 1.2 !important;
+            }
         }
         .more{
-            color:#26af86;
+            color:#26af86 !important;
             margin-top:px2rem(15px);
             display: block; 
+            font-size: px2rem(23px) !important;
         }
     }
 }
@@ -390,6 +398,8 @@ body {
     display:block;
     visibility: hidden;
     position: absolute;
+    left:0;
+    top:0;
     .forms-box{
         .item{
             margin-bottom:px2rem(20px); 

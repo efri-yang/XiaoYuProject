@@ -245,8 +245,15 @@
 
             }
         });
+
+    
+
         $(".section-tab-hd a[data-toggle='tab']").click(function() {
-            itemIndex = $(".section-tab-hd a[data-toggle='tab']").index(this);
+             $("body").scrollTo({
+                    toT: winH,
+                    durTime:0,
+                    delay:1
+                });
             $(this).tab('show');
         });
 

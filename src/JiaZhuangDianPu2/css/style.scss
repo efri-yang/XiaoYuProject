@@ -455,7 +455,7 @@
     padding: px2rem(30px) px2rem(30px) px2rem(180px) !important;
     color: #666666;
     @include font-dpr(16px);
-    line-height: 1.35;
+    line-height: 1.35 !important;
     img {
         width: 100%;
     }
