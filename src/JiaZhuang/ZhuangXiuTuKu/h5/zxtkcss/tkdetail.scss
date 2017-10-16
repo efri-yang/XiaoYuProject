@@ -25,7 +25,9 @@
  * 案例详情
  */
 
-
+.pbfoot{
+    padding-bottom:px2rem(180px); 
+}
 
 
 .casedetail-tbl {
@@ -42,7 +44,7 @@
     }
     td {
         padding: px2rem(20px);
-        @include font-dpr(14px);
+        font-size:px2rem(28px); 
         &.para-tit {
             border-left: 1px solid #e4e4e4;
             padding-right: 0;

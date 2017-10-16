@@ -1601,3 +1601,75 @@ input::-ms-input-placeholder {
         }
     }
 }
+
+
+/**
+ *提问问题-绑定表单页面
+ */
+.qa-bind-page{
+    .tip-1{
+        color:#ce8535;
+        font-size:px2rem(30px);
+        padding: 0 px2rem(25px);
+        height:px2rem(90px);
+        line-height:px2rem(90px);
+        background:#fffcef;
+        border-bottom:1px solid #f2dec8;      
+    }
+    .forms-box{
+        padding: 0 px2rem(25px);
+        .item {
+            margin-bottom: px2rem(30px);
+        }
+        .coms-field-text {
+            border-radius: px2rem(5px);
+            background:#f2f2f2;
+            border-color:#f2f2f2;  
+        }
+        .item-phone {
+            position: relative;
+            >input {
+                width: px2rem(430px);
+            }
+            .btn-getyzm {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: px2rem(250px);
+                height: px2rem(88px);
+                padding: 0;
+                background: #ffb463;
+                line-height: px2rem(88px);
+                border: none;
+                color: #fff;
+                font-size: px2rem(32px);
+                border-radius: px2rem(5px);
+                &:active {
+                    background-color: darken(#ffb463, 5%);
+                }
+                &:disabled {
+                    background: #d3d2d2;
+                    cursor: default;
+                    color: #999;
+                    &:hover {
+                        background: #cacaca;
+                    }
+                }
+            }
+        }
+        .ipt-submit {
+            @include font-dpr(18px);
+            margin-top: px2rem(70px);
+        }
+    }
+
+    .tip-2{
+        margin-top:px2rem(35px); 
+        padding: 0 px2rem(25px);
+        font-size:px2rem(28px);
+        color:#666666; 
+        p{
+            margin-top:px2rem(25px); 
+        } 
+    }
+}
