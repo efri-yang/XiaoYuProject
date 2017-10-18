@@ -257,6 +257,11 @@
     <link rel="stylesheet" type="text/css" href="zxtkjs/photoswipe/default-skin/default-skin.css">
     <script type="text/javascript" src="zxtkjs/photoswipe/photoswipe.min.js"></script>
     <script type="text/javascript" src="zxtkjs/photoswipe/photoswipe-ui-default.min.js"></script>
+<style type="text/css">
+    .pswp{
+        touch-action:auto;
+    }
+</style>
     <script type="text/javascript">
     $(function() {
         var currIndex = 0;
@@ -309,6 +314,13 @@
 
             var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
             gallery.init();
+
+            $(".pswp").on("click",function(event){
+                console.dir(event.target.tagName);
+                if(event.target.tagName!="IMG"){
+                    gallery.close()
+                }
+            });
         };
 
 
@@ -316,6 +328,8 @@
             var index = $(".casedetail-swiper-container .swiper-slide").index(this);
             openPhotoSwipe(index);
         });
+
+        
 
 
         function toggleIndex(index){

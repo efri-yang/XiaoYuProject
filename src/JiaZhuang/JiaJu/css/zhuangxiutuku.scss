@@ -561,7 +561,7 @@
 .zxtkc-list{
 	padding-bottom: 50px;
 	.list{
-		width: 1113px;
+		width: 1115px;
 		li{
 			float: left;
 			width: 354px;
@@ -573,8 +573,22 @@
 			.pic{
 				width: 354px;
 				height: 221px;
+				line-height: 221px;
 				overflow: hidden;
 				display: block;
+				text-align: center;
+				background:#e6e6e6;
+				span{
+					width: 354px;
+				height: 221px;
+	        display: table-cell;
+	        vertical-align: middle;
+	        text-align: center;
+				}
+				img{
+					vertical-align: middle;
+					width: 100%;
+				}
 			}
 			.txt{
 				height: 60px;
