@@ -263,8 +263,10 @@
     }
 </style>
     <script type="text/javascript">
+
     $(function() {
         var currIndex = 0;
+       
         var $slideSmall = $(".casedetail-swiper-small-container .swiper-slide");
         var items = [{
                     src: 'upload/pro_1.jpg'
@@ -315,20 +317,35 @@
             var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
             gallery.init();
 
-            $(".pswp").on("click",function(event){
+
+            // $(".pswp").on("click",function(event){
+            //     alert("xxx")
+            //     console.dir(event.target.tagName);
+            //     if(event.target.tagName !="IMG"){
+            //         gallery.close()
+            //     }
+            // });
+            
+            $(".pswp").on("touchstart",function(event){
                 console.dir(event.target.tagName);
                 if(event.target.tagName!="IMG"){
-                    gallery.close()
+                    gallery.close();
+                   
                 }
             });
+           
         };
 
+        
 
         $(".casedetail-swiper-container .swiper-slide").on("click", function() {
             var index = $(".casedetail-swiper-container .swiper-slide").index(this);
             openPhotoSwipe(index);
+           
         });
 
+
+        
         
 
 
@@ -351,19 +368,23 @@
             $(".tk-tbl-list .casedetail-tbl").eq(index).addClass("active").siblings().removeClass("active");
         }
 
-         var swiper1 = new Swiper('.casedetail-swiper-container', {
+        var swiper1 = new Swiper('.casedetail-swiper-container', {
             initialSlide :0,
             paginationClickable: true,
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
             spaceBetween: 0,
-            onTouchEnd: function(swiper){
-                if(swiper.isEnd && swiper.translate < 0){
+            onTouchStart:function(swiper){
+                swiper.currX=swiper.touches.startX;
+            },
+            onTouchEnd:function(swiper){
+                swiper.distX=swiper.touches.currentX;
+                var distance=swiper.distX-swiper.currX;
+                if(swiper.isEnd && swiper.translate < 0 && distance <0){     
                     alert("下一页跳转写在这里！");
-                }else if(swiper.isBeginning && swiper.translate > 0){
-                    alert("上一页跳转写在这里！")
+                }else if(swiper.isBeginning && swiper.translate >0 && distance >0){
+                    alert("上一页跳转写在这里！");
                 }
-
             }
         });
          
@@ -386,9 +407,6 @@
 
         swiper1.params.control = swiper2;
         swiper2.params.control = swiper1;
-
-
-
     })
     </script>
 </body>
