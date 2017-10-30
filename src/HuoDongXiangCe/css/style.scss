@@ -152,6 +152,15 @@
             right:px2rem(10px);
             top:px2rem(10px); 
         }
+        .ipt-file{
+            position:absolute;
+            font-size:px2rem(150px);
+            right: 0;
+            top: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            cursor: pointer
+        }
     }
 }
 
