@@ -36,24 +36,24 @@
                 <a href="#">中式</a>
                 <a href="#">田园</a>
                 <a href="#">乡村</a>
-                <a href="#">古典</a>
 
+                <a href="#">北欧</a>
+                <a href="#">日式</a>
+                <a href="#">现代</a>
+                <a href="#">简约</a>
+                <a href="#">欧式</a>
+                <a href="#">美式</a>
                 <a href="#">中式</a>
                 <a href="#">田园</a>
-                <a href="#">乡村</a>
-                <a href="#">古典</a>
+                
+
+               
             </div>
             <div class="zxtkc-tab-item" id="J_kongjian">
                 <a href="#">空间01</a>
                 <a href="#">空间01</a>
                 <a href="#">空间01</a>
-                <a href="#">空间01</a>
-                <a href="#">空间01</a>
-                <a href="#">空间01</a>
-                <a href="#">空间01</a>
-                <a href="#">空间01</a>
-                <a href="#">空间01</a>
-                <a href="#">空间01</a>
+                
             </div>
             <div class="zxtkc-tab-item" id="J_juebu">
                 <a href="#">局部</a>
@@ -143,7 +143,7 @@
     </div>
 
     
-
+    <!-- 修改 by yyh 2017 10 31 -->
     <div class="zxtkc-search-box">
         <span class="mask"></span>
         <div class="search-forms">
@@ -243,7 +243,9 @@
 
 
         $(".zxtkc-search-entry").on("click",function(){
-            $(".zxtkc-search-box").show();                
+            $(".zxtkc-search-box").show();
+             //修改 by yyh 20171031 
+            $(".zxtkc-search-box .ipt-text").focus();              
         });
         $(".zxtkc-search-box .cancel").on("click",function(event){
              $(".zxtkc-search-box").hide();          

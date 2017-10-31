@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>专家主页</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+       
+        <div class="dropload-scroll-box">
+            <ul class="jkbb-list">
+                <li>
+                    <a href="#">
+                        <p class="title">如何治疗神经疼痛？如何治疗神经疼痛？如何治疗神经疼痛？</p>
+                        <p class="intro">由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就度后度后度后度后</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p class="title">如何治疗神经疼痛？</p>
+                        <p class="intro">由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就度后度后度后度后</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p class="title">如何治疗神经疼痛？</p>
+                        <p class="intro">由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就度后度后度后度后</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p class="title">如何治疗神经疼痛？</p>
+                        <p class="intro">由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就度后度后度后度后</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p class="title">如何治疗神经疼痛？</p>
+                        <p class="intro">由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就度后度后度后度后</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p class="title">如何治疗神经疼痛？</p>
+                        <p class="intro">由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就度后度后度后度后</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p class="title">如何治疗神经疼痛？</p>
+                        <p class="intro">由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就度后度后度后度后</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p class="title">如何治疗神经疼痛？</p>
+                        <p class="intro">由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就度后度后度后度后</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p class="title">如何治疗神经疼痛？</p>
+                        <p class="intro">由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就度后度后度后度后</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p class="title">如何治疗神经疼痛？</p>
+                        <p class="intro">由于长时间低头伏案工作、使用电脑、高枕睡眠、开车时间过长等等使颈椎发生退行性变，当颈椎退变到一定程度后就度后度后度后度后</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    @@include("./views/_fixedbar.html")
+    <script type="text/javascript" src="js/dropload/dropload.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/dropload/dropload.css">
+    <script type="text/javascript">
+    $(function() {
+
+
+
+
+       (function() {
+            var itemCurrPage = 1;
+            var itemPageNum = 8;
+
+            var initCount=8;//开发请将首次加载的条数附在这里,如果只有两条数据的时候就不需要下拉加载更多 
+            if(initCount >=itemPageNum){
+                var dropload = $('.dropload-scroll-box').dropload({
+                scrollArea: window,
+                domDown : {
+                    domNoData  : '<div class="dropload-noData">òᆺó被你看光啦！</div>'
+                },
+                loadDownFn: function(me) {
+
+                    // 加载菜单一的数据
+                    $.ajax({
+                        type: 'GET',
+                        // data:{page:item1CurrPage,num:item1PageNum},
+                        url: './',
+                        dataType: 'json',
+                        success: function(data) {
+                            var data = {
+                                "lists": [{
+                                       
+                                        "name": "111111111111111？",
+                                        "intro": "厦门中医骨伤科主治医生厦门中医骨伤科主治医生厦门中医骨伤科主治医生厦门中医骨伤科主治医生",
+                                        "href": "http://wnworld.com"
+                                        
+                                    },
+                                    {
+                                       
+                                        "name": "111111111111111？",
+                                        "intro": "厦门中医骨伤科主治医生厦门中医骨伤科主治医生厦门中医骨伤科主治医生厦门中医骨伤科主治医生",
+                                        "href": "http://wnworld.com"
+                                        
+                                    },{
+                                       
+                                        "name": "111111111111111？",
+                                        "intro": "厦门中医骨伤科主治医生厦门中医骨伤科主治医生厦门中医骨伤科主治医生厦门中医骨伤科主治医生",
+                                        "href": "http://wnworld.com"
+                                        
+                                    },{
+                                       
+                                        "name": "111111111111111？",
+                                        "intro": "厦门中医骨伤科主治医生厦门中医骨伤科主治医生厦门中医骨伤科主治医生厦门中医骨伤科主治医生",
+                                        "href": "http://wnworld.com"
+                                        
+                                    },{
+                                       
+                                        "name": "111111111111111？",
+                                        "intro": "厦门中医骨伤科主治医生厦门中医骨伤科主治医生厦门中医骨伤科主治医生厦门中医骨伤科主治医生",
+                                        "href": "http://wnworld.com"
+                                        
+                                    },
+                                ]
+                            }
+                            itemCurrPage++;
+                            var result = "";
+                            for (var i = 0; i < data.lists.length; i++) {
+                                result += '<li><a href="'+data.lists[i].href+'"><p class="title">'+data.lists[i].name+'</p><p class="intro">'+data.lists[i].intro+'</p></a></li>';
+                            }
+                            setTimeout(function() { //测试用 后端请删除timeout的函数
+                                $(".jkbb-list").append(result);
+                                if (!data.lists.length || data.lists.length < itemPageNum) {
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData(); 
+                                }
+                                me.resetload();
+
+                            }, 2000)
+
+                        },
+                        error: function(xhr, type) {
+                            console.dir('Ajax error!');
+                            // 即使加载出错，也得重置
+                            me.resetload();
+                        }
+                    });
+                }
+            });
+            }
+            
+
+        })()
+    })
+    </script>
+</body>
+
+</html>

@@ -20,6 +20,8 @@
 	}
 	.zxtkc-search-entry{
 		float: right;
+		padding: 0 px2rem(10px);
+		margin-right: px2rem(-10px);
 		i{
 			width:px2rem(38px);
 			height: px2rem(38px);
@@ -71,9 +73,9 @@
 }
 .zxtkc-tab-item{
 	display: none;
-	padding: 0 px2rem(20px) 0;
+	padding: 0 px2rem(20px) px2rem(8px);
 	
-	height:px2rem(175px);
+	max-height:px2rem(175px);
 
 	overflow: hidden;
 	&.active{
@@ -400,16 +402,17 @@
 	left:0;
 	top:0;
 	right: 0;
-	bottom: 0;
-	padding:px2rem(35px) px2rem(125px) px2rem(35px) px2rem(35px);
+	
+	padding:px2rem(10px) px2rem(125px) px2rem(10px) px2rem(20px);
 	display:none;  
 	.cancel{
 		position:absolute;
-		right: px2rem(35px);
+		right: px2rem(15px);
 		color:#333333;
-		top:px2rem(60px);
+		top:px2rem(32px);
 		@include font-dpr(14px); 
 		z-index: 1;
+		padding: 0 px2rem(20px);
 	}
 	.mask{
 		position:absolute;
@@ -428,8 +431,9 @@
 		}
 		.ipt-submit{
 			position: absolute;
-			width: px2rem(38px);
-			height: px2rem(38px);
+			width: px2rem(40px);
+			height: px2rem(40px);
+			
 			overflow:hidden;
 			background:url("../zxtkimg/search_icon_2.png") no-repeat top center;
 			border:none;
@@ -440,7 +444,7 @@
 			margin-top:px2rem(-38px/2); 
 		}
 		.ipt-text{
-			padding:px2rem(20px) px2rem(100px) px2rem(20px) px2rem(20px); 
+			padding:px2rem(18px) px2rem(85px) px2rem(18px) px2rem(20px); 
 			border:2px solid #e2e2e2;
 			width: 100%;
 			border-radius: px2rem(40px);

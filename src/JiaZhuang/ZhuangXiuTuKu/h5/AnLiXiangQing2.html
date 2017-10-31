@@ -191,6 +191,8 @@
                     <div class="pic"><img src="upload/pro_6.jpg"></div>
                 </div>
             </div>
+            <a href="#" class="prev-page" id="J_small-prev-page"><b>上一页</b></a>
+            <a href="#" class="next-page" id="J_small-next-page"><b>下一页</b></a>
         </div>
     </div>
     <div class="pbfoot"></div>
@@ -350,20 +352,19 @@
 
 
         function toggleIndex(index){
-
             if(index==$(".casedetail-swiper-small-container .swiper-slide").length-1){
                     $("#J_swiper-button-next").hide();
-                    $("#J_next-page").show();
+                    $("#J_next-page,#J_small-next-page").show();
                 }else {
                     $("#J_swiper-button-next").show();
-                    $("#J_next-page").hide();
+                    $("#J_next-page,#J_small-next-page").hide();
                 }
             if(index==0){
                 $("#J_swiper-button-prev").hide();
-                    $("#J_prev-page").show();
+                    $("#J_prev-page,#J_small-prev-page").show();
             }else{
                 $("#J_swiper-button-prev").show();
-                $("#J_prev-page").hide();
+                $("#J_prev-page,#J_small-prev-page").hide();
             }
             $(".tk-tbl-list .casedetail-tbl").eq(index).addClass("active").siblings().removeClass("active");
         }

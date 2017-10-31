@@ -365,6 +365,29 @@ input::-ms-input-placeholder {
             }
         }
     }
+    &.type-2{
+       
+        .handlebtn-1 {
+            position: absolute;
+            right: px2rem(30px);
+            top: 50%;
+            margin-top:px2rem(-28px); 
+            width: px2rem(135px);
+            height: px2rem(56px);
+            line-height: px2rem(56px);
+            text-align: center;
+            @include font-dpr(14px);
+            overflow: hidden;
+            background: #2ccd8c;
+            border-radius: px2rem(5px);
+            padding: 0;
+            color: #fff;
+            &:active {
+                background-color: darken(#2ccd8c, 5%);
+            }
+        }
+        
+    }
 }
 
 
@@ -516,7 +539,57 @@ input::-ms-input-placeholder {
 }
 
 
-
+.pexpert-noq{
+    padding: px2rem(30px) px2rem(25px) px2rem(50px);
+    .tip-1{
+        color:#d62828;
+        font-size:px2rem(30px);  
+    }
+    .btn-1{
+        height: px2rem(100px);
+        line-height: px2rem(100px);
+        background:#2ccd8c;
+        border-radius:px2rem(10px);
+        display: block;
+        text-align: center;
+        color:#ffffff;
+        font-size: px2rem(36px); 
+        margin-top:px2rem(25px);  
+        i{
+            width:px2rem(36px);
+            height:px2rem(36px);
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top:px2rem(-3px); 
+            margin-right:px2rem(11px); 
+            background:url("../images/seach_icon_3.png") no-repeat top center;
+            background-size: 100% 100%;   
+        }   
+    }
+    .btn-2{
+        height: px2rem(100px);
+        line-height: px2rem(100px);
+        background:#ffb463;
+        border-radius:px2rem(10px);
+        display: block;
+        text-align: center;
+        color:#ffffff;
+        font-size: px2rem(36px);
+        margin-top:px2rem(30px);  
+        i{
+            width:px2rem(36px);
+            height:px2rem(36px);
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top:px2rem(-3px); 
+            margin-right:px2rem(11px); 
+            background:url("../images/jkwd_icon1.png") no-repeat top center;
+            background-size: 100% 100%;   
+        }   
+    }
+}
 
 
 /**
@@ -937,7 +1010,7 @@ input::-ms-input-placeholder {
                 padding: px2rem(25px);
                 min-height: px2rem(53px);
                 @include font-dpr(16px);
-                color: #666666;
+                color: #666666; 
                 i {
                     display: inline-block;
                     width: px2rem(53px);
@@ -974,6 +1047,15 @@ input::-ms-input-placeholder {
                     i {
                         background-color: #ffc25b;
                         background-image: url("../images/mine_wdsc.png");
+                    }
+                }
+            }
+            &.item-jkbb{
+
+                a {
+                    i {
+                        background-color: #3cd999;
+                        background-image: url("../images/mine_jkbb.png");
                     }
                 }
             }
@@ -1683,5 +1765,35 @@ input::-ms-input-placeholder {
         p{
             margin-top:px2rem(25px); 
         } 
+    }
+}
+
+//健康播报
+.jkbb-list{
+    li{
+        a{
+            display:  block;
+            padding:px2rem(20px) px2rem(25px);
+            border-bottom: 1px solid #efefef;
+        }
+        .title{
+            color:#333333;
+            font-size: px2rem(32px);
+            margin-top:px2rem(15px);
+            @extend %text-overflow;  
+        }
+        .intro{
+            line-height: 1.35;
+            color:#888888;
+            font-size:px2rem(26px);
+            margin-top:px2rem(15px);  
+            display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    height: inherit;
+        -webkit-line-clamp: 2; 
+        }
+
     }
 }
