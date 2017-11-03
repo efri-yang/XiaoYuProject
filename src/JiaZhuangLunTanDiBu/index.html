@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://bbs.xmfish.com/apps/rt/www/js/jquery.xmfish.17.08.min.js?t=1.0"></script>
+    <link rel="stylesheet" type="text/css" href="http://bbs.xmfish.com/images/pw_core.css?101128">
+    <link rel="stylesheet" type="text/css" href="http://bbs.xmfish.com/data/bbscache/wind_wind.css">
+    <link rel="stylesheet" type="text/css" href="http://bbs.xmfish.com/template/xmfish/images/headernav201205/headernav2.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="zx-ft-bm" id="J_zx-ft-bm">
+        <div class="zx-ft-main">
+            <div class="zx-ft-hd"><span class="pic"></span><span class="zx-ft-arrow" id="J_zx-ft-arrow"><b></b></span></div>
+            <div class="zx-ft-bd">
+                <div class="c-name">宜格&卫誉砖佳杯家装日记大赛</div>
+                <ul class="form-item cc">
+                    <li>
+                        <span class="para-tit">您的姓名：</span>
+                        <p class="para-val">
+                            <input type="text" class="ipt-text" placeholder="请输入您的真实姓名" />
+                        </p>
+                    </li>
+                    <li>
+                        <span class="para-tit">联系电话：</span>
+                        <p class="para-val">
+                            <input type="text" class="ipt-text" placeholder="请输入您的联系电话" />
+                        </p>
+                    </li>
+                    <li>
+                        <span class="para-tit">QQ号码：</span>
+                        <p class="para-val">
+                            <input type="text" class="ipt-text" placeholder="请输入您的QQ号码" />
+                        </p>
+                    </li>
+                    <li>
+                        <span class="para-tit">小区名称：</span>
+                        <p class="para-val">
+                            <input type="text" class="ipt-text" placeholder="请输入您的装修小区" />
+                        </p>
+                    </li>
+                    <li class="last">
+                        <span class="para-tit">链接地址：</span>
+                        <p class="para-val">
+                            <input type="text" class="ipt-text" placeholder="家装日记链接地址" />
+                        </p>
+                    </li>
+                </ul>
+                <input type="submit" class="ipt-submit" value="立即报名" />
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    (function($) {
+        var isClose = true,
+            $container = $("#J_zx-ft-bm"),
+            $arrow = $("#J_zx-ft-arrow");
+
+        function supportCss3(style) {
+		    var prefix = ['webkit', 'Moz', 'ms', 'o'],
+		        i,
+		        humpString = [],
+		        htmlStyle = document.documentElement.style,
+		        _toHumb = function(string) {
+		            return string.replace(/-(\w)/g, function($0, $1) {
+		                return $1.toUpperCase();
+		            });
+		        }; 
+		    for (i in prefix)
+		        humpString.push(_toHumb(prefix[i] + '-' + style)); 
+		    humpString.push(_toHumb(style)); 
+		    for (i in humpString)
+		        if (humpString[i] in htmlStyle) return true; 
+		    return false;
+		}
+
+        if (isClose) {
+            $container.on("click", function() {
+                if (!!isClose) {
+                	if(supportCss3("transform")){
+                		$container.addClass("curr");
+                	}else{
+                		$container.addClass("hackcurr");
+                	}
+                    isClose = false;
+                }
+            })
+        }
+        $arrow.on("click", function(event) {
+            event.stopPropagation();
+            if (!isClose) {
+            	if(supportCss3("transform")){
+            		$container.removeClass('curr');
+            	}else{
+            		$container.removeClass("hackcurr");
+            	}
+                
+                isClose = true;
+            } else {
+            	if(supportCss3("transform")){
+            		$container.addClass('curr');
+            	}else{
+            		$container.addClass("hackcurr");
+            	}
+                
+                isClose = false;
+            }
+        })
+    })(jQuery);
+    </script>
+</body>
+
+</html>
