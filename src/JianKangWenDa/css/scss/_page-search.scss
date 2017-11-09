@@ -63,18 +63,19 @@
 	padding:px2rem(10px) px2rem(5px) px2rem(15px); 
 	li{
 		float: left;
-		width:25%;
+		min-width: px2rem(120px);
 		padding:px2rem(10px) px2rem(10px); 
 		a{
 			display: block;
-			height: px2rem(70px);
-			line-height:px2rem(70px);
+			height: px2rem(56px);
+			line-height:px2rem(56px);
 			text-align: center;
 			font-size:px2rem(26px); 
 			border:1px solid #d7d7d7;
-			border-radius:px2rem(35px);
+			border-radius:px2rem(10px);
 			color:#535353; 
-			@extend %text-overflow;  
+			@extend %text-overflow; 
+			padding:0 px2rem(10px);  
 		}
 		&.active,&:active{
 			a{

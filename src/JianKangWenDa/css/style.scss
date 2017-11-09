@@ -300,8 +300,11 @@ input::-ms-input-placeholder {
         position: relative;
         border-bottom: 1px solid #f2f2f2;
         a {
-            padding: px2rem(30px) px2rem(180px)  px2rem(30px) px2rem(25px);
+            padding: px2rem(30px) px2rem(25px)  px2rem(30px) px2rem(25px);
             display: block;
+
+            
+           
         }
     }
     .avatar {
@@ -320,7 +323,7 @@ input::-ms-input-placeholder {
     .name {
         color: #333333;
         font-size:px2rem(36px);
-        margin: px2rem(5px) 0 px2rem(10px);
+        margin: px2rem(5px) 0 px2rem(18px);
         padding-right: px2rem(180px);
         @extend %text-overflow;
     }
@@ -328,23 +331,25 @@ input::-ms-input-placeholder {
         font-size:px2rem(28px);
         color: #333333;
         line-height: 1.4;
-            -webkit-line-clamp: 2;
-            display: -webkit-box;
+        -webkit-line-clamp:1;
+        display: -webkit-box;
         overflow: hidden;
         text-overflow: ellipsis;
         margin-top:px2rem(5px); 
         -webkit-box-orient: vertical;
+
     }
     .txt-sc{
 
     }
     .reply-count {
         position: absolute;
-        right: px2rem(30px);
+        right: px2rem(20px);
         top: px2rem(35px);
         color: #ffb463;
         @include font-dpr(14px);
     }
+
 }
 
 
@@ -386,15 +391,19 @@ input::-ms-input-placeholder {
         
     }
     &.type-2{
-            
+        li{
+            a{
+                padding-right:px2rem(25px);
+            }
+        }
         .handlebtn-1 {
             position: absolute;
             right: px2rem(30px);
-            top: 50%;
-            margin-top:px2rem(-28px); 
+            top: 14%;
+           
             width: px2rem(135px);
-            height: px2rem(56px);
-            line-height: px2rem(56px);
+            height: px2rem(50px);
+            line-height: px2rem(50px);
             text-align: center;
             @include font-dpr(14px);
             overflow: hidden;
@@ -406,8 +415,12 @@ input::-ms-input-placeholder {
                 background-color: darken(#2ccd8c, 5%);
             }
         }
-        li a p:last-child{
+        li a .txt-1{
+            -webkit-line-clamp:1;
+        }
+        li a .txt-1:last-child{
             color:#777777; 
+            -webkit-line-clamp:2;
         }
         
     }
@@ -1873,5 +1886,34 @@ input::-ms-input-placeholder {
         -webkit-line-clamp: 2; 
         }
 
+    }
+}
+
+
+.hot-expert-keshifl{
+    padding:px2rem(10px) px2rem(5px) px2rem(15px);
+    li{
+        float: left;
+        min-width: px2rem(120px);
+        padding:px2rem(10px) px2rem(10px); 
+        a{
+            display: block;
+            height: px2rem(56px);
+            line-height:px2rem(56px);
+            text-align: center;
+            font-size:px2rem(26px); 
+            border:1px solid #d7d7d7;
+            border-radius:px2rem(10px);
+            color:#535353; 
+            @extend %text-overflow; 
+            padding:0 px2rem(10px);  
+        }
+        &.active,&:active{
+            a{
+                background:#15cc82;
+                color:#fff;
+                border-color:#15cc82;  
+            }
+        }
     }
 }
