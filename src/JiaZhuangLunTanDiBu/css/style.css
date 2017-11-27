@@ -4,7 +4,7 @@
 	position: fixed;
 	left: 0;
 	right: 0;
-	bottom:-375px;
+	bottom:-415px;
 	transition: all 0.30s ease-out;
 	cursor: pointer;
 
@@ -65,7 +65,14 @@
 .zx-ft-bd{
 	background:#fff;
 	padding:0 0 25px 0;
-	height:350px; 
+	height:390px; 
+}
+
+.zx-ft-bd .tip-txt-1{
+	font-size: 14px;
+	color:#ff5353;
+	padding-left: 55px; 
+	margin-bottom:20px;
 }
 .zx-ft-bd .ipt-submit{
 	font-size: 20px;
