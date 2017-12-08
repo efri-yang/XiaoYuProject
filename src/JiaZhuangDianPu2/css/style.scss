@@ -137,7 +137,7 @@
 
 .shop-tab-hds-wrap{
     height:px2rem(97px);
-    background:#f60;
+  
     overflow:hidden;
 }
 .shop-tab-hds,.zsj-tab-hds{
@@ -457,7 +457,8 @@
     @include font-dpr(16px);
     line-height: 1.35 !important;
     img {
-        width: 100%;
+       max-width:100%;
+       width: auto;
     }
     *{
          @include font-dpr(16px);
@@ -878,7 +879,8 @@
              @include font-dpr(16px);
         }
         img{
-           width:100%;
+           max-width:100%;
+           width: auto;
         }
     }
 }
@@ -1171,6 +1173,74 @@
     line-height:1.5;
     @include font-dpr(18px); 
 }
+
+.shop-yhhd-list{
+    padding-top:px2rem(20px);
+    li{
+        border:1px solid #e4e4e4;
+        margin-top: px2rem(20px);
+        a{
+            display: block;
+            padding:px2rem(15px); 
+            position: relative;
+        }
+        .pic{
+            width:px2rem(660px);
+            height: px2rem(220px);
+            overflow: hidden; 
+            img{
+                width: 100%;
+                max-height: 100%;
+            }
+        }
+        .title{
+            color:#333;
+            line-height: 1.5;
+            font-size:px2rem(32px);
+            margin-top:px2rem(15px); 
+
+        }
+        .time-start{
+            color:#999999;
+            line-height: 1.35;
+            span{
+                color:#019a58;
+                margin-left:px2rem(10px);  
+            }
+        }
+        .time-end{
+            color:#999999;
+            line-height: 1.35;
+            span{
+                color:#ff1e26;
+                margin-left:px2rem(10px);  
+            }
+
+        }
+        .btn-status{
+            position: absolute;
+            right:px2rem(10px);
+            bottom:px2rem(12px);
+            width:px2rem(160px);
+            height:px2rem(50px);
+            line-height:px2rem(50px);
+            text-align: center;
+            color:#fff;
+            border-radius:px2rem(5px);   
+            background:#019a58;
+            &.disabled{
+                background:#cccccc; 
+            }   
+        }
+    }
+}
+
+/**
+ * 同步添加
+ */
+.icon-load{display:inline-block;width:.42rem;height:.42rem;background-repeat:no-repeat;background-size:100% 100%;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6REM5NjA2ODI0MzI1MTFFNjg3MEJBODFGOENERjEzQjYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6REM5NjA2ODM0MzI1MTFFNjg3MEJBODFGOENERjEzQjYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEQzk2MDY4MDQzMjUxMUU2ODcwQkE4MUY4Q0RGMTNCNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEQzk2MDY4MTQzMjUxMUU2ODcwQkE4MUY4Q0RGMTNCNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpN3xvwAAAGoSURBVHja7NjPKwRxGMfx3aGllBwclGJLclYipbhwkT/AQf4GjnJ1FDcH5aLQnNy4yhnFQSmJkj1s1EZ+JHye+k5NmuF5vvN9xqbvt961h92Z1/6YmWe2GIZhwdHqQW3oDZ252mhQqPPlgZrALtSag6EFNUiBZbSLtpWRtO0RNJiGTAMuog7Ur4ikbQ6jEmo33xgbOI9OzGMNZBxH6xpdSYA1NK2ETMKd2hwkGkgRjnOakSAv0dEPVxExjnseTEJuCD+5Jhuc5EQdR76gVSHwFd1IcbQaBTuJkL3mq5Suc/SAKpqXupolLloV6Qv8sPDvgXSQLDOfS9fnZ4f7nuACRxWOeM4qc3d6x9zgh2PgIxc49Uc/ry1/FHugBbA54/6KsYnGOZBOC+toLANuEs1K3mggwC2ZvzbofqXPAkjz4ADqRDNcZCDARVP0PrqwAB6jW/OYjQyEuD20hj4tgDTobkqRgUPcnAGsuEQGOXxymZBJwG5F3G/IEgf4ZNLCpSHv0TtnhKqiBTSOdpRw35FD6DBpYkqb8armBj2PRcgDPyx4YL2uLwEGADFTbUMvlyZVAAAAAElFTkSuQmCC');margin-right:.1rem;vertical-align:-.06rem;-webkit-animation:rotate linear 2.6s infinite;animation:rotate linear 2.6s infinite;vertical-align:-.07rem;}
+@-webkit-keyframes rotate{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+.alert-normal{padding-bottom:.3rem;text-align:center;font-size:0.375rem;color:#999;}
 
 // .casedetail-small-wrap{
 //     position:relative;
