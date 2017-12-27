@@ -17,6 +17,7 @@
     .intro {
         color: #616d71;
         font-size: 16px;
+        margin-top:10px;
     }
     .line {
         height: 4px;
@@ -90,15 +91,20 @@
 }
 
 .list-type-2 {
-    background: url("../images/bg_1.jpg") no-repeat top center;
+    background: url("../images/bg_1.jpg") no-repeat top center #000;
+    padding-bottom:60px;
 }
 
 .ldyx-box {
     background: #fff;
+    padding-bottom: 30px;
+    margin-top: 55px;
 }
 
 .ldyx-info {
-    padding: 30px 30px 0;
+    margin: 0 30px;
+    padding: 30px 0;
+    border-bottom: 1px solid #eeeeee;
     .pic {
         width: 224px;
         height: 224px;
@@ -115,13 +121,17 @@
     }
     .count {
         color: #16c87f;
+        margin-top:5px; 
     }
     .price-origin {
         text-decoration: line-through;
         color: #b2b2b2;
+        margin-top: 35px;
     }
     .price-present {
         color: #d44d44;
+        font-size: 16px;
+        line-height:25px;
         span {
             font-size: 26px;
             b {
@@ -132,10 +142,11 @@
     }
 
     .guide-hand {
-
+            margin-top: 20px;
         .guide-1 {
             float: left;
             margin-right:15px;
+            position: relative;
             a {
                 width: 175px;
                 height: 45px;
@@ -150,6 +161,22 @@
                     background-color: darken(#cc3333, 5%);
                 }
             }
+            .qrcode{
+                position: absolute;
+                width: 161px;
+                height:162px;
+                overflow:hidden;
+                margin: 0 auto;
+                padding: 7px;
+                background:url("../images/qrcode_1.png") no-repeat top center; 
+                box-shadow: 0px 10px 10px #d9d9d9;
+                display: none;  
+            }
+            &:hover{
+                 .qrcode{
+                    display: block;
+                 }
+            }
         }
         .txt-1{
         	float:left;
@@ -162,4 +189,97 @@
         	color:#db4c40;
         }
     }
+}
+
+.ldyx-step{
+    margin: 0 30px;
+    padding: 20px 0 25px;
+    border-bottom: 1px solid #eeeeee;
+    .caption{
+        color:#333333;
+        font-size: 24px;
+        font-weight: bold; 
+    }
+    ul{
+        margin-top: 20px;
+        li{
+            height:47px;
+            line-height: 47px;
+            border-radius:60px;
+            float: left;
+            background:#ffebbb; 
+            padding: 0 20px 0 8px; 
+            margin-right: 20px; 
+            span{
+                font-size: 16px;
+                color:#623a00;
+                background:#fdd071;
+                font-weight: bold;
+                display: inline-block;
+                width: 71px;
+                height: 34px;
+                line-height: 34px;
+                text-align: center;
+                margin-top: 6.5px;
+                border-radius: 30px;  
+            }
+        }
+    }
+}
+
+.ldyx-sycj{
+     margin: 0 30px;
+    padding: 20px 0 25px;
+  
+    .caption{
+        color:#333333;
+        font-size: 24px;
+        font-weight: bold; 
+    }
+    ul{
+        li{
+            padding: 25px 0;
+            float:left;
+            width: 500px;
+            padding-right: 20px;
+            .pic{
+                width: 110px;
+                height: 110px;
+                overflow:hidden;
+                float: left;
+                margin-right: 20px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                } 
+            }
+            .tit{
+                color:#262626;
+                font-size: 20px;
+                height:56px;
+                overflow: hidden;
+                line-height: 28px; 
+
+            }
+            .addres{
+                color:#666666;
+                font-size:14px;
+                margin-top:5px;  
+            }
+            .tel{
+                color:#262626;
+                font-size:14px; 
+                margin-top:5px;  
+            }
+        }
+    }
+}
+
+.ldyx-phone{
+    margin-top: 30px;
+    background: url("../images/icon_phone_1.png") no-repeat left center;
+    padding-left: 30px;
+    line-height: 21px;
+    color:#ffffff; 
+    font-size: 18px;
 }
