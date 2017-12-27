@@ -1,0 +1,64 @@
+@import "./scss/_normalize.scss";
+@import "./scss/_base.scss";
+@import "./scss/_funvar.scss";
+
+.container{
+	width:px2rem(750px);
+	margin: 0 auto; 
+}
+.banner{
+	max-width: 100%;
+	text-align: center;
+	img{
+		max-width: 100%;
+	}
+}
+
+.tit-type{
+	text-align: center;
+	.tit{
+		font-size:px2rem(40px);
+		padding-top: px2rem(50px); 
+	}
+	.intro{
+		font-size: px2rem(24px);
+		
+		margin-top:px2rem(10px); 
+	}
+	.line{
+		height:px2rem(4px);
+		width:px2rem(60px);
+		background:#ffb70f;
+		margin: px2rem(25px) auto 0;   
+	}
+	&.type-1{
+		.tit{
+			color:#152344; 
+		}
+		.intro{
+			color:#9f9f9f; 
+		}
+	}
+	&.type-2{
+		.tit{
+			color:#fff; 
+		}
+		.intro{
+			color:#fff; 
+		}
+	}
+}
+
+.guide-btn-1{
+	width:px2rem(703px);
+	margin:px2rem(30px) auto px2rem(50px);
+	height:px2rem(137px); 
+	background:url("../images/btn_1.png") no-repeat top center; 
+	background-size:100% 100%;
+	display:block;   
+}
+
+.main-box{
+	background: url("../images/bg_1.jpg") no-repeat top center #9143d1;
+	background-size: 100% auto;
+}
