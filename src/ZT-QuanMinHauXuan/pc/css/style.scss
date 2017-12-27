@@ -1,0 +1,165 @@
+.container {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.banner {
+    height: 670px;
+    background: url("../images/banner_1.jpg") no-repeat top center;
+}
+
+.tit-type {
+    padding-top: 50px;
+    text-align: center;
+    .tit {
+        font-size: 40px;
+    }
+    .intro {
+        color: #616d71;
+        font-size: 16px;
+    }
+    .line {
+        height: 4px;
+        width: 60px;
+        background: #ffb70f;
+        margin: 20px auto 0;
+    }
+    &.type-1 {
+        .tit {
+            color: #323232;
+        }
+        .intro {
+            color: #616d71;
+        }
+    }
+    &.type-2 {
+        .tit {
+            color: #fff;
+        }
+        .intro {
+            color: #fff;
+        }
+    }
+}
+
+.list-type-1 {
+    margin-top: 70px;
+    padding: 0 0 90px 65px;
+    li {
+        float: left;
+        .pic {
+            width: 165px;
+            height: 181px;
+            display: block;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .txt {
+            color: #323232;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .line {
+            height: 2px;
+            width: 40px;
+            background: #323232;
+            margin: 20px auto 0;
+        }
+        &.line-1 {
+            height: 181px;
+            width: 221px;
+            background: url("../images/icon_line_1.png") no-repeat center center;
+        }
+        &.item-1 {
+            .pic {
+                background: url("../images/icon_1.png") no-repeat center center;
+            }
+        }
+        &.item-2 {
+            .pic {
+                background: url("../images/icon_2.png") no-repeat center center;
+            }
+        }
+        &.item-3 {
+            .pic {
+                background: url("../images/icon_3.png") no-repeat center center;
+            }
+        }
+    }
+}
+
+.list-type-2 {
+    background: url("../images/bg_1.jpg") no-repeat top center;
+}
+
+.ldyx-box {
+    background: #fff;
+}
+
+.ldyx-info {
+    padding: 30px 30px 0;
+    .pic {
+        width: 224px;
+        height: 224px;
+        overflow: hidden;
+        text-align: center;
+        line-height: 224px;
+        float: left;
+        margin-right: 20px;
+    }
+    .name {
+        color: #16c87f;
+        color: #000000;
+        font-size: 20px;
+    }
+    .count {
+        color: #16c87f;
+    }
+    .price-origin {
+        text-decoration: line-through;
+        color: #b2b2b2;
+    }
+    .price-present {
+        color: #d44d44;
+        span {
+            font-size: 26px;
+            b {
+                font-size: 16px;
+                font-weight: normal;
+            }
+        }
+    }
+
+    .guide-hand {
+
+        .guide-1 {
+            float: left;
+            margin-right:15px;
+            a {
+                width: 175px;
+                height: 45px;
+                line-height:45px;
+                text-align: center;
+                color: #ffffff;
+                overflow: hidden;
+                background: #cc3333;
+                display:block;
+                &:hover {
+                    text-decoration: none;
+                    background-color: darken(#cc3333, 5%);
+                }
+            }
+        }
+        .txt-1{
+        	float:left;
+        	line-height:45px;
+        	color:#666666;
+        	margin-right:10px; 
+        }
+        .guide-2{
+        	line-height:45px;
+        	color:#db4c40;
+        }
+    }
+}
