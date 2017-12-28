@@ -7,6 +7,7 @@
     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/waterfall.js"></script>
 </head>
 
 <body>
@@ -116,8 +117,8 @@
                 <p class="intro">享免息、任性花</p>
                 <p class="line"></p>
             </div>
-            <ul class="xyqmh-list clearfix">
-                <li>
+            <ul class="xyqmh-list clearfix" id="J_xyqmh-list">
+                <!-- <li class="item-waterfall">
                     <div class="pic"><a href=""><img src="uploads/02.jpg" /></a></div>
                     <div class="intro-detail">
                         <p class="tit"><a href="#">瑞尔英语教育培训(思北校区)</a></p>
@@ -146,7 +147,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="item-waterfall">
                     <div class="pic"><a href=""><img src="uploads/02.jpg" /></a></div>
                     <div class="intro-detail">
                         <p class="tit"><a href="#">瑞尔英语教育培训(思北校区)</a></p>
@@ -176,7 +177,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="item-waterfall">
                     <div class="pic"><a href=""><img src="uploads/02.jpg" /></a></div>
                     <div class="intro-detail">
                         <p class="tit"><a href="#">瑞尔英语教育培训(思北校区)</a></p>
@@ -205,7 +206,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="item-waterfall">
                     <div class="pic"><a href=""><img src="uploads/02.jpg" /></a></div>
                     <div class="intro-detail">
                         <p class="tit"><a href="#">瑞尔英语教育培训(思北校区)</a></p>
@@ -233,11 +234,27 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> -->
             </ul>
             <p class="xyqmh-phone">免息客服电话：13012345678（刘先生）</p>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(function(){
+            $('#J_xyqmh-list').waterfall({
+                itemCls: 'item-waterfall',
+                colWidth:504,  
+                gutterWidth: 30,
+                gutterHeight: 30,
+                checkImagesLoaded: false,
+                dataType: 'html',
+                path: function(page) {
+                    return 'data/data.html?page=' + page;
+                }
+            });
+        })
+    </script>
 </body>
 
 </html>

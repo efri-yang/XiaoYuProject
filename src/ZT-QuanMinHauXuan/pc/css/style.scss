@@ -289,13 +289,14 @@
 }
 
 .xyqmh-list{
-    padding: 0 15px;
+    margin:0 15px;
+    position:relative;
 	li{
 		padding:30px;
 		border:1px solid #e2e2e2;
-		float:left;
-        margin:30px 15px 0;
-        display: inline;
+		// float:left;
+  //       margin:30px 15px 0;
+  //       display: inline;
 		.pic{
 			width:442px;
 			height:193px;
