@@ -289,7 +289,7 @@
 }
 
 .xyqmh-list{
-    margin:0 15px;
+    margin:40px 15px 0;
     position:relative;
 	li{
 		padding:30px;
@@ -415,4 +415,110 @@
     font-size:18px;   
 
     background:url("../images/icon_phone_2.png")  no-repeat left center; 
+}
+
+
+.aside-fixed{
+    position:fixed;
+    bottom:150px;
+    left:50%;
+    margin-left:580px; 
+    z-index: 100;
+    li{
+        background:#f52f3e;
+        border-radius: 3px;
+        margin-top: 3px;
+        position: relative; 
+        .tit{
+            display:block;
+            width:40px;
+            height:40px;
+            overflow:hidden;   
+        }
+        &.item-1{
+            .tit{
+                background:url("../images/aside_fixed_1.png") no-repeat top center; 
+            }
+            .qrcode{
+                position: absolute;
+                top:0;
+                right:100px;
+                opacity: 0;
+                visibility: hidden;
+                padding:15px;
+                border:1px solid #e6e6e6;
+                border-radius:3px;  
+                background:#fff;
+                transition: all 0.35s ease-out; 
+                .pic{
+                    width:93px;
+                    height: 93px;
+                    background:url("../images/qrcode_xyapp.png"); 
+                }
+                .txt{
+                    white-space:nowrap;
+                    color:#f52f3e;
+                    margin-top:3px;   
+                }
+            }
+            &:hover{
+                .qrcode{
+                    right:50px;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+         &.item-2{
+            .tit{
+                background:url("../images/aside_fixed_2.png") no-repeat top center; 
+            }
+            .qrcode{
+                position: absolute;
+                top:0;
+                right:100px;
+                opacity: 0;
+                visibility: hidden;
+                padding:15px;
+                border:1px solid #e6e6e6;
+                border-radius:3px;  
+                background:#fff;
+                transition: all 0.35s ease-out; 
+                .pic{
+                    width:93px;
+                    height: 93px;
+                    background:url("../images/qrcode_xyapp.png"); 
+                }
+                .txt{
+                    white-space:nowrap;
+                    color:#f52f3e;
+                    margin-top:3px;   
+                }
+            }
+            &:hover{
+                .qrcode{
+                    right:50px;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        &.item-3{
+             width:40px;
+            height:40px;
+            background:none; 
+            .tit{
+                background:url("../images/aside_fixed_3.png") no-repeat top center #f52f3e; 
+                  display:none; 
+            }
+            &.show{
+                .tit{
+                    display:block; 
+                }
+                
+            }
+        }
+
+
+    }
 }

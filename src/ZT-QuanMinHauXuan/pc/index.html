@@ -239,7 +239,29 @@
             <p class="xyqmh-phone">免息客服电话：13012345678（刘先生）</p>
         </div>
     </div>
+    <!--  -->
+    <ul class="aside-fixed">
+        <li class="item-1">
+            <span class="tit"></span>
+            <div class="qrcode">
+                <div class="pic"></div>
+                <p class="txt">下载小鱼客户端</p>
+            </div>
 
+        </li>
+        <li class="item-2">
+            <span class="tit"></span>
+            <div class="qrcode">
+                <div class="pic"></div>
+                <p class="txt">下载小鱼客户端</p>
+            </div>
+        </li>
+        <li class="item-3">
+            <span class="tit"></span>
+            
+        </li>
+    </ul>
+    <!--  -->
     <script type="text/javascript">
         $(function(){
             $('#J_xyqmh-list').waterfall({
@@ -253,6 +275,15 @@
                     return 'data/data.html?page=' + page;
                 }
             });
+
+            $(window).on("scroll",function(){
+                var scrollTop=$(this).scrollTop();
+                if(scrollTop > 1000){
+                    $(".aside-fixed .item-3").addClass("show");
+                }else{
+                    $(".aside-fixed .item-3").removeClass("show");
+                }
+            })
         })
     </script>
 </body>
