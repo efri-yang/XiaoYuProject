@@ -1,0 +1,140 @@
+@import "./scss/_normalize.scss";
+@import "./scss/_base.scss";
+@import "./scss/_funvar.scss";
+
+@import "./scss/_mDialogRem.scss";
+
+
+body{
+	background:url("../images/bg_1.jpg") repeat-y top center;
+}
+
+.container{
+	width:px2rem(750px);
+	margin:0 auto; 
+	padding-bottom:px2rem(80px);
+}
+.banner-1{
+	img{
+		width:100%;
+		vertical-align: top;
+	}
+}
+
+.nav-holder{
+	height:px2rem(110px);
+	&.fixed{
+		.nav-list{
+			position:fixed;
+			left:0;
+			top:0;
+			right:0;
+			z-index:10;
+		}
+	}
+	.nav-list{
+		background:#031e6f;
+		display:flex;
+		li{
+			padding:px2rem(6px) 0;
+			flex:2;
+			a{
+				display:block;
+				height:px2rem(98px);
+				line-height:px2rem(98px);
+				font-size:px2rem(32px);
+				color:#fff;
+				text-align:center;
+			}
+			&.current{
+				padding-bottom: 0;
+				border-bottom:px2rem(6px) solid #ffe400; 
+			}
+			&:last-child{
+				flex:3;
+			} 
+		}
+	}
+}
+
+.tit-type{
+	margin-top:px2rem(35px);
+	height:px2rem(71px);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: auto 100%;
+	&.type-daonei{
+		background-image:url("../images/tit_daonei.png");
+	}
+	&.type-jimei{
+		background-image:url("../images/tit_jimei.png");
+	}
+	&.type-haicang{
+		background-image:url("../images/tit_haicang.png");
+	}
+	&.type-xiangan{
+		background-image:url("../images/tit_xiangan.png");
+	}
+	&.type-tongan{
+		background-image:url("../images/tit_tongan.png");
+	}
+	&.type-huanxia{
+		background-image:url("../images/tit_huanxiabankuai.png");
+	}
+}
+
+.house-list{
+	padding:0 px2rem(5px);
+	li{
+		background:#fff;
+		float:left;
+		padding:px2rem(10px);
+		width:px2rem(339px);
+		overflow:hidden;
+		border-radius: px2rem(10px);
+		margin:px2rem(30px) px2rem(15px) 0;
+		position:relative;
+		.pic{
+			width:px2rem(319px);
+			height:px2rem(223px);
+			line-height:px2rem(223px);
+			overflow: hidden;
+			text-align:center;
+			img{
+				max-width: 100%;
+				max-height: 100%;
+				vertical-align:middle;
+			}
+		}
+		.name{
+			color:#282828;
+			font-size:px2rem(28px);
+			margin-top:px2rem(10px);
+			height:px2rem(60px);
+			line-height:px2rem(30px);
+			-webkit-line-clamp: 2;
+			    display: -webkit-box;
+    		overflow: hidden;
+    		text-overflow: ellipsis;
+    		-webkit-box-orient: vertical;
+		}
+		.count{
+			color:#707070;
+			font-size:px2rem(28px);
+			text-align:right;
+			margin-top:px2rem(20px);
+			font-weight:bold;
+			line-height:1.5; 
+		}
+		.tp-btn{
+			width:px2rem(221px);
+			height:px2rem(64px);
+			overflow:hidden;
+			background:url("../images/tp_btn_1.png") no-repeat top center;
+			background-size:100% 100%;
+			position:absolute;
+			left:0;
+			bottom:0;
+		}
+	}
+}
