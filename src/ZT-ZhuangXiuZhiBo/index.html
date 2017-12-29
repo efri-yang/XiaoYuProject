@@ -7,6 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/bxslider/jquery.bxslider.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/bxslider/jquery.bxslider.css">
+	
+	<script type="text/javascript" src="js/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/mCustomScrollbar/jquery.mCustomScrollbar.css">
 </head>
 <body>
 	<div class="banner"></div>
@@ -31,11 +36,19 @@
 
 	<div class="container hxgz-box">
 		<ul class="list clearfix">
-			<li class="item-1">
+			<li>
 				<span class="caption">原始户型</span>
-				
+				<div class="intro">
+						 <p>本次户型是一个异形不规则房屋结构。客厅被切割成一个锐角三角形，没有电视背景，连沙的的位置都很局促，除此之外，客厅位置光线昏暗，采光不足，通风效果差，角落多有潮湿掉皮现象。客厅正中的墙面是强电箱的位置所在，这个强电箱连接着一整栋楼的强电管线，所以强电箱难以移动，也就是说，强电箱所在的这一堵墙面不能敲打，这又为这次的改造增加了新的难度。卫生间以及厨房被隔成不规则且陕小的空间，难展拳脚，连转身都变得很困难。卫生间没有窗户，不通风，潮湿且有异味。厨房的排烟更是不堪入目。</p>
+						 <p>知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方</p>
+				</div>
 			</li>
-			<li></li>
+			<li>
+				<span class="caption">改造方案</span>
+				<div class="intro">
+						<p>本次户型是一个异形不规则房屋结构。客厅被切割成一个锐角三角形，没有电视背景，连沙的的位置都很局促，除此之外，客厅位置光线昏暗，采光不足，通风效果差，角落多有潮湿掉皮现象。客厅正中的墙面是强电箱的位置所在，这个强电箱连接着一整栋楼的强电管线，所以强电箱难以移动，也就是说，强电箱所在的这一堵墙面不能敲打，这又为这次的改造增加了新的难度。卫生间以及厨房被隔成不规则且陕小的空间，难展拳脚，连转身都变得很困难。卫生间没有窗户，不通风，潮湿且有异味。厨房的排烟更是不堪入目。</p>
+				</div>
+			</li>
 		</ul>
 	</div>
 	
@@ -54,67 +67,183 @@
 
 			<div class="sgjd-step-head">
 				<ul class="clearfix">
-					<li class="item-1">
-						<a href="#J_qianqiguihua">
+					<li class="item-1 active">
+						<a href="#J_qianqiguihua" data-toggle="tab">
 							<span class="pic"></span>
 							<b class="txt">前期规划</b>
 						</a>
 					</li>
 					<li class="item-2">
-						<a href="#J_qiaodahuanjie">
+						<a href="#J_qiaodahuanjie"  data-toggle="tab">
 							<span class="pic"></span>
 							<b class="txt">敲打环节</b>
 						</a>
 					</li>
 					<li class="item-3">
-						<a href="#J_shuidianshigong">
+						<a href="#J_shuidianshigong"  data-toggle="tab">
 							<span class="pic"></span>
 							<b class="txt">水电施工</b>
 						</a>
 					</li>
 					<li class="item-4">
-						<a href="#J_shuinishigong">
+						<a href="#J_shuinishigong"  data-toggle="tab">
 							<span class="pic"></span>
 							<b class="txt">泥水施工</b>
 						</a>
 					</li>
 					<li class="item-5">
-						<a href="#J_muzhuoshigong">
+						<a href="#J_muzhuoshigong"  data-toggle="tab">
 							<span class="pic"></span>
 							<b class="txt">木作施工</b>
 						</a>
 					</li>
 					<li class="item-6">
-						<a href="#J_youqishigong">
+						<a href="#J_youqishigong"  data-toggle="tab">
 							<span class="pic"></span>
 							<b class="txt">油漆施工</b>
 						</a>
 					</li>
 					<li class="item-7">
-						<a href="#J_anzhuangjieduan">
+						<a href="#J_anzhuangjieduan"  data-toggle="tab">
 							<span class="pic"></span>
 							<b class="txt">安装阶段</b>
 						</a>
 					</li>
 					<li class="item-8">
-						<a href="#J_ruanzhuangdapei">
+						<a href="#J_ruanzhuangdapei"  data-toggle="tab">
 							<span class="pic"></span>
 							<b class="txt">软装搭配</b>
 						</a>
 					</li>
 					<li class="item-9">
-						<a href="#J_wangongruzhu">
+						<a href="#J_wangongruzhu"  data-toggle="tab">
 							<span class="pic"></span>
 							<b class="txt">完工入驻</b>
 						</a>
 					</li>
 				</ul>
 			</div>
+			<script type="text/javascript">
+						$(function(){
+							$('.bxslider').bxSlider({
+								mode: 'horizontal',
+								moveSlides: 1,
+								slideMargin:0,
+								infiniteLoop: true,
+								slideWidth: 520,
+								minSlides:1,
+								maxSlides:1,
+								speed:500
+							});
 
+							$("#sgjd-step-head")
+
+							$('.sgjd-step-head ul li a').click(function (e) {
+							  e.preventDefault()
+							  $(this).tab('show')
+							})
+	
+						})
+					</script>
 			<div class="sgjd-step-body">
-				<div class="sgjd-step-body-item clearfix">
+				<div class="sgjd-step-body-item clearfix active" id="J_qianqiguihua">
 					<div class="sgjd-step-body-video"><img src="uploads/01.jpg"></div>
-					<div class="sgjd-step-body-gallery"></div>
+					<div class="sgjd-step-body-gallery">
+						<ul class="bxslider">
+							<li><img src="uploads/slide_01.jpg"></li>
+							<li><img src="uploads/slide_02.jpg"></li>
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_04.jpg"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sgjd-step-body-item clearfix" id="J_qiaodahuanjie">
+					<div class="sgjd-step-body-video"><img src="uploads/01.jpg"></div>
+					<div class="sgjd-step-body-gallery">
+						<ul class="bxslider">
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_02.jpg"></li>
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_04.jpg"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sgjd-step-body-item clearfix" id="J_shuidianshigong">
+					<div class="sgjd-step-body-video"><img src="uploads/01.jpg"></div>
+					<div class="sgjd-step-body-gallery">
+						<ul class="bxslider">
+							<li><img src="uploads/slide_04.jpg"></li>
+							<li><img src="uploads/slide_02.jpg"></li>
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_04.jpg"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sgjd-step-body-item clearfix" id="J_shuinishigong">
+					<div class="sgjd-step-body-video"><img src="uploads/01.jpg"></div>
+					<div class="sgjd-step-body-gallery">
+						<ul class="bxslider">
+							<li><img src="uploads/slide_02.jpg"></li>
+							<li><img src="uploads/slide_01.jpg"></li>
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_04.jpg"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sgjd-step-body-item clearfix" id="J_muzhuoshigong">
+					<div class="sgjd-step-body-video"><img src="uploads/01.jpg"></div>
+					<div class="sgjd-step-body-gallery">
+						<ul class="bxslider">
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_02.jpg"></li>
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_04.jpg"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sgjd-step-body-item clearfix" id="J_youqishigong">
+					<div class="sgjd-step-body-video"><img src="uploads/01.jpg"></div>
+					<div class="sgjd-step-body-gallery">
+						<ul class="bxslider">
+							<li><img src="uploads/slide_04.jpg"></li>
+							<li><img src="uploads/slide_02.jpg"></li>
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_04.jpg"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sgjd-step-body-item clearfix" id="J_anzhuangjieduan">
+					<div class="sgjd-step-body-video"><img src="uploads/01.jpg"></div>
+					<div class="sgjd-step-body-gallery">
+						<ul class="bxslider">
+							<li><img src="uploads/slide_01.jpg"></li>
+							<li><img src="uploads/slide_02.jpg"></li>
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_04.jpg"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sgjd-step-body-item clearfix" id="J_ruanzhuangdapei">
+					<div class="sgjd-step-body-video"><img src="uploads/01.jpg"></div>
+					<div class="sgjd-step-body-gallery">
+						<ul class="bxslider">
+							<li><img src="uploads/slide_02.jpg"></li>
+							<li><img src="uploads/slide_02.jpg"></li>
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_04.jpg"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sgjd-step-body-item clearfix" id="J_wangongruzhu">
+					<div class="sgjd-step-body-video"><img src="uploads/01.jpg"></div>
+					<div class="sgjd-step-body-gallery">
+						<ul class="bxslider">
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_02.jpg"></li>
+							<li><img src="uploads/slide_03.jpg"></li>
+							<li><img src="uploads/slide_04.jpg"></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -144,6 +273,93 @@
 		<p class="line"></p>
 	</div>
 
+
+	<div class="container sggzqj-video-list">
+		<ul class="clearfix">
+			<li>
+				<a href="#" class="pic"><img src="uploads/02.jpg" /></a>
+				<p class="txt">完工入驻视频展示</p>
+			</li>
+			<li>
+				<a href="#" class="pic"><img src="uploads/02.jpg" /></a>
+				<p class="txt">完工入驻视频展示</p>
+			</li>
+			<li>
+				<a href="#" class="pic"><img src="uploads/02.jpg" /></a>
+				<p class="txt">完工入驻视频展示</p>
+			</li>
+			<li>
+				<a href="#" class="pic"><img src="uploads/02.jpg" /></a>
+				<p class="txt">完工入驻视频展示</p>
+			</li>
+		</ul>
+		<div class="sggzqj-sjs-list">
+			<ul class="clearfix">
+				<li>
+					<span class="cap-arrow">设计师介绍</span>
+					<div class="avatar"><img src="images/banner_1.jpg"></div>
+					<p class="name">陈哲</p>
+					<p class="jobtit">(哇屋装修设计师)</p>
+					<div class="intro">
+						
+							<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+							<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+							<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+							<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p><p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p><p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p><p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p><p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p><p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+						
+					</div>
+				</li>
+				<li>
+					<span class="cap-arrow">主人公介绍</span>
+					<div class="avatar"><img src="images/banner_1.jpg"></div>
+					<p class="name">陈哲</p>
+					<p class="jobtit">(哇屋装修设计师)</p>
+					<div class="intro">
+						<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+						<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+						<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+						<p>毕业于天津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+						<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+						<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+					</div>
+				</li>
+				<li>
+					<span class="cap-arrow">明星工长介绍</span>
+					<div class="avatar"><img src="images/banner_1.jpg"></div>
+					<p class="name">陈哲</p>
+					<p class="jobtit">(哇屋装修设计师)</p>
+					<div class="intro">
+						<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+						<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+						<p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+						<p>毕业于天津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。</p>
+					</div>
+				</li>
+			</ul>
+
+			<script type="text/javascript">
+				(function($){
+			        $(window).on("load",function(){
+			            $(".sggzqj-sjs-list ul li .intro").mCustomScrollbar({
+			            	theme: "minimal-dark",
+		                    mouseWheel: { preventDefault: true },
+		                    scrollInertia: 400
+
+			            });
+
+			            $(".hxgz-box ul li .intro").mCustomScrollbar({
+			            	theme: "minimal-dark",
+		                    mouseWheel: { preventDefault: true },
+		                    scrollInertia: 400
+
+			            });
+			        });
+			    })(jQuery)
+				
+			</script>
+		</div>
+	</div>
+
 	<div class="tit-type type-1">
 		<div class="caption">
 			<b></b>
@@ -170,6 +386,8 @@
 		<span class="phone">电话：4006691168</span>
 		<span class="address">地址：厦门市湖里区枋湖北二路1505号107室</span>
 	</div>
+
+	
 
 
 	
