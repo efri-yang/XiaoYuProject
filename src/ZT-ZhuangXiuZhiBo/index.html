@@ -12,6 +12,7 @@
 	
 	<script type="text/javascript" src="js/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
 	<link rel="stylesheet" type="text/css" href="js/mCustomScrollbar/jquery.mCustomScrollbar.css">
+	<script type="text/javascript" src="js/layer/layer.js"></script>
 </head>
 <body>
 	<div class="banner"></div>
@@ -36,18 +37,22 @@
 
 	<div class="container hxgz-box">
 		<ul class="list clearfix">
-			<li>
+			<li class="item-1">
 				<span class="caption">原始户型</span>
 				<div class="intro">
 						 <p>本次户型是一个异形不规则房屋结构。客厅被切割成一个锐角三角形，没有电视背景，连沙的的位置都很局促，除此之外，客厅位置光线昏暗，采光不足，通风效果差，角落多有潮湿掉皮现象。客厅正中的墙面是强电箱的位置所在，这个强电箱连接着一整栋楼的强电管线，所以强电箱难以移动，也就是说，强电箱所在的这一堵墙面不能敲打，这又为这次的改造增加了新的难度。卫生间以及厨房被隔成不规则且陕小的空间，难展拳脚，连转身都变得很困难。卫生间没有窗户，不通风，潮湿且有异味。厨房的排烟更是不堪入目。</p>
 						 <p>知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方知道发士大夫撒地方</p>
 				</div>
+				<span class="fdj"></span>
+				<div id="img-1" class="fdt-img"><img src="./images/fdp_01.jpg"></div>
 			</li>
-			<li>
+			<li class="item-2">
 				<span class="caption">改造方案</span>
 				<div class="intro">
 						<p>本次户型是一个异形不规则房屋结构。客厅被切割成一个锐角三角形，没有电视背景，连沙的的位置都很局促，除此之外，客厅位置光线昏暗，采光不足，通风效果差，角落多有潮湿掉皮现象。客厅正中的墙面是强电箱的位置所在，这个强电箱连接着一整栋楼的强电管线，所以强电箱难以移动，也就是说，强电箱所在的这一堵墙面不能敲打，这又为这次的改造增加了新的难度。卫生间以及厨房被隔成不规则且陕小的空间，难展拳脚，连转身都变得很困难。卫生间没有窗户，不通风，潮湿且有异味。厨房的排烟更是不堪入目。</p>
 				</div>
+				<span class="fdj"></span>
+				<div id="img-2"  class="fdt-img"><img src="./images/fdp_02.jpg"></div>
 			</li>
 		</ul>
 	</div>
@@ -135,9 +140,6 @@
 								maxSlides:1,
 								speed:500
 							});
-
-							$("#sgjd-step-head")
-
 							$('.sgjd-step-head ul li a').click(function (e) {
 							  e.preventDefault()
 							  $(this).tab('show')
@@ -353,6 +355,36 @@
 		                    scrollInertia: 400
 
 			            });
+
+			            var winW,winH;
+			            $(window).on("resize",function(){
+			            		winW=$(this).width();
+			            		winH=$(this).height();
+			            }).trigger('resize');
+
+			            $(".hxgz-box ul li.item-1 .fdj").on("click",function(){
+			            	layer.open({
+							  type: 1,
+							  title: false,
+							  closeBtn: 0,
+							  area:[ winW-100+"px",winH-50+"px"],
+							  skin: 'layui-layer-nobg', //没有背景色
+							  shadeClose: true,
+							  content: $('#img-1')
+							});
+			            })
+
+			            $(".hxgz-box ul li.item-2 .fdj").on("click",function(){
+			            	layer.open({
+							  type: 1,
+							  title: false,
+							  closeBtn: 0,
+							  area:[ winW-100+"px",winH-50+"px"],
+							  skin: 'layui-layer-nobg', //没有背景色
+							  shadeClose: true,
+							  content: $('#img-2')
+							});
+			            })
 			        });
 			    })(jQuery)
 				

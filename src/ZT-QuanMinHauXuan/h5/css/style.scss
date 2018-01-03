@@ -262,15 +262,14 @@
 	.present{
 		color:#d44d44;
 		font-size:px2rem(24px);
-		line-height:px2rem(30px);
+		line-height:1.4;
 		span{
 			font-size:px2rem(40px);
 		}
 	}
 	.tags{
-		position:absolute;
-		right: 0;
-		top:0;
+		margin-top:px2rem(10px);
+		height:px2rem(42px);
 		span{
 			height:px2rem(42px);
 			line-height:px2rem(42px);
@@ -310,14 +309,14 @@
 			.line-l{
 				display:inline-block;
 				vertical-align:middle;
-				width:px2rem(120px);
+				width:px2rem(100px);
 				height:px2rem(2px);
 				background-image:-webkit-gradient(linear,100% 100%, 0% 0%, from(#C7C7C7), to(#FFFFFF), color-stop(1.0,#FFFFFF));
 			}
 			.line-r{
 				display:inline-block;
 				vertical-align:middle;
-				width:px2rem(120px);
+				width:px2rem(100px);
 				height:px2rem(2px);
 				background-image:-webkit-gradient(linear,0% 0%, 100% 100%, from(#C7C7C7), to(#FFFFFF), color-stop(1.0,#FFFFFF));
 			}
