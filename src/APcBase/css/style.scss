@@ -1,0 +1,17 @@
+
+.demo{
+  padding: 25px;
+  background-color: rgba(0,0,0,0.5);
+  @at-root (without: all) {
+	@media \0screen\,screen\9 {
+		.demo{
+			background:#000;
+			@include opacity(50);
+			p{
+				color: #FFFFFF;
+			}
+		}
+	}
+  }
+}
+
