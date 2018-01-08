@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible2.0.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+    <div class="banner">
+        <img src="images/index_banner_1.jpg" />
+    </div>
+    <div class="lmjs-box" id="J_lmjs-box">
+        <span class="txt">栏目介绍<i></i></span>
+    </div>
+    <div class="lmjs-dialog" id="J_lmjs-dialog">
+        <div class="caption">栏目介绍</div>
+        <div class="detail">
+            <p>房子是租来的，但生活不是。由哇屋装修发起，小鱼家居携手打造的《哇屋生活家——穿搭潮人出租屋大改造》栏目正式与大家见面。在2017年年末，接近春节不到三个月时间，网红女主播小安决定给自己在厦门的出租房进行一次装修大改造！虽然她住在出租屋里，但是她坚信美好的是自己创造的，为了提高自己的生活质量，让居住环境更加舒适、温馨，这一次出租屋改造是个重大且必要的决定！</p>
+            <p>装修全程为时45天，由哇屋装修——陈哲设计师亲手操刀主办，一个对生活充满希望和梦想的网红主播和它即将蜕变焕装的美好蜗居，会碰撞出什么样的火花儿？请拭目以待。</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+    (function($) {
+        $(function() {
+            $("#J_lmjs-box").on("click", function() {
+                var lmjsDialog = mDialog.open({
+                    // duration:0,
+                    title: false,
+                    duration: 250,
+                    content: $("#J_lmjs-dialog"),
+                });
+            });
+
+        })
+    })(Zepto)
+    </script>
+
+
+    <ul class="rwjs-tab-hd">
+        <li class="active"><a href="#J_shejishi">设计师介绍</a></li>
+        <li><a href="#J_zhurengong">主人公介绍</a></li>
+        <li><a href="#J_mingxinggong">明星工长介绍</a></li>
+    </ul>
+
+    <div class="rwjs-tab-bd active" id="J_shejishi">
+        <div class="rwjs-tab-bd-inner">
+            <span class="caption">设计师介绍</span>
+            <div class="avatar"><img src="upload/03.jpg" /></div>
+            <p class="name">陈哲</p>
+            <p class="job">（哇屋装修设计师）</p>
+            <div class="detail">
+                <p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。
+设计理念：充分发挥每个空间存在的意义，将潮流融入生活，尊重屋主的生活方式和情调，予以屋主最适合的生活空间。</p>
+
+<p>本次户型是一个异形不规则房屋结构，由于是二次改造，且经费有限，对于设计，实际上一个非常大的挑战。通过对屋主小安的初步了解，可以对房屋的功能做一个基本的定调。对于这次户型的改造我更多的是考虑最大限度地利用每一空间，让每个空间都可以多元化。</p>
+            </div>
+        </div>
+    </div>
+    <div class="rwjs-tab-bd" id="J_zhurengong">
+        <div class="rwjs-tab-bd-inner">
+            <span class="caption">主人公介绍</span>
+            <div class="avatar"><img src="upload/03.jpg" /></div>
+            <p class="name">陈哲</p>
+            <p class="job">（哇屋装修设计师）</p>
+            <div class="detail">
+                <p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。
+设计理念：充分发挥每个空间存在的意义，将潮流融入生活，尊重屋主的生活方式和情调，予以屋主最适合的生活空间。</p>
+
+<p>本次户型是一个异形不规则房屋结构，由于是二次改造，且经费有限，对于设计，实际上一个非常大的挑战。通过对屋主小安的初步了解，可以对房屋的功能做一个基本的定调。对于这次户型的改造我更多的是考虑最大限度地利用每一空间，让每个空间都可以多元化。</p>
+            </div>
+        </div>
+    </div>
+    <div class="rwjs-tab-bd" id="J_mingxinggong">
+        <div class="rwjs-tab-bd-inner">
+            <span class="caption">明星工长介绍</span>
+            <div class="avatar"><img src="upload/03.jpg" /></div>
+            <p class="name">陈哲</p>
+            <p class="job">（哇屋装修设计师）</p>
+            <div class="detail">
+                <p>毕业于天津师范大学环境艺术设计系。执着于对设计的热情，经过多年的实践历练，积累了丰富的经验。
+设计理念：充分发挥每个空间存在的意义，将潮流融入生活，尊重屋主的生活方式和情调，予以屋主最适合的生活空间。</p>
+
+<p>本次户型是一个异形不规则房屋结构，由于是二次改造，且经费有限，对于设计，实际上一个非常大的挑战。通过对屋主小安的初步了解，可以对房屋的功能做一个基本的定调。对于这次户型的改造我更多的是考虑最大限度地利用每一空间，让每个空间都可以多元化。</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="footer-place-seat"></div>
+    <ul class="footer-nav">
+        <li class="active"><a href="#">
+            <span class="pic"></span>
+            <p class="txt">首页</p>
+        </a></li>
+        <li><a href="#">
+            <span class="pic"></span>
+            <p class="txt">视频全集</p>
+        </a></li>
+        <li><a href="#">
+            <span class="pic"></span>
+            <p class="txt">帖子互动</p>
+        </a></li>
+        <li><a href="#">
+            <span class="pic"></span>
+            <p class="txt">人物介绍</p>
+        </a></li>
+    </ul>
+
+
+    <script type="text/javascript">
+        $(function(){
+             $(".rwjs-tab-hd a").click(function(e) {
+                e.preventDefault();
+                $(this).tab('show');
+                setTimeout(function() {
+                    swiperObj.destroy();
+                    initSwiper();
+                })
+            });
+
+        })
+    </script>
+</body>
+
+</html>

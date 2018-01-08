@@ -1,0 +1,87 @@
+
+@function px2rem($px, $base-font-size:75px) {
+    @if (unitless($px)) {
+        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+        @return px2rem($px + 0px); // That may fail.
+    }
+    @else if (unit($px)==rem) {
+        @return $px;
+    }
+    @return ($px / $base-font-size) * 1rem;
+}
+
+@mixin text-overflow-1{
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
+@mixin text-overflow-2{
+    -webkit-line-clamp:2;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
+
+@mixin text-overflow-3{
+    -webkit-line-clamp:3;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
+
+@mixin vhcenter{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+}
+
+
+ /**
+  * x=y=0的时候 阴影向四边扩散
+  * y >0  的时候 向下投影
+  * x > 0 的时候 向右投影
+  */
+@mixin shadow($x, $y, $blur, $color) {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin shadow-inset($x, $y, $blur, $color) {
+    -webkit-box-shadow: inset $x $y $blur $color;
+        -moz-box-shadow: inset $x $y $blur $color;
+            box-shadow: inset $x $y $blur $color;
+}
+
+
+
+
+@mixin linear-gradient($from, $to) {
+     /* Fallback for sad browsers */
+     background-color: $to;
+     /* Mozilla Firefox */
+     background-image:-moz-linear-gradient($from, $to);
+     /* Opera */
+     background-image:-o-linear-gradient($from, $to);
+     /* WebKit (Chrome 11+) */
+     background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to));
+    /* WebKit (Safari 5.1+, Chrome 10+) */
+     background-image: -webkit-linear-gradient($from, $to);
+    /* IE10 */
+    background-image: -ms-linear-gradient($from, $to);
+     /* W3C */
+    background-image: linear-gradient($from, $to);
+}
+
+
+
