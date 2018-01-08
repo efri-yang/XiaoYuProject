@@ -622,3 +622,36 @@
 		}
 	}
 }
+
+
+.ys-gz-detail{
+	padding:0 px2rem(20px);
+	font-size:px2rem(28px);
+	line-height:1.5;
+	color:#333;
+	img{
+		max-width:100%; 
+	}
+}
+
+.pswp__counter{
+    font-size:px2rem(32px);
+    top:px2rem(30px) !important;
+    right:px2rem(30px) !important;
+}
+.pswp__button--close{
+   width:px2rem(80px) !important;
+   height:px2rem(80px) !important;
+   border-radius:100%;
+   overflow:hidden;
+   top:px2rem(30px) !important;
+   right:px2rem(30px) !important;
+   background:url("../images/dialog_close_icon2.png") no-repeat top center  !important ;
+   background-size:100% 100% !important;
+}
+.pswp__bg{
+    background-color:rgba(0,0,0,0.9) !important;
+}
+.pswp__top-bar{
+    background:none !important;
+}
