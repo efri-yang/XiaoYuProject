@@ -27,19 +27,20 @@
         </div>
     </div>
     <script type="text/javascript">
-    (function($) {
-        $(function() {
-            $("#J_lmjs-box").on("click", function() {
-                var lmjsDialog = mDialog.open({
-                    // duration:0,
-                    title: false,
-                    duration: 250,
-                    content: $("#J_lmjs-dialog"),
-                });
-            });
 
-        })
-    })(Zepto)
+    // (function($) {
+    //     $(function() {
+    //         $("#J_lmjs-box").on("click", function() {
+              
+    //             var lmjsDialog = mDialog.open({
+    //                 title: false,
+    //                 duration: 250,
+    //                 content: $("#J_lmjs-dialog"),
+    //             });
+    //         });
+
+    //     })
+    // })(Zepto)
     </script>
     <div class="tit-type type-1">
         <span class="line-l"></span>
@@ -302,8 +303,7 @@
 			<p class="txt">人物介绍</p>
 		</a></li>
     </ul>
-    <!-- 栏目介绍  start-->
-    <!-- 栏目介绍  start end -->
+   
     <script type="text/javascript">
     $(function() {
 
@@ -322,7 +322,7 @@
 
         function initSwiper() {
             swiperObj = new Swiper('.zxjd-tab-item.active .swiper-container', {
-                height: "100%", //你的slide宽度
+                height: "100%",
                 navigation: {
                     nextEl: '.button-next',
                     prevEl: '.button-prev',
