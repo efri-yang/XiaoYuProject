@@ -25,28 +25,37 @@
             <p>房子是租来的，但生活不是。由哇屋装修发起，小鱼家居携手打造的《哇屋生活家——穿搭潮人出租屋大改造》栏目正式与大家见面。在2017年年末，接近春节不到三个月时间，网红女主播小安决定给自己在厦门的出租房进行一次装修大改造！虽然她住在出租屋里，但是她坚信美好的是自己创造的，为了提高自己的生活质量，让居住环境更加舒适、温馨，这一次出租屋改造是个重大且必要的决定！</p>
             <p>装修全程为时45天，由哇屋装修——陈哲设计师亲手操刀主办，一个对生活充满希望和梦想的网红主播和它即将蜕变焕装的美好蜗居，会碰撞出什么样的火花儿？请拭目以待。</p>
         </div>
+        <span class="close-btn"></span>
     </div>
+    <div class="lmjs-dialog-mask"></div>
     <script type="text/javascript">
+    (function($) {
+        $(function() {
+            var $dialog = $("#J_lmjs-dialog"),
+                $mask = $(".lmjs-dialog-mask"),
+                $closeBtn = $dialog.find(".close-btn");
+            $("#J_lmjs-box").on("touchstart", function() {
+                $dialog.show();
+                $mask.show();
+            });
+            $mask.on("touchstart", function() {
+                $dialog.hide();
+                $mask.hide();
+            });
+            $closeBtn.on("touchstart", function() {
+                $dialog.hide();
+                $mask.hide();
+            })
 
-    // (function($) {
-    //     $(function() {
-    //         $("#J_lmjs-box").on("click", function() {
-              
-    //             var lmjsDialog = mDialog.open({
-    //                 title: false,
-    //                 duration: 250,
-    //                 content: $("#J_lmjs-dialog"),
-    //             });
-    //         });
-
-    //     })
-    // })(Zepto)
+        })
+    })(Zepto)
     </script>
-    <div class="tit-type type-1">
+    <div class="tit-type type-1 no-line">
         <span class="line-l"></span>
         <span class="txt">本次改造总造价六万</span>
         <span class="line-r"></span>
     </div>
+    <a href="#" class="ckgwqd-btn">查看购物清单</a>
     <ul class="list-type-1">
         <li><a href="#">原始户型</a></li>
         <li><a href="#">改造方案</a></li>
@@ -59,41 +68,41 @@
         </div>
         <ul class="list-1">
             <li class="active"><a href="#J_zxjd-guihua" data-toggle="tab">
-				<span class="pic"></span>
-				<p class="txt">规划</p>
-			</a></li>
+                <span class="pic"></span>
+                <p class="txt">规划</p>
+            </a></li>
             <li><a href="#J_zxjd-qiaoda" data-toggle="tab">
-				<span class="pic"></span>
-				<p class="txt">敲打</p>
-			</a></li>
+                <span class="pic"></span>
+                <p class="txt">敲打</p>
+            </a></li>
             <li><a href="#J_zxjd-shuidian" data-toggle="tab">
-				<span class="pic"></span>
-				<p class="txt">水电</p>
-			</a></li>
+                <span class="pic"></span>
+                <p class="txt">水电</p>
+            </a></li>
             <li><a href="#J_zxjd-nishui" data-toggle="tab">
-				<span class="pic"></span>
-				<p class="txt">泥水</p>
-			</a></li>
+                <span class="pic"></span>
+                <p class="txt">泥水</p>
+            </a></li>
             <li><a href="#J_zxjd-muzhuo" data-toggle="tab">
-				<span class="pic"></span>
-				<p class="txt">木作</p>
-			</a></li>
+                <span class="pic"></span>
+                <p class="txt">木作</p>
+            </a></li>
             <li><a href="#J_zxjd-youqi" data-toggle="tab">
-				<span class="pic"></span>
-				<p class="txt">油漆</p>
-			</a></li>
+                <span class="pic"></span>
+                <p class="txt">油漆</p>
+            </a></li>
             <li><a href="#J_zxjd-anzhuang" data-toggle="tab">
-				<span class="pic"></span>
-				<p class="txt">安装</p>
-			</a></li>
+                <span class="pic"></span>
+                <p class="txt">安装</p>
+            </a></li>
             <li><a href="#J_zxjd-ruanzhuang" data-toggle="tab">
-				<span class="pic"></span>
-				<p class="txt">软装</p>
-			</a></li>
+                <span class="pic"></span>
+                <p class="txt">软装</p>
+            </a></li>
             <li><a href="#J_zxjd-wangong" data-toggle="tab">
-				<span class="pic"></span>
-				<p class="txt">完工</p>
-			</a></li>
+                <span class="pic"></span>
+                <p class="txt">完工</p>
+            </a></li>
         </ul>
         <div class="zxjd-tab-item active" id="J_zxjd-guihua">
             <div class="video-box-1">
@@ -281,33 +290,35 @@
         <li><a href="#"><img src="images/ft_5.jpg"></a></li>
         <li><a href="#"><img src="images/ft_6.jpg"></a></li>
         <li><a href="#"><img src="images/ft_7.jpg"></a></li>
-        <li><a href="#"><img src="images/ft_8.jpg"></a></li>
         <li><a href="#"><img src="images/ft_9.jpg"></a></li>
     </ul>
+    <div class="fwzxft-box">
+        <p class="guide-home">哇屋装修</p>
+        <a class="phone" href="tel:0596-6078066">电话：0596-6078066</a>
+        <p class="address">厦门总部：湖里区枋湖北二路锦厦科技大厦107单元</p>
+        <p class="address">角美分部：漳州角美吉家家世界家居体验馆3#D106</p>
+    </div>
     <div class="footer-place-seat"></div>
     <ul class="footer-nav">
         <li class="active"><a href="#">
-			<span class="pic"></span>
-			<p class="txt">首页</p>
-		</a></li>
+            <span class="pic"></span>
+            <p class="txt">首页</p>
+        </a></li>
         <li><a href="#">
-			<span class="pic"></span>
-			<p class="txt">视频全集</p>
-		</a></li>
+            <span class="pic"></span>
+            <p class="txt">视频全集</p>
+        </a></li>
         <li><a href="#">
-			<span class="pic"></span>
-			<p class="txt">帖子互动</p>
-		</a></li>
+            <span class="pic"></span>
+            <p class="txt">帖子互动</p>
+        </a></li>
         <li><a href="#">
-			<span class="pic"></span>
-			<p class="txt">人物介绍</p>
-		</a></li>
+            <span class="pic"></span>
+            <p class="txt">人物介绍</p>
+        </a></li>
     </ul>
-   
     <script type="text/javascript">
     $(function() {
-
-
         var swiperObj;
         $(".list-type-2 .list-1 a").click(function(e) {
             e.preventDefault();
@@ -323,6 +334,7 @@
         function initSwiper() {
             swiperObj = new Swiper('.zxjd-tab-item.active .swiper-container', {
                 height: "100%",
+                loop:true,
                 navigation: {
                     nextEl: '.button-next',
                     prevEl: '.button-prev',
