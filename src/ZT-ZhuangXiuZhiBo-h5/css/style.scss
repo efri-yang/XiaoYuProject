@@ -534,17 +534,55 @@
     margin: 0 px2rem(30px) px2rem(30px);
     padding: px2rem(15px);
     font-size: px2rem(26px);
-    border: 1px solid #ececec;
     line-height: 1.7;
     .guide-home {
-        font-size: px2rem(30px);
+        font-size: px2rem(24px);
+        line-height:px2rem(24px);
+        margin-bottom:px2rem(8px); 
+        i{
+            width:px2rem(25px);
+            height:px2rem(24px);
+            overflow:hidden;
+            display:inline-block; 
+            background: url("../images/link_icon_1.png") no-repeat top center; 
+            background-size:100% 100%;
+            margin-right:px2rem(12px);
+            vertical-align:middle;     
+        }
     }
-    .phone,
+    .phone{
+        margin-bottom:px2rem(8px); 
+        i{
+            width:px2rem(24px); 
+            height:px2rem(27px);
+            overflow:hidden;
+            display: inline-block;
+            vertical-align:middle; 
+            background: url("../images/link_icon_2.png") no-repeat top center; 
+            background-size:100% 100%;
+            margin-right:px2rem(13px);  
+        }
+    }
     .address {
+        i{
+            width:px2rem(29px); 
+            height:px2rem(23px);
+            overflow:hidden;
+            display: inline-block;
+            vertical-align:middle; 
+            
+           
+            margin-right:px2rem(8px);
+            &.address-icon{
+                background: url("../images/link_icon_3.png") no-repeat top center; 
+                 background-size:100% 100%;
+            }
+
+        }
         font-size: px2rem(26px) !important;
         color: #313131;
         display: block;
-        padding-left: px2rem(20px);
+        
     }
 }
 
