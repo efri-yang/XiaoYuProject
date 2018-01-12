@@ -547,7 +547,8 @@
             background: url("../images/link_icon_1.png") no-repeat top center; 
             background-size:100% 100%;
             margin-right:px2rem(12px);
-            vertical-align:middle;     
+            vertical-align:middle; 
+            margin-top:px2rem(2px);     
         }
     }
     .phone{
@@ -570,7 +571,7 @@
             overflow:hidden;
             display: inline-block;
             vertical-align:middle; 
-            
+            margin-top:px2rem(2px);    
            
             margin-right:px2rem(8px);
             &.address-icon{
