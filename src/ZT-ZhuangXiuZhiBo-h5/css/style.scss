@@ -548,7 +548,8 @@
             background-size:100% 100%;
             margin-right:px2rem(12px);
             vertical-align:middle; 
-            margin-top:px2rem(2px);     
+            margin-top:px2rem(-4px);
+            position:relative;         
         }
     }
     .phone{
@@ -571,7 +572,8 @@
             overflow:hidden;
             display: inline-block;
             vertical-align:middle; 
-            margin-top:px2rem(2px);    
+            margin-top:px2rem(-4px);
+            position:relative;    
            
             margin-right:px2rem(8px);
             &.address-icon{
