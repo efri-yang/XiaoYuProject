@@ -35,3 +35,245 @@
  ********票务列表
  */
 
+
+.pwlist-tab-hd{
+	display:flex;
+	padding: 0 px2rem(30px);
+	border-bottom:1px solid #eeeeee; 
+	li{
+		flex:1;
+		a{
+			font-size:px2rem(30px);
+			color:#666666;
+			text-align: center;
+			display:block;
+			height:px2rem(83px);
+			line-height:px2rem(73px);
+			padding:px2rem(5px) 0;    
+		}
+		&.active{
+			a{
+				border-bottom:px2rem(5px) solid #02d289;
+				padding-bottom: 0;
+				color:#02d289;
+			}
+		}
+	} 
+}
+.pwlist-tab-bd-item{
+	display:none;
+	&.active{
+		display:block;
+	}
+}
+.pwlist-tab-bd-list{
+	padding:0 px2rem(30px);
+	li{
+		border-bottom:1px solid #dcdcdc;
+		padding:px2rem(30px) 0;
+		.pic{
+			width:px2rem(200px);
+			height:px2rem(160px);
+			overflow:hidden;
+			float:left;
+			margin-right:px2rem(20px);
+			img{
+				width:100%;
+				height:100%;
+			} 
+		}
+		.tit{
+			color:#000000;
+			padding:px2rem(5px) 0;
+			line-height:1.5;
+			height:px2rem(95px);
+			margin-bottom:px2rem(15px);
+			font-size:px2rem(30px);
+			@include text-overflow-2;
+		}
+		.buy-btn{
+			float:left;
+			width:px2rem(105px);
+			height:px2rem(36px);
+			line-height:px2rem(32px);
+			border:px2rem(2px) solid #02d289;
+			font-size:px2rem(24px);
+			color:#02d289;
+			border-radius:px2rem(6px);
+			text-align:center;
+			float:left;
+		}	
+		.price{
+			color:#d44d44;
+			font-size:px2rem(36px);
+			float:right;
+
+			b{
+				font-weight: normal;
+				font-size:px2rem(28px);
+			}
+		}	
+	}
+}
+
+.pwdetail-photo{
+	position:relative;
+	img{
+		width:100%;
+	}
+	.count{
+		position:absolute;
+		right:px2rem(50px);
+		bottom:px2rem(30px);
+		line-height:px2rem(36px);
+		color:#fff;
+		font-size:px2rem(30px);
+		i{
+			width:px2rem(44px);
+			height:px2rem(36px);
+			display:inline-block;
+			vertical-align:middle;
+			background:url("../images/icon_img_1.png") no-repeat top center;
+			background-size:100% 100%;
+			margin-right:px2rem(10px); 
+		}
+	}
+}
+.pwdetail-pro-name{
+	color:#333333;
+	font-size:px2rem(32px);
+	padding:0 px2rem(30px);
+}
+
+.pwdetail-price{
+	padding:0 px2rem(25px) px2rem(5px);
+	line-height:px2rem(60px);
+	margin-top:px2rem(20px);
+	border-bottom:1px solid #eeeeee; 
+	.price{
+		float:left;
+		color:#d44d44;
+		b{
+			font-size:px2rem(28px);
+			font-weight:normal;
+			color:#d44d44;
+		}
+	}
+	.tip{
+		float:right;
+		color:#333333;
+
+		font-size:px2rem(24px);
+	}
+}
+.pwdetail-fxintro{
+	position:relative;
+	padding:0 px2rem(30px) px2rem(25px) px2rem(160px);
+	border-bottom:1px solid #eeeeee;
+	.tip{
+		width:px2rem(109px);
+		height:px2rem(36px);
+		border:px2rem(2px) solid #02d289;
+		border-radius:px2rem(5px);
+		font-size:px2rem(22px);
+		padding:px2rem(5px);
+		color:#02d289;
+		position:absolute;
+		left:px2rem(30px);
+		top:px2rem(30px);
+		white-space:nowrap; 
+	}
+	.txt{
+		color:#666666;
+		font-size:px2rem(26px);
+		padding-top:px2rem(28px);
+		line-height:1.5; 
+		span{
+			color:#d44d44;
+		}
+	}
+}
+.pwdetail-address{
+	color:#666666;
+	position:relative;
+	font-size:px2rem(26px);
+	height:px2rem(85px);
+	line-height:px2rem(85px);
+	padding:0 px2rem(50px) 0 px2rem(110px);
+	border-bottom:1px solid #eeeeee;
+	.lab{
+		position: absolute;
+	    left:px2rem(30px);
+	    top: 50%;
+	    -webkit-transform: translate(0,-50%);
+	    -ms-transform: translate(0,-50%);
+	    -moz-transform: translate(0,-50%);
+	}
+	.txt{
+		@include text-overflow-1;
+	}
+	i{
+		position: absolute;
+	    right:px2rem(30px);
+	    top: 50%;
+	    -webkit-transform: translate(0,-50%);
+	    -ms-transform: translate(0,-50%);
+	    -moz-transform: translate(0,-50%);
+	    width:px2rem(18px);
+	    height:px2rem(33px);
+	    overflow:hidden;
+	    background:url("../images/h_arrow_r_1.png") no-repeat top center;
+	    background-size: 100% 100%; 
+	}
+}
+.pwdetail-tab-hd{
+	display:flex;
+	border-bottom:1px solid #eeeeee;
+	li{
+		flex:1;
+		a{
+			color:#333333;
+			font-size:px2rem(30px);
+			height:px2rem(85px);
+			padding:px2rem(5px) 0;
+			line-height:px2rem(75px);
+			display:block;
+			text-align:center;
+		}
+		&.active{
+			border-bottom:px2rem(5px) solid #02d289;
+			padding-bottom:0;
+			a{
+				color:#02d289;
+			}
+		}
+	}
+}
+
+.pwdetail-tab-cpjs{
+	color:#666666;
+	font-size:px2rem(24px);
+	line-height:1.5;
+	padding:px2rem(30px);
+	*{
+		max-width: 100%;
+	}
+}
+
+.pwdetail-yhpj-tags{
+	padding:0 px2rem(30px);
+	li{
+		float:left;
+		margin-right:px2rem(10px);
+		margin-bottom:px2rem(15px); 
+		a{
+			display:block;
+			height:px2rem(62px);
+			line-height:px2rem(62px);
+			background:#f8f8f8;
+			font-size:px2rem(22px);
+			padding:0 px2rem(17px);
+			color:#666666;
+		}
+	}
+}
