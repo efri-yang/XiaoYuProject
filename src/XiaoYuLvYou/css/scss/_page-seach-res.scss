@@ -1,0 +1,34 @@
+.seach-r-xgsj{
+    padding:0 px2rem(15px);
+
+    li{
+        float:left;
+        width:50%;
+        padding:px2rem(15px);
+        border-bottom:1px solid #eee;
+        margin-top:px2rem(15px);
+        .pic{
+            height:px2rem(210px);
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+        .name{
+            color:#333333;
+            font-size:px2rem(30px);
+            padding:px2rem(10px) 0 0;
+            @include text-overflow-1; 
+        }
+        .price{
+            color:#d44d44;
+            font-size:px2rem(36px);
+           
+
+            b{
+                font-weight: normal;
+                font-size:px2rem(28px);
+            }
+        }   
+    }
+}

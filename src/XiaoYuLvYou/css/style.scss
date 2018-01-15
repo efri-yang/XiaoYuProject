@@ -1,109 +1,122 @@
 @import "./scss/_funvar.scss";
 @import "./scss/_common.scss";
 
+
+
 /**
- * 
+ ********首页
  */
-.h-banner-swiper{
-	&.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
-		background-color: rgba(255,255,255,0.7); 
-		opacity:1;
-		&.swiper-pagination-bullet-active{
-			background:#fff; 
-		}
-	}
-	img{
-		width: 100%;
-	}
+
+@import "./scss/_page-index.scss";
+
+
+
+
+
+/**
+ ********搜索结果
+ */
+
+@import "./scss/_page-seach-res.scss";
+
+
+.lygl-list {
+	padding:0 px2rem(30px);
+    li {
+    	border-bottom:1px solid #dcdcdc;
+    	.link{
+    		display:block;
+    		padding:px2rem(30px) 0;
+    	}
+    	.pic{
+    		float:left;
+    		width:px2rem(220px);
+    		height:px2rem(242px);
+    		overflow:hidden;
+    		margin-right:px2rem(20px);
+    	}
+    	.intro{
+    		font-size:px2rem(24px);
+    		color:#666666;
+    		line-height:1.4;
+    		margin-top:px2rem(10px);
+    		@include text-overflow-2;
+    	}
+        .avatar {
+            line-height: px2rem(55px);
+            margin-top:px2rem(10px);
+            .pic {
+                width: px2rem(55px);
+                height: px2rem(55px);
+                overflow: hidden;
+                display: block;
+                border-radius: 100%;
+                float: left;
+                margin-right: px2rem(10px);
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .name {
+                color: #bfbfbf;
+                font-size: px2rem(24px);
+                float: left;
+            }
+        }
+        .time {
+            line-height: px2rem(55px);
+            float: right;
+            color: #bfbfbf;
+            font-size: px2rem(24px);
+            i {
+                width: px2rem(23px);
+                height: px2rem(23px);
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: px2rem(5px);
+                background: url("../images/h_time_1.png") no-repeat left center;
+                background-size: 100% 100%;
+                margin-top: px2rem(-4px);
+            }
+        }
+        .tag{
+        	margin-top:px2rem(10px);
+        	span{
+        		display:inline-block;
+        		height:px2rem(36px);
+        		line-height:px2rem(32px);
+        		border:px2rem(2px) solid #02d289;
+        		border-radius:px2rem(4px);
+        		font-size:px2rem(22px);
+        		padding:0 px2rem(10px);
+        		margin-right:px2rem(10px);
+        		&:nth-child(2n+1){
+        			color:#02d289;
+        			border-color:#02d289; 
+        		}
+        		&:nth-child(2n+2){
+        			color:#e9ad0d;
+        			border-color:#e9ad0d; 
+        		}
+        	}
+        }
+        .tit{
+        	font-size:px2rem(30px);
+        	color:#333333;
+        	@include text-overflow-1;
+        }
+    }
 }
 
-.h-list-1{
-
-	li{
-		border-bottom:1px solid #eeeeee; 
-		a{
-			position: relative;
-			display: block;
-			min-height:px2rem(123px);
-			padding:px2rem(20px) px2rem(50px) px2rem(20px) px2rem(30px); 
-		}
-		.pic{
-			width:px2rem(83px);
-			height:px2rem(83px);
-			overflow:hidden;
-			float:left;
-			background-size:100%;
-			background-repeat: no-repeat;
-			background-position: 0 0; 
-			margin-right:px2rem(20px);    
-		}
-		.tit{
-			font-size:px2rem(30px);
-			margin-top:px2rem(5px);  
-		}
-		.intro{
-			font-size:px2rem(26px);
-			color:#333333; 
-			margin-top:px2rem(7px); 
-			@include text-overflow-1;
-		}
-		.arrow-r{
-			width:px2rem(18px);
-			height:px2rem(33px);
-			overflow:hidden;
-			background:url("../images/h_arrow_r_1.png") no-repeat top center;
-			background-size: 100% 100%;
-			position: absolute;
-		    right:px2rem(20px);
-		    top: 50%;
-		    -webkit-transform: translate(0,-50%);
-		    -ms-transform: translate(0,-50%);
-		    -moz-transform: translate(0,-50%);   
-
-		}
-
-		&:nth-child(1){
-			.pic{
-				background-image:url("../images/h_icon_1.png"); 
-			}
-			.tit{
-				color:#f73638; 
-			}
-		}
-
-		&:nth-child(2){
-			.pic{
-				background-image:url("../images/h_icon_2.png"); 
-			}
-			.tit{
-				color:#089dff; 
-			}
-		}
-
-		&:nth-child(3){
-			.pic{
-				background-image:url("../images/h_icon_3.png"); 
-			}
-			.tit{
-				color:#ef55a4; 
-			}
-		}
-
-		&:nth-child(4){
-			.pic{
-				background-image:url("../images/h_icon_4.png"); 
-			}
-			.tit{
-				color:#ff6c00; 
-			}
-		}
-	}
-}
-
-
-
-.h-swiper-jxly{
+.lygl-detail-infor{
+	padding:px2rem(30px);
+	line-height:1.5;
+	font-size:px2rem(26px);
+	border-top:1px solid #eeeeee;
+	border-bottom:1px solid #eeeeee;
+	color:#666666;
 	img{
-		max-width:100%; 
+		width:100% !important;
 	}
 }

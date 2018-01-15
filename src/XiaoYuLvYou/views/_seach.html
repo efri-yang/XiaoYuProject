@@ -1,0 +1,20 @@
+<div class="coms-seach-wrap">
+    <div class="coms-seach-box">
+        <span class="s-icon"></span>
+        <input type="seach" class="ipt-seach" id="J_seach-ipt" placeholder="输入目的地/关键词/主题" />
+    </div>
+    <input type="submit" value="搜索" class="seach-btn" />
+    <script type="text/javascript">
+    (function($) {
+        $(function() {
+            var $seachIpt = $("#J_seach-ipt"),
+                $parent = $seachIpt.parents(".coms-seach-wrap");
+            $seachIpt.on("focus", function() {
+                $parent.addClass('active');
+            }).on("blur", function() {
+                $parent.removeClass('active');
+            })
+        })
+    })(Zepto);
+    </script>
+</div>

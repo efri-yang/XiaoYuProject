@@ -1,0 +1,23 @@
+  <ul class="coms-fixed-guide">
+        <li class="gohome"><a href="index.html"></a></li>
+        <li class="goback"><a href="#"></a></li>
+        <li class="gotop" id="J_gotop"><a href="#gotop"></a></li>
+    </ul>
+    <script type="text/javascript">
+        //返回顶部
+    (function() {
+        $(function() {
+           $('<a name="gotop" style="visibility:hidden;"></a>').prependTo($("body"));
+           var $win=$(window),
+               $gotop=$("#J_gotop");
+            $win.on("scroll",$.throttle(250,function(){
+                 var scrolltop = $win.scrollTop();
+                if (scrolltop >= 500) {
+                    $gotop.addClass("active");
+                } else if(scrolltop <= 500){
+                    $gotop.removeClass("active");
+                }     
+            }))  
+        })
+    })();
+    </script>
