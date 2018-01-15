@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/flexible2.0.js"></script>
+    <script type="text/javascript" src="js/zepto.js"></script>
+
+
+
+
+    <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+</head>
+
+<body>
+
+		<div class="coms-header-top">
+			<a class="logo" href="">小鱼旅游</a>
+			<a  class="member" href="#"></a>
+		</div>
+
+		<div class="pl30 pr30">
+			<div class="coms-seach-wrap">
+				<div class="coms-seach-box">
+					<span class="s-icon"></span>
+					<input type="seach" class="ipt-seach" id="J_seach-ipt" placeholder="输入目的地/关键词/主题" />
+				</div>
+				<input type="submit" value="搜索" class="seach-btn" />
+				<script type="text/javascript">
+					(function($){
+						$(function(){
+							var $seachIpt=$("#J_seach-ipt"),
+								$parent=$seachIpt.parents(".coms-seach-wrap");
+							$seachIpt.on("focus",function(){
+								$parent.addClass('active');
+							}).on("blur",function(){
+								$parent.removeClass('active');
+							})
+						})
+					})(Zepto);
+				</script>
+			</div>	
+		</div>
+		<ul class="coms-seach-list clearfix">
+			<li><a href="#">周边景点</a></li>
+			<li><a href="#">周边景点</a></li>
+			<li><a href="#">周边景点</a></li>
+			<li><a href="#">周边景点55</a></li>
+		</ul>
+
+		<div class="swiper-container h-banner-swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><a href="#"><img src="upload/banner11.jpg" /></a></div>
+				<div class="swiper-slide"><a href="#"><img src="upload/banner12.jpg" /></a></div>
+				<div class="swiper-slide"><a href="#"><img src="upload/banner13.jpg" /></a></div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+
+
+		<ul class="h-list-1 border-b-20">
+			<li class="clearfix">
+				<a href="#">
+					<div class="pic"></div>
+					<p class="tit">游记攻略</p>
+					<p class="intro">百万用户旅游经历，带你轻松玩上天</p>
+					<span class="arrow-r"></span>
+				</a>
+			</li>
+
+			<li class="clearfix">
+				<a href="#">
+					<div class="pic"></div>
+					<p class="tit">游记攻略</p>
+					<p class="intro">百万用户旅游经历，带你轻松玩上天</p>
+					<span class="arrow-r"></span>
+				</a>
+			</li>
+
+			<li class="clearfix">
+				<a href="#">
+					<div class="pic"></div>
+					<p class="tit">游记攻略</p>
+					<p class="intro">百万用户旅游经历，带你轻松玩上天</p>
+					<span class="arrow-r"></span>
+				</a>
+			</li>
+
+			<li class="clearfix">
+				<a href="#">
+					<div class="pic"></div>
+					<p class="tit">游记攻略</p>
+					<p class="intro">百万用户旅游经历，带你轻松玩上天</p>
+					<span class="arrow-r"></span>
+				</a>
+			</li>
+		</ul>
+
+
+		<div class="coms-tit-type">
+				<span class="tit">精选游记</span>
+		</div>
+
+		<div class="swiper-container h-swiper-jxly">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+						<a href="#">
+
+
+						</a>
+		
+				</div>
+
+			</div>
+			
+		</div>
+
+		<div style="height: 250px"></div>
+
+
+   
+
+   <script>
+   	$(function(){
+   		var mySwiper = new Swiper('.h-banner-swiper', {
+			autoplay: true,//可选选项，自动滑动
+			pagination: {
+			    el: '.swiper-pagination',
+			}
+		});
+
+
+    var swiper = new Swiper('.h-swiper-jxly', { slidesPerView: 3, spaceBetween: 30, freeMode: true, pagination: {clickable: true, }, });
+  
+   	})
+
+</script>
+</body>
+
+</html>

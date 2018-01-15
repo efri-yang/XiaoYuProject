@@ -428,32 +428,39 @@
 
 .lmjs-box {
     position: absolute;
-    right: px2rem(30px);
-    top: px2rem(20px);
+    left:50%;
+    top:px2rem(445px);
+    -webkit-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);   
     border-radius: px2rem(30px);
     width: px2rem(153px);
-    height: px2rem(42px);
-    line-height: px2rem(20px);
+    height: px2rem(54px);
     text-align: center;
     overflow: hidden;
-    border: px2rem(3px) solid #ffffff;
+    border: px2rem(4px) solid #ffffff;
+     width:px2rem(200px); 
 
     .txt {
         color: #fff;
-        float:left;
+        position: absolute;
         padding-left:px2rem(20px);
-        padding-top:px2rem(7px);   
-        font-size: px2rem(24px);
-        position: relative;
+        font-size: px2rem(30px);
+       left:50%;
+        top:50%;
+         width:px2rem(200px); 
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%); 
         i {
             display: inline-block;
             vertical-align: middle;
             border-style: dashed dashed dashed solid;
             border-color: transparent transparent transparent #fff;
-            border-width: px2rem(10px);
+            border-width: px2rem(14px);
             width: 0;
             height: 0;
-            margin-left: px2rem(8px);
+            margin-left: px2rem(10px);
             margin-top: px2rem(-3px);
         }
     }
