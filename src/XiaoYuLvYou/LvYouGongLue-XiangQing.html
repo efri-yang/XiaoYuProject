@@ -10,38 +10,254 @@
     <script type="text/javascript" src="js/flexible2.0.js"></script>
     <script type="text/javascript" src="js/zepto.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
-
-
-   
+    <script type="text/javascript" src="js/mdialog/mDialog.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/mdialog/mDialog.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
 </head>
 
 <body>
-     @@include("./views/_header-top.html")
+    @@include("./views/_header-top.html")
     <!--  通用返回顶部 start -->
     @@include("./views/_fixed-guide.html")
     <!--  通用返回顶部 end -->
-
-
     <div class="border-b-20"></div>
-
     <div class="lygl-detail-infor">
-        <p>国内的介绍完了，下面我们来看看国外有哪些亲子游圣地。
-第一名当然是我们的泰国清迈了，这里有很多的体验项目，他们可以尽可能的体验不同的场景、人物、涉及多种活动，更善于孩子发信自己的兴趣点，不需要赶行程，激发他们的好奇心。</p>
+        <p>国内的介绍完了，下面我们来看看国外有哪些亲子游圣地。 第一名当然是我们的泰国清迈了，这里有很多的体验项目，他们可以尽可能的体验不同的场景、人物、涉及多种活动，更善于孩子发信自己的兴趣点，不需要赶行程，激发他们的好奇心。
+        </p>
         <img src="upload/banner11.jpg" />
-         <p>国内的介绍完了，下面我们来看看国外有哪些亲子游圣地。
-第一名当然是我们的泰国清迈了，这里有很多的体验项目，他们可以尽可能的体验不同的场景、人物、涉及多种活动，更善于孩子发信自己的兴趣点，不需要赶行程，激发他们的好奇心。</p>
+        <p>国内的介绍完了，下面我们来看看国外有哪些亲子游圣地。 第一名当然是我们的泰国清迈了，这里有很多的体验项目，他们可以尽可能的体验不同的场景、人物、涉及多种活动，更善于孩子发信自己的兴趣点，不需要赶行程，激发他们的好奇心。
+        </p>
         <img src="upload/banner11.jpg" />
     </div>
     <div class="border-b-20"></div>
+    <div class="lvgl-detail-qrcode">
+        <div class="qrcode-pic"><img src="images/qrcode_1.jpg" /></div>
+        <p class="txt-1">扫一扫，添加客服微信</p>
+        <p class="txt-2">客服微信号：18159883607</p>
+    </div>
+    <!-- 底部 start -->
+    <ul class="bt-nav-fixed">
+        <li class="lslx" id="J_nav-lslx">
+            <span class="pic"></span>
+            <p class="txt">类似线路</p>
+        </li>
+        <li class="sc">
+            <span class="pic"></span>
+            <p class="txt">收藏</p>
+        </li>
+        <li class="xgcp" id="J_nav-xgcp">
+            相关产品
+        </li>
+    </ul>
+    <!-- 同类线路 start -->
+    <div class="dialog-tlxl" id="J_dialog-tlxl">
+        <div class="coms-tit-type">
+            <span class="tit">同类线路 </span>
+        </div>
+        <div class="dialog-tlxl-list-wrapper" id="J_dialog-tlxl-wrapper">
+            <div class="dialog-tlxl-list-scroller">
+                <ul class="list">
+                    <li class="clearfix">
+                        <a href="#" class="link">
+                            <div class="pic"><img src="upload/pro51.jpg" /></div>
+                            <p class="txt"><span class="clr">香港</span>迪士尼乐园1晚2日自由行“ 亲子游”迪士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自由行
+                            </p>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="#" class="link">
+                            <div class="pic"><img src="upload/pro51.jpg" /></div>
+                            <p class="txt"><span class="clr">香港</span>迪士尼乐园1晚2日自由行“ 亲子游”迪士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自由行
+                            </p>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="#" class="link">
+                            <div class="pic"><img src="upload/pro51.jpg" /></div>
+                            <p class="txt"><span class="clr">香港</span>迪士尼乐园1晚2日自由行“ 亲子游”迪士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自由行
+                            </p>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="#" class="link">
+                            <div class="pic"><img src="upload/pro51.jpg" /></div>
+                            <p class="txt">香港迪士尼乐园1晚2日自由行“ 亲子游”迪士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自由行
+                            </p>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="#" class="link">
+                            <div class="pic"><img src="upload/pro51.jpg" /></div>
+                            <p class="txt">香港迪士尼乐园1晚2日自由行“ 亲子游”迪士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自由行
+                            </p>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="#" class="link">
+                            <div class="pic"><img src="upload/pro51.jpg" /></div>
+                            <p class="txt">香港迪士尼乐园1晚2日自由行“ 亲子游”迪士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自由行
+                            </p>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="#" class="link">
+                            <div class="pic"><img src="upload/pro51.jpg" /></div>
+                            <p class="txt">香港迪士尼乐园1晚2日自由行“ 亲子游”迪士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自由行
+                            </p>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="#" class="link">
+                            <div class="pic"><img src="upload/pro51.jpg" /></div>
+                            <p class="txt">香港迪士尼乐园1晚2日自由行“ 亲子游”迪士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自士尼专享自由行
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 同类线路 end -->
+    <!-- 相关产品  start -->
+    <div class="dialog-xgcp" id="J_dialog-xgcp">
+        <div class="coms-tit-type">
+            <span class="tit">相关产品 </span>
+        </div>
+        <span class="xgcp-close" id="J_xgcp-close"></span>
+        <div class="xgcp-iscroll-wrapper" id="J_xgcp-iscroll-wrapper">
+            <div class="xgcp-iscroll-scroller">
+                <ul class="xgcp-list">
+                    <li>
+                        <a href="#">
+                            <div class="pic"><img src="upload/pro31.jpg" /></div>
+                            <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
+                            <div class="clearfix">
+                                <div class="tag"><span>购买返现</span><span>购买返现</span></div>
+                                <span class="price"><b>￥</b>5600<b>起</b></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="pic"><img src="upload/pro31.jpg" /></div>
+                            <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
+                            <div class="clearfix">
+                                <div class="tag"><span>购买返现</span><span>购买返现</span></div>
+                                <span class="price"><b>￥</b>5600<b>起</b></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="pic"><img src="upload/pro31.jpg" /></div>
+                            <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
+                            <div class="clearfix">
+                                <div class="tag"><span>购买返现</span><span>购买返现</span></div>
+                                <span class="price"><b>￥</b>5600<b>起</b></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="pic"><img src="upload/pro31.jpg" /></div>
+                            <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
+                            <div class="clearfix">
+                                <div class="tag"><span>购买返现</span><span>购买返现</span></div>
+                                <span class="price"><b>￥</b>5600<b>起</b></span>
+                            </div>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 相关产品  end -->
+    <script type="text/javascript">
+    //同类线路
+    (function($) {
+        $(function() {
+            var DiaLslx, IscroLslx,
+                $NavLslx = $("#J_nav-lslx");
+            $NavLslx.on("touchstart", function() {
+                DiaLslx = mDialog.open({
+                    // duration:0,
+                    title: false,
+                    closeBtn: false,
+                    width: "80%",
+                    height: "100%",
+                    maxHeight: "100%",
+                    maxWidth: "100%",
+                    duration: 200,
+                    offset: ["left", "top"],
+                    content: $("#J_dialog-tlxl"),
+                    animIn: "slideInLeft",
+                    animOut: "slideOutLeft",
+                    baseViewWidth: 750,
+                    baseViewHeight: 960,
+                    buttons: false,
+                    onBeforeShow: function() {
+                        $NavLslx.parent().css("zIndex", 999999999);
+                    },
+                    onShow: function() {
+                        if (!IscroLslx) {
+                            IscroLslx = new IScroll('#J_dialog-tlxl-wrapper');
+                        }
+                    },
+                    onClose: function() {
+                        $NavLslx.parent().css("zIndex", "")
+                    }
+                });
+            });
 
 
-    <div style="height: 230px;"></div>
-    
+        })
+    })(Zepto);
 
+    //相关产品
+    (function($) {
+        $(function() {
+            var DiaLslx, IscroXgcp,
+                $NavXgcp = $("#J_nav-xgcp");
+            $NavXgcp.on("touchstart", function() {
+                DiaLslx = mDialog.open({
+                    // duration:0,
+                    title: false,
+                    closeBtn: false,
+                    width: "100%",
+                    height: "100%",
+                    maxHeight: "80%",
+                    maxWidth: "100%",
+                    duration: 350,
+                    offset: ["left", "bottom"],
+                    content: $("#J_dialog-xgcp"),
+                    animIn: "slideInBottom",
+                    animOut: "slideOutDown",
+                    baseViewWidth: 750,
+                    baseViewHeight: 960,
+                    buttons: false,
+                    onBeforeShow: function() {
+                       
+                    },
+                    onShow: function() {
+                        if (!IscroXgcp) {
+                            IscroXgcp = new IScroll('#J_xgcp-iscroll-wrapper');
+                        }
+                    },
+                    onClose: function() {
+                        
+                    }
+                });
+            });
 
-
-
-
+            $("#J_xgcp-close").on("touchstart",function(){
+                DiaLslx.close();
+            })
+        })
+    })(Zepto)
+    </script>
+    <!-- 底部 end -->
 </body>
 
 </html>

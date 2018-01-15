@@ -458,6 +458,7 @@
                 opts.content.css({
                     visibility: "visible",
                     display: "block",
+                    float:"none",
                     clear: "both"
                 });
                 opts.content.wrap('<div class="' + containerClassName + '"><div class="mDialog-layer-main"></div></div>');
