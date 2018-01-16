@@ -264,10 +264,11 @@
 }
 
 .pwdetail-yhpj-tags{
-	padding:px2rem(20px) px2rem(25px);
+	padding:px2rem(20px) px2rem(25px) 0;
 	li{
 		float:left;
 		margin:px2rem(8px) px2rem(5px);
+
 		a{
 			display:block;
 			height:px2rem(62px);
@@ -322,6 +323,10 @@
 }
 
 .pwdetail-yhpj-list-item{
+    padding:px2rem(30px) 0;
+    margin:0 px2rem(30px);
+    border-bottom:1px solid #dcdcdc;
+    position: relative;
     .avatar{
         .pic{
             width:px2rem(60px);
@@ -329,13 +334,59 @@
             border-radius: 100%;
             float:left;
             overflow:hidden;
+            margin-right:px2rem(10px); 
             img{
                 width: 100%;
                 height:100%; 
             }    
         }
         .name{
-            
+            color:#666666;
+            padding-top:px2rem(5px);
+            font-size:px2rem(24px);
+            @include text-overflow-1;  
         }
+        .time{
+            color:#9c9c9c;
+            font-size:px2rem(20px);
+            margin-top:px2rem(5px);  
+        }
+    }
+    .say-intro{
+        margin-top:px2rem(15px); 
+        color:#333333;
+        line-height:1.45; 
+        font-size:px2rem(24px);  
+    }
+    .img-list{
+        margin-top:px2rem(10px); 
+        li{
+            float:left;
+            margin-right:px2rem(10px); 
+            margin-top:px2rem(10px); 
+        }
+        .pic{
+            width:px2rem(147px);
+            height:px2rem(147px);
+            overflow:hidden;
+            position: relative;
+            img{
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    -webkit-transform: translate(-50%,-50%);
+                    -ms-transform: translate(-50%,-50%);
+                    -moz-transform: translate(-50%,-50%);
+                   
+            }   
+        }
+    }
+    .comment{
+        position: absolute;
+        color:#02d289;
+        right:0;
+        top:px2rem(48px);
+        font-size:px2rem(24px); 
+
     }
 }
