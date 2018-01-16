@@ -121,18 +121,33 @@
 			font-size:px2rem(30px);
 			@include text-overflow-2;
 		}
-		.buy-btn{
-			float:left;
-			width:px2rem(105px);
-			height:px2rem(36px);
-			line-height:px2rem(32px);
-			border:px2rem(2px) solid #02d289;
-			font-size:px2rem(24px);
-			color:#02d289;
-			border-radius:px2rem(6px);
-			text-align:center;
-			float:left;
-		}	
+		.tag {
+            margin-top:px2rem(5px); 
+            float:left; 
+            span {
+                
+                height: px2rem(36px);
+                line-height: px2rem(32px);
+                border: px2rem(2px) solid #02d289;
+                border-radius: px2rem(4px);
+                font-size: px2rem(22px);
+                padding: 0 px2rem(10px);
+                margin-right: px2rem(10px);
+                float:left; 
+                &:nth-child(3n+1) {
+                    color: #02d289;
+                    border-color: #02d289;
+                }
+                &:nth-child(3n+2) {
+                    color: #e9ad0d;
+                    border-color: #e9ad0d;
+                }
+                &:nth-child(3n+3) {
+                    color: #31afc2;
+                    border-color: #31afc2;
+                }
+            }
+        }
 		.price{
 			color:#d44d44;
 			font-size:px2rem(36px);
