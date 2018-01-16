@@ -1,0 +1,246 @@
+.sp-list-tab-hd{
+	display:flex;
+	border-bottom:1px solid #eeeeee;
+	padding:0 px2rem(30px); 
+	li{
+		flex:1;
+		a{
+			display:block;
+			height:px2rem(83px);
+			line-height:px2rem(73px); 
+			padding:px2rem(5px) 0;
+			font-size:px2rem(30px);
+			color:#666666;
+			text-align:center;
+		}
+		&.active{
+			a{
+				border-bottom:px2rem(5px) solid #02d289;
+				padding-bottom: 0; 
+			}
+		}
+	} 
+}
+
+.sp-list-sort{
+	padding:px2rem(20px) px2rem(30px);
+	li{
+		float:left; 
+		color:#666666;
+		font-size:px2rem(24px);
+		width:px2rem(150px);
+		height:px2rem(50px);
+		line-height:px2rem(48px);
+		border:1px solid #eeeeee;
+		text-align:center;
+		margin-right:px2rem(15px);
+		border-radius:px2rem(5px);  
+		&.active{
+			color:#02d289;
+			border-color:#02d289; 
+		} 
+	}
+}
+
+.sp-list-pro{
+    padding:0 px2rem(15px);
+
+    li{
+        float:left;
+        width:50%;
+        padding:px2rem(15px);
+       
+       
+        .pic{
+            height:px2rem(210px);
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+        .name{
+            color:#333333;
+            font-size:px2rem(30px);
+            padding:px2rem(10px) 0 0;
+            @include text-overflow-1; 
+        }
+        .price{
+            color:#d44d44;
+            font-size:px2rem(36px);
+           
+
+            b{
+                font-weight: normal;
+                font-size:px2rem(28px);
+            }
+        }   
+    }
+}
+
+.spdetail-header-top{
+	padding:px2rem(30px);
+	.avatar{
+		color:#666666;
+		font-size:px2rem(30px);
+		float:left;
+		margin-top:px2rem(8px);
+		i{
+			width:px2rem(34px);
+			height:px2rem(31px);
+			float:left;
+			background: url("../images/dianpu_icon.png") no-repeat top center;
+			background-size:100% 100%;
+			margin-right:px2rem(15px);
+		}
+	}
+	.collect{
+		float:right;
+		font-size:px2rem(24px);
+		color:#666666;
+		line-height:px2rem(33px);
+		border:1px solid #e2e2e2;
+		padding:px2rem(10px) px2rem(15px);
+		border-radius:px2rem(10px);
+		i{
+			float:left;
+			width:px2rem(33px);
+			height:px2rem(33px);
+			margin-top:px2rem(-3px); 
+			vertical-align:middle;
+			background:url("../images/shouchang.png") no-repeat top center;
+			background-size:100% 100%;
+			margin-right:px2rem(5px);
+		}
+		&.active{
+			i{
+				background:url("../images/shouchang_h.png") no-repeat top center;
+				background-size:100% 100%;
+			}
+		}
+	}
+}
+
+.sp-guide-nav{
+	padding:0 px2rem(15px) px2rem(30px);
+
+	display:flex;
+	li{
+		padding:0 px2rem(15px);
+		flex:1;
+		a{
+			display:block;
+			height:px2rem(160px);
+			line-height:px2rem(160px);
+			background:#f8f8f8;
+			font-size:px2rem(30px);
+			color:#333333;
+			text-align:center;
+			i{
+				width:px2rem(80px);
+				height:px2rem(80px);
+				display:inline-block;
+				vertical-align:middle;
+				background-size:100% 100%;
+				background-repeat:no-repeat;
+				margin-right:px2rem(10px);
+				background-position: center center; 
+				
+			}
+		}
+		&:nth-child(1){
+			a{
+				i{
+					background-image:url("../images/sp_guide_1.png");
+				}
+			}
+		}
+		&:nth-child(2){
+			a{
+				i{
+					background-image:url("../images/sp_guide_2.png");
+				}
+			}
+		}
+	}
+}
+.spdetail-detail-box{
+	color:#666666;
+	padding:px2rem(30px);
+	font-size:px2rem(28px);
+	line-height:1.35;
+	*{
+		max-width:100% !important;
+	}
+}
+
+
+.sppro-list{
+	padding:0 px2rem(30px);
+	li{
+		border-bottom:1px solid #dcdcdc;
+		padding:px2rem(30px) 0;
+		.pic{
+			width:px2rem(200px);
+			height:px2rem(160px);
+			overflow:hidden;
+			float:left;
+			margin-right:px2rem(20px);
+			img{
+				width:100%;
+				height:100%;
+			} 
+		}
+		.tit{
+			color:#000000;
+			padding:px2rem(5px) 0;
+			line-height:1.5;
+			height:px2rem(95px);
+			margin-bottom:px2rem(15px);
+			font-size:px2rem(30px);
+			@include text-overflow-2;
+		}
+        .tag{
+            float:left;
+            height:px2rem(36px);
+            margin-top:px2rem(4px);   
+            span{
+                height:px2rem(36px);
+                line-height:px2rem(32px);
+                border:px2rem(2px) solid #02d289;
+                font-size:px2rem(24px);
+                color:#02d289;
+                border-radius:px2rem(6px);
+                text-align:center;
+                font-size:px2rem(24px);
+                padding:0 px2rem(5px);
+                display: inline-block;
+                vertical-align: top;
+                margin-right:px2rem(5px);
+                &:nth-child(3n+1) {
+                    color: #02d289;
+                    border-color: #02d289;
+                }
+                &:nth-child(3n+2) {
+                    color: #e9ad0d;
+                    border-color: #e9ad0d;
+                }
+                &:nth-child(3n+3) {
+                    color: #31afc2;
+                    border-color: #31afc2;
+                }
+                
+            }
+        }
+		
+		.price{
+			color:#d44d44;
+			font-size:px2rem(36px);
+			float:right;
+
+			b{
+				font-weight: normal;
+				font-size:px2rem(28px);
+			}
+		}	
+	}
+}

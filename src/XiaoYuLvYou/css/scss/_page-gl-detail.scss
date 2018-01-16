@@ -105,32 +105,8 @@
     }
 }
 
-.lvgl-detail-qrcode {
-    padding: px2rem(20px) 0 px2rem(130px);
-    .qrcode-pic {
-        width: px2rem(192px);
-        height: px2rem(192px);
-        overflow: hidden;
-        margin: 0 auto;
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-    .txt-1 {
-        text-align: center;
-        color: #02d289;
-        font-size: px2rem(28px);
-        font-weight: bold;
-        margin-top: px2rem(8px);
-    }
-    .txt-2 {
-        color: #333333;
-        text-align: center;
-        font-size: px2rem(28px);
-        color: #333333;
-        margin-top: px2rem(8px);
-    }
+.lvgl-detail-qrcode-seat{
+    height:px2rem(100px);
 }
 
 
