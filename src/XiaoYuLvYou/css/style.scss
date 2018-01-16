@@ -250,22 +250,24 @@
 	}
 }
 
-.pwdetail-tab-cpjs{
+.pwdetail-tab-cpjs,.pwdetail-tab-fysm{
 	color:#666666;
 	font-size:px2rem(24px);
 	line-height:1.5;
-	padding:px2rem(30px);
+	padding:0 px2rem(30px);
 	*{
 		max-width: 100%;
 	}
 }
+.pwdetail-tab-fysm{
+    padding-bottom:px2rem(30px); 
+}
 
 .pwdetail-yhpj-tags{
-	padding:0 px2rem(30px);
+	padding:px2rem(20px) px2rem(25px);
 	li{
 		float:left;
-		margin-right:px2rem(10px);
-		margin-bottom:px2rem(15px); 
+		margin:px2rem(8px) px2rem(5px);
 		a{
 			display:block;
 			height:px2rem(62px);
@@ -275,5 +277,65 @@
 			padding:0 px2rem(17px);
 			color:#666666;
 		}
+        &.active{
+            a{
+                background:#b7f1dd;
+            }
+        }
 	}
+}
+
+.pwdetail-tit-1{
+    padding:px2rem(30px); 
+    line-height:px2rem(33px);
+    font-size:px2rem(30px); 
+    display:block; 
+    color:#333333; 
+    i{
+        width:px2rem(39px);
+        height:px2rem(33px);
+        overflow:hidden;
+        float:left; 
+        margin-right:px2rem(15px); 
+        vertical-align:middle; 
+        background-position: top center;
+        background-size:100% 100%;
+        background-repeat:no-repeat;    
+    }
+
+    &.cpjs-tit{
+        i{
+             background-image:url("../images/pwd_cpjs_icon.png");
+        }
+    }
+    &.fysm-tit{
+        i{
+             background-image:url("../images/pwd_fysm_icon.png");
+        }
+    }
+    &.yhpj-tit{
+        border-bottom:1px solid #eeeeee;
+        i{
+             background-image:url("../images/pwd_yhpj_icon.png");
+        }
+    }
+}
+
+.pwdetail-yhpj-list-item{
+    .avatar{
+        .pic{
+            width:px2rem(60px);
+            height:px2rem(60px);
+            border-radius: 100%;
+            float:left;
+            overflow:hidden;
+            img{
+                width: 100%;
+                height:100%; 
+            }    
+        }
+        .name{
+            
+        }
+    }
 }

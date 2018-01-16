@@ -10,14 +10,12 @@
     <script type="text/javascript" src="js/flexible2.0.js"></script>
     <script type="text/javascript" src="js/zepto.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
-
-
     <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
 </head>
 
 <body>
-    @@include("./views/_header-top.html")    
+    @@include("./views/_header-top.html")
     <!--  通用返回顶部 start -->
     @@include("./views/_fixed-guide.html")
     <!--  通用返回顶部 end -->
@@ -34,7 +32,6 @@
         <span class="tip">购买返现</span>
         <p class="txt">成功消费即返<span>100-200</span>积分，相当于<span>10-2</span>0元功消费即功消费即功消费即功消费即功消费即</p>
     </div>
-
     <div class="pwdetail-address">
         <label class="lab">地址：</label>
         <div class="txt">厦门市思明区软件园区软件园区软件园区软件园区软件园区软件园二期01</div>
@@ -42,36 +39,55 @@
     </div>
     <div class="border-b-20"></div>
     <ul class="pwdetail-tab-hd">
-        <li class="active"><a href="#">产品介绍</a></li>
-        <li><a href="#">费用说明</a></li>
+        <li class="active"><a href="#J_cpjstit">产品介绍</a></li>
+        <li><a href="#J_fysmtit">费用说明</a></li>
         <li><a href="#">用户评价</a></li>
         <li><a href="#">精选推荐</a></li>
     </ul>
-
-    <div class="pwdetail-tab-bds pwdetail-tab-cpjs">
+    <a class="pwdetail-tit-1 cpjs-tit" name="J_cpjstit">
+		<i></i>产品介绍
+    </a>
+    <div class="pwdetail-tab-cpjs">
         <p>金紫荆广场位于香港会展中心的新冀海旁的博览海滨花园内。“永远盛开的紫荆花”雕塑－金紫荆雕像矗立于香港会议展览中心新翼海旁的博览海滨花园内。金紫荆广场位于香港会展中心旁，是为纪念香港回归祖国而设立。金紫荆广场位于香港湾仔香港会议展览中心新翼人工岛上，三面被维港包围，在维港的中心位置，与对岸的尖沙咀对峙，是观景的好地方。</p>
         <img src="upload/banner13.jpg">
     </div>
+    <a class="pwdetail-tit-1 fysm-tit" name="J_fysmtit">
+		<i></i>费用说明
+    </a>
+    <div class="pwdetail-tab-fysm border-b-1">
+        <p>1、海洋赞礼号2晚船票（单人入住收船票双倍费用）。</p>
+        <p>2、邮轮上指定免费餐饮。</p>
+        <p>3、邮轮上指定的免费娱乐活动及设施。</p>
+        <p>4、邮轮港务税费。</p>
+    </div>
+    <div class="border-b-20"></div>
 
+    <a class="pwdetail-tit-1 yhpj-tit border-t-1" name="J_fysmtit">
+		<i></i>用户评价(225条)
+    </a>
     <div class="pwdetail-yhpj">
-        <ul class="pwdetail-yhpj-tags">
-            <li><a href="#">服务很棒(30)</a></li>
+        <ul class="pwdetail-yhpj-tags clearfix">
+            <li class="active"><a href="#">服务很棒(30)</a></li>
             <li><a href="#">行程紧凑(30)</a></li>
             <li><a href="#">服务很棒(30)</a></li>
             <li><a href="#">服务很棒(30)</a></li>
             <li><a href="#">行程紧凑(30)</a></li>
             <li><a href="#">服务很棒(30)</a></li>
         </ul>
+		<div class="pwdetail-yhpj-list">
+			<div class="pwdetail-yhpj-list-item">
+				<div class="avatar">
+					<div class="pic"><img src="upload/banner11.jpg" /></div>
+					<p class="name">忙碌的机器</p>
+					<p class="time">2018-01-09</p>
+				</div>
+			</div>
+		</div>
+
     </div>
 
+
     <div style="height:150px;"></div>
-
-
-
-    
-    
-
-    
 </body>
 
 </html>
