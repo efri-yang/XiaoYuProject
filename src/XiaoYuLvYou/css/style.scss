@@ -390,3 +390,86 @@
 
     }
 }
+
+.pwdetail-qrcode{
+    padding: px2rem(20px) 0 px2rem(130px);
+    .qrcode-pic {
+        width: px2rem(192px);
+        height: px2rem(192px);
+        overflow: hidden;
+        margin: 0 auto;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .txt-1 {
+        text-align: center;
+        color: #02d289;
+        font-size: px2rem(28px);
+        font-weight: bold;
+        margin-top: px2rem(8px);
+    }
+    .txt-2 {
+        color: #333333;
+        text-align: center;
+        font-size: px2rem(28px);
+        color: #333333;
+        margin-top: px2rem(8px);
+    }
+}
+
+.pwdetail-ft-nav{
+	display:flex;
+	position:fixed;
+	left:0;
+	bottom:0;
+	width:100%;
+	background:#ffffff;
+	border-top:px2rem(2px) solid #f3f3f3;
+	height:px2rem(89px);
+	overflow:hidden;
+	li{
+		flex:1;
+		a{
+			display:block;
+			height:px2rem(87px);
+		}
+		.pic{
+			display:block;
+			margin:px2rem(8px) auto 0; 
+		}
+		.txt{
+			font-size:px2rem(26px);
+			color:#666666;
+			text-align:center;
+			margin-top:px2rem(7px);
+		}
+		&.dp{
+			.pic{
+				width:px2rem(34);
+				height:px2rem(33px);
+				background:url("../images/dianpu_icon.png") no-repeat center center;
+				background-size:100% auto;
+			}
+		}
+		&.sc{
+			.pic{
+				width:px2rem(33);
+				height:px2rem(33px);
+				background:url("../images/shouchang.png") no-repeat center center;
+				background-size:100% auto;
+			}
+		}
+		&.ljgm-btn{
+			flex:2;
+			position:relative;
+				margin-top:px2rem(-2px);
+			a{
+				background:#ff8844;
+
+			}
+		}
+	}
+}
+
