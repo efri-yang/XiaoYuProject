@@ -1,6 +1,12 @@
 .hide{
     display:none;
 }
+.bgfff{
+    background:#fff;
+}
+.no-border-t{
+    border-top:none !important;
+}
 .pl30{
     padding-left:px2rem(30px); 
 }
@@ -164,6 +170,7 @@ html,body, button,select,input,textarea{
     .pic-img {
         width: px2rem(600px);
         height: px2rem(339px);
+        position:relative;
         line-height: px2rem(339px);
         overflow: hidden;
         text-align: center;

@@ -5,14 +5,11 @@
     <meta charset="UTF-8">
     <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/flexible2.0.js"></script>
-    <script type="text/javascript" src="js/zepto.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
+    @@include("./views/_staticCssJs.html")
 
 
-    
+    <script type="text/javascript" src="js/echo/echo.min.js"></script>
+    <script type="text/javascript" src="js/dropload/dropload.min.js"></script>
     <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
 </head>
@@ -30,15 +27,16 @@
     </ul>
     <div class="swiper-container h-banner-swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><a href="#"><img src="upload/banner11.jpg" /></a></div>
-            <div class="swiper-slide"><a href="#"><img src="upload/banner12.jpg" /></a></div>
-            <div class="swiper-slide"><a href="#"><img src="upload/banner13.jpg" /></a></div>
+            <div class="swiper-slide"><a href="#"><img data-src="upload/banner11.jpg" class="swiper-lazy"/><div class="swiper-lazy-preloader"></div></a></div>
+            <div class="swiper-slide"><a href="#"><img data-src="upload/banner12.jpg" class="swiper-lazy" /><div class="swiper-lazy-preloader"></div></a></div>
+            <div class="swiper-slide"><a href="#"><img data-src="upload/banner13.jpg" class="swiper-lazy" /><div class="swiper-lazy-preloader"></div></a></div>
+            
         </div>
         <div class="swiper-pagination"></div>
     </div>
     <ul class="h-list-1 border-b-20">
         <li class="clearfix">
-            <a href="#">
+            <a href="LvYouGongLue-list.html">
                 <div class="pic"></div>
                 <p class="tit">游记攻略</p>
                 <p class="intro">百万用户旅游经历，带你轻松玩上天</p>
@@ -46,26 +44,26 @@
             </a>
         </li>
         <li class="clearfix">
-            <a href="#">
+            <a href="PiaoWu-list.html">
                 <div class="pic"></div>
-                <p class="tit">游记攻略</p>
-                <p class="intro">百万用户旅游经历，带你轻松玩上天</p>
+                <p class="tit">景点门票</p>
+                <p class="intro">无论热门还是小众，都能给你独享价</p>
                 <span class="arrow-r"></span>
             </a>
         </li>
         <li class="clearfix">
-            <a href="#">
+            <a href="ShangJia.html">
                 <div class="pic"></div>
-                <p class="tit">游记攻略</p>
-                <p class="intro">百万用户旅游经历，带你轻松玩上天</p>
+                <p class="tit">特色住宿</p>
+                <p class="intro">花样住宿任你选，好假日“睡”出来</p>
                 <span class="arrow-r"></span>
             </a>
         </li>
         <li class="clearfix">
-            <a href="#">
+            <a href="HuoDong-list.html">
                 <div class="pic"></div>
-                <p class="tit">游记攻略</p>
-                <p class="intro">百万用户旅游经历，带你轻松玩上天</p>
+                <p class="tit">热门活动</p>
+                <p class="intro">亲子游、休闲游、各类爆款活动等你约</p>
                 <span class="arrow-r"></span>
             </a>
         </li>
@@ -83,8 +81,8 @@
     </div>
     <ul class="h-list-2">
 		<li>
-			<a href="#">
-				<div class="pic"><img src="upload/pro31.jpg" /></div>
+			<a href="PiaoWu-detail.html">
+				<div class="pic"><img src="upload/banner11.jpg" /></div>
 				<p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
 				<div class="clearfix">
 					<div class="tag"><span>购买返现</span></div>
@@ -94,8 +92,8 @@
 			</a>
 		</li>
         <li>
-            <a href="#">
-                <div class="pic"><img src="upload/pro31.jpg" /></div>
+            <a href="PiaoWu-detail.html">
+                <div class="pic"><img src="images/address_1.png" /></div>
                 <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
                 <div class="clearfix">
                     <div class="tag"><span>购买返现</span></div>
@@ -105,8 +103,8 @@
             </a>
         </li>
         <li>
-            <a href="#">
-                <div class="pic"><img src="upload/pro31.jpg" /></div>
+           <a href="PiaoWu-detail.html">
+                <div class="pic"><img src="upload/shu_img.jpg" /></div>
                 <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
                 <div class="clearfix">
                     <div class="tag"><span>购买返现</span></div>
@@ -116,7 +114,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="PiaoWu-detail.html">
                 <div class="pic"><img src="upload/pro31.jpg" /></div>
                 <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
                 <div class="clearfix">
@@ -134,8 +132,19 @@
     <!--  通用返回顶部 end -->
     <script>
     $(function() {
+        echo.init({
+            offset: 100,
+            throttle: 250,
+            unload: false,
+            callback: function (element, op) {
+              console.log(element, 'has been', op + 'ed')
+            }
+          });
         var mySwiper = new Swiper('.h-banner-swiper', {
             autoplay: true, //可选选项，自动滑动
+            lazy: {
+                loadPrevNext: true,
+            },
             pagination: {
                 el: '.swiper-pagination',
             }
