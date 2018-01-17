@@ -5,19 +5,13 @@
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/flexible2.0.js"></script>
-    <script type="text/javascript" src="js/zepto.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
-
-
-    <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+    @@include("./views/_staticCssJs.html")
+    <script type="text/javascript" src="js/echo/echo.min.js"></script>
+    <script type="text/javascript" src="js/dropload/dropload.min.js"></script>
 </head>
 
 <body>
-     @@include("./views/_header-top.html")
+    @@include("./views/_header-top.html")
     <div class="pl30 pr30">
         @@include("./views/_seach.html")
     </div>
@@ -26,338 +20,57 @@
     <!--  通用返回顶部 start -->
     @@include("./views/_fixed-guide.html")
     <!--  通用返回顶部 end -->
-    
-
-    <ul class="pwlist-tab-hd">
+    <ul class="pwlist-tab-hd" id="J_pwlist-tab-hd">
         <li class="active"><a href="#J_jdmp" data-toggle="tab">景点门票</a></li>
         <li><a href="#J_tslx" data-toggle="tab">特色线路</a></li>
         <li><a href="#J_jdms" data-toggle="tab">酒店民宿</a></li>
     </ul>
-    <div class="pwlist-tab-bd-item active" id="J_jdmp">
-        <ul class="pwlist-tab-bd-list">
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-                    </div>
-                </a>
-            </li>
-           
-        </ul>
-        <div class="coms-checked-more">查看更多<span></span></div>
+    <div id="J_dropload-container" class="dropload-container">
+        <div class="pwlist-tab-bd-item active" id="J_jdmp">
+            <ul class="pwlist-tab-bd-list">
+                <!-- <li>
+                    <a href="PiaoWu-detail.html">
+                        <div class="pic"><img src="upload/pro31.jpg" /></div>
+                        <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
+                        <div class="clearfix">
+                            <div class="tag"><span>购买返现</span></div>
+                            <span class="price"><b>￥</b>5600<b>起</b></span>
+                        </div>
+                    </a>
+                </li> -->
+            </ul>
+        </div>
+        <div class="pwlist-tab-bd-item" id="J_tslx">
+            <ul class="pwlist-tab-bd-list">
+                <!-- <li>
+                    <a href="PiaoWu-detail.html">
+                        <div class="pic"><img src="upload/pro31.jpg" /></div>
+                        <p class="tit">日月2222222</p>
+                        <div class="clearfix">
+                            <div class="tag"><span>购买返现</span></div>
+                            <span class="price"><b>￥</b>5600<b>起</b></span>
+                        </div>
+                    </a>
+                </li> -->
+            </ul>
+        </div>
+        <div class="pwlist-tab-bd-item" id="J_jdms">
+            <ul class="pwlist-tab-bd-list">
+                <!-- <li>
+                    <a href="PiaoWu-detail.html">
+                        <div class="pic"><img src="upload/pro31.jpg" /></div>
+                        <p class="tit">日月谷33333</p>
+                        <div class="clearfix">
+                            <div class="tag"><span>购买返现</span></div>
+                            <span class="price"><b>￥</b>5600<b>起</b></span>
+                        </div>
+                    </a>
+                </li> -->
+            </ul>
+        </div>
     </div>
-    <div class="pwlist-tab-bd-item" id="J_tslx">
-        <ul class="pwlist-tab-bd-list">
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月222222222222</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-        </ul>
-        <div class="coms-checked-more">查看更多<span></span></div>
-    </div>
-    <div class="pwlist-tab-bd-item" id="J_jdms">
-        <ul class="pwlist-tab-bd-list">
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷33333</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/pro31.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-
-                    </div>
-                </a>
-            </li>
-        </ul>
-        <div class="coms-checked-more">查看更多<span></span></div>
-    </div>
-
+    <script type="text/javascript" src="xx.js"></script>
     <script type="text/javascript">
-        $(function(){
-           
-            $('.pwlist-tab-hd a').click(function (e) {
-              e.preventDefault()
-              $(this).tab('show')
-            })
-        })
     </script>
 </body>
 

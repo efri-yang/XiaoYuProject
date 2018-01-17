@@ -5,16 +5,9 @@
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/flexible2.0.js"></script>
-    <script type="text/javascript" src="js/zepto.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
+     @@include("./views/_staticCssJs.html")
 
-
-    
-    <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+     <script type="text/javascript" src="js/echo/echo.min.js"></script>
 </head>
 
 <body>
@@ -23,21 +16,21 @@
     @@include("./views/_fixed-guide.html")
     <!--  通用返回顶部 end -->
     <div class="spdetail-header-top clearfix">
-        <div class="avatar"><i></i>厦门小鱼网</div>
+        <a class="avatar" href="ShangJia.html"><i></i>厦门小鱼网</a>
         <div class="collect active"><i></i>收藏</div>
     </div>
 
 
     <ul class="sp-guide-nav">
-        <li><a href="#"><i></i>返回商家首页</a></li>
-        <li><a href="#"><i></i>周边吃住推荐</a></li>
+        <li><a href="ShangJia.html"><i></i>返回商家首页</a></li>
+        <li><a href="ShangJia-pro-zhoubianchizhu.html"><i></i>周边吃住推荐</a></li>
     </ul>
     <div class="border-b-20  border-t-1"></div>
 
     <ul class="sppro-list border-t-1">
             <li>
                 <a href="#">
-                    <div class="pic"><img src="upload/pro31.jpg"></div>
+                    <div class="pic"><img src="images/common/blank.gif" data-echo="upload/pro31.jpg"></div>
                     <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
                     <div class="clearfix">
                         <div class="tag"><span>购买返现</span><span>金牌推荐</span></div>
@@ -47,7 +40,7 @@
             </li>
             <li>
                 <a href="#">
-                    <div class="pic"><img src="upload/pro31.jpg"></div>
+                    <div class="pic"><img src="images/common/blank.gif" data-echo="upload/pro31.jpg"></div>
                     <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
                     <div class="clearfix">
                         <div class="tag"><span>购买返现</span><span>金牌推荐</span></div>
@@ -57,7 +50,7 @@
             </li>
             <li>
                 <a href="#">
-                    <div class="pic"><img src="upload/pro31.jpg"></div>
+                    <div class="pic"><img src="images/common/blank.gif" data-echo="upload/pro31.jpg"></div>
                     <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
                     <div class="clearfix">
                         <div class="tag"><span>购买返现</span><span>金牌推荐</span></div>
@@ -67,7 +60,7 @@
             </li>
             <li>
                 <a href="#">
-                    <div class="pic"><img src="upload/pro31.jpg"></div>
+                    <div class="pic"><img src="images/common/blank.gif" data-echo="upload/pro31.jpg"></div>
                     <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
                     <div class="clearfix">
                         <div class="tag"><span>购买返现</span><span>金牌推荐</span></div>
@@ -77,7 +70,7 @@
             </li>
             <li>
                 <a href="#">
-                    <div class="pic"><img src="upload/pro31.jpg"></div>
+                    <div class="pic"><img src="images/common/blank.gif" data-echo="upload/pro31.jpg"></div>
                     <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
                     <div class="clearfix">
                         <div class="tag"><span>购买返现</span><span>金牌推荐</span></div>
@@ -89,6 +82,13 @@
     
     <div class="coms-checked-more">查看更多<span></span></div>
     <!--  相关商品  end-->
+    <script type="text/javascript">
+        echo.init({
+                                offset: 100,
+                                throttle: 250,
+                                unload: false
+                            });
+    </script>
 </body>
 
 </html>

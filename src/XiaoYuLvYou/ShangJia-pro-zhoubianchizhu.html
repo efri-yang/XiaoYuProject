@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/flexible2.0.js"></script>
-    <script type="text/javascript" src="js/zepto.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
+    @@include("./views/_staticCssJs.html")
+
+     <script type="text/javascript" src="js/echo/echo.min.js"></script>
 
 
     
@@ -22,7 +20,7 @@
     @@include("./views/_fixed-guide.html")
     <!--  通用返回顶部 end -->  
     <div class="spdetail-header-top clearfix">
-        <div class="avatar"><i></i>厦门小鱼网</div>
+         <a class="avatar" href="ShangJia.html"><i></i>厦门小鱼网</a>
         <div class="collect active"><i></i>收藏</div>
     </div>
 
@@ -33,8 +31,8 @@
         <div class="caption"><i></i>距离5Km内</div>
         <ul class="pro-list">
             <li>  
-                <a href="#" class="link">
-                    <div class="pic"><img src="upload/pro72.jpg" /></div>
+                <a href="ShangJia-pro-list.html" class="link">
+                    <div class="pic"><img src="images/common/blank.gif" data-echo="upload/pro72.jpg" /></div>
                     <p class="tit">聚食斋印印印印印度印印印度印印印度印印印度飞饼(国办街店)</p>
                     <div class="tags">
                         <span>人均:<b>60元</b></span>
@@ -51,8 +49,8 @@
             </li>
 
              <li>
-                <a href="#" class="link">
-                    <div class="pic"><img src="upload/pro72.jpg" /></div>
+                <a href="ShangJia-pro-list.html" class="link">
+                    <div class="pic"><img src="images/common/blank.gif" data-echo="upload/pro72.jpg" /></div>
                     <p class="tit">聚食斋印印印印印度印印印度印印印度印印印度飞饼(国办街店)</p>
                     <div class="tags">
                         <span>人均:<b>60元</b></span>
@@ -68,8 +66,8 @@
                 <a href="#" class="address-icon"></a>
             </li>
             <li>
-                <a href="#" class="link">
-                    <div class="pic"><img src="upload/pro72.jpg" /></div>
+                <a href="ShangJia-pro-list.html" class="link">
+                    <div class="pic"><img src="images/common/blank.gif" data-echo="upload/pro72.jpg" /></div>
                     <p class="tit">聚食斋印印印印印度印印印度印印印度印印印度飞饼(国办街店)</p>
                     <div class="tags">
                         <span>人均:<b>60元</b></span>
@@ -93,7 +91,7 @@
         <ul class="pro-list">
             <li>
                 <a href="#" class="link">
-                    <div class="pic"><img src="upload/pro72.jpg" /></div>
+                   <div class="pic"><img src="images/common/blank.gif" data-echo="upload/pro72.jpg" /></div>
                     <p class="tit">聚食斋印印印印印度印印印度印印印度印印印度飞饼(国办街店)</p>
                     <div class="tags">
                         <span>人均:<b>60元</b></span>
@@ -110,7 +108,7 @@
             </li>
             <li>
                 <a href="#" class="link">
-                    <div class="pic"><img src="upload/pro72.jpg" /></div>
+                    <div class="pic"><img src="images/common/blank.gif" data-echo="upload/pro72.jpg" /></div>
                     <p class="tit">聚食斋印印印印印度印印印度印印印度印印印度飞饼(国办街店)</p>
                     <div class="tags">
                         <span>人均:<b>60元</b></span>
@@ -127,7 +125,7 @@
             </li>
             <li>
                 <a href="#" class="link">
-                    <div class="pic"><img src="upload/pro72.jpg" /></div>
+                    <div class="pic"><img src="images/common/blank.gif" data-echo="upload/pro72.jpg" /></div>
                     <p class="tit">聚食斋印印印印印度印印印度印印印度印印印度飞饼(国办街店)</p>
                     <div class="tags">
                         <span>人均:<b>60元</b></span>
@@ -144,7 +142,14 @@
             </li>
         </ul>
     </div>
-   
+    
+    <script type="text/javascript">
+        echo.init({
+                                offset: 100,
+                                throttle: 250,
+                                unload: false
+                            });
+    </script>
     <!--  相关商品  end-->
 </body>
 

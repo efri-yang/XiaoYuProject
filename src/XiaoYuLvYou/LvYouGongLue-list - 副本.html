@@ -31,11 +31,10 @@
     </div>
     <div class="border-b-20"></div>
     <div id="J_dropload-container">
-        <ul class="lygl-list"> 
-           
+        <ul class="lygl-list">
             <!-- <li>
                 <a href="LvYouGongLue-XiangQing.html" class="link">
-                    <div class="pic-img"><img src="upload/pro41.jpg" /></div>
+                    <div class="pic"><img src="upload/pro41.jpg" /></div>
                     <p class="tit">印度神游丨新德新德新德新德新德新德里</p>
                     <p class="intro">对于印度，这是我们的头号邻居，也是一个麻烦制造者，但真实的印度是什么样但真实的印度是什么样但真实的印度是什么样</p>
                     <p class="tag"><span>玩法</span><span>购物</span></p>
@@ -50,7 +49,7 @@
             </li>
             <li>
                 <a href="LvYouGongLue-XiangQing.html" class="link">
-                     <div class="pic-img"><img src="upload/pro41.jpg" /></div>
+                    <div class="pic"><img src="upload/pro41.jpg" /></div>
                     <p class="tit">印度神游丨新德新德新德新德新德新德里</p>
                     <p class="intro">对于印度，这是我们的头号邻居，也是一个麻烦制造者，但真实的印度是什么样但真实的印度是什么样但真实的印度是什么样</p>
                     <p class="tag"><span>玩法</span><span>购物</span></p>
@@ -65,7 +64,7 @@
             </li>
             <li>
                 <a href="LvYouGongLue-XiangQing.html" class="link">
-                     <div class="pic-img"><img src="upload/pro41.jpg" /></div>
+                    <div class="pic"><img src="upload/pro41.jpg" /></div>
                     <p class="tit">印度神游丨新德新德新德新德新德新德里</p>
                     <p class="intro">对于印度，这是我们的头号邻居，也是一个麻烦制造者，但真实的印度是什么样但真实的印度是什么样但真实的印度是什么样</p>
                     <p class="tag"><span>玩法</span><span>购物</span></p>
@@ -80,7 +79,7 @@
             </li>
             <li>
                 <a href="LvYouGongLue-XiangQing.html" class="link">
-                     <div class="pic-img"><img src="upload/pro41.jpg" /></div>
+                    <div class="pic"><img src="upload/pro41.jpg" /></div>
                     <p class="tit">印度神游丨新德新德新德新德新德新德里</p>
                     <p class="intro">对于印度，这是我们的头号邻居，也是一个麻烦制造者，但真实的印度是什么样但真实的印度是什么样但真实的印度是什么样</p>
                     <p class="tag"><span>玩法</span><span>购物</span></p>
@@ -98,91 +97,6 @@
     <!--  通用返回顶部 start -->
     @@include("./views/_fixed-guide.html")
     <!--  通用返回顶部 end -->
-
-    <script type="text/javascript">
-         (function($) {
-        $(window).on("load", function() {
-            // 页数
-            var page = 0;
-            // 每页展示10个
-            var size = 10;
-
-            function renderHtml(data) {
-                var str = "";
-                str += '<li>' +
-                    '<a href="' + data.url + '" class="link">' +
-                        '<div class="pic-img"><img src="images/common/blank.gif" data-echo="' + data.img + '" /></div>' +
-                        '<p class="tit">' + data.title + '</p>' +
-                        '<p class="intro">' + data.title + '</p>'+
-                       
-                        '<p class="tag">';
-                            for (i = 0; i < data.tags.length; i++) {
-                                str += '<span>' + data.tags[i] + '</span>'
-                            }
-                str += '</p>' +
-                        '<div class="clearfix">'+
-                            '<div class="avatar">'+
-                                '<span class="pic"><img src="'+data.user.avatar+'"></span>'+
-                                '<p class="name">'+data.user.name+'</p>' +
-                            '</div>'+
-                            '<span class="time"><i></i>'+data.time+'</span>' +
-                        '</div>' +
-                    '</a>' +
-                '</li>';
-                return str;
-            }
-
-            // dropload
-            $('#J_dropload-container').dropload({
-                scrollArea: window,
-                loadDownFn: function(me) {
-                    page++;
-                    // 拼接HTML
-                    var result = '';
-                    $.ajax({
-                        type: 'GET',
-                        url: 'http://wnworld.com/api/list02.php?page=' + page + '&size=' + size,
-                        // url: './php/list01.json?page=' + page + '&size=' + size,
-                        dataType: 'json',
-                        success: function(data) {
-                            var arrLen = data.list.length;
-                            if (arrLen > 0) {
-                                for (var i = 0; i < arrLen; i++) {
-                                    result += renderHtml(data.list[i]);
-                                }
-
-                                // 如果没有数据
-                            } else {
-                                // 锁定
-                                me.lock();
-                                // 无数据
-                                me.noData();
-                            }
-
-
-                            // 插入数据到页面，放到最后面
-                            $('.lygl-list').append(result);
-                            // 每次数据插入，必须重置
-                            me.resetload();
-
-                            echo.init({
-                                offset: 100,
-                                throttle: 250,
-                                unload: false
-                            });
-
-                        },
-                        error: function(xhr, type) {
-
-                            // 即使加载出错，也得重置
-                            me.resetload();
-                        }
-                    });
-                }
-            });
-        })
-    })(Zepto);
-    </script>
 </body>
 
 </html>

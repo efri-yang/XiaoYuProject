@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> @@include("./views/_staticCssJs.html")
+    
     <script type="text/javascript" src="js/echo/echo.min.js"></script>
     <script type="text/javascript" src="js/dropload/dropload.min.js"></script>
     <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
@@ -75,7 +76,7 @@
     <div class="coms-tit-type">
         <span class="tit">游玩推荐</span>
     </div>
-    <div id="J_dropload-container">
+    <div id="J_dropload-container" class="dropload-container">
         <ul class="h-list-2">
             <!--  <li>
                 <a href="PiaoWu-detail.html">
@@ -152,8 +153,8 @@
                     '<p class="tit">' + data.title + '</p>' +
                     '<div class="clearfix">' +
                     '<div class="tag">';
-                for (i = 0; i < data.tags; i++) {
-                    str += '<span>' + data.tags[i] + '<span>'
+                for (i = 0; i < data.tags.length; i++) {
+                    str += '<span>' + data.tags[i] + '</span>'
                 }
                 str += '</div>' +
                     '<span class="price"><b>￥</b>5600<b>起</b></span>' +
@@ -172,7 +173,7 @@
                     var result = '';
                     $.ajax({
                         type: 'GET',
-                        url: 'http://localhost/XiaoYuProject/src/XiaoYuLvYou/php/list01.php?page=' + page + '&size=' + size,
+                        url: 'http://wnworld.com/api/list01.php?page=' + page + '&size=' + size,
                         // url: './php/list01.json?page=' + page + '&size=' + size,
                         dataType: 'json',
                         success: function(data) {
@@ -183,8 +184,9 @@
                                 }
 
                                 // 如果没有数据
-                            } else {
-                                // 锁定
+                            }
+                            if(arrLen < size){
+                                 // 锁定
                                 me.lock();
                                 // 无数据
                                 me.noData();
