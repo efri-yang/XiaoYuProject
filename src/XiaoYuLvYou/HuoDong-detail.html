@@ -11,9 +11,10 @@
     <script type="text/javascript" src="js/zepto.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
 
-
-    
-  
+    <script type="text/javascript" src="js/mdialog/mDialog.js"></script>    
+    <link rel="stylesheet" type="text/css" href="js/mdialog/mDialog.css" />
+    <script type="text/javascript" src="js/mvalidate/js/zepto-mvalidate.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/mvalidate/css/validate.css">
 </head>
 
 <body>
@@ -21,12 +22,12 @@
     <!--  通用返回顶部 start -->
     @@include("./views/_fixed-guide.html")
     <!--  通用返回顶部 end -->
-    
-    
     <div class="huod-detail-pro-item">
         <div class="caption">
             <span class="status bmz">报名中</span>
-            <div class="time-remain"><span class="txt">活动剩余时间:</span><div class="num">23:08:28</div></div>
+            <div class="time-remain"><span class="txt">活动剩余时间:</span>
+                <div class="num">23:08:28</div>
+            </div>
         </div>
         <div class="tip-1">产品由<a href="#">厦门小鱼网</a>提供</div>
         <a class="clearfix pro-infor">
@@ -36,52 +37,96 @@
             <p class="hd-time"><i></i>活动时间：2018年1月5日</p>
         </a>
     </div>
-
     <div class="huod-detail-info border-b-1">
         <p>金紫荆广场位于香港会展中心的新冀海旁的博览海滨花园内。“永远盛开的紫荆花”雕塑－金紫荆雕像矗立于香港会议展览中心新翼海旁的博览海滨花园内。金紫荆广场位于香港会展中心旁，是为纪念香港回归祖国而设立。金紫荆广场位于香港湾仔香港会议展览中心新翼人工岛上，三面被维港包围，在维港的中心位置，与对岸的尖沙咀对峙，是观景的好地方。</p>
         <p><img src="upload/banner11.jpg" /></p>
     </div>
-
     <div class="border-b-20"></div>
-
-    <div class="coms-tit-type border-t-1">
+    <div class="coms-tit-type border-t-1" name="J_wybmform" id="J_wybmform">
         <span class="tit">请填写报名信息</span>
     </div>
-
     <div class="huod-bm-form">
-        <div class="item">
-            <input type="text" class="ipt-text" placeholder="联系人">
-        </div>
-        <div class="item">
-            <input type="text" class="ipt-text"  placeholder="手机号">
-        </div>
-        <div class="item">
-            <input type="text" class="ipt-text" placeholder="报名人数">
-        </div>
-        <div class="item">
-            <input type="text" class="ipt-text"  placeholder="备注(选填)">
-        </div>
+        <form id="J_bmform">
+            <div class="item">
+                <input type="text" class="ipt-text" placeholder="联系人" data-required="true" data-descriptions="contacter">
+            </div>
+            <div class="item">
+                <input type="number" class="ipt-text" placeholder="手机号" data-validate="phone">
+            </div>
+            <div class="item">
+                <input type="number" class="ipt-text" placeholder="报名人数" data-pattern="^[0-9]+$" data-required="true" data-descriptions="age">
+            </div>
+            <div class="item">
+                <input type="text" class="ipt-text" placeholder="备注(选填)">
+            </div>
+        </form>
     </div>
-
     <div class="border-b-20"></div>
-
     @@include("./views/_ft-qrcode.html")
     <div class="huod-bm-ft-seat"></div>
-
     <ul class="huod-bm-ft">
-        <li><a href="#">提交报名</a></li>
-        <li><a href="#">我要报名</a></li>
+        <li id="J_formsubmit-btn"><a href="">提交报名</a></li>
+        <li><a href="#J_wybmform">我要报名</a></li>
     </ul>
+    <script type="text/javascript">
+    $(function() {
+        $.mvalidateExtend({
+            phone: {
+                required: true,
+                pattern: /^0?1[3|4|6|7|5|8][0-9]\d{8}$/,
+                descriptions: {
+                    required: '<div class="field-invalidmsg">请输入手机号码</div>',
+                    pattern: '<div class="field-invalidmsg">您输入的手机号码格式不正确</div>',
+                    valid: '<div class="field-validmsg">正确</div>'
+                }
+            }
+        });
+        $("#J_bmform").mvalidate({
+            type: 1,
+            onKeyup: true,
+            sendForm:false,
+            firstInvalidFocus: false,
+            valid: function(event, options) {
+                    //数据处理请写在这里，下面代码仅仅展示提示框效果
+                    //
+                    var LoadDialog;
+                    mDialog.msg({
+                        content:"开发可以提交数据进行处理了！",
+                        onClose:function(){
+                           LoadDialog=mDialog.load({
+                                text:false,
+                                shade:false,
+                                onClose:function(){
+                                    mDialog.msg({
+                                        pause:3000,
+                                        content:"<p style='line-height:1.5;'>您已成功提交报名，我们将尽快联系您并对您的报名信息进行审核，请保持手机畅通。</p>"
+                                    })
+                                }
+                           });
+                           setTimeout(function(){
+                                LoadDialog.close();
+                           },3000)
+                        }
+                    })
+            },
+            invalid: function(event, status, options) {},
+            descriptions: {
+                contacter: {
+                    required: '请输入联系人'
+                },
+                age: {
+                    required: '请输入年龄',
+                    pattern: '你输入的年龄格式不正确'
+                }
+            }
+        });
 
-    
-
-
-
-
-    
-   
-   
-   
+        $("#J_formsubmit-btn").on("click",function(event){
+            event.preventDefault();
+            $("#J_bmform").submit();
+        })
+    })
+    </script>
 </body>
 
 </html>
