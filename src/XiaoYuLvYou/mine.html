@@ -4,8 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    @@include("./views/_staticCssJs.html")
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> @@include("./views/_staticCssJs.html")
+    <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+    <style type="text/css">
+    html,
+    body {
+        height: 100%;
+        background: #f8f8f8;
+    }
+    </style>
 </head>
 
 <body>
@@ -17,10 +25,34 @@
         <span class="pic"><img src="upload/pro72.jpg"></span>
         <p class="txt">WUSK</p>
     </div>
-    
-
-   
-    
+    <div class="border-t-20 border-b-1"></div>
+    <ul class="mine-list-1">
+        <li class="item-dingdan"><a href="#"><i class="pic"></i><i class="arrow"></i>我的订单</a></li>
+        <li class="item-soucang"><a href="#"><i class="pic"></i><i class="arrow"></i>我的收藏</a></li>
+        <li class="item-fanli"><a href="#"><i class="pic"></i><i class="arrow"></i>我的返利</a></li>
+        <li class="item-huodong"><a href="#"><i class="pic"></i><i class="arrow"></i>我的活动</a></li>
+        <li class="item-cangyong"><a href="#"><i class="pic"></i><i class="arrow"></i>常用信息</a></li>
+    </ul>
+    <div class="mine-h-swiper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#"><img src="upload/banner21.jpg" /></a></div>
+                <div class="swiper-slide"><a href="#"><img src="upload/banner22.jpg" /></a></div>
+                <div class="swiper-slide"><a href="#"><img src="upload/banner21.jpg" /></a></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <script>
+    $(function() {
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: true, //可选选项，自动滑动
+            pagination: {
+                el: '.swiper-pagination',
+            }
+        });
+    })
+    </script>
 </body>
 
 </html>
