@@ -458,7 +458,12 @@
 	} 
 }
 
-
+.mine-order-tab-bd{
+    display:none;
+    &.active{
+        display:block; 
+    } 
+}
 
 .mine-order-tab-hd{
     display: flex;
@@ -496,17 +501,29 @@
 
 
 .mine-order-item{
-   
+    border-bottom:px2rem(20px) solid #f8f8f8; 
     border-top:1px solid #eeeeee;
     &:first-child{
         border-top:none;
     }
-   
+    .status{
+        float: right;
+        margin-right:px2rem(30px); 
+        line-height:px2rem(71px); 
+        font-size:px2rem(26px); 
+        &.wsy{
+            color:#02d289; 
+        }
+        &.yxf{
+            color:#d44d44; 
+        }
+    }
     .sp-avatar{
         color:#666666;
         font-size:px2rem(30px);
         padding:px2rem(20px) px2rem(30px);
         border-bottom:1px solid #eeeeee;
+        float:left; 
         i{
             width:px2rem(34px);
             height:px2rem(31px);
@@ -539,6 +556,8 @@
     		color:#333333;
     		font-size:px2rem(26px);
     		line-height:1.4;
+            height:px2rem(70px);
+            overflow:hidden;  
     		margin-top:px2rem(8px);
     		margin-bottom:px2rem(8px);
     		@include text-overflow-2;
@@ -559,5 +578,97 @@
     		color:#888888;
     		font-size:px2rem(26px);
     	}
+    }
+    .guide-dir{
+        padding:px2rem(20px) px2rem(30px); 
+         border-bottom:1px solid #eeeeee;
+        .guide-sqtk{
+            float: right;
+            color:#888888;
+            font-size:px2rem(24px);
+            line-height:px2rem(56px);  
+        }
+    }
+    .guide-btn{
+       float:left; 
+        a{
+            float:left;
+            height:px2rem(56px);
+            line-height:px2rem(52px);
+            border:px2rem(2px) solid #cdcdcd;
+            border-radius:px2rem(5px); 
+            font-size:px2rem(24px);
+            color:#333333;
+            text-align:center;
+            padding:0 px2rem(10px); 
+            margin-right:px2rem(20px);
+            &.comment{
+                border-color:#02d289;
+                color:#02d289;
+                min-width:px2rem(150px);  
+            }     
+        }
+        .comment-tip{
+            float: left;
+            font-size:px2rem(24px);
+            color:#888888;
+            line-height:px2rem(56px); 
+        }
+        .comment-had{
+             float:left;
+            height:px2rem(56px);
+            line-height:px2rem(56px);
+            background:#ececec; 
+            border-radius:px2rem(5px); 
+            font-size:px2rem(24px);
+            color:#666666;
+            text-align:center;
+            padding:0 px2rem(10px);
+            min-width:px2rem(150px);   
+            margin-right:px2rem(20px);
+        }
+    }
+}
+
+.mine-fanli-totalscore{
+    height:px2rem(80px);
+    line-height:px2rem(80px);
+    padding: 0 px2rem(30px);
+    font-size:px2rem(30px);
+    color:#666666;   
+    span{
+        color:#02d289; 
+    } 
+}
+
+.mine-fanli-record{
+    border-bottom:1px solid #e5e5e5;
+padding-top:px2rem(15px);
+    padding-bottom:px2rem(30px);  
+    li{
+        padding:0 px2rem(30px); 
+        height:px2rem(55px);
+        line-height: px2rem(55px); 
+        .lab{
+            float:left;
+            color:#666666;
+            margin-right:px2rem(9px); 
+            font-size:px2rem(26px);   
+        }
+        .score{
+            float:left;
+            font-size:px2rem(26px);
+            &.reduce{
+                color:#d44d44;  
+            }
+            &.plus{
+                color:#02d289; 
+            }
+        }
+        .time{
+            float: right;
+            color:#888888;
+            font-size:px2rem(26px);  
+        }
     }
 }
