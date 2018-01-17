@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> @@include("./views/_staticCssJs.html")
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    @@include("./views/_staticCssJs.html")
+
+
     <script type="text/javascript" src="js/echo/echo.min.js"></script>
     <script type="text/javascript" src="js/dropload/dropload.min.js"></script>
     <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
@@ -27,6 +30,7 @@
             <div class="swiper-slide"><a href="#"><img data-src="upload/banner11.jpg" class="swiper-lazy"/><div class="swiper-lazy-preloader"></div></a></div>
             <div class="swiper-slide"><a href="#"><img data-src="upload/banner12.jpg" class="swiper-lazy" /><div class="swiper-lazy-preloader"></div></a></div>
             <div class="swiper-slide"><a href="#"><img data-src="upload/banner13.jpg" class="swiper-lazy" /><div class="swiper-lazy-preloader"></div></a></div>
+            
         </div>
         <div class="swiper-pagination"></div>
     </div>
@@ -68,25 +72,26 @@
         <span class="tit">精选游记</span>
     </div>
     <div class="pl10 pr10 mt20">
-        @@include("./views/_swiper-1.html")
+           @@include("./views/_swiper-1.html")
     </div>
-    <div class="border-b-20"></div>
+	<div class="border-b-20"></div>
     <!-- 游玩推荐  star -->
     <div class="coms-tit-type">
         <span class="tit">游玩推荐</span>
     </div>
-    <div id="J_dropload-container">
+    <div class="dropload-container">
         <ul class="h-list-2">
-            <!--  <li>
-                <a href="PiaoWu-detail.html">
-                    <div class="pic"><img src="upload/banner11.jpg" /></div>
-                    <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
-                    <div class="clearfix">
-                        <div class="tag"><span>购买返现</span></div>
-                        <span class="price"><b>￥</b>5600<b>起</b></span>
-                    </div>
-                </a>
-            </li>
+    		<li>
+    			<a href="PiaoWu-detail.html">
+    				<div class="pic"><img src="upload/banner11.jpg" /></div>
+    				<p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
+    				<div class="clearfix">
+    					<div class="tag"><span>购买返现</span></div>
+    					<span class="price"><b>￥</b>5600<b>起</b></span>
+
+    				</div>
+    			</a>
+    		</li>
             <li>
                 <a href="PiaoWu-detail.html">
                     <div class="pic"><img src="images/address_1.png" /></div>
@@ -94,16 +99,18 @@
                     <div class="clearfix">
                         <div class="tag"><span>购买返现</span></div>
                         <span class="price"><b>￥</b>5600<b>起</b></span>
+
                     </div>
                 </a>
             </li>
             <li>
-                <a href="PiaoWu-detail.html">
+               <a href="PiaoWu-detail.html">
                     <div class="pic"><img src="upload/shu_img.jpg" /></div>
                     <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
                     <div class="clearfix">
                         <div class="tag"><span>购买返现</span></div>
                         <span class="price"><b>￥</b>5600<b>起</b></span>
+
                     </div>
                 </a>
             </li>
@@ -114,17 +121,27 @@
                     <div class="clearfix">
                         <div class="tag"><span>购买返现</span></div>
                         <span class="price"><b>￥</b>5600<b>起</b></span>
+
                     </div>
                 </a>
-            </li> -->
+            </li>
         </ul>
     </div>
+    <div class="coms-checked-more">查看更多<span></span></div>
     <!--  游玩推荐  end-->
     <!--  通用返回顶部 start -->
     @@include("./views/_fixed-guide.html")
     <!--  通用返回顶部 end -->
     <script>
     $(function() {
+        echo.init({
+            offset: 100,
+            throttle: 250,
+            unload: false,
+            callback: function (element, op) {
+              console.log(element, 'has been', op + 'ed')
+            }
+          });
         var mySwiper = new Swiper('.h-banner-swiper', {
             autoplay: true, //可选选项，自动滑动
             lazy: {
@@ -135,84 +152,10 @@
             }
         });
 
-    });
 
-    (function($) {
-        $(window).on("load", function() {
-            // 页数
-            var page = 0;
-            // 每页展示10个
-            var size = 10;
+        
 
-            function renderHtml(data) {
-                var str = "";
-                str += '<li>' +
-                    '<a href="' + data.url + '">' +
-                    '<div class="pic"><img src="images/common/blank.gif" data-echo="' + data.img + '" /></div>' +
-                    '<p class="tit">' + data.title + '</p>' +
-                    '<div class="clearfix">' +
-                    '<div class="tag">';
-                for (i = 0; i < data.tags; i++) {
-                    str += '<span>' + data.tags[i] + '<span>'
-                }
-                str += '</div>' +
-                    '<span class="price"><b>￥</b>5600<b>起</b></span>' +
-                    '</div>' +
-                    '</a>' +
-                    '</li>';
-                return str;
-            }
-
-            // dropload
-            $('#J_dropload-container').dropload({
-                scrollArea: window,
-                loadDownFn: function(me) {
-                    page++;
-                    // 拼接HTML
-                    var result = '';
-                    $.ajax({
-                        type: 'GET',
-                        url: 'http://localhost/XiaoYuProject/src/XiaoYuLvYou/php/list01.php?page=' + page + '&size=' + size,
-                        // url: './php/list01.json?page=' + page + '&size=' + size,
-                        dataType: 'json',
-                        success: function(data) {
-                            var arrLen = data.list.length;
-                            if (arrLen > 0) {
-                                for (var i = 0; i < arrLen; i++) {
-                                    result += renderHtml(data.list[i]);
-                                }
-
-                                // 如果没有数据
-                            } else {
-                                // 锁定
-                                me.lock();
-                                // 无数据
-                                me.noData();
-                            }
-
-
-                            // 插入数据到页面，放到最后面
-                            $('.h-list-2').append(result);
-                            // 每次数据插入，必须重置
-                            me.resetload();
-
-                            echo.init({
-                                offset: 100,
-                                throttle: 250,
-                                unload: false
-                            });
-
-                        },
-                        error: function(xhr, type) {
-
-                            // 即使加载出错，也得重置
-                            me.resetload();
-                        }
-                    });
-                }
-            });
-        })
-    })(Zepto);
+    })
     </script>
 </body>
 
