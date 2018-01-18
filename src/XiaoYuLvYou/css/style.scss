@@ -419,6 +419,7 @@
             color: #000000;
             padding: px2rem(5px) 0;
             line-height: 1.5;
+            height:px2rem(90px); 
             margin-bottom: px2rem(15px);
             font-size: px2rem(30px);
             @include text-overflow-2;
@@ -534,7 +535,7 @@
         color: #666666;
         font-size: px2rem(30px);
         padding: px2rem(20px) px2rem(30px);
-        border-bottom: 1px solid #eeeeee;
+        
         float: left;
         a{
             color: #666666;
@@ -550,16 +551,22 @@
     }
     .pro-info {
         padding: px2rem(30px);
+        display:block; 
+        border-top: 1px solid #eeeeee;
         border-bottom: 1px solid #eeeeee;
         .pic {
             width: px2rem(200px);
             height: px2rem(160px);
+            line-height: px2rem(160px);
             overflow: hidden;
             float: left;
+            text-align:center;
+            font-size:0; 
             margin-right: px2rem(20px);
             img {
-                width: 100%;
-                height: 100%;
+                max-width: 100%;
+                max-height: 100%;
+                vertical-align:middle; 
             }
         }
         .num {

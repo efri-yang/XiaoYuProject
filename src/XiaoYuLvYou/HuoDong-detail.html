@@ -4,17 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/flexible2.0.js"></script>
-    <script type="text/javascript" src="js/zepto.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
-
-    <script type="text/javascript" src="js/mdialog/mDialog.js"></script>    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> @@include("./views/_staticCssJs.html")
+    <script type="text/javascript" src="js/mdialog/mDialog.js"></script>
     <link rel="stylesheet" type="text/css" href="js/mdialog/mDialog.css" />
     <script type="text/javascript" src="js/mvalidate/js/zepto-mvalidate.js"></script>
     <link rel="stylesheet" type="text/css" href="js/mvalidate/css/validate.css">
+    <script type="text/javascript" src="js/countdown.js"></script>
 </head>
 
 <body>
@@ -26,16 +21,16 @@
         <div class="caption">
             <span class="status bmz">报名中</span>
             <div class="time-remain"><span class="txt">活动剩余时间:</span>
-                <div class="num">23:08:28</div>
+                <div class="num" id="J_coutndownNum" data-time="2018/1/22 12:00:00"></div>
             </div>
         </div>
-        <div class="tip-1">产品由<a href="#">厦门小鱼网</a>提供</div>
-        <a class="clearfix pro-infor">
+        <div class="tip-1">产品由<a href="ShangJia-pro-list.html">厦门小鱼网</a>提供</div>
+        <div class="clearfix pro-infor">
             <div class="img-pic"><img src="upload/pro72.jpg" /></div>
             <p class="tit">香港太平山摩天台+杜莎夫人蜡像馆三山天台+杜莎夫人蜡像馆三天台+杜莎夫人蜡像馆三天台+杜莎夫人蜡像馆三天台+杜莎夫人蜡像馆三+摩天台</p>
             <p class="man-count"><i></i>活动人数：<span>2人</span></p>
             <p class="hd-time"><i></i>活动时间：2018年1月5日</p>
-        </a>
+        </div>
     </div>
     <div class="huod-detail-info border-b-1">
         <p>金紫荆广场位于香港会展中心的新冀海旁的博览海滨花园内。“永远盛开的紫荆花”雕塑－金紫荆雕像矗立于香港会议展览中心新翼海旁的博览海滨花园内。金紫荆广场位于香港会展中心旁，是为纪念香港回归祖国而设立。金紫荆广场位于香港湾仔香港会议展览中心新翼人工岛上，三面被维港包围，在维港的中心位置，与对岸的尖沙咀对峙，是观景的好地方。</p>
@@ -56,7 +51,7 @@
             <div class="item">
                 <input type="number" class="ipt-text" placeholder="报名人数" data-pattern="^[0-9]+$" data-required="true" data-descriptions="age">
             </div>
-            <div class="item">
+            <div class="item"> 
                 <input type="text" class="ipt-text" placeholder="备注(选填)">
             </div>
         </form>
@@ -68,6 +63,7 @@
         <li id="J_formsubmit-btn"><a href="">提交报名</a></li>
         <li><a href="#J_wybmform">我要报名</a></li>
     </ul>
+
     <script type="text/javascript">
     $(function() {
         $.mvalidateExtend({
@@ -84,30 +80,30 @@
         $("#J_bmform").mvalidate({
             type: 1,
             onKeyup: true,
-            sendForm:false,
+            sendForm: false,
             firstInvalidFocus: false,
             valid: function(event, options) {
-                    //数据处理请写在这里，下面代码仅仅展示提示框效果
-                    //
-                    var LoadDialog;
-                    mDialog.msg({
-                        content:"开发可以提交数据进行处理了！",
-                        onClose:function(){
-                           LoadDialog=mDialog.load({
-                                text:false,
-                                shade:false,
-                                onClose:function(){
-                                    mDialog.msg({
-                                        pause:3000,
-                                        content:"<p style='line-height:1.5;'>您已成功提交报名，我们将尽快联系您并对您的报名信息进行审核，请保持手机畅通。</p>"
-                                    })
-                                }
-                           });
-                           setTimeout(function(){
-                                LoadDialog.close();
-                           },3000)
-                        }
-                    })
+                //数据处理请写在这里，下面代码仅仅展示提示框效果
+                //
+                var LoadDialog;
+                mDialog.msg({
+                    content: "开发可以提交数据进行处理了！",
+                    onClose: function() {
+                        LoadDialog = mDialog.load({
+                            text: false,
+                            shade: false,
+                            onClose: function() {
+                                mDialog.msg({
+                                    pause: 3000,
+                                    content: "<p style='line-height:1.5;'>您已成功提交报名，我们将尽快联系您并对您的报名信息进行审核，请保持手机畅通。</p>"
+                                })
+                            }
+                        });
+                        setTimeout(function() {
+                            LoadDialog.close();
+                        }, 3000)
+                    }
+                })
             },
             invalid: function(event, status, options) {},
             descriptions: {
@@ -121,10 +117,27 @@
             }
         });
 
-        $("#J_formsubmit-btn").on("click",function(event){
+        $("#J_formsubmit-btn").on("click", function(event) {
             event.preventDefault();
+            if($(this).hasClass('disabled')) return;
             $("#J_bmform").submit();
+        });
+
+        $('#J_coutndownNum').countdown($('#J_coutndownNum').data("time"), function(event) {
+            var totalHours = event.offset.totalDays * 24 + event.offset.hours;
+            $(this).html(event.strftime(totalHours+':%M:%S'));
+            if(event.type=="finish.countdown"){
+               $("#J_formsubmit-btn").addClass("disabled");
+            }
         })
+        // $('#J_coutndownNum').countdown('2020/10/10 13:00:00').on('update.countdown', function(event) {
+        //       var $this = $(this).html(event.strftime(''
+        //         + '<span>%-w</span> week%!w '
+        //         + '<span>%-d</span> day%!d '
+        //         + '<span>%H</span> hr '
+        //         + '<span>%M</span> min '
+        //         + '<span>%S</span> sec'));
+        //     });
     })
     </script>
 </body>
