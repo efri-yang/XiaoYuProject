@@ -213,7 +213,8 @@
         $(function() {
             var DiaLslx, IscroLslx,
                 $NavLslx = $("#J_nav-lslx");
-            $NavLslx.on("touchstart", function() {
+            $NavLslx.on("touchstart", function(event) {
+                event.preventDefault();
                 DiaLslx = mDialog.open({
                     // duration:0,
                     title: false,
@@ -253,7 +254,8 @@
         $(function() {
             var DiaLslx, IscroXgcp,
                 $NavXgcp = $("#J_nav-xgcp");
-            $NavXgcp.on("touchstart", function() {
+            $NavXgcp.on("touchstart", function(event) {
+                event.preventDefault();
                 DiaLslx = mDialog.open({
                     // duration:0,
                     title: false,
