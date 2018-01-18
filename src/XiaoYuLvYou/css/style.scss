@@ -979,3 +979,40 @@
         }
     }
 }
+
+.dialog-man-infor{
+        background: #fff;
+        float: left;
+        visibility: hidden;
+        display: none;
+        border-radius:px2rem(10px); 
+        padding:px2rem(30px);
+        .item{
+            padding:px2rem(10px)  0;
+        }  
+        .ipt-text{
+            appearance:button;
+            height:px2rem(80px);
+            padding:px2rem(10px) px2rem(15px);
+            box-shadow:none; 
+            width:px2rem(580px);
+            display:block;
+            background:#f8f8f8;
+            border-radius:0; 
+            border:1px solid #eee;
+        }
+        .ipt-submit{
+            margin-top:px2rem(20px); 
+            height:px2rem(80px);
+            line-height: px2rem(80px);
+            background:#02d289;
+            width:100%;
+            text-align:center;
+            color:#fff;
+            border:none;
+            &:active{
+                background-color:darken(#02d289,5%); 
+            }    
+        }
+
+}

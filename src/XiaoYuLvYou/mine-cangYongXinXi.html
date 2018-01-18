@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> @@include("./views/_staticCssJs.html")
+
+    <script type="text/javascript" src="js/mdialog/mDialog.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/mdialog/mDialog.css" />
     <style type="text/css">
     html,
     body {
@@ -70,6 +73,74 @@
     <div class="mine-xinxi-ft-btn">
         <a href="#"><i></i>新增信息</a>
     </div>
+
+
+    <!--  -->
+    <div class="dialog-man-infor" id="J_dialog-man-infor">
+        <form>
+            <div class="item">
+                <input type="text" class="ipt-text" name="" placeholder="姓名">
+            </div>
+            <div class="item">
+                <input type="text" class="ipt-text" name="" placeholder="电话">
+            </div>
+            <div class="item">
+                <input type="text" class="ipt-text" name="" placeholder="身份证">
+            </div>
+            <div class="item">
+                <input type="submit" class="ipt-submit" value="提交" />
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+            $(function(){
+               
+                $(".mine-xinxi-ft-btn").on("touchstart",function(event){
+                    event.preventDefault();
+                    addDialog=mDialog.open({
+                        // duration:0,
+                        title: false,
+                        closeBtn: true,
+                        duration: 200,
+                        content: $("#J_dialog-man-infor"),
+                        buttons: false,
+                        onBeforeShow: function() {
+                           
+                        },
+                        onShow: function() {
+                          
+                        },
+                        onClose: function() {
+                           
+                        }
+                    })
+                });
+
+                $(".mine-xinxi-list .edit").on("touchstart",function(event){
+                    event.preventDefault();
+                    editDialog=mDialog.open({
+                        // duration:0,
+                        title: false,
+                        closeBtn: true,
+                        duration: 200,
+                        content: $("#J_dialog-man-infor"),
+                        buttons: false,
+                        onBeforeShow: function() {
+                           
+                        },
+                        onShow: function() {
+                          
+                        },
+                        onClose: function() {
+                           
+                        }
+                    })
+                })
+                
+            });
+       
+    </script>
     
 </body>
 
