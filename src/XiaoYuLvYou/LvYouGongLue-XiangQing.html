@@ -208,11 +208,15 @@
     //同类线路
     (function($) {
         $(function() {
-            var DiaLslx, IscroLslx, isShow = false,
+            var DiaLslx, IscroLslx, isShow = false,animIng=false,
                 $NavLslx = $("#J_nav-lslx");
             $NavLslx.on("touchstart", function(event) {
                 event.preventDefault();
+                if(!!animIng){
+                    return;
+                }
                 if (!isShow) {
+                    animIng=true;
                     DiaLslx = mDialog.open({
                         // duration:0,
                         title: false,
@@ -234,12 +238,17 @@
                         },
                         onShow: function() {
                             isShow=true;
+                            animIng=false;
                             if (!IscroLslx) {
                                 IscroLslx = new IScroll('#J_dialog-tlxl-wrapper');
                             }
                         },
+                        onBeforeClose:function(){
+                            animIng=true;
+                        },
                         onClose: function() {
                             isShow=false;
+                            animIng=false;
                             $NavLslx.parent().css("zIndex", "")
                         }
                     });

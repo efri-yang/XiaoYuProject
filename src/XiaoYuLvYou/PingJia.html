@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> @@include("./views/_staticCssJs.html")
+</head>
+
+<body>
+    @@include("./views/_header-top.html")
+    <div class="mine-order-item">
+        <div class="clearfix">
+            <div class="sp-avatar"><a href="ShangJia-pro-list.html"><i></i>厦门小鱼网</a></div>
+            <span class="status wsy">未使用</span>
+        </div>
+        <div class="pro-info">
+            <div class="pic"><img src="upload/pro31.jpg"></div>
+            <p class="num">订单编号：201712054524</p>
+            <p class="tit">皇家加勒比邮轮-海洋赞礼号 香港-海上巡游-香港 2晚3日游</p>
+            <div class="clearfix">
+                <p class="price"><b>￥</b>450</p>
+                <span class="time">2018/01/10  12:02:33</span>
+            </div>
+        </div>
+    </div>
+    <div class="mine-comment-form border-t-1">
+        <form>
+            <textarea placeholder="请输入评价内容" class="area"></textarea>
+            <ul class="list-pic clearfix">
+                <li>
+                    <input type="file" class="ipt-file">
+                </li>
+                <li>
+                    <input type="file" class="ipt-file">
+                </li>
+                <li>
+                    <input type="file" class="ipt-file">
+                </li>
+                <li class="camera"></li>
+            </ul>
+            <div class="submit-btn">
+                <input type="submit" class="ipt-submit" value="发布评价">
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        $(".mine-comment-form .ipt-file").on("change", function(event) {
+        	var $parent=$(this).parent();
+            var img = event.target.files[0];
+            if (!(img.type.indexOf('image') == 0 && img.type && /\.(?:jpg|jpeg|png|gif)$/.test(img.name))) {
+                alert('图片只能是jpg,gif,png');
+                return;
+            }
+            var reader = new FileReader(); 
+            reader.readAsDataURL(img);  
+            reader.onload = function(e) { // reader onload start 
+            	var $img=$("<img src='"+e.target.result+"' />");
+            	$parent.append($img);
+                // ajax 上传图片  
+                // $parent.append($('<img src="'+e.target.result+'" />'))	
+            }
+             
+        })
+    })
+    </script>
+</body>
+
+</html>

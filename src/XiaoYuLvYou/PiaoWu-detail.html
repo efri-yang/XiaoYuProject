@@ -151,7 +151,7 @@
     </ul>
     <script type="text/javascript">
     (function($) {
-        $(function() {
+        $(window).on("load",function(){
             var $tabHdHoler=$("#J_pwdetail-tab-hd-holder"),
                 $lis=$tabHdHoler.find("li"),
                 $clickA=$tabHdHoler.find("a"),
@@ -171,11 +171,6 @@
                     $(window).scrollTop(offsetArr[index]);
                 $this.parent().addClass("active").siblings().removeClass("active");
             });
-
-            
-
-
-
             $(window).on("scroll",$.throttle(250,function(){
                 var top=$(this).scrollTop();
                 if((top+tabHdH) >=tabHdTop){

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> @@include("./views/_staticCssJs.html")
-
+    <script type="text/javascript" src="js/mdialog/mDialog.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/mdialog/mDialog.css" />
 </head>
 
 <body>
@@ -23,7 +24,6 @@
         <li><a href="#J_orderwsy" data-toggle="tab">未使用</a></li>
         <li><a href="#J_orderyxf" data-toggle="tab">已消费</a></li>
     </ul>
-
     <div class="mine-order-tab-bd active" id="J_orderall">
         <div class="mine-order-item">
             <div class="clearfix">
@@ -35,22 +35,21 @@
                 <p class="num">订单编号：201712054524</p>
                 <p class="tit">皇家加勒比邮轮-海洋赞礼号 香港-海上巡游-香港 2晚3日游</p>
                 <div class="clearfix">
-                        <p class="price"><b>￥</b>450</p>
-                        <span class="time">2018/01/10  12:02:33</span>
+                    <p class="price"><b>￥</b>450</p>
+                    <span class="time">2018/01/10  12:02:33</span>
                 </div>
             </div>
             <div class="guide-dir clearfix">
                 <div class="guide-btn clearfix">
-                    <a href="#">查看核销码</a>
+                    <a href="#" class="hxm-btn">查看核销码</a>
                     <a href="ShangJia-pro-zhoubianchizhu.html">周边吃住推荐</a>
                 </div>
                 <a href="#" class="guide-sqtk">申请退款</a>
             </div>
         </div>
-
         <div class="mine-order-item">
             <div class="clearfix">
-                 <div class="sp-avatar"><a href="ShangJia-pro-list.html"><i></i>厦门小鱼网</a></div>
+                <div class="sp-avatar"><a href="ShangJia-pro-list.html"><i></i>厦门小鱼网</a></div>
                 <span class="status yxf">已消费</span>
             </div>
             <div class="pro-info">
@@ -58,21 +57,20 @@
                 <p class="num">订单编号：201712054524</p>
                 <p class="tit">皇家加勒比邮轮-海洋赞礼号 香港-海上巡游-香港 2晚3日游</p>
                 <div class="clearfix">
-                        <p class="price"><b>￥</b>450</p>
-                        <span class="time">2018/01/10  12:02:33</span>
+                    <p class="price"><b>￥</b>450</p>
+                    <span class="time">2018/01/10  12:02:33</span>
                 </div>
             </div>
             <div class="guide-dir clearfix">
                 <div class="guide-btn clearfix">
-                    <a href="#" class="comment">评价</a>
+                    <a href="PingJia.html" class="comment">评价</a>
                     <span class="comment-tip">评价返现100积分，相当于1元</span>
                 </div>
             </div>
         </div>
-
         <div class="mine-order-item">
             <div class="clearfix">
-                 <div class="sp-avatar"><a href="ShangJia-pro-list.html"><i></i>厦门小鱼网</a></div>
+                <div class="sp-avatar"><a href="ShangJia-pro-list.html"><i></i>厦门小鱼网</a></div>
                 <span class="status yxf">已消费</span>
             </div>
             <div class="pro-info">
@@ -80,20 +78,19 @@
                 <p class="num">订单编号：201712054524</p>
                 <p class="tit">皇家加勒比邮轮-海洋赞礼号 香港-海上巡游-香港 2晚3日游</p>
                 <div class="clearfix">
-                        <p class="price"><b>￥</b>450</p>
-                        <span class="time">2018/01/10  12:02:33</span>
+                    <p class="price"><b>￥</b>450</p>
+                    <span class="time">2018/01/10  12:02:33</span>
                 </div>
             </div>
             <div class="guide-dir clearfix">
                 <div class="guide-btn clearfix">
                     <span class="comment-had">已评价</span>
-                   
                 </div>
-                
             </div>
         </div>
-    </div>
+        <div class="coms-checked-more">查看更多<span></span></div>
 
+    </div>
     <div class="mine-order-tab-bd" id="J_orderwsy">
         <div class="mine-order-item">
             <div class="clearfix">
@@ -104,24 +101,21 @@
                 <p class="num">订单编号：201712054524</p>
                 <p class="tit">皇222222222222222222222</p>
                 <div class="clearfix">
-                        <p class="price"><b>￥</b>450</p>
-                        <span class="time">2018/01/10  12:02:33</span>
+                    <p class="price"><b>￥</b>450</p>
+                    <span class="time">2018/01/10  12:02:33</span>
                 </div>
             </div>
             <div class="guide-dir clearfix">
                 <div class="guide-btn clearfix">
-                    <a href="#">查看核销码</a>
+                    <a href="#" class="hxm-btn">查看核销码</a>
                     <a href="#">周边吃住推荐</a>
                 </div>
                 <a href="#" class="guide-sqtk">申请退款</a>
             </div>
         </div>
-
-        
+        <!-- <div class="coms-checked-more">查看更多<span></span></div> -->
     </div>
-
-     <div class="mine-order-tab-bd" id="J_orderyxf">
-        
+    <div class="mine-order-tab-bd" id="J_orderyxf">
         <div class="mine-order-item">
             <div class="clearfix">
                 <div class="sp-avatar"><i></i>厦门小鱼网</div>
@@ -131,64 +125,68 @@
                 <p class="num">订单编号：201712054524</p>
                 <p class="tit">皇家加勒比邮轮-海洋赞礼号 香港-海上巡游-香港 2晚3日游</p>
                 <div class="clearfix">
-                        <p class="price"><b>￥</b>450</p>
-                        <span class="time">2018/01/10  12:02:33</span>
+                    <p class="price"><b>￥</b>450</p>
+                    <span class="time">2018/01/10  12:02:33</span>
                 </div>
             </div>
             <div class="guide-dir clearfix">
                 <div class="guide-btn clearfix">
-                    <a href="#" class="comment">评价</a>
+                    <a href="PingJia.html" class="comment">评价</a>
                     <span class="comment-tip">评价返现100积分，相当于1元</span>
                 </div>
-                
             </div>
         </div>
-
         <div class="mine-order-item">
             <div class="clearfix">
                 <div class="sp-avatar"><i></i>厦门小鱼网</div>
-                
             </div>
             <div class="pro-info">
                 <div class="pic"><img src="upload/pro31.jpg" /></div>
                 <p class="num">订单编号：201712054524</p>
                 <p class="tit">皇家加勒比邮轮-海洋赞礼号 香港-海上巡游-香港 2晚3日游</p>
                 <div class="clearfix">
-                        <p class="price"><b>￥</b>450</p>
-                        <span class="time">2018/01/10  12:02:33</span>
+                    <p class="price"><b>￥</b>450</p>
+                    <span class="time">2018/01/10  12:02:33</span>
                 </div>
             </div>
             <div class="guide-dir clearfix">
                 <div class="guide-btn clearfix">
                     <span class="comment-had">已评价</span>
-                   
                 </div>
-                
             </div>
         </div>
     </div>
-
-
-
-    
-    
+    <div class="mine-hxm-box" id="J_mine-hxm-box">
+        <p>8888888</p>
+    </div>
     <script>
     $(function() {
-      
-
-        $('.mine-order-tab-hd a').click(function (e) {
-            e.preventDefault()
-            $(this).tab('show')
+        $('.mine-order-tab-hd a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
         });
 
-        
+        $(document).on("click", ".hxm-btn", function(event) {
+            event.preventDefault();
+            mDialog.open({
+                // duration:0,
+                title: "商品核销码",
+                closeBtn: true,
+                duration: 200,
+                width: "70%",
+                content: $("#J_mine-hxm-box"),
+                buttons: false,
+                onBeforeShow: function() {
 
+                },
+                onShow: function() {
 
+                },
+                onClose: function() {
 
-
-
-
-
+                }
+            })
+        })
     })
     </script>
 </body>

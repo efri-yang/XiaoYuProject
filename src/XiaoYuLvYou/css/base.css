@@ -504,7 +504,13 @@ a{
 html,body, button,select,input,textarea  {
 font-family:sans-serif;
 }
+input[type="button"], input[type="submit"], input[type="reset"] {
 
+-webkit-appearance: none;
+
+}
+
+textarea {  -webkit-appearance: none;}   
 
 
 /**
