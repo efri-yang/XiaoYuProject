@@ -28,15 +28,13 @@
         </div>
         <span class="time">2018/01/10</span>
     </div>
-    <div class="lvgl-detail-tit">泰国—活着的冲动，浮生一场春梦 北碧.大
-城.曼谷象岛.春武里</div>
+    <div class="lvgl-detail-tit">泰国—活着的冲动，浮生一场春梦 北碧.大 城.曼谷象岛.春武里
+    </div>
     <div class="lvgl-detail-tag clearfix">
         <span>纯玩</span>
         <span>购物</span>
         <span>推荐精华</span>
     </div>
-
-
     <div class="border-b-20 border-t-1"></div>
     <div class="lygl-detail-infor">
         <p>国内的介绍完了，下面我们来看看国外有哪些亲子游圣地。 第一名当然是我们的泰国清迈了，这里有很多的体验项目，他们可以尽可能的体验不同的场景、人物、涉及多种活动，更善于孩子发信自己的兴趣点，不需要赶行程，激发他们的好奇心。
@@ -182,7 +180,7 @@
                         </a>
                     </li>
                     <li>
-                       <a href="PiaoWu-detail.html">
+                        <a href="PiaoWu-detail.html">
                             <div class="pic"><img src="upload/pro31.jpg" /></div>
                             <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
                             <div class="clearfix">
@@ -201,7 +199,6 @@
                             </div>
                         </a>
                     </li>
-                    
                 </ul>
             </div>
         </div>
@@ -211,38 +208,45 @@
     //同类线路
     (function($) {
         $(function() {
-            var DiaLslx, IscroLslx,
+            var DiaLslx, IscroLslx, isShow = false,
                 $NavLslx = $("#J_nav-lslx");
             $NavLslx.on("touchstart", function(event) {
                 event.preventDefault();
-                DiaLslx = mDialog.open({
-                    // duration:0,
-                    title: false,
-                    closeBtn: false,
-                    width: "80%",
-                    height: "100%",
-                    maxHeight: "100%",
-                    maxWidth: "100%",
-                    duration: 200,
-                    offset: ["left", "top"],
-                    content: $("#J_dialog-tlxl"),
-                    animIn: "slideInLeft",
-                    animOut: "slideOutLeft",
-                    baseViewWidth: 750,
-                    baseViewHeight: 960,
-                    buttons: false,
-                    onBeforeShow: function() {
-                        $NavLslx.parent().css("zIndex", 999999999);
-                    },
-                    onShow: function() {
-                        if (!IscroLslx) {
-                            IscroLslx = new IScroll('#J_dialog-tlxl-wrapper');
+                if (!isShow) {
+                    DiaLslx = mDialog.open({
+                        // duration:0,
+                        title: false,
+                        closeBtn: false,
+                        width: "80%",
+                        height: "100%",
+                        maxHeight: "100%",
+                        maxWidth: "100%",
+                        duration: 200,
+                        offset: ["left", "top"],
+                        content: $("#J_dialog-tlxl"),
+                        animIn: "slideInLeft",
+                        animOut: "slideOutLeft",
+                        baseViewWidth: 750,
+                        baseViewHeight: 960,
+                        buttons: false,
+                        onBeforeShow: function() {
+                            $NavLslx.parent().css("zIndex", 999999999);
+                        },
+                        onShow: function() {
+                            isShow=true;
+                            if (!IscroLslx) {
+                                IscroLslx = new IScroll('#J_dialog-tlxl-wrapper');
+                            }
+                        },
+                        onClose: function() {
+                            isShow=false;
+                            $NavLslx.parent().css("zIndex", "")
                         }
-                    },
-                    onClose: function() {
-                        $NavLslx.parent().css("zIndex", "")
-                    }
-                });
+                    });
+                }else{
+                    DiaLslx.close()
+                }
+
             });
 
 
@@ -273,7 +277,7 @@
                     baseViewHeight: 960,
                     buttons: false,
                     onBeforeShow: function() {
-                       
+
                     },
                     onShow: function() {
                         if (!IscroXgcp) {
@@ -281,12 +285,12 @@
                         }
                     },
                     onClose: function() {
-                        
+
                     }
                 });
             });
 
-            $("#J_xgcp-close").on("touchstart",function(){
+            $("#J_xgcp-close").on("touchstart", function() {
                 DiaLslx.close();
             })
         })

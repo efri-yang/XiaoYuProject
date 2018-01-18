@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> @@include("./views/_staticCssJs.html")
- 
 </head>
 
 <body>
@@ -26,7 +25,7 @@
     <div class="mine-collect-tab-bd active" id="J_spsclist">
         <ul class="mine-collect-list">
             <li>
-                <a href="#" class="link" style="transform:translate(-80px); ">
+                <a href="#" class="link" id="x1">
                     <div class="pic"><img src="upload/pro31.jpg"></div>
                     <p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p>
                     <div class="clearfix">
@@ -83,7 +82,6 @@
         </ul>
         <div class="coms-checked-more">查看更多<span></span></div>
     </div>
-
     <div class="mine-collect-tab-bd" id="J_dpsclist">
         <ul class="mine-collect-list">
             <li>
@@ -97,11 +95,9 @@
                 </a>
                 <span class="cancel-btn">取消关注</span>
             </li>
-            
         </ul>
         <div class="coms-checked-more">查看更多<span></span></div>
     </div>
-
     <div class="mine-collect-tab-bd" id="J_yjsclist">
         <ul class="mine-collect-list">
             <li>
@@ -115,20 +111,106 @@
                 </a>
                 <span class="cancel-btn">取消关注</span>
             </li>
-            
         </ul>
         <div class="coms-checked-more">查看更多<span></span></div>
     </div>
     <script>
     $(function() {
-       
 
-        $('.mine-collect-tab-hd a').click(function (e) {
-              e.preventDefault()
-              $(this).tab('show')
+
+        $('.mine-collect-tab-hd a').click(function(e) {
+            e.preventDefault()
+            $(this).tab('show')
         });
+        var touchHandlerInit=(function() {
+            // 获取所有行，对每一行设置监听
+            
+            var lastX, lastXForMobile;
 
-        
+            // 用于记录被按下的对象
+            var pressedObj; // 当前左滑的对象
+            var lastLeftObj; // 上一个左滑的对象
+
+            // 用于记录按下的点
+            var start;
+
+            var touchStartHandler=function(e) {
+                lastXForMobile = e.changedTouches[0].pageX;
+                pressedObj = this; // 记录被按下的对象 
+
+                // 记录开始按下时的点
+                var touches = event.touches[0];
+                start = {
+                    x: touches.pageX, // 横坐标
+                    y: touches.pageY // 纵坐标
+                };
+            };
+
+            var touchMoveHandler=function(e) {
+                    // 计算划动过程中x和y的变化量
+                    var touches = event.touches[0];
+                    delta = {
+                        x: touches.pageX - start.x,
+                        y: touches.pageY - start.y
+                    };
+
+                    // 横向位移大于纵向位移，阻止纵向滚动
+                    if (Math.abs(delta.x) > Math.abs(delta.y)) {
+                        event.preventDefault();
+                    }
+                };
+
+            var touchEndHandler=function(e) {
+                    if (lastLeftObj && pressedObj != lastLeftObj) { // 点击除当前左滑对象之外的任意其他位置
+                        $(lastLeftObj).removeClass('active'); // 右滑
+                        lastLeftObj = null; // 清空上一个左滑的对象
+                    }
+                    var diffX = e.changedTouches[0].pageX - lastXForMobile;
+                    if (diffX < -50) {
+                        $(pressedObj).addClass('active'); // 左滑
+                        lastLeftObj && lastLeftObj != pressedObj &&
+                            $(lastLeftObj).removeClass('active'); // 已经左滑状态的按钮右滑
+                        lastLeftObj = pressedObj; // 记录上一个左滑的对象
+                    } else if (diffX > 50) {
+                        if (pressedObj == lastLeftObj) {
+                            $(pressedObj).removeClass('active'); ; // 右滑
+                            lastLeftObj = null; // 清空上一个左滑的对象
+                        }
+                    }
+            };
+
+            function  init($elems){
+                var len = $elems.length;
+                 for (var i = 0; i < len; ++i) {
+                    $elems[i].removeEventListener('touchstart',touchStartHandler,false);
+                    $elems[i].removeEventListener('touchmove',touchMoveHandler,false);
+                    $elems[i].removeEventListener('touchend',touchEndHandler,false);
+                    $elems[i].addEventListener('touchstart',touchStartHandler);
+                    $elems[i].addEventListener('touchmove',touchMoveHandler);
+                    $elems[i].addEventListener('touchend',touchEndHandler);
+                }
+            }
+            return init;
+
+
+            // 网页在移动端运行时的监听        
+        })();
+        touchHandlerInit($(".mine-collect-list li"));
+
+
+
+        $("#J_spsclist .coms-checked-more").on("click",function(){
+                var $list=$(this).siblings(".mine-collect-list");
+                $('<li><a href="#" class="link" id="x1"><div class="pic"><img src="upload/pro31.jpg"></div><p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p><div class="clearfix"><div class="tag"><span>购买返现</span></div><span class="price"><b>￥</b>5600<b>起</b></span></div></a> <span class="cancel-btn">取消关注</span></li><li><a href="#" class="link" id="x1"><div class="pic"><img src="upload/pro31.jpg"></div><p class="tit">日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐日月谷温泉门票，包含一晚上家庭住宿和三人早餐</p><div class="clearfix"><div class="tag"><span>购买返现</span></div><span class="price"><b>￥</b>5600<b>起</b></span></div></a> <span class="cancel-btn">取消关注</span></li>').appendTo($list);
+
+                //绑定touchmove，保证滑动事件的执行
+                touchHandlerInit($list.children('li'));
+        })
+
+
+
+
+
 
 
 
