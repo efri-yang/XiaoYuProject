@@ -114,8 +114,10 @@ html,body, button,select,input,textarea{
 
 
 .coms-ft-qrcode{
+    background:#fff; 
     padding: px2rem(20px);
     border-top:1px solid #eee;
+    border-bottom:1px solid #eee;
     .qrcode-pic {
         width: px2rem(192px);
         height: px2rem(192px);

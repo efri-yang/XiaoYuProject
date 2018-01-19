@@ -76,7 +76,8 @@
             color:#333333;
             font-size:px2rem(30px);
             padding:px2rem(10px) 0 0;
-            height:px2rem(45px); 
+            height:px2rem(53px);
+            line-height:1.35;  
             @include text-overflow-1; 
         }
         .price{
@@ -176,13 +177,20 @@
 				}
 			}
 		}
+		&.sp-back{
+			a{
+				i{
+					background-image:url("../images/sp_guide_3.png") !important;
+				}
+			}
+		}
 	}
 }
 .spdetail-detail-box{
 	color:#666666;
 	padding:px2rem(30px);
-	font-size:px2rem(28px);
-	line-height:1.35;
+	font-size:px2rem(30px);
+	line-height:1.5;
 	*{
 		max-width:100% !important;
 	}
@@ -234,7 +242,7 @@
                 padding:0 px2rem(5px);
                 display: inline-block;
                 vertical-align: top;
-                margin-right:px2rem(5px);
+                margin-right:px2rem(15px);
                 &:nth-child(3n+1) {
                     color: #02d289;
                     border-color: #02d289;

@@ -4,9 +4,7 @@ header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Methods:POST');  
 // 响应头设置  
 header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
-for ($i=0; $i < 1000000; $i++) { 
-	$j=10+$i;
-}
+
 $page=$_REQUEST["page"];
 $size=$_REQUEST["size"];
 

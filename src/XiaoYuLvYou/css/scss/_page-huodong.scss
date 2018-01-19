@@ -77,7 +77,7 @@
 	.man-count{
 		color:#888888;
 		font-size:px2rem(24px);
-		margin-top:px2rem(25px);
+		margin-top:px2rem(30px);
 		i{
 			width:px2rem(23px);
 			height:px2rem(24px);
@@ -95,7 +95,7 @@
 		color:#888888;
 		font-size:px2rem(24px);
 		line-height:px2rem(24px);
-		margin-top:px2rem(10px);
+		margin-top:px2rem(15px);
 		i{
 			width:px2rem(24px);
 			height:px2rem(24px);
@@ -212,7 +212,7 @@
 .huod-detail-info{
 	padding:px2rem(30px);
 	color:#666666;
-	font-size:px2rem(26px);
+	font-size:px2rem(28px);
 	line-height:1.5;
 	*{
 		max-width:100% !important;
@@ -236,6 +236,28 @@
 		border-radius:0; 
 		border:1px solid #eee;
 	}
+	.ipt-submit{
+		width:100%;
+		margin-top:px2rem(40px); 
+		border:none;
+		background:#02d289;  
+		display: block;
+	    height: 1.2rem;
+	    line-height: 1.2rem;
+	    text-align: center;
+	    font-size: 0.4rem;
+	    color: #fff;
+	    border-radius: 0.13333rem;
+	    &:active{
+			background-color:darken(#02d289,5%); 
+	    }
+	    &[disabled]{
+			
+			background-color: #ccc !important;
+			border-color: #ccc;
+			
+		}
+	}
 }
 
 .huod-bm-ft-seat{
@@ -255,12 +277,7 @@
 	li{
 		flex:1;
 		padding:0 px2rem(15px);
-		&.disabled{
-			a{
-				background-color: #ccc !important;
-    			border-color: #ccc;
-			}
-		}
+		
 		a{
 			display:block;
 			height:px2rem(90px);
@@ -270,12 +287,8 @@
 			color:#fff;
 			border-radius:px2rem(10px);
 		}
+		
 		&:nth-child(1){
-			a{
-				background:#ffa200;
-			}
-		}
-		&:nth-child(2){
 			a{
 				background:#02d289;
 			}

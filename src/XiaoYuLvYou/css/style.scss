@@ -484,6 +484,7 @@
 
 .mine-order-tab-bd {
     display: none;
+    border-bottom:px2rem(20px) solid #f8f8f8;
     &.active {
         display: block;
     }
@@ -493,11 +494,23 @@
     visibility:hidden;
     display:none;
     background:#fff;
-    padding:px2rem(100px) px2rem(50px);
-    border-radius:0 0 px2rem(20px) px2rem(20px);
-    p{
+    padding:px2rem(100px) px2rem(50px) px2rem(100px);
+    border-radius:px2rem(20px) px2rem(20px);
+    .pic{
+    	width:px2rem(300px);
+    	height:px2rem(300px);
+    	overflow:hidden;
+    	margin:0 auto; 
+    	img{
+    		width:100%;
+    		height:100%;  
+    	}   
+    }
+    .txt{
         font-size:px2rem(40px);
         text-align:center;
+        letter-spacing:px2rem(4px);
+        margin-top:px2rem(15px); 
     }
 }
 .mine-order-tab-hd {
@@ -528,12 +541,20 @@
 }
 
 
-.mine-order-item {
-    border-bottom: px2rem(20px) solid #f8f8f8;
-    border-top: 1px solid #eeeeee;
-    &:first-child {
-        border-top: none;
-    }
+.mine-order-list {
+
+	li{
+		 border-bottom: px2rem(20px) solid #f8f8f8;
+    	border-top: 1px solid #eeeeee;
+    	&:first-child {
+	        border-top: none;
+	    }
+	    &:last-child{
+	        border-bottom:0;
+	    }
+	}
+   
+   
     .status {
         float: right;
         margin-right: px2rem(30px);
@@ -1068,12 +1089,8 @@
         }
     }
 
-    .submit-btn{
-        
-        position:absolute;
-        left:px2rem(30px);
-        right:px2rem(30px);
-        bottom:px2rem(50px);
+    .submit-btn{ 
+      	padding-top:px2rem(80px); 
         .ipt-submit{
             width:100%;
             border:none;
