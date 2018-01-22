@@ -16,9 +16,41 @@
     <div class="pwdetail-photo">
         <img src="upload/pro61.jpg" />
         <div class="count"><i></i>1/32</div>
-        <ul class="img-list">
-			<li data-size="964x1024" data-src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg"></li>
+        <ul class="img-list photo-swipe-gallery">
+            <li data-size="964x1024" data-src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg"></li>
+            <li data-size="964x1025" data-src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg"></li>
+            <li data-size="964x1026" data-src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg"></li>
+            <li data-size="964x1027" data-src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg"></li>
         </ul>
+    </div>
+    <div class="pwdetail-yhpj-list-item">
+        <div class="avatar clearfix">
+            <div class="pic"><img src="upload/banner11.jpg"></div>
+            <p class="name">忙碌的机器</p>
+            <p class="time">2018-01-09</p>
+        </div>
+        <div class="say-intro">这是一次非常成功的全家出游，第一次坐邮轮，全家人的感受都非常好，吃喝玩乐各方面都很满意。也感谢客服张国福对各种问题的耐心解答，推荐大家有机会都来体验一下。附赠老爸做诗一首：皇家加勒比赞礼号邮轮游 国庆假期黄金周，皇家邮轮六日游。 风和日丽碧海蓝，波潮浪花伴船走。 巨轮庞然似大厦，载客船员六千五。 十八层高巍屹立，四百来米尾到头...</div>
+        <ul class="img-list clearfix photo-swipe-gallery">
+            <li data-size="964x1028" data-src="upload/pro71.jpg">
+                <div class="pic"><img src="upload/pro71.jpg"></div>
+            </li>
+            <li data-size="964x1029" data-src="upload/pro71.jpg">
+                <div class="pic"><img src="upload/banner11.jpg"></div>
+            </li>
+            <li data-size="964x1030" data-src="upload/pro71.jpg">
+                <div class="pic"><img src="images/h_more_1.png"></div>
+            </li>
+            <li data-size="964x1024" data-src="upload/pro71.jpg">
+                <div class="pic"><img src="upload/pro71.jpg"></div>
+            </li>
+            <li data-size="964x1024" data-src="upload/pro71.jpg">
+                <div class="pic"><img src="upload/banner11.jpg"></div>
+            </li>
+            <li data-size="964x1024" data-src="upload/pro71.jpg">
+                <div class="pic"><img src="images/h_more_1.png"></div>
+            </li>
+        </ul>
+        <span class="comment">好评</span>
     </div>
     <!--  -->
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
@@ -58,10 +90,6 @@
                 <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
                     <div class="pswp__share-tooltip"></div>
                 </div>
-                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                </button>
-                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                </button>
                 <div class="pswp__caption">
                     <div class="pswp__caption__center"></div>
                 </div>
@@ -70,55 +98,114 @@
     </div>
     <!--  -->
     <script type="text/javascript">
-    $(function() {
-        var pswpElement = document.querySelectorAll('.pswp')[0];
-        // build items array
-        var items = [{
-                src: 'upload/banner11.jpg',
-                w: 600,
-                h: 400
-            },
-            {
-                src: 'upload/banner12.jpg',
-                w: 1200,
-                h: 900
-            },
-            {
-                src: 'upload/banner13.jpg',
-                w: 1200,
-                h: 900
-            },
-            {
-                src: 'upload/banner21.jpg',
-                w: 1200,
-                h: 900
-            },
-            {
-                src: 'upload/banner22.jpg',
-                w: 1200,
-                h: 900
-            },
-            {
-                src: 'upload/demo_1.jpg',
-                w: 1200,
-                h: 900
-            },
-            {
-                src: 'upload/pro11.jpg',
-                w: 1200,
-                h: 900
+    (function($) {
+        $(function() {
+            var parseThumbnailElements = function($el) {
+                var items = [],
+                    item,
+                    $childLi = $el.children('li'),
+                    size;
+
+                var len = $childLi.length;
+
+                for (var i = 0; i < len; i++) {
+                    size = $childLi.eq(i).attr('data-size').split('x');
+                    item = {
+                        src: $childLi.eq(i).attr('data-src'),
+                        w: parseInt(size[0], 10),
+                        h: parseInt(size[1], 10)
+                    };
+                    items.push(item);
+                }
+                return items;
             }
-        ];
-        // define options (if needed)
-        var options = {
-            // optionName: 'option value'
-            // for example:
-            index: 0 // start at first slide
-        };
-        // Initializes and opens PhotoSwipe
-        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.init();
-    })
+
+            var closest = function closest(el, fn) {
+                return el && (fn(el) ? el : closest(el.parentNode, fn));
+            };
+
+            var openPhotoSwipe = function(index, galleryElement) {
+
+                var pswpElement = document.querySelectorAll('.pswp')[0],
+                    gallery,
+                    options,
+                    items;
+                items = parseThumbnailElements($(galleryElement));
+
+
+
+
+
+               
+                options = {
+                    // define gallery index (for URL)
+                    galleryUID: galleryElement.getAttribute('data-pswp-uid')
+                    // getThumbBoundsFn: function(index) {
+                    //     // See Options -> getThumbBoundsFn section of documentation for more info
+                    //     var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                    //         pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                    //         rect = thumbnail.getBoundingClientRect();
+
+                    //     return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
+                    // }
+
+                };
+                options.index = parseInt(index, 10);
+
+                if (isNaN(options.index)) {
+                    return;
+                }
+              
+                
+
+                // Pass data to PhotoSwipe and initialize it
+                gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+                gallery.init();
+            }
+
+            var onThumbnailsClick = function(e) {
+                e.preventDefault();
+                var $this = $(this),
+                    $childLi = $(this).children('li'),
+                    eventTarget = event.target;
+
+                var clickedListItem = closest(eventTarget, function(el) {
+                    return (el.tagName && el.tagName.toUpperCase() === 'LI');
+                });
+
+                if (!clickedListItem) {
+                    return;
+                }
+
+                var index = $childLi.index($(clickedListItem));
+
+                if (index >= 0) {
+                    // open PhotoSwipe if valid index found
+                    openPhotoSwipe(index, this);
+                }
+                return false;
+
+
+
+
+            }
+
+
+            var initPhotoSwipeFromDOM = function(gallerySelector) {
+                var $gallerySelector = $(gallerySelector),
+                    gallerySelectorLen = $gallerySelector.length;
+
+                parseThumbnailElements($gallerySelector);
+
+
+                for (var i = 0; i < gallerySelectorLen; i++) {
+                    $gallerySelector.eq(i).attr('data-pswp-uid', i + 1);
+                    $gallerySelector.eq(i).on("click", onThumbnailsClick)
+                }
+            }
+            initPhotoSwipeFromDOM('.photo-swipe-gallery');
+        })
+    })(Zepto);
     </script>
 </body>
 
