@@ -12,6 +12,11 @@
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+
+    <link rel="stylesheet" type="text/css" href="js/photoswipe/photoswipe.css">
+    <link rel="stylesheet" type="text/css" href="js/photoswipe/default-skin/default-skin.css" />
+    <script type="text/javascript" src="js/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="js/photoswipe/photoswipe-ui-default.min.js"></script>
 </head>
 
 <body>
@@ -22,6 +27,12 @@
     <div class="pwdetail-photo">
         <img src="upload/pro61.jpg" />
         <div class="count"><i></i>1/32</div>
+        <ul class="img-list photo-swipe-gallery">
+            <li data-size="964x1024" data-src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg"></li>
+            <li data-size="964x1025" data-src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg"></li>
+            <li data-size="964x1026" data-src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg"></li>
+            <li data-size="964x1027" data-src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg"></li>
+        </ul>
     </div>
     <p class="pwdetail-pro-name">皇家加勒比邮轮-海洋赞礼号 香港-海上巡游-香港 2晚3日游</p>
     <div class="pwdetail-price clearfix">
@@ -76,24 +87,24 @@
                     <p class="time">2018-01-09</p>
                 </div>
                 <div class="say-intro">这是一次非常成功的全家出游，第一次坐邮轮，全家人的感受都非常好，吃喝玩乐各方面都很满意。也感谢客服张国福对各种问题的耐心解答，推荐大家有机会都来体验一下。附赠老爸做诗一首：皇家加勒比赞礼号邮轮游 国庆假期黄金周，皇家邮轮六日游。 风和日丽碧海蓝，波潮浪花伴船走。 巨轮庞然似大厦，载客船员六千五。 十八层高巍屹立，四百来米尾到头...</div>
-                <ul class="img-list clearfix">
-                    <li>
-                        <div class="pic"><img src="upload/pro71.jpg" /></div>
+                <ul class="img-list clearfix photo-swipe-gallery">
+                    <li data-size="750x326" data-src="upload/banner11.jpg">
+                        <div class="pic"><img src="upload/pro71.jpg"></div>
                     </li>
-                    <li>
-                        <div class="pic"><img src="upload/banner11.jpg" /></div>
+                    <li data-size="750x326" data-src="upload/banner12.jpg">
+                        <div class="pic"><img src="upload/banner11.jpg"></div>
                     </li>
-                    <li>
-                        <div class="pic"><img src="images/h_more_1.png" /></div>
+                    <li data-size="750x326" data-src="upload/banner13.jpg">
+                        <div class="pic"><img src="images/h_more_1.png"></div>
                     </li>
-                    <li>
-                        <div class="pic"><img src="upload/pro71.jpg" /></div>
+                    <li data-size="600x339" data-src="upload/pro21.jpg">
+                        <div class="pic"><img src="upload/pro71.jpg"></div>
                     </li>
-                    <li>
-                        <div class="pic"><img src="upload/banner11.jpg" /></div>
+                    <li data-size="147x147" data-src="upload/pro71.jpg">
+                        <div class="pic"><img src="upload/banner11.jpg"></div>
                     </li>
-                    <li>
-                        <div class="pic"><img src="images/h_more_1.png" /></div>
+                    <li data-size="147x147" data-src="upload/pro71.jpg">
+                        <div class="pic"><img src="images/h_more_1.png"></div>
                     </li>
                 </ul>
                 <span class="comment">好评</span>
@@ -149,6 +160,51 @@
             <a href="#">立即购买</a>
         </li>
     </ul>
+
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+            <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+                    <!-- <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> -->
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
     <script type="text/javascript">
     (function($) {
         $(window).on("load",function(){
@@ -179,6 +235,115 @@
                     $tabHdHoler.removeClass('fixed');
                 }   
             }))
+        })
+    })(Zepto);
+
+    (function($) {
+        $(function() {
+            var parseThumbnailElements = function($el) {
+                var items = [],
+                    item,
+                    $childLi = $el.children('li'),
+                    size;
+
+                var len = $childLi.length;
+
+                for (var i = 0; i < len; i++) {
+                    size = $childLi.eq(i).attr('data-size').split('x');
+                    item = {
+                        src: $childLi.eq(i).attr('data-src'),
+                        w: parseInt(size[0], 10),
+                        h: parseInt(size[1], 10)
+                    };
+                    items.push(item);
+                }
+                return items;
+            }
+
+            var closest = function closest(el, fn) {
+                return el && (fn(el) ? el : closest(el.parentNode, fn));
+            };
+
+            var openPhotoSwipe = function(index, galleryElement) {
+
+                var pswpElement = document.querySelectorAll('.pswp')[0],
+                    gallery,
+                    options,
+                    items;
+                items = parseThumbnailElements($(galleryElement));
+
+
+
+
+
+               
+                options = {
+                    // define gallery index (for URL)
+                    galleryUID: galleryElement.getAttribute('data-pswp-uid')
+                    // getThumbBoundsFn: function(index) {
+                    //     // See Options -> getThumbBoundsFn section of documentation for more info
+                    //     var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                    //         pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                    //         rect = thumbnail.getBoundingClientRect();
+
+                    //     return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
+                    // }
+
+                };
+                options.index = parseInt(index, 10);
+
+                if (isNaN(options.index)) {
+                    return;
+                }
+              
+                
+
+                // Pass data to PhotoSwipe and initialize it
+                gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+                gallery.init();
+            }
+
+            var onThumbnailsClick = function(e) {
+                e.preventDefault();
+                var $this = $(this),
+                    $childLi = $(this).children('li'),
+                    eventTarget = event.target;
+
+                var clickedListItem = closest(eventTarget, function(el) {
+                    return (el.tagName && el.tagName.toUpperCase() === 'LI');
+                });
+
+                if (!clickedListItem) {
+                    return;
+                }
+
+                var index = $childLi.index($(clickedListItem));
+
+                if (index >= 0) {
+                    // open PhotoSwipe if valid index found
+                    openPhotoSwipe(index, this);
+                }
+                return false;
+
+
+
+
+            }
+
+
+            var initPhotoSwipeFromDOM = function(gallerySelector) {
+                var $gallerySelector = $(gallerySelector),
+                    gallerySelectorLen = $gallerySelector.length;
+
+                parseThumbnailElements($gallerySelector);
+
+
+                for (var i = 0; i < gallerySelectorLen; i++) {
+                    $gallerySelector.eq(i).attr('data-pswp-uid', i + 1);
+                    $gallerySelector.eq(i).on("click", onThumbnailsClick)
+                }
+            }
+            initPhotoSwipeFromDOM('.photo-swipe-gallery');
         })
     })(Zepto);
     </script>
