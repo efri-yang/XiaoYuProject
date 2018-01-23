@@ -240,6 +240,7 @@
 
     (function($) {
         $(function() {
+            var gallery;
             var parseThumbnailElements = function($el) {
                 var items = [],
                     item,
@@ -267,7 +268,7 @@
             var openPhotoSwipe = function(index, galleryElement) {
 
                 var pswpElement = document.querySelectorAll('.pswp')[0],
-                    gallery,
+                   
                     options,
                     items;
                 items = parseThumbnailElements($(galleryElement));
@@ -344,6 +345,13 @@
                 }
             }
             initPhotoSwipeFromDOM('.photo-swipe-gallery');
+
+            $(".pswp__container").on("click",function(event){
+                var target=event.target;
+                if(target.tagName.toUpperCase() != 'IMG'){
+                        gallery.close();
+                }
+            })
         })
     })(Zepto);
     </script>
