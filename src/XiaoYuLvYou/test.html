@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/flexible2.0.js"></script>
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+</head>
+<body>
+	<div class="swiper-container h-banner-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="#"><img data-src="upload/banner11.jpg" class="swiper-lazy"/><div class="swiper-lazy-preloader"></div></a></div>
+            <div class="swiper-slide"><a href="#"><img data-src="upload/banner12.jpg" class="swiper-lazy" /><div class="swiper-lazy-preloader"></div></a></div>
+            <div class="swiper-slide"><a href="#"><img data-src="upload/banner13.jpg" class="swiper-lazy" /><div class="swiper-lazy-preloader"></div></a></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script type="text/javascript">
+    	$(function(){
+    		var mySwiper = new Swiper('.h-banner-swiper', {
+            loop:true,
+            autoplay: false, //可选选项，自动滑动
+            lazy: {
+                loadPrevNext: true,
+            },
+            followFinger:false,
+            pagination: {
+                el: '.swiper-pagination',
+            }
+        });
+    	})
+    </script>
+</body>
+</html>
