@@ -25,9 +25,13 @@
     </ul>
     <div class="swiper-container h-banner-swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><a href="#"><img data-src="upload/banner11.jpg" class="swiper-lazy"/><div class="swiper-lazy-preloader"></div></a></div>
+            <!-- <div class="swiper-slide"><a href="#"><img data-src="upload/banner11.jpg" class="swiper-lazy"/><div class="swiper-lazy-preloader"></div></a></div>
             <div class="swiper-slide"><a href="#"><img data-src="upload/banner12.jpg" class="swiper-lazy" /><div class="swiper-lazy-preloader"></div></a></div>
-            <div class="swiper-slide"><a href="#"><img data-src="upload/banner13.jpg" class="swiper-lazy" /><div class="swiper-lazy-preloader"></div></a></div>
+            <div class="swiper-slide"><a href="#"><img data-src="upload/banner13.jpg" class="swiper-lazy" /><div class="swiper-lazy-preloader"></div></a></div> -->
+
+            <div class="swiper-slide"><a href="#"><img src="upload/banner11.jpg" /></a></div>
+            <div class="swiper-slide"><a href="#"><img src="upload/banner12.jpg"  /></a></div>
+            <div class="swiper-slide"><a href="#"><img src="upload/banner13.jpg" /></a></div>
         </div>
         <div class="swiper-pagination"></div>
     </div>
@@ -129,9 +133,9 @@
         var mySwiper = new Swiper('.h-banner-swiper', {
             loop:true,
             autoplay: true, //可选选项，自动滑动
-            lazy: {
-                loadPrevNext: true,
-            },
+            // lazy: {
+            //     loadPrevNext: true,
+            // },
             pagination: {
                 el: '.swiper-pagination',
             }
