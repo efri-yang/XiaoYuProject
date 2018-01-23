@@ -206,9 +206,10 @@
     <!-- 相关产品  end -->
     <script type="text/javascript">
     //同类线路
+    var DiaLslx;
     (function($) {
         $(function() {
-            var DiaLslx, IscroLslx, isShow = false,animIng=false,
+            var IscroLslx, isShow = false,animIng=false,
                 $NavLslx = $("#J_nav-lslx");
             $NavLslx.on("touchstart", function(event) {
                 event.preventDefault();
@@ -265,11 +266,12 @@
     //相关产品
     (function($) {
         $(function() {
-            var DiaLslx, IscroXgcp,
+            var IscroXgcp,
                 $NavXgcp = $("#J_nav-xgcp");
             $NavXgcp.on("touchstart", function(event) {
                 event.preventDefault();
-                DiaLslx = mDialog.open({
+                DiaLslx.close();
+                DiaXgcp = mDialog.open({
                     // duration:0,
                     title: false,
                     closeBtn: false,
@@ -300,7 +302,7 @@
             });
 
             $("#J_xgcp-close").on("touchstart", function() {
-                DiaLslx.close();
+                DiaXgcp.close();
             })
         })
     })(Zepto)
