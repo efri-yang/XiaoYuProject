@@ -1063,9 +1063,21 @@
 
       YMD[1]++;
       YMD[2] = st + 1;
-      
-      item.attr('lay-ymd', YMD.join('-')).html(YMD[2]+"<p><span>￥</span>"+380000+"</p>");
 
+       //**********************************************************************************************************
+      var dataT=YMD.join('-');
+
+      var price=options.serverData.normal;
+
+      $.each(options.serverData.special,function(index,obj){
+          if(index==dataT){
+              price=obj;
+              return;
+          }
+      })
+     
+      item.attr('lay-ymd', YMD.join('-')).html(YMD[2]+"<p><span>￥</span>"+price+"</p>");
+ //**********************************************************************************************************
       that.mark(item, YMD).limit(item, {
         year: YMD[0]
         ,month: YMD[1] - 1
