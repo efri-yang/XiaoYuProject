@@ -1520,12 +1520,13 @@
         display: block;
         width: 100%;
     }
-
+    
     .layui-laydate-main {
         width: 100% !important;
     }
     .layui-laydate-content table {
         width: 100%;
+        table-layout:fixed; word-break: break-all; word-wrap: break-word;
     }
     .layui-laydate-content{
         padding:0 ;
@@ -1534,9 +1535,30 @@
     .layui-laydate-content th,
     .layui-laydate-content td {
         width: 14.28% !important;
+        
+
+        
+    }
+
+    .layui-laydate-content td p{
+        font-size:px2rem(24px);
+        color:#d44d44;
+        padding-top:px2rem(6px); 
+        @include text-overflow-1;
+        span{
+            font-size:px2rem(22px); 
+        } 
     }
     .layui-laydate-content td {
+        padding-left:px2rem(2px);
+        padding-right:px2rem(2px);
         height: px2rem(100px) !important;
+    }
+    .laydate-disabled,.laydate-day-prev,.laydate-day-next{
+        p{
+            color:#d2d2d2 !important;
+           
+        }
     }
     .layui-laydate-content td:hover,
     .layui-laydate-list li:hover {
@@ -1544,6 +1566,9 @@
     }
     .layui-laydate .layui-this{
         background-color:#02d289 !important;
+        p{
+            color:#fff; 
+        }
     }
     .order-layui-datetime .layui-laydate-content td{
         &:hover{
@@ -1560,7 +1585,12 @@
         box-shadow:none;
         border:none;
     }
-    
+   .laydate-prev-y.disabled,.laydate-next-y.disabled{
+            color:#d9d9d9; 
+   }
+   .laydate-prev-m.disabled,.laydate-next-m.disabled{
+            color:#d9d9d9 !important;
+   }
     .layui-laydate-range{
         .layui-laydate-main {
             width:50% !important;

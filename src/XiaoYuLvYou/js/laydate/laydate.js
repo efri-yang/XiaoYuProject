@@ -606,20 +606,25 @@
       
       //左右切换
       ,headerChild = [function(){ //上一年
-        
+       var year=new Date().getFullYear();
+       var className=(year <= options.min.year) ? "disabled" : "";
+      
         var elem = lay.elem('i', {
-          'class': 'layui-icon laydate-icon laydate-prev-y'
+          'class': 'layui-icon laydate-icon laydate-prev-y '+className
         });
         elem.innerHTML = '&#xe65a;';
         return elem;
       }(), function(){ //上一月
+        var month=new Date().getMonth();
 
+        var className=(month <= options.min.month) ? "disabled" : "";
         var elem = lay.elem('i', {
-          'class': 'layui-icon laydate-icon laydate-prev-m'
+          'class': 'layui-icon laydate-icon laydate-prev-m '+className
         });
         elem.innerHTML = '&#xe603;';
         return elem;
       }(), function(){ //年月选择
+
         var elem = lay.elem('div', {
           'class': 'laydate-set-ym'
         }), spanY = lay.elem('span'), spanM = lay.elem('span');
@@ -627,15 +632,19 @@
         elem.appendChild(spanM);
         return elem;
       }(), function(){ //下一月
-        
+        var month=new Date().getMonth();
+         var year=new Date().getFullYear();
+        var className=((month >= options.max.month) && year >= options.max.year)  ? "disabled" : "";
         var elem = lay.elem('i', {
-          'class': 'layui-icon laydate-icon laydate-next-m'
+          'class': 'layui-icon laydate-icon laydate-next-m '+className
         });
         elem.innerHTML = '&#xe602;';
         return elem;
       }(), function(){ //下一年
+        var year=new Date().getFullYear();
+        var className=(year >= options.max.year) ? "disabled" : "";
         var elem = lay.elem('i', {
-          'class': 'layui-icon laydate-icon laydate-next-y'
+          'class': 'layui-icon laydate-icon laydate-next-y ' +className
         });
         elem.innerHTML = '&#xe65b;';
         return elem;
@@ -660,6 +669,7 @@
         lay.each(new Array(7), function(j){
           if(i === 0){
             var th = lay.elem('th');
+
             th.innerHTML = lang.weeks[j];
             theadTr.appendChild(th);
           }
@@ -1031,9 +1041,11 @@
     
     //赋值日
     lay.each(tds, function(index, item){
+
       var YMD = [dateTime.year, dateTime.month], st = 0;
       item = lay(item);
       item.removeAttr('class');
+
       if(index < startWeek){
         st = prevMaxDate - startWeek + index;
         item.addClass('laydate-day-prev');
@@ -1048,14 +1060,19 @@
         item.addClass('laydate-day-next');
         YMD = that.getAsYM(dateTime.year, dateTime.month);
       }
+
       YMD[1]++;
       YMD[2] = st + 1;
-      item.attr('lay-ymd', YMD.join('-')).html(YMD[2]);
+      
+      item.attr('lay-ymd', YMD.join('-')).html(YMD[2]+"<p><span>￥</span>"+380000+"</p>");
+
       that.mark(item, YMD).limit(item, {
         year: YMD[0]
         ,month: YMD[1] - 1
         ,date: YMD[2]
       }, index);
+
+
     });  
     
     //同步头部年月
@@ -1691,17 +1708,67 @@
       prevYear: function(){
         if(addSubYeay('sub')) return;
         dateTime.year--;
+        if(dateTime.year <=options.min.year){
+          $(".laydate-prev-y").addClass('disabled');
+        };
+       // if(dateTime.year < options.max.year){
+       //       $(".laydate-next-y").removeClass('disabled');
+       //  }else{
+       //      $(".laydate-next-y").addClass('disabled');
+       //  }
+
+         
+
+          if((dateTime.year <=options.max.year) && (dateTime.month <=options.min.month)){
+              $(".laydate-prev-m").addClass('disabled');
+          }else{
+              $(".laydate-prev-m").removeClass('disabled');
+          }
+
+
         that.checkDate('limit').calendar();
         options.range || that.done(null, 'change');
       }
       ,prevMonth: function(){
+       
+
+
+
         var YM = that.getAsYM(dateTime.year, dateTime.month, 'sub');
         lay.extend(dateTime, {
           year: YM[0]
           ,month: YM[1]
         });
+
+        
         that.checkDate('limit').calendar();
         options.range || that.done(null, 'change');
+        //点击上一页的时候
+        //下一页 一定是可以点击，
+        //下一年 就要跟句情况判断
+        //上一页 也要根据月数和年数来判断
+        //上一年 根据年数来判断
+        
+
+        if((dateTime.year <=options.max.year) && (options.dateTime.month < options.max.month)){
+          
+            $(".laydate-next-m").removeClass('disabled');
+        }
+        if(dateTime.year <options.max.year){
+          $(".laydate-next-m").removeClass('disabled');
+        }
+
+        if(options.dateTime.year < options.max.year){
+            $(".laydate-next-y").removeClass('disabled');
+        }
+
+        if((options.dateTime.month <= options.min.month) && (options.dateTime.year <= options.min.year)){
+            $(".laydate-prev-m").addClass('disabled');
+        }
+
+        if(options.dateTime.year <= options.min.year){
+          $(".laydate-prev-y").addClass('disabled');
+        }
       }
       ,nextMonth: function(){
         var YM = that.getAsYM(dateTime.year, dateTime.month);
@@ -1711,12 +1778,40 @@
         });
         that.checkDate('limit').calendar();
         options.range || that.done(null, 'change');
+
+        if(dateTime.year > options.min.year){
+          $(".laydate-prev-y").removeClass('disabled');
+        };
+        if((dateTime.year >=options.min.year) || ((dateTime.year >=options.min.year) && (dateTime.month >options.min.month))){
+          $(".laydate-prev-m").removeClass('disabled');
+        }else{
+          $(".laydate-prev-m").addClass('disabled');
+        }
+
+        if((dateTime.year >=options.max.year) && (dateTime.month+1 >=options.min.month)){
+          $(".laydate-next-m").addClass('disabled');
+        }
+
+        if((options.dateTime.month >=(options.max.month-1)) && (options.dateTime.year >= options.max.year)){
+          $(".laydate-next-y").addClass('disabled');
+         
+        };
+
       }
       ,nextYear: function(){
         if(addSubYeay()) return;
-        dateTime.year++
+        dateTime.year++;
+        //
+        $(".laydate-prev-y,.laydate-prev-m").removeClass('disabled');
+        
         that.checkDate('limit').calendar();
         options.range || that.done(null, 'change');
+        if(dateTime.year >=options.max.year){
+         $(".laydate-next-y").addClass('disabled');
+        };
+        if((dateTime.year >=options.max.year) && (options.dateTime.month >=(options.max.month))){
+            $(".laydate-next-m").addClass('disabled');
+        }
       }
     };
   };
@@ -1735,11 +1830,16 @@
     lay.each(that.elemHeader, function(i, header){
       //上一年
       lay(header[0]).on('click', function(e){
+        if(options.dateTime.year <= options.min.year) return;
+
         that.change(i).prevYear();
+        
+
       });
       
       //上一月
       lay(header[1]).on('click', function(e){
+         if((options.dateTime.month <= options.min.month) && (options.dateTime.year <= options.min.year)) return;
         that.change(i).prevMonth();
       });
       
@@ -1760,11 +1860,20 @@
 
       //下一月
       lay(header[3]).on('click', function(e){
+        
+        if((options.dateTime.month >=(options.max.month-1)) && (options.dateTime.year >= options.max.year)){
+          $(".laydate-next-y").addClass('disabled');
+          return
+        };
         that.change(i).nextMonth();
       });
       
       //下一年
       lay(header[4]).on('click', function(e){
+        if(options.dateTime.year >=options.max.year){
+              $(".laydate-next-y").addClass("disabled");
+              return ;
+        };
         that.change(i).nextYear();
       });
     });
