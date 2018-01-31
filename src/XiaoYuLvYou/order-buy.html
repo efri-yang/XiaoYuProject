@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> @@include("./views/_staticCssJs.html")
+
+    <script type="text/javascript" src="js/laydate/laydate.js"></script>
+</head>
+
+<body style="background:#f8f8f8;">
+	@@include("./views/_header-top.html")
+
+	<div class="coms-tit-type bgfff">
+        <span class="tit">套餐类型</span>
+    </div>
+    <ul class="order-tc-list bgfff clearfix">
+		<li class="active"><a href="#">双人床</a></li>
+		<li><a href="#">双人床</a></li>
+		<li><a href="#">双人床</a></li>
+		<li><a href="#">双人床</a></li>
+		<li><a href="#">双人床</a></li>
+		<li><a href="#">双人床</a></li>
+		<li><a href="#">双人床</a></li>
+    </ul>
+	<div class="border-b-20 border-t-1"></div>
+    <div class="coms-tit-type bgfff" style="border-bottom: none;">
+        <span class="tit">使用日期</span>
+    </div>
+
+ <div class="layui-inline order-layui-datetime" id="test-n1"></div>
+    <script type="text/javascript">
+  laydate.render({
+    elem: '#test-n1',
+    showBottom:false,
+    calendar: false,
+    min: '2018-1-1',
+  	max: '2019-12-31',
+    position: 'static',
+    range:false,
+
+    value: new Date(),
+    done: function(value, date, endDate){
+    	
+    },
+    change: function(value, date, endDate){
+
+    }
+  });
+    </script>
+
+	<div class="border-b-20 border-t-1"></div>
+	<div class="order-buy-num bgfff">
+	    <div class="coms-tit-type ">
+	        <span class="tit">购买数量</span>
+	    </div>
+	    <div class="hand-num">
+	    	<span class="reduce disable"><i></i></span>
+			<input type="number" class="ipt-number" value="1">
+			<span class="plus"><i></i></span>
+	    </div>
+	    <div class="order-phone-edit">
+			<input type="number" class="ipt-phone" placeholder="请输入您的手机号">
+			<p class="tip">成功购买后，系统将向此手机发送核销码信息</p>
+	    </div>
+	    <div class="order-phone-info" style="display: none">
+			<p class="tip">成功购买后，系统将向15080347485 发送核销码信息</p>
+			<a href="#" class="btn-change">修改手机号</a>
+	    </div>
+    </div>
+    <div class="border-b-20 border-t-1"></div>
+
+    <ul class="order-maninfo-list">
+		<li>
+			<div class="coms-tit-type">
+		        <span class="tit">消费者信息</span>
+		    </div>
+		    <div class="form-box">
+				<input type="text" class="ipt-text" placeholder="联系人" />
+				<input type="text" class="ipt-text" placeholder="手机号" />
+				<input type="text" class="ipt-text" placeholder="身份证" />
+
+				<div class="linker clearfix"><a><i></i>选择联系人</a></div>
+		    </div>
+		</li>
+		<li>
+			<div class="coms-tit-type">
+		        <span class="tit">消费者信息</span>
+		    </div>
+		    <div class="form-box">
+				<input type="text" class="ipt-text" placeholder="联系人" />
+				<input type="text" class="ipt-text" placeholder="手机号" />
+				<input type="text" class="ipt-text" placeholder="身份证" />
+
+				<div class="linker clearfix"><a><i></i>选择联系人</a></div>
+		    </div>
+		</li>
+    </ul>
+
+    <div class="order-maninfo-addbtn">
+		<span><i></i>新增消费者</span>
+    </div>
+
+    <div class="order-fixed-bt-seat"></div>
+
+
+    <ul class="order-fixed-bt">
+		<li class="totalprice">
+			总金额：<b>￥</b><span>5600</span>
+		</li>
+		<li class="gobuy"><a href="#">去支付</a></li>
+    </ul>
+   
+</body>
+</html>
