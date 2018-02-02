@@ -1066,7 +1066,7 @@
 
        //**********************************************************************************************************
       var dataT=YMD.join('-');
-
+      console.dir(YMD[2]);
       var price=options.serverData.normal;
 
       $.each(options.serverData.special,function(index,obj){
@@ -1723,6 +1723,10 @@
         if(dateTime.year <=options.min.year){
           $(".laydate-prev-y").addClass('disabled');
         };
+        if(dateTime.year < options.max.year){
+          $(".laydate-next-y").removeClass('disabled');
+        };
+
        // if(dateTime.year < options.max.year){
        //       $(".laydate-next-y").removeClass('disabled');
        //  }else{
@@ -1733,10 +1737,15 @@
 
           if((dateTime.year <=options.max.year) && (dateTime.month <=options.min.month)){
               $(".laydate-prev-m").addClass('disabled');
+             
           }else{
               $(".laydate-prev-m").removeClass('disabled');
           }
-
+          if((dateTime.year <=options.max.year) && (dateTime.month <=options.max.month)){
+            $(".laydate-next-m").removeClass('disabled');
+          }else{
+            $(".laydate-next-m").removeClass('disabled');
+          }
 
         that.checkDate('limit').calendar();
         options.range || that.done(null, 'change');
