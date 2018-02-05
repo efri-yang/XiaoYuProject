@@ -1038,7 +1038,7 @@
     
     prevMaxDate = laydate.getEndDate(dateTime.month || 12, dateTime.year); //计算上个月的最后一天
     thisMaxDate = laydate.getEndDate(dateTime.month + 1, dateTime.year); //计算当前月的最后一天
-    $("#test-n1 .layui-laydate-content").find("table").attr("data-m",dateTime.month+1).attr("data-y",dateTime.year)
+    
     //赋值日
     lay.each(tds, function(index, item){
 
@@ -1060,24 +1060,23 @@
         item.addClass('laydate-day-next');
         YMD = that.getAsYM(dateTime.year, dateTime.month);
       }
+
       YMD[1]++;
       YMD[2] = st + 1;
 
        //**********************************************************************************************************
-      // var dataT=YMD.join('-');
+      var dataT=YMD.join('-');
 
-      // var price=options.serverData.normal;
-      // console.dir(that.priceArr);
-      // $.each(options.serverData.special,function(index,obj){
-      //     if(index==dataT){
-      //         price=obj;
-      //         return;
-      //     }
-      // })
-    
-      
-      item.attr('data-d', YMD[2])
-      item.attr('lay-ymd', YMD.join('-')).html(YMD[2]);
+      var price=options.serverData.normal;
+      console.dir(that.priceArr);
+      $.each(options.serverData.special,function(index,obj){
+          if(index==dataT){
+              price=obj;
+              return;
+          }
+      })
+     
+      item.attr('lay-ymd', YMD.join('-')).html(YMD[2]+"<p><span>￥</span>"+price+"</p>");
  //**********************************************************************************************************
       that.mark(item, YMD).limit(item, {
         year: YMD[0]

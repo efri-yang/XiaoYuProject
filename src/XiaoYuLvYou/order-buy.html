@@ -30,7 +30,8 @@
 
  <div class="layui-inline order-layui-datetime" id="test-n1"></div>
     <script type="text/javascript">
-  laydate.render({
+   
+  var lay=laydate.render({
     elem: '#test-n1',
     showBottom:false,
     calendar: false,
@@ -39,26 +40,18 @@
     position: 'static',
     range:false,
     value: new Date(),
-    serverData:{
-    	special:{
-    		"2018-2-1":"2800",
-    		"2018-2-2":"3200",
-    		"2018-2-3":"3600",
-    		"2018-2-4":"4000",
-    		"2018-2-5":"4400",
-    		"2018-2-6":"4800"
-    	},
-    	normal:2500
-    },
     done: function(value, date, endDate){
+    	//上一个月 下一个月 是不会触发done
     	
     },
+   
     change: function(value, date, endDate){
-    	$.ajax({
-    		url:""
-    	})
+    	//判断year-month 是否一致，如果一致 就不用请求，如果不一致 那就要请求
+    	console.dir(date)
     }
   });
+
+  //ajax 请求  请求完成后再去赋值
     </script>
 
 	<div class="border-b-20 border-t-1"></div>
