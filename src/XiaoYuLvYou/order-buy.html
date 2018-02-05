@@ -29,30 +29,8 @@
     </div>
 
  <div class="layui-inline order-layui-datetime" id="test-n1"></div>
-    <script type="text/javascript">
-   
-  var lay=laydate.render({
-    elem: '#test-n1',
-    showBottom:false,
-    calendar: false,
-    min: '2018-1-15',
-  	max: '2020-1-31',
-    position: 'static',
-    range:false,
-    value: new Date(),
-    done: function(value, date, endDate){
-    	//上一个月 下一个月 是不会触发done
-    	
-    },
-   
-    change: function(value, date, endDate){
-    	//判断year-month 是否一致，如果一致 就不用请求，如果不一致 那就要请求
-    	console.dir(date)
-    }
-  });
 
-  //ajax 请求  请求完成后再去赋值
-    </script>
+    <script type="text/javascript" src="./js/ddd.js"></script>
 
 	<div class="border-b-20 border-t-1"></div>
 	<div class="order-buy-num bgfff">
