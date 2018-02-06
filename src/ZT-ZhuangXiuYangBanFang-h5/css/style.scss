@@ -1,0 +1,88 @@
+@import "./scss/_base.scss";
+@import "./scss/_funvar.scss";
+
+.banner{
+	text-align:center; 
+	img{
+		max-width:100%;
+		vertical-align:top; 
+	}
+}
+
+.tab-hd-list{
+	display:flex;
+	border-bottom:px2rem(20px) solid #fafafa;
+	li{
+		flex:1;
+		a{
+			color:#333333;
+			font-size:px2rem(30px);
+			text-align:center;
+			display:block;
+			height:px2rem(97px);
+			line-height:px2rem(85px); 
+			padding:px2rem(6px) 0;  
+		}
+		&.active{
+			a{
+				border-bottom:px2rem(6px) solid #00c08d; 
+			}
+		}
+	}
+}
+.tab-bd-item{
+	display:none;
+	&.active{
+		display:block;
+	}
+}
+.tab-bd-nrjs{
+	padding:px2rem(30px) px2rem(20px);
+	font-size:px2rem(28px);
+	line-height:1.7;
+	color:#666666;
+	*{
+		max-width:100% !important;
+	}
+}
+.ljbm-btn{
+	padding:px2rem(37px) px2rem(20px);
+	a{
+		height:px2rem(93px);
+		line-height:px2rem(93px);
+		display:block;
+		text-align:center;
+		background:#00c08d;
+		color:#fff;
+		font-size:px2rem(36px);
+		&:active{
+			background-color:darken(#00c08d,5%);
+		}
+	}
+}
+
+.tab-bd-nrhd{
+	padding:px2rem(30px) px2rem(20px);
+	.item{
+		position: relative;
+		padding-left:px2rem(140px); 
+		margin-bottom:px2rem(15px);
+		.lab{
+			position:absolute;
+			left:0;
+			top:0;
+			color:#000000;
+			font-size:px2rem(28px);
+			
+		}
+		.txt{
+			font-size:px2rem(28px);
+			color:#666666;
+			.tip{
+				color:#e53f37;
+			}
+		}
+	}
+}
+
+
