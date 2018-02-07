@@ -192,16 +192,21 @@
     .form-box{
     	margin-top: px2rem(20px); 
     	.item{
-    		margin-bottom:px2rem(20px); 
+    		margin-bottom:px2rem(10px); 
     	}
     	.ipt-text{
-    		padding:px2rem(29px) px2rem(15px); 
+    		padding:px2rem(24px) px2rem(15px); 
     		line-height:px2rem(30px);  
     		background:#f3f3f3;
     		border:none; 
     		width:100%; 
+    		font-size:px2rem(28px);
+    	}
+    	.submit-btn{
+    		padding-top:px2rem(20px); 
     	}
     	.ipt-submit{
+    		-webkit-appearance:button;
     		height:px2rem(83px);
     		line-height:px2rem(83px);
     		background:#00c08d;
@@ -228,7 +233,7 @@
 
 .dropdown-box{
         position:relative;
-        z-index:10;
+        z-index:100;
         
         .arrow{
            
@@ -236,27 +241,29 @@
             right:9px;
             top:50%;
             margin-top:px2rem(-7px);
-
+	
             border-style:solid dashed dashed dashed;
 			border-width:px2rem(14px);
-			border-color:#666 transparent transparent transparent;
+			border-color:#999 transparent transparent transparent;
 			width:0;height:0;
            
         }
         >cite{
             
-            padding:px2rem(25px) px2rem(15px); 
-            color:#848484;
+            padding:px2rem(21px) px2rem(70px) px2rem(21px) px2rem(15px); 
+            color:#a5a5a5;
             font-size:px2rem(28px); 
-           
+            overflow:hidden;
             cursor:text;
             font-style:normal;
             
-            display:block;
+           
            	background:#f3f3f3; 
             position:relative;
             cursor:pointer;
             @include text-overflow-1;
+            white-space:nowrap; 
+             display:block;
             &.active{
                 color:#333;
             }
@@ -267,13 +274,13 @@
             position:absolute;
             display:none;
             left:0;
-            top:px2rem(87px);
-            width:100%; 
-            max-height:px2rem(200px); 
+            top:px2rem(76px);
+            width:100%;
+            height:px2rem(300px);
+            
             background:#fff;
-          
-           
-            overflow:scroll;
+
+            overflow-y:hidden;
             &::-webkit-scrollbar {width: 6px;height:6px;}
             &::-webkit-scrollbar-track-piece{background-color: #eee;margin: -2px;}
             &::-webkit-scrollbar-thumb{background: #aaa;min-height: 150px;min-width: 150px;border-radius: 10px;}
@@ -292,6 +299,7 @@
                     @include text-overflow-1;
                     overflow:hidden;
                     display:block;
+                    color:#666;
                 }
             }
         }
