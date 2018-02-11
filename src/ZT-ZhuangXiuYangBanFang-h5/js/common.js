@@ -136,20 +136,20 @@
         $(document).on("click", function(event) {
             var relateElem = event.relatedTarget;
             if ($(relateElem).closest($('[data-roler="dropdown"]')).length > 0) {
+
                 return;
             } else {
                 $('[data-roler="dropdown"]').find(".scroll-dropdown-wrap").hide();
             }
         });
-        $(document).on("click", '[data-roler="dropdown"] cite', function() {
+        $(document).on("click", '[data-roler="dropdown"] cite', function(event) {
             var $this = $(this);
-            if($this.siblings(".scroll-dropdown-wrap").is(":visible")){
-             
-                $this.siblings(".scroll-dropdown-wrap").hide();
-            }else{
+            event.stopPropagation() 
+           
+           
 
                 $this.siblings(".scroll-dropdown-wrap").show();
-            }
+          
             
             
                 iscrollDrop=new IScroll('#J_scroll-dropdown');

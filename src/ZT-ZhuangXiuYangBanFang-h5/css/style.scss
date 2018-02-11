@@ -218,6 +218,20 @@
     			background-color:darken(#00c08d,5%);
     		}   
     	}
+    	.time-beigin{
+    		
+    		
+    		position:relative;
+    		
+    		.mask{
+    			position:absolute;
+    			left:0;
+    			right:0;
+    			top:0;
+    			bottom:0;
+    		}
+    	}
+    	
     }
 }
 
@@ -316,6 +330,22 @@
                 }
             }
         }
+ }
+
+ .dialog-time-area{
+ 	background: #fff;
+    float: left;
+    visibility: hidden;
+    display: none;
+    border-radius: px2rem(10px);
+    .layui-laydate-main,.layui-laydate-static{
+    	width:100%;
+    }
+    .layui-laydate-content {
+    	table{
+    		width:100%;
+    	}
+    }
  }
 
 
