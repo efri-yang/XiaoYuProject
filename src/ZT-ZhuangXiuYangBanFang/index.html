@@ -10,6 +10,7 @@
     <script type="text/javascript" src="js/bxSlider/jquery.bxslider.js"></script>
     <link rel="stylesheet" type="text/css" href="js/bxSlider/jquery.bxslider.css">
     <script type="text/javascript" src="js/laydate/laydate.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 
 <body>
@@ -42,8 +43,21 @@
                         <label class="lab">小区名称</label>
                     </div>
                     <div class="item">
-                        <input type="text" class="ipt-text" />
-                        <label class="lab">当前装修阶段</label>
+                       <!--  <input type="text" class="ipt-text" />
+                        <label class="lab">当前装修阶段</label> -->
+                        <div class="dropdown-box" data-roler="dropdown">
+                             <cite class="cite">装修阶段</cite>
+                             <i class="arrow"></i>
+                             <ul>
+                                 <li><a href="#" selid="1">前期准备</a></li>
+                                 <li><a href="#" selid="2">水电阶段</a></li>
+                                 <li><a href="#" selid="3">泥水阶段</a></li>
+                                 <li><a href="#" selid="4">木作阶段</a></li>
+                                 <li><a href="#" selid="5">油漆阶段</a></li>
+                                 <li><a href="#" selid="6">安装阶段</a></li>
+                             </ul>
+                             <input type="hidden" id="J_dropselhidden">
+                        </div>
                     </div>
                     <div class="item clearfix">
                         <div class="yjzx-time">
@@ -252,13 +266,13 @@
         
         	laydate.render({
 				elem: '#J_ipt-zxtime',
-				type: 'datetime',
+				type: 'date',
 				range: true
 			});
         
     });
     </script>
-    <div style="height: 1000px"></div>
+    
 </body>
 
 </html>

@@ -20,9 +20,9 @@
             var $this = $(this);
             dropdownHandle($this);
         });
-        var $dropDown = $('#J_zsjs-order-dialog [data-roler="dropdown"]');
+        var $dropDown = $('[data-roler="dropdown"]');
         var $cite = $dropDown.children('cite');
-        var $ul = $dropDown.children('ul');
+        var $ul = $dropDown.find('ul');
         var $hiddenInut = $("#J_dropselhidden");
         if (!!$hiddenInut.val()) $cite.removeClass("active");
         /**

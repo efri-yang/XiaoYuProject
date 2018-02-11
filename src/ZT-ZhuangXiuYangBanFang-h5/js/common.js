@@ -132,18 +132,28 @@
 (function($) {
 
     $(function() {
+        var iscrollDrop;
         $(document).on("click", function(event) {
             var relateElem = event.relatedTarget;
-            $(this).removeClass("active");
             if ($(relateElem).closest($('[data-roler="dropdown"]')).length > 0) {
                 return;
             } else {
-                $('[data-roler="dropdown"]').children("ul").hide();
+                $('[data-roler="dropdown"]').find(".scroll-dropdown-wrap").hide();
             }
         });
         $(document).on("click", '[data-roler="dropdown"] cite', function() {
             var $this = $(this);
-            $this.siblings("ul").show();
+            if($this.siblings(".scroll-dropdown-wrap").is(":visible")){
+             
+                $this.siblings(".scroll-dropdown-wrap").hide();
+            }else{
+
+                $this.siblings(".scroll-dropdown-wrap").show();
+            }
+            
+            
+                iscrollDrop=new IScroll('#J_scroll-dropdown');
+            
         });
         $(document).on("click", '[data-roler="dropdown"] ul li a', function(event) {
             event.preventDefault();
@@ -152,7 +162,7 @@
         });
         var $dropDown = $('#J_dialog-bm-box [data-roler="dropdown"]');
         var $cite = $dropDown.children('cite');
-        var $ul = $dropDown.children('ul');
+        var $dropdownScroll = $dropDown.find('.scroll-dropdown-wrap');
         var $hiddenInut = $("#J_dropselhidden");
         if (!!$hiddenInut.val()) $cite.removeClass("active");
         /**
@@ -165,8 +175,7 @@
             console.dir($dropDown.length)
             $hiddenInut.val(selId);
             $cite.addClass('active').text(selText);
-            $ul.hide();
-
+            $dropdownScroll.hide();
         }
     })
 })(Zepto);

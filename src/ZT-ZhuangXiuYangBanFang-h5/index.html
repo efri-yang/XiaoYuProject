@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
     <script type="text/javascript" src="js/mdialog/mDialog.js"></script>
     <link rel="stylesheet" type="text/css" href="js/mdialog/mDialog.css" />
+    <script type="text/javascript" src="js/iscroll.js"></script>
 </head>
 
 <body>
@@ -125,22 +126,25 @@
 				<div class="dropdown-box" data-roler="dropdown">
                      <cite class="cite">装修阶段</cite>
                      <i class="arrow"></i>
-                     <ul>
-                         <li><a href="#" selid="1">项目1项目项目项目项目项目项目项目项目项目项目</a></li>
-                         <li><a href="#" selid="2">项目222222</a></li>
-                         <li><a href="#" selid="3">项目333333</a></li>
-                         <li><a href="#" selid="4">项目444444</a></li>
-                         <li><a href="#" selid="5">项目555555</a></li>
-                         <li><a href="#" selid="6">项目666666</a></li>
-                         <li><a href="#" selid="7">项目777777</a></li>
-                         <li><a href="#" selid="8">项目888888</a></li>
-                     </ul>
+                     <div class="scroll-dropdown-wrap" id="J_scroll-dropdown">
+                        <div class="scroll-dropdown-iscroll">
+                            <ul>
+                                <li><a href="#" selid="1">前期准备</a></li>
+                                <li><a href="#" selid="2">水电阶段</a></li>
+                                <li><a href="#" selid="3">泥水阶段</a></li>
+                                <li><a href="#" selid="4">木作阶段</a></li>
+                                <li><a href="#" selid="5">油漆阶段</a></li>
+                                <li><a href="#" selid="6">安装阶段</a></li>
+                            </ul>
+                            
+                        </div>
+                     </div>
                      <input type="hidden" id="J_dropselhidden">
                 </div>
-
+                
 			</div>
 			<div class="item">
-				<input type="text" class="ipt-text" placeholder="预计装修时间">
+				<input type="date"  placeholder="预计装修时间">
 			</div>
 			<div class="item">
 				<input type="number" class="ipt-text" placeholder="参与人数">
@@ -182,15 +186,15 @@
                 closeBtn: true,
                 duration: 200,
                 width:"80%",
-                // height:"90%",
-                // maxHeight: "90%", 
+                height:"90%",
+                maxHeight: "90%", 
                 content: $("#J_dialog-bm-box"),
                 buttons: false,
                 onBeforeShow: function() {
                    
                 },
                 onShow: function() {
-                  
+                 
                 },
                 onClose: function() {
                    

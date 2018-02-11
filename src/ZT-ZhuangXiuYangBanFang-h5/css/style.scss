@@ -176,7 +176,7 @@
     visibility: hidden;
     display: none;
     border-radius: px2rem(10px);
-    padding: px2rem(30px);
+    padding: px2rem(15px) px2rem(30px) px2rem(30px);
     .caption{
     	color:#152344;
     	font-size:px2rem(40px);
@@ -268,7 +268,7 @@
                 color:#333;
             }
         }
-        >ul{
+        .scroll-dropdown-wrap{
             border:1px solid #dddddd;
             border-top:none;
             position:absolute;
@@ -276,11 +276,24 @@
             left:0;
             top:px2rem(76px);
             width:100%;
-            height:px2rem(300px);
+            height:px2rem(380px);
+            overflow: hidden;
             
             background:#fff;
 
-            overflow-y:hidden;
+        }
+        .scroll-dropdown-iscroll{
+            position: relative;
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+        
+        ul{
+            
+
+ 
             &::-webkit-scrollbar {width: 6px;height:6px;}
             &::-webkit-scrollbar-track-piece{background-color: #eee;margin: -2px;}
             &::-webkit-scrollbar-thumb{background: #aaa;min-height: 150px;min-width: 150px;border-radius: 10px;}
@@ -294,8 +307,8 @@
                 a{
                     padding-left:10px;
                     font-size:14px;
-                    height:35px;
-                    line-height:35px;
+                    height:px2rem(75px);
+                    line-height:px2rem(75px);
                     @include text-overflow-1;
                     overflow:hidden;
                     display:block;
