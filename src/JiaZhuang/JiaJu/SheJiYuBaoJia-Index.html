@@ -11,7 +11,7 @@
 
 <body class="yahei">
     <!-- ****************** 头部start  *********************-->
-	@@include("./views/_headertop.html")
+    @@include("./views/_headertop.html")
     <!-- ****************** 头部end  ***********************-->
     <!-- ****************** 搜索 start  ***********************-->
     @@include("./views/_search.html")
@@ -20,14 +20,122 @@
     @@include("./views/_nav.html")
     <!-- ****************** 导航 end  ***********************-->
     <div class="wrap">
-        <ul class="nav-sub-second">
-            <li class="item-1"><a href="#"><span>设计与报价</span></a></li>
-            <li class="item-2"><a href="#"><span>局部改造</span></a></li>
-            <li class="item-3"><a href="#"><span>免费验房量房</span></a></li>
+        <ul class="nav-sub-second clear">
+            <li class="item-1 active"><a href="SheJiYuBaoJia-Index.html"><span>设计与报价</span></a></li>
+            <li class="item-2"><a href="SheJiYuBaoJia-JuBuGaiZao.html"><span>局部改造</span></a></li>
+            <li class="item-3"><a href="SheJiYuBaoJia-YanFangLiangFang.html"><span>免费验房量房</span></a></li>
         </ul>
     </div>
-    
+    <div class="sjybj-banner item-1">
+        <div class="bm-form-box">
+            <div class="reg-panel">
+                <!--装修设计-->
+                <div class="reg-form mt30 color-666">
+                    <div class="control-group mt10"><em class="color-orange mr5"><b>10</b></em>秒登记，免费获取专业设计方案</div>
+                    <div class="control-group">
+                        <input class="reg-txt" type="text" value="">
+                        <span class="inp-note">输入您的称呼</span>
+                    </div>
+                    <div class="control-group">
+                        <input class="reg-txt" type="text" value="">
+                        <span class="inp-note">请输入您的手机号码</span>
+                    </div>
+                    <div class="control-group">
+                        <button type="submit" onclick="$('#cupboardDesign').show();" class="reg-button yahei">免费申请</button>
+                    </div>
+                    <div class="control-group mt10">
+                        已为<em class="color-orange ml5 mr5"><b>60005</b></em>位业主提供专业设计方案，
+                        <br> 上百家厦门最专业的装修公司为您服务
+                    </div>
+                </div>
+                <!--end 装修设计-->
+            </div>
+        </div>
+    </div>
+    <div class="wrap sjybj-fwlc">
+        <div class="tit-type-1">
+            <p class="tit">服务流程</p>
+            <p class="line"></p>
+        </div>
+        <ul class="list clear">
+            <li class="item-1">
+                <div class="pic"></div>
+                <p class="txt">电话安排量房时间</p>
+            </li>
+            <li class="item-2">
+                <div class="pic"></div>
+                <p class="txt">专业设计上门量房</p>
+            </li>
+            <li class="item-3">
+                <div class="pic"></div>
+                <p class="txt">提供4套户型改造建议</p>
+            </li>
+            <li class="item-4">
+                <div class="pic"></div>
+                <p class="txt">提供4套精准报价方案</p>
+            </li>
+        </ul>
+    </div>
+    <div class="sjybj-mtjd">
+        <div class="tit-type-1">
+            <p class="tit">小鱼网官方媒体监督 让装修更有保障</p>
+            <p class="line"></p>
+        </div>
+        <div class="item-1"></div>
+    </div>
+    <div class="wrap">
+        <div class="sjybj-case">
+            <div class="tit-type-1">
+                <p class="tit">设计案例</p>
+                <p class="line"></p>
+            </div>
+            <ul class="list clear">
+                <li class="item-1"><a href="#"><img src="upload/sjybj_case_1.jpg" /></a></li>
+                <li class="item-2"><a href="#"><img src="upload/sjybj_case_2.jpg" /></a></li>
+                <li class="item-3"><a href="#"><img src="upload/sjybj_case_3.jpg" /></a></li>
+                <li class="item-4"><a href="#"><img src="upload/sjybj_case_4.jpg" /></a></li>
+            </ul>
+            <a href="#" class="more">查看更多</a>
+        </div>
+    </div>
+    <div class="sjybj-shenqr">
+        <div class="tit-type-1">
+            <p class="tit">最新申请装修设计</p>
+            <p class="line"></p>
+        </div>
+    </div>
+    <div class="wrap sjybj-warn">
+        <div class="tit-type-1">
+            <p class="tit">温馨提醒</p>
+            <p class="line"></p>
+        </div>
+        <div class="intro">
+            <div class="detail">
+                <p>● 预约成功后，小鱼家居客服会尽快与您联系，请您保持手机畅通。</p>
+                <p>● 免费设计与报价是小鱼家居官方公益活动，由小鱼家居口碑认证商家提供专业服务。</p>
+                <p>● 报名有疑问请咨询：18159883609 小鱼客服</p>
+            </div>
+        </div>
+    </div>
 
-
+    <div class="sjybj-xcq">
+        <div class="item-1"></div>
+        <div class="sjybj-zxfn-form">
+            <div class="wrap">
+                <div class="form-box">
+                    <span class="icon-man"></span>
+                    <div class="form">
+                        <input type="text" class="ipt-text mr10" placeholder="请输入您的称呼" /> 
+                        <input type="text" class="ipt-text mr10" placeholder="请输入您的手机号码" />
+                        <input type="submit" class="ipt-submit" value="立即免费申请">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ****************** footer start  ***********************-->
+    @@include("./views/_footer2.html")
+    <!-- ****************** footer end  ***********************-->
 </body>
+
 </html>
