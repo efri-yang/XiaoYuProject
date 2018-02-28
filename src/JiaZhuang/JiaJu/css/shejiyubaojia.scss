@@ -1,0 +1,20 @@
+.nav-sub-second{
+	li{
+		float:left;
+		width:33.33%;
+		a{
+			display:block;
+			height:90px;
+			line-height:90px;
+			color:#1a1a1a;
+			text-align: center;
+			
+			span{
+				display:inline-block;
+				height:38px;
+				line-height:38px;
+				font-size:24px;  
+			}   
+		} 
+	}
+}
