@@ -239,6 +239,15 @@ img{vertical-align:middle;}
 .nav-list li .nav-dropdown a{display:block;padding:5px 15px;font-size:16px;}
 .nav-list li .nav-dropdown a:hover{background-color:#fafafa;}
 .nav-list li.active .nav-dropdown{display:block;}
+.nav-list li a{min-width:82px}
+.nav-list li.moreactive a.nav-item {
+            background-color: #28ab00;
+            color: #fff;
+        }
+.nav-more.moreactive .icon-navarrow{border-top:8px solid #fff;}
+.nav-list li.nav-more a.nav-item{width:149px;}
+.nav-list li .nav-dropdown{width:145px;left: 39%;}
+    
 
 .con-200{width:200px;}
 .con-220{width:220px;}
