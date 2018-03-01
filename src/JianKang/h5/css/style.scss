@@ -79,7 +79,14 @@
         .tit{
             color:#282828;
             font-size:px2rem(30px);
-            @include text-overflow-1;
+            line-height:px2rem(45px);
+            height:px2rem(90px);
+            overflow: hidden;  
+            @include text-overflow-2;
+        }
+        .time{
+            color:#888888;
+            font-size:px2rem(26px);  
         }
 	}
 }
