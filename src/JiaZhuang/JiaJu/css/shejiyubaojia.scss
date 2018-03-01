@@ -393,18 +393,47 @@
             margin-left: -300px;
             margin-top: -89px;
             overflow: hidden;
-            background: url("../img/shejiyubaojia/sjybj_xcq_icon1.jpg") no-repeat top center;
+            border:3px solid #fff;
+            background:#ffe94e;
+            text-align:center;
+            .txt-1{
+            	color:#000202;
+            	font-size:40px;
+            	margin-top: 15px; 
+            	span{
+            		color:#ff0000;
+            		padding:0 10px; 
+            		font-family:arial;
+            		font-weight:bold;   
+            	}
+            }
+            .line{
+            	width:99px;
+            	height:4px;
+            	background:#ffb400;
+            	margin:10px auto 0;   
+            }
+            .txt-2{
+            	color:#000202;
+            	margin-top:15px; 
+            	font-size:26px; 
+            }
         }
     }
 
     .sjybj-zxfn-form {
-        position: absolute;
+        position: fixed;
         left: 0;
         right: 0;
         bottom: 0;
         height: 101px;
+        bottom:-200px; 
+        background-color:#000;
         background-color: rgba(0, 0, 0, 0.8);
-
+        transition: all 0.5s;
+		&.active{
+			bottom: 0;
+		}
         .form-box {
             position: relative;
             padding-left: 450px;
@@ -438,6 +467,9 @@
             overflow: hidden;
             background: url("../img/shejiyubaojia/sjybj_zxfn_form_1.png") no-repeat top center;
         }
+    }
+    .sjybj-zxfn-form-seat{
+    	height: 101px;
     }
     /**
  * 局部改造
@@ -595,7 +627,6 @@
                } 
                .txt{
                     position:absolute;
-    
                     left:0;
                     right:0;
                     bottom:-40px;
@@ -605,6 +636,7 @@
                     color:#fff;
                     font-size:18px;
                     padding: 0 10px;
+                     background-color:#000;
                     background-color:rgba(0,0,0,0.7);
                     white-space:nowrap;
                     overflow:hidden;
