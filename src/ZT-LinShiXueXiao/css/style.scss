@@ -13,3 +13,14 @@
     background:#666;
     width:400px;
 }
+
+.tabs-h-1{
+	
+}
+
+.tabs-b-1{
+	display:none;
+	&.active{
+		display:block; 
+	} 
+}
