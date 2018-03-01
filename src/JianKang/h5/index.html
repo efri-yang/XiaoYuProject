@@ -2,20 +2,62 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/flexible1.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+    <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
-	<div class="container" style="background:#f60;">
-	<p>sdfasdfasdfasssssssssssssssssssssssss</p>
-	</div>
-	
+    
+    <div class="container">
+        <div class="swiper-container banner-box">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#"><img src="upload/b_1.jpg" /></a></div>
+                <div class="swiper-slide"><a href="#"><img src="upload/b_2.jpg" /></a></div>
+                <div class="swiper-slide"><a href="#"><img src="upload/b_3.jpg" /></a></div>
+                <div class="swiper-slide"><a href="#"><img src="upload/b_4.jpg" /></a></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
 
-   
+
+        <ul class="video-list-1 clearfix border-b-10 border-t-10">
+			<li>
+				
+					<div class="video-box"><iframe frameborder="0"  src="https://v.qq.com/iframe/player.html?vid=d0026jkhvn7&tiny=0&auto=0" allowfullscreen></iframe></div>
+					<p class="txt">如何预防秋冬儿童感冒如何预防秋冬儿童感冒如何何预防秋冬儿童感冒</p>
+			</li>
+			<li>
+				
+					<div class="video-box"><iframe frameborder="0"  src="https://v.qq.com/iframe/player.html?vid=d0026jkhvn7&tiny=0&auto=0" allowfullscreen></iframe></div>
+					<p class="txt">如何预防秋冬儿童感冒如何预防秋冬儿童感冒如何何预防秋冬儿童感冒</p>
+			</li>
+        </ul>
+
+        <ul class="theme-list-1">
+			<li>
+				<a href="#">
+					<div class="pic"><img src="upload/theme_1_1.jpg" /></div>
+					<div class="tit">经方可以解决所有临经方可以解决所有临经方可以解决所有临经方可以解决所有临经方可以解决所有临经方可以解决所有临床问题吗？</div>
+					<p class="time">2018.02.22</p>
+				</a>
+			</li>
+        </ul>
+    </div>
+    
+
+    <script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+    </script>
 </body>
 
 </html>

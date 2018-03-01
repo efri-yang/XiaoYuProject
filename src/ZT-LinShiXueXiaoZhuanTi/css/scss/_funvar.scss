@@ -1,51 +1,7 @@
-
-@function px2rem($px, $base-font-size:75px) {
-    @if (unitless($px)) {
-        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
-        @return px2rem($px + 0px); // That may fail.
-    }
-    @else if (unit($px)==rem) {
-        @return $px;
-    }
-    @return ($px / $base-font-size) * 1rem;
-}
-
-
-@mixin text-overflow-1{
-    display: -webkit-box;
-    overflow: hidden;
+%text-overflow {
+    white-space: nowrap;
     text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-}
-
-@mixin text-overflow-2{
-    
-    display: -webkit-box;
     overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp:2;
-}
-
-
-@mixin text-overflow-3{
-    
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp:3;
-}
-
-
-@mixin vhcenter{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
 }
 
 
@@ -67,6 +23,14 @@
 }
 
 
+
+//兼容背景透明的方案
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+  position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+  *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+}
 
 
 @mixin linear-gradient($from, $to) {
