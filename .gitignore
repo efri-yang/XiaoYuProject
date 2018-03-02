@@ -9,7 +9,6 @@ dev/
 APSD/
 dist/
 192168026/
-ZT-LinShiXueXiao-01/
-ZT-LinShiXueXiao-02/
+ZT-LinShiXueXiao/
 *.dat
 *.sass-cache
