@@ -149,13 +149,13 @@ body {
 
 .image-gallery-wrap-1-2,.image-gallery-wrap-1-3{
     width: 804px;
+
     .gallery {
         li {
             text-align: center;
             img {
                 max-width: 100%;
-                height: 435px;
-                max-height: 100%;
+                max-height:435px;
             }
         }
     }
@@ -181,7 +181,7 @@ body {
 
     .lSPager-wrap{
         background-color: rgba(0, 0, 0, 0.5);
-        // padding: 5px  5px;
+        padding: 5px  0px;
         position: relative;
         margin-top: -90px;
         overflow:hidden;
