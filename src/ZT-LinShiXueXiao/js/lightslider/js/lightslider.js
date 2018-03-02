@@ -239,7 +239,7 @@
                     elSize = settings.verticalHeight;
                     $slide.css('height', elSize + 'px');
                 } else {
-                    elSize = $el.outerWidth();
+                    elSize = $el.outerWidth()-10;
                 }
                 $children.addClass('lslide');
                 if (settings.loop === true && settings.mode === 'slide') {
@@ -342,6 +342,7 @@
                 var $this = this;
                 refresh.createPager = function () {
                     thumbWidth = (elSize - ((settings.thumbItem * (settings.thumbMargin)) - settings.thumbMargin)) / settings.thumbItem;
+                    
                     var $children = $slide.find('.lslide');
                     var length = $slide.find('.lslide').length;
                     var i = 0,
@@ -417,7 +418,7 @@
                     if (settings.gallery) {
                         cl = 'lSGallery';
                     }
-                    $slide.after('<ul class="lSPager ' + cl + '"></ul>');
+                    $slide.after('<div class="lSPager-wrap"><div class="lSPager-inner"><ul class="lSPager ' + cl + '"></ul></div></div>');
                     var gMargin = (settings.vertical) ? 'margin-left' : 'margin-top';
                     $slide.parent().find('.lSPager').css(gMargin, settings.galleryMargin + 'px');
                     refresh.createPager();
