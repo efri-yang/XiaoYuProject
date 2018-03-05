@@ -175,8 +175,9 @@
         padding:9px;    
     }
 
-    .bs_list3 li { width:100%; height: 452px; }
-    .bs_list3 li a { display: block; height: 452px }
+    .bs_list3 li { width:100%; height:384px; }
+    .bs_list3 li a { display: block; height: 384px;text-align:center; line-height:384px; }
+   
     .cs-bannerWrap1 .banner-ui-prev { height: 55px; position: absolute; top: 170px; left: 10px; width: 52px; background: #900 }
     .cs-bannerWrap1 .banner-ui-next { height: 55px; position: absolute; top: 170px; right: 10px; width: 52px; background: #900 }
     .cs-bannerWrap1 .banner-numlist { bottom:0px;text-align: right; width: 100%; z-index: 30; background: rgba(0,0,0,0.6); padding:10px 0;height: 55px;}
