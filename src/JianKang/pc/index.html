@@ -7,10 +7,11 @@
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/banner.js"></script>
 </head>
 
 <body class="yahei" style="padding-top:30px;">
-	@@include("./views/_header.html")
+    @@include("./views/_header.html")
     <div class="nav clearfix">
         <div class="container">
             <h1 class="logo"><a href="#">小鱼健康</a></h1>
@@ -29,11 +30,43 @@
                 <li><a href="#">厦门市第五医院正式通过HIMSS EMRAM六级认证</a></li>
             </ul>
         </div>
-
         <div class="h-mod2 clearfix">
             <div class="banner-1">
-
+                <div><ul id="J_bslist3" class="bs_list3">
+                    <li data-title="描述001描述描述描述描述描述描述描述描述描述描述描述" data-small="upload/03.jpg"><a href="#"><img src="upload/03.jpg"></a></li>
+                    <li data-title="描述002" data-small="upload/04.jpg"><a href="#"><img src="upload/04.jpg"></a></li>
+                    <li data-title="描述003" data-small="upload/05.jpg"><a href="#"><img src="upload/05.jpg"></a></li>
+                    <li data-title="描述003" data-small="upload/06.jpg"><a href="#"><img src="upload/06.jpg"></a></li>
+                </ul></div>
             </div>
+            <script type="text/javascript">
+            $(function() {
+                $("#J_bslist3").bannerSlider({
+                    width:660, //宽 (如果100%的时候请传入字符串)
+                    height: 384, //高
+                    auto: true, //是否能自动滚
+                    effect: "fade", //效果
+                    Pause: 3000, //停顿时间-两个动画滚动间隔的时间
+                    animTime: 250, //一张图滚动的时间
+                    zIndex: 10, //设置层级相互遮盖
+                    parentClass: "cs-bannerWrap1",
+                    pagination: {
+                        show: true,
+                        className: "banner-numlist"
+                    },
+                    btn: {
+                        show: false,
+                        dynamic: false //是否有鼠标移动上去显示箭头的效果
+                    },
+                    describe: {
+                        show: true,
+                        left: 0,
+                        bottom: 0
+                    }
+                })
+
+            })
+            </script>
             <div class="cside">
                 <div class="coms-tit-1 clearfix">
                     <span class="tit">健康头条</span>
@@ -50,7 +83,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="h-mod3">
             <div class="coms-tit-1 clearfix">
                 <span class="tit">健康养生视频</span>
@@ -80,7 +112,6 @@
                 </li>
             </ul>
         </div>
-
         <div class="h-mod4">
             <div class="coms-tit-1 clearfix">
                 <span class="tit">合作商家</span>
@@ -104,11 +135,9 @@
                     <td><a href="#"><img src="upload/02.jpg" /></a></td>
                     <td><a href="#"><img src="upload/02.jpg" /></a></td>
                 </tr>
-
             </table>
         </div>
     </div>
-
     <div class="h-mod5">
         <div class="container relative clearfix">
             <div class="contact">
@@ -122,9 +151,7 @@
             </div>
         </div>
     </div>
-    
     @@include("./views/_footer.html")
-   
 </body>
 
 </html>
