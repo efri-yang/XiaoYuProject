@@ -1,4 +1,7 @@
 @import "./scss/_funvar.scss";
+body{
+    background:#f3f1ee; 
+}
 .container {
     width: 1100px;
     margin: 0 auto;
@@ -79,6 +82,8 @@
         }
     }
 }
+
+
 
 
 
@@ -326,3 +331,50 @@
         }
     }
 }
+
+.h-edge-fixed-wrap{
+    position:fixed;
+    left:50%;
+    width:167px; 
+    top:390px;
+    margin-left: 565px;
+    background:url("../images/edge_fixed_1.png") no-repeat top center;
+    padding-top:12px;   
+}
+
+.h-edge-fixed-inner{
+    background:url("../images/edge_fixed_2.png") no-repeat bottom center;
+    padding: 0 6px 12px;
+}
+.h-edge-fixed{
+    background:#b18f7c; 
+    .list{
+        padding:15px; 
+        li{
+            text-align:center;
+            border-bottom:1px dashed #c0a493; 
+            a{
+                color:#fff;
+                font-size:16px;
+                display:block;
+                line-height: 30px;
+                &:hover{
+                    color:#ce0f0f;
+                    text-decoration:none;  
+                }   
+            } 
+            &.last{
+                border-bottom:none;
+                display:none; 
+            }
+            &.qrcode{
+                padding:8px 0;
+                height: 123px;
+                img{
+                    max-height:100%; 
+                }  
+            }
+        }
+    }
+}
+
