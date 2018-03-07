@@ -202,27 +202,28 @@ body{
     .list {
         width: 1130px;
         li {
+            width: 340px;
             float: left;
             margin-right: 20px;
             margin-top:20px; 
-            a {
-                width: 340px;
-                height: 223px;
-                overflow: hidden;
-                display: block;
-                 text-align:center; 
-                position: relative;
-                &:hover{
-                    .pic {
-                        img{
-                            transform: scale(1.1,1.1);
-                        }
-                    }
-                    .vbtn {
-                        transform: scale(1.1,1.1);
-                    }
-                }
-            }
+            // a {
+            //     width: 340px;
+            //     height: 223px;
+            //     overflow: hidden;
+            //     display: block;
+            //      text-align:center; 
+            //     position: relative;
+            //     &:hover{
+            //         .pic {
+            //             img{
+            //                 transform: scale(1.1,1.1);
+            //             }
+            //         }
+            //         .vbtn {
+            //             transform: scale(1.1,1.1);
+            //         }
+            //     }
+            // }
             .pic {
                 width: 340px;
                 height: 223px;
@@ -238,32 +239,30 @@ body{
                 }
             }
             .txt {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                bottom: 0;
+               
                 height: 39px;
                 line-height: 39px;
                 padding:0 10px; 
-                color: #ffffff;
+                display: block;
+                color:#333333; 
                 font-size: 14px;
-                background:url("../images/bg_mask.png") repeat; 
+                text-align:center; 
+                // background:url("../images/bg_mask.png") repeat; 
                 @extend %text-overflow;
                 
             }
-            .vbtn {
-                width: 79px;
-                height: 79px;
-                overflow: hidden;
-                background: url("../images/v_plau_btn.png") no-repeat top center;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                margin-top: -38.5px;
-                margin-left: -38.5px;
-                transition: all 0.35s;
-            }
+            // .vbtn {
+            //     width: 79px;
+            //     height: 79px;
+            //     overflow: hidden;
+            //     background: url("../images/v_plau_btn.png") no-repeat top center;
+            //     position: absolute;
+            //     left: 50%;
+            //     top: 50%;
+            //     margin-top: -38.5px;
+            //     margin-left: -38.5px;
+            //     transition: all 0.35s;
+            // }
         }
     }
 }
