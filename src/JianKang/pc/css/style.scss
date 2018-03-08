@@ -162,6 +162,7 @@ body{
                     line-height: 40px;
                     color: #333333;
                     padding-left: 10px;
+                    @extend %text-overflow;
                     &:hover {
                         color: #ce0f0f;
                     }
