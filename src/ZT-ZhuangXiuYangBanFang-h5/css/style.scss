@@ -38,9 +38,12 @@
 }
 .tab-bd-nrjs{
 	padding:px2rem(30px) px2rem(20px);
-	font-size:px2rem(28px);
+	font-size:px2rem(30px);
 	line-height:1.7;
 	color:#666666;
+	p{
+		text-indent: 2em;
+	}
 	*{
 		max-width:100% !important;
 	}
@@ -51,6 +54,7 @@
 .ljbm-btn{
 	padding:px2rem(30px) px2rem(20px);
 	position:fixed;
+	z-index:100; 
 	left:0;
 	bottom:0;
 	right: 0;
@@ -75,9 +79,9 @@
 	padding:px2rem(30px) 0;
 	.item{
 		position: relative;
-		padding-left:px2rem(160px);
+		padding-left:px2rem(200px);
 		padding-right:px2rem(20px);  
-		margin-bottom:px2rem(15px);
+		margin-bottom:px2rem(25px);
 		.lab{
 			position:absolute;
 			padding-left:px2rem(20px); 
@@ -85,19 +89,86 @@
 			top:0;
 			color:#000000;
 			font-size:px2rem(28px);
+			i{
+				display:inline-block;
+				width:px2rem(31px);
+				height:px2rem(31px);
+				vertical-align:middle;
+				background-repeat:no-repeat;
+				
+				margin-right:px2rem(10px); 
+
+			}
 			
 		}
 		.txt{
-			font-size:px2rem(28px);
+			font-size:px2rem(30px);
 			color:#666666;
 			.tip{
 				color:#e53f37;
+			}
+		}
+		&.item-1{
+			.lab{
+				i{
+					background-image:url("../images/hd_icon_1.png");
+					background-size:100% 100%; 
+				}
+			}
+		}
+		&.item-2{
+			.lab{
+				i{
+					background-image:url("../images/hd_icon_2.png"); 
+					background-size:auto 100%;
+				}
+			}
+		}
+		&.item-3{
+			.lab{
+				i{
+					background-image:url("../images/hd_icon_3.png"); 
+					background-size:auto 100%;
+				}
+			}
+		}
+		&.item-4{
+			.lab{
+				i{
+					background-image:url("../images/hd_icon_4.png");
+					background-size:100% auto; 
+				}
+			}
+		}
+		&.item-5{
+			.lab{
+				i{
+					background-image:url("../images/hd_icon_5.png");
+					background-size:100%; 
+				}
+			}
+		}
+		&.item-6{
+			.lab{
+				i{
+					background-image:url("../images/hd_icon_6.png");
+					background-size:100% auto; 
+				}
+			}
+		}
+		&.item-7{
+			.lab{
+				i{
+					background-image:url("../images/hd_icon_7.png");
+					background-size:100% auto; 
+				}
 			}
 		}
 	}
 	.hdsj{
 		border-top:px2rem(20px) solid #fafafa;
 		background:#fff; 
+
 		.caption{
 			.tit{
 				color:#3f3a39;
@@ -113,11 +184,17 @@
 				margin: px2rem(15px) auto 0;  
 				display:block;  
 			}
+			.sjname{
+				display:block;
+				margin-top:px2rem(10px);  
+				text-align:center;
+				color:#666666; 
+				font-size:px2rem(28px);  
+			}
 		}
 		.pic{
 			width:px2rem(610px);
-			height:px2rem(160px);
-			margin:px2rem(40px) auto 0;
+			margin:px2rem(30px) auto 0;
 			img{
 				max-width: 100%;
 			}  
@@ -128,46 +205,15 @@
 
 .tab-bd-wqhg{
 	padding:px2rem(30px) px2rem(20px); 
-	.pic{
-		width:px2rem(710px);
-		height:px2rem(466px);
-		line-height: px2rem(466px);
-		text-align:center; 
-		overflow:hidden; 
-		position:relative; 
-		img{
-			max-width:100%; 
-		}
-		.tit{
-			position:absolute;
-			left:0;
-			right:0;
-			bottom:0;
-			padding:0 px2rem(15px);
-			height:px2rem(60px);
-			line-height: px2rem(60px);
-			background-color:rgba(0,0,0,0.8); 
-			color:#fff;
-			font-size:px2rem(28px); 
-			z-index: 100; 
-			text-align:left; 
-			@include text-overflow-1;    
-		}
-	}
-	.swiper-button-next,.swiper-button-prev{
-		width:px2rem(37px);
-		height:px2rem(87px);
-		overflow:hidden;
-		background-image:url("../images/arrow_dir.png");
-		background-repeat: no-repeat;
-		background-size:100% auto;     
-	}
-	.swiper-button-prev{
-		background-position:0 0; 
-	}
-	.swiper-button-next{
-		background-position:0 px2rem(-87px); 
-	}
+	font-size:px2rem(28px);
+		color:#666666;
+		line-height: 1.7;
+	p{
+		text-align:2em; 
+	}	
+	*{
+		max-width: 100%;
+	}  
 }
 
 .dialog-bm-box{
@@ -236,13 +282,63 @@
 }
 
 .tab-bd-lmgms{
-	font-size:px2rem(28px);
-	color:#666666;
-	line-height: 1.7;
-	padding:px2rem(30px) px2rem(20px); 
-	*{
-		max-width: 100%;
-	}  
+	padding:0 px2rem(20px); 
+	.infor{
+		font-size:px2rem(30px);
+		color:#666666;
+		line-height: 1.7;
+		padding:px2rem(30px) 0; 
+		*{
+			max-width: 100%;
+		}
+		p{
+			text-indent: 2em;
+		}  
+	}	
+
+	.pic{
+		width:px2rem(710px);
+		height:px2rem(466px);
+		line-height: px2rem(466px);
+		text-align:center; 
+		overflow:hidden; 
+		position:relative; 
+		img{
+			max-width:100%; 
+		}
+		.tit{
+			position:absolute;
+			left:0;
+			right:0;
+			bottom:0;
+			padding:0 px2rem(15px);
+			height:px2rem(60px);
+			line-height: px2rem(60px);
+			background-color:rgba(0,0,0,0.8); 
+			color:#fff;
+			font-size:px2rem(28px); 
+			z-index: 100; 
+			text-align:left; 
+			@include text-overflow-1;    
+		}
+	}
+	.swiper-button-next,.swiper-button-prev{
+		width:px2rem(37px);
+		height:px2rem(87px);
+		overflow:hidden;
+		background-image:url("../images/arrow_dir.png");
+		background-repeat: no-repeat;
+		background-size:100% auto;     
+	}
+	.swiper-button-prev{
+		background-position:0 0; 
+	}
+	.swiper-button-next{
+		background-position:0 px2rem(-87px); 
+	}
+
+
+	
 }
 
 .dropdown-box{

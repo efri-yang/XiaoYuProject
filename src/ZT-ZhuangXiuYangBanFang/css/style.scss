@@ -128,17 +128,75 @@
                 color: #000000;
                 float: left;
                 font-weight: bold;
-                width: 85px;
+                width: 105px;
                 overflow: hidden;
+                i{
+                    width:20px;
+                    height:20px;
+                    margin-right:5px;
+                    display:inline-block;
+                    vertical-align:middle;  
+                    background-position:center;
+                    background-repeat:no-repeat;    
+                }
             }
             .intro-txt {
                 color: #666666;
                 float: left;
-                width: 530px;
+                width: 500px;
                 overflow: hidden;
                 font-size: 16px;
                 .tip {
                     color: #e53f37;
+                }
+            }
+            &.detail-item-1{
+                .lab {
+                    i{
+                        background-image:url("../images/hd_icon_4.png"); 
+                    }
+                }
+            }
+            &.detail-item-2{
+                .lab {
+                    i{
+                        background-image:url("../images/hd_icon_5.png"); 
+                    }
+                }
+            }
+            &.detail-item-3{
+                .lab {
+                    i{
+                        background-image:url("../images/hd_icon_6.png"); 
+                    }
+                }
+            }
+            &.detail-item-4{
+                .lab {
+                    i{
+                        background-image:url("../images/hd_icon_7.png"); 
+                    }
+                }
+            }
+            &.detail-item-5{
+                .lab {
+                    i{
+                        background-image:url("../images/hd_icon_1.png"); 
+                    }
+                }
+            }
+            &.detail-item-6{
+                .lab {
+                    i{
+                        background-image:url("../images/hd_icon_2.png"); 
+                    }
+                }
+            }
+            &.detail-item-7{
+                .lab {
+                    i{
+                        background-image:url("../images/hd_icon_3.png"); 
+                    }
                 }
             }
         }
@@ -217,27 +275,27 @@
         .arrow-dir {
             position: absolute;
             top: 50%;
-            width: 37px;
-            height: 87px;
-            margin-top: -43.5px;
+            width: 44px;
+            height: 44px;
+            margin-top: -22px;
 
             a {
                 text-indent: -999999px;
                 display: block;
                 height: 100%;
-                background-image: url("../images/arrow_dir.png");
+                background-position:center;
                 background-repeat: no-repeat;
             }
             &.arrow-l {
                 left: 20px;
                 a {
-                    background-position: 0 0;
+                    background:url("../images/arrow_dir_left.png"); 
                 }
             }
             &.arrow-r {
                 right: 20px;
                 a {
-                    background-position: 0 -87px;
+                    background:url("../images/arrow_dir_right.png"); 
                 }
             }
         }
@@ -248,8 +306,15 @@
         font-size: 14px;
         line-height: 24px;
         height: 430px;
-        padding: 28px 10px 10px;
+        padding: 15px 10px 10px;
         border: 6px solid #323232;
+        .tit01{
+            font-size:18px;
+            color:#323232; 
+            text-align:center;
+            font-weight:bold;  
+            margin-bottom:10px;   
+        }
         p {
             text-indent: 2em;
             margin-bottom: 20px;
@@ -265,33 +330,33 @@
         box-shadow: none;
         margin-bottom:0;
     }
-    .arrow-dir {
-        position: absolute;
-        top: 50%;
-        width: 37px;
-        height: 87px;
-        margin-top: -43.5px;
+     .arrow-dir {
+            position: absolute;
+            top: 50%;
+            width: 44px;
+            height: 44px;
+            margin-top: -47px;
 
-        a {
-            text-indent: -999999px;
-            display: block;
-            height: 100%;
-            background-image: url("../images/arrow_dir.png");
-            background-repeat: no-repeat;
-        }
-        &.arrow-l {
-            left: 20px;
             a {
-                background-position: 0 0;
+                text-indent: -999999px;
+                display: block;
+                height: 100%;
+                background-position:center;
+                background-repeat: no-repeat;
+            }
+            &.arrow-l {
+                left: 20px;
+                a {
+                    background:url("../images/arrow_dir_left.png"); 
+                }
+            }
+            &.arrow-r {
+                right: 20px;
+                a {
+                    background:url("../images/arrow_dir_right.png"); 
+                }
             }
         }
-        &.arrow-r {
-            right: 20px;
-            a {
-                background-position: 0 -87px;
-            }
-        }
-    }
     .bxslider {
         li {
             .pic {
@@ -301,6 +366,7 @@
                 overflow: hidden;
                 img {
                     max-width: 100%;
+                    
                     vertical-align: middle;
                     display: inline-block;
                 }
@@ -375,27 +441,27 @@
         .arrow-dir {
             position: absolute;
             top: 50%;
-            width: 37px;
-            height: 87px;
-            margin-top: -43.5px;
+            width: 44px;
+            height: 44px;
+            margin-top: -22px;
 
             a {
-                text-indent: -999px;
+                text-indent: -999999px;
                 display: block;
                 height: 100%;
-                background-image: url("../images/arrow_dir.png");
+                background-position:center;
                 background-repeat: no-repeat;
             }
             &.arrow-l {
                 left: 20px;
                 a {
-                    background-position: 0 0;
+                    background:url("../images/arrow_dir_left.png"); 
                 }
             }
             &.arrow-r {
                 right: 20px;
                 a {
-                    background-position: 0 -87px;
+                    background:url("../images/arrow_dir_right.png"); 
                 }
             }
         }
