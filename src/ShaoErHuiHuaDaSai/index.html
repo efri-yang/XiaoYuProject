@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/bxSlider/jquery.bxslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/bxSlider/jquery.bxslider.css">
+</head>
+
+<body style="padding-top:0;">
+    @@include("./views/_header.html")
+    <div class="banner"></div>
+    <div class="container">
+        <div class="com-tit type1"></div>
+        <div class="mod-1 clearfix">
+            <span class="icon-top"></span>
+            <div class="mod-1-slider">
+                <div class="slider-gallery">
+                    <ul class="bxslider">
+                        <li><img src="./upload/demo_1.jpg" /></li>
+                        <li><img src="./upload/demo_1.jpg" /></li>
+                        <li><img src="./upload/demo_1.jpg" /></li>
+                        <li><img src="./upload/demo_1.jpg" /></li>
+                    </ul>
+                    <div class="pa-box"></div>
+                    <div class="arrow-l arrow-dir"></div>
+                    <div class="arrow-r arrow-dir"></div>
+                </div>
+            </div>
+            <div class="mod-1-info">
+                <div class="tip-item">
+                    <p class="tit">规则</p>
+                    <div class="detail">
+                        <p><i>1</i>每个用户每天可投10票</p>
+                        <p><i>2</i>严禁恶意刷票行为，一旦发现取消评选资格</p>
+                        <p><i>3</i>投票结束后，将有工作人员电话通知参与线下领奖</p>
+                        <p><i>4</i>请严格遵守比赛规则，以保证竞赛的公平与公正</p>
+                    </div>
+                </div>
+
+                <div class="tip-item term-2">
+                    <p class="tit">奖品</p>
+                    <div class="detail">
+                        <p><i>1</i>一等奖一名：现金800元（一名）</p>
+                        <p><i>2</i>二等奖一名：凤凰折叠自行车一辆</p>
+                        <p><i>3</i>三等奖一名：高档欧式骨瓷咖啡杯套装一套</p>
+                        <p><i>4</i>幸运奖十四名：每人十里蓝山景区套票5张</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="com-tit type2"></div>
+        <div class="mod-2">
+            <ul class="list">
+                <li>
+                    <div class="pic"><img src="upload/demo_2.jpg" /></div>
+                    <p class="tit">最美花海</p>
+                    <p class="rank">编号7 / 排名42</p>
+                    <p class="total">总票数128</p>
+                    <p class="name">许佳淇（11岁）</p>
+                    <a href="#" class="tpbtn">投我一票</a>
+                </li>
+            </ul>
+        </div>
+        <div style="height:300px;"></div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $('.mod-1-slider .bxslider').bxSlider({
+            slideWidth: 710,
+            slideHeight: 470,
+            auto: true,
+            nextSelector: ".mod-1-slider .arrow-r",
+            prevSelector: ".mod-1-slider .arrow-l",
+            pagerSelector: ".mod-1-slider .pa-box"
+        });
+
+
+
+      
+
+    });
+    </script>
+    @@include("./views/_footer.html")
+</body>
+
+</html>
