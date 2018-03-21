@@ -2,6 +2,8 @@
 @import "./scss/_base.scss";
 @import "./scss/_funvar.scss";
 
+input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);} 
+
 .coms-field-select {
     -webkit-appearance: none !important;
     -webkit-border-radius: 0;
@@ -661,7 +663,7 @@
 .desiger-dialog-box {
     background: #fff;
     padding: px2rem(90px) px2rem(30px) px2rem(30px);
-    position: fixed;
+    position: absolute;
     z-index: 999;
     border-radius: px2rem(5px);
     width: 80%;

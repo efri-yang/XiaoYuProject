@@ -27,11 +27,16 @@
     //意向登记 弹出框
     $(function() {
         var DialogDesigner = $("#J_desiger-dialog-box").dialogs({
-            shadeClose: true
+            shadeClose: true,
+            afterHide:function(){
+                 $("html,body").css({"height":"auto","overflow":"hidden"});
+            }
         });
         $("#J_fixbottom").on("click",function(event){
             event.preventDefault();
-            DialogDesigner.show();
+            DialogDesigner.show(function(){
+               $("html,body").css({"height":"100%","overflow":"hidden"});
+            });
         })
         
         var validateFunc=function() {
@@ -60,7 +65,7 @@
                      var layer1=layer.open({type: 2,shade:false,time:20000});
                      setTimeout(function(){
                             layer.close(layer1);
-                             DialogDesigner.hide();
+                            DialogDesigner.hide();
                             layer.open({
                             content:'稍后会有客服给您致电，请告知客服您希望由***装修公司来提供服务',
                             anim:"scale",

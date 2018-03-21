@@ -191,7 +191,8 @@
                 this.opts.beforeHide && this.opts.beforeHide.call(this);
                 this.$element.removeClass('dia-in').transitionEnd(function(){
                     _this.opts.afterHide && _this.opts.afterHide.call(this);
-                    !!fn && setTimeout(fn, 0);
+                    !!fn && fn.call(_this);
+
                 })
             },
             show: function(fn) {
