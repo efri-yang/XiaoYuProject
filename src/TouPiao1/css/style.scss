@@ -179,7 +179,8 @@
 
 .search-box{
     position: relative;
-    margin-top:px2rem(30px); 
+    margin-top:px2rem(30px);
+    font-size:0;  
     .ipt-text{
         border:1px solid #5d5552;  
         width: 100%;
@@ -203,9 +204,40 @@
         padding: 0 px2rem(30px);
         color:#ffffff;
         border-radius: 0; 
+        font-size:18px; 
     }
 }
+.sort-list{
+    display:flex; 
+    margin-top:6px; 
+    li{
+        flex:1;
+       
+        text-align:center;
+        
+        &:nth-child(1){
+             padding-right:5px;
+        }
 
+        &:nth-child(2){
+             padding-left:5px;
+        }
+        &.active{
+            a{
+                background:#79aacd;
+                color:#fff;  
+            }
+        }
+       
+        a{
+            border:1px solid #f2f2f2;
+            padding:8px 0; 
+            display:block; 
+            color:#333;   
+            font-size:px2rem(30px); 
+        }
+    }
+}
 .vote-list{
     padding-top:px2rem(15px); 
     li{
