@@ -12,3 +12,4 @@ dist/
 ZT-LinShiXueXiao/
 *.dat
 *.sass-cache
+src/mdialog/
