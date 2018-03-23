@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <title>案例</title>
     <script src="js/zepto.js"></script>
     <script src="js/flexible.js"></script>
@@ -13,110 +14,145 @@
 <body>
     <div class="container">
         <a name="gotop" class="gotop-placeholder"></a>
-        <!-- <div class="user-infor">
-            <span class="avatar"><img src="upload/avatar_1.jpg"></span>
-            <p class="name">北大装饰设计</p>
-            <p class="phone"><i></i>联系电话：15080347486</p>
-            <p class="address"><i></i>营业地址：厦门市软件园二期望海路59号之一501室</p>
-            <ul class="guide-btn">
-                <li><a href="#" id="J_yxdj-btn">意向登记</a></li>
-                <li><a href="ShangJiaXiangQing.html">商家简介</a></li>
+        <ul class="shop-sj-top">
+            <li>
+                <a href="#">
+                    <div class="pic"><img src="upload/pro_1.jpg" /></div>
+                    <p class="name">夏天装饰</p>
+                    <div class="pj">
+                        <div class="xj">
+                            <label>星级</label>
+                            <span class="star star-1"></span>
+                        </div>
+                        <div class="kb">
+                            <label>口碑值</label>
+                            <span>9857</span>
+                        </div>
+                    </div>
+                    <p class="address">地址：厦门市湖里区凡湖东路东路路东路东路木错建材家居12号雷地专卖店</p>
+                </a>
+            </li>
+        </ul>
+        <div class="shop-tab-hds-wrap">
+            <ul class="shop-tab-hds">
+                <li class="active"><a href="N-sjsj-Case.html">设计案例</a></li>
+                <li><a href="N-sjsj-YouHuiHuoDong.html">优惠活动</a></li>
+                <li><a href="N-sjsj-VRKanFang.html">VR看房</a></li>
+                <li><a href="N-sjsj-ShangPinXiangQing.html">商家简介</a></li>
             </ul>
-        </div> -->
-        <!-- <div class="border-top-r30"> -->
-            <div class="shop-tab-hds-wrap">
-                <ul class="shop-tab-hds">
-                    <li class="active"><a href="N-sjsj-Case.html">设计案例</a></li>
-                    <li><a href="N-sjsj-YouHuiHuoDong.html">优惠活动</a></li>
-                    <li><a href="N-sjsj-VRKanFang.html">VR看房</a></li>
-                    <li><a href="N-sjsj-ShangPinXiangQing.html">商家简介</a></li>       
-                </ul>
-            </div>
-            <div class="shop-tab-bd-scroll pbfoot">
-                <ul class="case-search-box">
-                    <li>
-                        <select class="coms-field-select">
-                            <option>不限时间</option>
-                            <option>2017-09-01</option>
-                            <option>2017-09-02</option>
-                            <option>2017-09-03</option>
-                        </select>
-                    </li>
-                    <li>
-                        <select class="coms-field-select">
-                            <option>不限时间</option>
-                            <option>2017-09-01</option>
-                            <option>2017-09-02</option>
-                            <option>2017-09-03</option>
-                        </select>
-                    </li>
-                </ul>
-                <ul class="case-search-result" id="J_case-search-result">
-                    <li>
-                        <a href="N-sjsj-AnLiXiangQing.html">
+        </div>
+        <!-- 修改   yyh start -->
+        <ul class="case-search-box">
+            <li>
+                <a class="first" href="#">风格<i></i></a>
+                <div class="sub">
+                    <a href="#">风格1</a>
+                    <a href="#">风格2</a>
+                    <a href="#">风格3</a>
+                    <a href="#">风格4</a>
+                </div>
+            </li>
+            <li>
+                <a class="first" href="#">户型<i></i></a>
+                <div class="sub">
+                    <a href="#">风格1</a>
+                    <a href="#">风格2</a>
+                    <a href="#">风格3</a>
+                    <a href="#">风格4</a>
+                </div>
+            </li>
+        </ul>
+        <script type="text/javascript">
+            $(function(){
+                var $lis= $(".case-search-box li");
+
+                $lis.children('a').on("click",function(event){
+                    event.preventDefault();
+                    var $this=$(this);
+                    var $parent=$this.parent();
+                    if($parent.hasClass("active")){
+                        $parent.removeClass('active');
+                    }else{
+                         $parent.addClass('active');
+                    }
+                });
+                $(document).on("touchstart",function(event){
+                    var target=event.target;
+                    if(!$(target).closest($(this).parents("li")).length){
+                        $lis.removeClass('active');
+                    }
+                    
+                })
+            })
+        </script>
+        <!-- 修改   yyh end -->
+        <div class="shop-tab-bd-scroll pbfoot">
+            <ul class="case-search-result" id="J_case-search-result">
+                <li>
+                    <a href="N-sjsj-AnLiXiangQing.html">
                             <span class="pic"><img src="upload/pro_3.jpg" /></span>
                             <p class="name">首开领翔国际【大观装饰】</p>
                             <p class="para-type">中式三室80-120m 二厅</p>
                         </a>
-                    </li>
-                    <li>
-                        <a href="N-sjsj-AnLiXiangQing.html">
+                </li>
+                <li>
+                    <a href="N-sjsj-AnLiXiangQing.html">
                             <span class="pic"><img src="upload/pro_2.jpg" /></span>
                             <p class="name">首开领翔国际【大观装饰】</p>
                             <p class="para-type">中式三室80-120m 二厅</p>
                         </a>
-                    </li>
-                    <li>
-                        <a href="N-sjsj-AnLiXiangQing.html">
+                </li>
+                <li>
+                    <a href="N-sjsj-AnLiXiangQing.html">
                             <span class="pic"><img src="upload/pro_2.jpg" /></span>
                             <p class="name">首开领翔国际【大观装饰】</p>
                             <p class="para-type">中式三室80-120m 二厅</p>
                         </a>
-                    </li>
-                    <li>
-                        <a href="N-sjsj-AnLiXiangQing.html">
+                </li>
+                <li>
+                    <a href="N-sjsj-AnLiXiangQing.html">
                             <span class="pic"><img src="upload/pro_2.jpg" /></span>
                             <p class="name">首开领翔国际【大观装饰】</p>
                             <p class="para-type">中式三室80-120m 二厅</p>
                         </a>
-                    </li>
-                    <li>
-                        <a href="N-sjsj-AnLiXiangQing.html">
+                </li>
+                <li>
+                    <a href="N-sjsj-AnLiXiangQing.html">
                             <span class="pic"><img src="upload/pro_2.jpg" /></span>
                             <p class="name">首开领翔国际【大观装饰】</p>
                             <p class="para-type">中式三室80-120m 二厅</p>
                         </a>
-                    </li>
-                    <li>
-                        <a href="N-sjsj-AnLiXiangQing.html">
+                </li>
+                <li>
+                    <a href="N-sjsj-AnLiXiangQing.html">
                             <span class="pic"><img src="upload/pro_2.jpg" /></span>
                             <p class="name">首开领翔国际【大观装饰】</p>
                             <p class="para-type">中式三室80-120m 二厅</p>
                         </a>
-                    </li>
-                    <li>
-                        <a href="#">
+                </li>
+                <li>
+                    <a href="#">
                             <span class="pic"><img src="upload/pro_2.jpg" /></span>
                             <p class="name">首开领翔国际【大观装饰】</p>
                             <p class="para-type">中式三室80-120m 二厅</p>
                         </a>
-                    </li>
-                    <li>
-                        <a href="#">
+                </li>
+                <li>
+                    <a href="#">
                             <span class="pic"><img src="upload/pro_2.jpg" /></span>
                             <p class="name">首开领翔国际【大观装饰】</p>
                             <p class="para-type">中式三室80-120m 二厅</p>
                         </a>
-                    </li>
-                </ul>
-            </div>
+                </li>
+            </ul>
+        </div>
         <!-- </div> -->
     </div>
     <!--  -->
     <ul class="fixed-bar-guide">
         <li class="gohome"><a href="index.html"></a></li>
         <li class="goback"><a href="javascript:void(0)"></a></li>
-        <li class="gotop"><a href="#gotop"></a></li>
+        <li class="gotop return-top"><a href="#gotop"></a></li>
     </ul>
     <!--  -->
     @@include("./views/_DengJiForm.html")

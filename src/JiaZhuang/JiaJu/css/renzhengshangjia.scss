@@ -1,0 +1,268 @@
+.rzsj-sort {
+    border: 1px solid #eaeaea;
+
+    .sort-cell {
+        position: relative;
+        border-top:1px dashed #eaeaea; 
+        &.first{
+        	border-top:none;
+        }
+        .lab {
+        	position:absolute;
+        	left:0;
+        	top:0;
+        	bottom:0; 
+        	width:76px; 
+        	color:#666666; 
+        	background:#f8f8f8;
+        	border-right:1px solid #eaeaea;  
+        	span{
+        		position:absolute;
+        		width:76px;
+        		text-align:center;
+        		height:26px;
+        		top:50%;
+        		margin-top:-13px; 
+        		line-height: 26px; 
+        	}
+        }
+        .items{
+        	padding:5px 10px 5px 100px;
+        	line-height:25px;
+        	a{
+        		color:#666666;
+        		margin-right:20px; 
+        		&.active,&:hover{
+        			color:#17bf75;
+        		}
+        	}
+          
+        }
+    }
+}
+
+
+.rzsj-list-wrap{
+	border:1px solid #eaeaea;
+	margin-top:10px;
+}
+
+.rzsj-list{
+	li{
+		border-bottom:1px solid #eeeeee;
+		padding:20px;
+		position:relative; 
+		.pic{
+			width:138px;
+			height:138px;
+			border:1px solid #eeeeee;
+			text-align:center;
+			overflow:hidden;
+			line-height:138px;
+			float:left;
+			margin-right:20px;
+			img{
+				width: 100%;
+				display: inline-block;
+				vertical-align:middle;
+			}
+		}
+		.info{
+			float:left;
+			width:350px;
+			.name{
+				color:#282828;
+				font-size:16px;
+				
+				overflow:hidden;
+				line-height:25px;
+				font-weight:bold;  
+			}
+			.count{
+				margin-top:10px;
+				color:#666666;
+				span{
+					color:#50c07f;
+				}
+			}
+			.address{
+				margin-top:5px;
+				color:#666666;
+			}
+			.yybtn{
+				margin-top:18px;
+				width:170px;
+				display:block;
+				height:36px;
+				line-height:36px;
+				text-align:center;
+				background:#17bf75;
+				color:#fff;
+				transition:all 0.2s;
+				&:hover{
+					background:darken(#17bf75,5%);
+				}
+			}
+		}
+
+		.pinjia{
+			border-left:1px dashed #e6e6e6;
+			position:absolute;
+			right:30px;
+			top:50%; 
+			margin-top:-67px;
+			padding:40px 0  40px 25px;
+			.pj-sj{
+				line-height:15px;
+				padding:10px 0;
+				.star{
+					margin-left:15px; 
+					display:inline-block;
+					vertical-align:middle;
+					width:92px;
+					height:15px;
+					margin-top:-2px;
+					background:url("../img/rezhengshangjia/star.png") no-repeat top center;
+					&.star-1{
+						background-position: 0 -15px;
+					}
+					&.star-2{
+						background-position: 0 -30px;
+					}
+					&.star-3{
+						background-position: 0 -45px;
+					}
+					&.star-4{
+						background-position: 0 -60px;
+					}
+					&.star-5{
+						background-position: 0 -75px;
+					}
+				}
+			}
+			.pj-kb{
+				label{
+					word-spacing:2px
+				}
+				b{
+					margin-left:15px;
+					color:#4eca77;
+				}
+			}
+		}
+	}
+}
+
+
+.com-sj-header{
+	position:relative;
+	.sj-pic{
+		width:110px;
+		height:110px;
+		line-height:110px;
+		overflow:hidden;
+		border:1px solid #e6e6e6;
+		padding:4px;
+		float:left;
+		text-align:center;
+		font-size:0;
+		margin-right:20px;
+		background:#fff;
+		img{
+			width:100%;
+			display:inline-block;
+			vertical-align:middle;
+		} 
+	}
+	.sj-name{
+		font-size:22px;
+		color:#000;
+	}
+	.sj-pj{
+		margin-top:5px;
+		font-size:14px;
+		height:25px;
+		li{
+			float:left;
+			&.pj-star{
+
+				.star{
+					margin-left:15px; 
+					display:inline-block;
+					vertical-align:middle;
+					width:92px;
+					height:15px;
+					margin-top:-2px;
+					background:url("../img/rezhengshangjia/star.png") no-repeat top center;
+					&.star-1{
+						background-position: 0 -15px;
+					}
+					&.star-2{
+						background-position: 0 -30px;
+					}
+					&.star-3{
+						background-position: 0 -45px;
+					}
+					&.star-4{
+						background-position: 0 -60px;
+					}
+					&.star-5{
+						background-position: 0 -75px;
+					}
+				}
+			}
+
+			&.pj-kb{
+				margin-left:20px;
+				label{
+					word-spacing:2px
+				}
+				b{
+					margin-left:15px;
+					color:#4eca77;
+					font-weight:normal;
+				}
+			}
+			
+		}
+	}
+	.sj-info{
+		font-size:14px;
+		color:#666666;
+		span{
+			margin-right:35px;
+		}
+	}
+	.sj-address{
+		margin-top:5px;
+		color:#666666;
+	}
+	.sj-handler{
+		position:absolute;
+		right:0;
+		top:15px;
+		.yybtn{
+			display:block;
+			width:184px;
+			height:43px;
+			line-height:43px;
+			text-align:center;
+			background:#17bf75;
+			color:#fff;
+			font-size:16px;
+			&:hover{
+				background:darken(#17bf75,5%);
+				text-decoration: none;
+			}
+		}
+		.count{
+			text-align:center;
+			margin-top:8px;
+			b{
+				color:#ff8a00;
+			   font-weight:normal;
+			}
+			
+		}
+	}
+}

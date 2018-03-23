@@ -1,0 +1,230 @@
+@import "./scss/_normalize.scss";
+@import "./scss/_base.scss";
+@import "./scss/_funvar.scss";
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.border-top-r30 {
+    border-top: px2rem(30px) solid #f4f4f4;
+}
+
+.border-bottom-r30 {
+    border-bottom: px2rem(30px) solid #f4f4f4;
+}
+
+.seach-box {
+    background: #fff;
+    padding: px2rem(20px) px2rem(35px);
+    .search-form {
+        position: relative;
+        .ipt-text {
+            width: 100%;
+            font-size: px2rem(28px);
+            border: 1px solid #e2e2e2;
+            border-radius: 5px;
+            height: px2rem(70px);
+            box-shadow: none;
+            -webkit-appearance: none;
+            padding: px2rem(25px) px2rem(10px) px2rem(25px) px2rem(55px);
+        }
+        .icon-s {
+            position: absolute;
+            left: px2rem(10px);
+            top: 50%;
+            margin-top: px2rem(-14px);
+            width: px2rem(28px);
+            height: px2rem(28px);
+            overflow: hidden;
+            background: url("../images/zhaoshangjia/seach_icon.png") no-repeat top center;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.tab-hd {
+    display: flex;
+    li {
+        float: left;
+        flex: 1;
+        a {
+            display: block;
+            height: px2rem(89px);
+            line-height: px2rem(89px);
+            text-align: center;
+            padding: 2px 0;
+            color: #666666;
+            font-size: px2rem(32px);
+            border-bottom: 1px solid #ebebeb;
+        }
+        &.active {
+            a {
+                color: #019a58;
+                padding-bottom: 0px;
+                border-bottom: 2px solid #019a58;
+            }
+        }
+    }
+}
+
+.jcsj-tags-list {
+    padding: px2rem(10px) 0 px2rem(25px);
+    margin: 0 px2rem(25px);
+    border-bottom: 1px solid #f5f5f5;
+    li {
+        float: left;
+        margin-top: px2rem(20px);
+        width: 25%;
+        padding: 0 px2rem(10px);
+        a {
+            display: block;
+            color: #1a1a1a;
+
+            font-size: px2rem(26px);
+            text-align: center;
+            height: px2rem(60px);
+            line-height: px2rem(60px);
+            border-radius: px2rem(6px);
+            border: 1px solid #ebebeb;
+        }
+        &.active {
+            a {
+                border-color: #019a58;
+                color: #019a58;
+            }
+        }
+    }
+}
+
+.jcsj-list {
+    li {
+        &:last-child {
+            border-bottom: none;
+        }
+        a {
+            display: block;
+            border-bottom: 1px solid #f5f5f5;
+            min-height: px2rem(222px);
+            padding: px2rem(30px) px2rem(35px);
+            .pic {
+                width: px2rem(222px);
+                height: px2rem(162px);
+                overflow: hidden;
+                border: 1px solid #e4e4e4;
+                line-height: px2rem(160px);
+                text-align: center;
+                font-size: 0;
+                margin-right: px2rem(20px);
+                float: left;
+                img {
+                    max-width: 100%;
+                    display: inline-block;
+                    vertical-align: middle;
+                    max-height: 100%;
+                }
+            }
+            .name {
+                color: #333333;
+                padding-top: px2rem(8px);
+                font-size: px2rem(30px);
+            }
+            .pj {
+                height: px2rem(25px);
+                font-size: px2rem(24px);
+                margin-top: px2rem(16px);
+                .xj {
+                    float: left;
+
+
+                    label {
+                        color: #666666;
+                    }
+                    .star {
+                        display: inline-block;
+                        width: px2rem(130px);
+                        height: px2rem(21px);
+                        background-position: top center;
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                        background-image: url("../images/zhaoshangjia/star_0.png");
+                        &.star-1 {
+                            background-image: url("../images/zhaoshangjia/star_1.png");
+                        }
+                        &.star-2 {
+                            background-image: url("../images/zhaoshangjia/star_2.png");
+                        }
+                        &.star-3 {
+                            background-image: url("../images/zhaoshangjia/star_3.png");
+                        }
+                        &.star-4 {
+                            background-image: url("../images/zhaoshangjia/star_4.png");
+                        }
+                        &.star-5 {
+                            background-image: url("../images/zhaoshangjia/star_5.png");
+                        }
+                    }
+                }
+                .kb {
+                    float: right;
+                    color: #666666;
+                    span {
+                        color: #2bca7c;
+                    }
+                }
+            }
+            .address {
+                margin-top: px2rem(15px);
+                color: #666666;
+                line-height: 1.3;
+            }
+        }
+    }
+}
+
+.fixed-bar-guide {
+
+    position: fixed;
+    z-index: 100;
+    right: px2rem(30px);
+    bottom: px2rem(100px);
+    li {
+        width: px2rem(69px);
+        height: px2rem(69px);
+        overflow: hidden;
+        border-radius: 100%;
+        margin-bottom: px2rem(20px);
+        a {
+
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+        }
+        &.gohome {
+            a {
+                background: url("../images/fixed_icon_1.png") no-repeat center center rgba(0, 0, 0, 0.2);
+                background-size: 100% 100%;
+            }
+        }
+        &.goback {
+            a {
+                background: url("../images/fixed_icon_2.png") no-repeat center center rgba(0, 0, 0, 0.2);
+                background-size: 100% 100%;
+            }
+        }
+        &.gotop {
+
+            a {
+                display: none;
+                background: url("../images/fixed_icon_3.png") no-repeat center center rgba(0, 0, 0, 0.2);
+                background-size: 100% 100%;
+            }
+            &.active {
+                a {
+                    display: block;
+                }
+            }
+        }
+    }
+}

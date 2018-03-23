@@ -566,7 +566,7 @@ table.pop-330tb input.reg-txt{width:220px;padding:10px;border:#e4e4e4 1px solid;
 table.pop-330tb .inp-note{position:absolute;top:9px;left:10px;color:#999;z-index:10;}
 .select-sty{height:38px;padding-left:5px;border:#e4e4e4 1px solid;}
 
-.uploadpic{position:absolute;top:0;left:0;width:122px;height:44px;filter:alpha(opacity:0);opacity:0;-moz-opacity:0;-khtml-opacity:0;}
+/*.uploadpic{position:absolute;top:0;left:0;width:122px;height:44px;filter:alpha(opacity:0);opacity:0;-moz-opacity:0;-khtml-opacity:0;}*/
 .viewpic-close{display:block;position:absolute;top:-5px;left:90px;width:16px;height:16px;text-align:center;line-height:14px;border-radius:20px;background:#cac9c9;color:#fff;}
 
 .riji-sorts{}

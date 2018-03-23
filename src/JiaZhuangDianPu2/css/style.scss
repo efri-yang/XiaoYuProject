@@ -142,6 +142,8 @@ input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
   
     overflow:hidden;
 }
+
+
 .shop-tab-hds,.zsj-tab-hds{
     display: flex;
     border-top: 1px solid #dddddd;
@@ -181,7 +183,9 @@ input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
         display: block;
     }
 }
-
+.shop-tab-hds{
+    border-top:none;
+}
 
 
 
@@ -349,16 +353,73 @@ input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 
 .case-search-box {
     display: flex;
-    padding-top: px2rem(30px);
+    position:relative;
+    z-index: 10;
+    border-bottom:1px solid #dddddd;
     li {
         flex: 1;
-        &:nth-child(1) {
-            padding-right: px2rem(15px);
+        position:relative;
+        &:first-child{
+            border-right:1px solid #dddddd; 
         }
-        &:nth-child(2) {
-            padding-left: px2rem(15px);
+        &:last-child{
+             .sub{
+                border:1px solid #dddddd;
+                border-right:none;
+                border-top:none;
+                left:-1px;
+             }
+        }
+        .first{
+           height:px2rem(85px);
+           line-height:px2rem(85px);
+           text-align:center;
+           display:block;
+           color:#666666;
+           font-size:px2rem(30px);
+           i{
+             display:inline-block;
+             margin-left:px2rem(10px);
+             margin-top:px2rem(-5px);
+             width:px2rem(18px);
+             height:px2rem(10px);
+             background:url("../images/arrow_2.png") no-repeat top center;
+             background-size:100% 100%;
+             vertical-align:middle;
+           }
+        }
+        .sub{
+            position:absolute;
+            left:1px;
+            top:px2rem(184px);
+            width:100%;
+            background:#fff;
+            border:1px solid #dddddd;
+            border-top:none;
+            border-left:none;
+            visibility:hidden;
+            transition:all 0.1 s;
+            a{
+                display:block;
+                text-align:center;
+                line-height:3;
+                color:#666;
+                border-bottom:1px dashed #dddddd;
+                font-size:px2rem(28px);
+                &:last-child{
+                    border-bottom:none;
+                }
+            }
+        }
+        &.active{
+            .sub{
+                visibility:visible;
+                opacity:1;
+                top:px2rem(84px);
+            }
         }
     }
+
 }
 
 .case-search-result {
@@ -379,7 +440,7 @@ input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
         }
         .pic {
             position: relative;
-            width: px2rem(332px);
+            
             height: px2rem(264px);
             overflow: hidden;
             display: block;
@@ -876,6 +937,8 @@ input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
     .text-desc{
         line-height: 1.3;
         margin-top:30px;
+        position: relative;
+    overflow: hidden;
         @include font-dpr(16px);
         *{
              @include font-dpr(16px);
@@ -1233,6 +1296,96 @@ input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
             &.disabled{
                 background:#cccccc; 
             }   
+        }
+    }
+}
+
+/**
+ * 
+ */
+
+.shop-sj-top{
+    border-bottom:px2rem(30px) solid #f4f4f4;
+    li{
+        &:last-child{
+            border-bottom:none;
+        }
+        a{
+            display:block;
+            border-bottom:1px solid #f5f5f5;
+            min-height:px2rem(222px);
+            padding:px2rem(30px) px2rem(35px);
+            .pic{
+                width:px2rem(222px);
+                height:px2rem(162px);
+                overflow:hidden;
+                border:1px solid #e4e4e4;
+                line-height:px2rem(160px);
+                text-align:center;
+                font-size:0;
+                margin-right:px2rem(20px);
+                float:left;
+                img{
+                    max-width:100%;
+                    display:inline-block;
+                    vertical-align:middle; 
+                    max-height:100%;
+                }
+            }
+            .name{
+                color:#333333;
+                padding-top:px2rem(8px);
+                font-size:px2rem(30px);
+            }
+            .pj{
+                height:px2rem(25px);
+                font-size:px2rem(24px);
+                margin-top:px2rem(16px);
+                .xj{
+                    float:left;
+
+
+                    label{
+                        color:#666666;
+                    }
+                    .star{
+                        display:inline-block;
+                        width:px2rem(130px);
+                        height:px2rem(21px);
+                        background-position:top center;
+                        background-repeat: no-repeat;
+                        background-size:100% 100%;
+                        background-image:url("../images/zhaoshangjia/star_0.png");
+                        &.star-1{
+                            background-image:url("../images/zhaoshangjia/star_1.png");
+                        }  
+                        &.star-2{
+                            background-image:url("../images/zhaoshangjia/star_2.png");
+                        }  
+                        &.star-3{
+                            background-image:url("../images/zhaoshangjia/star_3.png");
+                        }  
+                        &.star-4{
+                            background-image:url("../images/zhaoshangjia/star_4.png");
+                        }  
+                        &.star-5{
+                            background-image:url("../images/zhaoshangjia/star_5.png");
+                        }  
+                    }
+                }
+                .kb{
+                    float:right;
+                    color:#666666;
+                    span{
+                        color:#2bca7c;
+                    }
+                }
+            }
+            .address{
+                margin-top:px2rem(15px);
+                color:#666666;
+                line-height:1.3;
+            }
         }
     }
 }
