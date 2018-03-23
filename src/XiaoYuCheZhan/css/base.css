@@ -38,7 +38,7 @@ text-decoration: none;
 }
 a:hover {
 color:#009cda; 
-text-decoration:underline;
+text-decoration:none;
 }
 fieldset, img {
 border: none;
