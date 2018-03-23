@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/bxSlider/jquery.bxslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/bxSlider/jquery.bxslider.css" />
+</head>
+
+<body>
+    @@include("./views/_header.html")
+    <div class="coms-container">
+        <div class="coms-crumbs">
+            当前位置：<a href="#">网上车展</a> > <span class="sr-crumb-tip">搜索名称（共<b>23</b>个搜索结果）</span>
+        </div>
+        <div class="cd-mod-1 clearfix">
+            <div class="cd-gallery">
+                <ul id="J_cd-gallery-list">
+                    <li><img src="upload/demo_7.jpg"></li>
+                    <li><img src="upload/demo_7.jpg"></li>
+                </ul>
+                <div class="pager"></div>
+            </div>
+        </div>
+    </div>
+    @@include("./views/_footer.html")
+    <script type="text/javascript">
+    $('#J_cd-gallery-list').bxSlider({
+        auto: true,
+        pager: true,
+        controls: false,
+        pagerSelector: $('.cd-gallery .pager'),
+        slideWidth:570,
+    });
+    </script>
+</body>
+
+</html>

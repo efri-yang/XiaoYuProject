@@ -1,317 +1,793 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/base.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="js/bxSlider/jquery.bxslider.js"></script>
-	<link rel="stylesheet" type="text/css" href="js/bxSlider/jquery.bxslider.css" />
-</head>
-<body style="background:#f4f4f4;">
-	<div class="coms-header-top">
-		<div class="coms-container">
-			<h1 class="logo"></h1>
-			<div class="coms-header-seach">
-				<div class="relative clearfix">
-					<div class="form-para">
-						<input type="text" class="ipt-text" placeholder="搜索" />
-						<i class="icon-s"></i>
-					</div>
-					<input type="submit" value="搜索" class="ipt-submit" />
-				</div>
-				<div class="hot-keys">
-					<a href="#">秦</a>
-					<a href="#">奥迪Q3</a>
-					<a href="#">英菲尼迪</a>
-					<a href="#">英菲尼迪</a>
-					<a href="#">英菲尼迪</a>
-				</div>
-			</div>
-			<ul class="tips-list">
-				<li class="item-1">
-					<i></i>
-					<p>诚信</p>
-				</li>
-				<li class="item-2">
-					<i></i>
-					<p>低价</p>
-				</li>
-				<li class="item-3">
-					<i></i>
-					<p>安全</p>
-				</li>
-				<li class="item-4">
-					<i></i>
-					<p>免费</p>
-				</li>
-			</ul>
-		</div>
-	</div>
 
-	<div class="coms-container mt10">
-		<div class="h-mod-1 clearfix mt10">
-			<div class="area-l">
-				<div class="h-fastbm-form">
-					<div class="soma-hd">
-						<span class="txt-1">快速报名</span>
-						<span class="txt-2">已有<b>2104</b>名用户低价购车</span>
-					</div>
-					<div class="soma-form">
-						<div class="item item-sel">
-							<select class="sel first">
-								<option>选择品牌</option>
-								<option>选择品牌</option>
-								<option>选择品牌</option>
-								<option>选择品牌</option>
-								<option>选择品牌</option>
-							</select>
-							<select  class="sel">
-								<option>选择品牌</option>
-								<option>选择品牌</option>
-								<option>选择品牌</option>
-								<option>选择品牌</option>
-							</select>
-						</div>
-						<div class="item">
-							<input type="text" class="ipt-text">
-						</div>
-						<div class="item">
-							<input type="text" class="ipt-text">
-						</div>
-						<input type="submit" class="ipt-submit" value="立即报名" />
-					</div>
-				</div>
-				<div class="h-mod-1-pptg">
-					<div class="soma-hd">
-						<span class="tit">品牌团购</span>
-						<i class="arrow"></i>
-					</div>
-					<ul class="list clearfix">
-						<li>
-							<a href="#">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/bxSlider/jquery.bxslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/bxSlider/jquery.bxslider.css" />
+</head>
+
+<body style="background:#f4f4f4;">
+    @@include("./views/_header.html")
+    <div class="coms-container mt10">
+        <div class="h-mod-1 clearfix mt10">
+            <div class="area-l">
+                <div class="h-fastbm-form">
+                    <div class="soma-hd">
+                        <span class="txt-1">快速报名</span>
+                        <span class="txt-2">已有<b>2104</b>名用户低价购车</span>
+                    </div>
+                    <div class="soma-form">
+                        <div class="item item-sel">
+                            <select class="sel first">
+                                <option>选择品牌</option>
+                                <option>选择品牌</option>
+                                <option>选择品牌</option>
+                                <option>选择品牌</option>
+                                <option>选择品牌</option>
+                            </select>
+                            <select class="sel">
+                                <option>选择品牌</option>
+                                <option>选择品牌</option>
+                                <option>选择品牌</option>
+                                <option>选择品牌</option>
+                            </select>
+                        </div>
+                        <div class="item item-ipt" data-roler="iptip">
+                            <input type="text" class="ipt-text">
+                            <label class="lab">请输入您的姓名</label>
+                        </div>
+                        <div class="item item-ipt" data-roler="iptip">
+                            <input type="text" class="ipt-text">
+                            <label class="lab">请输入您的联系方式</label>
+                        </div>
+                        <input type="submit" class="ipt-submit" value="立即报名" />
+                    </div>
+                </div>
+                <div class="h-mod-1-pptg">
+                    <div class="soma-hd">
+                        <span class="tit">品牌团购</span>
+                        <i class="arrow"></i>
+                    </div>
+                    <ul class="list clearfix">
+                        <li>
+                            <a href="#">
 								<span class="pic"><img src="upload/demo_3.jpg" /></span>
 								<span class="txt">奔驰</span>
 							</a>
-						</li>
-						<li>
-							<a href="#">
+                        </li>
+                        <li>
+                            <a href="#">
 								<span class="pic"><img src="upload/demo_3.jpg" /></span>
 								<span class="txt">奔驰</span>
 							</a>
-						</li>
-						<li>
-							<a href="#">
+                        </li>
+                        <li>
+                            <a href="#">
 								<span class="pic"><img src="upload/demo_3.jpg" /></span>
 								<span class="txt">奔驰奔驰奔驰奔驰奔驰奔驰</span>
 							</a>
-						</li>
-						<li>
-							<a href="#">
+                        </li>
+                        <li>
+                            <a href="#">
 								<span class="pic"><img src="upload/demo_3.jpg" /></span>
 								<span class="txt">奔驰</span>
 							</a>
-						</li>
-						<li>
-							<a href="#">
+                        </li>
+                        <li>
+                            <a href="#">
 								<span class="pic"><img src="upload/demo_3.jpg" /></span>
 								<span class="txt">奔驰</span>
 							</a>
-						</li>
-						<li>
-							<a href="#">
+                        </li>
+                        <li>
+                            <a href="#">
 								<span class="pic"><img src="upload/demo_3.jpg" /></span>
 								<span class="txt">奔驰</span>
 							</a>
-						</li>
-						<li>
-							<a href="#">
+                        </li>
+                        <li>
+                            <a href="#">
 								<span class="pic"><img src="upload/demo_3.jpg" /></span>
 								<span class="txt">奔驰</span>
 							</a>
-						</li>
-						<li>
-							<a href="#">
+                        </li>
+                        <li>
+                            <a href="#">
 								<span class="pic"><img src="upload/demo_3.jpg" /></span>
 								<span class="txt">奔驰</span>
 							</a>
-						</li>
-						<li>
-							<a href="#">
+                        </li>
+                        <li>
+                            <a href="#">
 								<span class="pic"><img src="upload/demo_3.jpg" /></span>
 								<span class="txt">奔驰</span>
 							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="area-r">
-				<div class="h-bxslider-1">
-					<ul id="J_bxslider-1">
-					  <li><a href="#"><img src="upload/demo_1.jpg"></a></li>
-					  <li><a href="#"><img src="upload/demo_2.jpg"></a></li> 
-					</ul>
-					<div class="pager"></div>
-				</div>
+                        </li>
+                    </ul>
+                </div>
+<script type="text/javascript">
+	$(function(){
+		$(".h-mod-1-pptg .arrow").on("mouseover",function(){
+			$(".pptg-tree-box").show();
+		}).on("mouseout",function(event){
+			var realteTarget=event.relatedTarget;
+			if(!$(realteTarget).closest($(".pptg-tree-box")).length){
+				$(".pptg-tree-box").hide();
+			}
+		});
 
-				<ul class="list">
-					<li><a href=""><img src="upload/demo_4.jpg" /></a></li>
-					<li><a href=""><img src="upload/demo_4.jpg" /></a></li>
-					<li><a href=""><img src="upload/demo_4.jpg" /></a></li>
-				</ul>
+		$(".pptg-tree-box").on("mouseout",function(event){
+			var realteTarget=event.relatedTarget;
+			if(!$(realteTarget).closest($(".pptg-tree-box")).length || $(realteTarget).closest($(".h-mod-1-pptg .arrow")).length){
+				$(".pptg-tree-box").hide();
+			}
+		})
+	})
 
+</script>
+                <div class="pptg-tree-box">
+					 <p class="caption">所有品牌</p>
+					 <div class="tree-l">
+							<div class="item-cell">
+								<label class="lab">A</label>
+								<p class="tag">
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
 
-				<script type="text/javascript">
-					$('#J_bxslider-1').bxSlider({
-					  auto: true,
-					  stopAutoOnClick: true,
-					  pager: true,
-					  controls:false,
-					  pagerSelector:$('.h-bxslider-1 .pager'),
-					  slideWidth: 874,
-					});
-				</script>
-			</div>
-		</div>
-		
-		<div class="h-mod-2">
-			<div class="h-tit-type1 clearfix">
-				<span class="tit">热门品牌</span>
-				<p class="sub-tit">一起团购聚划算</p>
-			</div>
-			<ul class="h-list-1 clearfix">
-				<li>
-					<a href="javascript:void(0);">
-						<span class="pic"><img src="upload/demo_5.jpg" /></span>
-						<span class="tip">福特</span>
-						<span class="mask">
-							<i></i>
-							<b>去团购 <label>></label></b>
-						</span>
-					</a>
-					<p class="txt">已有<b>2548</b>人报名</p>
-				</li>
-				<li>
-					<a href="javascript:void(0);">
-						<span class="pic"><img src="upload/demo_5.jpg" /></span>
-						<span class="tip">福特</span>
-						<span class="mask">
-							<i></i>
-							<b>去团购 <label>></label></b>
-						</span>
-					</a>
-					<p class="txt">已有<b>2548</b>人报名</p>
-				</li>
-				<li>
-					<a href="javascript:void(0);">
-						<span class="pic"><img src="upload/demo_5.jpg" /></span>
-						<span class="tip">福特</span>
-						<span class="mask">
-							<i></i>
-							<b>去团购 <label>></label></b>
-						</span>
-					</a>
-					<p class="txt">已有<b>2548</b>人报名</p>
-				</li>
-				<li>
-					<a href="javascript:void(0);">
-						<span class="pic"><img src="upload/demo_5.jpg" /></span>
-						<span class="tip">福特</span>
-						<span class="mask">
-							<i></i>
-							<b>去团购 <label>></label></b>
-						</span>
-					</a>
-					<p class="txt">已有<b>2548</b>人报名</p>
-				</li>
-				<li>
-					<a href="javascript:void(0);">
-						<span class="pic"><img src="upload/demo_5.jpg" /></span>
-						<span class="tip">福特</span>
-						<span class="mask">
-							<i></i>
-							<b>去团购 <label>></label></b>
-						</span>
-					</a>
-					<p class="txt">已有<b>2548</b>人报名</p>
-				</li>
-				<li>
-					<a href="javascript:void(0);">
-						<span class="pic"><img src="upload/demo_5.jpg" /></span>
-						<span class="tip">福特</span>
-						<span class="mask">
-							<i></i>
-							<b>去团购 <label>></label></b>
-						</span>
-					</a>
-					<p class="txt">已有<b>2548</b>人报名</p>
-				</li>
-				<li>
-					<a href="javascript:void(0);">
-						<span class="pic"><img src="upload/demo_5.jpg" /></span>
-						<span class="tip">福特</span>
-						<span class="mask">
-							<i></i>
-							<b>去团购 <label>></label></b>
-						</span>
-					</a>
-					<p class="txt">已有<b>2548</b>人报名</p>
-				</li>
-				<li>
-					<a href="javascript:void(0);">
-						<span class="pic"><img src="upload/demo_5.jpg" /></span>
-						<span class="tip">福特</span>
-						<span class="mask">
-							<i></i>
-							<b>去团购 <label>></label></b>
-						</span>
-					</a>
-					<p class="txt">已有<b>2548</b>人报名</p>
-				</li>
-				<li>
-					<a href="javascript:void(0);">
-						<span class="pic"><img src="upload/demo_5.jpg" /></span>
-						<span class="tip">福特</span>
-						<span class="mask">
-							<i></i>
-							<b>去团购 <label>></label></b>
-						</span>
-					</a>
-					<p class="txt">已有<b>2548</b>人报名</p>
-				</li>
-				<li>
-					<a href="javascript:void(0);">
-						<span class="pic"><img src="upload/demo_5.jpg" /></span>
-						<span class="tip">福特</span>
-						<span class="mask">
-							<i></i>
-							<b>去团购 <label>></label></b>
-						</span>
-					</a>
-					<p class="txt">已有<b>2548</b>人报名</p>
-				</li>
-			</ul>
-		</div>
+									<a href="#">奥迪</a>
+								</p>
+							</div>
+							<div class="item-cell">
+								<label class="lab">B</label>
+								<p class="tag">
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									
+									<a href="#">奥迪</a>
+								</p>
+							</div>
+							<div class="item-cell">
+								<label class="lab">C</label>
+								<p class="tag">
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									
+									<a href="#">奥迪</a>
+								</p>
+							</div>
+							<div class="item-cell">
+								<label class="lab">D</label>
+								<p class="tag">
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									
+									<a href="#">奥迪</a>
+								</p>
+							</div>
+							<div class="item-cell">
+								<label class="lab">E</label>
+								<p class="tag">
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									
+									<a href="#">奥迪</a>
+								</p>
+							</div>
+							<div class="item-cell">
+								<label class="lab">F</label>
+								<p class="tag">
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									
+									<a href="#">奥迪</a>
+								</p>
+							</div>
+							<div class="item-cell">
+								<label class="lab">H</label>
+								<p class="tag">
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									
+									<a href="#">奥迪</a>
+								</p>
+							</div>
+					 </div>
+					 <div class="tree-r">
+							<div class="item-cell">
+								<label class="lab">A</label>
+								<p class="tag">
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
 
-		<div class="h-mod-3">
-			<div class="h-tit-type1 clearfix">
-				<span class="tit">爆款好车</span>
-				<p class="sub-tit">大家都在买的好车</p>
-			</div>
-			<ul class="h-list-2">
-				<li>
-					<a href="#">
+									<a href="#">奥迪</a>
+								</p>
+							</div>
+							<div class="item-cell">
+								<label class="lab">A</label>
+								<p class="tag">
+									<a href="#">阿尔法∙罗密欧</a> |
+									<a href="#">阿尔法∙罗密欧</a> |
+
+									<a href="#">奥迪</a>
+								</p>
+							</div>
+					 </div>
+        		</div>
+            </div>
+            <div class="area-r">
+                <div class="h-bxslider-1">
+                    <ul id="J_bxslider-1">
+                        <li><a href="#"><img src="upload/demo_1.jpg"></a></li>
+                        <li><a href="#"><img src="upload/demo_2.jpg"></a></li>
+                    </ul>
+                    <div class="pager"></div>
+                </div>
+                <ul class="list">
+                    <li><a href=""><img src="upload/demo_4.jpg" /></a></li>
+                    <li><a href=""><img src="upload/demo_4.jpg" /></a></li>
+                    <li><a href=""><img src="upload/demo_4.jpg" /></a></li>
+                </ul>
+                <script type="text/javascript">
+                $('#J_bxslider-1').bxSlider({
+                    auto: true,
+                    pager: true,
+                    controls: false,
+                    pagerSelector: $('.h-bxslider-1 .pager'),
+                    slideWidth: 874,
+                });
+                </script>
+            </div>
+        </div>
+        <!--  -->
+       
+        <div class="h-mod-2">
+            <div class="h-tit-type1 clearfix">
+                <span class="tit">热门品牌</span>
+                <p class="sub-tit">一起团购聚划算</p>
+            </div>
+            <ul class="h-list-1 clearfix">
+                <li>
+                    <a href="javascript:void(0);">
+						<span class="pic"><img src="upload/demo_5.jpg" /></span>
+						<span class="tip">福特</span>
+						<span class="mask">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="txt">已有<b>2548</b>人报名</p>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+						<span class="pic"><img src="upload/demo_5.jpg" /></span>
+						<span class="tip">福特</span>
+						<span class="mask">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="txt">已有<b>2548</b>人报名</p>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+						<span class="pic"><img src="upload/demo_5.jpg" /></span>
+						<span class="tip">福特</span>
+						<span class="mask">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="txt">已有<b>2548</b>人报名</p>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+						<span class="pic"><img src="upload/demo_5.jpg" /></span>
+						<span class="tip">福特</span>
+						<span class="mask">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="txt">已有<b>2548</b>人报名</p>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+						<span class="pic"><img src="upload/demo_5.jpg" /></span>
+						<span class="tip">福特</span>
+						<span class="mask">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="txt">已有<b>2548</b>人报名</p>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+						<span class="pic"><img src="upload/demo_5.jpg" /></span>
+						<span class="tip">福特</span>
+						<span class="mask">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="txt">已有<b>2548</b>人报名</p>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+						<span class="pic"><img src="upload/demo_5.jpg" /></span>
+						<span class="tip">福特</span>
+						<span class="mask">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="txt">已有<b>2548</b>人报名</p>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+						<span class="pic"><img src="upload/demo_5.jpg" /></span>
+						<span class="tip">福特</span>
+						<span class="mask">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="txt">已有<b>2548</b>人报名</p>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+						<span class="pic"><img src="upload/demo_5.jpg" /></span>
+						<span class="tip">福特</span>
+						<span class="mask">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="txt">已有<b>2548</b>人报名</p>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+						<span class="pic"><img src="upload/demo_5.jpg" /></span>
+						<span class="tip">福特</span>
+						<span class="mask">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="txt">已有<b>2548</b>人报名</p>
+                </li>
+            </ul>
+        </div>
+        <div class="h-mod-3">
+            <div class="h-tit-type1 type-2 clearfix">
+                <span class="tit">爆款好车</span>
+                <p class="sub-tit">大家都在买的好车</p>
+            </div>
+            <ul class="h-list-2 clearfix">
+                <li>
+                    <a href="#">
 						<span class="pic"><img src="upload/demo_6.jpg" /></span>
-						<span><i class="mask"></i><b>雷克萨斯宝马X5 2011款 xDrive35i 豪华型</b></span>
+						<span class="txt-1"><i class="mask"></i><b>雷克萨斯宝马X斯宝马X斯宝马X斯宝马X5 2011款 xDrive35i 豪华型</b></span>
+						<span class="mask-1">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
 					</a>
-					<p class="tip-1">买车就送行车记录仪，买一送一，优惠不断</p>
-					<p class="tip-2">送油卡送油卡送油卡</p>
-				</li>
-			</ul>
-		</div>
-	</div>
+                    <p class="tip-1">买车就送行车记录仪，买一送一，优惠不断</p>
+                    <p class="tip-2">送油卡送油卡送油卡</p>
+                </li>
+                <li>
+                    <a href="#">
+						<span class="pic"><img src="upload/demo_6.jpg" /></span>
+						<span class="txt-1"><i class="mask"></i><b>雷克萨斯宝马X斯宝马X斯宝马X斯宝马X5 2011款 xDrive35i 豪华型</b></span>
+						<span class="mask-1">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="tip-1">买车就送行车记录仪，买一送一，优惠不断</p>
+                    <p class="tip-2">送油卡送油卡送油卡</p>
+                </li>
+                <li>
+                    <a href="#">
+						<span class="pic"><img src="upload/demo_6.jpg" /></span>
+						<span class="txt-1"><i class="mask"></i><b>雷克萨斯宝马X斯宝马X斯宝马X斯宝马X5 2011款 xDrive35i 豪华型</b></span>
+						<span class="mask-1">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="tip-1">买车就送行车记录仪，买一送一，优惠不断</p>
+                    <p class="tip-2">送油卡送油卡送油卡</p>
+                </li>
+                <li>
+                    <a href="#">
+						<span class="pic"><img src="upload/demo_6.jpg" /></span>
+						<span class="txt-1"><i class="mask"></i><b>雷克萨斯宝马X斯宝马X斯宝马X斯宝马X5 2011款 xDrive35i 豪华型</b></span>
+						<span class="mask-1">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="tip-1">买车就送行车记录仪，买一送一，优惠不断</p>
+                    <p class="tip-2">送油卡送油卡送油卡</p>
+                </li>
+                <li>
+                    <a href="#">
+						<span class="pic"><img src="upload/demo_6.jpg" /></span>
+						<span class="txt-1"><i class="mask"></i><b>雷克萨斯宝马X斯宝马X斯宝马X斯宝马X5 2011款 xDrive35i 豪华型</b></span>
+						<span class="mask-1">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="tip-1">买车就送行车记录仪，买一送一，优惠不断</p>
+                    <p class="tip-2">送油卡送油卡送油卡</p>
+                </li>
+                <li>
+                    <a href="#">
+						<span class="pic"><img src="upload/demo_6.jpg" /></span>
+						<span class="txt-1"><i class="mask"></i><b>雷克萨斯宝马X斯宝马X斯宝马X斯宝马X5 2011款 xDrive35i 豪华型</b></span>
+						<span class="mask-1">
+							<i></i>
+							<b>去团购 <label>></label></b>
+						</span>
+					</a>
+                    <p class="tip-1">买车就送行车记录仪，买一送一，优惠不断</p>
+                    <p class="tip-2">送油卡送油卡送油卡</p>
+                </li>
+            </ul>
+        </div>
+        <div class="h-mod-4">
+            <div class="h-tit-type1 type-3 clearfix">
+                <span class="tit">二手好车</span>
+                <p class="sub-tit">不可错过的二手精品</p>
+            </div>
+            <div class="h-mod-4-bd">
+                <ul class="h-list-3 clearfix">
+                    <li>
+                        <div class="item-list clearfix">
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">11111111111111马X5 2011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">雷克萨斯萨斯萨斯萨斯宝马X5 2011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">雷克萨斯萨斯萨斯萨斯宝马X5 2011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">雷克萨斯萨斯萨斯萨斯宝马X5 2011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">雷克萨斯萨斯萨斯萨斯宝马X5 2011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">雷克萨斯萨斯萨斯萨斯宝马X5 2011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-list clearfix">
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">222222222222222011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">雷克萨斯萨斯萨斯萨斯宝马X5 2011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">雷克萨斯萨斯萨斯萨斯宝马X5 2011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">雷克萨斯萨斯萨斯萨斯宝马X5 2011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">雷克萨斯萨斯萨斯萨斯宝马X5 2011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+								<img src="upload/demo_6.jpg" />
+							</a>
+                                <a href="#" class="txt-link">雷克萨斯萨斯萨斯萨斯宝马X5 2011款 xDrive35i 豪华型</a>
+                                <div class="soma-bt clearfix">
+                                    <span class="price-current">6.38万</span>
+                                    <span class="price-orginal">原价：29.70万</span>
+                                    <a href="#">预约看车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="page-type-1">
+                    <div class="prev-wrap" id="J_prev1"></div>
+                    <div class="next-wrap" id="J_next1"></div>
+                    <div class="pager" id="J_page-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="h-mod-5">
+            <div class="h-tit-type1 type-4 clearfix">
+                <span class="tit">小鱼购车帮</span>
+                <p class="sub-tit">没有满意的车型？小鱼来帮您</p>
+            </div>
+            <div class="soma-form">
+                <form>
+                    <div class="item-cell">
+                        <label class="para-lab">意向车型：</label>
+                        <div class="pare-item item-yx">
+                            <div class="clearfix mb15">
+                                <select class="sel mr15">
+                                    <option>品牌</option>
+                                </select>
+                                <select class="sel">
+                                    <option>车型</option>
+                                </select>
+                            </div>
+                            <div class="clearfix mb15">
+                                <select class="sel mr15">
+                                    <option>品牌</option>
+                                </select>
+                                <select class="sel">
+                                    <option>车型</option>
+                                </select>
+                            </div>
+                            <i class="icon-plus"></i>
+                        </div>
+                    </div>
+                    <div class="item-cell">
+                        <label class="para-lab">其他考虑：</label>
+                        <div class="pare-item">
+                            <select class="sel mr15">
+                                <option>预算区间</option>
+                            </select>
+                            <select class="sel">
+                                <option>车型（SUV/轿车）可多选</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item-cell">
+                        <label class="para-lab">联系方式：</label>
+                        <div class="pare-item clearfix">
+                            <div class="mr15 item-ipt" data-roler="iptip">
+                                <input type="text" class="ipt-text" />
+                                <label class="lab">您的姓名</label>
+                            </div>
+                            <div class="mr15 item-ipt" data-roler="iptip">
+                                <input type="text" class="ipt-text" />
+                                <label class="lab">联系方式</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-cell">
+                        <label class="para-lab"></label>
+                        <div class="pare-item para-imte-submit">
+                            <input type="submit" class="ipt-submit" value="报名领取990元购车补贴" />
+                            <span>（已有<b>4312</b>人领取购车补贴）</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--  -->
+        <div class="h-mod-6">
+            <div class="h-tit-type1 type-5 clearfix">
+                <span class="tit">9.9元，上门试驾</span>
+                <p class="sub-tit">试驾登记，领取990元购车红包</p>
+            </div>
+            <div class="h-mod-6-bd">
+                <ul class="h-list-4 clearfix">
+                    <li>
+                        <div class="item-list clearfix">
+                            <div class="item">
+                                <a href="#" class="pic">
+									<img src="upload/demo_6.jpg" />
+								</a>
+                                <a href="#" class="txt-link">11111111111111马X5 2011款 xDrive35i 豪华型</a>
+                                <a href="#" class="yybtn">立即预约</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+									<img src="upload/demo_6.jpg" />
+								</a>
+                                <a href="#" class="txt-link">11111111111111马X5 2011款 xDrive35i 豪华型</a>
+                                <a href="#" class="yybtn">立即预约</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+									<img src="upload/demo_6.jpg" />
+								</a>
+                                <a href="#" class="txt-link">11111111111111马X5 2011款 xDrive35i 豪华型</a>
+                                <a href="#" class="yybtn">立即预约</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+									<img src="upload/demo_6.jpg" />
+								</a>
+                                <a href="#" class="txt-link">11111111111111马X5 2011款 xDrive35i 豪华型</a>
+                                <a href="#" class="yybtn">立即预约</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-list clearfix">
+                            <div class="item">
+                                <a href="#" class="pic">
+									<img src="upload/demo_6.jpg" />
+								</a>
+                                <a href="#" class="txt-link">11111111111111马X5 2011款 xDrive35i 豪华型</a>
+                                <a href="#" class="yybtn">立即预约</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="pic">
+									<img src="upload/demo_6.jpg" />
+								</a>
+                                <a href="#" class="txt-link">11111111111111马X5 2011款 xDrive35i 豪华型</a>
+                                <a href="#" class="yybtn">立即预约</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="page-type-1">
+                    <div class="prev-wrap" id="J_prev2"></div>
+                    <div class="next-wrap" id="J_next2"></div>
+                    <div class="pager" id="J_page-2"></div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+    </div>
+    <div class="mt30"></div>
+    @@include("./views/_footer.html")
+    <script type="text/javascript">
+    $('.h-list-3').bxSlider({
+        auto: false,
+        pager: true,
+        pagerSelector: $('#J_page-1'),
+        controls: true,
+        nextSelector: $("#J_next1"),
+        nextText: "下一页",
+        prevSelector: $("#J_prev1"),
+        prevText: "上一页",
+        slideWidth: 1170,
+    });
 
-	<div style="height:500px;"></div>
+    $('.h-list-4').bxSlider({
+        auto: false,
+        pager: true,
+        pagerSelector: $('#J_page-2'),
+        controls: true,
+        nextSelector: $("#J_next2"),
+        nextText: "下一页",
+        prevSelector: $("#J_prev2"),
+        prevText: "上一页",
+        slideWidth: 1170,
+    });
+    </script>
+    <script type="text/javascript">
+    (function($) {
+        $(function() {
+            $(document).on("click", '[data-roler="iptip"] .lab', function() {
+                var $this = $(this);
+                $this.hide();
+                $this.siblings(".ipt-text").focus();
+            })
+            $('[data-roler="iptip"] .ipt-text').on("blur", function() {
+                var $this = $(this);
+                var val = $.trim($this.val());
+                if (!val) {
+                    $this.siblings(".lab").show();
+                }
+            })
+        })
+    })(jQuery)
+    </script>
 </body>
+
 </html>
