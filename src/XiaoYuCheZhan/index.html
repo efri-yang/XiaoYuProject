@@ -8,8 +8,13 @@
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+
+
+
+    
     <script type="text/javascript" src="js/bxSlider/jquery.bxslider.js"></script>
     <link rel="stylesheet" type="text/css" href="js/bxSlider/jquery.bxslider.css" />
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 
 <body style="background:#f4f4f4;">
@@ -57,7 +62,7 @@
                     <ul class="list clearfix">
                         <li>
                             <a href="#">
-								<span class="pic"><img src="upload/demo_3.jpg" /></span>
+								<span class="pic"><img src="upload/demo_1.jpg" /></span>
 								<span class="txt">奔驰</span>
 							</a>
                         </li>
@@ -105,133 +110,104 @@
                         </li>
                         <li>
                             <a href="#">
-								<span class="pic"><img src="upload/demo_3.jpg" /></span>
+								<span class="pic"><img src="images/activity/activity_intro_1.png" /></span>
 								<span class="txt">奔驰</span>
 							</a>
                         </li>
                     </ul>
                 </div>
-<script type="text/javascript">
-	$(function(){
-		$(".h-mod-1-pptg .arrow").on("mouseover",function(){
-			$(".pptg-tree-box").show();
-		}).on("mouseout",function(event){
-			var realteTarget=event.relatedTarget;
-			if(!$(realteTarget).closest($(".pptg-tree-box")).length){
-				$(".pptg-tree-box").hide();
-			}
-		});
-
-		$(".pptg-tree-box").on("mouseout",function(event){
-			var realteTarget=event.relatedTarget;
-			if(!$(realteTarget).closest($(".pptg-tree-box")).length || $(realteTarget).closest($(".h-mod-1-pptg .arrow")).length){
-				$(".pptg-tree-box").hide();
-			}
-		})
-	})
-
-</script>
                 <div class="pptg-tree-box">
-					 <p class="caption">所有品牌</p>
-					 <div class="tree-l">
-							<div class="item-cell">
-								<label class="lab">A</label>
-								<p class="tag">
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-
-									<a href="#">奥迪</a>
-								</p>
-							</div>
-							<div class="item-cell">
-								<label class="lab">B</label>
-								<p class="tag">
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									
-									<a href="#">奥迪</a>
-								</p>
-							</div>
-							<div class="item-cell">
-								<label class="lab">C</label>
-								<p class="tag">
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									
-									<a href="#">奥迪</a>
-								</p>
-							</div>
-							<div class="item-cell">
-								<label class="lab">D</label>
-								<p class="tag">
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									
-									<a href="#">奥迪</a>
-								</p>
-							</div>
-							<div class="item-cell">
-								<label class="lab">E</label>
-								<p class="tag">
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									
-									<a href="#">奥迪</a>
-								</p>
-							</div>
-							<div class="item-cell">
-								<label class="lab">F</label>
-								<p class="tag">
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									
-									<a href="#">奥迪</a>
-								</p>
-							</div>
-							<div class="item-cell">
-								<label class="lab">H</label>
-								<p class="tag">
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									
-									<a href="#">奥迪</a>
-								</p>
-							</div>
-					 </div>
-					 <div class="tree-r">
-							<div class="item-cell">
-								<label class="lab">A</label>
-								<p class="tag">
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-
-									<a href="#">奥迪</a>
-								</p>
-							</div>
-							<div class="item-cell">
-								<label class="lab">A</label>
-								<p class="tag">
-									<a href="#">阿尔法∙罗密欧</a> |
-									<a href="#">阿尔法∙罗密欧</a> |
-
-									<a href="#">奥迪</a>
-								</p>
-							</div>
-					 </div>
-        		</div>
+                    <p class="caption">所有品牌</p>
+                    <div class="tree-l">
+                        <div class="item-cell">
+                            <label class="lab">A</label>
+                            <p class="tag">
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">奥迪</a>
+                            </p>
+                        </div>
+                        <div class="item-cell">
+                            <label class="lab">B</label>
+                            <p class="tag">
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">奥迪</a>
+                            </p>
+                        </div>
+                        <div class="item-cell">
+                            <label class="lab">C</label>
+                            <p class="tag">
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">奥迪</a>
+                            </p>
+                        </div>
+                        <div class="item-cell">
+                            <label class="lab">D</label>
+                            <p class="tag">
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">奥迪</a>
+                            </p>
+                        </div>
+                        <div class="item-cell">
+                            <label class="lab">E</label>
+                            <p class="tag">
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">奥迪</a>
+                            </p>
+                        </div>
+                        <div class="item-cell">
+                            <label class="lab">F</label>
+                            <p class="tag">
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">奥迪</a>
+                            </p>
+                        </div>
+                        <div class="item-cell">
+                            <label class="lab">H</label>
+                            <p class="tag">
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">奥迪</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tree-r">
+                        <div class="item-cell">
+                            <label class="lab">A</label>
+                            <p class="tag">
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">奥迪</a>
+                            </p>
+                        </div>
+                        <div class="item-cell">
+                            <label class="lab">A</label>
+                            <p class="tag">
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">阿尔法∙罗密欧</a> |
+                                <a href="#">奥迪</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="area-r">
                 <div class="h-bxslider-1">
@@ -246,19 +222,10 @@
                     <li><a href=""><img src="upload/demo_4.jpg" /></a></li>
                     <li><a href=""><img src="upload/demo_4.jpg" /></a></li>
                 </ul>
-                <script type="text/javascript">
-                $('#J_bxslider-1').bxSlider({
-                    auto: true,
-                    pager: true,
-                    controls: false,
-                    pagerSelector: $('.h-bxslider-1 .pager'),
-                    slideWidth: 874,
-                });
-                </script>
+               
             </div>
         </div>
         <!--  -->
-       
         <div class="h-mod-2">
             <div class="h-tit-type1 clearfix">
                 <span class="tit">热门品牌</span>
@@ -744,50 +711,28 @@
         <!--  -->
     </div>
     <div class="mt30"></div>
-    @@include("./views/_footer.html")
-    <script type="text/javascript">
-    $('.h-list-3').bxSlider({
-        auto: false,
-        pager: true,
-        pagerSelector: $('#J_page-1'),
-        controls: true,
-        nextSelector: $("#J_next1"),
-        nextText: "下一页",
-        prevSelector: $("#J_prev1"),
-        prevText: "上一页",
-        slideWidth: 1170,
-    });
 
-    $('.h-list-4').bxSlider({
-        auto: false,
-        pager: true,
-        pagerSelector: $('#J_page-2'),
-        controls: true,
-        nextSelector: $("#J_next2"),
-        nextText: "下一页",
-        prevSelector: $("#J_prev2"),
-        prevText: "上一页",
-        slideWidth: 1170,
-    });
-    </script>
-    <script type="text/javascript">
-    (function($) {
-        $(function() {
-            $(document).on("click", '[data-roler="iptip"] .lab', function() {
-                var $this = $(this);
-                $this.hide();
-                $this.siblings(".ipt-text").focus();
-            })
-            $('[data-roler="iptip"] .ipt-text').on("blur", function() {
-                var $this = $(this);
-                var val = $.trim($this.val());
-                if (!val) {
-                    $this.siblings(".lab").show();
-                }
-            })
-        })
-    })(jQuery)
-    </script>
+    <div class="h-fixed-side">
+		<div class="detail-item">
+			<div class="caption">导航</div>
+			<ul class="list" id="J_h-fixed-side-list">
+			   <li><a href="javascript:void(0);">1F 热门品牌</a></li>
+			   <li><a href="javascript:void(0);">2F 爆款好车</a></li>
+			   <li><a href="javascript:void(0);">3F 二手车</a></li>
+			   <li><a href="javascript:void(0);">4F 小鱼购车帮</a></li>
+			   <li><a href="javascript:void(0);">5F 小鱼试驾</a></li>
+			</ul>
+			<div class="qr-code">
+				<div class="soma-hd">关注购车帮<br/>
+1对1购车解答</div>
+<div class="soma-bd"><img src="images/qrcode_1.jpg" /></div>
+			</div>
+
+			<a href="javascript:void(0);" class="gotop" id="J_gotop""></a>
+		</div>
+    </div>
+    @@include("./views/_footer.html")
+  
 </body>
 
 </html>

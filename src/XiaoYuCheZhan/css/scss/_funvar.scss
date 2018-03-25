@@ -4,6 +4,13 @@
     overflow: hidden;
 }
 
+%v-img {
+     max-width:100%;
+    max-height:100%;
+    display:inline-block;
+    vertical-align:middle;
+}
+
 
  /**
   * x=y=0的时候 阴影向四边扩散

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/bxSlider/jquery.bxslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/bxSlider/jquery.bxslider.css" />
+</head>
+
+<body>
+    @@include("./views/_header.html")
+    <div class="coms-container">
+        <div class="coms-crumbs">
+            当前位置：<a href="#">网上车展</a> > <span class="sr-crumb-tip">搜索名称（共<b>23</b>个搜索结果）</span>
+        </div>
+        <div class="cd-mod-1 clearfix">
+            <div class="brandd-mod-1-l">
+                <p class="title">奥迪品牌团购会【2018-03-24 星期六】</p>
+                <div class="tip-yh clearfix">
+                    <span class="tit">特惠</span>
+                    <div class="txt">报名参团即可获得价值2588元大礼包，快点来报名吧！</div>
+                </div>
+                <div class="time-djs clearfix">
+                    <p class="count">本期已报名<b>336</b>人</p>
+                    <div class="times">
+                        <label class="lab">报名倒计时：</label>
+                        <div class="time-d-box"><span class="item-val">23</span>天<span class="item-val">09</span>时<span class="item-val">31</span>分<span class="item-val">31</span>秒</div>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="item-cell">
+                        <label class="lab">品牌：</label>
+                        <div class="para-val">
+                            <select class="sel">
+                                <option>奥迪</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item-cell item-line">
+                        <label class="lab">车型：</label>
+                        <div class="para-val">
+                            <select class="sel">
+                                <option>选择车型</option>
+                            </select>
+                            <p class="tip-warning">已选择奥迪A6L，尽快报名，即刻了解最新优惠</p>
+                        </div>
+                    </div>
+                    <div class="item-cell">
+                        <label class="lab">姓名：</label>
+                        <div class="para-val">
+                            <input type="text" class="ipt-text">
+                        </div>
+                    </div>
+                    <div class="item-cell">
+                        <label class="lab">手机号：</label>
+                        <div class="para-val">
+                            <input type="text" class="ipt-text">
+                        </div>
+                    </div>
+                    <div class="item-cell">
+                        <label class="lab"></label>
+                        <div class="para-val">
+                            <input type="submit" class="ipt-submit" value="立即报名">
+                            <p class="tip-xy">
+                                <input type="checkbox">我已同意此<a href="#">服务协议</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="brandd-mod-1-r">
+                <p class="mb5">团购时间：2018-03-24（星期六）</p>
+                <p class="mb5">团购地点：正规4s店 <span class="tip-1">具体地点以短信通知为准</span></p>
+                <div class="clearfix">
+                    <div class="fl">团购价格：团购现场公布</div>
+                    <div class="tip-2">
+                        <span class="d-tit">原因？</span>
+                        <div class="d-body">
+                            <i class="arrow-top"></i>
+                            <p>1. 小鱼购车帮还在帮您砍价，还不确定底价。</p>
+                            <p>2. 团购价比较低，厂家不允许公开，公开后团购可能被取消，从而损害用户利益</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-pic"><img src="upload/demo_8.jpg" /></div>
+            </div>
+        </div>
+        @@include("./views/_pinpai_chexing_detail.html")
+    </div>
+    @@include("./views/_footer.html")
+    <script type="text/javascript">
+    $(function() {
+        $('#J_cd-gallery-list').bxSlider({
+            auto: true,
+            pager: true,
+            controls: false,
+            pagerSelector: $('.cd-gallery .pager'),
+            slideWidth: 570,
+        });
+    })
+    </script>
+</body>
+
+</html>

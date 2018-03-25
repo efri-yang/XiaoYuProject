@@ -26,17 +26,96 @@
                 </ul>
                 <div class="pager"></div>
             </div>
+            <div class="cd-mod-1-r">
+                <p class="title">奥迪品牌团购会【2018-03-24 星期六】</p>
+                <div class="tip-yh clearfix">
+                    <span class="tit">特惠</span>
+                    <div class="txt">报名参团即可获得价值2588元大礼包，快点来报名吧！</div>
+                </div>
+                <div class="time-djs clearfix">
+                    <p class="count">本期已报名<b>336</b>人</p>
+                    <div class="times">
+                        <label class="lab">报名倒计时：</label>
+                        <div class="time-d-box">23天09时31分56秒</div>
+                    </div>
+                </div>
+                <div class="tip-cx">
+                    <label class="lab">促销信息：</label>
+                    <div class="txt">
+                        <p>预定车型即送百元红包；</p>
+                        <p>促销二送油卡；</p>
+                        <p>促销三送行车记录仪。</p>
+                    </div>
+                </div>
+                <div class="bm-form">
+                    <form action="">
+                        <div class="form-cell clearfix">
+                            <label class="lab">姓名：</label>
+                            <div class="para-val">
+                                <input type="text" class="ipt-text" />
+                            </div>
+                        </div>
+                        <div class="form-cell clearfix">
+                            <label class="lab">手机号：</label>
+                            <div class="para-val">
+                                <input type="text" class="ipt-text" />
+                            </div>
+                        </div>
+                        <div class="form-cell clearfix">
+                            <label class="lab"></label>
+                            <div class="para-val">
+                                <input type="submit" class="ipt-submit" value="立即报名" />
+                                <p class="tip-xy">
+                                    <input type="checkbox" />我已同意此<a href="#">服务协议</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+        @@include("./views/_pinpai_chexing_detail.html")
     </div>
     @@include("./views/_footer.html")
+    <div class="inside-aside-fixed">
+        <a href="#" class="item-1">
+            <span class="soma-tit">购车顾问</span>
+            <div class="soma-bd">
+                <i class="arrow"></i>
+                <div class="pic"><img src="images/qrcode_2.jpg" /></div>
+                <p class="txt">扫码关注购车帮一对一购车解答</p>
+            </div>
+        </a>
+        <a href="javascript:void(0);" class="item-2" id="J_goinsideTop"></a>
+    </div>
     <script type="text/javascript">
-    $('#J_cd-gallery-list').bxSlider({
-        auto: true,
-        pager: true,
-        controls: false,
-        pagerSelector: $('.cd-gallery .pager'),
-        slideWidth:570,
-    });
+    $(function() {
+        (function() {
+            $goTop = $("#J_goinsideTop");
+            $goTop.on("click", function() {
+                $("html,body").animate({
+                    scrollTop: 0
+                }, 250);
+            });
+
+            $(window).on("scroll", function() {
+                var offsetT = $(this).scrollTop();
+                if (offsetT > 500) {
+                    $goTop.show();
+                } else {
+                    $goTop.hide();
+
+                }
+            })
+
+        })()
+        $('#J_cd-gallery-list').bxSlider({
+            auto: true,
+            pager: true,
+            controls: false,
+            pagerSelector: $('.cd-gallery .pager'),
+            slideWidth: 570,
+        });
+    })
     </script>
 </body>
 
