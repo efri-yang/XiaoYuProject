@@ -8,164 +8,518 @@
     <script type="text/javascript" src="js/flexible1.0.js"></script>
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/zepto.js"></script>
+
+
+
+    <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css" />
+    <script type="text/javascript" src="js/mdialog/mDialog.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
 </head>
 
 <body>
-	<div class="container">
-		<div class="h-banner border-b-30">
-			<img src="images/home/banner.jpg" />
-			<div class="seach-box">
-				<i class="icon-s"></i>
-				<input type="seach" class="ipt-text" placeholder="请输入车型名称进行搜索" />
-			</div>
-		</div>
+    <div class="container">
+        <div class="h-banner border-b-30">
+            <img src="images/home/banner.jpg" />
+            <div class="seach-box" id="J_seach-box-seat">
+                <i class="icon-s"></i>
+                <input type="seach" class="ipt-text" disabled placeholder="请输入车型名称进行搜索" />
+            </div>
+        </div>
+        <div class="bgfff border-b-30">
+            <div class="h-tit-1 clearfix">
+                <span class="txt-cn">品牌团购</span>
+                <span class="txt-en">BRANDS</span>
+                <a href="#" class="more">全部<span class="arrow"></span></a>
+            </div>
+            <ul class="pptg-list clearfix">
+                <li>
+                    <a href="#">
+                        <div class="pic"><img src="upload/01.jpg" /></div>
+                        <p class="txt">东风日产</p>
+                    </a>
+                    <p class="count">已有<span>2548</span>人报名</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pic"><img src="upload/01.jpg" /></div>
+                        <p class="txt">东风日产</p>
+                    </a>
+                    <p class="count">已有<span>2548</span>人报名</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pic"><img src="upload/01.jpg" /></div>
+                        <p class="txt">东风日产</p>
+                    </a>
+                    <p class="count">已有<span>2548</span>人报名</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pic"><img src="upload/01.jpg" /></div>
+                        <p class="txt">东风日产</p>
+                    </a>
+                    <p class="count">已有<span>2548</span>人报名</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pic"><img src="upload/01.jpg" /></div>
+                        <p class="txt">东风日产</p>
+                    </a>
+                    <p class="count">已有<span>2548</span>人报名</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pic"><img src="upload/demo_1.jpg" /></div>
+                        <p class="txt">东风日产</p>
+                    </a>
+                    <p class="count">已有<span>2548</span>人报名</p>
+                </li>
+            </ul>
+        </div>
+        <div class="bgfff border-b-30">
+            <div class="h-tit-1 clearfix">
+                <span class="txt-cn">爆款好车</span>
+                <span class="txt-en">HOT</span>
+            </div>
+            <ul class="pkhc-list clearfix">
+                <li>
+                    <a href="#">
+                        <div class="pic"><img src="upload/02.jpg" /></div>
+                        <div class="txt">
+                            <p class="tit">上汽大众 全新一代迈腾经典款</p>
+                            <p class="txt-1">主优惠信息送行车记录仪等等</p>
+                            <p class="txt-2">副优惠信息副优惠信息</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pic"><img src="upload/02.jpg" /></div>
+                        <div class="txt">
+                            <p class="tit">上汽大众 全新一代迈腾经典款</p>
+                            <p class="txt-1">主优惠信息送行车记录仪等等</p>
+                            <p class="txt-2">副优惠信息副优惠信息</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pic"><img src="upload/02.jpg" /></div>
+                        <div class="txt">
+                            <p class="tit">上汽大众 全新一代迈腾经典款</p>
+                            <p class="txt-1">主优惠信息送行车记录仪等等</p>
+                            <p class="txt-2">副优惠信息副优惠信息</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pic"><img src="upload/02.jpg" /></div>
+                        <div class="txt">
+                            <p class="tit">上汽大众 全新一代迈腾经典款</p>
+                            <p class="txt-1">主优惠信息送行车记录仪等等</p>
+                            <p class="txt-2">副优惠信息副优惠信息</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="bgfff border-b-30">
+            <div class="h-tit-1 clearfix">
+                <span class="txt-cn">二手好车</span>
+                <span class="txt-en">USED CAR</span>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <ul class="h-list-1">
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide">
+                        <ul class="h-list-1">
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="h-list-1-pagination"></div>
+            </div>
+        </div>
+        <div class="bgfff border-b-30">
+            <div class="h-tit-1 clearfix">
+                <span class="txt-cn">小鱼购车帮</span>
+                <span class="txt-en">HELP</span>
+            </div>
+            <div class="bcg-form-box">
+                <div class="soma-bd">
+                    <div class="item-cell">
+                        <div class="lab">登记意向车型参与购车团购 <i class="plus"></i></div>
+                        <div class="para-val">
+                            <select class="sel">
+                                <option>品牌</option>
+                                <option>品牌111</option>
+                            </select>
+                            <select class="sel">
+                                <option>车型</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item-cell">
+                        <div class="lab">没有意向车型？我还考虑</div>
+                        <div class="para-val">
+                            <select class="sel">
+                                <option>预算区间</option>
+                                <option>品牌111</option>
+                            </select>
+                            <select class="sel">
+                                <option>车型可多选</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                                <option>车型111</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item-cell">
+                        <input type="text" class="ipt-text" placeholder="您的姓名" />
+                    </div>
+                    <div class="item-cell">
+                        <input type="text" class="ipt-text" placeholder="您的联系方式" />
+                    </div>
+                    <div class="item-cell">
+                        <input type="button" class="ipt-submit" value="报名领取990元购车补贴">
+                        <p class="tip-1">（已有<b>4312</b>人领取购车补贴)</p>
+                    </div>
+                </div>
+                <i class="bt-icon"></i>
+            </div>
+        </div>
+        <div class="bgfff">
+            <div class="h-tit-1 clearfix">
+                <span class="txt-cn">9.9元,上门试驾</span>
+                <span class="txt-en">THE GIFT</span>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <ul class="h-list-1">
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide">
+                        <ul class="h-list-1">
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic"><img src="upload/02.jpg" /></div>
+                                    <div class="txt">
+                                        <p class="name">玛莎拉蒂 总裁 16年</p>
+                                        <div class="price">
+                                            <span class="current">¥ 90.54万</span>
+                                            <span class="origin">100.54万</span>
+                                        </div>
+                                        <span class="checkbtn">预约看车</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="h-list-1-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">©️2003-2016 小鱼网 版权所有，并保留所有权利</div>
+    <!-- 搜索 start-->
+    <div class="seach-dialog" id="J_seach-dialog">
+        <div class="form-seach">
+            <span class="goback" id="J_goback"></span>
+            <div class="form-item">
+                <i class="sicon"></i>
+                <input type="seach" class="ipt-seach" placeholder="请输入车型名称进行搜索">
+            </div>
+        </div>
+        <div class="seach-hot">
+            <div class="tit">热门搜索</div>
+            <div class="tag clearfix">
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型11车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+            </div>
+        </div>
+        <div class="seach-record">
+            <div class="tit">搜索记录</div>
+            <div class="tag clearfix">
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型型1车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+                <a href="#">车型1</a>
+            </div>
+        </div>
+    </div>
+    <!-- 搜搜  end -->
+    <script type="text/javascript">
+    (function($) {
+        $(function() {
+            var dialog;
+            $("#J_seach-box-seat").on("click", function() {
+                dialog = mDialog.open({
+                    title: false,
+                    width: "100%",
+                    height: "100%",
+                    maxHeight: "100%",
+                    maxWidth: "100%",
+                    duration: 200,
+                    offset: ["right", "top"],
+                    content: $("#J_seach-dialog"),
+                    animIn: "slideInRight",
+                    animOut: "slideOutRight",
+                    hasInput: false,
+                    closeBtn: false,
+                    baseViewWidth: 750,
+                    baseViewHeight: 960,
+                    onShow: function() {
 
-		<div class="bgfff border-b-30">
-			<div class="h-tit-1 clearfix">
-				<span class="txt-cn">品牌团购</span>
-				<span class="txt-en">BRANDS</span>
-				<a href="#" class="more">全部<span class="arrow"></span></a>
-			</div>
-			<ul class="pptg-list clearfix">
-				<li>
-					<a href="#">
-						<div class="pic"><img src="upload/01.jpg" /></div>
-						<p class="txt">东风日产</p>
-					</a>
-					<p class="count">已有<span>2548</span>人报名</p>
-				</li>
-				<li>
-					<a href="#">
-						<div class="pic"><img src="upload/01.jpg" /></div>
-						<p class="txt">东风日产</p>
-					</a>
-					<p class="count">已有<span>2548</span>人报名</p>
-				</li>
-				<li>
-					<a href="#">
-						<div class="pic"><img src="upload/01.jpg" /></div>
-						<p class="txt">东风日产</p>
-					</a>
-					<p class="count">已有<span>2548</span>人报名</p>
-				</li>
-				<li>
-					<a href="#">
-						<div class="pic"><img src="upload/01.jpg" /></div>
-						<p class="txt">东风日产</p>
-					</a>
-					<p class="count">已有<span>2548</span>人报名</p>
-				</li>
-				<li>
-					<a href="#">
-						<div class="pic"><img src="upload/01.jpg" /></div>
-						<p class="txt">东风日产</p>
-					</a>
-					<p class="count">已有<span>2548</span>人报名</p>
-				</li>
-				<li>
-					<a href="#">
-						<div class="pic"><img src="upload/demo_1.jpg" /></div>
-						<p class="txt">东风日产</p>
-					</a>
-					<p class="count">已有<span>2548</span>人报名</p>
-				</li>
-			</ul>
-		</div>
+                    },
+                    onClose: function() {
+
+                    }
+
+                });
+            });
+            $("#J_goback").on("click", function() {
+                mDialog.close(dialog);
+            })
 
 
-
-		<div class="bgfff border-b-30">
-			<div class="h-tit-1 clearfix">
-				<span class="txt-cn">爆款好车</span>
-				<span class="txt-en">HOT</span>
-			</div>
-			<ul class="pkhc-list clearfix">
-				<li>
-					<a href="#">
-						<div class="pic"><img src="upload/02.jpg" /></div>
-						<div class="txt">
-							<p class="tit">上汽大众  全新一代迈腾经典款</p>
-							<p class="txt-1">主优惠信息送行车记录仪等等</p>
-							<p class="txt-2">副优惠信息副优惠信息</p>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="pic"><img src="upload/02.jpg" /></div>
-						<div class="txt">
-							<p class="tit">上汽大众  全新一代迈腾经典款</p>
-							<p class="txt-1">主优惠信息送行车记录仪等等</p>
-							<p class="txt-2">副优惠信息副优惠信息</p>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="pic"><img src="upload/02.jpg" /></div>
-						<div class="txt">
-							<p class="tit">上汽大众  全新一代迈腾经典款</p>
-							<p class="txt-1">主优惠信息送行车记录仪等等</p>
-							<p class="txt-2">副优惠信息副优惠信息</p>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="pic"><img src="upload/02.jpg" /></div>
-						<div class="txt">
-							<p class="tit">上汽大众  全新一代迈腾经典款</p>
-							<p class="txt-1">主优惠信息送行车记录仪等等</p>
-							<p class="txt-2">副优惠信息副优惠信息</p>
-						</div>
-					</a>
-				</li>
-
-			</ul>
-		</div>
-
-
-		<div class="bgfff">
-			<div class="h-tit-1 clearfix">
-				<span class="txt-cn">二手好车</span>
-				<span class="txt-en">USED CAR</span>
-			</div>
-			<ul class="h-list-1">
-				<li>
-					<a href="#">
-						<div class="pic"><img src="upload/02.jpg" /></div>
-						<p class="name">玛莎拉蒂 总裁 16年</p>
-						<div class="price"></div>
-						<span class="checkbtn">预约看车</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-
-		<div class="bgfff">
-			<div class="h-tit-1">
-				<span class="txt-cn">小鱼购车帮</span>
-				<span class="txt-en">HELP</span>
-				<a href="#" class="more">全部<span class="arrow"><i class="right-arrow1"></i><i class="right-arrow2"></i></span></a>
-			</div>
-
-		</div>
-
-		<div class="bgfff">
-			<div class="h-tit-1">
-				<span class="txt-cn">9.9元,上门试驾</span>
-				<span class="txt-en">THE GIFT</span>
-				<a href="#" class="more">全部<span class="arrow"><i class="right-arrow1"></i><i class="right-arrow2"></i></span></a>
-			</div>
-		</div>
-
-
-
-			
-	</div>
-
-
-   
+        })
+    })(Zepto);
+    $(function() {
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.h-list-1-pagination',
+            },
+        });
+    })
+    </script>
 </body>
 
 </html>
