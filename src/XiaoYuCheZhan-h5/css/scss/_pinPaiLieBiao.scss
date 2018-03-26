@@ -1,0 +1,153 @@
+
+
+
+.brandlist-caption {
+    height: px2rem(60px);
+    line-height: px2rem(60px);
+    background: #f5f5f5;
+    padding: 0 px2rem(30px);
+    text-transform: uppercase;
+    font-size: px2rem(32px);
+}
+
+.brandlist-item {
+    li {
+        padding: 0 px2rem(30px);
+        &:last-child {
+            a {
+                border-bottom: none;
+            }
+        }
+        a {
+            display: block;
+            padding: px2rem(15px) 0;
+            line-height: px2rem(75px);
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .pic {
+            width: px2rem(75px);
+            height: px2rem(75px);
+            overflow: hidden;
+            float: left;
+            position: relative;
+            margin-right: px2rem(15px);
+            img {
+                @include img-vhcenter;
+            }
+        }
+        .name {
+            color: #4c4c4c;
+            font-size: px2rem(30px);
+        }
+    }
+}
+
+.brandlist-letter {
+    position: fixed;
+    right: 0;
+    top: px2rem(100px);
+    li {
+        a {
+            color: #f88c00;
+            font-size: px2rem(30px);
+            width: px2rem(60px);
+            height: px2rem(35px);
+            line-height: px2rem(35px);
+            text-align: center;
+
+            display: block;
+        }
+    }
+}
+
+.brandlist-dialog {
+    background: #fff;
+    padding: px2rem(110px) px2rem(30px) 0;
+    display: none;
+    position: absolute;
+    visibility: hidden;
+    .caption {
+        height: px2rem(110px);
+        padding: px2rem(30px) 0;
+        line-height: px2rem(50px);
+        border-bottom: 1px solid #cccccc;
+        position: absolute;
+        left: px2rem(30px);
+        right: px2rem(30px);
+        top: 0;
+
+        .tit {
+            color: #333333;
+            font-size: px2rem(30px);
+        }
+        .yykc {
+            height: px2rem(50px);
+            width: px2rem(166px);
+            text-align: center;
+            color: #fff;
+            float: right;
+            background: #ff9812;
+            border-radius: px2rem(25px);
+        }
+    }
+    .list {
+        padding-bottom: px2rem(25px);
+        background: #fff;
+        li {
+
+            a {
+                padding: px2rem(20px) 0;
+                border-bottom: 1px dashed #cccccc;
+                min-height: px2rem(158px);
+                display: block;
+                .pic {
+                    width: px2rem(220px);
+                    height: px2rem(118px);
+                    overflow: hidden;
+                    position: relative;
+                    float: left;
+                    margin-right: px2rem(15px);
+                    img {
+                        @include img-vhcenter;
+                    }
+                }
+
+                .name {
+                    color: #333333;
+                    font-size: px2rem(24px);
+                    height: px2rem(60px);
+                    line-height: px2rem(30px);
+                    overflow: hidden;
+                    padding-top: px2rem(5px);
+                }
+                .price {
+                    color: #ef3a3a;
+                    font-size: px2rem(24px);
+                    b {
+                        font-size: px2rem(32px);
+                    }
+                }
+            }
+            &:last-child {
+                a {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+    .iscroller-wrap {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+    .iscroll-inner {
+        position: relative;
+
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+

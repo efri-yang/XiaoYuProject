@@ -1,0 +1,148 @@
+.cartype-banner{
+	img{
+		width:100%;
+		vertical-align: top;
+	}
+}
+
+.cartype-count{
+	background:url("../images/carddetail/bg_1.jpg") no-repeat top center;
+	background-size:100% 100%;
+	height:px2rem(88px);
+	line-height:px2rem(88px);  
+	display:flex;
+	li{
+		flex:1;
+		font-size:px2rem(30px);
+		color:#ffffff;
+		text-align:center;
+		span{
+			font-size:px2rem(54px);
+			font-weight:bold;  
+		}  
+	}
+}
+
+.cartype-tg-info{
+	color:#333333;
+	padding:px2rem(30px) px2rem(30px) px2rem(20px); 
+	font-size:px2rem(28px);
+	border-top:px2rem(10px) solid #f4f4f4;
+	.list{
+		li{
+			position:relative;
+			padding-left:px2rem(191px);
+			margin-bottom:px2rem(15px);  
+			.lab{
+				position:absolute;
+				left:0;
+				top:0;
+				color:#333333; 
+				i{
+					width:px2rem(30px);
+					height:px2rem(30px);
+					display:inline-block;
+					vertical-align:middle;
+					margin-top:-2px;
+					margin-right:px2rem(20px);    
+					background:url("../images/carddetail/tag_1.png") no-repeat top center;
+					background-size:100% 100%;   
+				}
+			}
+			.txt-detail{
+				color:#666666;
+				.qa-icon{
+					width:px2rem(26px);
+					height:px2rem(26px);
+					display:inline-block;
+					vertical-align: middle;
+					background:url("../images/carddetail/tag_2.png") no-repeat top center;
+					background-size:100% 100%;
+					margin-left:px2rem(10px);
+					margin-top:px2rem(-4px);       
+				}
+			}
+		}
+	}  
+}
+
+
+.cartype-tgbm{
+	padding:0 px2rem(30px) px2rem(10px); 
+	.caption{
+		color:#333333;
+		font-size:px2rem(32px);
+		height:px2rem(78px);
+		line-height:px2rem(78px);
+		
+	}
+}
+
+.cartype-tgbm-form{
+	.item-cell{
+		margin-bottom:px2rem(20px); 
+	}
+	.ipt-text{
+		padding:px2rem(30px) px2rem(20px); 
+		border:1px solid #eeeeee;
+		appearance:none;
+		 border-radius:0;
+		 font-size:px2rem(28px);
+		 width:100%;   
+	}
+	.ipt-submit{
+		height:px2rem(88px);
+		line-height:px2rem(88px);
+		background:#ff9812;
+		color:#fff;
+		display:block;
+		border:0;
+		background:#ff9812;
+		appearance:none;
+		width:100%;
+		font-size:px2rem(28px);
+		&:active{
+			background:darken(#ff9812,5%);
+		}     
+	}
+
+}
+
+
+.cartype-hdjs{
+	padding:0 px2rem(30px) px2rem(30px); 
+	.caption{
+		color:#333333;
+		font-size:px2rem(32px);
+		height:px2rem(78px);
+		line-height:px2rem(78px);
+		
+	}
+	.soma-bd{
+		color:#4c4c4c;
+		font-size:px2rem(26px);
+		line-height:1.5; 
+		*{
+			max-width:100%; 
+		}  
+	}
+}
+
+
+.cartype-fixed-bottom-seat{
+	height:px2rem(88px);
+	line-height:px2rem(88px);
+}
+.cartype-fixed-bottom{
+	position:fixed;
+	left:0;
+	bottom:0;
+	right:0; 
+	height:px2rem(88px);
+	line-height:px2rem(88px);
+	background:#ff9812;
+	text-align:center;
+	color:#fff;
+	font-weight:bold; 
+	font-size:px2rem(28px);      
+}
