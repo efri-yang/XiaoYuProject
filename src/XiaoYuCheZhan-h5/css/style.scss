@@ -1,0 +1,197 @@
+@import "./scss/_funvar.scss";
+
+
+.container {
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+.border-t-30 {
+    border-top: px2rem(30px) solid #f4f4f4;
+}
+
+.border-b-30 {
+    border-bottom: px2rem(30px) solid #f4f4f4;
+}
+
+.bgfff {
+    background: #fff;
+}
+
+
+.h-banner {
+    position: relative;
+    img {
+        max-width: 100%;
+        vertical-align: top;
+    }
+    .seach-box {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: px2rem(30px);
+        .ipt-text {
+            height: px2rem(66px);
+            border: none;
+            width: 100%;
+            color: #666666;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: px2rem(30px);
+            padding: px2rem(23px) px2rem(30px) px2rem(23px) px2rem(65px);
+            font-size: px2rem(28px);
+        }
+        .icon-s {
+            width: px2rem(30px);
+            height: px2rem(30px);
+            position: absolute;
+            left: px2rem(50px);
+            top: 50%;
+            -webkit-transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+            -moz-transform: translate(0, -50%);
+            background: url("../images/home/search_icon.png") no-repeat left top;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.h-tit-1 {
+	line-height:px2rem(40px);
+	padding:px2rem(15px) px2rem(30px);   
+    .txt-cn {
+        color: #333333;
+        float: left;
+        font-size: px2rem(32px);
+        margin-right:px2rem(10px); 
+    }
+    .txt-en {
+        color: #ff9812;
+        float: left;
+        font-size: px2rem(34px);
+    }
+    .more {
+        float: right;
+        color: #808080;
+        font-size: px2rem(24px);
+        position: relative;
+        padding-right: px2rem(20px);
+        .arrow {
+            width: px2rem(14px);
+            height: px2rem(22px);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            -webkit-transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+            -moz-transform: translate(0, -50%);
+            background:url("../images/home/arrow_r.png") no-repeat top center;
+            background-size:100% 100%;  
+        }
+    }
+}
+
+
+.pptg-list{
+	padding:px2rem(10px) px2rem(22px) 0; 
+	li{
+		width:33.33%;
+		float:left;
+		margin-bottom:px2rem(20px);  
+		overflow:hidden; 
+		padding:0 px2rem(8px);
+
+
+		a{
+			display:block; 
+			border-radius:px2rem(5px) px2rem(5px) 0 0; 
+		}
+		.pic{
+			display:block; 
+			height:px2rem(134px);
+			position:relative;
+			text-align:center; 
+			
+			overflow:hidden; 
+			img{
+				@include img-vhcenter;  
+			} 
+		}
+		.txt{
+			height:px2rem(46px);
+			line-height:px2rem(46px);
+			background:#ffaf46;
+			text-align:center;
+			color:#fff;
+			font-size:px2rem(22px);
+			font-weight:bold;
+			border-radius: 0 0 px2rem(5px) px2rem(5px);    
+		}
+		.count{
+			text-align:center;
+			color:#4c4c4c;
+			font-size:px2rem(22px);
+			line-height:1.8;
+			white-space:nowrap;
+			text-overflow:ellipsis; 
+			width:100%;
+			padding: 0 px2rem(5px);
+			overflow:hidden;   
+			span{
+				color:#ee3a3a;
+				font-weight:bold;  
+			}   
+		}
+	}
+}
+
+.pkhc-list{
+	padding:px2rem(10px) px2rem(20px) px2rem(10px);
+	li{
+		float:left;
+		width:50%;
+		padding:0 px2rem(10px);
+		margin-bottom:px2rem(20px); 
+		.pic{
+			height:px2rem(181px);
+			position:relative; 
+			overflow:hidden;
+			img{
+				@include img-vhcenter;
+			}   
+		}
+		.tit{
+			height:px2rem(50px);
+			line-height:px2rem(50px);
+			text-align: center;
+			@include text-overflow;
+			color:#333333;
+			font-size:px2rem(22px);
+			margin: 0 px2rem(12px);
+			border-bottom:1px dashed #cccccc;   
+		}
+		.txt{
+			border:1px solid #e6e6e6;
+			border-top:none;
+			padding:0 px2rem(12px) px2rem(10px); 
+		}
+		.txt-1{
+			height:px2rem(40px);
+			line-height: px2rem(40px);
+			text-align:center;
+			font-size:px2rem(24px);
+			font-weight:bold; 
+			color:#ef3a3a; 
+			margin: px2rem(5px) 0 0;
+			@include text-overflow;
+		}
+		.txt-2{
+			height:px2rem(30px);
+			line-height: px2rem(30px);
+			text-align:center;
+			
+			font-size:px2rem(22px);
+			@include text-overflow;
+			color:#ef3a3a;    
+		}
+	}
+}

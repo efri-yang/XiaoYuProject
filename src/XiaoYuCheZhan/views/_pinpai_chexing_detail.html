@@ -72,13 +72,13 @@
                 <div class="item-cell">
                     <label class="lab">姓名：</label>
                     <div class="para-val">
-                        <input type="text" class="ipt-text">
+                         <input type="text" class="ipt-text" placeholder="请输入姓名">
                     </div>
                 </div>
                 <div class="item-cell">
                     <label class="lab">手机号：</label>
                     <div class="para-val">
-                        <input type="text" class="ipt-text">
+                         <input type="text" class="ipt-text" placeholder="请输入手机号">
                     </div>
                 </div>
                 <div class="item-cell">
@@ -106,40 +106,54 @@
         </div>
         <div class="signed-user">
             <div class="caption">已报名用户</div>
-            <ul class="list">
-                <li class="clearfix">
-                    <span class="name">苏女士</span>
-                    <span class="phone">138****9443</span>
-                </li>
-                <li>
-                    <span class="name">苏女士</span>
-                    <span class="phone">138****9443</span>
-                </li>
-                <li class="clearfix">
-                    <span class="name">苏女士</span>
-                    <span class="phone">138****9443</span>
-                </li>
-                <li>
-                    <span class="name">苏女士</span>
-                    <span class="phone">138****9443</span>
-                </li>
-                <li class="clearfix">
-                    <span class="name">苏女士</span>
-                    <span class="phone">138****9443</span>
-                </li>
-                <li>
-                    <span class="name">苏女士</span>
-                    <span class="phone">138****9443</span>
-                </li>
-                <li class="clearfix">
-                    <span class="name">苏女士</span>
-                    <span class="phone">138****9443</span>
-                </li>
-                <li>
-                    <span class="name">苏女士</span>
-                    <span class="phone">138****9443</span>
-                </li>
-            </ul>
+            <div class="soma-bd" id="J_signed-user-list">
+                <ul class="list">
+                    <li class="clearfix">
+                        <span class="name">苏女士1</span>
+                        <span class="phone">138****9443</span>
+                    </li>
+                    <li>
+                        <span class="name">苏女士2</span>
+                        <span class="phone">138****9443</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="name">苏女士3</span>
+                        <span class="phone">138****9443</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="name">苏女士4</span>
+                        <span class="phone">138****9443</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="name">苏女士5</span>
+                        <span class="phone">138****9443</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="name">苏女士6</span>
+                        <span class="phone">138****9443</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="name">苏女士7</span>
+                        <span class="phone">138****9443</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="name">苏女士8</span>
+                        <span class="phone">138****9443</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="name">苏女士9</span>
+                        <span class="phone">138****9443</span>
+                    </li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+            $(function() {
+                $('#J_signed-user-list').liMarquee({
+                    direction: 'up',
+                    scrollamount:25
+                });
+            })
+            </script>
         </div>
         <div class="hot-cartype">
             <div class="caption">热门车型</div>
