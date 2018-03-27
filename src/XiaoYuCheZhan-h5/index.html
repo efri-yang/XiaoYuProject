@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <title></title>
     @@include("./views/_headStyleScript.html")
-
-
-
     <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css" />
     <script type="text/javascript" src="js/mdialog/mDialog.js"></script>
@@ -256,39 +253,48 @@
                     <div class="item-cell">
                         <div class="lab">登记意向车型参与购车团购 <i class="plus"></i></div>
                         <div class="para-val">
-                            <select class="sel">
-                                <option>品牌</option>
-                                <option>品牌111</option>
-                            </select>
-                            <select class="sel">
-                                <option>车型</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                            </select>
+                            <div class="clearfix item-yx">
+                                <select class="sel">
+                                    <option>品牌</option>
+                                    <option>品牌111</option>
+                                </select>
+                                <select class="sel">
+                                    <option>车型</option>
+                                    <option>车型111</option>
+                                    <option>车型111</option>
+                                    <option>车型111</option>
+                                    <option>车型111</option>
+                                    <option>车型111</option>
+                                    <option>车型111</option>
+                                    <option>车型111</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="item-cell">
                         <div class="lab">没有意向车型？我还考虑</div>
-                        <div class="para-val">
+                        <div class="para-val clearfix">
                             <select class="sel">
                                 <option>预算区间</option>
                                 <option>品牌111</option>
                             </select>
-                            <select class="sel">
-                                <option>车型可多选</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                                <option>车型111</option>
-                            </select>
+                            <div class="cart-type-box">
+                                <div class="sel-field-el">车型可多选</div>
+                                <input type="hidden" id="J_cart-hidden" value="">
+                                <div class="sel-item-box">
+                                    <a href="#" data-val="小型车" data-id="1">小型车</a>
+                                    <a href="#" data-val="紧凑型车" data-id="2">紧凑型车</a>
+                                    <a href="#" data-val="中型车" data-id="3">中型车</a>
+                                    <a href="#" data-val="中大型车" data-id="4">中大型车</a>
+                                    <a href="#" data-val="大型车" data-id="5">大型车</a>
+                                    <a href="#" data-val="中大型SUV" data-id="6">中大型SUV</a>
+                                    <a href="#" data-val="中型SUV" data-id="7">中型SUV</a>
+                                    <a href="#" data-val="MPV" data-id="8">MPV</a>
+                                    <a href="#" data-val="紧凑型SUV">紧凑型SUV</a>
+                                    <span class="arrow-up"></span>
+                                    <p class="btncomfirm" id="J_btncomfirm">确认</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="item-cell">
@@ -302,7 +308,6 @@
                         <p class="tip-1">（已有<b>4312</b>人领取购车补贴)</p>
                     </div>
                 </div>
-                <i class="bt-icon"></i>
             </div>
         </div>
         <div class="bgfff">
@@ -469,7 +474,7 @@
                 <a href="#">车型1</a>
                 <a href="#">车型1</a>
             </div>
-        </div>
+        </div> 
     </div>
     <!-- 搜搜  end -->
     <script type="text/javascript">
@@ -504,8 +509,6 @@
             $("#J_goback").on("click", function() {
                 mDialog.close(dialog);
             })
-
-
         })
     })(Zepto);
     $(function() {
@@ -514,7 +517,92 @@
                 el: '.h-list-1-pagination',
             },
         });
-    })
+    });
+
+    (function($) {
+        $(function() {
+            var CartType = function() {
+                this.arr = [];
+                this.add = function(obj) {
+                    if (this.indexOf(obj.id) == false) {
+                        this.arr.push(obj);
+                    }
+
+                }
+                this.indexOf = function(id) {
+                    var posIndex = false;
+                    $.each(this.arr, function(index, obj) {
+                        if (obj.id == id) {
+                            posIndex = index;
+                            return;
+                        }
+                    })
+                    return posIndex;
+                }
+                this.remove = function(id) {
+                    var index = this.indexOf(id);
+                    if (index !== false) {
+                        this.arr.splice(index, 1)
+                    }
+                }
+                this.joinId = function() {
+                        var arr = [];
+                        $.each(this.arr, function(index, obj) {
+                            arr.push(obj.id);
+                        })
+                        return arr.join(",")
+                    },
+                    this.joinText = function() {
+                        var arr = [];
+                        $.each(this.arr, function(index, obj) {
+                            arr.push(obj.text);
+                        })
+                        return arr.join(",")
+                    }
+            }
+
+            var cart = new CartType();
+
+            (function() {
+                $(".sel-field-el").on("click", function() {
+                    if ($(".cart-type-box").hasClass("open")) {
+                        $(".cart-type-box").removeClass("open");
+                    } else {
+                        $(".cart-type-box").addClass("open");
+                    }
+                })
+                $(".sel-item-box a").on("click", function(event) {
+                    var obj = {};
+                    event.preventDefault();
+                    var $this = $(this);
+                    obj.id = $this.data("id");
+                    obj.text = $this.data("val");
+                    if ($this.hasClass('active')) {
+                        $this.removeClass('active');
+                        cart.remove(obj.id);
+                    } else {
+                        $this.addClass('active');
+                        cart.add(obj);
+                    }
+
+                    //隐藏域要去选项的id 开发自己选择
+
+                    //$("#J_cart-hidden").val(cart.joinText()) //隐藏域要去选项的文本 开发自己选择
+                    //
+                });
+
+                $("#J_btncomfirm").on("click", function() {
+                    if (cart.arr.length) {
+                        $(".sel-field-el").html(cart.joinText());
+                    } else {
+                        $(".sel-field-el").html("- 选择车型 -")
+                    }
+                    $("#J_cart-hidden").val(cart.joinText());
+                    $(".cart-type-box").removeClass('open');
+                })
+            })()
+        })
+    })(Zepto);
     </script>
 </body>
 

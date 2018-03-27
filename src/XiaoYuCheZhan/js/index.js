@@ -99,3 +99,89 @@
           })
       })
   })(jQuery);
+
+
+  (function($) {
+        $(function() {
+            var CartType = function() {
+                this.arr = [];
+                this.add = function(obj) {
+                    if (this.indexOf(obj.id) == false) {
+                        this.arr.push(obj);
+                    }
+
+                }
+                this.indexOf = function(id) {
+                    var posIndex = false;
+                    $.each(this.arr, function(index, obj) {
+                        if (obj.id == id) {
+                            posIndex = index;
+                            return;
+                        }
+                    })
+                    return posIndex;
+                }
+                this.remove = function(id) {
+                    var index = this.indexOf(id);
+                    if (index !== false) {
+                        this.arr.splice(index, 1)
+                    }
+                }
+                this.joinId = function() {
+                        var arr = [];
+                        $.each(this.arr, function(index, obj) {
+                            arr.push(obj.id);
+                        })
+                        return arr.join(",")
+                    },
+                    this.joinText = function() {
+                        var arr = [];
+                        $.each(this.arr, function(index, obj) {
+                            arr.push(obj.text);
+                        })
+                        return arr.join(",")
+                    }
+            }
+
+            var cart = new CartType();
+
+            (function() {
+                $(".sel-field-el").on("click", function() {
+                    if ($(".cart-type-box").hasClass("open")) {
+                        $(".cart-type-box").removeClass("open");
+                    } else {
+                        $(".cart-type-box").addClass("open");
+                    }
+                })
+                $(".sel-item-box a").on("click", function(event) {
+                    var obj = {};
+                    event.preventDefault();
+                    var $this = $(this);
+                    obj.id = $this.data("id");
+                    obj.text = $this.data("val");
+                    if ($this.hasClass('active')) {
+                        $this.removeClass('active');
+                        cart.remove(obj.id);
+                    } else {
+                        $this.addClass('active');
+                        cart.add(obj);
+                    }
+
+                    //隐藏域要去选项的id 开发自己选择
+
+                    //$("#J_cart-hidden").val(cart.joinText()) //隐藏域要去选项的文本 开发自己选择
+                    //
+                });
+
+                $("#J_btncomfirm").on("click", function() {
+                    if (cart.arr.length) {
+                        $(".sel-field-el").html(cart.joinText());
+                    } else {
+                        $(".sel-field-el").html("- 选择车型 -")
+                    }
+                    $("#J_cart-hidden").val(cart.joinText());
+                    $(".cart-type-box").removeClass('open');
+                })
+            })()
+        })
+    })(jQuery);

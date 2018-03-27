@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
     <title></title>
     @@include("./views/_headStyleScript.html")
+    <script type="text/javascript" src="js/mdialog/mDialog.js"></script>
 </head>
 <body>
 	<div class="container brand-detail-container">
@@ -69,5 +70,25 @@
 		<a class="brandd-fixed-bottom" href="#ljbm">立即报名</a>
 
 	</div>
+
+	<div class="qa-tip-dialog" id="J_qa-tip-dialog">
+            <p>1. 小鱼购车帮还在帮您砍价，还不确定底价。</p>
+            <p>2. 团购价比较低，厂家不允许公开，公开后团购可能被取消，从而损害用户利益</p>
+        </div>
+    <script type="text/javascript">
+    $(function() {
+        $(".qa-icon").on("click", function() {
+            mDialog.open({
+                title: false,
+                width: "80%",
+                duration: 200,
+                content: $("#J_qa-tip-dialog"),
+                hasInput: false,
+                closeBtn: true
+
+            });
+        })
+    })
+    </script>
 </body>
 </html>

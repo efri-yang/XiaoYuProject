@@ -209,7 +209,6 @@
     function setElemPos($elem, opts, $title, $main, $footer) {
         //maxWidth、maxHeight 传递进来的值可能是  auto  80%  400px;
         //width、height  传递进来的值可能是  auto  80%  400px;
-
         var elemW, elemH, winW, winH, realW, realH, maxW, maxH, offsetX, isOffsetX, offsetY, isOffsetY, titleH = 0,
             contentH = 0,
             footerH = 0,
@@ -302,6 +301,8 @@
 
 
         elemH = $elem.outerHeight();
+
+
         opts.maxHeight = !!opts.maxHeight ? ((opts.maxHeight == "auto") ? "80%" : opts.maxHeight) : "80%";
         maxH = ExtraFunc.isPx(opts.maxHeight) ? ExtraFunc.getNumber(opts.maxHeight) : winH * ExtraFunc.getNumber(opts.maxHeight) / 100;
 

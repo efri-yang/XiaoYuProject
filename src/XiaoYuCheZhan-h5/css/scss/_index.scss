@@ -251,22 +251,16 @@
     width: px2rem(720px);
     margin: 0 auto;
     position: relative;
-    padding-bottom: px2rem(120px);
-    .bt-icon {
-        width: 100%;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: px2rem(195px);
-        background: url("../images/home/bt_icon.png") no-repeat center bottom;
-    }
-    .soma-bd {
-        background: #fafafa;
-        padding: px2rem(20px) px2rem(50px);
-        margin: px2rem(15px) px2rem(45px) 0;
-        box-shadow: 0 0 5px #e1e1e0;
-        position: relative;
+    padding-bottom: px2rem(30px);
 
+    .soma-bd {
+
+        padding: px2rem(30px) px2rem(50px) px2rem(110px);
+        margin: px2rem(15px) px2rem(45px) 0;
+
+        position: relative;
+        background: url("../images/home/bt_icon.png") no-repeat bottom center;
+        background-size: 100% 100%;
         .item-cell {
             margin-bottom: px2rem(20px);
             .lab {
@@ -293,6 +287,7 @@
                 appearance: none;
                 -webkit-appearance: none;
                 border-radius: 0;
+                float: left;
                 font-size: px2rem(22px);
                 /* Safari 和 Chrome */
                 background: #ffffff url("../images/home/arrow_sel.png") no-repeat 100% center;
@@ -329,6 +324,97 @@
                     font-weight: bold;
                 }
             }
+
+            .item-yx {
+                margin-bottom: px2rem(20px);
+            }
+        }
+    }
+
+    .cart-type-box {
+        position: relative;
+        float: left;
+
+        width: px2rem(250px);
+        &.open {
+            .sel-item-box {
+                display: block;
+            }
+        }
+    }
+    .sel-field-el {
+        border-radius: 0;
+        border: 1px solid #dbdbdb;
+        padding: px2rem(20px) px2rem(60px) px2rem(20px) px2rem(10px);
+        width: 100%;
+        color: #323232;
+        margin-top:px2rem(4px); 
+        font-size: px2rem(22px);
+        background: #ffffff url(../images/home/arrow_sel.png) no-repeat 100% center;
+        @include text-overflow;
+        max-width: px2rem(300px);
+    }
+    .sel-item-box {
+        position: absolute;
+        right: 0;
+        top: px2rem(100px);
+        background: #fff;
+        width: px2rem(630px);
+        padding: px2rem(20px);
+        z-index: 100;
+
+        display: none;
+        a {
+            display: inline-block;
+            height: px2rem(58px);
+            line-height: px2rem(58px);
+            overflow: hidden;
+            padding: 0 px2rem(18px);
+            font-size: px2rem(28px);
+            background: #f0f0f0;
+            color: #4c4c4c;
+            margin-bottom: px2rem(10px);
+            margin-right: px2rem(2px);
+            border: 1px solid #f0f0f0;
+            &.active {
+                background: #ff4800;
+                background: #fff;
+                border: 1px solid #ff530f;
+            }
+        }
+        .arrow-up {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 15px solid #fff;
+            position: absolute;
+            right: px2rem(20px);
+            top: px2rem(-15px);
+        }
+        .btncomfirm {
+            padding: px2rem(15px) 0;
+            width: px2rem(280px);
+            margin: px2rem(10px) auto 0;
+            font-size: px2rem(28px);
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border-radius: px2rem(50px);
+            display: block;
+
+            color: #fff;
+            background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, from(rgb(166, 34, 226)), to(rgb(216, 34, 186)), to(rgb(51, 102, 0)));
         }
     }
 }
@@ -420,3 +506,9 @@
         }
     }
 }
+
+
+
+
+//**********
+//
