@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/home.css" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.xmfish.com/js/chanel/www/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="js/layer/layer.js"></script>
     <script>
     /*头图切换*/
     function liSum(wrap, list, pageUL, pageCUR) {
@@ -131,16 +132,16 @@
         });
 
         setTimeout(function() {
-                jQuery("#branddesign-slider").slide({
-                    mainCell: "ul",
-                    autoPlay: true,
-                    effect: "leftMarquee",
-                    vis: 9,
-                    interTime: 50,
-                    trigger: "click"
-                });
-            }, 20)
-            /* end 轮播*/
+            jQuery("#branddesign-slider").slide({
+                mainCell: "ul",
+                autoPlay: true,
+                effect: "leftMarquee",
+                vis: 9,
+                interTime: 50,
+                trigger: "click"
+            });
+        }, 20)
+        /* end 轮播*/
 
         /* 输入框默认提示*/
         jQuery(".sc-inp,.reg-txt").each(function() {
@@ -198,60 +199,7 @@
     </script>
 </head>
 
-<body class="yahei" style="background:#333; ">
-
-    <link rel="stylesheet" type="text/css" href="./css/sjybjdialog.css">
-    <!-- 设计与报价 弹出框    start -->
-    <div class="home-sjybj-dialog">
-        <i class="cicon-bg-top"></i>
-        <i class="cion-close"></i>
-        <div class="sjybj-tab-hd">
-            <a href="#" class="active item-1">免费报价</a>
-            <a href="#" class="item-2">免费报价</a>
-        </div>
-        <div class="sjybj-tab-bd">
-            <div class="sjybj-mfbj-step1 clear">
-                <div class="c-mfbj-forms">
-                    <p class="txt-1">免费抢4套设计方案与报价 </p> 
-                    <p class="txt-2">今天仅剩<span class="num">88</span>个名额</p>
-                    <div class="form-box">
-                        <div class="item-cell">
-                            <label class="lab">您的姓名</label>
-                            <input type="ipt-text" class="ipt-text" />
-                        </div>
-                        <div class="item-cell">
-                           <label class="lab">请输入手机号码</label>
-                            <input type="text"  class="ipt-text" />
-                        </div>
-                        <div class="item-cell">
-                            <input type="submit" class="ipt-submit">
-                        </div>
-                    </div> 
-                    <p class="txt-3">已为<span class="num">25864</span>位业主提供专业设计方案</p>
-                    <p class="txt-4">张小姐 1分钟前免费获取4套专业设计方案</p>  
-                </div>
-                <div class="area-lf"><div class="pic"></div></div>
-            </div> 
-
-            <div class="sjybj-mfbj-step2 clear">
-                <div class="c-mfbj-success-intro">
-                    <div class="txt-1"><span>申请成功!</span></div>
-                    <p class="pic-icon-1"></p>
-                    <p class="txt-2">您同时还获得1项增值服务</p>
-                    <p class="txt-3">稍后装修管家将致电您，为您提供免费装修咨询服务。</p>
-                </div>
-                <div class="c-mfbj-success-qrcode">
-                    <div class="txt-1">添加装修管家微信</div>
-                    <div class="qrcode-pic"></div>
-                    <p class="txt-2">扫码添加小鱼装修管家客服微信，一对一专业服务</p>
-                </div>
-            </div> 
-        </div>
-        <div class="sjybj-tab-bd active"></div>
-    </div>
-
-
-    <!-- 设计与报价 弹出框    start -->
+<body class="yahei">
     <!--头部-->
     <div class="home-topheader">
         <div class="wrap clear">
@@ -341,7 +289,7 @@
     </div>
     <!--end 搜索-->
     <!--导航-->
-   @@include("./views/_nav.html")
+    @@include("./views/_nav.html")
     <!--end 导航-->
     <div class="wrap">
         <!--广告-->
@@ -419,100 +367,11 @@
                 </div>
             </div>
             <!--end 轮播-->
-            <!--报名-->
-            <div class="fr con-340">
-                <div class="reg-panel">
-                    <ul class="reg-hd clear">
-                        <li class="active"><a href="javascript:">装修设计</a></li>
-                        <li><a href="javascript:">橱柜设计</a></li>
-                        <li><a href="javascript:">公益验房</a></li>
-                        <li><a href="javascript:">样房通道</a></li>
-                    </ul>
-                    <div class="pl20">
-                        <!--装修设计-->
-                        <div id="regzx" class="reg-form color-666">
-                            <div class="control-group mt10"><em class="color-orange mr5"><b>10</b></em>秒登记，免费获取专业设计方案</div>
-                            <div class="control-group">
-                                <input class="reg-txt" type="text" value="">
-                                <span class="inp-note">输入您的称呼</span>
-                            </div>
-                            <div class="control-group">
-                                <input class="reg-txt" type="text" value="">
-                                <span class="inp-note">请输入您的手机号码</span>
-                            </div>
-                            <div class="control-group">
-                                <button type="submit" onclick="$('#decorationDesign').show();" class="reg-button yahei">免费申请</button>
-                            </div>
-                            <div class="control-group mt10">
-                                已为<em class="color-orange ml5 mr5"><b>60005</b></em>位业主提供专业设计方案，
-                                <br /> 上百家厦门最专业的装修公司为您服务
-                            </div>
-                        </div>
-                        <!--end 装修设计-->
-                        <!--橱柜设计-->
-                        <div id="regcg" class="reg-form color-666" style="display:none;">
-                            <div class="control-group mt10"><em class="color-orange mr5"><b>10</b></em>秒登记，免费获取专业设计方案</div>
-                            <div class="control-group">
-                                <input class="reg-txt" type="text" value="">
-                                <span class="inp-note">输入您的称呼</span>
-                            </div>
-                            <div class="control-group">
-                                <input class="reg-txt" type="text" value="">
-                                <span class="inp-note">请输入您的手机号码</span>
-                            </div>
-                            <div class="control-group">
-                                <button type="submit" onclick="$('#cupboardDesign').show();" class="reg-button yahei">免费申请</button>
-                            </div>
-                            <div class="control-group mt10">
-                                已为<em class="color-orange ml5 mr5"><b>184956</b></em>位业主提供专业设计方案，
-                                <br /> 上百家厦门最专业的装修公司为您服务
-                            </div>
-                        </div>
-                        <!--end 橱柜设计-->
-                        <!--公益验房-->
-                        <div id="reggytf" class="reg-form color-666" style="display:none;">
-                            <div class="control-group mt10"><em class="color-orange mr5"><b>10</b></em>秒登记，免费获取专业设计方案</div>
-                            <div class="control-group">
-                                <input class="reg-txt" type="text" value="">
-                                <span class="inp-note">输入您的称呼</span>
-                            </div>
-                            <div class="control-group">
-                                <input class="reg-txt" type="text" value="">
-                                <span class="inp-note">请输入您的手机号码</span>
-                            </div>
-                            <div class="control-group">
-                                <button type="submit" onclick="$('#houseInspection').show();" class="reg-button yahei">免费申请</button>
-                            </div>
-                            <div class="control-group mt10">
-                                已为<em class="color-orange ml5 mr5"><b>7821</b></em>位业主提供专业设计方案，
-                                <br /> 上百家厦门最专业的装修公司为您服务
-                            </div>
-                        </div>
-                        <!--end 公益验房-->
-                        <!--样房通道-->
-                        <div id="regyftd" class="reg-form color-666" style="display:none;">
-                            <div class="control-group mt10"><em class="color-orange mr5"><b>10</b></em>秒登记，免费获取专业设计方案</div>
-                            <div class="control-group">
-                                <input class="reg-txt" type="text" value="">
-                                <span class="inp-note">输入您的称呼</span>
-                            </div>
-                            <div class="control-group">
-                                <input class="reg-txt" type="text" value="">
-                                <span class="inp-note">请输入您的手机号码</span>
-                            </div>
-                            <div class="control-group">
-                                <button type="submit" onclick="$('#modelHouses').show();" class="reg-button yahei">免费申请</button>
-                            </div>
-                            <div class="control-group mt10">
-                                已为<em class="color-orange ml5 mr5"><b>14624</b></em>位业主提供专业设计方案，
-                                <br /> 上百家厦门最专业的装修公司为您服务
-                            </div>
-                        </div>
-                        <!--end 样房通道-->
-                    </div>
-                </div>
+            <!--报名 修改  2018-0329 yyh start ***************-->
+            <div class="h-bm-form-1">
+            @@include("./views/_mfbj-forms.html")
             </div>
-            <!--end 报名-->
+            <!--报名 修改  2018-0329 yyh end ***************-->
         </div>
         <div class="mt10 cpanel pt40 pb40 pr40 clear">
             <div class="fl news-con pl40">
@@ -1615,13 +1474,64 @@
     <!-- add by yyh 20170605 -->
 
 
-    
-    
+ <!-- add by yyh 20180329 *******************************************************************************-->    
+    @@include("./views/_homeFormDialog.html")
+    <script type="text/javascript" src="./js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+
+         //tab 选项卡
+    (function($) {
+        $(function() {
+            var $container = $("#J_home-sjybj-dialog");
+            var $bds = $container.find(".sjybj-tab-bd");
+            var $hds = $container.find(".sjybj-tab-hd a");
+            $hds.each(function(index, el) {
+
+                $(el).on("click", function(event) {
+                    event.preventDefault();
+                    var $this = $(this);
+                    var index = $hds.index(this);
+                    $this.addClass('active').siblings().removeClass('active');
+                    $bds.eq(index).addClass('active').siblings().removeClass('active');
+                })
+            });
+        })
+
+    })(jQuery);
+    (function($) {
+        $(function() {
+            var isOpen;
+            var $dialog = $("#J_home-sjybj-dialog");
+            var $mask = $("#J_home-sjybj-dialog-mask");
+            var $close = $("#J_home-sjybj-close");
+            //开发自行加cookie
+            // var dialogCookie=$.cookie('jzhomedialog');
+            $close.on("click", function() {
+                $dialog.removeClass('show');
+                $mask.removeClass('show');
+                countRandObj.start($dialog);
+            })
+            $(window).on("scroll", function() {
+                var scrollTop = $(window).scrollTop();
+                // if(scrollTop > 700 && !isOpen && !dialogCookie){
+                if (scrollTop > 700 && !isOpen) {
+                    $dialog.addClass('show');
+                    $mask.addClass('show');
+                    isOpen = true;
+                    //开始随机数
+                    countRandObj.start($dialog);
+                    // $.cookie('jzhomedialog',"jzhomedialog",{ expires: 30 });
+                }
+            })
+        })
+    })(jQuery)
+    </script>
 
 
 
+    @@include("./views/_homeFormFooter.html")
 
-
+      @@include("./views/_mfbj-forms-dialog.html")
 </body>
 
 </html>

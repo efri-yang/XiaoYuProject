@@ -1,20 +1,16 @@
 
 .c-mfbj-forms {
     float: left;
-    padding:20px 0 15px;
     .txt-1 {
-        color: #33b371;
-        font-size: 20px;
-        text-align:center;
+        color: #0cb46a;
+        font-size: 22px;
         margin-bottom: 5px;
     }
     .txt-2 {
         color: #666666;
-        text-align:center;
         font-size: 14px;
         .num {
             color: #ff9600;
-            padding:0 3px;
         }
     }
     .txt-3 {
@@ -52,36 +48,27 @@
                 border: 1px solid #f0f0f0;
                 height: 20px;
                 padding: 9px;
-                width: 280px;
+                width: 320px;
             }
         }
     }
     .ipt-submit {
-        width: 100%;
+        width: 340px;
         height: 40px;
-        background: #33b371;
+        background: #ffaa00;
         font-size: 16px;
         color: #fff;
         &:hover {
-            background: darken(#33b371, 5%);
+            background: darken(#ffaa00, 5%);
         }
     }
 }
 
-.c-mfbj-success-wrap{
-    display:none;
-    background:#fff;
-    width:336px;
-    padding:0 20px 20px;
-}
-
 .c-mfbj-success-intro {
-        border-bottom:1px solid #ededed;
-        padding-bottom:15px;
-        margin-bottom:15px; 
+    float: left;
     .txt-1 {
         text-align: center;
-        margin-top: 30px;
+        margin-top: 60px;
         span {
             color: #333333;
             font-size: 26px;
@@ -113,9 +100,9 @@
 }
 
 .c-mfbj-success-qrcode {
-   
-    
-    
+    width: 475px;
+    float: right;
+    background: url("../img/sjybjdialog/line_1.png") no-repeat left center;
     .qrcode-pic {
         width: 206px;
         height: 206px;
