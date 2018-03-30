@@ -1,4 +1,45 @@
 
+
+@-moz-keyframes fingerscale{
+    0%{
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100%{
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+    }
+}
+@-ms-keyframes fingerscale{
+    0%{
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100%{
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+    }
+}
+@-webkit-keyframes fingerscale{
+    0%{
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100%{
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+    }
+}
+@keyframes fingerscale{
+    0%{
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100%{
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+    }
+}
 .c-mfbj-forms {
     padding:20px 0 15px;
     .txt-1 {
@@ -48,6 +89,19 @@
                 height: 20px;
                 padding: 9px;
                 width: 280px;
+            }
+        }
+        .item-submit{
+            position:relative;
+            .icon-palm{
+                position: absolute;
+                right: 13px;
+                bottom: -20px;
+                width: 45px;
+                height: 37px;
+                -webkit-animation: fingerscale 500ms linear infinite alternate;
+                animation: fingerscale 500ms linear infinite alternate;
+                background:url("../img/sjybjdialog/shouzhang_1.png") no-repeat top center;
             }
         }
     }
