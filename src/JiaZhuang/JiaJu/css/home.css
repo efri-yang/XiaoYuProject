@@ -3357,7 +3357,7 @@ table.pop-330tb .inp-note {
     top: 0;
     background: #000;
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 99;
+    z-index: 999;
     opacity: 0;
     transition: all 0.25s ease-out;
     visibility: hidden;
@@ -3369,7 +3369,7 @@ table.pop-330tb .inp-note {
 
 .home-sjybj-dialog {
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     width: 980px;
     left: 50%;
     top: 50%;
