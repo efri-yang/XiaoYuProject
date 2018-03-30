@@ -1,6 +1,5 @@
 
 .c-mfbj-forms {
-    float: left;
     padding:20px 0 15px;
     .txt-1 {
         color: #33b371;
@@ -27,11 +26,11 @@
             padding: 0 3px;
         }
     }
-    .txt-4 {
-        margin-top: 5px;
-        color: #e8792f;
-        font-size: 14px;
-    }
+    // .txt-4 {
+    //     margin-top: 5px;
+    //     color: #e8792f;
+    //     font-size: 14px;
+    // }
     .form-box {
         .item-cell {
             position: relative;
@@ -64,6 +63,23 @@
         color: #fff;
         &:hover {
             background: darken(#33b371, 5%);
+        }
+    }
+
+    .c-mfbj-scroll{
+        
+        height:30px;
+        line-height:30px;
+        overflow:hidden;
+        .list{
+            position:relative;
+            li{
+                white-space:nowrap;
+                overflow:hidden;
+                text-overflow:ellipsis; 
+                color: #e8792f;
+                font-size: 14px;
+            }
         }
     }
 }

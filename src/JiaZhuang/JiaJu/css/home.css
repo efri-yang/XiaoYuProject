@@ -3179,6 +3179,7 @@ table.pop-330tb .inp-note {
     bottom: -355px;
     transition: all 0.30s ease-out;
     cursor: pointer;
+    z-index:99; 
 }
 
 
@@ -3474,6 +3475,7 @@ table.pop-330tb .inp-note {
 
 .home-sjybj-dialog .c-mfbj-forms {
     padding: 0;
+    float:left;
 }
 
 .home-sjybj-dialog .c-mfbj-success-intro {

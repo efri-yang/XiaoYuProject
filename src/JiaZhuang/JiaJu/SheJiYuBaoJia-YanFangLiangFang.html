@@ -6,7 +6,10 @@
     <title>设计与报价——免费验房量房</title>
     <link rel="stylesheet" type="text/css" href="css/home.css">
     <link rel="stylesheet" type="text/css" href="css/shejiyubaojia.css">
+
     <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/sjybjdialog.css">
+    <script type="text/javascript" src="js/layer/layer.js"></script>
 </head>
 
 <body class="yahei">
@@ -29,29 +32,12 @@
         </div>
     </div>
     <div class="sjybj-banner item-3">
-        <div class="bm-form-box">
-            <div class="reg-panel">
-                <!--装修设计-->
-                <div class="reg-form mt30 color-666">
-                    <div class="control-group mt10"><em class="color-orange mr5"><b>10</b></em>秒登记，免费获取专业设计方案</div>
-                    <div class="control-group">
-                        <input class="reg-txt" type="text" value="">
-                        <span class="inp-note">输入您的称呼</span>
-                    </div>
-                    <div class="control-group">
-                        <input class="reg-txt" type="text" value="">
-                        <span class="inp-note">请输入您的手机号码</span>
-                    </div>
-                    <div class="control-group">
-                        <button type="submit" onclick="$('#cupboardDesign').show();" class="reg-button yahei">免费申请</button>
-                    </div>
-                    <div class="control-group mt10">
-                        已为<em class="color-orange ml5 mr5"><b>60005</b></em>位业主提供专业设计方案，
-                        <br> 上百家厦门最专业的装修公司为您服务
-                    </div>
-                </div>
-                <!--end 装修设计-->
-            </div>
+         <div class="bm-form-box">
+<!-- *************start******************
+    ********** -->
+@@include("./views/_mfbj-forms.html")
+@@include("./views/_mfbj-forms-dialog.html")
+<!-- end -->
         </div>
     </div>
     <div class="yflf-m-1">
