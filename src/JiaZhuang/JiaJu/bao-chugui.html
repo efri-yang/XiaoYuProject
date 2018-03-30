@@ -226,32 +226,25 @@ $(document).ready(function(){
     </div>
     <div class="mt20 clear">
         <!--报名-->
-        <div class="fl con-340">
-        	<div class="reg-panel">
-                <div class="pl20">
-                	<!--装修设计-->
-                	<div class="reg-form mt30 color-666">
-                        <div class="control-group mt10"><em class="color-orange mr5"><b>10</b></em>秒登记，免费获取专业设计方案</div>
-                        <div class="control-group">
-                            <input class="reg-txt" type="text" value="">
-                            <span class="inp-note">输入您的称呼</span>
-                        </div>
-                        <div class="control-group">
-                            <input class="reg-txt" type="text" value="">
-                            <span class="inp-note">请输入您的手机号码</span>
-                        </div>
-                        <div class="control-group">
-                            <button type="submit" onclick="$('#cupboardDesign').show();" class="reg-button yahei">免费申请</button>
-                        </div>
-                        <div class="control-group mt10">
-                            已为<em class="color-orange ml5 mr5"><b>60005</b></em>位业主提供专业设计方案，<br />
-                            上百家厦门最专业的装修公司为您服务
-                        </div>
-                    </div>
-                    <!--end 装修设计-->
-                </div>
-            </div>
+        <link rel="stylesheet" type="text/css" href="css/sjybjdialog.css">
+        <script type="text/javascript" src="js/layer/layer.js"></script>
+        <div class="currpage-c-mfbj-forms">
+         @@include("./views/_mfbj-forms.html")
+         @@include("./views/_mfbj-forms-dialog.html")
         </div>
+        <style type="text/css">
+            .currpage-c-mfbj-forms{
+                float:left;
+                border:1px solid #28ab00;
+                padding:17px 0; 
+            }
+            .currpage-c-mfbj-forms .c-mfbj-forms{
+                width: 300px;
+                padding:0 20px;
+            }
+        </style>
+
+
         <!--end 报名-->
         <!--轮播-->
     	<div class="fr con-750">

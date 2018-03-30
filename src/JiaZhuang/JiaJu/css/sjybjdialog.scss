@@ -26,11 +26,7 @@
             padding: 0 3px;
         }
     }
-    // .txt-4 {
-    //     margin-top: 5px;
-    //     color: #e8792f;
-    //     font-size: 14px;
-    // }
+   
     .form-box {
         .item-cell {
             position: relative;
@@ -58,11 +54,11 @@
     .ipt-submit {
         width: 100%;
         height: 40px;
-        background: #33b371;
+        background: #fe5e3f;
         font-size: 16px;
         color: #fff;
         &:hover {
-            background: darken(#33b371, 5%);
+            background: darken(#fe5e3f, 5%);
         }
     }
 
