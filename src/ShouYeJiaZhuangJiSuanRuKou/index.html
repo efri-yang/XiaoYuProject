@@ -1,77 +1,95 @@
-<script type="text/javascript" src="./js/jquery.cookie.js">
-</script>
-<!-- *******************
-    设计与报价 弹出框    start **********************************************************-->
-<div class="home-sjybj-dialog" id="J_home-sjybj-dialog">
-    <i class="cicon-bg-top"></i>
-    <i class="cion-close" id="J_home-sjybj-close"></i>
-    <div class="sjybj-tab-hd">
-        <a href="#" class="item-1">免费报价</a>
-        <a href="#" class="item-2 active">免费报价</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/sjybjdialog.css">
+</head>
+
+<body>
+    @@include("./views/_header.html")
+    <!-- 通用表单  网站多个地方公用  start*************************************** -->
+    <!-- 通用表单  网站多个地方公用  start*************************************** -->
+    <div class="c-mfbj-success-wrap">
+        <div class="c-mfbj-success-intro">
+            <div class="txt-1"><span>申请成功!</span></div>
+            <p class="pic-icon-1"></p>
+            <p class="txt-2">您同时还获得1项增值服务</p>
+            <p class="txt-3">稍后装修管家将致电您，为您提供免费装修咨询服务。</p>
+        </div>
+        <div class="c-mfbj-success-qrcode">
+            <div class="txt-1">添加装修管家微信</div>
+            <div class="qrcode-pic"></div>
+            <p class="txt-2">扫码添加小鱼装修管家客服微信，一对一专业服务</p>
+        </div>
     </div>
-    <div class="sjybj-tab-bd">
-        <div class="sjybj-mfbj-step1 clear">
-            <div class="c-mfbj-forms J_sth">
-                <p class="txt-1">免费抢4套设计方案与报价 </p>
-                <p class="txt-2">今天仅剩<span class="num">88</span>个名额</p>
-                <div class="form-box">
-                    <div class="item-cell">
-                        <label class="lab">您的姓名</label>
-                        <input type="ipt-text" class="ipt-text" />
-                    </div>
-                    <div class="item-cell">
-                        <label class="lab">请输入手机号码</label>
-                        <input type="text" class="ipt-text" />
-                    </div>
-                    <div class="item-cell">
-                        <input type="submit" class="ipt-submit">
-                    </div>
-                </div>
-                <p class="txt-3">已为<span class="num">25864</span>位业主提供专业设计方案</p>
-                <p class="txt-4">张小姐 1分钟前免费获取4套专业设计方案</p>
-                <script type="text/javascript">
-                $(function() {
-                    $(".c-mfbj-forms .item-cell .lab").on("click", function() {
-                        var $this = $(this);
-                        $this.hide();
-                        $this.siblings(".ipt-text").focus();
-                    });
-                    $(".c-mfbj-forms .item-cell .ipt-text").on("blur", function() {
-                        var $this = $(this);
-                        if (!$.trim($this.val())) {
-                            $this.siblings(".lab").show();
-                        }
-                    });
-                    $(".c-mfbj-forms.J_sth .ipt-submit").on("click",function(){
-                       
-                        $(this).parents(".sjybj-mfbj-step1").hide().siblings(".sjybj-mfbj-step2").show();
-                    })
+    <!-- 通用表单  网站多个地方公用  end *************************************** -->
+    <div class="c-mfbj-forms">
+        <p class="txt-1">免费抢4套设计方案与报价 </p>
+        <p class="txt-2">今天仅剩<span class="num">88</span>个名额</p>
+        <div class="form-box">
+            <div class="item-cell">
+                <label class="lab">您的姓名</label>
+                <input type="ipt-text" class="ipt-text" />
+            </div>
+            <div class="item-cell">
+                <label class="lab">请输入手机号码</label>
+                <input type="text" class="ipt-text" />
+            </div>
+            <div class="item-cell">
+                <input type="submit" class="ipt-submit" style="border:none;">
+            </div>
+        </div>
+        <p class="txt-3">已为<span class="num">25864</span>位业主提供专业设计方案</p>
+        <p class="txt-4">张小姐 1分钟前免费获取4套专业设计方案</p>
+        <script type="text/javascript">
+        $(function() {
+            $(".c-mfbj-forms .item-cell .lab").on("click", function() {
+                var $this = $(this);
+                $this.hide();
+                $this.siblings(".ipt-text").focus();
+            });
+            $(".c-mfbj-forms .item-cell .ipt-text").on("blur", function() {
+                var $this = $(this);
+                if (!$.trim($this.val())) {
+                    $this.siblings(".lab").show();
+                }
+            });
+            //判处弹出框那个提交按钮
+            $(".c-mfbj-forms").not(".J_sth").find(".ipt-submit").on("click", function() {
+                layer.open({
+                    type: 1,
+                    title: false,
+                    shadeClose: true,
+                    area: ["376px"],
+                    content: $(".c-mfbj-success-wrap")
                 })
-                </script>
-            </div>
-            <div class="area-lf">
-                <div class="pic"></div>
-            </div>
-        </div>
-        <div class="sjybj-mfbj-step2 clear">
-            <div class="c-mfbj-success-intro">
-                <div class="txt-1"><span>申请成功!</span></div>
-                <p class="pic-icon-1"></p>
-                <p class="txt-2">您同时还获得1项增值服务</p>
-                <p class="txt-3">稍后装修管家将致电您，为您提供免费装修咨询服务。</p>
-            </div>
-            <div class="c-mfbj-success-qrcode">
-                <div class="txt-1">添加装修管家微信</div>
-                <div class="qrcode-pic"></div>
-                <p class="txt-2">扫码添加小鱼装修管家客服微信，一对一专业服务</p>
-            </div>
-        </div>
+            })
+        })
+        </script>
     </div>
-    <div class="sjybj-tab-bd active">
-        <!-- ******************************
+    <!-- 通用表单  网站多个地方公用  end *************************************** -->
+    <!-- ******************************
     通用部分 网站很多地方用到这个东西   start********************************************-->
-        <link rel="stylesheet" type="text/css" href="./css/sjybjdialog.css">
-        <script type="text/javascript" src="js/zxjgcount.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/sjybjdialog.css">
+    <script type="text/javascript" src="js/zxjgcount.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <style type="text/css">
+    .xyhome-zxjs-wrap {
+        display: none;
+        ;
+    }
+
+    .xyhome-zxjs-wrap .ipt-submit {
+        border: none;
+    }
+    </style>
+    <div class="xyhome-zxjs-wrap" id="J_xyhome-zxjs-wrap" style="display:none; ">
         <div class="mfbj-count-form-wrap clear">
             <div class="mfbj-count-form-box">
                 <p class="tit">免费获取装修报价</p>
@@ -209,10 +227,40 @@
                 </div>
             </div>
         </div>
-        <!-- ******************************
-    通用部分 网站很多地方用到这个东西   end********************************************-->
     </div>
-</div>
-<div class="home-sjybj-dialog-mask" id="J_home-sjybj-dialog-mask"></div>
-<!-- *******************
-    设计与报价 弹出框    end **********************************************************-->
+    <!-- ******************************
+    通用部分 网站很多地方用到这个东西   end********************************************-->
+    <button id="x1">按钮1</button>
+    <button id="x2">hover</button>
+    <script type="text/javascript">
+    $(function() {
+        $("#x1").on("click", function() {
+
+        });
+
+        $("#x2").on("mouseover", function() {
+            var zxjsqCookie = $.cookie("zxjsqcookie");
+            if (!zxjsqCookie) {
+                layer.open({
+                    type: 1,
+                    title: false,
+                    shadeClose: true,
+                    area: ["986px"],
+                    content: $("#J_xyhome-zxjs-wrap"),
+                    cancel: function() {
+                        countRandObj.stop();
+                    }
+
+                })
+                countRandObj.start($("#J_xyhome-zxjs-wrap"));
+                $.cookie("zxjsqcookie",1,{expires:30});
+            }
+
+        })
+
+    })
+    </script>
+    @@include("./views/_footer.html")
+</body>
+
+</html>

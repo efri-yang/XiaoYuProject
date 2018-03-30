@@ -1,0 +1,19 @@
+@import "./scss/_funvar.scss";
+.demo {
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    p {
+        color: #fff;
+    }
+    @at-root (without: all) {
+        @media \0screen\,screen\9 { //这个不能换行
+            .demo {
+                background: #000;
+                @include opacity(50);
+                p {
+                   position: relative;
+                }
+            }
+        }
+    }
+}
