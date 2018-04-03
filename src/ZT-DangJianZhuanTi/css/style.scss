@@ -1,0 +1,21 @@
+@import "./scss/_funvar.scss";
+.header1 .search-txt{
+    margin-top:0 !important; 
+}
+
+.c-container{
+    width:1000px;
+    margin:0 auto;
+}
+
+.banner{
+    height:200px;
+    background: url("../images/banner.jpg") no-repeat top center; 
+}
+
+.gallery-1{
+    width:580px;
+    height:340px;
+    float:left;
+    background:#f60; 
+}
