@@ -7,26 +7,137 @@
     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/bxSlider/jquery.bxslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/bxSlider/jquery.bxslider.css">
 </head>
 
 <body class="yahei" style="padding-top:31px;">
     @@include("./views/_header.html")
     <div class="banner"></div>
     <div class="c-container">
-        <div class="clearfix">
-        	<div class="gallery-1">
-
-        	</div>
-
-        	<ul class="news-list-1">
-				<li><a href="#">解读 | 政府工作报告传递2018发展信号“新热点”</a></li>
-				<li><a href="#">解读 | 两会部长通道上的“新掌门”和“新热点”</a></li>
-				<li><a href="#">解读 | 政府工作报告传递2018发展信号“新热点”</a></li>
-        	</ul>
-				
+        <div class="clearfix mt30">
+            <div class="gallery-1">
+                <ul class="bxslider">
+                    <li><a href="#"><img src="upload/demo_2_1.jpg" title="聚焦两会，重视民生1"></a></li>
+                    <li><a href="#"><img src="upload/demo_2_2.jpg" title="聚焦两会，重视民生2"></a></li>
+                    <li><a href="#"><img src="upload/demo_2_3.jpg" title="聚焦两会，重视民生3"></a></li>
+                </ul>
+                <div class="pager"></div>
+            </div>
+            <ul class="news-list-1">
+                <li><a href="#">解读 | 政府工作报告传递2018发展信号“新热点”</a></li>
+                <li><a href="#">解读 | 两会部长通道上的“新掌门”和“新热点”</a></li>
+                <li><a href="#">解读 | 政府工作报告传递2018发展信号“新热点”</a></li>
+                <li><a href="#">解读 | 政府工作报告传递2018发展信号“新热点”</a></li>
+                <li><a href="#">解读 | 两会部长通道上的“新掌门”和“新热点”</a></li>
+                <li><a href="#">解读 | 政府工作报告传递2018发展信号“新热点”</a></li>
+                <li><a href="#">解读 | 政府工作报告传递2018发展信号“新热点”</a></li>
+                <li><a href="#">解读 | 两会部长通道上的“新掌门”和“新热点”</a></li>
+                <li><a href="#">解读 | 政府工作报告传递2018发展信号“新热点”</a></li>
+            </ul>
+        </div>
+        <ul class="list-type-1 mt30 clearfix">
+            <li class="item-1">
+                <a href="#">
+                    <span>党务指南</span>        
+                </a>
+            </li>
+            <li class="item-2">
+                <a href="#">
+                    <span>学习园地</span>        
+                </a>
+            </li>
+            <li class="item-3">
+                <a href="#">
+                    <span>活动成果</span>        
+                </a>
+            </li>
+        </ul>
+        <div class="caption-type type-1 mt25">
+            <span class="tit">党性教育基地</span>
+            <a href="#" class="more">更多 > </a>
+        </div>
+        <div class="list-type-2-wrap">
+            <ul class="list-type-2 clearfix">
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/demo_3_1.jpg" /></span>
+                        <span class="txt">解读《政府工作报告》重点工作任务</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/demo_3_2.jpg" /></span>
+                        <span class="txt">基层社区志愿者保障两会安全</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/demo_3_3.jpg" /></span>
+                        <span class="txt">政协委员交流意见</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="caption-type type-1 mt25">
+            <span class="tit">人物事迹</span>
+            <a href="#" class="more">更多 > </a>
+        </div>
+        <div class="list-type-3-wrap">
+            <ul class="list-type-3 clearfix">
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/demo_4_1.jpg" /></span>
+                        <div class="txt">
+                            <span class="name">杨宝贵</span>
+                            <span class="info">深藏功与名的大神级保安</span>
+                        </div>
+                        
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/demo_4_2.jpg" /></span>
+                        <div class="txt">
+                            <span class="name">黄静生</span>
+                            <span class="info">用饱满的热情回报社会</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/demo_4_3.jpg" /></span>
+                        <div class="txt">
+                            <span class="name">高云礼</span>
+                            <span class="info">执着于公益的重庆汉子</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/demo_4_4.jpg" /></span>
+                        <div class="txt">
+                            <span class="name">寂地</span>
+                            <span class="info">国内绘本天后，80后漫画家</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
+    <div style="height:50px;"></div>
     @@include("./views/_footer.html");
+    <script type="text/javascript">
+    $(function() {
+        $('.bxslider').bxSlider({
+            mode: 'fade',
+            captions: true,
+            slideWidth: 580,
+            controls: false,
+            pagerSelector: $(".gallery-1 .pager")
+        });
+    });
+    </script>
 </body>
 
 </html>
