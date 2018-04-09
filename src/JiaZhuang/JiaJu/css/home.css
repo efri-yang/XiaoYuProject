@@ -3390,8 +3390,8 @@ table.pop-330tb .inp-note {
     position: absolute;
     width: 608px;
     height: 482px;
-    right: 0;
-    top: -325px;
+    right: 30px;
+    top: -270px;
     z-index: -1;
     background: url("../img/sjybjdialog/cicon_2.png") no-repeat left center;
 }

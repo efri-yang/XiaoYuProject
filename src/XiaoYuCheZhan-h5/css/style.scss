@@ -39,9 +39,13 @@
 
 
 .brandd-banner {
+   text-align: center;
+    position:relative;
+    padding:px2rem(30px) 0;  
     img {
-        width: 100%;
-        vertical-align: top;
+        max-width: 100%;
+        display: inline-block;
+        vertical-align: middle;
     }
 }
 
