@@ -26,6 +26,8 @@
             buttons: {},
             baseViewWidth: 750,
             baseViewHeight: 1344,
+            scrollTop:0,
+            hasInput:false,
             onBeforeShow: function() {},
             onShow: function() {},
             onBeforeClose: function() {},
@@ -190,8 +192,8 @@
             _this = this;
         if ($.isArray(opts.buttons) && !!opts.buttons.length) {
             $.each(opts.buttons, function(index, obj) {
-                obj.className = !!obj.className ? obj.className : "";
-                var $btn = $('<a href="javascript:void(0)" class="mDialog-btn ' + obj.className + '">' + obj.text + '</a>');
+                obj.class = !!obj.class ? obj.class : "";
+                var $btn = $('<a href="javascript:void(0);" class="mDialog-btn ' + (obj.className ? obj.className : "") + '">' + obj.text + '</a>');
                 if (!!obj.callback) {
                     $btn.on(deviceUtil.tapEvent, function(event) {
                         event.preventDefault();
@@ -458,7 +460,6 @@
                 opts.content.css({
                     visibility: "visible",
                     display: "block",
-                    float:"none",
                     clear: "both"
                 });
                 opts.content.wrap('<div class="' + containerClassName + '"><div class="mDialog-layer-main"></div></div>');
@@ -521,7 +522,11 @@
         !!$footerButton && $footerButton.appendTo($container);
         $container.css({ "zIndex": mDialog.zIndex + 1, "visibility": "visible" });
         containerCloseHandle = function() {
-
+            if(!!opts.hasInput){
+                $("html,body").css({"height":"auto","overflow":"visible"});
+                $(window).scrollTop(opts.scrollTop);
+            }
+            
             !!opts.onBeforeClose && opts.onBeforeClose();
             if (opts.animOut) {
 
@@ -550,16 +555,20 @@
                 opts.onShow();
                 !!opts.pause && setTimeout(function() {
                     _this.close();
+                    
                 }, opts.pause)
             });
         } else {
             !!opts.onShow && opts.onShow();
             !!opts.pause && setTimeout(function() {
                 _this.close();
+               
             }, opts.pause)
         }
-
-
+        if(!!opts.hasInput){
+            opts.scrollTop=$(window).scrollTop();
+            $("html,body").css({"height":"100%","overflow":"hidden"});
+        }
         $container.removeSelf = containerCloseHandle;
         mDialog.stack[this.opts.uid].push($container);
     };
@@ -636,7 +645,8 @@
                 delete mDialog.stack[sindex];
             }
         });
-
+        
+         
     };
 
     mDialog.open = function(options, type) {
