@@ -6,6 +6,8 @@
 	@@include("./views/headerStyleScript.html")
 </head>
 <body style="padding-top:0">
+	<link rel="stylesheet" type="text/css" href="css/sjybjdialog.css">
+	<script type="text/javascript" src="js/zxjgcount.js"></script>
 	<div class="skin-main">
 		<div id="head" style="background:#f60;">
 			<p>测试</p>
@@ -64,7 +66,7 @@
 			
 		</li>
 
-		<li class="second">
+		<li class="second" id="J_second-count">
 			
 			<div class="icon-wrap">
 				<i class="item-1"></i>
@@ -78,7 +80,208 @@
 		</li>
 	</ul>
 
+	@@include("./views/_homeFormDialog.html")
+
+	<script type="text/javascript">
+		
+
+         //tab 选项卡
+    (function($) {
+        $(function() {
+            var $container = $("#J_home-sjybj-dialog");
+            var $bds = $container.find(".sjybj-tab-bd");
+            var $hds = $container.find(".sjybj-tab-hd a");
+            $hds.each(function(index, el) {
+
+                $(el).on("click", function(event) {
+                    event.preventDefault();
+                    var $this = $(this);
+                    var index = $hds.index(this);
+                    $this.addClass('active').siblings().removeClass('active');
+                    $bds.eq(index).addClass('active').siblings().removeClass('active');
+                })
+            });
+        })
+
+    })(jQuery);
+    (function($) {
+        $(function() {
+            var isOpen;
+            var $dialog = $("#J_home-sjybj-dialog");
+            var $mask = $("#J_home-sjybj-dialog-mask");
+            var $close = $("#J_home-sjybj-close");
+            //开发自行加cookie
+            // var dialogCookie=$.cookie('jzhomedialog');
+            $close.on("click", function() {
+                $dialog.removeClass('show');
+                $mask.removeClass('show');
+                countRandObj.start($dialog);
+            })
+
+            $("#J_second-count").on("click",function(){
+            	
+            	$dialog.addClass('show');
+                    $mask.addClass('show');
+                    isOpen = true;
+                    //开始随机数
+                    countRandObj.start($dialog);
+            })
+           
+        })
+    })(jQuery)
+    </script>
+
 	<style type="text/css">
+
+
+/**
+ *首页弹出框样式
+ * 
+ */
+
+.home-sjybj-dialog-mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #000;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    transition: all 0.25s ease-out;
+    visibility: hidden;
+    
+}
+.home-sjybj-dialog-mask.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+.home-sjybj-dialog {
+    position: fixed;
+    z-index: 1000;
+    width: 980px;
+    left: 50%;
+    top: 50%;
+   	z-index:1000;
+    margin-top: -120px;
+    margin-left: -490px;
+    visibility: hidden;
+    transition: transform 0.20s ease-out;
+    transform: scale3d(.3, .3, .3);
+}
+
+.home-sjybj-dialog.show {
+    visibility: visible;
+    opacity: 1;
+    
+    transform: scale3d(1, 1, 1);
+}
+
+.home-sjybj-dialog .cicon-bg-top {
+    position: absolute;
+    width: 608px;
+    height: 482px;
+    right: 30px;
+    top: -270px;
+    z-index: -1;
+    background: url("images/sjybjdialog/cicon_2.png") no-repeat left center;
+}
+
+.home-sjybj-dialog .cion-close {
+    position: absolute;
+    right: 0;
+    width: 41px;
+    height: 41px;
+    top: 30px;
+    cursor: pointer;
+    margin-right: -20px;
+    overflow: hidden;
+    background: url("images/sjybjdialog/cicon_close.png") no-repeat left center;
+}
+
+.home-sjybj-dialog .sjybj-tab-hd {
+    height: 49px;
+    line-height: 49px;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.home-sjybj-dialog .sjybj-tab-hd a {
+    display: block;
+    height: 49px;
+    width: 163px;
+    float: left;
+    color: #ffffff;
+    font-size: 18px;
+    background: #0cb46a;
+}
+
+.home-sjybj-dialog .sjybj-tab-hd a.item-1 {
+    border-radius: 10px 0 0 0;
+}
+
+.home-sjybj-dialog .sjybj-tab-hd a.item-2 {
+    border-radius: 0 10px 0 0;
+}
+
+.home-sjybj-dialog .sjybj-tab-hd a.active {
+    background: #fff;
+    color: #0cb46a;
+}
+
+.home-sjybj-dialog .sjybj-tab-bd {
+    width: 980px;
+    background: #fff;
+    border-radius: 15px;
+    display: none;
+    min-height: 355px;
+}
+
+.home-sjybj-dialog .sjybj-tab-bd.active {
+    display: block;
+}
+
+.home-sjybj-dialog .sjybj-mfbj-step1 {
+    padding: 30px 40px;
+}
+
+.home-sjybj-dialog .sjybj-mfbj-step1 .area-lf {
+    float: left;
+    padding-left: 55px;
+    min-height: 257px;
+    margin-left: 107px;
+    background: url("images/sjybjdialog/line_1.png") no-repeat left center;
+}
+
+.home-sjybj-dialog .sjybj-mfbj-step1 .area-lf .pic {
+    width: 354px;
+    height: 293px;
+    background: url("images/sjybjdialog/img_1.png") no-repeat top center;
+}
+
+.home-sjybj-dialog .sjybj-mfbj-step2 {
+    display: none;
+    padding: 30px 40px;
+}
+
+.home-sjybj-dialog .c-mfbj-forms {
+    padding: 0;
+    float:left;
+}
+
+.home-sjybj-dialog .c-mfbj-success-intro {
+    float: left;
+    border-bottom:none; 
+}
+
+.home-sjybj-dialog .c-mfbj-success-qrcode{
+	width: 475px;
+    float: right;
+    background: url("images/sjybjdialog/line_1.png") no-repeat left center;
+}
+
 	.aside-qrcode-fixed li.second{
 		cursor:pointer; 
 	}
@@ -99,17 +302,81 @@
 		background-repeat:no-repeat;
 		background-position:center;   
 	}
+	@-webkit-keyframes mymove1 {
+	    0% {opacity:0;}
+	    25% {opacity:1;}
+	    50% {opacity:1;}
+	    75% {opacity:1;}
+	    100% {opacity:1;}
+	}
+	@keyframes mymove1 {
+		0% {opacity:0;}
+	    25% {opacity:1;}
+	    50% {opacity:1;}
+	    75% {opacity:1;}
+	    100% {opacity:1;}
+	}
+	@-webkit-keyframes mymove2 {
+	    0% {opacity:0;}
+	    25% {opacity:0;}
+	    50% {opacity:1;}
+	    75% {opacity:1;}
+	    100% {opacity:1;}
+	}
+	@keyframes mymove2 {
+		0% {opacity:0;}
+	    25% {opacity:0;}
+	    50% {opacity:1;}
+	    75% {opacity:1;}
+	    100% {opacity:1;}
+	}
+	@-webkit-keyframes mymove3 {
+	    0% {opacity:0;}
+	    25% {opacity:0;}
+	    50% {opacity:0;}
+	    75% {opacity:1;}
+	    100% {opacity:1;}
+	}
+	@keyframes mymove3 {
+		 0% {opacity:0;}
+	    25% {opacity:0;}
+	    50% {opacity:0;}
+	    75% {opacity:1;}
+	    100% {opacity:1;}
+	}
+	@-webkit-keyframes mymove4 {
+	     0% {opacity:0;}
+	    25% {opacity:0;}
+	    50% {opacity:0;}
+	    75% {opacity:0;}
+	    100% {opacity:1;}
+	}
+	@keyframes mymove4 {
+		 0% {opacity:0;}
+	    25% {opacity:0;}
+	    50% {opacity:0;}
+	    75% {opacity:0;}
+	    100% {opacity:1;}
+	}
 	.aside-qrcode-fixed li.second .icon-wrap i.item-1{
+		animation:mymove2 1s infinite;
+		-webkit-animation:mymove2 1s infinite;
 		background-image: url(images/sidebarcode/code_i_2.png);
 	}
 	.aside-qrcode-fixed li.second .icon-wrap i.item-2{
+		animation:mymove1 1s infinite;
+		-webkit-animation:mymove1 1s infinite;
 		background-image: url(images/sidebarcode/code_i_1.png);
 	}
 	.aside-qrcode-fixed li.second .icon-wrap i.item-3{
+		animation:mymove3 1s infinite;
+		-webkit-animation:mymove3 1s infinite;
 		background-image: url(images/sidebarcode/code_i_3.png);
 	}
 
 	.aside-qrcode-fixed li.second .icon-wrap i.item-4{
+		animation:mymove4 1s infinite;
+		-webkit-animation:mymove4 1s infinite;
 		background-image: url(images/sidebarcode/code_i_4.png);
 	}
 	.aside-qrcode-fixed li.second:hover .icon-wrap{
@@ -147,10 +414,10 @@
 			left:100px;
 			width:142px;
 			padding-left:10px;
-			top:-40px; 
-			/*visibility: hidden;
-			opacity:0; 
-			transition:all 0.25s ease-out; */
+			top:-50px; 
+			visibility: hidden;
+			opacity:0;
+			transition:all 0.25s ease-out;  
 		}
 
 		.aside-qrcode-fixed li.first .soma-bd .pic-box{
@@ -240,8 +507,6 @@
 			visibility: visible;
 			opacity: 1;
 		}
-
-		
 	</style>
 </body>
 </html>
