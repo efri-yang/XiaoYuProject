@@ -296,7 +296,7 @@ body {
 
 
 /*新加*/
-.pop-cover{display:none;position:fixed;top:0;bottom:0;right:0;left:0;background:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#cc000000',endColorstr='#cc000000');z-index:999;}
+.pop-cover{display:none;position:fixed;top:0;bottom:0;right:0;left:0;background:rgba(0,0,0,0.5);z-index:999;}
 .pop-cover .pop{position:fixed;top:50%;left:50%;width:88%;background-color:#fff;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}
 .pop-cover .pop-btn{display:block;background-color:#e6e6e6;}
 .con-220{width:2.933rem;}

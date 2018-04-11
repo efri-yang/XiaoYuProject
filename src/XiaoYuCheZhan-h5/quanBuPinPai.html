@@ -280,21 +280,21 @@
             <div class="iscroll-inner">
                 <ul class="list">
                     <li>
-                        <a href="#">
+                        <a href="http://www.baidu.com">
                             <div class="pic"><img src="upload/04.jpg" /></div>
                             <p class="name">玛莎拉莎拉莎拉蒂 总裁 16年</p>
                             <p class="price"><b>90.54</b>万—<b>90.54</b>万</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="http://www.baidu.com">
                             <div class="pic"><img src="upload/04.jpg" /></div>
                             <p class="name">玛莎拉莎拉莎拉蒂 总裁 16年</p>
                             <p class="price"><b>90.54</b>万—<b>90.54</b>万</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="http://www.baidu.com">
                             <div class="pic"><img src="upload/04.jpg" /></div>
                             <p class="name">玛莎拉莎拉莎拉蒂 总裁 16年</p>
                             <p class="price"><b>90.54</b>万—<b>90.54</b>万</p>
@@ -368,7 +368,7 @@
                                 baseViewHeight: 960,
                                 onShow: function() {
                                     if (!myIscroll) {
-                                        myIscroll = new IScroll('#J_brandlist-iscroller-wrap');
+                                        myIscroll = new IScroll('#J_brandlist-iscroller-wrap',{click: true, tap: true});
                                     }
                                     myIscroll.refresh();
                                 },
