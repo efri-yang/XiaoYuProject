@@ -170,6 +170,7 @@ body {
 
 .section-tab-hd{
     display: flex;
+    display:-webkit-flex;
     background:#be6565;
     font-size: px2rem(32px);
     text-align:center; 
