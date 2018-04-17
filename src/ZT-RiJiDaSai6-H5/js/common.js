@@ -129,7 +129,8 @@
 })(window.jQuery || window.Zepto)
 
 
-;(function($, window, document, undefined) {
+;
+(function($, window, document, undefined) {
     var mDialog = {
         v: '0.0.1',
         stack: {},
@@ -147,41 +148,29 @@
             height: "auto",
             maxWidth: "85%",
             maxHeight: "80%",
+            offset: ["auto", "auto"],
             animIn: "mDialogZoomIn",
             animOut: "mDialogZoomOut",
             shadeClose: true,
             content: "",
             closeBtn: true,
             buttons: {},
-            baseViewWidth:750,
-            baseViewHeight:1344,
+            baseViewWidth: 750,
+            baseViewHeight: 1344,
+            scrollTop:0,
+            hasInput:false,
             onBeforeShow: function() {},
             onShow: function() {},
             onBeforeClose: function() {},
             onClose: function() {}
         }
     }
-
-
-    var stylesContentShow = {
-        visibility: "visible",
-        display: "block",
-        clear: "both"
-
-    };
-    var styleContentsHide = {
-        visibility: "hidden",
-        display: "none",
-        float: "none"
-    };
-
-
     var ExtraFunc = {
         colorToRgba: function(colorStr, opacity) {
             colorStr = !!colorStr ? colorStr : "#000";
             var sColor = colorStr.toLowerCase();
             //没有传递，那么默认的是
-            var sOpacity = (opacity === 0 || !!opacity) ? ((opacity > 1) ? 1 : ((opacity < 0) ? 0 : opacity)) : 0.8;
+            var sOpacity = (opacity === 0 || !!opacity) ? ((opacity > 1) ? 1 : ((opacity <= 0) ? 0 : opacity)) : 0.8;
             if (sColor && /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/.test(sColor)) {
                 if (sColor.length === 4) {
                     var sColorNew = "#";
@@ -200,12 +189,15 @@
                 return sColor;
             }
         },
-        dealCssEvent(eventNameArr, callback) {
+         dealCssEvent:function(eventNameArr, callback,duration) {
             var events = eventNameArr,
+                called=false,
+                Timer=null,
                 i, dom = this; // jshint ignore:line
 
             function fireCallBack(e) {
                 /*jshint validthis:true */
+                called=true;
                 if (e.target !== this) return;
                 callback.call(this, e);
                 for (i = 0; i < events.length; i++) {
@@ -215,8 +207,13 @@
             if (callback) {
                 for (i = 0; i < events.length; i++) {
                     dom.on(events[i], fireCallBack);
+                    Timer=setTimeout(function(){
+                       clearTimeout(Timer);
+                       !called &&callback();
+                    },duration)
                 }
             }
+           
         },
         uuid: function() {
             var s = [];
@@ -250,30 +247,25 @@
         }
     };
 
-    var deviceUtil=(function(){
-        var UA = window.navigator.userAgent,win=window,
+    var deviceUtil = (function() {
+        var UA = window.navigator.userAgent,
+            win = window,
             isAndroid = /android|adr/gi.test(UA),
             isIOS = /iphone|ipod|ipad/gi.test(UA) && !isAndroid,
-            isIPhone=win.navigator.appVersion.match(/iphone/gi),
+            isIPhone = win.navigator.appVersion.match(/iphone/gi),
             isMobile = isAndroid || isIOS,
             isSupportTouch = "ontouchend" in document ? true : false;
         return {
             tapEvent: isMobile && isSupportTouch ? 'touchstart' : 'click',
-            isIPhone:isIPhone
+            isIPhone: isIPhone
         }
     })();
 
 
 
     if (!$.fn.AnimationEnd) {
-        $.fn.AnimationEnd = function(callback) {
-            ExtraFunc.dealCssEvent.call(this, ['webkitAnimationEnd', 'animationend'], callback);
-            return this;
-        };
-    }
-    if (!$.fn.TransitionEnd) {
-        $.fn.TransitionEnd = function(callback) {
-            ExtraFunc.dealCssEvent.call(this, ['webkitTransitionEnd', 'transitionend'], callback);
+        $.fn.AnimationEnd = function(callback,duration) {
+            var called=ExtraFunc.dealCssEvent.call(this, ['webkitAnimationEnd', 'animationend'], callback,duration);
             return this;
         };
     }
@@ -318,6 +310,7 @@
         if (!!opts.closeBtn) {
             $close = $('<span class="mDialog-close"></span>');
             $close.on(deviceUtil.tapEvent, function() {
+
                 indicator.close();
             })
         }
@@ -331,7 +324,7 @@
         if ($.isArray(opts.buttons) && !!opts.buttons.length) {
             $.each(opts.buttons, function(index, obj) {
                 obj.class = !!obj.class ? obj.class : "";
-                var $btn = $('<a href="#" class="mDialog-btn ' + obj.className + '">' + obj.text + '</a>');
+                var $btn = $('<a href="javascript:void(0);" class="mDialog-btn ' + (obj.className ? obj.className : "") + '">' + obj.text + '</a>');
                 if (!!obj.callback) {
                     $btn.on(deviceUtil.tapEvent, function(event) {
                         event.preventDefault();
@@ -345,10 +338,10 @@
     };
 
     function setElemPos($elem, opts, $title, $main, $footer) {
-        //maxWidth、maxHeight 传递进来的值可能是  auto  80%  400px  8rem;
-        //width、height  传递进来的值可能是  auto  80%  400px  8rem;
+        //maxWidth、maxHeight 传递进来的值可能是  auto  80%  400px;
+        //width、height  传递进来的值可能是  auto  80%  400px;
 
-        var elemW, elemH, winW, winH, realW, realH, maxW,maxH,titleH = 0,
+        var elemW, elemH, winW, winH, realW, realH, maxW, maxH, offsetX, isOffsetX, offsetY, isOffsetY, titleH = 0,
             contentH = 0,
             footerH = 0,
             fullClassName = "mDialog-layer-main-full",
@@ -360,166 +353,173 @@
         winW = $(window).width();
         winH = $(window).height();
         dpr = document.documentElement.getAttribute('data-dpr');
-  
 
 
+        opts.offset[0] = (opts.offset[0] == "auto" || opts.offset[0] == "center") ? "auto" : ((opts.offset[0] == 0) ? "0px" : opts.offset[0].toLowerCase());
+        opts.offset[1] = (opts.offset[1] == "auto" || opts.offset[1] == "center") ? "auto" : ((opts.offset[1] == 0) ? "0px" : opts.offset[1].toLowerCase());
+
+        isOffsetX = (opts.offset[0] == "auto") ? false : true;
+        isOffsetY = (opts.offset[1] == "auto") ? false : true;
+
+        //进行宽度计算
         elemW = $elem.outerWidth();
         opts.maxWidth = !!opts.maxWidth ? ((opts.maxWidth == "auto") ? "85%" : opts.maxWidth) : "85%";
-        maxW=ExtraFunc.isPx(opts.maxWidth) ?  ExtraFunc.getNumber(opts.maxWidth) : winW*ExtraFunc.getNumber(opts.maxWidth)/100;
-        
+        maxW = ExtraFunc.isPx(opts.maxWidth) ? ExtraFunc.getNumber(opts.maxWidth) : winW * ExtraFunc.getNumber(opts.maxWidth) / 100;
 
-        if(opts.width=="auto" || !opts.width){
-            realW=(elemW > maxW) ? maxW : elemW;
-            standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
-        }else if(ExtraFunc.isPercent(opts.width)){
-            realW=winW*ExtraFunc.getNumber(opts.width)/100;
-            if(realW > maxW){  
-                realW=maxW;
+        //对于百分比(%) auto px 的时候进行宽度的计算，
+        if (opts.width == "auto" || !opts.width) {
+            realW = (elemW > maxW) ? maxW : elemW;
+            standardRatio = (dpr == 1 && winW > 540) ? 540 : winW;
+        } else if (ExtraFunc.isPercent(opts.width)) {
+            realW = winW * ExtraFunc.getNumber(opts.width) / 100;
+            if (realW > maxW) {
+                realW = maxW;
             }
-            standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
+            standardRatio = (dpr == 1 && winW > 540) ? 540 : winW;
 
-        }else if(ExtraFunc.isPx(opts.width)){  
-            realW=ExtraFunc.getNumber(opts.width);
-            if(isFlexible){
-                if(realW > opts.baseViewWidth*ExtraFunc.getNumber(opts.maxWidth)/100){
-                    realW=maxW;
-                    standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
-                }else{
-                    standardRatio=opts.baseViewWidth;
+        } else if (ExtraFunc.isPx(opts.width)) {
+            realW = ExtraFunc.getNumber(opts.width);
+            if (isFlexible) {
+                if (realW > opts.baseViewWidth * ExtraFunc.getNumber(opts.maxWidth) / 100) {
+                    realW = maxW;
+                    standardRatio = (dpr == 1 && winW > 540) ? 540 : winW;
+                } else {
+                    standardRatio = opts.baseViewWidth;
                 }
-            }else{
-                realW=(realW >winW) ? maxW : realW;
-            } 
+            } else {
+                realW = (realW > winW) ? maxW : realW;
+            }
+        }
+        if (isFlexible) {
+            realW = realW / standardRatio * 10;
+        }
+        if (isOffsetX) {
+            if (ExtraFunc.isPx(opts.offset[0])) {
+                offsetX = ExtraFunc.isPx(opts.offset[0]) ? ExtraFunc.getNumber(opts.offset[0]) : winW * ExtraFunc.getNumber(opts.offset[0]) / 100;
+                isFlexible && (offsetX = offsetX / standardRatio * 10);
+                $elem.css({
+                    left: offsetX + unitRemPx
+                })
+            } else if (ExtraFunc.isPercent(opts.offset[0])) {
+                $elem.css({
+                    left: opts.offset[0],
+                })
+            } else if (opts.offset[0] == "left") {
+                $elem.css({
+                    left: 0,
+                })
+            } else if (opts.offset[0] == "right") {
+                $elem.css({
+                    right: 0,
+                })
+            } else {
+                $elem.css({
+                    left: "50%",
+                    "marginLeft": -realW / 2 + unitRemPx
+                })
+            }
+
+        } else {
+            $elem.css({
+                left: "50%",
+                "marginLeft": -realW / 2 + unitRemPx
+            })
         }
 
-        console.dir("winW的px:  "+winW);
-        console.dir("maxW的px:  "+maxW);
-        console.dir("elemW(传进来的宽度)的px:  "+elemW);
-        console.dir("standardRatio:  "+standardRatio)
-       
-        console.dir("realW(最终的宽度)的px:  "+realW);
-        
-       
-        
-       
-
-
-        if(isFlexible){
-           realW=realW/standardRatio*10;
-        }
-        console.dir("realW从px转化成rem:  "+realW);
         $elem.css({
-            left: "50%",
             width: realW + unitRemPx,
-            "marginLeft": -realW / 2 + unitRemPx
         })
 
 
 
-
-       
-       
-       
-       
-        
-
-
         elemH = $elem.outerHeight();
         opts.maxHeight = !!opts.maxHeight ? ((opts.maxHeight == "auto") ? "80%" : opts.maxHeight) : "80%";
-        maxH=ExtraFunc.isPx(opts.maxHeight) ?  ExtraFunc.getNumber(opts.maxHeight) : winH*ExtraFunc.getNumber(opts.maxHeight)/100;
-        
-        console.dir("winH的px:  "+winH);
-        console.dir("elemH的px:  "+elemH);
-        console.dir("maxH的px:  "+maxH);
-        
-       
-        
-        if(opts.height=="auto" || !opts.height){
-            realH=(elemH > maxH) ? maxH : elemH;
-            standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
-        }else if(ExtraFunc.isPercent(opts.height)){
-            realH=winH*ExtraFunc.getNumber(opts.height)/100;
-            if(realH > maxH){
-                realH=maxH;
+        maxH = ExtraFunc.isPx(opts.maxHeight) ? ExtraFunc.getNumber(opts.maxHeight) : winH * ExtraFunc.getNumber(opts.maxHeight) / 100;
+
+        if (opts.height == "auto" || !opts.height) {
+            realH = (elemH > maxH) ? maxH : elemH;
+            standardRatio = (dpr == 1 && winW > 540) ? 540 : winW;
+        } else if (ExtraFunc.isPercent(opts.height)) {
+            realH = winH * ExtraFunc.getNumber(opts.height) / 100;
+            if (realH > maxH) {
+                realH = maxH;
             }
-            standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
-        }else if(ExtraFunc.isPx(opts.height)){
-            realH=ExtraFunc.getNumber(opts.height);
-            if(isFlexible){
-                if(realH > opts.baseViewHeight*ExtraFunc.getNumber(opts.maxHeight)/100){
-                    realH=maxH;
-                    standardRatio=(dpr==1 && winW > 540) ? 540 : winW;
-                }else{
-                    standardRatio=opts.baseViewWidth;
+            standardRatio = (dpr == 1 && winW > 540) ? 540 : winW;
+        } else if (ExtraFunc.isPx(opts.height)) {
+            realH = ExtraFunc.getNumber(opts.height);
+            if (isFlexible) {
+                if (realH > opts.baseViewHeight * ExtraFunc.getNumber(opts.maxHeight) / 100) {
+                    realH = maxH;
+                    standardRatio = (dpr == 1 && winW > 540) ? 540 : winW;
+                } else {
+                    standardRatio = opts.baseViewWidth;
                 }
-            }else{
-                realH=(realH > maxH) ? maxH : realH;
+            } else {
+                realH = (realH > maxH) ? maxH : realH;
             }
         }
 
-        console.dir("standardRatio:  "+standardRatio);
-        console.dir("realH(最终的宽度)的px:  "+realH);
-
-
-      
-
-
-
-
-
-      
         !!$title && !!$title.length && (titleH = $title.outerHeight());
-        !!$footer && !!$footer.length  && (footerH = $footer.outerHeight());
+        !!$footer && !!$footer.length && (footerH = $footer.outerHeight());
         mainH = ((realH - titleH - footerH) > 0) ? (realH - titleH - footerH) : 0;
 
-        console.dir("titleH:"+titleH);
-        console.dir("mainH:"+mainH);
-        console.dir("footerH:"+footerH);
-        if(isFlexible){
-           realH=realH/standardRatio*10;
-           mainH=mainH/standardRatio*10;
+
+
+        if (isFlexible) {
+            realH = realH / standardRatio * 10;
+            mainH = mainH / standardRatio * 10;
         }
-        console.dir("mainH:"+mainH)
 
-        console.dir("realH(最终的)的rem:  "+realH);
 
-        if((realH > maxH) || elemH > realH){
+        if ((realH > maxH) || elemH > realH) {
             $main.addClass(fullClassName);
         }
-        if(opts.width==opts.height &&  opts.width=="100%"){
-           $elem.addClass('mDialog-layer-container-full')
+        if (opts.width == opts.height && opts.width == "100%") {
+            $elem.addClass('mDialog-layer-container-full')
         }
 
-        
-       
-        $main.css({ 
-            height: mainH + unitRemPx 
+        $main.css({
+            height: mainH + unitRemPx
         });
         $elem.css({
             height: realH + unitRemPx
         });
 
-        
-
-        if (opts.top || parseInt(opts.top) == 0) {
-            $elem.css({
-                top: opts.top,
-            })
-        } else if (opts.bottom || parseInt(opts.bottom) == 0) {
-            $elem.css({
-                bottom: opts.bottom,
-            })
+        if (isOffsetY) {
+            if (ExtraFunc.isPx(opts.offset[1])) {
+                offsetY = ExtraFunc.isPx(opts.offset[1]) ? ExtraFunc.getNumber(opts.offset[1]) : winH * ExtraFunc.getNumber(opts.offset[1]) / 100;
+                isFlexible && (offsetY = offsetY / standardRatio * 10);
+                $elem.css({
+                    top: offsetY + unitRemPx,
+                })
+            } else if (ExtraFunc.isPercent(opts.offset[1])) {
+                $elem.css({
+                    top: opts.offset[1],
+                })
+            } else if (opts.offset[1] == "top") {
+                $elem.css({
+                    top: 0
+                })
+            } else if (opts.offset[1] == "bottom") {
+                $elem.css({
+                    bottom: 0
+                })
+            } else {
+                $elem.css({
+                    top: "50%",
+                    "marginTop": -realH / 2 + unitRemPx
+                })
+            }
         } else {
             $elem.css({
                 top: "50%",
                 "marginTop": -realH / 2 + unitRemPx
             })
         }
-
-
     };
 
     function setAnim($elem, animInClass, animOutClass, duration, type, callback) {
+        var called = false;
         animInClass = !!animInClass ? animInClass : "";
         animOutClass = !!animOutClass ? animOutClass : "";
         switch (type) {
@@ -532,12 +532,12 @@
             default:
                 $elem.css({ "animation-duration": duration + "ms" }).removeClass(animOutClass).addClass(animInClass);
         }
+
         $elem.AnimationEnd(function() {
             !!callback && callback.call();
-        })
+        },duration)
+
     }
-
-
 
     var createClass = function(options, type) {
         this.opts = $.extend({}, mDialog.defaults, options);
@@ -558,7 +558,6 @@
         }
 
     }
-    createClass.prototype.test = 100;
     createClass.prototype._renderContainer = function() {
         var _this = this,
             opts = this.opts,
@@ -587,19 +586,24 @@
             //如果没有type参数,那么说明 调用的方式是open() 
             //判断 content的内容是不是页面的元素内容
             if (opts.content instanceof $ || $.zepto.isZ(opts.content)) {
-
-
                 //如果内容是jquery 或者zepto 对象，实行把容器包起来
-                $container = $('<div class="' + containerClassName + '"></div>');
                 $title = $(title);
-                opts.content.css(stylesContentShow)
-                opts.content.wrap('<div class="mDialog-layer-main"></div>')
+                opts.content.css({
+                    visibility: "visible",
+                    display: "block",
+                    clear: "both"
+                });
+                opts.content.wrap('<div class="' + containerClassName + '"><div class="mDialog-layer-main"></div></div>');
                 $main = opts.content.parent();
-                $main.wrap($container);
+                $container = $main.parent();
                 !!title && $container.prepend($title);
                 contentCloseHandle = function() {
                     $main.siblings().remove();
-                    opts.content.css(styleContentsHide);
+                    opts.content.css({
+                        visibility: "hidden",
+                        display: "none",
+                        float: "none"
+                    });
                     for (var i = 0; i < 2; i++) {
                         opts.content.unwrap();
                     }
@@ -617,26 +621,26 @@
                     content = '<div class="mDialog-confirm-section">' + opts.content + '</div>';
                     break;
                 case "msg":
-                    content = '<div class="mDialog-msg-section">00000' + opts.content + '</div>';
+                    content = '<div class="mDialog-msg-section">' + opts.content + '</div>';
                     break;
             }
 
         }
 
-
-        containerStr = '<div class="' + containerClassName + '">' +
-            title +
-            '<div class="' + mainClassName + '">' +
-            content +
-            '</div>' +
-            '</div>';
-
         if (!$container) {
+            containerStr = '<div class="' + containerClassName + '">' +
+                title +
+                '<div class="' + mainClassName + '">' +
+                content +
+                '</div>' +
+                '</div>';
             $container = $(containerStr);
             $container.appendTo($('body'));
 
             $title = $container.children('.' + titleClassName);
             $main = $container.children('.' + mainClassName);
+
+
         }
 
         if (!!opts.isPreventMove) {
@@ -645,14 +649,20 @@
             })
         }
 
-
         !!$closeBtn && $closeBtn.appendTo($container);
         !!$footerButton && $footerButton.appendTo($container);
+        $container.css({ "zIndex": mDialog.zIndex + 1, "visibility": "visible" });
         containerCloseHandle = function() {
+            if(!!opts.hasInput){
+                $("html,body").css({"height":"auto","overflow":"visible"});
+                $(window).scrollTop(opts.scrollTop);
+            }
+            
             !!opts.onBeforeClose && opts.onBeforeClose();
             if (opts.animOut) {
+
                 setAnim($container, opts.animIn, opts.animOut, opts.duration, "out", function() {
-                    // this -》 window
+
                     !!contentCloseHandle && contentCloseHandle();
                     $container.remove();
                     opts.onClose();
@@ -672,75 +682,79 @@
         !!opts.onBeforeShow && opts.onBeforeShow();
         $container.css({ "zIndex": mDialog.zIndex + 1, "visibility": "visible" });
         if (opts.animIn) {
-
             setAnim($container, opts.animIn, opts.animOut, opts.duration, "in", function() {
                 opts.onShow();
                 !!opts.pause && setTimeout(function() {
                     _this.close();
+                    
                 }, opts.pause)
-                // setTimeout(_this.close,opts.pause) 这里的调用的是偶close 中作用于就指向了window
             });
         } else {
             !!opts.onShow && opts.onShow();
             !!opts.pause && setTimeout(function() {
                 _this.close();
+               
             }, opts.pause)
         }
-
-
+        if(!!opts.hasInput){
+            opts.scrollTop=$(window).scrollTop();
+            $("html,body").css({"height":"100%","overflow":"hidden"});
+        }
         $container.removeSelf = containerCloseHandle;
         mDialog.stack[this.opts.uid].push($container);
     };
-
-
-
-
-
-
 
     createClass.prototype._renderShade = function() {
         //opts.shade=true 如果需要遮罩
         var _this = this,
             opts = this.opts,
-        defaultOpacity = 0.5,
+            defaultOpacity = 0.75,
             defaultColor = "#000",
             shadeCloseHandle = $.noop(),
-        styles = {
-            "animation-duration": this.opts.duration + "ms",
-            "zIndex": mDialog.zIndex,
-        },
-        $shade = $('<div class="mDialog-shade in"></div>');
+            styles = {
+                "animation-duration": this.opts.duration + "ms",
+                "zIndex": mDialog.zIndex,
+            },
+            $shade = $('<div class="mDialog-shade in"></div>');
         //如果是{color:"",opacity:""} 传入的是颜色和透明值
-        ropacity = !!opts.shade.opacity ? opts.shade.opacity : defaultOpacity;
-        rcolor = !!opts.shade.defaultColor ? opts.shade.defaultColor : defaultColor;
+        ropacity = (!!opts.shade.opacity || opts.shade.opacity == 0) ? opts.shade.opacity : defaultOpacity;
+        rcolor = !!opts.shade.bgColor ? opts.shade.bgColor : defaultColor;
         styles["background-color"] = ExtraFunc.colorToRgba(rcolor, ropacity);
 
 
+        shadeCloseHandle = function() {
+            if (!!opts.duration) {
+                !!$shade && $shade.removeClass("in").addClass('out');
+                $shade.AnimationEnd(function() {
+                    $shade.remove();
+                },opts.duration)
+            } else {
+                $shade.remove();
+            }
+        }
+
         if (this.opts.shadeClose) {
             //如果需要点击关闭遮罩层, 遮罩要关闭，主体要关闭
-            shadeCloseHandle = function() {
-                if (!!opts.duration) {
-                    
-                    !!$shade && $shade.removeClass("in").addClass('out');
-                    $shade.AnimationEnd(function() {
-                        $shade.remove();
-                    })
-                } else {
-                    $shade.remove();
-                }
-            }
+            $shade.removeSelf = shadeCloseHandle;
             $shade.on(deviceUtil.tapEvent, function(event) {
-             
                 event.stopPropagation();
                 _this.close();
-            })
+            });
         } else {
             $shade.on(deviceUtil.tapEvent, function(event) {
+                event.stopPropagation();
+            });
+            $shade.on("touchmove", function(event) {
+                event.preventDefault();
                 event.stopPropagation();
             })
         }
         $shade.css(styles);
-        $shade.removeSelf = shadeCloseHandle;
+
+        if (opts._type == "load") {
+
+            $shade.removeSelfOnlyFinal = shadeCloseHandle;
+        }
         $shade.appendTo($("body"));
         mDialog.stack[this.opts.uid].push($shade);
     };
@@ -748,29 +762,23 @@
 
 
     /******************************************************************/
-
-
-
-
     /**
      * *
      * 通过调用 mDialog.close() 来关闭
      */
     createClass.prototype.close = function(index) {
+
         var _this = this;
         sindex = !!index ? index : this.opts.uid;
         $.each(mDialog.stack[sindex], function(index, obj) {
-            obj.removeSelf();
+            !!obj.removeSelf ? obj.removeSelf() : (!!obj.removeSelfOnlyFinal && obj.removeSelfOnlyFinal());
             if (index == mDialog.stack[sindex].length - 1) {
                 delete mDialog.stack[sindex];
             }
         });
-
+        
+         
     };
-
-
-
-
 
     mDialog.open = function(options, type) {
         mDialog.zIndex++;
@@ -786,7 +794,7 @@
         options.closeBtn = false;
         options.buttons = false;
         options.text = options.text === undefined ? true : (!!options.text ? options.text : false);
-        mDialog.open(options, "load");
+        return mDialog.open(options, "load");
     };
     mDialog.confirm = function(opts) {
         var options = !!$.isPlainObject(opts) ? opts : {};
@@ -798,7 +806,6 @@
         options.buttons = ($.isArray(opts.buttons) && !!opts.buttons.length) ? opts.buttons : [{
                 text: "取消",
                 callback: function() {
-
                     this.close();
                 }
             },
@@ -807,31 +814,27 @@
                 callback: !!opts.yes ? opts.yes : function() {}
             }
         ]
-        mDialog.open(options, "comfirm")
+        return mDialog.open(options, "comfirm")
     };
-
-
     mDialog.msg = function(opts) {
         var options = !!$.isPlainObject(opts) ? opts : {};
         options.closeBtn = false;
         options.shade = !!opts.shade ? opts.shade : false;
         options.pause = !!opts.pause ? opts.pause : 2000;
-        mDialog.open(options, "msg")
+        return mDialog.open(options, "msg")
     };
-
     mDialog.close = function(obj) {
         obj.close();
     };
-
-    mDialog.closeAll=function(){    
+    mDialog.closeAll = function() {
         $.each(mDialog.stack, function(index1, obj1) {
-            $.each(obj1,function(index2,obj2){
+            $.each(obj1, function(index2, obj2) {
                 obj2.removeSelf();
                 if (index2 == mDialog.stack[index1].length - 1) {
                     delete mDialog.stack[index1];
                 }
-            })   
-        }); 
+            })
+        });
     };
     window.mDialog = mDialog;
 })(window.jQuery || window.Zepto, window, document);

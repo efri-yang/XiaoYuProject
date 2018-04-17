@@ -103,14 +103,14 @@
                         <span class="more">查看更多》</span>
                     </a>
                 </li>
-                <li>
+               <!--  <li>
                     <a href="#">
                         <div class="pic"><img src="./upload/2.jpg"></div>
                         <p class="tit">卫誉砖佳</p>
                         <div class="intro">卫誉砖佳是一家集产品研发设计、生产、销售、服务为一体的厦门本土企业。公司推崇“个性化定制”，其中，浴室柜作为拳头产品，由多家品牌口碑商家联合打造。大理石台......</div>
                         <span class="more">查看更多》</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="#">
                         <div class="pic"><img src="./upload/3.jpg"></div>
@@ -170,6 +170,8 @@
     </div>
     <!-- 日记报名弹出框 end -->
     <script type="text/javascript">
+
+
     $(function() {
         var mDialogIndex;
         $(".rjbm-dialog input[name='toggleid']").on("click", function() {
@@ -231,7 +233,12 @@
 
     $(function() {
         var winH = $(window).height();
-        $(".banner-entry").css("height", winH);
+
+        var tabH=$(".section-tab-hd").height();
+
+        $(".banner-entry").css("height",winH);
+        $(".section-tab-bd").css("height",(winH-tabH)+"px");
+
 
         bannerElem = $(".banner-entry")[0];
         var startX, startY, moveEndX, moveEndY, X, Y;
