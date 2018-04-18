@@ -24,7 +24,7 @@
 
             return {
                 start: function($container) {
-                    console.dir($container)
+         
                     $zxysElem=$container.find(".J_dynamics-zxys");
                     $clfElem=$container.find(".J_dynamics-clf");
                     $rgfElem=$container.find(".J_dynamics-rgf");

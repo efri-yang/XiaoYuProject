@@ -24,7 +24,6 @@
                             <select class="sel sel-2" name="selting">
                                 <option value="1">1厅</option>
                                 <option value="2">2厅</option>
-                                
                             </select>
                             <select class="sel sel-3" name="selchu">
                                 <option value="1">1厨</option>
@@ -66,10 +65,10 @@
                 <div class="mfbj-count-dynamics">
                     <div class="soma-hd">您的装修预算<span class="J_dynamics-zxys">?</span>元</div>
                     <div class="soma-bd">
-                        <p>材料费：<span class="dynamics-num J_dynamics-clf" >?</span>元</p>
-                        <p>人工费：<span class="dynamics-num J_dynamics-rgf" >?</span>元 </p>
-                        <p>设计费：<span class="dynamics-num J_dynamics-sjf" >?</span>元 </p>
-                        <p>质检费：<span class="dynamics-num J_dynamics-zjf" >?</span>元 </p>
+                        <p>材料费：<span class="dynamics-num J_dynamics-clf">?</span>元</p>
+                        <p>人工费：<span class="dynamics-num J_dynamics-rgf">?</span>元 </p>
+                        <p>设计费：<span class="dynamics-num J_dynamics-sjf">?</span>元 </p>
+                        <p>质检费：<span class="dynamics-num J_dynamics-zjf">?</span>元 </p>
                     </div>
                 </div>
                 <a href="#" class="mfbj-count-btn">
@@ -139,11 +138,63 @@
                         <input type="submit" class="ipt-submit">
                         <div class="validate-tip"></div>
                     </div>
-
-
                 </div>
             </div>
-            <!--***************************************************-->
+            <!--20180417***************************************************-->
+            <div class="sjybj-mfbj-step1 clear">
+                <div class="c-mfbj-forms J_sth">
+                    <p class="txt-1">免费抢4套设计方案与报价 </p>
+                    <p class="txt-2">今天仅剩<span class="num">88</span>个名额</p>
+                    <div class="form-box">
+                        <div class="item-cell">
+                            <label class="lab">您的姓名</label>
+                            <input type="ipt-text" class="ipt-text">
+                        </div>
+                        <div class="item-cell">
+                            <label class="lab">请输入手机号码</label>
+                            <input type="text" class="ipt-text">
+                        </div>
+                        <div class="item-cell">
+                            <input type="submit" class="ipt-submit" value="获取方案">
+                        </div>
+                    </div>
+                    <p class="txt-3">已为<span class="num">25864</span>位业主提供专业设计方案</p>
+                    <div class="c-mfbj-scroll">
+                        <ul class="list">
+                            <li>张小姐 1分钟前免费获取4套专业专业设专业设专业设专业设设计方案</li>
+                            <li>张小姐 2分钟前免费获取4套专业设计方案</li>
+                            <li>张小姐 3分钟前免费获取4套专业设计方案</li>
+                            <li>张小姐 4分钟前免费获取4套专业设计方案</li>
+                        <li>张小姐 1分钟前免费获取4套专业专业设专业设专业设专业设设计方案</li>
+                            <li>张小姐 2分钟前免费获取4套专业设计方案</li>
+                            <li>张小姐 3分钟前免费获取4套专业设计方案</li>
+                            <li>张小姐 4分钟前免费获取4套专业设计方案</li></ul>
+                    </div>
+                    <script type="text/javascript">
+                    $(function() {
+                        $(".c-mfbj-forms .item-cell .lab").on("click", function() {
+                            var $this = $(this);
+                            $this.hide();
+                            $this.siblings(".ipt-text").focus();
+                        });
+                        $(".c-mfbj-forms .item-cell .ipt-text").on("blur", function() {
+                            var $this = $(this);
+                            if (!$.trim($this.val())) {
+                                $this.siblings(".lab").show();
+                            }
+                        });
+                        $(".c-mfbj-forms.J_sth .ipt-submit").on("click", function() {
+
+                            $(this).parents(".sjybj-mfbj-step1").hide().siblings(".sjybj-mfbj-step2").show();
+                        })
+                    })
+                    </script>
+                </div>
+                <div class="area-lf">
+                    <div class="pic"></div>
+                </div>
+            </div>
+            <!-- ****************************************************** -->
         </div>
     </div>
 </div>
@@ -183,7 +234,7 @@
                     }
                     isClose = false;
                     countRandObj.start($container);
-                   
+
                 }
             })
         }
@@ -209,6 +260,22 @@
 
             }
         })
+    });
+
+
+
+    //add 20180417--基数显示表单 偶数显示计算器
+    $(function() {
+        var myDate = new Date();
+        var day = myDate.getDate();
+        if (day % 2) {
+            //基数
+            $("#J_jzhome-ft-bm .sjybj-mfbj-step1").show();
+            $("#J_jzhome-ft-bm .mfbj-count-form-wrap").hide();
+            
+        } else {
+            //偶数
+        }
     })
 })(jQuery);
 </script>
