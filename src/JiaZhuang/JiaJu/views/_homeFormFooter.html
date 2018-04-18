@@ -266,16 +266,18 @@
 
     //add 20180417--基数显示表单 偶数显示计算器
     $(function() {
-        var myDate = new Date();
-        var day = myDate.getDate();
-        if (day % 2) {
-            //基数
-            $("#J_jzhome-ft-bm .sjybj-mfbj-step1").show();
-            $("#J_jzhome-ft-bm .mfbj-count-form-wrap").hide();
-            
-        } else {
-            //偶数
-        }
+         var myDate = new Date();
+            var day = myDate.getDate();
+            if (day % 2) {
+                //基数
+                $("#J_jzhome-ft-bm .sjybj-mfbj-step1").show();
+                $("#J_jzhome-ft-bm .mfbj-count-form-wrap").hide();
+                
+            } else {
+                //偶数
+                $("#J_jzhome-ft-bm .sjybj-mfbj-step1").hide();
+                $("#J_jzhome-ft-bm .mfbj-count-form-wrap").show();
+            }
     })
 })(jQuery);
 </script>
