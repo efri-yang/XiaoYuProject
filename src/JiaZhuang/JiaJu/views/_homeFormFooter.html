@@ -270,14 +270,19 @@
             var day = myDate.getDate();
             if (day % 2) {
                 //基数
+                $("#J_jzhome-ft-bm .jzhome-ft-hd").addClass('form1');
                 $("#J_jzhome-ft-bm .sjybj-mfbj-step1").show();
                 $("#J_jzhome-ft-bm .mfbj-count-form-wrap").hide();
                 
             } else {
                 //偶数
+                $("#J_jzhome-ft-bm .jzhome-ft-hd").removeClass('form1');
                 $("#J_jzhome-ft-bm .sjybj-mfbj-step1").hide();
                 $("#J_jzhome-ft-bm .mfbj-count-form-wrap").show();
             }
+        $(window).on("load",function(){
+            $("#J_jzhome-ft-bm .jzhome-ft-bd").show();
+        })
     })
 })(jQuery);
 </script>
