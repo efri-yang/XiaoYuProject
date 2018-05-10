@@ -68,13 +68,8 @@ body, html {
     height:100%;
 }
 
-
-
-
-
-
 .container{
-	width:750px;
+	max-width:750px;
 	margin: 0 auto;
 	position: relative; 
 }
@@ -116,12 +111,76 @@ body, html {
     right: 20px;
     top: 20px;
     z-index: 20;
-    width: .86667rem;
-    height: .86667rem;
+    width: 0.86667rem;
+    height: 0.86667rem;
     cursor: pointer;
+    z-index:1000;
+    background: url("../images/normalmusic.png");
+    background-size: 100% 100%;
     &.off {
-    	background: url(https://img4.99.com/www/images/uedc/xz2017/normalmusic.png);
-    	background-size: 100% 100%;
+    	
 	}
 }
+@function px2rem($px, $base-font-size:75px) {
+    @if (unitless($px)) {
+        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+        @return px2rem($px + 0px); // That may fail.
+    }
+    @else if (unit($px)==rem) {
+        @return $px;
+    }
+    @return ($px / $base-font-size) * 1rem;
+}
 
+
+@import "./scss/_page1.scss";
+
+@import "./scss/_page2.scss";
+
+
+.item-form-cell{
+    color:#666666;
+    font-size:0;
+    .labfor{
+        font-size:px2rem(28px);
+    }
+
+}
+
+.item-cell-next{
+    .next-btn{
+        display:block;
+        width:px2rem(460px);
+        height:px2rem(81px);
+        overflow: hidden;
+        background:url("../images/next_btn_1.png") no-repeat center center;
+        background-size:100% 100%;
+    }
+}
+.com-ipt-radio{
+    -webkit-appearance: none;
+    width: px2rem(30px);
+    height: px2rem(30px);
+    border: 1px solid #9a8680;
+    text-align: center;
+    vertical-align: middle;
+    margin-top:-0.5px; 
+    outline: 0;
+    border-radius:100%;
+    position:relative;
+    &:checked{
+        background:#ff7b5b;
+        border-color:#ff7b5b; 
+        &:before{
+            position:absolute;
+            content:"";
+            left:0;
+            top:0;
+            width: px2rem(30px);
+            height: px2rem(30px);
+            background:url("../images/raido_checkbox.png") no-repeat -1px top;
+            background-size:100% 100%;
+        }
+    }
+
+}
