@@ -141,26 +141,38 @@ body, html {
 .item-form-cell{
     color:#666666;
     font-size:0;
-    .labfor{
-        font-size:px2rem(28px);
-    }
+    
 
 }
 
+.labfor{
+    font-size:px2rem(30px);
+    color:#654c48; 
+}
+
+.item-from-group{
+	margin:px2rem(20px) px2rem(60px) px2rem(30px);
+	.item-form-cell{
+		padding:px2rem(15px) 0; 
+	}	
+}
+
 .item-cell-next{
+	text-align:center; 
     .next-btn{
         display:block;
         width:px2rem(460px);
         height:px2rem(81px);
         overflow: hidden;
+        margin:0 auto; 
         background:url("../images/next_btn_1.png") no-repeat center center;
         background-size:100% 100%;
     }
 }
 .com-ipt-radio{
     -webkit-appearance: none;
-    width: px2rem(30px);
-    height: px2rem(30px);
+    width: px2rem(35px);
+    height: px2rem(35px);
     border: 1px solid #9a8680;
     text-align: center;
     vertical-align: middle;
@@ -168,6 +180,7 @@ body, html {
     outline: 0;
     border-radius:100%;
     position:relative;
+    margin-right:px2rem(10px); 
     &:checked{
         background:#ff7b5b;
         border-color:#ff7b5b; 
@@ -176,11 +189,219 @@ body, html {
             content:"";
             left:0;
             top:0;
-            width: px2rem(30px);
-            height: px2rem(30px);
+            width: px2rem(35px);
+            height: px2rem(35px);
             background:url("../images/raido_checkbox.png") no-repeat -1px top;
             background-size:100% 100%;
         }
     }
+}
 
+.slide-page-1{
+	background:url("../images/page_1_bg.jpg") no-repeat top center;
+	background-size:100% 100%;  
+}
+
+
+.slide-page-2{
+	background:url("../images/page_2_bg.jpg") no-repeat top center;
+	background-size:100% 100%; 
+
+	.pic-1{
+		width:px2rem(750px);
+		height:px2rem(277px);
+		background:url("../images/page_2_1.png") no-repeat top center;
+		background-size: 100% 100%;   
+	} 
+
+	.form-item-1{
+		border-radius:px2rem(10px);
+		border:1px solid #cab5ad; 
+		margin:0 px2rem(145px); 
+		text-align:center; 
+		.ipt-text{
+			border:none;
+			background:none;
+			width:px2rem(220px); 
+			font-size:px2rem(32px); 
+			padding:px2rem(15px) px2rem(10px);   
+		} 
+	}
+	.form-item-2{
+		position:absolute;
+		left:14%;
+		bottom:25%;  
+	}
+
+	.form-item-3{
+		position:absolute;
+		right:18%;
+		bottom:25%;  
+	}
+
+	.pic-2{
+		position: absolute;
+	    left: 50%;
+	    bottom:10%; 
+	    margin-left:px2rem(-230px); 
+		width:px2rem(460px);
+		height: px2rem(81px);
+		background:url("../images/kscs_btn_1.png") no-repeat top center;
+		background-size:100% 100%;  
+	}
+}
+.com-txt-type-1{
+	color:#654c48;
+		font-size:px2rem(38px);
+		text-align:center;
+}
+.slide-page-3{
+	background:url("../images/page_3_bg.jpg") no-repeat top center;
+	background-size:100% 100%; 
+	.pic-1{
+		width: px2rem(104px);
+		height:px2rem(211px);
+		overflow:hidden;
+		margin: px2rem(-20px) auto 0;
+
+		background: url("../images/page_3_1.png") no-repeat top center; 
+		background-size:100% 100%; 
+	}
+	.txt-1{
+		
+		margin:px2rem(40px) px2rem(80px) 0;    
+	}
+
+}
+
+.slide-page-4{
+	background:url("../images/page_4_bg.jpg") no-repeat top center;
+	background-size:100% 100%;  
+	.pic-1{
+		width: px2rem(112px);
+		height:px2rem(199px);
+		overflow:hidden;
+		margin: px2rem(-20px) auto 0;
+		background: url("../images/page_4_1.png") no-repeat top center; 
+		background-size:100% 100%; 
+	}
+	.txt-1{
+		
+		margin:px2rem(40px) px2rem(160px) 0;  
+	}
+	.item-from-group{
+		padding-bottom: px2rem(25px);
+	}
+
+}
+.slide-page-5{
+	background:url("../images/page_5_bg.jpg") no-repeat top center;
+	background-size:100% 100%; 
+
+	.pic-1{
+		width: px2rem(85px);
+		height:px2rem(201px);
+		overflow:hidden;
+		margin: 0 auto;
+		background: url("../images/page_5_1.png") no-repeat top center; 
+		background-size:100% 100%; 
+	} 
+	.pic-2{
+		width:px2rem(293px);
+		height:px2rem(220px);
+		overflow:hidden;
+		position:absolute;
+		right:19%;
+		bottom:11%;  
+		background:url("../images/page_5_2.png") no-repeat top center;
+		background-size: 100% 100%;     
+	}
+	.txt-1{
+		margin:px2rem(40px) px2rem(180px) 0; 
+	}
+}
+.slide-page-6{
+	background:url("../images/page_6_bg.jpg") no-repeat top center;
+	background-size:100% 100%;  
+	.pic-1{
+		width: px2rem(90px);
+		height:px2rem(198px);
+		overflow:hidden;
+		margin: 0 auto;
+		background: url("../images/page_6_1.png") no-repeat top center; 
+		background-size:100% 100%; 
+	} 
+	.txt-1{
+		margin:px2rem(40px) px2rem(160px) 0; 
+	}
+	.pic-2{
+		position:absolute;
+		left:7%;
+		bottom:0;  
+		width:px2rem(688px);
+		height:px2rem(525px);
+		overflow:hidden;
+		background: url("../images/page_6_2.png") no-repeat top center;
+		background-size: 100% 100%;   
+	}
+	.pic-3{
+		position:absolute;
+		right:20%;
+		bottom:13%;  
+		width:px2rem(115px);
+		height:px2rem(71px);
+		overflow:hidden;
+		background: url("../images/page_6_3.png") no-repeat top center;
+		background-size: 100% 100%;   
+	}
+	.pic-4{
+		width:px2rem(163px);
+		height:px2rem(44px);
+		overflow: hidden;
+		position:absolute;
+		right:px2rem(20px);
+		bottom:px2rem(35px);   
+		background: url("../images/page_6_4.png") no-repeat top center;
+		background-size: 100% 100%;   
+	}
+}
+
+.slide-page-7{
+	background:url("../images/page_7_bg.jpg") no-repeat top center;
+	background-size:100% 100%; 
+	.pic-1{
+		width: px2rem(94px);
+		height:px2rem(205px);
+		overflow:hidden;
+		margin: 0 auto;
+		background: url("../images/page_7_1.png") no-repeat top center; 
+		background-size:100% 100%; 
+	}
+	.txt-1{
+		margin:px2rem(40px) px2rem(220px) 0; 
+	} 
+	.item-from-group{
+		margin-left:25%;
+	}
+}
+
+.slide-page-8{
+	background:url("../images/page_2_bg.jpg") no-repeat top center;
+	background-size:100% 100%;  
+}
+
+
+.item-tjcs-btn{
+	text-align:center; 
+    .ipt-submit{
+    	border:none;
+        display:block;
+        width:px2rem(460px);
+        height:px2rem(81px);
+        overflow: hidden;
+        margin:0 auto; 
+        background:url("../images/tjcs_btn_1.png") no-repeat center center;
+        background-size:100% 100%;
+    }
+	
 }
