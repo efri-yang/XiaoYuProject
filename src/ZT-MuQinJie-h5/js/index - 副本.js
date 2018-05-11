@@ -60,39 +60,38 @@ var mySwiper = new Swiper('.swiper-container', {
                         $truenameInput.parent().removeClass('shake');
                     }
                 });
-            }else if(this.activeIndex==2 && !isCheck($page3Input)){
-                
+            }else if(this.activeIndex==2){
                 $page3Input.parent().animate("shake", {
                     complete: function() {
                         $page3Input.parent().removeClass('shake');
                     }
                 });
-            }else if(this.activeIndex==3 && sexVal==1 && !isCheck($page4GrilInput)){
+            }else if(this.activeIndex==3 && sexVal==1){
                  $page4GrilInput.parent().animate("shake", {
                     complete: function() {
                         $page4GrilInput.parent().removeClass('shake');
                     }
                 });
-            }else if(this.activeIndex==3 && sexVal==2 && !isCheck($page4BoyInput)){
+            }else if(this.activeIndex==3 && sexVal==2){
                  $page4BoyInput.parent().animate("shake", {
                     complete: function() {
                         $page4BoyInput.parent().removeClass('shake');
                     }
                 });
-            }else if(this.activeIndex==4 && !isCheck($page5Input)){
+            }else if(this.activeIndex==4){
                 $page5Input.parent().animate("shake", {
                     complete: function() {
                         $page5Input.parent().removeClass('shake');
                     }
                 });
-            }else if(this.activeIndex==5 && !isCheck($page6Input)){
+            }else if(this.activeIndex==5){
                 $page6Input.parent().animate("shake", {
                     complete: function() {
                         $page6Input.parent().removeClass('shake');
                     }
                 });
             }
-            else if(this.activeIndex==6 && !isCheck($page7Input) ){
+            else if(this.activeIndex==6){
                 if(!isCheck($page7Input)){
                     $page7Input.parent().animate("shake", {
                     complete: function() {
@@ -195,7 +194,7 @@ $(function() {
         }
     });
 
-    $("#J_star-cs-btn").on("touchstart", function() {
+    $("#J_star-cs-btn").on("click", function() {
        
         if (!isTrueNameValidate) {
             $parent.animate("shake", {
@@ -220,7 +219,7 @@ $(function() {
 
 
 $(function() {
-    $(".slide-page-3 .item-cell-next .next-btn").on("touchstart", function() {
+    $(".slide-page-3 .item-cell-next .next-btn").on("click", function() {
         if(!isCheck($page3Input)){
             $page3Input.parent().animate("shake", {
                     complete: function() {
@@ -232,7 +231,7 @@ $(function() {
         }
     });
 
-    $(".slide-page-4 .item-cell-next .next-btn").on("touchstart", function() {
+    $(".slide-page-4 .item-cell-next .next-btn").on("click", function() {
         if(sexVal==1 && !isCheck($page4GrilInput)){
             $page4GrilInput.parent().animate("shake", {
                     complete: function() {
@@ -249,7 +248,7 @@ $(function() {
             mySwiper.slideNext();
         }
     });
-    $(".slide-page-5 .item-cell-next .next-btn").on("touchstart", function() {
+    $(".slide-page-5 .item-cell-next .next-btn").on("click", function() {
         if(!isCheck($page5Input)){
             $page5Input.parent().animate("shake", {
                     complete: function() {
@@ -261,7 +260,7 @@ $(function() {
         }
     });
 
-    $(".slide-page-6 .item-cell-next .next-btn").on("touchstart", function() {
+    $(".slide-page-6 .item-cell-next .next-btn").on("click", function() {
 
         if(!isCheck($page6Input)){
             $page6Input.parent().animate("shake", {
@@ -274,7 +273,7 @@ $(function() {
         }
     });
 
-    $("#J_ipt-submit").on("touchstart",function(){
+    $("#J_ipt-submit").on("click",function(){
         if(!isCheck($page7Input)){
             $page7Input.parent().animate("shake", {
                     complete: function() {
@@ -282,8 +281,7 @@ $(function() {
                     }
                 });
         }else{
-            alert("提交");
-            window.location.href="result.html";
+            alert("提交")
         }
 
         // $("#J_result-submit-tip").animate({"visibility":"visible","opacity":1},function(){
