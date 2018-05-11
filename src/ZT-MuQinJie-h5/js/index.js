@@ -186,13 +186,17 @@ $(function() {
     
     var $parent = $truenameInput.parent();
 
-    $truenameInput.on("keyup", function() {
+    $truenameInput.on("keyup", function(e) {
         isTrueNameValidate = $.trim($(this).val()) ? true : false;
         if (isTrueNameValidate) {
             $(".slide-page-2").removeClass("swiper-no-swiping");
         } else {
             $(".slide-page-2").addClass("swiper-no-swiping");
         }
+        if (e.keyCode === 13) {
+              e.preventDefault()
+              //此处对应自己的操作
+            }
     });
 
     $("#J_star-cs-btn").on("touchstart", function() {
