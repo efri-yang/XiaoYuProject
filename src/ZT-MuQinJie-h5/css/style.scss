@@ -239,10 +239,14 @@ html {
     animation: rotating 1.2s linear infinite;
 }
 
+.swiper-container {
+    height: 100%;
+}
+
 .auto-btn {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 6px;
+    top: 6px;
     z-index: 20;
     width: 0.86667rem;
     height: 0.86667rem;
@@ -277,7 +281,7 @@ $base-font-size:75px) {
 }
 
 .labfor {
-    font-size: px2rem(30px);
+    font-size:px2rem(30px);
     color: #654c48;
     display: block;
 }
@@ -286,21 +290,21 @@ $base-font-size:75px) {
     position: absolute;
     left: 50%;
     top: 30%;
-    -webkit-transform: translate(-50%,0);
-    -ms-transform: translate(-50%,0);
-    -moz-transform: translate(-50%,0);
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
     .item-form-cell {
-    	white-space:nowrap; 
+        white-space: nowrap;
         padding: px2rem(15px) 0;
     }
 }
 
 .item-cell-next {
     text-align: center;
-    position:absolute;
-    top:57%;
+    position: absolute;
+    bottom: 30%;
     left: 50%;
-    margin-left:px2rem(-230px);  
+    margin-left: px2rem(-230px);
     .next-btn {
         display: block;
         width: px2rem(460px);
@@ -347,8 +351,8 @@ $base-font-size:75px) {
         width: px2rem(191px);
         height: px2rem(36px);
         position: absolute;
-        left: px2rem(60px);
-        top: px2rem(60px);
+        left: px2rem(90px);
+        top: px2rem(35px);
         overflow: hidden;
         background: url("../images/page_1_1.png") no-repeat top center;
         background-size: 100% 100%;
@@ -357,8 +361,8 @@ $base-font-size:75px) {
         width: px2rem(90px);
         height: px2rem(99px);
         position: absolute;
-        right: px2rem(120px);
-        top: px2rem(40px);
+        right: px2rem(90px);
+        top: 0;
         overflow: hidden;
         background: url("../images/page_1_2.png") no-repeat top center;
         background-size: 100% 100%;
@@ -411,7 +415,7 @@ $base-font-size:75px) {
 .slide-page-2 {
     background: url("../images/page_2_bg.jpg") no-repeat top center;
     background-size: 100% 100%;
-   
+
     .pic-1 {
         width: px2rem(750px);
         height: px2rem(277px);
@@ -465,10 +469,10 @@ $base-font-size:75px) {
 .slide-page-3 {
     background: url("../images/page_3_bg.jpg") no-repeat top center;
     background-size: 100% 100%;
-	.item-from-group-wrap{
-		margin-top:px2rem(20px) 
-	}
-    
+    .item-from-group-wrap {
+        margin-top: px2rem(20px)
+    }
+
     .pic-1 {
         width: px2rem(104px);
         height: px2rem(211px);
@@ -485,18 +489,19 @@ $base-font-size:75px) {
 }
 
 .slide-page-4 {
-   .item-from-group-wrap{
-   	margin-top: px2rem(30px);
-   }
-	.item-cell-next{
-		position:absolute;
-		left:50%;
-		top:57%;
-		margin-left:px2rem(-460px/2);  
-	}
+
+    .item-from-group-wrap {
+        margin-top: px2rem(30px);
+    }
+    .item-cell-next {
+        position: absolute;
+        left: 50%;
+        bottom: 34%;
+        margin-left: px2rem(-460px/2);
+    }
     .txt-1 {
 
-        margin: px2rem(40px) px2rem(160px) 0;
+        margin: px2rem(20px) px2rem(160px) 0;
     }
     .item-from-group {
         padding-bottom: px2rem(25px);
@@ -504,25 +509,28 @@ $base-font-size:75px) {
     .page-item-nv {
         height: 100%;
         display: block;
-         background: url("../images/page_4_bg.jpg") no-repeat top center;
-    background-size: 100% 100%;
+        background: url("../images/page_4_bg.jpg") no-repeat top center;
+        background-size: 100% 100%;
+        // position: absolute;
         .pic-1 {
             width: px2rem(112px);
             height: px2rem(199px);
             overflow: hidden;
-            margin: px2rem(-20px) auto 0;
+            margin: px2rem(-30px) auto 0;
             background: url("../images/page_4_1.png") no-repeat top center;
             background-size: 100% 100%;
         }
     }
     .page-item-nan {
-    	 background: url("../images/page_4_nan_bg.jpg") no-repeat top center;
-    background-size: 100% 100%;
+        background: url("../images/page_4_nan_bg.jpg") no-repeat bottom center;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 100%;
         .pic-1 {
             width: px2rem(112px);
             height: px2rem(199px);
             overflow: hidden;
-            margin: px2rem(-20px) auto 0;
+            margin: px2rem(-30px) auto 0;
             background: url("../images/page_4_nan_1.png") no-repeat top center;
             background-size: 100% 100%;
         }
@@ -534,14 +542,17 @@ $base-font-size:75px) {
 .slide-page-5 {
     background: url("../images/page_5_bg.jpg") no-repeat top center;
     background-size: 100% 100%;
-.item-from-group-wrap{
-	margin-top:px2rem(35px); 
-}
+    .item-cell-next {
+        bottom: 34%;
+    }
+    .item-from-group-wrap {
+        margin-top: px2rem(20px);
+    }
     .pic-1 {
         width: px2rem(85px);
         height: px2rem(201px);
         overflow: hidden;
-        margin: 0 auto;
+        margin: px2rem(-40px) auto 0;
         background: url("../images/page_5_1.png") no-repeat top center;
         background-size: 100% 100%;
     }
@@ -556,21 +567,25 @@ $base-font-size:75px) {
         background-size: 100% 100%;
     }
     .txt-1 {
-        margin: px2rem(40px) px2rem(180px) 0;
+        margin: px2rem(20px) px2rem(180px) 0;
     }
 }
 
 .slide-page-6 {
     background: url("../images/page_6_bg.jpg") no-repeat top center;
     background-size: 100% 100%;
-    .item-from-group-wrap{
-    	margin-top:px2rem(35px); 
+    .item-from-group-wrap {
+        margin-top: px2rem(35px);
+    }
+
+    .item-cell-next {
+        bottom:35%;
     }
     .pic-1 {
         width: px2rem(90px);
         height: px2rem(198px);
         overflow: hidden;
-        margin: 0 auto;
+        margin: px2rem(-40px) auto;
         background: url("../images/page_6_1.png") no-repeat top center;
         background-size: 100% 100%;
     }
@@ -612,25 +627,69 @@ $base-font-size:75px) {
 .slide-page-7 {
     background: url("../images/page_7_bg.jpg") no-repeat top center;
     background-size: 100% 100%;
+    .item-tjcs-btn {
+        top: 62%;
+    }
     .pic-1 {
         width: px2rem(94px);
         height: px2rem(205px);
         overflow: hidden;
-        margin: 0 auto;
+        margin: px2rem(-30px) auto 0;
         background: url("../images/page_7_1.png") no-repeat top center;
         background-size: 100% 100%;
     }
     .txt-1 {
-        margin: px2rem(40px) px2rem(220px) 0;
+        margin: px2rem(25px) px2rem(220px) 0;
     }
     .item-from-group {
-        margin-top:px2rem(30px);
+        margin-top: px2rem(30px);
+    }
+}
+
+.page-8-ren {
+    position: absolute;
+    right: px2rem(30px);
+    top: px2rem(20px);
+    z-index: 10;
+    width: px2rem(72px);
+    height: px2rem(149px);
+    
+    background: url("../images/result_p_8_1.png") no-repeat top center;
+    background-size: 100% 100%;
+//    animation:page8ren 3s infinite;
+// -moz-animation:page8ren 3s infinite; /* Firefox */
+// -webkit-animation:page8ren 3s infinite;
+    .qiu{
+        width:px2rem(35px);
+        height:px2rem(42px);
+        background: url("../images/qiqiu.png") no-repeat top center;
+        background-size:100% 100%;
+        position:absolute;
+        right:px2rem(-5px);
+        top:px2rem(0px);
+           animation:page8ren 3s infinite;
+-moz-animation:page8ren 3s infinite; /* Firefox */
+-webkit-animation:page8ren 3s infinite;
+    }
+}
+
+@keyframes page8ren {
+    0 {
+        top: px2rem(0px);
+    }
+    50%{
+        top: px2rem(-5px);
+    }
+    
+     100% {
+        top: px2rem(5px);
     }
 }
 
 .slide-page-8 {
     background: url("../images/page_8_bg.jpg") no-repeat top center;
     background-size: 100% 100%;
+
     .pic-1 {
         width: px2rem(670px);
         height: px2rem(834px);
@@ -647,7 +706,7 @@ $base-font-size:75px) {
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
-            width: px2rem(220px);
+            width: px2rem(200px);
             position: absolute;
             left: 19%;
             top: 32.5%;
@@ -708,15 +767,16 @@ $base-font-size:75px) {
         z-index: 1;
     }
     .sccs-btn {
-        width: px2rem(607px);
-        height: px2rem(107px);
+        width: px2rem(472px);
+        height: px2rem(96px);
         overflow: hidden;
         background: url("../images/sccs_btn_1.png") no-repeat top center;
         background-size: 100%;
         position: absolute;
         bottom: 5%;
         left: 50%;
-        margin-left: px2rem(-607px/2);
+        margin-left: px2rem(-472px/2);
+        
     }
     .sccs-mine-btn {
         width: px2rem(607px);
@@ -734,10 +794,10 @@ $base-font-size:75px) {
 
 .item-tjcs-btn {
     text-align: center;
-    position:absolute;
-    left:50%;
-    top:55%;
-    margin-left:px2rem(-460px/2);  
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    margin-left: px2rem(-460px/2);
     .ipt-submit {
         border: none;
         display: block;

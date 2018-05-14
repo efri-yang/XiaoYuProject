@@ -1,6 +1,6 @@
 var isTrueNameValidate = false;
 var $truenameInput=$("#J_ipt-true-name");
-var sexVal = "女";
+var sexVal="女";
 var $page3Input=$(".slide-page-3 input[type='radio']");
 var $page4GrilInput=$(".slide-page-4  .page-item-nv input[type='radio']");
 var $page4BoyInput=$(".slide-page-4  .page-item-nan input[type='radio']");
@@ -60,39 +60,38 @@ var mySwiper = new Swiper('.swiper-container', {
                         $truenameInput.parent().removeClass('shake');
                     }
                 });
-            }else if(this.activeIndex==2 && !isCheck($page3Input)){
-                
+            }else if(this.activeIndex==2){
                 $page3Input.parent().animate("shake", {
                     complete: function() {
                         $page3Input.parent().removeClass('shake');
                     }
                 });
-            }else if(this.activeIndex==3 && sexVal == "女" && !isCheck($page4GrilInput)){
+            }else if(this.activeIndex==3 && sexVal=="女"){
                  $page4GrilInput.parent().animate("shake", {
                     complete: function() {
                         $page4GrilInput.parent().removeClass('shake');
                     }
                 });
-            }else if(this.activeIndex==3 && sexVal == "男" && !isCheck($page4BoyInput)){
+            }else if(this.activeIndex==3 && sexVal=="男"){
                  $page4BoyInput.parent().animate("shake", {
                     complete: function() {
                         $page4BoyInput.parent().removeClass('shake');
                     }
                 });
-            }else if(this.activeIndex==4 && !isCheck($page5Input)){
+            }else if(this.activeIndex==4){
                 $page5Input.parent().animate("shake", {
                     complete: function() {
                         $page5Input.parent().removeClass('shake');
                     }
                 });
-            }else if(this.activeIndex==5 && !isCheck($page6Input)){
+            }else if(this.activeIndex==5){
                 $page6Input.parent().animate("shake", {
                     complete: function() {
                         $page6Input.parent().removeClass('shake');
                     }
                 });
             }
-            else if(this.activeIndex==6 && !isCheck($page7Input) ){
+            else if(this.activeIndex==6){
                 if(!isCheck($page7Input)){
                     $page7Input.parent().animate("shake", {
                     complete: function() {
@@ -110,12 +109,12 @@ var mySwiper = new Swiper('.swiper-container', {
                 if(!isCheck($page3Input)){
                     this.slideTo(this.activeIndex - 1, 1000, false);
                 }
-            }else if(this.activeIndex == 4 && sexVal == "女"){
+            }else if(this.activeIndex == 4 && sexVal=="女"){
                 if(!isCheck($page4GrilInput)){
                     this.slideTo(this.activeIndex - 1, 1000, false);
                 }
                
-            }else if(this.activeIndex == 4 && sexVal == "男"){
+            }else if(this.activeIndex == 4 && sexVal=="男"){
                if(!isCheck($page4BoyInput)){
                     this.slideTo(this.activeIndex - 1, 1000, false);
                 }
@@ -156,7 +155,6 @@ var mySwiper = new Swiper('.swiper-container', {
 (function() {
     var audio = document.getElementById("J_media");
     audio.play();
-    var flagfirst=false;
     document.addEventListener("WeixinJSBridgeReady", function() {
         audio.play();
     }, false);
@@ -168,7 +166,6 @@ var mySwiper = new Swiper('.swiper-container', {
         var $audioBtn = $("#J_auto-btn");
         $audioBtn.on("touchstart", function(event) {
             event.stopPropagation();
-            flagfirst=true;
             if (audio.paused) {
                 $audioBtn.addClass("rotating");
                 audio.play();
@@ -176,13 +173,6 @@ var mySwiper = new Swiper('.swiper-container', {
                 $audioBtn.removeClass("rotating");
                 audio.pause();
             }
-        });
-        
-        $(document).on("touchstart",function(){
-                if(audio.paused && !flagfirst){
-                    audio.play();
-                    flagfirst=true;
-                }
         })
     })
 })();
@@ -195,23 +185,16 @@ $(function() {
     
     var $parent = $truenameInput.parent();
 
-    $truenameInput.on("keyup", function(e) {
+    $truenameInput.on("keyup", function() {
         isTrueNameValidate = $.trim($(this).val()) ? true : false;
-        // if (isTrueNameValidate) {
-        //     $(".slide-page-2").removeClass("swiper-no-swiping");
-        // } else {
-        //     $(".slide-page-2").addClass("swiper-no-swiping");
-        // }
-        $("#J_real2").val($(this).val());
-        
+        if (isTrueNameValidate) {
+            $(".slide-page-2").removeClass("swiper-no-swiping");
+        } else {
+            $(".slide-page-2").addClass("swiper-no-swiping");
+        }
     });
-     $truenameInput.on("blur", function(e) {
-$("#J_real2").val($(this).val());
-     })
 
-
-
-    $("#J_star-cs-btn").on("touchstart", function() {
+    $("#J_star-cs-btn").on("click", function() {
        
         if (!isTrueNameValidate) {
             $parent.animate("shake", {
@@ -236,7 +219,7 @@ $("#J_real2").val($(this).val());
 
 
 $(function() {
-    $(".slide-page-3 .item-cell-next .next-btn").on("touchstart", function() {
+    $(".slide-page-3 .item-cell-next .next-btn").on("click", function() {
         if(!isCheck($page3Input)){
             $page3Input.parent().animate("shake", {
                     complete: function() {
@@ -248,14 +231,14 @@ $(function() {
         }
     });
 
-    $(".slide-page-4 .item-cell-next .next-btn").on("touchstart", function() {
-        if(sexVal=="女" && !isCheck($page4GrilInput)){
+    $(".slide-page-4 .item-cell-next .next-btn").on("click", function() {
+        if(sexVal==1 && !isCheck($page4GrilInput)){
             $page4GrilInput.parent().animate("shake", {
                     complete: function() {
                         $page4GrilInput.parent().removeClass('shake');
                     }
                 });
-        }else if(sexVal=="男" && !isCheck($page4BoyInput)){
+        }else if(sexVal==2 && !isCheck($page4BoyInput)){
             $page4BoyInput.parent().animate("shake", {
                     complete: function() {
                         $page4BoyInput.parent().removeClass('shake');
@@ -265,7 +248,7 @@ $(function() {
             mySwiper.slideNext();
         }
     });
-    $(".slide-page-5 .item-cell-next .next-btn").on("touchstart", function() {
+    $(".slide-page-5 .item-cell-next .next-btn").on("click", function() {
         if(!isCheck($page5Input)){
             $page5Input.parent().animate("shake", {
                     complete: function() {
@@ -277,7 +260,7 @@ $(function() {
         }
     });
 
-    $(".slide-page-6 .item-cell-next .next-btn").on("touchstart", function() {
+    $(".slide-page-6 .item-cell-next .next-btn").on("click", function() {
 
         if(!isCheck($page6Input)){
             $page6Input.parent().animate("shake", {
@@ -290,7 +273,7 @@ $(function() {
         }
     });
 
-    $("#J_ipt-submit").on("touchstart",function(){
+    $("#J_ipt-submit").on("click",function(){
         if(!isCheck($page7Input)){
             $page7Input.parent().animate("shake", {
                     complete: function() {
@@ -298,7 +281,7 @@ $(function() {
                     }
                 });
         }else{
-            $("#form1").submit();
+            alert("提交")
         }
 
         // $("#J_result-submit-tip").animate({"visibility":"visible","opacity":1},function(){
@@ -318,7 +301,7 @@ $(function() {
 $(function(){
     $("input[name='sex']").on("change",function(){
         var $this=$(this);
-        if($this.val()=="女"){
+        if($this.val()==1){
             sexVal="女";
             //女生
             $(".page-item-nv").show();
