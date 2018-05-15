@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="http://www.dev.xiaoyu.com/css/love/css/base.css">
+    <link type="text/css" rel="stylesheet" href="http://www.dev.xiaoyu.com/css/love/css/style.css">
+    <script type="text/javascript" src="http://www.dev.xiaoyu.com/js/flexible.js"></script>
+    <script type="text/javascript" src="http://www.dev.xiaoyu.com/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.dev.xiaoyu.com/js/DateSelector.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../dev/H5Uploader/css/style.css">
+    <script type="text/javascript" src="./js/jquery.ajaxfileupload.js"></script>
+
+    <body>
+        <div class="bg">
+            <section class="inner25 pl60 pr60">
+                <!-- 单图测试 -->
+                <dl class="mt20 inner10">
+                    <ul class="qform-upload" id="J_single-upload-list">
+                        <li>
+                            <span class="pic-wrap"><img src="images/upload_icon.png" class="pic"></span>
+                            <span class="load"></span>
+                            <a href="javascript:;" class="file">
+                                <input type="file" name="file" class="ipt-file" id="J_single-upload">
+                            </a>
+                            <span class="close"></span>
+                        </li>
+                    </ul>
+                </dl>
+                <!-- 多图测试 -->
+                <dl class="mt20 inner10">
+                    <ul class="qform-upload qform-muti-upload" id="J_muti-upload-list">
+                        <li id="J_add-file-btn">
+                            <span class="pic-wrap"><img src="images/upload_icon.png" class="pic"></span>
+                            <a href="javascript:;" class="file">
+                                <input type="file" name="file" class="ipt-file" id="J_muti-upload">
+                            </a>
+                        </li>
+                    </ul>
+                </dl>
+            </section>
+            <script type="text/javascript">
+            //单张图片
+            (function() {
+                $(function() {
+                    var $listUl = $("#J_single-upload-list");
+                    var $load = $listUl.find(".load");
+                    var $pic = $listUl.find(".pic");
+                    var $close=$listUl.find(".close");
+                    var normalUrl="images/upload_icon.png";
+                    $("#J_single-upload").AjaxFileUpload({
+                        action: "upload.php",
+                        onChange: function(filename) {
+                            $load.show();
+                        },
+                        onSubmit: function(filename) {
+                            return true;
+                        },
+                        onComplete: function(filename, response) {
+                            $load.hide();
+                            if(response.error){
+                                alert("图片上传错误");
+                            }else{
+                                $pic.attr("src",response.url).show().parent().addClass('active');
+                                $close.show();  
+                            }
+                        }   
+                    });
+
+                    $close.on("click",function(){
+                        $pic.attr("src",normalUrl).parent().removeClass('active');
+                        $close.hide();
+                    })
+                })
+            })();
+
+
+            //多张图片
+            (function() {
+                $(function() {
+                    var $listUl = $("#J_muti-upload-list");
+                    var $addBtn=$("#J_add-file-btn");
+                    var $li;
+                    $("#J_muti-upload").AjaxFileUpload({
+                        action: "upload.php",
+                        onChange: function(filename) {
+                           $li=$('<li><span class="pic-wrap"><img src="images/upload_icon.png" class="pic"></span><span class="load"></span><span class="close"></span></li>');
+                           $addBtn.before($li);
+
+                        },
+                        onSubmit: function(filename) {
+                            return true;
+                        },
+                        onComplete: function(filename, response) {
+                            $li.find(".load").hide();
+                            if(response.error){
+                                alert("图片上传错误");
+                                $li.remove();
+                            }else{
+                                $li.find(".pic").attr("src",response.url).show().parent().addClass('active');
+                                $li.find(".close").show();  
+                            }
+                        }   
+                    });
+
+                    $("#J_muti-upload-list").on("click",".close",function(){
+                        var $this=$(this);
+                        var $parent=$this.parent();
+                        $parent.remove();
+                    })
+
+                    
+                })
+            })();
+            </script>
+        </div>
+    </body>
+
+</html>

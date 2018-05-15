@@ -1,0 +1,154 @@
+.ywqs-entry-slide-list {
+    li {
+        width: 299px;
+        .ywqspic {
+            width: 300px;
+            height: 185px;
+            overflow: hidden;
+            overflow: hidden;
+            text-align: center;
+            line-height: 185px;
+            a{
+            	display:block; 
+            	height:100%;
+            	position:relative;  
+            }
+            img {
+                vertical-align: middle;
+                display: inline-block;
+            }
+        }
+        .ywqstit {
+            padding: 15px 0 10px;
+            display: block;
+            color: #333333;
+            font-size: 18px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .ywqsintro {
+            color: #888888;
+            font-size: 14px;
+            line-height: 23px;
+            height: 46px;
+            overflow: hidden;
+            text-align: left;
+        }
+    }
+}
+
+.ywqs-entry-slide {
+    position: relative;
+    .bx-wrapper {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+    }
+}
+
+.ywqs-entry-slide-prev {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+    left: 0;
+    top: 61px;
+
+    a {
+        display: block;
+        width: 32px;
+        height: 63px;
+        overflow: hidden;
+        background: url("../images/ywqs_entry_slide_prev.png") no-repeat top center;
+        &.disabled{
+            display:none; 
+        }
+    }
+}
+
+
+.ywqs-entry-slide-next {
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    top: 61px;
+    right: 2px;
+    a {
+        display: block;
+        width: 32px;
+        height: 63px;
+
+        overflow: hidden;
+        background: url("../images/ywqs_entry_slide_next.png") no-repeat top center;
+        &.disabled{
+            display:none; 
+        }
+    }
+}
+
+@-webkit-keyframes bounce-down {
+
+    25% {
+
+        -webkit-transform: translateY(-5px);
+
+    }
+
+    50%, 100% {
+
+        -webkit-transform: translateY(0);
+
+    }
+
+    75% {
+
+        -webkit-transform: translateY(5px);
+
+    }
+
+}
+
+ 
+
+@keyframes bounce-down {
+
+    25% {
+
+        transform: translateY(-5px);
+
+    }
+
+    50%, 100% {
+
+        transform: translateY(0);
+
+    }
+
+    75% {
+
+        transform: translateY(5px);
+
+    }
+
+}
+
+ 
+
+.animate-bounce-down{
+
+    -webkit-animation: bounce-down 1.5s linear infinite;
+
+    animation: bounce-down 1.5s linear infinite;
+
+}
+
+.ywqs-entry-icon-pic{
+    width:161px;
+    height:83px;
+    float: right;
+    overflow:hidden;
+    background:url("../images/ywqs_qtl_anim.png") no-repeat top center;  
+
+
+}
