@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/bxSlider/jquery.bxslider.css">
+    <script type="text/javascript" src="js/bxSlider/jquery.bxslider.js"></script>
+</head>
+
+<body>
+    <div class="h-banner"></div>
+    <div class="detailpage-box clearfix">
+        <div class="detail-left">
+            <p class="num">001号</p>
+            <div class="avatar"><img src="upload/demo_1.jpg"></div>
+            <p class="name">张玉婷</p>
+            <p class="age">(12岁)</p>
+            <div class="rank-ps clearfix">
+                <span class="piaoshu">票数<strong>12345</strong></span>
+                <span class="rank">排名 <strong>12345</strong></span>
+            </div>
+            <div class="intro">
+                <p>作品简介：</p>
+                <div class="txt">
+                    <p>作品简介：万岁孩子们可以按！ 我曾与你作为一个插画书侏罗纪船尾。 也正是这样有趣看这本书腾飞！...</p>
+                </div>
+            </div>
+            <a href="#" class="tp-btn disabled">投TA一票</a>
+        </div>
+
+        <div class="detailslide-box">
+			<div class="detailslide-list-wrap">
+				<ul class="detailslide-list">
+					<li><img src="upload/demo_1.jpg"></li>
+					<li><img src="upload/pic_01.jpg"></li>
+					<li><img src="upload/pic_03.jpg"></li>
+					
+				</ul>
+			</div>
+			<div class="slide-prev" id="J_slide-prev-1"></div>
+            <div class="slide-next" id="J_slide-next-1"></div>
+        </div>
+    </div>
+
+    <div class="copyright">
+            <p>©2003-2018 小鱼网 版权所有，并保留所有权利。</p>
+            <p>闽公网安备35020302000108号 闽ICP备05000086号-2 闽B2-20170142</p>
+    </div>
+
+
+
+    <script type="text/javascript">
+    	$(function(){
+    		$('.detailslide-list').bxSlider({
+	            mode: 'horizontal',
+	            controls: true,
+	            infiniteLoop: true,
+	            pager: false,
+	            slideMargin: 18,
+	            slideWidth: 620,
+	            minSlides: 1,
+	            maxSlides: 1,
+	            moveSlides: 1,
+	            nextText: "",
+	            prevText: "",
+	            prevSelector: $("#J_slide-prev-1"),
+	            nextSelector: $("#J_slide-next-1"),
+	        });
+    	})
+
+    </script>
+</body>
+
+</html>
