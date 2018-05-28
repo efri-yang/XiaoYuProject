@@ -1,0 +1,136 @@
+    @import "./scss/_funvar.scss";
+.container {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.h-banner {
+    height: 638px;
+    background: url("../images/banner_01.jpg") no-repeat top center;
+    .list {
+        li {
+            float: left;
+            a {
+                display: block;
+            }
+        }
+    }
+}
+
+.slide-1 {
+    padding: 10px;
+    position: relative;
+    box-shadow: 0 0 10px #eeedee;
+    .bx-wrapper {
+        box-shadow: none;
+        margin: 0;
+        border: none;
+    }
+    ul {
+        li {
+            .pic {
+                width: 500px;
+                height: 280px;
+                overflow: hidden;
+                float: left;
+                margin-right: 30px;
+            }
+            .txt {
+                float: left;
+                width: 515px;
+                overflow: hidden;
+            }
+            .tit {
+                color: #1a1a1a;
+                font-size: 20px;
+                padding: 13px 0;
+                display: block;
+            }
+            .intro {
+                color: #666666;
+                height: 196px;
+                font-size: 14px;
+                margin-top: 12px;
+                line-height: 28px;
+            }
+        }
+    }
+    .slide-prev {
+        position: absolute;
+        left: -50px;
+
+        top: 50%;
+        margin-top: -50px;
+
+        a {
+            display: block;
+            width: 50px;
+            height: 100px;
+            background: url("../images/arrow_l.png") no-repeat top center;
+            &.disabled {
+                background-image: url("../images/arrow_l_disabled.png");
+            }
+        }
+    }
+    .slide-next {
+        position: absolute;
+        right: -50px;
+        top: 50%;
+        margin-top: -50px;
+
+        a {
+            display: block;
+            width: 50px;
+            height: 100px;
+            background: url("../images/arrow_r.png") no-repeat top center;
+            &.disabled {
+                background-image: url("../images/arrow_r_disabled.png");
+            }
+        }
+    }
+}
+
+.h-tit-type-1 {
+    color: #1a1a1a;
+    font-size: 28px;
+    text-align: center;
+    padding: 20px 0 10px;
+}
+
+.h-intro-1 {
+    color: #1a1a1a;
+    text-align: center;
+    line-height: 28px;
+}
+
+.hdbm-box {
+    padding-bottom: 40px;
+    background: url("../images/bg_01.png") no-repeat bottom center;
+}
+
+
+.tbl-1 {
+    border: 1px solid #e4e4e4;
+    width: 700px;
+    margin: 0 auto;
+    table-layout: fixed;
+    td {
+        border: 1px solid #e4e4e4;
+        background: #fff;
+        &.para-hd {
+            color:#1a1a1a;
+            font-size: 14px;
+            font-weight: bold; 
+            width: 150px;
+            padding:0 20px 
+        }
+        .list-1 {
+            padding: 0 20px;
+            li {
+                line-height:30px;
+                
+                float:left; 
+            }
+        }
+    }
+}
