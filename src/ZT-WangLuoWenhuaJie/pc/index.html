@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
     <link rel="stylesheet" type="text/css" href="js/bxSlider/jquery.bxslider.css">
     <script type="text/javascript" src="js/bxSlider/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="js/layer/layer.js"></script>
 </head>
 
 <body>
@@ -78,7 +79,7 @@
                 </td>
             </tr>
         </table>
-        <a href="#" class="djbm-btn">点击报名</a>
+        <a href="#" class="djbm-btn" id="J_djbm-btn">点击报名</a>
     </div>
     <div class="tpq-box clearfix">
         <div class="container">
@@ -98,7 +99,7 @@
                             <span class="piaoshu">票数<strong>12345</strong></span>
                         </div>
 
-                        <a href="#" class="tp-btn">投TA一票</a>
+                        <a href="#" class="tp-btn disabled">投TA一票</a>
                     </li>
                     <li>
                         <div class="num">001号</div>
@@ -236,7 +237,38 @@
                         <span class="txt">图文轮播+链接HOOG Tes链接HOOG T链接HOOG T链接HOOG Tco Disco图文轮播+链接HOOG Tesco Disco</span>
                     </a>
                 </li>
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/pic_02.jpg" /></span>
+                        <span class="txt">图文轮播+链接HOOG Tes链接HOOG T链接HOOG T链接HOOG Tco Disco图文轮播+链接HOOG Tesco Disco</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/pic_02.jpg" /></span>
+                        <span class="txt">图文轮播+链接HOOG Tes链接HOOG T链接HOOG T链接HOOG Tco Disco图文轮播+链接HOOG Tesco Disco</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/pic_02.jpg" /></span>
+                        <span class="txt">图文轮播+链接HOOG Tes链接HOOG T链接HOOG T链接HOOG Tco Disco图文轮播+链接HOOG Tesco Disco</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/pic_02.jpg" /></span>
+                        <span class="txt">图文轮播+链接HOOG Tes链接HOOG T链接HOOG T链接HOOG Tco Disco图文轮播+链接HOOG Tesco Disco</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="pic"><img src="upload/pic_02.jpg" /></span>
+                        <span class="txt">图文轮播+链接HOOG Tes链接HOOG T链接HOOG T链接HOOG Tco Disco图文轮播+链接HOOG Tesco Disco</span>
+                    </a>
+                </li>
             </ul>
+            <div class="slide-3-page"></div>
         </div>
         <div class="h-mod-3-video">
             <img src="upload/pic_03.jpg">
@@ -265,7 +297,7 @@
 
     <!--  -->
 
-    <div class="tp-dialog">
+    <div class="tp-dialog" id="J_tp-dialog">
         <p class="tit-1">填写报名信息</p>
         <div class="form-box">
             <div class="item-cell clearfix">
@@ -308,15 +340,21 @@
             <div class="item-cell clearfix">
                 <label class="lab">头像</label>
                 <div class="para-val">
-                    <div class="upload-avatar-box">
-                        
-                    </div>
+                	<a href="javascript:void(0)" class="up-file-avatar">
+					   <input type="file" value="" />
+					</a>
                 </div>
             </div>
             <div class="item-cell clearfix">
                 <label class="lab">作品</label>
                 <div class="para-val">
-                    
+                    <a href="javascript:void(0)" class="up-file-zp">
+					   <input type="file" value="" />
+					</a>
+					<ul class="upload-zp-list">
+						<li><span>作品01作品01作1作品01作1作品01作品01作品01作品01.jpg</span><i></i></li>
+						<li><span>作品01.jpg </span> <i></i></li>
+					</ul>
                 </div>
             </div>
 
@@ -330,8 +368,17 @@
 
             
         </div>
-       
+    </div>
 
+    <div class="side-fixed">
+		<ul class="list">
+			<li class="itemnav"></li>
+			<li class="itemnav"></li>
+			<li class="itemnav"></li>
+			<li class="itemnav"></li>
+			<li class="itemnav"></li>
+			<li class="itemqrcode"></li>
+		</ul>
     </div>
 
     <script type="text/javascript">
@@ -369,20 +416,37 @@
         });
 
         $('.h-mod-3-slide-list').bxSlider({
+        	auto:true,
             mode: 'horizontal',
-            controls: true,
+            controls: false,
             infiniteLoop: true,
             pager: true,
+            pagerSelector:".slide-3-page",
             slideMargin: 18,
             slideWidth: 500,
             minSlides: 1,
             maxSlides: 1,
-            moveSlides: 1,
-            nextText: "",
-            prevText: "",
-            prevSelector: $("#J_slide-prev-2"),
-            nextSelector: $("#J_slide-next-2"),
+            moveSlides: 1
         });
+
+        $("#J_djbm-btn").on("click",function(event){
+        	event.preventDefault();
+        	layer.open({
+                 type: 1,
+                 shade: false,
+                 closeBtn: 0,
+                 area:"600px",
+                 shade: [0.6, '#000'],
+                 shadeClose: true,
+                 title: false, //不显示标题
+                 content: $('#J_tp-dialog')
+             });
+        });
+
+
+        $(document).on("click",".tp-btn",function(){
+
+        })
     })
     </script>
    
