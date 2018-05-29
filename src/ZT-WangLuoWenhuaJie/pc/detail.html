@@ -11,7 +11,8 @@
     <script type="text/javascript" src="js/bxSlider/jquery.bxslider.js"></script>
 </head>
 
-<body>
+<body style="padding-top: 0">
+    @@include("./views/_header.html")
     <div class="h-banner"></div>
     <div class="detailpage-box clearfix">
         <div class="detail-left">
@@ -35,7 +36,7 @@
         <div class="detailslide-box">
 			<div class="detailslide-list-wrap">
 				<ul class="detailslide-list">
-					<li><img src="upload/demo_1.jpg"></li>
+					<li><img src="upload/banner_02.jpg"></li>
 					<li><img src="upload/pic_01.jpg"></li>
 					<li><img src="upload/pic_03.jpg"></li>
 					
@@ -43,6 +44,8 @@
 			</div>
 			<div class="slide-prev" id="J_slide-prev-1"></div>
             <div class="slide-next" id="J_slide-next-1"></div>
+
+            <div class="num"><span id="J_curr"></span>/<span id="J_total"></span></div>
         </div>
     </div>
 
@@ -51,11 +54,17 @@
             <p>闽公网安备35020302000108号 闽ICP备05000086号-2 闽B2-20170142</p>
     </div>
 
+    <ul class="list">
+            <li class="itemnav"><a href="#">首页</a></li>
+            <li class="line  line-1"></li>
+            <li class="itemqrcode"><span class="pic"></span></li>
+        </ul>
+
 
 
     <script type="text/javascript">
     	$(function(){
-    		$('.detailslide-list').bxSlider({
+    		var slide=$('.detailslide-list').bxSlider({
 	            mode: 'horizontal',
 	            controls: true,
 	            infiniteLoop: true,
@@ -69,7 +78,14 @@
 	            prevText: "",
 	            prevSelector: $("#J_slide-prev-1"),
 	            nextSelector: $("#J_slide-next-1"),
+                onSlideAfter:function(){
+                    var slide_curr = this.getCurrentSlide();
+                    $("#J_curr").html(slide_curr+1);
+                }
 	        });
+
+            $("#J_total").html(slide.getSlideCount());
+            $("#J_curr").html(slide.getCurrentSlide()+1);
     	})
 
     </script>

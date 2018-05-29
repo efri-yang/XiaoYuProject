@@ -12,7 +12,8 @@
     <script type="text/javascript" src="js/layer/layer.js"></script>
 </head>
 
-<body>
+<body style="padding-top: 0">
+    @@include("./views/_header.html")
     <div class="h-banner"></div>
     <div class="container">
         <div class="slide-1">
@@ -37,7 +38,7 @@
         </div>
     </div>
     <div class="hdbm-box">
-        <div class="h-tit-type-1">活动报名描述</div>
+        <div class="h-tit-type-1" id="J_h-tit-type-hdbm">活动报名描述</div>
         <div class="h-intro-1">正值厦门改革开放40周年之际，小鱼网邀请各位天才小画家来参加【文脉传承-我手中的美丽厦门】绘画活动，
             <br/>用手中的水彩笔画出你眼里的美丽厦门。</div>
         <table class="tbl-1">
@@ -83,7 +84,7 @@
     </div>
     <div class="tpq-box clearfix">
         <div class="container">
-            <div class="tit-1">投票区</div>
+            <div class="tit-1" id="J_h-tit-type-tpq">投票区</div>
             <div class="tpq-box-l">
                 <p class="tit-2">幼儿组投票区</p>
                 <div class="tpq-soma-hd clearfix">
@@ -177,7 +178,8 @@
             </div>
         </div>
     </div>
-    <div class="container h-mod-1 clearfix">
+    <div class="container h-mod-1 clearfix" id="J_h-tit-type-lpzs">
+     
         <div class="h-mod-1-tpgz">
             <p class="tit-1">投票规则</p>
             <div class="intro">
@@ -222,7 +224,7 @@
 
     <div class="container h-mod-3 clearfix">
 
-        <p class="tit-1">活动冠名</p>
+        <p class="tit-1" id="J_h-tit-type-hdgm">活动冠名</p>
         <div class="h-mod-3-slide">
             <ul class="h-mod-3-slide-list">
                 <li>
@@ -372,13 +374,19 @@
 
     <div class="side-fixed">
 		<ul class="list">
-			<li class="itemnav"></li>
-			<li class="itemnav"></li>
-			<li class="itemnav"></li>
-			<li class="itemnav"></li>
-			<li class="itemnav"></li>
-			<li class="itemqrcode"></li>
+			<li class="itemnav"><a href="#">首页</a></li>
+            <li class="line line-1"></li>
+			<li class="itemnav" id="J_itemnav-hdbm">活动报名</li>
+            <li class="line  line-2"></li>
+			<li class="itemnav" id="J_itemnav-tpzq">投票专区</li>
+            <li class="line  line-3"></li>
+			<li class="itemnav" id="J_itemnav-lpzs">礼品展示</li>
+            <li class="line  line-4"></li>
+			<li class="itemnav" id="J_itemnav-hdgm">活动冠名</li>
+            <li class="line  line-5"></li>
+			<li class="itemqrcode"><span class="pic"></span></li>
 		</ul>
+        <a href="#" class="gotop"><span id="J_gotop"></span></a>
     </div>
 
     <script type="text/javascript">
@@ -442,6 +450,44 @@
                  content: $('#J_tp-dialog')
              });
         });
+
+
+        $("#J_itemnav-hdbm").on("click",function(){
+            var offsetTop=$("#J_h-tit-type-hdbm").offset().top;
+            $('html,body').animate({scrollTop:offsetTop});
+        });
+
+
+        $("#J_itemnav-tpzq").on("click",function(){
+            var offsetTop=$("#J_h-tit-type-tpq").offset().top;
+            $('html,body').animate({scrollTop:offsetTop});
+        });
+
+
+        $("#J_itemnav-lpzs").on("click",function(){
+            var offsetTop=$("#J_h-tit-type-lpzs").offset().top;
+            $('html,body').animate({scrollTop:offsetTop});
+        });
+
+        $("#J_itemnav-hdgm").on("click",function(){
+            var offsetTop=$("#J_h-tit-type-hdgm").offset().top;
+            $('html,body').animate({scrollTop:offsetTop});
+        });
+
+        $("#J_gotop").on("click",function(event){
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop:0
+            });
+        });
+        $(window).on("scroll",function(event){
+            if($(this).scrollTop()> 500){
+                $("#J_gotop").css("display","block");
+            }else{
+                $("#J_gotop").css("display","none");
+            }
+        })
+
 
 
         $(document).on("click",".tp-btn",function(){

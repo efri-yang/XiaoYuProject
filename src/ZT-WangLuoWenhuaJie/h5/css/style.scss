@@ -4,6 +4,7 @@
 
 .container{
 	width:px2rem(750px);
+	max-width: 750px;
 	margin: 0 auto; 
 }
 
@@ -15,7 +16,7 @@
 .h-mod-1{
 	.tit{
 		text-align:center;
-		font-weight:px2rem(32px);
+		font-size:px2rem(32px);
 		color:#1a1a1a;   
 	}
 	.txt{
