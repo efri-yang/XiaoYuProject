@@ -6,6 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/zepto.js"></script>
 	<script type="text/javascript" src="js/flexible2.0.js"></script>
+	<script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.css">
 </head>
 <body>
 	<div class="container">
@@ -59,9 +61,65 @@
 				<label class="lab">注意：</label>
 				<div class="txt">作品完成后根据年龄分组拍照上传至活动页面并写下创作思路即可报名成功。<br/>作品拍照照片需要至少2张清晰度不低于2M，再加上一张小画家本人大头照片</div>
 			</div>
-
-			<div style="height:200px;"></div>
 		</div>
+
+		<div class="h-mod-3">
+			<p class="tit">活动报名描述</p>
+			<div class="swiper-slide-1">
+				<div class="swiper-container">
+				  <div class="swiper-wrapper">
+				    <div class="swiper-slide">
+						<a href="#">
+							<span class="pic"><img src="upload/pic_01.jpg" /></span>
+							<span class="txt">图文轮播图文轮播图文轮播图文轮播图文轮播+链接HOOG Tesco Disco</span>
+						</a>
+				    </div>
+				    <div class="swiper-slide">
+						<a href="#">
+							<span class="pic"><img src="upload/pic_01.jpg" /></span>
+							<span class="txt">图文轮播+链接HOOG Tesco Disco</span>
+						</a>
+				    </div>
+				    <div class="swiper-slide">
+						<a href="#">
+							<span class="pic"><img src="upload/pic_01.jpg" /></span>
+							<span class="txt">图文轮播+链接HOOG Tesco Disco</span>
+						</a>
+
+				    </div>
+				  </div>
+				  <div class="swiper-pagination"></div>
+				</div>	
+			</div>
+			<div class="h-mod-3-video">
+				<img src="upload/pic_02.jpg" />
+			</div>
+		</div>
+
+
+		<div class="h-mod-4">
+			<p class="tit">特别鸣谢</p>
+			<ul class="list">
+				<li><img src="upload/mx_1.jpg" /></li>
+			</ul>
+
+		</div>
+
+		
+
+		<div style="height:500px;"></div>
 	</div>
+
+
+
+
+	<script>
+		var mySwiper = new Swiper('.swiper-container', {
+			autoplay: true,//可选选项，自动滑动
+			pagination: {
+		    el: '.swiper-pagination',
+		  },
+		})
+		</script>
 </body>
 </html>
