@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/flexible2.0.js"></script>
     <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.css">
+    <script type="text/javascript" src="js/mdialog/mDialog.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,8 @@
                     <span class="ps">票数 <strong>12345</strong></span>
                     <span class="rank">排名 <strong>1</strong></span>
                 </p>
-                <p class="infor-3"><a href="#">投TA一票</a></p>
+                <!-- 不能投票就disabled -->
+                <p class="infor-3"><a href="#" class="disabled" id="J_tpbtn">投TA一票</a></p>
             </div>
             <div class="item-cell-2">
                 <p class="tit-1">作品简介：</p>
@@ -37,25 +39,117 @@
         </div>
         <div class="detail-tit-1">作品展示</div>
         <div class="slide-detail-1">
-	        <div class="swiper-container">
-	            <div class="swiper-wrapper">
-	                <div class="swiper-slide">
-	                   <img src="upload/pic_05.jpg" />
-	                </div>
-	                <div class="swiper-slide">
-	                   sdfasdfasd
-	                </div>
-	            </div>
-	        </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img data-src="upload/pic_05.jpg" class="swiper-lazy">
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img data-src="upload/pic_01.jpg" class="swiper-lazy">
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img data-src="upload/pic_02.jpg" class="swiper-lazy">
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="prev-btn"></a>
+            <a href="#" class="next-btn"></a>
+            <div class="count"><span id="J_curr">0</span>/<span id="J_total">0</span></div>
+        </div>
+        <div class="foot-fixed-bottom-seat"></div>
+        <ul class="foot-fixed-bottom">
+            <li class="active"><a href="index.html">首页</a></li>
+            <li><a href="list-youer.html">幼儿组</a></li>
+            <li><a href="list-shaoer.html">少儿组</a></li>
+            <li><a href="#">报名参赛</a></li>
+        </ul>
+        <div class="detail-yxgz" id="J_detail-yxgz">
+            <span class="pic"></span>
+            <p class="txt">投票规则</p>
+        </div>
+        <div class="detail-yxgz-dialog" id="J_detail-yxgz-dialog">
+            <p>撒旦法时代发是的</p>
+            <p>撒旦法时代发是的</p>
+            <p>撒旦法时代发是的</p>
+            <p>撒旦法时代发是的</p>
         </div>
     </div>
-
     <script>
-		var mySwiper = new Swiper('.swiper-container', {
-			
-			
-		})
-		</script>
+    $(function() {
+        $("#J_total").html($(".swiper-wrapper .swiper-slide").length);
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
+            lazy: {
+                loadPrevNext: true,
+            },
+            on: {
+                init: function() {
+                    var that = this;
+                    $("#J_curr").html(this.realIndex + 1);
+                    $(".slide-detail-1 .prev-btn").on("click", function() {
+                        that.slidePrev();
+                    });
+                    $(".slide-detail-1 .next-btn").on("click", function() {
+                        that.slideNext();
+                    })
+
+                },
+                slideChangeTransitionEnd: function() {
+                    $("#J_curr").html(this.realIndex + 1);
+                },
+            }
+        });
+
+
+        $("#J_tpbtn").on("click",function(event){
+            event.preventDefault();
+            //我只负责不痛弹出框的调用展示，ajax开发自己写哈！！
+            tpDialog=mDialog.load({
+                text:"",
+                duration:250,
+                shade:{opacity:0},
+                shadeClose:false,
+                onShow: function() {
+
+                },
+                onClose: function() {
+
+                }
+            });
+
+            setTimeout(function(){
+                tpDialog.close();
+                mDialog.msg({content:"<span style='white-space: nowrap'>投票成功!</span>"})
+            },2000)
+        });
+
+        $("#J_detail-yxgz").on("click",function(){
+            mDialog.open({
+                // duration:0,
+               
+                width: "85%",
+               
+             
+                duration: 250,
+              
+                content: $("#J_detail-yxgz-dialog"),
+               
+                
+                onShow: function() {
+                   
+                    
+                },
+                onClose: function() {
+                    
+                }
+                
+            });
+        })
+    })
+    </script>
 </body>
 
 </html>
