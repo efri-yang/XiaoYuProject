@@ -34,15 +34,15 @@
 	};
 	var fieldTooltip=(function(){
 			var instance=null;
-				function show(text){
+				function show(text,options){
 					if(!instance){
-						var $container=$('<div class="field-tooltipWrap"><div class="field-tooltipInner"><div class="field-tooltip fieldTipBounceIn">'+text+'</div></div></div>');
+						var $container=$('<div class="field-tooltipWrap '+options.tipClassName+'"><div class="field-tooltipInner"><div class="field-tooltip fieldTipBounceIn">'+text+'</div></div></div>');
 		    			$container.appendTo($("body"));
 		    			instance=true;
 		    			setTimeout(function(){
 							$container.remove();
 							instance=false;
-						},1500)
+						},options.pause)
 					}
 				}
 
@@ -176,7 +176,7 @@
 				$field.focus();
 			}
 			if(options.type==1){
-				fieldTooltip.show(log)
+				fieldTooltip.show(log,options)
 			}
 			if(typeof(validation.invalid) == 'function') {
 				validation.invalid.call($field, event, status, options);
@@ -203,6 +203,7 @@
 	$.fn.mvalidate=function(options){
 		var defaults={
 			type:1,
+			pause:1500,
 			validateInSubmit:true,
 			sendForm:true,
 			onKeyup:false,
@@ -215,6 +216,7 @@
 			eachInvalidField : $.noop,
 			valid:$.noop,
 			invalid:$.noop,
+			tipClassName:"",
 			namespace:"mvalidate"
 		},
 		opts=$.extend(true,defaults,options),

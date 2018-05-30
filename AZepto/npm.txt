@@ -1,4 +1,4 @@
-MODULES="zepto event form data ajax detect fx fx_methods assets data deferred callbacks selector touch gesture stack ios3 adapter  scrollfix fastclick init" npm run-script dist
+MODULES="amd_layout zepto event form data ajax detect fx fx_methods assets data deferred callbacks selector touch ie gesture stack ios3 adapter scrollfix fastclick init" npm run-script dist
 
 
 

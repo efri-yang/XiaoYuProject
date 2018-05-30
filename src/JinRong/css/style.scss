@@ -454,6 +454,8 @@
             	color:#fff;
             	background:#358dff;  
             	font-size:px2rem(32px);
+                border-radius:px2rem(50px); 
+                 background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#347AFF), to(#37BBFF), color-stop(1.0, #37bbff));
             	&:active{
             		background-color: darken(#358dff,5%);
             	}   
@@ -462,6 +464,15 @@
     }
 }
 
+.mfsq-form-tip{
+    .field-tooltip{
+        vertical-align:bottom;
+        .zvalid-resultformat{
+            margin-bottom:px2rem(500px);  
+        }
+        
+    }
+}
 
 
 .field-invalid{

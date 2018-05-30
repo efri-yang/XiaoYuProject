@@ -2777,48 +2777,48 @@ window.$ === undefined && (window.$ = Zepto)
         end: $.support.touch ? 'touchend' : 'mouseup'
     };
 
-    // $.fn.dataset = function() {
-    //     var dataset = {},ds = this[0].dataset;
-    //     for (var key in ds) { // jshint ignore:line
-    //         var item = (dataset[key] = ds[key]);
-    //         if (item === 'false') dataset[key] = false;
-    //         else if (item === 'true') dataset[key] = true;
-    //         else if (parseFloat(item) === item * 1) dataset[key] = item * 1;
-    //     }
-    //     // mixin dataset and __eleData
-    //     return $.extend({}, dataset, this[0].__eleData);
-    // };
-    // $.fn.data = function(key, value) {
-    //     var tmpData = $(this).dataset();
-    //     if (!key) {
-    //         return tmpData;
-    //     }
-    //     // value may be 0, false, null
-    //     if (typeof value === 'undefined') {
-    //         // Get value
-    //         var dataVal = tmpData[key],
-    //             __eD = this[0].__eleData;
+    $.fn.dataset = function() {
+        var dataset = {},ds = this[0].dataset;
+        for (var key in ds) { // jshint ignore:line
+            var item = (dataset[key] = ds[key]);
+            if (item === 'false') dataset[key] = false;
+            else if (item === 'true') dataset[key] = true;
+            else if (parseFloat(item) === item * 1) dataset[key] = item * 1;
+        }
+        // mixin dataset and __eleData
+        return $.extend({}, dataset, this[0].__eleData);
+    };
+    $.fn.data = function(key, value) {
+        var tmpData = $(this).dataset();
+        if (!key) {
+            return tmpData;
+        }
+        // value may be 0, false, null
+        if (typeof value === 'undefined') {
+            // Get value
+            var dataVal = tmpData[key],
+                __eD = this[0].__eleData;
 
-    //         //if (dataVal !== undefined) {
-    //         if (__eD && (key in __eD)) {
-    //             return __eD[key];
-    //         } else {
-    //             return dataVal;
-    //         }
+            //if (dataVal !== undefined) {
+            if (__eD && (key in __eD)) {
+                return __eD[key];
+            } else {
+                return dataVal;
+            }
 
-    //     } else {
-    //         // Set value,uniformly set in extra ```__eleData```
-    //         for (var i = 0; i < this.length; i++) {
-    //             var el = this[i];
-    //             // delete multiple data in dataset
-    //             if (key in tmpData) delete el.dataset[key];
+        } else {
+            // Set value,uniformly set in extra ```__eleData```
+            for (var i = 0; i < this.length; i++) {
+                var el = this[i];
+                // delete multiple data in dataset
+                if (key in tmpData) delete el.dataset[key];
 
-    //             if (!el.__eleData) el.__eleData = {};
-    //             el.__eleData[key] = value;
-    //         }
-    //         return this;
-    //     }
-    // };
+                if (!el.__eleData) el.__eleData = {};
+                el.__eleData[key] = value;
+            }
+            return this;
+        }
+    };
 
     function __dealCssEvent(eventNameArr, callback) {
         var events = eventNameArr,

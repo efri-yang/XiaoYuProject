@@ -480,7 +480,8 @@ var Zepto = (function() {
       return $(uniq(this.concat($(selector,context))))
     },
     is: function(selector){
-      return this.length > 0 && zepto.matches(this[0], selector)
+      return typeof selector == 'string' ? this.length > 0 && zepto.matches(this[0], selector) : 
+          selector && this.selector == selector.selector
     },
     not: function(selector){
       var nodes=[]
@@ -664,11 +665,12 @@ var Zepto = (function() {
     },
     prop: function(name, value){
       name = propMap[name] || name
-      return (1 in arguments) ?
+      return (typeof name == 'string' && !(1 in arguments)) ?
+        (this[0] && this[0][name]) :
         this.each(function(idx){
-          this[name] = funcArg(this, value, idx, this[name])
-        }) :
-        (this[0] && this[0][name])
+          if (isObject(name)) for (key in name) this[propMap[key] || key] = name[key]
+          else this[name] = funcArg(this, value, idx, this[name])
+        })
     },
     removeProp: function(name){
       name = propMap[name] || name
