@@ -171,6 +171,8 @@
             </form>
         </div>
     </div>
+
+    @@include("./views/_resultDialog.html")
     <script type="text/javascript">
     $(function() {
         (function() {
@@ -204,13 +206,13 @@
         })();
 
         (function() {
-        	var dialog;
+        	var dialogForm,dialogTip;
             $(".list-1").on("click", ".mfsq-btn", function(event) {
             	event.preventDefault();
                 var $this = $(this);
                 //已经申请过了就不能再申请了
                 if ($this.hasClass("disabled")) return;
-                 dialog=mDialog.open({
+                 dialogForm=mDialog.open({
                     title:false,
                     width:"100%",
               		closeBtn:false,
@@ -236,7 +238,7 @@
             });
 
             $("#J_close").on("click",function(){
-            	dialog.close();
+            	dialogForm.close();
             });
 
 
@@ -250,6 +252,13 @@
 	                //点击提交按钮时,表单通过验证触发函数
 	                 event.preventDefault();
 	                alert("验证通过！接下来可以做你想做的事情啦！");
+                    dialogTip=mDialog.open({
+                        title:false,
+                        duration: 250,
+                        content: $("#J_sqsuccess-dialog"),
+                        onShow: function() {},
+                        onClose: function() {}
+                    })
 	               
 	            },
 	            
@@ -263,6 +272,12 @@
 	                }
 	            }
 	        });
+
+            //关闭提示框
+            $("#J_sqsuccess-dialog .khnowbtn").on("click",function(event){
+                event.preventDefault();
+                dialogTip.close();
+            })
         })();
 
     })

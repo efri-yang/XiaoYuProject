@@ -7,6 +7,145 @@
         width: px2rem(750px);
         margin: 0 auto;
     }
+    /****
+弹出框公用**********************************************************************************************
+ 
+    /************表单验证信息提示*******************/
+
+    .mfsq-form-tip {
+        .field-tooltip {
+            vertical-align: bottom;
+            .zvalid-resultformat {
+                margin-bottom: px2rem(500px);
+            }
+        }
+    }
+
+
+    .field-invalid {
+        border-color: #a94442;
+    }
+
+    .field-invalidmsg {
+        color: #a94442;
+    }
+
+    .field-validmsg {
+        color: #3c763d;
+    }
+
+    .field-tooltipWrap {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 19891014;
+    }
+
+    .field-tooltipInner {
+        pointer-events: none;
+        display: table;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .field-tooltip {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .field-tooltip .field-invalidmsg,
+    .field-tooltip .field-validmsg {
+        color: #fff;
+    }
+
+    .field-tooltip .zvalid-resultformat {
+        display: inline-block;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 14px;
+        border-radius: 6px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+        pointer-events: auto;
+        animation-name: fieldTipBounceIn;
+        -webkit-animation-name: fieldTipBounceIn;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-duration: .18s;
+        animation-duration: .18s;
+    }
+
+    @-webkit-keyframes fieldTipBounceIn {
+
+        0% {
+            opacity: 0;
+            -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+        }
+    }
+
+
+    @keyframes fieldTipBounceIn {
+
+        0% {
+            opacity: 0;
+            -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+        }
+    }
+    /**************提交成功弹出框****************************/
+    .sqsuccess-dialog {
+        display: none;
+        position: absolute;
+        visibility: hidden;
+        border-radius: px2rem(20px);
+        background: #fff;
+        padding: px2rem(40px) px2rem(30px) px2rem(50px);
+        .tit-txt-1 {
+            color: #f64723;
+            font-size: px2rem(36px);
+            text-align: center;
+            font-weight: bold;
+        }
+        .tit-txt-2 {
+            margin-top: px2rem(12px);
+            color: #888888;
+            font-size: px2rem(28px);
+            text-align: center;
+            line-height: 1.7;
+        }
+        .khnowbtn {
+            font-size: px2rem(32px);
+            text-align: center;
+            display: block;
+            margin: px2rem(30px) auto 0;
+            color: #fff;
+            border-radius: px2rem(50px);
+            width: px2rem(338px);
+            height: px2rem(75px);
+            line-height: px2rem(75px);
+            background-color: #347AFF;
+            background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#347AFF), to(#37BBFF), color-stop(1.0, #37bbff));
+        }
+    } 
+    /**********
+首页**********************************************************************/
 
     .top-nav-wrap {
         position: relative;
@@ -376,64 +515,11 @@
                 }
             }
         }
-    } // *******************************
-    .mfsqxyk-dialog {
-        .item-radio-list {
-            li {
-                position: relative;
-                float: left;
-                color: #666;
-                margin-bottom: px2rem(9px);
-                width: 50%;
-                overflow: hidden;
-                line-height: px2rem(40px);
-                .txt {
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-            }
-            input[type="radio"] {
-                width: px2rem(45px);
-                height: px2rem(45px);
-                display: inline-block;
-                vertical-align: middle;
-                opacity: 0;
-            }
-
-            label {
-                position: absolute;
-                left: px2rem(10px);
-                top: px2rem(9px);
-                width: px2rem(40px);
-                height: px2rem(40px);
-                border-radius: 50%;
-                border: 1px solid #999;
-            }
-
-            /*设置选中的input的样式*/
-            /* + 是兄弟选择器,获取选中后的label元素*/
-            input:checked+label {
-                background-color: #fe6d32;
-                border: 1px solid #fe6d32;
-            }
-
-            input:checked+label::after {
-                position: absolute;
-                content: "";
-                width: px2rem(10px);
-                height: px2rem(20px);
-                top: px2rem(4px);
-                left: px2rem(12px);
-                border: 2px solid #fff;
-                border-top: none;
-                border-left: none;
-                transform: rotate(45deg)
-            }
-        }
     }
+    /**********
+列表页弹出框**********************************************************************/
 
-    .mfsq-dialog,
-    .mfsqxyk-dialog {
+    .mfsq-dialog {
         display: none;
         position: absolute;
         visibility: hidden;
@@ -516,104 +602,147 @@
             }
         }
     }
+    /**********
+列表页弹出框**********************************************************************/
 
-    .mfsq-form-tip {
-        .field-tooltip {
-            vertical-align: bottom;
-            .zvalid-resultformat {
-                margin-bottom: px2rem(500px);
+    .mfsqxyk-dialog {
+        display: none;
+        position: absolute;
+        visibility: hidden;
+        background: #fff;
+        padding-bottom: px2rem(60px);
+        .soma-hd {
+            padding: 0 px2rem(40px);
+            height: px2rem(79px);
+            line-height: px2rem(79px);
+            background: #eeeeee;
+            text-align: right;
+            span {
+                font-weight: bold;
+                color: #4e8bee;
+                font-size: px2rem(30px);
+            }
+        }
+        .txt-1 {
+            color: #282828;
+            text-align: center;
+            font-size: px2rem(36px);
+            position: relative;
+            margin-top: px2rem(35px);
+            &:after {
+                content: "";
+                position: absolute;
+
+                left: 50%;
+                top: px2rem(60px);
+                -webkit-transform: translate(-50%, 0);
+                -ms-transform: translate(-50%, 0);
+                -moz-transform: translate(-50%, 0);
+                height: px2rem(4px);
+                background: #282828;
+                width: px2rem(80px);
+            }
+        }
+        .form-box {
+            padding: px2rem(20px) px2rem(30px) px2rem(10px);
+            .item-cell {
+                margin-top: px2rem(25px);
+                position: relative;
+                padding-left: px2rem(80px);
+                .lab {
+                    position: absolute;
+                    left: 0;
+                    font-size: px2rem(30px);
+                    color: #333333;
+                    top: 50%;
+                    -webkit-transform: translate(0, -50%);
+                    -ms-transform: translate(0, -50%);
+                    -moz-transform: translate(0, -50%);
+                }
+                .ipt-text {
+                    border-radius: 0;
+                    width: 100%;
+                    font-size: px2rem(30px);
+                    padding: px2rem(23px) px2rem(15px);
+                    border: 1px solid #d0d0d0;
+                }
+                .ipt-submit {
+                    appearance: none;
+                    border-radius: 0;
+                    margin: px2rem(40px) auto 0;
+                    display: block;
+                    border: none;
+                    width: px2rem(338px);
+                    height: px2rem(75px);
+                    line-height: px2rem(75px);
+                    text-align: center;
+                    color: #fff;
+                    background: #358dff;
+                    font-size: px2rem(32px);
+                    border-radius: px2rem(50px);
+                    background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#347AFF), to(#37BBFF), color-stop(1.0, #37bbff));
+                    &:active {
+                        background-color: darken(#358dff, 5%);
+                    }
+                }
+            }
+        }
+        .item-radio-list {
+            li {
+                position: relative;
+                float: left;
+                color: #666;
+                margin-bottom: px2rem(9px);
+                width: 50%;
+                overflow: hidden;
+                line-height: px2rem(40px);
+                .txt {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+            input[type="radio"] {
+                width: px2rem(45px);
+                height: px2rem(45px);
+                display: inline-block;
+                vertical-align: middle;
+                opacity: 0;
+            }
+
+            label {
+                position: absolute;
+                left: px2rem(10px);
+                top: px2rem(9px);
+                width: px2rem(40px);
+                height: px2rem(40px);
+                border-radius: 50%;
+                border: 1px solid #999;
+            }
+
+            /*设置选中的input的样式*/
+            /* + 是兄弟选择器,获取选中后的label元素*/
+            input:checked+label {
+                background-color: #fe6d32;
+                border: 1px solid #fe6d32;
+            }
+
+            input:checked+label::after {
+                position: absolute;
+                content: "";
+                width: px2rem(10px);
+                height: px2rem(20px);
+                top: px2rem(4px);
+                left: px2rem(12px);
+                border: 2px solid #fff;
+                border-top: none;
+                border-left: none;
+                transform: rotate(45deg)
             }
         }
     }
+    /**********
+信用卡首页**********************************************************************/
 
-
-    .field-invalid {
-        border-color: #a94442;
-    }
-
-    .field-invalidmsg {
-        color: #a94442;
-    }
-
-    .field-validmsg {
-        color: #3c763d;
-    }
-
-    .field-tooltipWrap {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        z-index: 19891014;
-    }
-
-    .field-tooltipInner {
-        pointer-events: none;
-        display: table;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .field-tooltip {
-        display: table-cell;
-        vertical-align: middle;
-        text-align: center;
-    }
-
-    .field-tooltip .field-invalidmsg,
-    .field-tooltip .field-validmsg {
-        color: #fff;
-    }
-
-    .field-tooltip .zvalid-resultformat {
-        display: inline-block;
-        position: relative;
-        background-color: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        padding: 10px 15px;
-        font-size: 14px;
-        border-radius: 6px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, .1);
-        pointer-events: auto;
-        animation-name: fieldTipBounceIn;
-        -webkit-animation-name: fieldTipBounceIn;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-        -webkit-animation-duration: .18s;
-        animation-duration: .18s;
-    }
-
-    @-webkit-keyframes fieldTipBounceIn {
-
-        0% {
-            opacity: 0;
-            -webkit-transform: scale3d(.3, .3, .3);
-            transform: scale3d(.3, .3, .3);
-        }
-        100% {
-            opacity: 1;
-            -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-        }
-    }
-
-
-    @keyframes fieldTipBounceIn {
-
-        0% {
-            opacity: 0;
-            -webkit-transform: scale3d(.3, .3, .3);
-            transform: scale3d(.3, .3, .3);
-        }
-        100% {
-            opacity: 1;
-            -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-        }
-    } //列表********************
     .banner-2 {
         text-align: center;
         font-size: 0;
@@ -702,7 +831,10 @@
                 }
             }
         }
-    } //详细页*********************
+    }
+    /**********
+信用卡列表页**********************************************************************/
+
     .xyklist-hd {
         height: px2rem(92px);
         line-height: px2rem(92px);
@@ -773,37 +905,68 @@
     }
 
 
-.sqsuccess-dialog{
-    display: none;
-    position: absolute;
-    visibility: hidden;
-    border-radius:px2rem(20px);
-    background: #fff;
-    padding:px2rem(40px) px2rem(30px) px2rem(50px);
-    .tit-txt-1{
-        color:#f64723;
-        font-size:px2rem(36px);
-        text-align:center;
-        font-weight:bold;
+    
+    /***********
+详细页**********************************************************************/
+
+    .detail-xyk-avatar {
+        background: #fff;
+        padding: px2rem(40px) 0 px2rem(30px);
+        margin-bottom: px2rem(20px);
+        .pic {
+            width: px2rem(435px);
+            margin: 0 auto;
+            overflow: hidden;
+            img {
+                max-width: 100%;
+            }
+        }
+        .name {
+            text-align: center;
+            color: #333333;
+            margin-top: px2rem(10px);
+            text-align: center;
+            font-size: px2rem(32px);
+        }
     }
-    .tit-txt-2{
-        margin-top:px2rem(12px);
-        color:#888888;
-        font-size:px2rem(28px);
-        text-align:center;
-        line-height:1.7;
+
+    .detail-xyk-intro {
+        background: url("../images/detail_bg_1.png") no-repeat px2rem(80px) center #fff;
+        background-size: 100% auto;
+        padding: px2rem(20px) 0 px2rem(50px);
+        .tit {
+            text-align: center;
+            color: #666666;
+            font-size: px2rem(32px);
+        }
+        .intro-txt {
+            padding: px2rem(40px) px2rem(50px) 0;
+            color: #666666;
+            font-size: px2rem(28px);
+            line-height: 1.8;
+            img {
+                max-width: 100%;
+            }
+        }
     }
-    .khnowbtn{
-        font-size:px2rem(32px);
-        text-align:center;
-        display:block;
-        margin:px2rem(30px) auto 0;
-        color:#fff;
-        border-radius:px2rem(50px);
-        width:px2rem(338px);
-        height:px2rem(75px);
-        line-height:px2rem(75px);
+
+    .detail-xyk-tip-1 {
+        padding: px2rem(20px) 0;
+        text-align: center;
+        color: #cccccc;
+        font-size: px2rem(24px);
+    }
+
+    .detail-sqk-btn {
+        font-size: px2rem(32px);
+        text-align: center;
+        display: block;
+        margin: px2rem(10px) auto 0;
+        color: #fff;
+        border-radius: px2rem(50px);
+        width: px2rem(665px);
+        height: px2rem(81px);
+        line-height: px2rem(81px);
         background-color: #347AFF;
         background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#347AFF), to(#37BBFF), color-stop(1.0, #37bbff));
     }
-}
