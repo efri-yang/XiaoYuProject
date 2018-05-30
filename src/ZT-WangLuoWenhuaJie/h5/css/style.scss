@@ -5,11 +5,12 @@
 
 .container {
     width: px2rem(750px);
-    max-width: 750px;
+    
     margin: 0 auto;
 }
 
 .banner {
+    text-align:center; 
     img {
         max-width: 100%;
     }
@@ -153,6 +154,7 @@
     width: px2rem(700px);
     margin: px2rem(40px) auto 0;
     overflow: hidden;
+    text-align:center; 
     img,
     iframe {
         max-width: 100%;
@@ -228,6 +230,7 @@
 
 //*******************
 .banner-list {
+    text-align:center; 
     img {
         max-width: 100%;
     }
@@ -284,6 +287,7 @@
         height: px2rem(50px);
         width: px2rem(200px);
         padding: px2rem(10px) px2rem(8px);
+        font-size: px2rem(22px);
     }
     .ipt-submit {
         appearance: button;
@@ -294,6 +298,7 @@
         border: none;
         color: #ffffff;
         width: px2rem(94px);
+        font-size: px2rem(22px);
     }
 }
 
@@ -314,6 +319,7 @@
             line-height: px2rem(232px);
             overflow: hidden;
             font-size: 0;
+            text-align:center; 
             a {
                 display: block;
             }
