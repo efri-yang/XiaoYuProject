@@ -5,22 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.js"></script>
     <script type="text/javascript" src="js/flexible2.0.js"></script>
-
     <script type="text/javascript" src="js/mdialog/mDialog.js"></script>
+    <script type="text/javascript" src="js/jquery.ajaxfileupload.js"></script>
 </head>
 
 <body>
-
     <div class="container">
         <div class="banner-list"><img src="images/banner_02.jpg" /></div>
-
         <div class="adv-box-1">
             <span style="height:100%;width:100%;display:block;background:#f60;">广告</span>
         </div>
         <p class="bm-tit-1">填写报名信息</p>
-
         <div class="bm-form-box">
             <div class="item-cell">
                 <input type="text" class="ipt-text" placeholder="请输入姓名" />
@@ -43,34 +40,106 @@
                 <input type="number" class="ipt-text" placeholder="请输入联系电话" />
             </div>
             <div class="item-cell">
-                <textarea  placeholder="输入作品简介" class="ipt-textarea"></textarea>
+                <textarea placeholder="输入作品简介" class="ipt-textarea"></textarea>
             </div>
             <div class="item-cell">
-                <a href="javascript:;" class="bm-file-1"><input type="file" name="" id=""></a>
+                <div class="upload-box-1" id="J_upload-box-1">
+                    <span class="pic-wrap"><img src="images/bm_file_1.png" class="pic"></span>
+                    <span class="load"></span>
+                    <a href="javascript:;" class="file">
+                        <input type="file" name="file" class="ipt-file" id="J_single-upload">
+                    </a>
+                </div>
             </div>
-
             <div class="item-cell">
-                <ul class="cszp-list">
-                    <li><img src="upload/pic_06.jpg" /><span class="del"><i></i></span></li>
+                <ul class="cszp-list" id="J_cszp-list">
+                    <!-- <li><span class="pic"><img src="upload/pic_06.jpg" /></span><span class="load"></span><span class="del"><i></i></span></li> -->
                 </ul>
-                <a href="javascript:;" class="bm-file-2"><input type="file" name="" id=""></a>
+                <a href="javascript:;" class="bm-file-2">
+                    <input type="file" name="file"  id="J_muti-upload">
+                </a>
             </div>
-
             <div class="item-submit">
                 <input type="submit" class="ipt-submit" value="提交报名" />
             </div>
         </div>
     </div>
-
-
     <div class="foot-fixed-bottom-seat"></div>
     <ul class="foot-fixed-bottom">
         <li><a href="index.html">首页</a></li>
         <li><a href="list-youer.html">幼儿组</a></li>
         <li><a href="list-shaoer.html">少儿组</a></li>
-        <li  class="active"><a href="baoming.html">报名参赛</a></li>
+        <li class="active"><a href="baoming.html">报名参赛</a></li>
     </ul>
-    
+    <script type="text/javascript">
+    //单张图片
+    (function() {
+        $(function() {
+            var $listUl = $("#J_upload-box-1");
+            var $load = $listUl.find(".load");
+            var $pic = $listUl.find(".pic");
+            var normalUrl = "images/bm_file_1.png";
+            $("#J_single-upload").AjaxFileUpload({
+                action: "upload.php",
+                onChange: function(filename) {
+                    $load.show();
+                },
+                onSubmit: function(filename) {
+                    return true;
+                },
+                onComplete: function(filename, response) {
+                    console.dir(response);
+                    $load.hide();
+                    if (response.error) {
+                        alert("图片上传错误");
+                    } else {
+                        $pic.attr("src", response.url).show().parent().addClass('active');
+
+                    }
+                }
+            });
+
+
+        })
+    })();
+
+
+    (function() {
+        $(function() {
+            var $listUl = $("#J_cszp-list");
+            var $li;
+            $("#J_muti-upload").AjaxFileUpload({
+                action: "upload.php",
+                onChange: function(filename) {
+                    $li = $(' <li><span class="pic-img"><img class="pic" src="" /></span><span class="load"></span><span class="del"><i></i></span></li>');
+                    $li.appendTo($listUl);
+                },
+                onSubmit: function(filename) {
+                    return true;
+                },
+                onComplete: function(filename, response) {
+                    $li.find(".load").hide();
+                    console.dir(response);
+                    if (response.error) {
+                        alert("图片上传错误");
+                        $li.remove();
+                    } else {
+                        $li.find(".pic").attr("src", response.url).show().parent();
+                        $li.find(".close").show();
+                    }
+                }
+            });
+
+            $("#J_cszp-list").on("click", ".del", function() {
+                var $this = $(this);
+                var $parent = $this.parent();
+                $parent.remove();
+            })
+
+
+        })
+    })();
+    </script>
 </body>
 
 </html>
