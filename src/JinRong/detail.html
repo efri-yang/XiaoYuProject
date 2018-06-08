@@ -17,26 +17,34 @@
 
 <body style="background:#f5f5f5;">
     <div class="container">
-        <div class="detail-xyk-avatar">
-            <div class="pic"><img src="upload/02.jpg" /></div>
-            <p class="name">王者荣耀联名卡-铠</p>
+        <div class="detail-xyk-top">
+            <div class="txt-1">中油消费金融-邮你贷</div>
+            <p class="price">50000</p>
+            <p class="txt-2">贷款额度（元）</p>
         </div>
+        <ul class="detail-list">
+            <li>
+                <span class="para-tit"><i></i>综合年利率</span>
+                <p class="para-val para-val-1">14.04-28.44%</p>
+            </li>
+            <li>
+                <span class="para-tit"><i></i>贷款期限</span>
+                <p class="para-val">12-60个月</p>
+            </li>
+            <li>
+                <span class="para-tit"><i></i>职业要求</span>
+                <p class="para-val">国企</p>
+            </li>
+        </ul>
         <div class="detail-xyk-intro">
             <div class="tit">— 基本详情 —</div>
             <div class="intro-txt">
-                <p>每月2次9元看电影</p>
-                <p>畅享五星酒店豪华自助餐买一赠一</p>
-                <p>每月2次9元看电影</p>
-                <p>畅享五星酒店豪华自助餐买一赠一</p>
-                <p>每月2次9元看电影</p>
-                <p>畅享五星酒店豪华自助餐买一赠一</p>
-                <p>每月2次9元看电影</p>
-                <p>畅享五星酒店豪华自助餐买一赠一</p>
+                <p>作为一家专注于抵押贷款模式的网贷平台，钱多多在确保现有业务稳定发展的基础上，不断完善运营模式，积累符合自身的管理经验，整合行业资源，加大互联网技术开发与应用强化品牌知名度与影响力建设，力求打造成集多元化、标准化、信息化为一体的综合性金融服务平台。</p>
             </div>
+            <a href="#" class="detail-sqk-btn">免费申请</a>
         </div>
-        <p class="detail-xyk-tip-1">以上所以的信息，仅供参考之用，最终信息以发卡行官网为准</p>
-
-        <a href="#" class="detail-sqk-btn">免费申请</a>
+       
+        
     </div>
 
 
@@ -52,31 +60,6 @@
                 <div class="item-cell">
                     <label class="lab">手机</label>
                     <input type="text" class="ipt-text" placeholder="请输入您的手机号码" name="telphone" data-required="true" data-pattern="^0?1[3|4|5|6|7|8][0-9]\d{8}$" data-descriptions="telphone" />
-                </div>
-                <div class="item-cell">
-                    <label class="lab"></label>
-                    <ul class="item-radio-list clearfix">
-                        <li>
-                            <input id="item1" type="radio" name="item" checked>
-                            <label for="item1"></label>
-                            <span class="txt">5000以下</span>
-                        </li>
-                        <li>
-                            <input id="item2" type="radio" name="item" >
-                            <label for="item2"></label>
-                            <span class="txt">5000-10000</span>
-                        </li>
-                        <li>
-                            <input id="item3" type="radio" name="item" >
-                            <label for="item3"></label>
-                            <span class="txt">10000-20000</span>
-                        </li>
-                        <li>
-                            <input id="item4" type="radio" name="item" >
-                            <label for="item4"></label>
-                            <span class="txt">20000以上</span>
-                        </li>
-                    </ul>
                 </div>
                 <div class="item-cell">
                     <input type="submit" class="ipt-submit" value="立即申请" />
@@ -142,18 +125,18 @@
             });
 
            //提交成功后提示框，开发请根据业务嵌入到具体的代码中
-            var successDialog=mDialog.open({
-                title:false,
-                duration: 250,
-                content: $("#J_sqsuccess-dialog"),
-                onShow: function() {},
-                onClose: function() {}
-            });
-            //关闭提示代码
-            $("#J_sqsuccess-dialog .khnowbtn").on("click",function(event){
-                event.preventDefault();
-                successDialog.close();
-            })
+            // var successDialog=mDialog.open({
+            //     title:false,
+            //     duration: 250,
+            //     content: $("#J_sqsuccess-dialog"),
+            //     onShow: function() {},
+            //     onClose: function() {}
+            // });
+            // //关闭提示代码
+            // $("#J_sqsuccess-dialog .khnowbtn").on("click",function(event){
+            //     event.preventDefault();
+            //     successDialog.close();
+            // })
         })();
         })
 

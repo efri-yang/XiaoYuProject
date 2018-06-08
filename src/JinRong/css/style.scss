@@ -110,6 +110,7 @@
         }
     }
     /**************提交成功弹出框****************************/
+
     .sqsuccess-dialog {
         display: none;
         position: absolute;
@@ -143,7 +144,7 @@
             background-color: #347AFF;
             background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#347AFF), to(#37BBFF), color-stop(1.0, #37bbff));
         }
-    } 
+    }
     /**********
 首页**********************************************************************/
 
@@ -265,6 +266,7 @@
                 right: px2rem(90px);
                 font-size: px2rem(28px);
                 padding-top: px2rem(9px);
+                display:none;
                 .arrow {
                     top: 0;
                     right: px2rem(48px);
@@ -795,45 +797,92 @@
                 float: left;
                 width: 33.33%;
                 padding: 0 px2rem(20px);
-                a {
+
+                .pic {
+                    width: px2rem(200px);
+                    height: px2rem(130px);
+                    overflow: hidden;
+                    margin: 0 auto;
                     display: block;
-                    .pic {
-                        width: px2rem(200px);
-                        height: px2rem(130px);
-                        overflow: hidden;
-                        margin: 0 auto;
-                        display: block;
-                        position: relative;
-                        border-radius: px2rem(10px);
-                        img {
-                            max-width: 100%;
-                            max-height: 100%;
-                            @include vhcenter;
-                        }
-                    }
-                    .name {
-                        color: #333333;
-                        font-size: px2rem(28px);
-                        text-align: center;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        margin-top: px2rem(5px);
-                    }
-                    .txt {
-                        text-align: center;
-                        font-size: px2rem(24px);
-                        color: #999999;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
+                    position: relative;
+                    border-radius: px2rem(10px);
+                    img {
+                        max-width: 100%;
+                        max-height: 100%;
+                        @include vhcenter;
                     }
                 }
+                .name {
+                    color: #333333;
+                    font-size: px2rem(28px);
+                    text-align: center;
+                    white-space: nowrap;
+                    display:block;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    margin-top: px2rem(5px);
+                }
+                .txt {
+                    text-align: center;
+                    font-size: px2rem(24px);
+                    color: #999999;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                .mfsq-btn{
+                    font-size: px2rem(26px);
+                    text-align: center;
+                    display:block;
+                    margin-top: px2rem(10px);
+                    color: #fff;
+                    border-radius: px2rem(50px);
+                    width: px2rem(191px);
+                    height: px2rem(57px);
+                    line-height: px2rem(57px);
+                    background-color: #347AFF;
+                    background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#347AFF), to(#37BBFF), color-stop(1.0, #37bbff));
+                }
+                 
             }
         }
     }
     /**********
 信用卡列表页**********************************************************************/
+
+    .xyklist-avatar {
+        margin-bottom: px2rem(20px);
+        background: #fff;
+        padding: px2rem(20px) 0;
+        .pic {
+            width: px2rem(100px);
+            height: px2rem(100px);
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 100%;
+            padding: px2rem(5px);
+            border: 1px solid #ededed;
+            img {
+                @include vhcenter;
+            }
+        }
+        .name {
+            color: #333333;
+            font-size: px2rem(36px);
+            text-align: center;
+            margin-top: px2rem(12px);
+        }
+        .tel {
+            text-align: center;
+            color: #347cff;
+            font-size: px2rem(26px);
+            margin-top: px2rem(12px);
+            a {
+                color: #347cff;
+            }
+        }
+    }
 
     .xyklist-hd {
         height: px2rem(92px);
@@ -857,78 +906,166 @@
     }
 
     .xyklist-bd {
-        padding: 0 px2rem(30px);
+        // padding: 0 px2rem(30px);
         li {
-            padding: px2rem(30px) 0;
-            border-bottom: 1px solid #ececec;
-            position: relative;
-            min-height: px2rem(190px);
-            padding-left: px2rem(225px);
-            .pic {
-                position: absolute;
-                left: 0;
-                top: px2rem(30px);
-                width: px2rem(200px);
-                height: px2rem(130px);
-                overflow: hidden;
-                img {
-                    max-width: 100%;
-                    max-height: 100%;
-                    @include vhcenter;
+            border-top: 1px solid #ececec;
+            background: #fff;
+            margin-bottom: px2rem(20px);
+            .soma-bd {
+                padding: px2rem(30px) 0;
+                border-bottom: 1px solid #ececec;
+                position: relative;
+                min-height: px2rem(190px);
+                padding-left: px2rem(250px);
+                .pic {
+                    position: absolute;
+                    left: px2rem(30px);
+                    top: px2rem(30px);
+                    width: px2rem(200px);
+                    height: px2rem(130px);
+                    overflow: hidden;
+                    img {
+                        max-width: 100%;
+                        max-height: 100%;
+                        @include vhcenter;
+                    }
                 }
-            }
-            .tit {
+                .intro-list {
+                    p {
+                        position: relative;
+                        color: #898a95;
+                        line-height: px2rem(32px);
+                        font-size: px2rem(24px);
+                        padding-left: px2rem(30px);
+                        &:after {
+                            content: "";
+                            width: px2rem(17px);
+                            height: px2rem(15px);
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            -webkit-transform: translate(0, -50%);
+                            -ms-transform: translate(0, -50%);
+                            -moz-transform: translate(0, -50%);
 
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                font-size: px2rem(28px);
-                a {
-                    color: #333;
-                    padding: px2rem(9px) 0;
+                            overflow: hidden;
+                            background: url("../images/arrow_5.png") no-repeat top center;
+                            background-size: 100%;
+                        }
+                    }
                 }
             }
-            .mfsq-btn {
-                width: px2rem(200px);
-                height: px2rem(44px);
-                line-height: px2rem(44px);
-                overflow: hidden;
-                text-align: center;
-                color: #ed7704;
-                display: block;
-                margin-top: px2rem(12px);
-                border: 1px solid #fe8007;
-                font-size: px2rem(30px);
-                border-radius: px2rem(30px);
+            .soma-hd {
+                height: px2rem(90px);
+                padding: 0 px2rem(30px);
+                line-height: px2rem(90px);
+                border-bottom: 1px solid #ececec;
+                .tit {
+                    color: #333333;
+                    float: left;
+                    font-size: px2rem(30px);
+                }
+                .mfsq-btn {
+                    font-size: px2rem(26px);
+                    text-align: center;
+                    float: right;
+                    margin-top: px2rem(21px);
+                    color: #fff;
+                    border-radius: px2rem(50px);
+                    width: px2rem(151px);
+                    height: px2rem(48px);
+                    line-height: px2rem(48px);
+                    background-color: #347AFF;
+                    background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#347AFF), to(#37BBFF), color-stop(1.0, #37bbff));
+                }
             }
         }
     }
-
-
-    
     /***********
 详细页**********************************************************************/
 
     .detail-xyk-avatar {
-        background: #fff;
-        padding: px2rem(40px) 0 px2rem(30px);
-        margin-bottom: px2rem(20px);
-        .pic {
-            width: px2rem(435px);
-            margin: 0 auto;
-            overflow: hidden;
-            img {
-                max-width: 100%;
-            }
+        // background: #fff;
+        // padding: px2rem(40px) 0 px2rem(30px);
+        // margin-bottom: px2rem(20px);
+        // .pic {
+        //     width: px2rem(435px);
+        //     margin: 0 auto;
+        //     overflow: hidden;
+        //     img {
+        //         max-width: 100%;
+        //     }
+        // }
+        // .name {
+        //     text-align: center;
+        //     color: #333333;
+        //     margin-top: px2rem(10px);
+        //     text-align: center;
+        //     font-size: px2rem(32px);
+        // }
+    }
+
+    .detail-xyk-top {
+        padding: px2rem(40px) 0;
+        color: #fff;
+        text-align: center;
+        background-color: #347AFF;
+        background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#347AFF), to(#37BBFF), color-stop(1, #37bbff));
+        .txt-1 {
+            font-size: px2rem(40px);
         }
-        .name {
-            text-align: center;
-            color: #333333;
+        .price {
+            font-size: px2rem(70px);
             margin-top: px2rem(10px);
-            text-align: center;
-            font-size: px2rem(32px);
+        }
+        .txt-2 {
+            font-size: px2rem(24px);
         }
     }
+
+    .detail-list {
+        background: #ffffff;
+        margin-bottom: px2rem(20px);
+        li {
+            height: px2rem(90px);
+            line-height: px2rem(90px);
+            overflow: hidden;
+            padding-right: px2rem(30px);
+            border-bottom: 1px solid #ececec;
+            .para-tit {
+                height: px2rem(90px);
+                line-height: px2rem(90px);
+                overflow:hidden;
+                padding: 0 px2rem(30px) 0 px2rem(50px);
+                font-size: px2rem(30px);
+                color: #333333;
+                position: relative;
+                float:left;
+
+                i {
+                    width: px2rem(7px);
+                    height: px2rem(30px);
+                    position: absolute;
+                    left: px2rem(30px);
+                    top: 50%;
+                    transform: translate(0, -50%);
+
+                    border-radius: px2rem(10px);
+                    background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#3480FF), to(#37BCFF), color-stop(1.0, #37BCFF))
+                }
+            }
+            .para-val {
+                float: right;
+                color: #666666;
+                font-size: px2rem(30px);
+            }
+            .para-val-1 {
+                color: #666666;
+            }
+        }
+    }
+
+
 
     .detail-xyk-intro {
         background: url("../images/detail_bg_1.png") no-repeat px2rem(80px) center #fff;
@@ -938,6 +1075,7 @@
             text-align: center;
             color: #666666;
             font-size: px2rem(32px);
+            font-weight: bold;
         }
         .intro-txt {
             padding: px2rem(40px) px2rem(50px) 0;
@@ -961,7 +1099,7 @@
         font-size: px2rem(32px);
         text-align: center;
         display: block;
-        margin: px2rem(10px) auto 0;
+        margin: px2rem(50px) auto 0;
         color: #fff;
         border-radius: px2rem(50px);
         width: px2rem(665px);
@@ -970,3 +1108,29 @@
         background-color: #347AFF;
         background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#347AFF), to(#37BBFF), color-stop(1.0, #37bbff));
     }
+
+
+
+.xykitem-cell .soma-hd .pic {
+    position: absolute;
+    left:0.4rem;
+    top:50%;
+    transform: translate(0, -50%);
+    width:0.7rem;
+    height: 0.7rem;
+    line-height: 0.5rem;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.xykitem-cell .soma-hd .pic img {
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.xykitem-cell .soma-hd i {
+    left:1.4rem;
+}
+.xykitem-cell .soma-hd {
+    padding-left: 1.8rem;
+}
