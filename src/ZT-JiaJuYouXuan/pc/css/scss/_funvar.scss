@@ -1,0 +1,61 @@
+%text-overflow {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+ /**
+  * x=y=0的时候 阴影向四边扩散
+  * y >0  的时候 向下投影
+  * x > 0 的时候 向右投影
+  */
+@mixin shadow($x, $y, $blur, $color) {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin shadow-inset($x, $y, $blur, $color) {
+    -webkit-box-shadow: inset $x $y $blur $color;
+        -moz-box-shadow: inset $x $y $blur $color;
+            box-shadow: inset $x $y $blur $color;
+}
+
+
+
+//兼容背景透明的方案
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+  position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+  *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+}
+
+
+@mixin linear-gradient($from, $to) {
+     /* Fallback for sad browsers */
+     background-color: $to;
+     /* Mozilla Firefox */
+     background-image:-moz-linear-gradient($from, $to);
+     /* Opera */
+     background-image:-o-linear-gradient($from, $to);
+     /* WebKit (Chrome 11+) */
+     background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to));
+    /* WebKit (Safari 5.1+, Chrome 10+) */
+     background-image: -webkit-linear-gradient($from, $to);
+    /* IE10 */
+    background-image: -ms-linear-gradient($from, $to);
+     /* W3C */
+    background-image: linear-gradient($from, $to);
+}
+
+%imgCenter{
+  max-width: 100%;
+  max-height:100%;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+
+
