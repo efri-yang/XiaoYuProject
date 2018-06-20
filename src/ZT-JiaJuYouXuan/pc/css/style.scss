@@ -454,3 +454,80 @@
         background:url("../images/ft_01.png") no-repeat bottom center;
         cursor:pointer; 
     }
+
+    .side-fixed{
+        position:fixed;
+        left:50%;
+        top:20%;
+        margin-left:580px; 
+        .top-pic{
+            width:137px;
+            height:150px;
+            display:block;
+            position: relative;
+            z-index: 10; 
+            background: url("../images/fixed_bar_1.png") no-repeat top center;  
+        }
+        .con-box{
+            width:102px;
+            margin:-40px auto 0; 
+            background:#d91636;
+            padding:55px 10px 15px; 
+            .list{
+                margin-bottom: 15px;
+                li{
+                    border-bottom: 1px dashed #c90006;
+                    a{
+                        display:block;
+                        height: 40px;
+                        line-height:40px;
+                        text-align:center;
+                        color:#fff;    
+                    }
+                }
+            } 
+            .pic-qrcode{
+                width:99px;
+                height: 99px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height:100%; 
+                } 
+            }
+        }
+
+    }
+
+
+    .dialog-form-box{
+        .item-cell{
+            position: relative;
+            margin-bottom:20px; 
+            .lab{
+                position: absolute;
+                height: 54px;
+                line-height: 54px;
+                padding-left: 15px;
+                left:0;
+                right: 0;
+              
+            }
+        }
+        .ipt-text{
+            padding: 17px 15px;
+            height: 20px;
+            line-height: 20px;
+            background:#f3f3f3;
+            border:none; 
+        }
+        .ipt-sbumit{
+            height: 60px;
+            line-height: 60px;
+            background:#d91636;
+            border:none;
+            width:100%;
+            color:#fff;
+            font-size:16px;    
+        }
+    }
