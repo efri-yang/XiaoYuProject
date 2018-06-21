@@ -18,9 +18,33 @@
 
 
     <div class="banner">
-        <div class="tip"><a href="#">领取万元小鱼专属建材大礼包>></a></div>
+        <div class="tip"><a href="#" id="J_lqwy-btn-1">领取万元小鱼专属建材大礼包>></a></div>
     </div>
-    <div class="dialog-bm">
+
+    <!-- 领取万元礼包 -->
+    <div class="coms-dialog" id="J_dialog-lqwj">
+       <div class="dialog-form-box">
+            <div class="item-cell">
+                <label class="lab">姓名</label>
+                <input type="text" class="ipt-text" />
+            </div>
+            <div class="item-cell">
+                <label class="lab">联系方式</label>
+                <input type="text" class="ipt-text" />
+            </div>
+            
+            <input type="submit" class="ipt-sbumit" value="免费领取">
+            <div class="dialog-tip-1">
+                <p class="tit-1">小鱼网装修万元礼包：</p>
+                <div class="intro-1">
+                    <p>1、巴拉巴拉我是关于礼包的纯文字说明</p>
+                    <p>2、巴拉巴拉小魔仙</p>
+                </div>
+            </div>
+       </div>
+    </div>
+    <!-- 领取优惠券弹出框 -->
+    <div class="coms-dialog" id="J_dialog-lqyhj">
        <div class="dialog-form-box">
             <div class="item-cell">
                 <label class="lab">姓名</label>
@@ -34,11 +58,48 @@
                 <label class="lab">想要的优惠品牌/商家名称</label>
                 <input type="text" class="ipt-text" />
             </div>
-            <div class="item-cell">
-                <input type="submit" class="ipt-sbumit">
-            </div>
+            <input type="submit" class="ipt-sbumit" value="免费领取">
        </div>
     </div>
+    <!-- 领取优惠券弹出框2 -->
+     <div class="coms-dialog" id="J_dialog-yhj">
+       <div class="dialog-form-box">
+            <div class="item-cell">
+                <label class="lab">姓名</label>
+                <input type="text" class="ipt-text" />
+            </div>
+            <div class="item-cell">
+                <label class="lab">联系方式</label>
+                <input type="text" class="ipt-text" />
+            </div>
+            <input type="submit" class="ipt-sbumit" value="免费领取">
+       </div>
+    </div>
+
+
+    <!-- 关于我们弹出框 -->
+    <div class="coms-dialog dialog-aboutus" id="J_dialog-aboutus">
+        <p>小鱼居家优选是一档以“专注甄选居家优质好物，为你
+打造美好品质生活”为主题的建材优选栏目，旨在帮助
+有居家建材选购需求的用户提供特别甄选的优质建材，
+还能享受小鱼专属福利折扣和官方媒体监督保障。让用
+户了解居家优品与享受物超所值的购物体验。</p>
+
+<p>这里只有优质好物/你喜欢的好物/热销实用爆款/好看
+好用不一定很贵的特色居家优品，更多优品等你一起开
+启....</p>
+    </div>
+
+    <!-- 领取结果弹出框 -->
+    <div class="coms-dialog dialog-result" id="J_dialog-result">
+        <p>已提交您的**建材优惠券申请，小编将会48小时内回复
+您是否申请成功，请您留意电话。</p>
+
+        <span class="btn-close">关闭</span>
+    </div>
+
+
+
     <div class="mod-1 container">
         <div class="caption-type-1">往期优质家居好物</div>
         <div class="mod-1-con clearfix">
@@ -235,7 +296,7 @@
     <div class="mod-3 container">
         <div class="caption-type-1">优质商家优惠券</div>
         <div class="mod-3-con">
-        	<p class="caption"><a href="#">没有想要的优惠券？点我申请>></a></p>
+        	<p class="caption"><a href="#" id="J_lqyhj-btn">没有想要的优惠券？点我申请>></a></p>
             <ul class="clearfix">
                 <li>
                 	<div class="pic"><img src="upload/pic3.jpg" /></div>
@@ -281,19 +342,22 @@
 
     <div class="ft-fixed">
         <span class="top-pic"></span>
-        <div class="con-box">
 
-        </div>
+       
     </div>
     <div class="side-fixed">
-        <span class="top-pic"></span>
+        <span class="top-pic" id="J_lqwy-btn-2"></span>
+        <i class="top-pic-txt"></i>
         <div class="con-box">
             <ul class="list">
-                <li class="active"><a href="#">最新居家好物</a></li>
-                <li><a href="#">往期居家好物</a></li>
-                <li><a href="#">商家优惠券</a></li>
-                <li><a href="#">优质商家</a></li>
-                <li><a href="#">关于我们</a></li>
+                <li><a href="#" id="J_side-nav-1">最新居家好物</a></li>
+                <li><a href="#" id="J_side-nav-2">往期居家好物</a></li>
+                <li><a href="#" id="J_side-nav-3">商家优惠券</a></li>
+                <li><a href="#" id="J_side-nav-4">优质商家</a></li>
+                <li id="J_aboutus"><a href="javascript:void(0);">关于我们</a></li>
+
+
+
             </ul>
             <div class="pic-qrcode"><img src="images/qrcode_1.jpg"></div>
         </div>

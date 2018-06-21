@@ -452,10 +452,32 @@
         bottom:0;
         min-height:158px;
         background:url("../images/ft_01.png") no-repeat bottom center;
+
         cursor:pointer;
         z-index:10; 
-    }
 
+    }
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
     .side-fixed{
         position:fixed;
         left:50%;
@@ -463,36 +485,56 @@
         margin-left:580px; 
         .top-pic{
             width:137px;
-            height:150px;
+            height:140px;
             display:block;
-            position: relative;
-            z-index: 10; 
-            background: url("../images/fixed_bar_1.png") no-repeat top center;  
+           
+            background: url("../images/fixed_bar_1.png") no-repeat top center; 
         }
+        .top-pic-txt{
+            width: 137px;
+                height: 75px;
+                display:block;
+                position:absolute;
+                top:80px; 
+                z-index: 20;
+                background: url("../images/fixed_bar_2.png") no-repeat top center; 
+                animation-duration:2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transform-origin: center center;
+  animation-name: swing;
+  cursor: pointer;
+        }
+
         .con-box{
             width:102px;
+            z-index: 11;
             margin:-40px auto 0; 
             background:#d91636;
-            padding:55px 10px 15px; 
+            padding:75px 10px 15px; 
             .list{
                 margin-bottom: 15px;
                 li{
                     border-bottom: 1px dashed #c90006;
+
                     &.active{
                         a{
                             color:#ffed17;
 
                         }
                     }
+
                     a{
                         display:block;
                         height: 40px;
                         line-height:40px;
                         text-align:center;
                         color:#fff;    
+
                          &:hover{
                                 color:#ffed17;
                             }
+
                     }
                 }
             } 
@@ -509,8 +551,53 @@
 
     }
 
+    
+    .coms-dialog{
+        display:none;
+        padding:15px 0;  
+    }
+    .dialog-aboutus{
+        width:410px;
+        padding:20px;
+        color:#333333;
+        line-height:26px; 
+        font-size:16px;
+        p{
+            text-indent: 2em;
+            margin: 20px 0;
+        } 
+    }
+
+    .dialog-result{
+        width:410px;
+        padding:40px 20px;
+        color:#333333;
+        line-height:26px; 
+        font-size:16px;
+        p{
+            text-indent: 2em;
+            
+        } 
+        .btn-close{
+            height: 60px;
+            line-height: 60px;
+            display:block;
+            width:100%;
+            text-align: center;
+            color:#555555;
+            margin-top:35px;    
+            border:1px solid #d5d5d5;
+            background:#efefef;
+            &:hover{
+                background: darken(#efefef,5%);
+            }
+        }
+    }
 
     .dialog-form-box{
+        width:410px;
+        padding:20px;  
+
         .item-cell{
             position: relative;
             margin-bottom:20px; 
@@ -521,6 +608,11 @@
                 padding-left: 15px;
                 left:0;
                 right: 0;
+
+
+                color:#999;
+                cursor: text; 
+
               
             }
         }
@@ -530,6 +622,9 @@
             line-height: 20px;
             background:#f3f3f3;
             border:none; 
+
+            width:380px; 
+
         }
         .ipt-sbumit{
             height: 60px;
@@ -540,4 +635,17 @@
             color:#fff;
             font-size:16px;    
         }
+
+    }
+    .dialog-tip-1{
+        margin-top: 15px;
+        .tit-1{
+            color:#df4760;
+            font-size: 16px; 
+        }
+        .intro-1{
+            color:#666666;
+            line-height:25px;
+        }
+
     }
