@@ -194,12 +194,31 @@
                     font-weight: bold;
                     margin-right: 15px;
                 }
-                .start {
-                    width: 60px;
-                    height: 11px;
-                    margin-top: 6px;
-                    background: #f60;
+                .star {
+                    width: 110px;
+                    overflow: hidden;
+                    height: 16px;
+                    margin-top: 2px;
+                    background:url("../images/start_1.png") no-repeat left top;
                     float: left;
+                    &.star-0{
+                        background-position: 0 0;
+                    }
+                    &.star-1{
+                        background-position: 0 -16px;
+                    }
+                    &.star-2{
+                        background-position: 0 -32px;
+                    }
+                    &.star-3{
+                        background-position: 0 -48px;
+                    }
+                    &.star-4{
+                        background-position: 0 -64px;
+                    }
+                    &.star-5{
+                        background-position: 0 -80px;
+                    }
                 }
                 .pltxt {
                     clear: both;
@@ -311,12 +330,31 @@
                     font-weight: bold;
                     margin-right: 15px;
                 }
-                .start {
-                    width: 60px;
-                    height: 11px;
-                    margin-top: 6px;
-                    background: #f60;
+                .star {
+                    width: 110px;
+                    overflow: hidden;
+                    height: 16px;
+                    margin-top: 2px;
+                    background:url("../images/start_1.png") no-repeat left top;
                     float: left;
+                    &.star-0{
+                        background-position: 0 0;
+                    }
+                    &.star-1{
+                        background-position: 0 -16px;
+                    }
+                    &.star-2{
+                        background-position: 0 -32px;
+                    }
+                    &.star-3{
+                        background-position: 0 -48px;
+                    }
+                    &.star-4{
+                        background-position: 0 -64px;
+                    }
+                    &.star-5{
+                        background-position: 0 -80px;
+                    }
                 }
                 .pltxt {
                     clear: both;
