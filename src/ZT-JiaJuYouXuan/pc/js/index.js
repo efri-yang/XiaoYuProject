@@ -13,6 +13,11 @@
             prevText: "",
             prevSelector: $("#J_slide-prev-1"),
             nextSelector: $("#J_slide-next-1"),
+            onSlideAfter:function(slider,oldIndex,newIndex){
+
+               $(".slide-1-box .xjuser-wrap .xjuser").eq(newIndex).addClass('active').siblings().removeClass('active');
+               $("slide-1-box .intro-txt-wrap .intro-txt").eq(newIndex).addClass('active').siblings().removeClass('active');
+            }
         });
 
 
@@ -27,7 +32,12 @@
             maxSlides: 1,
             moveSlides: 1,
             nextText: "",
-            prevText: ""
+            prevText: "",
+            onSlideAfter:function(slider,oldIndex,newIndex){
+              $(this).parents(".slide-2-box").find(".intro-txt-wrap").children(".intro-txt").eq(newIndex).addClass('active').siblings().removeClass('active');
+               $(this).parents(".slide-2-box").find(".xjuser-wrap").children(".xjuser").eq(newIndex).addClass('active').siblings().removeClass('active');
+              
+            }
         });
 
 
@@ -128,16 +138,16 @@
         });
 
         //预约成功以后弹出框，开发根据需要嵌入
-        var layerResult=layer.open({
-              type: 1,
-              shadeClose: true,
-              title: false, //不显示标题
-              area:"450px",
-              content: $('#J_dialog-result'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
-              cancel: function(){
+        // var layerResult=layer.open({
+        //       type: 1,
+        //       shadeClose: true,
+        //       title: false, //不显示标题
+        //       area:"450px",
+        //       content: $('#J_dialog-result'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        //       cancel: function(){
                   
-              }
-         });
+        //       }
+        //  });
         $("#J_dialog-result .btn-close").on("click",function(){
             layer.close(layerResult)
         });

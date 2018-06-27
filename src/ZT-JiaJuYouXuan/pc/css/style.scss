@@ -95,14 +95,23 @@
         .slide-1-box {
             float: right;
             width: 457px;
+            .intro-txt-wrap{
+                 margin-top: 18px;
+                 line-height: 22px;
+                  height: 66px;
+                overflow: hidden;
+
+            }
             .intro-txt {
                 color: #666666;
                 font-size: 14px;
-                line-height: 22px;
+                
                 text-indent: 2em;
-                margin-top: 18px;
-                height: 66px;
-                overflow: hidden;
+                display:none; 
+                &.active{
+                    display:block; 
+                }
+               
             }
         }
 
@@ -166,12 +175,18 @@
         }
 
 
-
+        .xjuser-wrap{
+             margin-top: 50px;
+        }
 
         .xjuser {
             position: relative;
-            margin-top: 50px;
+           
             padding-left: 53px;
+            display:none;
+            &.active{
+                display: block;
+            } 
             .avatar {
                 width: 43px;
                 height: 43px;
@@ -263,14 +278,23 @@
         .slide-2-box {
             float: left;
             width: 457px;
+            .intro-txt-wrap{
+                 margin-top: 18px;
+                 line-height: 22px;
+                  height: 66px;
+                overflow: hidden;
+
+            }
             .intro-txt {
                 color: #666666;
                 font-size: 14px;
-                line-height: 22px;
+                
                 text-indent: 2em;
-                margin-top: 18px;
-                height: 66px;
-                overflow: hidden;
+                display:none; 
+                &.active{
+                    display:block; 
+                }
+               
             }
         }
         .slide-2-wrap {
@@ -304,10 +328,18 @@
             }
         }
 
+        .xjuser-wrap{
+             margin-top: 50px;
+        }
+
         .xjuser {
             position: relative;
-            margin-top: 50px;
+           
             padding-left: 53px;
+            display:none;
+            &.active{
+                display: block;
+            } 
             .avatar {
                 width: 43px;
                 height: 43px;
