@@ -33,8 +33,8 @@
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
     <script type="text/javascript">
     var swiper = new Swiper('.swiper-container', {
-       initialSlide:2,
-
+       
+        loop:true,
         slidesPerView: "auto",
         centeredSlides: true,
         pagination: {
@@ -43,11 +43,29 @@
         },
         on: {
             init: function(){
-                console.dir(this.activeIndex);
-              console.dir($(this.slides[this.activeIndex]).children(".pic").width())
+              this.slideWidth=$(this.slides[this.activeIndex]).children(".pic").width();
+              this.slideScale=0.96;
+              this.slideOpacity=0.6;
+              $(this.slides[this.activeIndex+1]).css({"transform":"scale("+this.slideScale+")","opacity":""+this.slideOpacity+""});
+               $(this.slides[this.activeIndex-1]).css({"transform":"scale("+this.slideScale+")","opacity":""+this.slideOpacity+""});
             }, 
             touchMove: function(event){
-               console.dir(this.touches.diff);
+               if(this.touches.diff > 0){
+                 //console.dir("向右滑"),上一页
+                 console.dir(this.touches.diff/this.slideWidth)*0.04/100;
+                 
+                 this.slideScale+=(this.touches.diff/this.slideWidth)*0.04;
+                  
+                 this.slideOpacity+=this.touches.diff/this.slideWidth*0.4;
+                 $(this.slides[this.activeIndex-1]).css({"transform":"scale("+this.slideScale+")","opacity":""+this.slideOpacity+""});
+
+                 $(this.slides[this.activeIndex-1]).css({"transform":"scale("+this.slideScale+")","opacity":""+this.slideOpacity+""});
+               }else{
+                //console.dir("向左滑")下一页
+               }
+            },
+            slideChangeTransitionEnd: function(){
+             
             },
         },
     });
