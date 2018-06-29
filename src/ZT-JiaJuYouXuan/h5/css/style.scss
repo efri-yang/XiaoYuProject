@@ -6,6 +6,7 @@
     position: relative;
     img {
         width: 100%;
+        vertical-align: top;
     }
     .btn-lqwy {
         position: absolute;
@@ -42,13 +43,102 @@
 
 .swiper-container-1 {
     .swiper-slide {
-        padding:0 px2rem(5px); 
+        padding: px2rem(50px) px2rem(5px) px2rem(35px);
         width: px2rem(663px);
+        transition: all 0.25s;
         .pic {
             width: 100%;
             img {
                 width: 100%;
             }
         }
+        .avatar-pl {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            background: #fff;
+            padding: px2rem(25px) px2rem(25px) px2rem(25px) px2rem(115px);
+            -webkit-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
+            -moz-transform: translate(-50%, 0);
+            height: px2rem(117px);
+            width: px2rem(574px);
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 0 5px #8f8f8f;
+            .u-pic {
+                width: px2rem(76px);
+                height: px2rem(76px);
+                overflow: hidden;
+                position: absolute;
+                left: px2rem(25px);
+                top: 50%;
+                background: #fff;
+                border-radius: 100%;
+                -webkit-transform: translate(0, -50%);
+                -ms-transform: translate(0, -50%);
+                -moz-transform: translate(0, -50%);
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .u-name-star {
+                padding-bottom:px2rem(8px); 
+                .name {
+                    color: #333333;
+                    float: left;
+                    margin-right: px2rem(20px);
+                    font-size: px2rem(26px);
+
+                    line-height: px2rem(30px);
+                    max-width: px2rem(250px);
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            .star {
+                float: left;
+                width: px2rem(152px);
+                overflow: hidden;
+                height: px2rem(22px);
+                margin-top: px2rem(4px);
+                background-repeat: no-repeat;
+                background-position: left top;
+                background-size: 100% 100%;
+                float: left;
+                &.star-0 {
+                    background-image: url("../images/start_0.png");
+                }
+                &.star-1 {
+                    background-image: url("../images/start_1.png");
+                }
+                &.star-2 {
+                    background-image: url("../images/start_2.png");
+                }
+                &.star-3 {
+                    background-image: url("../images/start_3.png");
+                }
+                &.star-4 {
+                    background-image: url("../images/start_4.png");
+                }
+                &.star-5 {
+                    background-image: url("../images/start_5.png");
+                }
+            }
+            .u-txt{
+                color:#666666;
+                font-size:px2rem(24px);
+                white-space: nowrap;
+                text-overflow: ellipsis; 
+
+            }
+        }
     }
+}
+
+.h-mod-1{
+    background:#fff;
+    margin-bottom:px2rem(20px); 
+    padding:px2rem(40px) 0 px2rem(32px) 
 }
