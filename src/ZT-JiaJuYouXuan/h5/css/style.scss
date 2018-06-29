@@ -1,0 +1,54 @@
+@import "./scss/_funvar.scss";
+@import "./scss/_base.scss";
+
+
+.h-banner {
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .btn-lqwy {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        font-size: px2rem(22px);
+        text-align: center;
+        background: #d91636;
+        border-radius: px2rem(30px);
+        padding: px2rem(5px) px2rem(20px);
+        color: #fff;
+    }
+}
+
+.h-title-1 {
+    color: #333333;
+    font-size: px2rem(40px);
+    text-align: center;
+    position: relative;
+    padding-bottom: px2rem(25px);
+    &:after {
+        content: "";
+        width: px2rem(92px);
+        height: px2rem(8px);
+        background: #f5d97a;
+        position: absolute;
+        left: 50%;
+        top: px2rem(65px);
+        margin-left: px2rem(-92px/2);
+    }
+}
+
+.swiper-container-1 {
+    .swiper-slide {
+        padding:0 px2rem(10px); 
+        width: px2rem(673px);
+        .pic {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
