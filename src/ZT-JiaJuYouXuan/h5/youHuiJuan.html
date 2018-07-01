@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/flexible2.0.js"></script>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/mDialog/mDialog.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+</head>
+<body style="background:#f4f6f8">
+     @@include("./views/_dialog.html")
+    <div class="h-banner"><a href="javascript:void(0);" class="btn-lqwy" id="J_banner-btn-lqwy">领取万元小鱼专属建材大礼包></a><img src="images/h_banner.jpg"></div>
+    <div class="yhj-mod-1">
+        <div class="h-title-2">优质商家优惠券</div>
+        <p class="yhj-tip-1"><a href="javascript:void(0);" class="btn-yhjsq" id="J_btn-yhjsq">没有想要的优惠券？点我申请>></a></p>
+        <ul class="dropload-list-yhj clearfix">
+            <li>
+                <div class="pic"><img src="upload/demo_4.jpg" /></div>
+                <div class="intro">
+                    <div class="txt">
+                        <p>强辉瓷砖100元优惠券强辉瓷砖100元优惠券强辉瓷砖100元优惠券</p>
+                    </div>
+                    <a href="#" class="btn-fmsq">免费申请</a>
+                </div>
+            </li>
+            <li>
+                <div class="pic"><img src="upload/demo_4.jpg" /></div>
+                <div class="intro">
+                    <div class="txt">
+                        <p>强辉瓷砖100元优惠强辉</p>
+                    </div>
+                    <a href="#" class="btn-fmsq">免费申请</a>
+                </div>
+            </li>
+            <li>
+                <div class="pic"><img src="upload/demo_4.jpg" /></div>
+                <div class="intro">
+                    <div class="txt">
+                        <p>强辉瓷砖100元优惠券强辉瓷砖100元优惠券强辉瓷砖100元优惠券</p>
+                    </div>
+                    <a href="#" class="btn-fmsq">免费申请</a>
+                </div>
+            </li>
+            <li>
+                <div class="pic"><img src="upload/demo_4.jpg" /></div>
+                <div class="intro">
+                    <div class="txt">
+                        <p>强辉瓷砖100元优惠强辉</p>
+                    </div>
+                    <a href="#" class="btn-fmsq">免费申请</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-fixed-seat"></div>
+    <ul class="footer-fixed">
+        <li class="first active">
+            <a href="#">
+                <div class="pic"></div>
+                <p class="txt">往期回顾</p>
+            </a>
+        </li>
+        <li class="mid" id="J_ft-btn-lqwy">
+            <div class="m-pic"></div>
+            <p class="txt">免费万元礼包</p>
+        </li>
+        <li class="last active">
+            <a href="#">
+                <div class="pic"></div>
+                <p class="txt">优惠专区</p>
+            </a>
+        </li>
+    </ul>
+    <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+    <script type="text/javascript">
+    var scaleDistance = 0,
+        opacityDistance = 0,
+        slideScale = 0.96,
+        slideOpacity = 0.6;
+
+
+    var swiper1 = new Swiper('.swiper-container-1', {
+
+        loop: true,
+        slidesPerView: "auto",
+        centeredSlides: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        on: {
+            init: function() {
+                this.slideWidth = $(this.slides[this.activeIndex]).children(".pic").width();
+                this.slideScale = slideScale;
+                this.slideOpacity = slideOpacity;
+                $(this.slides[this.activeIndex + 1]).css({ "transform": "scale(" + this.slideScale + ")", "opacity": "" + this.slideOpacity + "" });
+                $(this.slides[this.activeIndex - 1]).css({ "transform": "scale(" + this.slideScale + ")", "opacity": "" + this.slideOpacity + "" });
+            },
+
+            slideChangeTransitionEnd: function() {
+                $(this.slides[this.activeIndex]).css({ "transform": "scale(1)", "opacity": "1" });
+                $(this.slides[this.activeIndex + 1]).css({ "transform": "scale(" + this.slideScale + ")", "opacity": "" + this.slideOpacity + "" });
+                $(this.slides[this.activeIndex - 1]).css({ "transform": "scale(" + this.slideScale + ")", "opacity": "" + this.slideOpacity + "" });
+            },
+        },
+    });
+
+
+    var swiper2 = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        slidesPerView: 'auto',
+        freeMode: true
+    });
+
+
+    //优惠券领取
+    var yhjDialog1,yhjDialog2;
+    $(document).on("click",".dropload-list-yhj .btn-fmsq",function(event){
+        event.preventDefault();
+        yhjDialog1=mDialog.open({
+            title: false,
+            width: "80%",
+            duration: 250,
+            content: $("#J_dialog-lqyhj-1"),
+            hasInput: true,
+            onShow: function() {
+
+
+            },
+            onClose: function() {
+
+            }
+        });
+
+    });
+    $("#J_btn-yhjsq").on("tap",function(){
+         yhjDialog2=mDialog.open({
+            title: false,
+            width: "80%",
+            duration: 250,
+            content: $("#J_dialog-lqyhj-2"),
+            hasInput: true,
+            onShow: function() {
+
+
+            },
+            onClose: function() {
+
+            }
+        });
+    })
+    </script>
+</body>
+
+</html>
