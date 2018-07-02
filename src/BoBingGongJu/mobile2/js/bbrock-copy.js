@@ -81,6 +81,8 @@ $(function() {
                 Voice.play("tt");
                 $(".dice1").animationEnd(function(){
                     Voice.play(rank);
+                    $(".bb-drap-bar").hide();
+                    $("#J_boyibo-btn").css("display","block");
                 })
 
             },
@@ -176,7 +178,7 @@ $(function() {
                 $(".bb-guide-tip").hide();
                 $("#J_bowl-box").html("");
                 $.ajax({
-                    url: 'http://wnworld.com/BoBingGongJu/pc/php/bbgj.php',
+                    url: 'https://wnworld.com/BoBingGongJu/pc/php/bbgj.php',
                     type: 'post',
                     dataType: 'json',
                     beforeSend: function() {

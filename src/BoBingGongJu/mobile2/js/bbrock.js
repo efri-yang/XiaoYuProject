@@ -190,7 +190,7 @@ $(function() {
                 $(".bb-guide-tip").hide();
                 $("#J_bowl-box").html("");
                 $.ajax({
-                    url: 'http://wnworld.com/BoBingGongJu/pc/php/bbgj.php',
+                    url: 'https://wnworld.com/BoBingGongJu/pc/php/bbgj.php',
                     type: 'post',
                     dataType: 'json',
                     beforeSend: function() {
