@@ -1,0 +1,78 @@
+.dpflcj-nodata-tip{
+    padding: px2rem(100px) 0;
+    .pic{
+        width:px2rem(213px);
+        height: px2rem(194px);
+        overflow:hidden;
+        background: url("../images/dpflcj_nodata_tip.png") no-repeat center center;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+    .txt{
+        color:#d6d6d6;
+        @include font-dpr(18px);
+        text-align:center;
+        margin-top: px2rem(25px);
+    }
+
+}
+
+.dpflcj-list{
+    padding:px2rem(30px) px2rem(20px) 0;
+    border-top:1px solid #efefef;
+    background:#fff;
+    li{
+        border-radius:px2rem(20px);
+        overflow:hidden;
+        background:#ffffff;
+        border:1px solid #efefef;
+        border-bottom:1px dashed #efefef;
+        margin-bottom:px2rem(40px);
+
+       
+        .money{
+            @include font-dpr(16px);
+            padding:px2rem(15px) px2rem(20px) 0;
+            color:#f24e53;
+            b{
+                @include font-dpr(22px);
+            }
+        }
+        .desc{
+            @include font-dpr(14px);
+            padding:px2rem(10px) px2rem(20px) 0;
+            line-height:1.4;
+            color:#adadad;
+            strong{
+                color:#f24e53;
+                font-weight:normal;
+                margin-left: px2rem(5px);
+            }
+        }
+    }
+    .soma-hd{
+        height:px2rem(78px);
+        line-height:px2rem(78px);
+        padding:0 px2rem(20px);
+        @include font-dpr(16px);
+        background:#ffe574;
+        color:#8a5100;
+        .tit{
+            float:left;
+        }
+        .amount{
+            float:right;
+            font-weight:normal;
+        }
+    }
+    .bhcode{
+        height:px2rem(80px);
+        line-height:px2rem(80px);
+        color:#888888;
+        @include font-dpr(16px);
+        text-align:center;
+        background:#f2f2f2;
+        margin-top:px2rem(25px);
+    }
+    
+}

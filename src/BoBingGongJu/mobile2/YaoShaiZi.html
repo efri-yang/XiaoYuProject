@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>掷骰子</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container pbr155">
+        <div class="bb-top-bar">
+            <span class="score"><i></i>今日博饼分:0 </span>
+            <span class="rank"><i></i>今日排名:100名以外</span>
+            <a href="PaiMing.html" class="entry-btn">查看排名</a>
+        </div>
+        <div class="bb-main-box">
+            <a href="#" class="entery-gzsj" id="J_entery-gzsj">关注商家</a>
+            <a href="HuoDongGuiZe.html" class="entery-hdgz">活动规则<i></i></a>
+            <div class="bb-guide-tip nobegin"><span></span></div>
+            <div class="bb-rock-box">
+                <div class="bb-bowl">
+                        <span class="loading"></span>
+                        <div class="bb-bowl-logo"><img src="images/bb_bowl_logo.png"></div>
+                        <div class="dice-box" id="J_bowl-box"></div>
+                </div>
+                
+                <a href="#" class="dir-prev"><span></span></a>
+                <a href="#" class="dir-next"><span></span></a>
+                <span class="plam-hand" id="J_plam-hand"></span>
+            </div>
+            <div class="bb-para-box">
+                <span class="amount">剩余次数：0</span>
+                <span class="add-btn" id="J_para-amount">增加次数</span>
+                <span class="xyb">小鱼币：2450</span>
+                <span class="zyb-btn" id="J_para-zyb">赚鱼币</span>
+            </div>
+            <div class="bb-usexyb clearfix">
+                <span class="tit">用小鱼币博饼</span>
+                <select class="sel-real">
+                    <option>一倍博饼分 / 5个小鱼币</option>
+                    <option>一倍博饼分 / 5个小鱼币</option>
+                    <option>一倍博饼分 / 5个小鱼币</option>
+                    <option>2017-09-03</option>
+                </select>
+               <!--  <div class="sel-mn" id="J_sel-mn">
+                    <p class="txt">一倍博饼分 / 51个小鱼币<i></i></p>
+                </div> -->
+               
+                
+
+            </div>
+            <div class="bb-drap-bar">
+                <input type="hidden" value="0" class="slideunlock-lockable">
+                <span class="line"></span>
+                <div class="slideunlock-slider">
+                    <span class="slideunlock-bg" id="J_slideunlock-bg"></span>
+                    <span class="slideunlock-btn"><b><span></span></b>
+                    </span>
+                    <span class="slideunlock-txt">按住往右拉>></span>
+                </div>
+            </div>
+            <button class="boyibo-btn" id="J_boyibo-btn" style="display:none;"></button>
+        </div>
+      
+       <!-- 声音 start -->
+       <audio src="images/voice/audio.mp3" preload id="J_audio"></audio>
+       
+       
+     <!-- 声音 end -->
+
+       
+        
+        <div class="border-top-r20">
+            <div class="bb-caption-1">
+                <span class="tit">博饼包厢</span>
+            </div>
+            <div class="swiper-container" id="J_bb-swiper-container">
+                 <div class="swiper-wrapper bb-bx-list clearfix">
+                        <div class="swiper-slide active">
+                            <a href="javascript:void(0)">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">当前包厢</span></p>
+                            </a>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger disabled">今日未博</span></p>
+                            </a>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger disabled">今日未博</span></p>
+                            </a>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger disabled">今日未博</span></p>
+                            </a>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger disabled">今日未博</span></p>
+                            </a>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <a href="YaoShaiZi.html">
+                                <div class="pic"><img src="upload/h_m_pic3.png"></div>
+                                <p class="align-r mtr10 txt"><span class="coms-cbtn cbtn-danger">今日未博</span></p>
+                            </a>
+                        </div>
+                        
+                    </div>
+            </div>
+        </div>
+        <div class="border-top-r20">
+            <div class="bb-qfl">
+                <a href="#">
+					<img src="images/bb_qfl.jpg" />
+				</a>
+            </div>
+        </div>
+        <div class="border-top-r20">
+            <div class="bb-lqxyb">
+                <a href="#">
+					<img src="upload/bb_pro_1.jpg">
+					<span class="mask">点击广告，领取5个小鱼币（限一次）</span>
+				</a>
+            </div>
+        </div>
+        <div class="border-top-r20">
+            <div class="bb-enregister-box-zdy">
+                <div class="soma-hd">
+                    <span class="tit">商家优惠促销</span>
+                    <span class="tip">登记信息可领取5个小鱼币（限一次）</span>
+                </div>
+                <div class="caption-1">注册潮人租车</div>
+                <div class="caption-2"><span>可领取价值998元小鱼博饼专属大礼包，并可参与潮人租车会
+员专属包厢、VIP会员包厢，赢取超值礼品。</span></div>
+                <div class="bb-enregister-form-zdy undis">
+                    <form>
+                        <div class="item">
+                            <input type="text" class="coms-field-text" placeholder="姓名">
+                        </div>
+                        <div class="item item-yzm">
+                            <input type="number" class="coms-field-text" placeholder="验证码">
+                            <button type="button" class="coms-cbtn btn-getyzm">获取验证码</button>
+
+                            <!-- <button type="button" class="coms-cbtn btn-getyzm" disabled>58秒后重发</button> -->
+                        </div>
+                        
+                       
+                        <div class="item item-submit">
+                                <input type="submit" class="coms-cbtn cbtn-danger cbtn-full" value="免费注册">
+                        </div>
+                    </form>
+                </div>
+                <div class="bb-enregister-form-zdyjg">
+                    <p class="tip-1"><i></i>恭喜你，注册成功！</p>
+                    <div class="qrcode-1">
+                        <div class="pic"><img src="./images/zdy_qrcode_1.jpg"></div>
+                        <p class="txt">潮人专属包厢</p>
+                    </div>
+                    <div class="qrcode-1 ptr10">
+                        <div class="pic"><img src="./images/zdy_qrcode_2.jpg"></div>
+                        <p class="txt">潮人VIP包厢</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bb-enregister-box undis">
+                <div class="soma-hd">
+                    <span class="tit">商家优惠促销</span>
+                    <span class="tip">登记信息可领取5个小鱼币（限一次）</span>
+                </div>
+                <div class="caption-1">美容意向登记</div>
+                <div class="caption-2"><span>优惠内容：凭此券登记信息可到店领取1000元整容大礼包</span></div>
+                <div class="bb-enregister-form">
+                    <form>
+                        <div class="item">
+                            <input type="text" class="coms-field-text" placeholder="姓名">
+                        </div>
+                        <div class="item">
+                            <input type="number" class="coms-field-text" placeholder="手机">
+                        </div>
+                        <div class="item">
+                            <input type="number" class="coms-field-text" placeholder="职业">
+                        </div>
+                        <div class="item">
+								<span class="para-tit">意向(多选):</span>
+								<div class="para-val">
+									<label class="lab"><input type="checkbox" class="coms-field-checkbox iconfont">双眼皮</label>
+
+									<label class="lab"><input type="checkbox" class="coms-field-checkbox iconfont">隆胸</label>
+
+									<label class="lab"><input type="checkbox" class="coms-field-checkbox iconfont">双眼皮</label>
+
+									<label class="lab"><input type="checkbox" class="coms-field-checkbox iconfont">隆胸</label>
+								</div>
+                        </div>
+                        <div class="item item-submit">
+								<input type="submit" class="coms-cbtn cbtn-danger cbtn-full" value="提交">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- footer start -->
+    @@include("./views/_footer.html")
+    <!-- footer end -->
+
+    <!-- 如何赚取小鱼币 start -->
+    <div class="coms-dialog-box bb-dialog-addcount" id="J_bb-dialog-addcount">
+         <div class="soma-caption">如何增加次数?</div>
+         <div class="soma-desc">将包厢页面发给朋友或者到朋友圈中即可增
+加一次博饼，每个包厢每天限2次。</div>
+         <p class="guide-btn"><a href="#" class="coms-cbtn cbtn-danger cbtn-full" data-roler='close'>确定</a></p>
+         <a href="#" data-roler='close' class="soma-close"></a>
+    </div>
+
+    <!-- 如何赚取小鱼币 end -->
+
+
+    <!-- 如何赚取小鱼币 start -->
+    <div class="coms-dialog-box bb-dialog-xyb" id="J_bb-dialog-xyb">
+         <div class="soma-caption">如何赚取小鱼币？</div>
+         <div class="soma-desc">点击包厢内的广告或登记商家优惠促销信息即可赚到鱼币</div>
+         <p class="guide-btn"><a href="#" class="coms-cbtn cbtn-danger cbtn-full" data-roler='close'>确定</a></p>
+         <a href="#" data-roler='close' class="soma-close"></a>
+    </div>
+
+    <!-- 如何赚取小鱼币 end -->
+
+
+     <!-- 小鱼二维码 start -->
+    <div class="coms-dialog-box bb-dialog-qrcode" id="J_bb-dialog-qrcode">
+         <div class="soma-caption">关注公众号</div>
+         <div class="soma-desc">第一时间掌握商家最新优惠信息</div>
+         <div class="qrocde"><img src="./images/qrcode_1.jpg"></div>
+         <p class="qrocde-txt">长按识别关注</p>
+         <p class="guide-btn"><a href="#" class="coms-cbtn cbtn-danger cbtn-full" data-roler='close'>确定</a></p>
+         <a href="#" data-roler='close' class="soma-close"></a>
+    </div>
+
+    <!-- 小鱼二维码 end -->
+
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>    
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
+    <script src="js/swiper/js/swiper.jquery.min.js"></script>
+    <script type="text/javascript" src="js/shake.js"></script>
+    <script type="text/javascript" src="js/jquery.slideunlock.js"></script>
+    <script type="text/javascript" src="js/bbrock-copy.js"></script>
+</body>
+
+</html>
