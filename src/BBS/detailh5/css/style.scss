@@ -1,7 +1,8 @@
 @import "./scss/_funvar.scss";
 @import "./scss/_base.scss";
+@import "./scss/_mDialogRem.scss";
 
-.container {}
+
 
 .banner {
     font-size: 0;
@@ -52,18 +53,48 @@
     position: absolute;
     visibility: hidden;
     border-radius: px2rem(20px);
-    padding: px2rem(50px) px2rem(30px) px2rem(30px);
+    padding: px2rem(30px) px2rem(30px) px2rem(30px);
     background: #fff;
+
+    .iscroll-wrapper {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .iscroll-scroller{
+        position: relative;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+    }
     .item-cell {
         .lab {
             color: #333333;
             display: block;
             font-size: px2rem(30px);
-            padding: px2rem(15px) 0 px2rem(10px) 0;
+            padding: px2rem(25px) 0 px2rem(6px) 0;
         }
     }
 
+    .ipt-submit{
+    	height:px2rem(100px);
+    	line-height:px2rem(100px);
+    	text-align:center;
+    	font-size:px2rem(36px);
+    	color:#fff;
+    	background:#23ace8;
+    	border:none;
+    	width:100%;
+    	margin-top:px2rem(40px);
+    	border-radius:px2rem(5px);
+    	appearance:none;
+    }
+
     .item-radio {
+
         .para-val {
             label{
                 padding-right: px2rem(30px);
@@ -79,10 +110,66 @@
     }
     .item-radio{
         font-size: px2rem(30px);
+        
+       
+        
+
     }
     .item-checkbox{
         font-size: px2rem(30px);
+
+
     }
+
+    input[type="checkbox"] {
+                display: inline-block;
+                margin-top: 2px;
+                width:px2rem(28px);
+                height:px2rem(28px);
+                vertical-align: middle;
+                position: relative;
+                background: #fff;
+                appearance: none;
+                border: 1px solid #dbdbdb;
+                border-radius: 1px;
+            }
+    input[type="checkbox"]:checked:before {
+                color: #fff;
+                content: "";
+                left:px2rem(3px);
+                top:px2rem(5px);
+                width: px2rem(22px);
+                position: absolute;
+                height:px2rem(15px);
+                background: url("../images/checkbox_bg.png") no-repeat center center;
+                background-size:100%;
+            }
+
+    input[type="radio"] {
+            display: inline-block;
+            margin-top: -2px;
+            width:px2rem(28px);
+            border: 1px solid #dbdbdb;
+            height:px2rem(28px);
+            vertical-align: middle;
+            appearance: none;
+            border-radius: 100%;
+            background: #fff;
+            position: relative;
+        }
+
+         input[type="radio"]:checked:before {
+                color: #fff;
+                content: "";
+                width:px2rem(16px);
+                height:px2rem(16px);
+                left: px2rem(6.5px);
+                top: px2rem(5px);
+                position: absolute;
+                
+                background: url("../images/radio_bg.png") no-repeat center center;
+                background-size:100% 100%; 
+            }
     
     input[type="text"] {
         border: 1px solid #f2f2f2;
@@ -90,6 +177,7 @@
         padding: px2rem(13px) px2rem(10px);
         font-size: px2rem(32px);
         width: 100%;
+        appearance:none;
         border-radius: px2rem(3px);
     }
     textarea {
@@ -98,6 +186,7 @@
         padding: px2rem(13px) px2rem(10px);
         font-size: px2rem(32px);
         width: 100%;
+        appearance:none;
         border-radius: px2rem(3px);
     }
     select {
@@ -107,17 +196,21 @@
         font-size: px2rem(32px);
         width: 100%;
         border-radius: px2rem(3px);
+        appearance:none;
+        background: #ffffff url("../images/select_arrow.png") no-repeat 100% center;
     }
     input[type="radio"] {
-        width: px2rem(28px);
-        height: px2rem(28px);
+        width: px2rem(32px);
+        height: px2rem(32px);
         vertical-align: middle;
         margin-top: -2px;
+        
     }
     input[type="checkbox"] {
-        width: px2rem(28px);
-        height: px2rem(28px);
+        width: px2rem(32px);
+        height: px2rem(32px);
         vertical-align: middle;
+
        
     }
     

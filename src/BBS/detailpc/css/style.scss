@@ -1,0 +1,200 @@
+@import "./scss/_funvar.scss";
+
+
+.pagedetail-container {
+    width: 1100px;
+    margin: 20px auto 0;
+}
+
+.pagedetail-main {
+    float: left;
+    width: 710px;
+    overflow: hidden;
+    .adv-1 {
+        height: 237px;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.pagedetail-side {
+    float: right;
+    width: 340px;
+}
+
+.pagedetail-con-txt {
+    color: #282828;
+    font-size: 14px;
+    line-height: 30px;
+    img {
+        margin: 10px 0;
+    }
+    * {
+        max-width: 100% !important;
+    }
+}
+
+
+.coms-detailbm-cform {
+    border: 1px solid #f3f3f3;
+    padding: 15px 19px 28px;
+    .tit {
+        color: #333333;
+        font-size: 18px;
+        position: relative;
+        padding-left: 14px;
+        line-height: 22px;
+        font-weight: bold;
+        color: #23ace8;
+        &:before {
+            content: "";
+            width: 4px;
+            background: #23ace8;
+            height: 22px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    select{
+        border:none;
+        padding: 10px 5px;
+        color:#333333;
+        font-size: 14px; 
+        width:298px; 
+        background-color:#f2f2f2;
+    }
+    textarea{
+        border:none;
+        padding: 5px;
+        color:#333333;
+        font-size: 14px; 
+        width: 288px;
+        height: 90px;
+        resize: none;
+        background:#f2f2f2;
+    }
+    .item-cell {
+        position: relative;
+        margin-top: 15px;
+        .lab {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom:0; 
+            font-size: 14px;
+
+            padding: 0 10px;
+            text-align: left;
+            line-height: 40px;
+            cursor: text;
+            color: #888888;
+        }
+        .para-val {
+            float: left;
+            width: 198px;
+
+
+            overflow: hidden;
+        }
+        &.item-checkbox {
+            &:after{
+                 content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+            }
+            .lab {
+                color: #888;
+                padding: 0;
+                padding-right:15px;
+                max-width:100px;
+                min-width:80px; 
+                position: relative;
+                line-height: normal;
+                float: left;
+            }
+
+            input[type="checkbox"] {
+                display: inline-block;
+                margin-top: 2px;
+                width: 16px;
+                height: 16px;
+                vertical-align: middle;
+                position: relative;
+                background: #fff;
+                appearance: none;
+                border: 1px solid #dbdbdb;
+                border-radius: 1px;
+            }
+            input[type="checkbox"]:checked:before {
+                color: #fff;
+                content: "";
+                width: 16px;
+                position: absolute;
+                height: 16px;
+                background: url("../images/formpic/checkbox_bg.png") no-repeat 1px 3px;
+            }
+        }
+
+        &.item-radio {
+            &:after{
+                 content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+            }
+            .lab {
+                 color: #888;
+                padding: 0;
+                padding-right:15px;
+                max-width:100px;
+                 min-width:80px; 
+                position: relative;
+                line-height: normal;
+                float: left;
+            }
+            .para-val {
+                label {
+                    font-size: 14px;
+                    padding-right: 20px;
+                }
+            }
+            input[type="radio"] {
+                display: inline-block;
+                margin-top: -2px;
+                width: 16px;
+                border: 1px solid #dbdbdb;
+                height: 16px;
+                vertical-align: middle;
+                appearance: none;
+                border-radius: 100%;
+                background: #fff;
+                position: relative;
+            }
+            input[type="radio"]:checked:before {
+                color: #fff;
+                content: "";
+                width: 8px;
+                left: 3px;
+                top: 3px;
+                position: absolute;
+                height: 8px;
+                background: url("../images/formpic/radio_bg.png") no-repeat center center;
+            }
+        }
+    }
+
+    input[type="text"] {
+        padding: 8px 5px;
+        width: 288px;
+        background: #f2f2f2;
+        color: #333333;
+        font-size: 14px;
+        border: none;
+    }
+}

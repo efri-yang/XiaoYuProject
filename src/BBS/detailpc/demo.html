@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="http://bbs.xmfish.com/images/pw_core.css?v=151020">
+    <link rel="stylesheet" type="text/css" href="http://bbs.xmfish.com/data/bbscache/wind_wind.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+</head>
+
+<body style="padding-top:0;">
+    @@include("./views/_header.html")
+    <div style="height: 50px"></div>
+    <div class="pagedetail-container">
+        <div class="pagedetail-main">
+            <div class="adv-1"><img src="upload/demo_2.jpg" /></div>
+            <div class="pagedetail-con-txt">
+                <p> 刚刚，厦门土拍落幕，又是一首凉凉！仅一幅地块楼面 价超过两 万元，同安地价重回1万+，汀溪片区楼面价直降1.3万/㎡，翔安隧道口地价直降2万元/㎡ ！ 在刚刚结束的厦门2018年第三次商住用地拍卖会，五幅地块一一顺利拍出：中铁以底价42.69亿元竞得同安T2018P01地块，楼面价为18001元/㎡。华润以底价9.15亿元总价竞得同安T2018P02地块，楼面价为17014元/㎡。海晟以15.98亿元总价竞得翔安X2018P01地块，楼面价为21182元/㎡。 据了解，本次土拍共吸引了中骏/旭辉、华润、特房、海晟、翔投金茂、正荣、联发、禹洲、建发/翔发、国贸/金地/华润、中铁同安置业共计13家房企跟联合体参与竞地。 　　4月25日土拍“扑街”，6月1日土拍再次“凉凉”，今天土拍继续遇“冷”，不管是上半年还是下半年的首场土拍，似乎都在将这股“凉意”进行到底。究其原因，以下两点或许是土拍持续“冷”的原因所在：特房以17.02亿元总价竞得翔安X2018P02地块，楼面价为19814元/㎡。国贸&金地&华润联合体以13.97亿元总价竞得翔安隧道口X2018P03地块，楼面价为18950元/㎡。
+                </p>
+                <p>华润、中铁同安置业共计13家房企跟联合体参与竞地。 　　4月25日土拍“扑街”，6月1日土拍再次“凉凉”，今天土拍继续遇“冷”，不管是上半年还是下半年的首场土拍，似乎都在将这股“凉意”进行到底。究其原因，以下两点或许是土拍持续“冷”的原因所在：特房以17.02亿元总价竞得翔安X2018P02地块，楼面价为19814元/㎡。国贸&金地&华润联合体以13.97亿元总价竞得翔安隧道口X2018P03地块，楼面价为18950元/㎡。
+                </p>
+            </div>
+        </div>
+        <div class="pagedetail-side">
+            <div class="coms-detailbm-cform">
+                <div class="tit">立即报名</div>
+                <div class="item-cell">
+                    <label class="lab">您的姓名</label>
+                    <input type="text" />
+                </div>
+                <div class="item-cell">
+                    <label class="lab">联系方式</label>
+                    <input type="text" />
+                </div>
+
+                <div class="item-cell">
+                    
+                    <select>
+						<option>请选择</option>
+						<option>01</option>
+						<option>02</option>
+                    </select>
+                </div>
+                <div class="item-cell">
+                    <label class="lab">请填写内容</label>
+                    <textarea></textarea>
+                </div>
+                <div class="item-cell item-checkbox">
+                    <label class="lab">兴趣爱好</label>
+                    <div class="para-val">
+                        <label>
+                            <input type="checkbox" />篮球</label>
+                        <label>
+                            <input type="checkbox" />足球</label>
+                        <label>
+                            <input type="checkbox" />羽毛球</label>
+                    </div>
+                </div>
+                <div class="item-cell item-radio">
+					<label class="lab">性别</label>
+					<div class="para-val">
+						 <label><input type="radio" name="sex" />男</label>
+                                                                    <label><input type="radio"  name="sex" />女</label>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    	(function($){
+    		$(function(){
+    			$(".coms-detailbm-cform .item-cell").not(".item-radio,.item-checkbox").find(".lab").on("click",function(){
+    				var $this=$(this);
+    				$this.hide();
+    				$this.siblings('input,textarea').focus();
+    				
+    			})
+    			$(".coms-detailbm-cform .item-cell").not(".item-radio,.item-checkbox").find("input,textarea").on("focus",function(){
+    				var $this=$(this);
+    				$this.siblings(".lab").hide();
+    			}).on("blur",function(){
+    				var $this=$(this);
+    				if(!$.trim($this.val())){
+    					$this.siblings(".lab").show();
+    				}
+    			})
+    		})
+    	})(jQuery)
+    </script>
+</body>
+
+</html>

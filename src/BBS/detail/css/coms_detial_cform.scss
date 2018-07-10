@@ -42,11 +42,9 @@
         }
     }
 
-    .item-checkradio{
-
+    .item-checkbox{
     	.lab{
     		line-height:normal; 
-
     	}
     	.para-val{
     		label{
@@ -59,17 +57,58 @@
     		margin-top: 2px;
     		width:16px;
     		height: 16px; 
-
     		vertical-align: middle; 
+            position:relative;
+            background:#fff;
+            appearance: none;
+            border:1px solid #dbdbdb;
+            border-radius:1px;
     	}
-    	input[type="radio"]{
-    		display:inline-block;
-    		margin-top: -2px;
-    		width:16px;
-    		height: 16px; 
-    		vertical-align: middle; 
-    	}
+        input[type="checkbox"]:checked:before{
+            color: #fff;
+            content: "";
+            width:16px;
+            position:absolute;
+            height: 16px; 
+            background:url("../images/formpic/checkbox_bg.png") no-repeat  1px 3px;
+        }
+        
+    	
 
+    }
+
+    .item-radio{
+        .lab{
+            line-height:normal; 
+        }
+        .para-val{
+            label{
+                font-size:14px; 
+                padding-right: 20px;
+            }
+        }
+        input[type="radio"]{
+            display:inline-block;
+            margin-top: -2px;
+            width:16px;
+            border:1px solid #dbdbdb;
+            height: 16px; 
+            vertical-align: middle;
+            appearance: none; 
+            border-radius:100%;
+            background:#fff;
+            position:relative;
+        }
+        input[type="radio"]:checked:before{
+            color: #fff;
+            content: "";
+            width:8px;
+            left:3px;
+            top:3px;
+            position:absolute;
+            height:8px; 
+            background:url("../images/formpic/radio_bg.png") no-repeat center center;
+        }
     }
 
     select{
