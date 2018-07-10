@@ -1,0 +1,85 @@
+@import "./scss/_funvar.scss";
+@import "./scss/_base.scss";
+
+.container {}
+
+.banner {
+    font-size: 0;
+    text-align: center;
+    img {
+        width: 100%;
+    }
+}
+
+.detail-con {
+    margin-top: px2rem(15px);
+    color: #282828;
+    font-size: px2rem(28px);
+    line-height: 1.7;
+    padding: 0 px2rem(30px);
+    img {
+        margin: px2rem(15px) 0;
+    }
+    * {
+        max-width: 100% !important;
+    }
+}
+
+
+.fixed-bottom-seat {
+    height: px2rem(150px);
+}
+
+.fixed-bottom-btn {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: px2rem(100px);
+    overflow: hidden;
+    text-align: center;
+    font-size: px2rem(36px);
+    color: #fff;
+    line-height: px2rem(100px);
+    background: #24ace8;
+    &:active {
+        background: darken(#24ace8, 5%);
+    }
+}
+
+.coms-bm-dialog {
+    display: none;
+    position: absolute;
+    visibility: hidden;
+    border-radius: px2rem(20px);
+    padding: px2rem(50px) px2rem(30px) px2rem(30px);
+    background: #fff;
+    .item-cell {
+        .lab {
+            color: #333333;
+            display:block;
+            font-size: px2rem(30px);
+            padding:px2rem(15px) 0 px2rem(10px) 0;
+           
+        }
+    }
+    .para-val{
+    	 
+    }
+    input[type="text"]{
+    	border:1px solid #f2f2f2;
+    	background:#f2f2f2;
+    	padding:px2rem(13px) px2rem(10px);
+    	font-size:px2rem(32px);
+    	width:100%;
+    	border-radius:px2rem(3px);
+    }
+    textarea{
+    	border:1px solid #f2f2f2;
+    	background:#f2f2f2;
+    	padding:px2rem(13px) px2rem(10px);
+    	font-size:px2rem(32px);
+    	width:100%;
+    	border-radius:px2rem(3px);
+    }
+}
