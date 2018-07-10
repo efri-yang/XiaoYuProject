@@ -77,6 +77,20 @@
         resize: none;
         background:#f2f2f2;
     }
+    .ipt-submit{
+        width:100%;
+        height:46px;
+        line-height:46px;
+        color:#fff;
+        font-size:16px;
+        background:#23ace8;
+        border:none;
+        text-align:center;
+        margin-top:8px;
+        &:active{
+            background:darken(#23ace8,5%);
+        }
+    }
     .item-cell {
         position: relative;
         margin-top: 15px;

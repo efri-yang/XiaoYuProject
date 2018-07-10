@@ -1,0 +1,138 @@
+.coms-detail-cform {
+    clear: both;
+    padding-bottom:20px; 
+    .item-cell {
+        position: relative;
+        padding-left: 105px;
+        margin-top: 15px;
+        overflow: hidden;
+        clear:both; 
+        .lab {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size:14px;
+            color:#333333;  
+            width: 100px;
+            text-align: right;
+            line-height: 41px;
+        }
+        &.item-col-2 {
+        	clear:none; 
+            float: left;
+           	// width:375px; 
+           	width:255px;
+           	padding-right: 15px; 
+
+        }
+        .ipt-submit{
+        	width: 258px;
+        	height: 46px;
+        	overflow: hidden;
+        	background:#23ace8;
+        	border-radius:5px;
+        	color:#fff;
+        	font-size:16px;
+        	border:none; 
+        	margin:0 auto;
+        	display:block; 
+        	&:hover{
+        		background: darken(#23ace8,5%);
+        	}  
+        }
+    }
+
+    .item-checkbox{
+    	.lab{
+    		line-height:normal; 
+    	}
+    	.para-val{
+    		label{
+    			font-size:14px; 
+    			padding-right: 20px;
+    		}
+    	}
+    	input[type="checkbox"]{
+    		display:inline-block;
+    		margin-top: 2px;
+    		width:16px;
+    		height: 16px; 
+    		vertical-align: middle; 
+            position:relative;
+            background:#fff;
+            appearance: none;
+            border:1px solid #dbdbdb;
+            border-radius:1px;
+    	}
+        input[type="checkbox"]:checked:before{
+            color: #fff;
+            content: "";
+            width:16px;
+            position:absolute;
+            height: 16px; 
+            background:url("../images/formpic/checkbox_bg.png") no-repeat  1px 3px;
+        }
+        
+    	
+
+    }
+
+    .item-radio{
+        .lab{
+            line-height:normal; 
+        }
+        .para-val{
+            label{
+                font-size:14px; 
+                padding-right: 20px;
+            }
+        }
+        input[type="radio"]{
+            display:inline-block;
+            margin-top: -2px;
+            width:16px;
+            border:1px solid #dbdbdb;
+            height: 16px; 
+            vertical-align: middle;
+            appearance: none; 
+            border-radius:100%;
+            background:#fff;
+            position:relative;
+        }
+        input[type="radio"]:checked:before{
+            color: #fff;
+            content: "";
+            width:8px;
+            left:3px;
+            top:3px;
+            position:absolute;
+            height:8px; 
+            background:url("../images/formpic/radio_bg.png") no-repeat center center;
+        }
+    }
+
+    select{
+    	border: 1px solid #dbdbdb;
+    	padding: 10px 5px;
+    	color:#333333;
+    	font-size: 14px; 
+    	width:253px; 
+    }
+    textarea{
+    	border: 1px solid #dbdbdb;
+    	padding: 5px;
+    	color:#333333;
+    	font-size: 14px; 
+    	width: 615px;
+    	height: 110px;
+    	resize: none;
+    }
+}
+
+.coms-detail-cform input[type="text"] {
+    padding: 8px 5px;
+    width:240px;
+    color:#333333;
+    font-size: 14px; 
+    border: 1px solid #dbdbdb;
+}
