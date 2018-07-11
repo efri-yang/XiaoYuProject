@@ -59,36 +59,36 @@
         }
     }
 
-    select{
-        border:none;
+    select {
+        border: none;
         padding: 10px 5px;
-        color:#333333;
-        font-size: 14px; 
-        width:298px; 
-        background-color:#f2f2f2;
+        color: #333333;
+        font-size: 14px;
+        width: 298px;
+        background-color: #f2f2f2;
     }
-    textarea{
-        border:none;
+    textarea {
+        border: none;
         padding: 5px;
-        color:#333333;
-        font-size: 14px; 
+        color: #333333;
+        font-size: 14px;
         width: 288px;
         height: 90px;
         resize: none;
-        background:#f2f2f2;
+        background: #f2f2f2;
     }
-    .ipt-submit{
-        width:100%;
-        height:46px;
-        line-height:46px;
-        color:#fff;
-        font-size:16px;
-        background:#23ace8;
-        border:none;
-        text-align:center;
-        margin-top:8px;
-        &:active{
-            background:darken(#23ace8,5%);
+    .ipt-submit {
+        width: 100%;
+        height: 46px;
+        line-height: 46px;
+        color: #fff;
+        font-size: 16px;
+        background: #23ace8;
+        border: none;
+        text-align: center;
+        margin-top: 8px;
+        &:active {
+            background: darken(#23ace8, 5%);
         }
     }
     .item-cell {
@@ -99,7 +99,7 @@
             left: 0;
             top: 0;
             right: 0;
-            bottom:0; 
+            bottom: 0;
             font-size: 14px;
 
             padding: 0 10px;
@@ -111,27 +111,29 @@
         .para-val {
             float: left;
             width: 198px;
-
-
             overflow: hidden;
+            label {
+                display: inline-block;
+            }
         }
         &.item-checkbox {
-            &:after{
-                 content: " ";
-  display: block;
-  clear: both;
-  height: 0;
+            &:after {
+                content: " ";
+                display: block;
+                clear: both;
+                height: 0;
             }
             .lab {
                 color: #888;
                 padding: 0;
-                padding-right:15px;
-                max-width:100px;
-                min-width:80px; 
+                padding-right: 15px;
+                max-width: 100px;
+                min-width: 80px;
                 position: relative;
                 line-height: normal;
                 float: left;
             }
+            
 
             input[type="checkbox"] {
                 display: inline-block;
@@ -156,18 +158,18 @@
         }
 
         &.item-radio {
-            &:after{
-                 content: " ";
-  display: block;
-  clear: both;
-  height: 0;
+            &:after {
+                content: " ";
+                display: block;
+                clear: both;
+                height: 0;
             }
             .lab {
-                 color: #888;
+                color: #888;
                 padding: 0;
-                padding-right:15px;
-                max-width:100px;
-                 min-width:80px; 
+                padding-right: 15px;
+                max-width: 100px;
+                min-width: 80px;
                 position: relative;
                 line-height: normal;
                 float: left;
