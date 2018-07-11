@@ -76,6 +76,12 @@
             display: block;
             font-size: px2rem(30px);
             padding: px2rem(25px) 0 px2rem(6px) 0;
+            .star{
+                font-size:px2rem(24px);
+                font-weight:normal;
+                color:#f60;
+                padding-right:px2rem(8px);
+            }
         }
     }
 

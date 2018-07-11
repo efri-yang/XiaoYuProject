@@ -16,6 +16,14 @@
             width: 100px;
             text-align: right;
             line-height: 41px;
+            .star{
+                font-weight:normal;
+                color:#f60;
+                font-size:12px;
+                padding-right:3px;
+                display:inline-block;
+                vertical-align:middle;
+            }
         }
         &.item-col-2 {
         	clear:none; 
