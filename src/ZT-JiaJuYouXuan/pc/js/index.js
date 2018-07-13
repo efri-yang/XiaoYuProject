@@ -56,7 +56,7 @@
             event.preventDefault();
             layer.open({
               type: 1,
-              shadeClose: true,
+              shadeClose: false,
               title: false, //不显示标题
               area:"450px",
               content: $('#J_dialog-lqwj'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
@@ -70,6 +70,8 @@
             event.preventDefault();
             layer.open({
               type: 1,
+             
+              skin: 'layui-layer-c',
               shadeClose: true,
               title: false, //不显示标题
               area:"450px",
@@ -83,6 +85,7 @@
             event.preventDefault();
             layer.open({
               type: 1,
+              skin: 'layui-layer-c',
               shadeClose: true,
               title: false, //不显示标题
               area:"450px",
@@ -97,6 +100,7 @@
             event.preventDefault();
             layer.open({
               type: 1,
+               skin: 'layui-layer-c',
               shadeClose: true,
               title: false, //不显示标题
               area:"450px",
@@ -112,6 +116,7 @@
             event.preventDefault();
             layer.open({
               type: 1,
+              skin: 'layui-layer-c',
               shadeClose: true,
               title: false, //不显示标题
               area:"450px",
@@ -127,6 +132,7 @@
              event.preventDefault();
              layer.open({
               type: 1,
+              skin: 'layui-layer-c',
               shadeClose: true,
               title: false, //不显示标题
               area:"450px",

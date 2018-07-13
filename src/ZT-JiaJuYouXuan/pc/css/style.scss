@@ -23,6 +23,15 @@
             top: 50%;
             margin-left: -398px;
             margin-top: -174px;
+            span{
+                color:#ca632c;
+                font-size:26px;
+                position: absolute;
+                left: 50%;
+                width:550px;
+                margin-left: -275px;
+                bottom: 90px;
+            }
             a {
                 width: 402px;
                 height: 48px;
@@ -243,7 +252,11 @@
         }
     }
 
-
+    .mod-step{
+        height:90px;
+        margin-top:35px;
+        background:url("../images/h_pic1.jpg") no-repeat top center;
+    }
 
 
     .mod-2 {
@@ -650,16 +663,34 @@
     .coms-dialog{
         display:none;
         padding:15px 0;  
+        .tit-caption{
+            height:153px;
+            position:relative;
+            
+            background:url("../images/dialog_hd.png") no-repeat top center;
+        }
+    }
+    .layui-layer-c{
+        background:none !important;
+        box-shadow:none !important;
+        .layui-layer-close{
+            top:55px  !important;
+        }
     }
     .dialog-aboutus{
-        width:410px;
-        padding:20px;
+        width:450px;
+       
         color:#333333;
         line-height:26px; 
         font-size:16px;
+
+        .con-txt{
+             padding:0 20px 30px;
+            background:#fff;
+        }
         p{
             text-indent: 2em;
-            margin: 20px 0;
+            padding-top: 20px;
         } 
     }
 
@@ -693,6 +724,7 @@
     .dialog-form-box{
         width:410px;
         padding:20px;  
+        background:#fff;
 
         .item-cell{
             position: relative;
