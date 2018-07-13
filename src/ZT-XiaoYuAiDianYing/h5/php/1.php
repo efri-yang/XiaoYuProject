@@ -1,8 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
-header('Access-Control-Allow-Headers:x-requested-with,content-type');
-$type = $_POST["type"]=1;
+$type = $_POST["type"];
 $arr = [];
 if ($type == 1) {
     for ($a = 0; $a < 8; $a++) {
