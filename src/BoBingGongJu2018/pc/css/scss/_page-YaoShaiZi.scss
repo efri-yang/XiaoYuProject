@@ -1,5 +1,6 @@
 @import "./_funVar.scss";
 
+
 /**
  * 掷骰子页面
  */
@@ -46,7 +47,7 @@
     .tit {
         color: #f52d44;
         font-size: 20px;
-    
+
         max-width: 450px;
         @extend %text-overflow;
         float: left;
@@ -1064,19 +1065,21 @@
 .slideunlock-label-2 {
     width: 223px;
     height: 70px;
-    
+
     display: block;
     margin: 23px auto 0;
     z-index: 11;
     background: url("../images/bb_btn_1.png") no-repeat top center;
-   
+
     cursor: pointer;
-    border:none;
-    &.disabled,&:disabled{
+    border: none;
+    &.disabled,
+    &:disabled {
         background-position: 0 -70px;
         cursor: default;
     }
 }
+
 
 
 /***---------------------------------------------------------------------------------*/
@@ -1492,35 +1495,34 @@
         }
     }
 
-    .result-txt-1{
+    .result-txt-1 {
         margin-top: 30px;
         text-align: center;
-        span{
+        span {
             display: inline-block;
             height: 34px;
-            background:url("../images/zdy_tip_dg.png") no-repeat left top;
-            color:#4bd4a1;
+            background: url("../images/zdy_tip_dg.png") no-repeat left top;
+            color: #4bd4a1;
             font-size: 22px;
-            font-weight:normal; 
-            padding-left: 45px; 
-
+            font-weight: normal;
+            padding-left: 45px;
         }
     }
-    .qr-list{
+    .qr-list {
         text-align: center;
         margin-top: 30px;
-        li{
-           display: inline-block;
-            .pic{
+        li {
+            display: inline-block;
+            .pic {
                 width: 175px;
                 height: 175px;
                 overflow: hidden;
-                img{
+                img {
                     max-width: 100%;
                 }
             }
-            .txt{
-                color:#666666; 
+            .txt {
+                color: #666666;
             }
         }
     }
@@ -1579,74 +1581,74 @@
 }
 
 
-.voice-choice-dropdown{
-    position:absolute;
-    left:0;
-    top:11px; 
-     width: 130px;  
- z-index: 10;
- &.active{
-    .dropdown-bd{
-        display:block; 
-    }
- }
-    .dropdown-hd{
-        height:36px;
-        line-height: 36px;
-        text-align:center;
-        border-radius:25px;
-        width: 130px;
-        background:#fafafa;
-        border:1px solid #e6e6e6;
-        cursor:pointer; 
-        .cpic-1{
-            width: 20px;
-            height:18px;
-            display: inline-block;
-            vertical-align:middle;
-            margin-right: 10px;
-              
-            overflow:hidden;
-            background: url("../images/2018/voice_1.png") no-repeat top center; 
+.voice-choice-dropdown {
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 130px;
+    z-index: 10;
+    &.active {
+        .dropdown-bd {
+            display: block;
         }
-        span{
-            color:#666666;
+    }
+    .dropdown-hd {
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        border-radius: 25px;
+        width: 130px;
+        background: #fafafa;
+        border: 1px solid #e6e6e6;
+        cursor: pointer;
+        .cpic-1 {
+            width: 20px;
+            height: 18px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+
+            overflow: hidden;
+            background: url("../images/2018/voice_1.png") no-repeat top center;
+        }
+        span {
+            color: #666666;
             font-size: 16px;
             display: inline-block;
             width: 50px;
-        }  
-        .cpic-2{
+        }
+        .cpic-2 {
             width: 18px;
             height: 10px;
             display: inline-block;
             vertical-align: middle;
-            overflow:hidden;
+            overflow: hidden;
             margin-left: 10px;
-            background: url("../images/2018/arrow_1.png") no-repeat top center; 
+            background: url("../images/2018/arrow_1.png") no-repeat top center;
         }
     }
-    .dropdown-bd{
-       
-        position:absolute; 
+    .dropdown-bd {
+
+        position: absolute;
         width: 100%;
         padding-top: 15px;
-        display:none; 
+        display: none;
 
-        ul{
-             background:#fff;
-        border:1px solid #e6e6e6;
-        box-shadow: 0 0 10px #e5e5e5; 
+        ul {
+            background: #fff;
+            border: 1px solid #e6e6e6;
+            box-shadow: 0 0 10px #e5e5e5;
         }
-        li{
+        li {
             height: 35px;
             line-height: 35px;
             color: #666666;
             font-size: 16px;
-            text-align:center;
-            &:hover{
-                cursor:pointer; 
-                background:#fafafa; 
-            } 
+            text-align: center;
+            &:hover {
+                cursor: pointer;
+                background: #fafafa;
+            }
         }
     }
 }

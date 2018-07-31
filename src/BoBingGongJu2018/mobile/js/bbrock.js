@@ -30,17 +30,13 @@ $(function() {
     //手掌对象
     var Plam = (function() {
         var $plam = $("#J_plam-hand");
-        var initTop = -$plam.height(),
-            initLeft = -$plam.width(),
-            slideW = parseInt($(".slideunlock-slider").width() - $(".slideunlock-btn").width());
+       
 
         return {
             $elem: $plam,
             move: function(index) {
-                var _this = this,
-                    posTop = Math.abs(index * ((initTop - 40) / slideW)),
-                    posLeft = Math.abs(index * ((initLeft - 130) / slideW));
-                _this.$elem.css({ left: initLeft + posLeft, top: initTop + posTop,visibility:"visible"});
+                
+                _this.$elem.addClass('selected');
             },
             rotating: function() {
                 this.$elem.addClass('swing')

@@ -101,20 +101,13 @@ $(function() {
     //手掌对象
     var Plam = (function() {
         var $plam = $("#J_plam-hand");
-        var initTop = -$plam.height(),
-            initLeft = -$plam.width(),
-            slideW = parseInt($(".slideunlock-slider").width() - $(".slideunlock-btn").width());
+       
         return {
             $elem: $plam,
-            move: function(index) {
-                var _this = this,
-                    posTop = Math.abs(index * ((initTop - 40) / slideW)),
-                    posLeft = Math.abs(index * ((initLeft - 130) / slideW));
-                    _this.$elem.css({ left: initLeft + posLeft, top: initTop + posTop,visibility:"visible"});
-                if(index==0){
-
-                        _this.$elem.css("visibility","hidden");
-                }
+            move: function() {
+                var _this = this;
+                    _this.$elem.addClass('selected');
+               
             },
             rotating: function() {
                 this.$elem.addClass('swing')
@@ -130,10 +123,8 @@ $(function() {
             close: function() {
                 var _this = this;
                 setTimeout(function() {
-                    _this.$elem.animate({ left: initLeft, top: initTop }, 100, function() {
-                        _this.$elem.removeClass('open');
-                         _this.$elem.css("visibility","hidden");
-                    });
+                   _this.$elem.removeClass('selected');
+                   _this.$elem.removeClass('open');
                 }, 250)
             }
         }
@@ -150,48 +141,23 @@ $(function() {
         },false);
         $(window).on("load", function() {
 
-            var realW = $(".slideunlock-slider").width() - $(".slideunlock-btn").width();
-            var $lockable=$(".slideunlock-lockable");
-            var slider = new SliderUnlock(".slideunlock-slider", {
-                labelTip: "按住往右拉>>",
-                successLabelTip: "开始！",
-                duration: 0 // 动画效果执行时间，默认200ms
-            }, function() {
-                clickDrapShake("drap");
-
-            }, function() {
-                
-                if ($lockable.val() == 0) {
-                    Plam.move(slider.index);
-                }
-
-
-            });
-            slider.init();
-
+           
 
             //点击的时候
             //
-            function clickDrapShake(type){
+            function clickDrapShake(){
                 $(".bb-guide-tip").hide();
                 $("#J_bowl-box").html("");
+                Plam.move();
                 $.ajax({
-                    url: 'http://wnworld.com/BoBingGongJu/pc/php/bbgj.php',
+                    url: 'https://wnworld.com/BoBingGongJu/pc/php/bbgj.php',
                     type: 'post',
                     dataType: 'json',
                     beforeSend: function() {
-                        if(type=="drap"){
-                            Plam.rotating(); //拖拽的时候需要拳头抖动
-                        }else{
-                            $(".bb-bowl .loading").fadeIn();//点击和摇一摇的时候显示加载按钮
-                        }  
+                        Plam.rotating(); //拖拽的时候需要拳头抖动
                     },
                     success: function(data) {
-                        if(type=="drap"){
-                            Plam.open(150); //拖拽的时候需要放开拳头
-                        }else{
-                            $(".bb-bowl .loading").hide();
-                        }
+                        Plam.open(150); //拖拽的时候需要放开拳头
                         $(".bb-guide-tip").fadeIn();//点击和摇一摇的时候隐藏加载按钮
                         Dice.show(data.dices,data.rank); //动画骰子
                     }
@@ -199,7 +165,8 @@ $(function() {
             }
 
             $("#J_boyibo-btn").on("click",function(){
-                clickDrapShake("click");
+                
+                clickDrapShake();
             });
 
 
@@ -209,7 +176,7 @@ $(function() {
             });
             myShakeEvent.start();
             window.addEventListener('shake',function(){
-                clickDrapShake("shake");
+                clickDrapShake();
             }, false);
         })
 

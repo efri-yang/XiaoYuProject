@@ -20,11 +20,35 @@
         <div class="bb-main-box">
 
             <div class="voice-dropdown">
-                <div class="dropdown-hd"></div>
+                <div class="dropdown-hd"><i class="cpic-1"></i><span>闽南语</span><i class="cpic-2"></i></div>
                 <div class="dropdown-bd">
-
+                    <ul>
+                        <li class="active">闽南语</li>
+                        <li>普通话</li>
+                        <li>静音</li>
+                    </ul>
                 </div>
             </div>
+
+            <script type="text/javascript">
+                $(function(){
+                    $(".voice-dropdown .dropdown-hd").on("touchstart",function(){
+                        var $this=$(this);
+                        var $parent=$this.parent();
+                        if($parent.hasClass('active')){
+                            $parent.removeClass('active');
+                        }else{
+                            $parent.addClass('active');
+                        }
+                    });
+                    $(".voice-dropdown ul").children('li').on("click",function(){
+                        $(".voice-dropdown").removeClass("active");
+                        var str=$(this).html();
+                        $(".voice-dropdown .dropdown-hd span").html(str);
+                        $(this).addClass("active").siblings().removeClass("active");
+                    })
+                })
+            </script>
             <a href="#" class="entery-gzsj" id="J_entery-gzsj">关注商家</a>
             
             <div class="bb-guide-tip nobegin"><span></span></div>
@@ -70,13 +94,13 @@
                     <span class="slideunlock-txt">按住往右拉>></span>
                 </div>
             </div> -->
-            <button class="boyibo-btn" id="J_boyibo-btn" disabled></button>
+            <button class="boyibo-btn" id="J_boyibo-btn"></button>
 
             <a href="HuoDongGuiZe.html" class="entery-hdgz">活动规则<i></i></a>
         </div>
       
        <!-- 声音 start -->
-       <audio src="images/voice/audio.mp3" preload id="J_audio"></audio>
+       <audio src="images/2018/audio2018.mp3" preload id="J_audio"></audio>
        
        
      <!-- 声音 end -->
@@ -299,7 +323,7 @@
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css">
     <script src="js/swiper/js/swiper.jquery.min.js"></script>
     <script type="text/javascript" src="js/shake.js"></script>
-    <script type="text/javascript" src="js/jquery.slideunlock.js"></script>
+   
     <script type="text/javascript" src="js/bbrock-copy.js"></script>
 </body>
 
