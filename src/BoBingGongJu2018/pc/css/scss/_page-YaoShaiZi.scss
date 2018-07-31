@@ -44,9 +44,9 @@
     padding: 0 20px;
     margin-top: 15px;
     .tit {
-        color: #333333;
-        font-size: 18px;
-
+        color: #f52d44;
+        font-size: 20px;
+    
         max-width: 450px;
         @extend %text-overflow;
         float: left;
@@ -874,7 +874,7 @@
         line-height: 28px;
         height: 28px;
         padding: 0 25px 0 9px;
-        color: #999999;
+        color: #666;
         width: 174px;
         cursor: text;
         font-style: normal;
@@ -932,7 +932,7 @@
                 @extend %text-overflow;
                 overflow: hidden;
                 display: block;
-                color: #999999;
+                color: #666;
                 &:hover {
                     color: #f52d44;
                     text-decoration: none;
@@ -1575,5 +1575,78 @@
     margin-top: 20px;
     img {
         max-width: 100%;
+    }
+}
+
+
+.voice-choice-dropdown{
+    position:absolute;
+    left:0;
+    top:11px; 
+     width: 130px;  
+ z-index: 10;
+ &.active{
+    .dropdown-bd{
+        display:block; 
+    }
+ }
+    .dropdown-hd{
+        height:36px;
+        line-height: 36px;
+        text-align:center;
+        border-radius:25px;
+        width: 130px;
+        background:#fafafa;
+        border:1px solid #e6e6e6;
+        cursor:pointer; 
+        .cpic-1{
+            width: 20px;
+            height:18px;
+            display: inline-block;
+            vertical-align:middle;
+            margin-right: 10px;
+              
+            overflow:hidden;
+            background: url("../images/2018/voice_1.png") no-repeat top center; 
+        }
+        span{
+            color:#666666;
+            font-size: 16px;
+            display: inline-block;
+            width: 50px;
+        }  
+        .cpic-2{
+            width: 18px;
+            height: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            overflow:hidden;
+            margin-left: 10px;
+            background: url("../images/2018/arrow_1.png") no-repeat top center; 
+        }
+    }
+    .dropdown-bd{
+       
+        position:absolute; 
+        width: 100%;
+        padding-top: 15px;
+        display:none; 
+
+        ul{
+             background:#fff;
+        border:1px solid #e6e6e6;
+        box-shadow: 0 0 10px #e5e5e5; 
+        }
+        li{
+            height: 35px;
+            line-height: 35px;
+            color: #666666;
+            font-size: 16px;
+            text-align:center;
+            &:hover{
+                cursor:pointer; 
+                background:#fafafa; 
+            } 
+        }
     }
 }

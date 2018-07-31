@@ -79,6 +79,30 @@
                            
                         </div>
                         <div class="bb-rock-box">
+                            <div class="voice-choice-dropdown">
+                                <div class="dropdown-hd"><i class="cpic-1"></i><span>闽南语</span><i class="cpic-2"></i></div>
+                                <div class="dropdown-bd">
+                                    <ul>
+                                    <li data-id="1">普通话</li>
+                                    <li  data-id="2">闽南语</li>
+                                    <li  data-id="0">静音</li>
+                                </ul>
+                                </div>
+                            </div>
+
+                            <script type="text/javascript">
+                                    $(function(){
+                                        var $container=$(".voice-choice-dropdown");
+                                        $container.on("mouseover",function(){
+                                            $(this).addClass("active");
+                                        }).on("mouseout",function(){
+                                            $(this).removeClass("active")
+                                        });
+                                        $container.find("li").on("click",function(){
+                                            $container.removeClass('active');
+                                        });
+                                    })
+                            </script>
                             <div class="bb-rock-result">一秀 +1博饼分</div>
                             <a href="HuoDongGuiZe.html" class="bb-rock-rule">活动规则</a>
                             <div class="bb-rock-run">
@@ -124,7 +148,7 @@
                                     <input type="hidden" id="J_dropselhidden" data-required="true" data-descriptions="projects">
                                 </div>
                             </div>
-                            <div class="bb-rock-slide">
+                            <!-- <div class="bb-rock-slide">
                                 <span class="line"></span>
                                 <input type="hidden" value="1" class="slideunlock-lockable" />
                                 <div class="slideunlock-slider unselectable">
@@ -133,8 +157,8 @@
                                     <span class="slideunlock-lable-tip" id="J_slideunlock-lable-tip"><b><i></i>向右滑动博饼</b></span>
                                     <span class="slideunlock-statu" id="J_slideunlock-statu"></span>
                                 </div>
-                            </div>
-                            <button class="slideunlock-label-2 disabled" type="button" id="J_slideunlock-btn2"></button>
+                            </div> -->
+                            <button class="slideunlock-label-2" type="button" id="J_slideunlock-btn2"></button>
                             <div class="undis">
                                      <!-- 声音 -->
     <div id="jquery_jplayer_0" class="jp-jplayer"></div>
