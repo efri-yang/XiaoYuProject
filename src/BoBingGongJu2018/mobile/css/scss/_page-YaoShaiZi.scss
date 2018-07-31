@@ -89,17 +89,17 @@
         border-radius: px2rem(30px);
         position: absolute;
         top: px2rem(30px);
-        left: px2rem(30px);
+        right: px2rem(30px);
         color: #fff7a5;
         @include font-dpr(14px);
     }
     .entery-hdgz {
-        position: absolute;
-        top: px2rem(30px);
+       text-align: center;
+       display:block; 
         height: px2rem(50px);
         line-height: px2rem(50px);
-        right: px2rem(30px);
-        @include font-dpr(14px);
+        margin-top:px2rem(8px); 
+        font-size: px2rem(26px);
         color: #ffefa9;
         i {
             width: px2rem(29px);
