@@ -12,6 +12,20 @@
     }
 }
 
+h1{
+    font-size:px2rem(32px); 
+    padding: px2rem(20px) px2rem(30px);
+}
+
+.author-time{
+    border-bottom:1px solid #f5f5f5;
+    font-size:px2rem(28px);
+    color:#999;
+    padding: 0 px2rem(30px) px2rem(15px);   
+}
+.author-time >span{
+    margin-right: px2rem(40px);
+}
 .detail-con {
     margin-top: px2rem(15px);
     color: #282828;
@@ -135,8 +149,8 @@
     input[type="checkbox"] {
                 display: inline-block;
                 margin-top: 2px;
-                width:px2rem(28px);
-                height:px2rem(28px);
+                width:px2rem(32px);
+                height:px2rem(32px);
                 vertical-align: middle;
                 position: relative;
                 background: #fff;
@@ -147,8 +161,8 @@
     input[type="checkbox"]:checked:before {
                 color: #fff;
                 content: "";
-                left:px2rem(3px);
-                top:px2rem(5px);
+                left:px2rem(6px);
+                top:px2rem(10px);
                 width: px2rem(22px);
                 position: absolute;
                 height:px2rem(15px);
@@ -159,9 +173,9 @@
     input[type="radio"] {
             display: inline-block;
             margin-top: -2px;
-            width:px2rem(28px);
+            width:px2rem(32px);
             border: 1px solid #dbdbdb;
-            height:px2rem(28px);
+            height:px2rem(32px);
             vertical-align: middle;
             appearance: none;
             border-radius: 100%;
@@ -172,10 +186,10 @@
          input[type="radio"]:checked:before {
                 color: #fff;
                 content: "";
-                width:px2rem(16px);
-                height:px2rem(16px);
-                left: px2rem(6.5px);
-                top: px2rem(5px);
+                width:px2rem(20px);
+                height:px2rem(20px);
+                left: px2rem(7px);
+                top: px2rem(6px);
                 position: absolute;
                 
                 background: url("../images/radio_bg.png") no-repeat center center;
@@ -211,15 +225,15 @@
         background: #ffffff url("../images/select_arrow.png") no-repeat 100% center;
     }
     input[type="radio"] {
-        width: px2rem(32px);
-        height: px2rem(32px);
+        width: px2rem(38px);
+        height: px2rem(38px);
         vertical-align: middle;
         margin-top: -2px;
         
     }
     input[type="checkbox"] {
-        width: px2rem(32px);
-        height: px2rem(32px);
+        width: px2rem(38px);
+        height: px2rem(38px);
         vertical-align: middle;
 
        

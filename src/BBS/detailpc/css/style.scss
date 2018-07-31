@@ -1,6 +1,14 @@
 @import "./scss/_funvar.scss";
 
-
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
 .pagedetail-container {
     width: 1100px;
     margin: 20px auto 0;
@@ -10,28 +18,42 @@
     float: left;
     width: 710px;
     overflow: hidden;
-    .adv-1 {
-        height: 237px;
-        overflow: hidden;
-        img {
-            width: 100%;
-        }
+    .tit{
+            font-size: 30px;
+              line-height: normal;
+              margin-bottom: 10px;
+    }
+    .author-time{
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .author{
+        font-size: 16px;
+        color:#999;
+        margin-right: 30px; 
+    }
+    .timedate{
+        font-size: 16px;
+        color:#999; 
     }
 }
 
 .pagedetail-side {
     float: right;
     width: 340px;
+    overflow:hidden; 
 }
 
 .pagedetail-con-txt {
     color: #282828;
-    font-size: 14px;
+    font-size:14px;
     line-height: 30px;
+    padding-top: 20px;
     img {
         margin: 10px 0;
     }
     * {
+        font-size: 14px;
         max-width: 100% !important;
     }
 }
@@ -57,6 +79,12 @@
             left: 0;
             top: 0;
         }
+    }
+    &.fixed{
+        position:fixed;
+        left:50%;
+        margin-left: 210px;
+        top:38px; 
     }
 
     select {
@@ -110,7 +138,7 @@
         }
         .para-val {
             float: left;
-            width: 198px;
+            width: 168px;
             overflow: hidden;
             label {
                 display: inline-block;
@@ -132,14 +160,22 @@
                 position: relative;
                 line-height: normal;
                 float: left;
+                overflow:hidden; 
+            }
+            .para-val {
+                label{
+                    padding-bottom:4px;
+                    padding-right: 5px;
+                }
+                 
             }
             
 
             input[type="checkbox"] {
                 display: inline-block;
                 margin-top: 2px;
-                width: 16px;
-                height: 16px;
+                width: 18px;
+                height: 18px;
                 vertical-align: middle;
                 position: relative;
                 background: #fff;
@@ -150,10 +186,10 @@
             input[type="checkbox"]:checked:before {
                 color: #fff;
                 content: "";
-                width: 16px;
+                width: 18px;
                 position: absolute;
-                height: 16px;
-                background: url("../images/formpic/checkbox_bg.png") no-repeat 1px 3px;
+                height: 18px;
+                background: url("../images/formpic/checkbox_bg.png") no-repeat 2px 4px;
             }
         }
 
@@ -178,14 +214,15 @@
                 label {
                     font-size: 14px;
                     padding-right: 20px;
+                    padding-bottom: 5px;
                 }
             }
             input[type="radio"] {
                 display: inline-block;
                 margin-top: -2px;
-                width: 16px;
+                width: 18px;
                 border: 1px solid #dbdbdb;
-                height: 16px;
+                height: 18px;
                 vertical-align: middle;
                 appearance: none;
                 border-radius: 100%;
@@ -195,11 +232,11 @@
             input[type="radio"]:checked:before {
                 color: #fff;
                 content: "";
-                width: 8px;
+                width: 10px;
                 left: 3px;
                 top: 3px;
                 position: absolute;
-                height: 8px;
+                height: 10px;
                 background: url("../images/formpic/radio_bg.png") no-repeat center center;
             }
         }

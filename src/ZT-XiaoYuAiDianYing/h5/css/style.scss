@@ -106,7 +106,7 @@
     }
 
     .swiper-container-2-wrap {
-        padding: 0 px2rem(20px) px2rem(20px);
+        padding: 0 px2rem(13px) px2rem(20px);
         margin-top: px2rem(20px);
         border-bottom: px2rem(20px) solid #ebebeb;
         .swiper-container-2-pagination {
@@ -129,118 +129,131 @@
     .swiper-container-2 {
 
         .swiper-slide {
-            padding: px2rem(10px);
-            .pic {
-                width: 100%;
-                height: px2rem(210px);
-                display: block;
-                text-align: center;
-                position: relative;
-                overflow: hidden;
-            }
-            img {
-                width: 100%;
-                max-height: 100%;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                -webkit-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                -moz-transform: translate(-50%, -50%);
+            padding: px2rem(10px) 0;
+            .pic-list {
+                .pic {
+                    width: px2rem(220px);
+                    margin: 0 px2rem(10px) px2rem(15px);
+                    float:left; 
+                    height: px2rem(210px);
+                    display: block;
+                    text-align: center;
+                    position: relative;
+                    overflow: hidden;
+                }
+                img {
+                    width: 100%;
+                    max-height: 100%;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    -moz-transform: translate(-50%, -50%);
+                }
             }
         }
     }
 
-    .h-list-1{
+    .h-list-1 {
         padding: px2rem(20px) px2rem(15px) 0 px2rem(30px);
-        li{
-            margin-top:px2rem(20px); 
-            a{
+        li {
+            margin-top: px2rem(20px);
+            a {
                 display: block;
                 position: relative;
-            height:px2rem(66px);
-            padding-left: px2rem(80px);
+                height: px2rem(66px);
+                padding-left: px2rem(80px);
                 line-height: px2rem(66px);
                 overflow: hidden;
                 padding-right: px2rem(15px);
             }
             float: left;
             width: 50%;
-            
-            .pic{
-                position:absolute;
-                left:0;
-                top:0; 
-                width:px2rem(66px);
-                height:px2rem(66px);
+
+            .pic {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: px2rem(66px);
+                height: px2rem(66px);
                 line-height: px2rem(66px);
                 text-align: center;
                 border-radius: 100%;
                 overflow: hidden;
-                font-size:0; 
-                float:left; 
-                img{
+                font-size: 0;
+                float: left;
+                img {
                     width: 100%;
                     height: 100%;
-                   
-                } 
+                }
             }
-            .txt{
+            .txt {
                 line-height: px2rem(66px);
-                height:px2rem(66px); 
-                
-                color:#333333;
-                font-size:px2rem(24px);  
-                 overflow: hidden;
+                height: px2rem(66px);
+
+                color: #333333;
+                font-size: px2rem(24px);
+                overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
             }
         }
-
     }
 
-    .h-mod-1{
+    .h-mod-1 {
         padding-bottom: px2rem(40px);
-        border-bottom: px2rem(20px) solid #ebebeb; 
+        border-bottom: px2rem(20px) solid #ebebeb;
     }
 
-    .dropload-list-1{
+    .dropload-list-1 {
         padding: 0 px2rem(30px);
-        li{
-            margin-top:px2rem(40px); 
-            a{
+        li {
+            margin-top: px2rem(40px);
+            a {
                 display: block;
                 position: relative;
                 padding-left: px2rem(280px);
-                .pic{
+                .pic {
                     position: absolute;
-                    left:0;
-                    top:0;
-                    width:px2rem(260px);
-                    height:px2rem(174px);
+                    left: 0;
+                    top: 0;
+                    width: px2rem(260px);
+                    height: px2rem(174px);
                     text-align: center;
                     line-height: px2rem(174px);
                     overflow: hidden;
-                    img{
+                    img {
                         max-height: 100%;
                         max-width: 100%;
                         display: inline-block;
                         vertical-align: middle;
-                    }  
-                }
-                .tit{
-                    color:#333333;
-                    line-height: px2rem(40px);
-                    height: px2rem(80px);
-                    font-size:px2rem(26px); 
-                    span{
-                        color:#f7690b;
-                        padding-right: px2rem(10px); 
+                    }
+                    .mask{
+                        width:100%;
+                        left:0;
+                        top:0;
+                        height: 100%;
+                        position:absolute;
+                        background: url("../images/ygq.png") no-repeat center center;
+                        background-size:auto 100%;
+                        z-index: 10;
+
                     }
                 }
-                .intro{
+                .tit {
+                    color: #333333;
+                    line-height: px2rem(40px);
+                    height: px2rem(80px);
+                    font-size: px2rem(26px);
+                    span {
+                        color: #f7690b;
+                        padding-right: px2rem(10px);
+                    }
+                }
+                .intro {
                     font-size: px2rem(22px);
-                    color:#999999;
+                    color: #999999;
                     line-height: px2rem(32px);
                     height: px2rem(96px);
                 }
