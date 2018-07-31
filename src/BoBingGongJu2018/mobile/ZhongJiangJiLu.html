@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排名</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="zjjl-tab-hd-wrap">
+            <ul class="zjjl-tab-hd">
+                <li class="active"><a href="#tab-dhjp" data-toggle="tab">兑换奖品</a></li>
+                <li><a href="#tab-bbmp" data-toggle="tab">博饼门票</a></li>
+            </ul>
+        </div>
+        
+        <div class="zjjl-tab-bd active" id="tab-dhjp">
+            <div class="zjjl-pro-list">
+                <p class="soma-hd">您已成功兑换<b>5份</b>奖品</p>
+                <ul class="list clearfix">
+                    <li>
+                        <a href="#">
+                            <div class="pic"><img src="upload/h_m_pic9.jpg" /><span class="tags">小鱼币</span></div>
+                            <p class="name">绿巨能 小火箭急速车箭急速车箭急速车载快充急速车载快充</p>
+                            
+                            <p class="amount">共1份</p>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="pic"><img src="upload/h_m_pic9.jpg" /><span class="tags">实物奖品</span></div>
+                            <p class="name">绿巨能 小火箭急速车箭急速车箭急速车载快充急速车载快充</p>
+                            
+                            <p class="amount">共1份</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="pic"><img src="upload/h_m_pic9.jpg" /><span class="tags">虚拟奖品</span></div>
+                            <p class="name">绿巨能 小火箭急速车箭急速车箭急速车载快充急速车载快充</p>
+                           
+                            <p class="amount">共1份</p>
+                            <span class="dzm-btn">点击查看电子码</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+             </div>
+			 <div class="zjjl-nodata-tip">
+				<div class="pic"></div>
+				<p class="txt">还没有兑换过奖品</p>
+			 </div>
+             
+            
+             <a href="ZhongJiangDengJi.html" class="zjjl-zjdj-entry"><b></b>中奖登记</a>
+        </div>
+        <div class="zjjl-tab-bd" id="tab-bbmp">
+            <div class="bbmp-nodata-tip">
+                <div class="pic"></div>
+                <p class="txt">你还没有获得博饼门票</p>
+                <a href="#" class="zjjl-zjdj-entry"><b></b>中奖登记</a>
+            </div>
+
+            <ul class="bbmp-mp-list">
+                 <li>
+                    <p class="txt-1"><b></b>恭喜，您已获得线下博饼门票</p>
+                    <p class="txt-2">详情：2017/09/03 总积分排名第5</p>
+                    <a href="ZhongJiangDengJi.html" class="guide-dj">查看博饼详情</a>
+                 </li>
+                 <li>
+                    <p class="txt-1"><b></b>恭喜，您已获得线下博饼门票</p>
+                    <p class="txt-2">详情：2017/09/03 总积分排名第5</p>
+                    <a href="ZhongJiangDengJi-YiDengJi.html" class="guide-dj">查看博饼详情</a>
+                 </li>
+            </ul>
+            
+
+        </div>
+         <div class="zjjl-qrcode">
+                    <div class="pic"><img src="images/qrcode_1.jpg" /></div>
+                    <p class="txt">关注公众号，第一时间了解中奖情况</p>
+             </div>
+		
+
+
+		
+	</div>
+
+
+    <!--  -->
+    <div class="coms-dialog-box dzm-dialog-box" id="J_dzm-dialog-box">
+         <div class="soma-caption">购买本商品登记</div>
+         <p class="tip">具体使用方法请查看对应奖品的详情页</p>
+         <ul class="list">
+            <li>
+                <p class="tit">电子码</p>
+                <p class="num">215488232</p>
+            </li>
+            <li>
+                <p class="tit">电子码</p>
+                <p class="num">215488232</p>
+            </li>
+            <li>
+                <p class="tit">电子码</p>
+                <p class="num">215488232</p>
+            </li>
+            <li>
+                <p class="tit">电子码</p>
+                <p class="num">215488232</p>
+            </li>
+            <li>
+                <p class="tit">电子码</p>
+                <p class="num">215488232</p>
+            </li>
+            <li>
+                <p class="tit">电子码</p>
+                <p class="num">215488232</p>
+            </li>
+            <li>
+                <p class="tit">电子码</p>
+                <p class="num">215488232</p>
+            </li>
+         </ul>
+         <a href="#" data-roler="close" class="soma-close"></a>
+    </div>
+    <!--  -->
+	 <script type="text/javascript">
+    $(function() {
+      
+        $(".zjjl-tab-hd a").on("click", function(e) {
+            e.preventDefault()
+            $(this).tab('show')
+        });
+
+        //奖品详情
+        var DialogDzm = $("#J_dzm-dialog-box").dialogs({
+            shadeClose:true
+        });
+   
+        $(document).on("click",".dzm-btn",function(){
+                DialogDzm.show();
+        })
+    })
+    </script>
+
+	
+
+	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/zepto.js"></script>
+</head>
+
+<body>
+    <button id="x1">开始</button>
+    <button id="x3">暂定</button>
+    <button id="x2">单机</button>
+    <audio src="images/voice/audio.mp3"  id="J_audio"></audio>
+
+    <audio controls>
+	   <source src="images/voice/audio0.mp3" type="audio/mpeg">
+	   <source src="images/voice/audio1.mp3" type="audio/mpeg">
+	   <source src="images/voice/audio2.mp3" type="audio/mpeg">
+	   <source src="images/voice/audio3.mp3" type="audio/mpeg">
+	 Your browser does not support the audio element.
+	</audio> 
+    <script type="text/javascript">
+    	alert(document.getElementById("J_audio").readyState);
+
+    	$("#x1").on("click",function(){
+    		alert(document.getElementById("J_audio").readyState)
+    		document.getElementById("J_audio").play();
+    	});
+    	$("#x3").on("click",function(){
+    		alert(document.getElementById("J_audio").pause())
+    		alert(document.getElementById("J_audio").readyState)
+    		
+    	});
+
+    	$("#x2").on("click",function(){
+    		alert(document.getElementById("J_audio").readyState)
+    		
+    	});
+
+
+
+
+    
+    </script>
+</body>
+
+</html>

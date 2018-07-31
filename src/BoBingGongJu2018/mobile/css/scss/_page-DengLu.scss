@@ -1,0 +1,508 @@
+
+.djjg-tip-box{
+	text-align: center;
+	padding-top: px2rem(20px);
+	padding-bottom: px2rem(10px);
+	.pic{
+		width:px2rem(357px);
+		height: px2rem(353px);
+		overflow: hidden;
+		margin: 0 auto;
+		background: url("../images/djjg_tip.png") no-repeat top center;
+		background-size: 100% 100%;
+
+	}
+	.txt-1{
+		color:#fd2f2c;
+		@include font-dpr(20px);
+		margin-top: px2rem(10px);
+	}
+	.txt-2{
+		color:#d78400;
+		@include font-dpr(16px);
+		margin-top: px2rem(15px);
+	}
+}
+
+.djjg-qrcode{
+    margin-top:px2rem(50px);
+    .qrcode-pic{
+        width:px2rem(354px);
+        height:px2rem(354px);
+        overflow:hidden;
+        margin:0 auto;
+        background: url("../images/qrcode_1.jpg") no-repeat top center;
+        background-size:100% 100%;
+    }
+    .txt{
+        text-align:center;
+        color:#666666;
+        margin-top:px2rem(10px);
+        @include font-dpr(18px);
+    }
+}
+
+
+.wxlogin-logo{
+    padding-top:px2rem(85px);
+    .pic{
+        width:px2rem(138px);
+        height:px2rem(138px);
+        overflow:hidden;
+        margin:0 auto;
+        background:url("../images/xiaoyu_logo.png") no-repeat 0 0;
+        background-size:100% 100%;
+    }
+    .txt{
+        text-align:center;
+        @include font-dpr(22px);
+        color:#393939;
+        margin-top:px2rem(15px);
+    }
+}
+.wxlogin-form{
+    margin:px2rem(60px) px2rem(30px) 0;
+    border-top:1px solid #ececec;
+    padding-top:px2rem(30px);
+    .txt-1{
+        color:#333333;
+        @include font-dpr(18px);
+    }
+    .para-val{
+        margin-top:px2rem(20px);
+        @include font-dpr(16px);
+        color:#bdbdbd;
+    }
+    .para-submit{
+        margin-top:px2rem(150px);
+        input{
+             @include font-dpr(20px);
+        }
+    }
+}
+
+.sjyz-avatar{
+    padding-top:px2rem(90px);
+    .pic{
+        width:px2rem(151px);
+        height:px2rem(151px);
+        overflow:hidden;
+        margin:0 auto;
+        border-radius: 100%;
+        img{
+            width:100%;
+            height:100%;
+        }
+    }
+    .txt-tip{
+        color:#333333;
+        text-align:center;
+        @include font-dpr(18px);
+        max-width: px2rem(360px);
+
+        text-align:center;
+        margin:px2rem(10px) auto 0;
+
+        line-height: 1.3;
+    }
+}
+
+.sjyz-form{
+    padding:0 px2rem(30px);
+    margin-top:px2rem(70px);
+    .item{
+        position:relative;
+        margin-bottom: px2rem(20px);
+    }
+    .item-submit{
+        margin-top:px2rem(100px);
+        .coms-cbtn{
+            background:#ff8403;
+            padding:px2rem(15px) px2rem(50px);
+            @include font-dpr(20px);
+            color:#fff;
+            &:active{
+                background-color:darken(#ff8403,5%);
+            }
+        }
+    }
+    .yzn-btn{
+        color:#349dff;
+        border:1px solid #4ba8ff;
+        border-radius:px2rem(10px);
+        padding:px2rem(10px) px2rem(10px);
+        @include font-dpr(16px);
+        position:absolute;
+        right:0;
+        top:50%;
+        margin-top:px2rem(-30px);
+        background: none;
+        &:active{
+            background:#4ba8ff;
+            color:#fff;
+        }
+    }
+    .ipt-text{
+        display:block;
+        width: 100%;
+        height:px2rem(88px);
+        padding:px2rem(8px) px2rem(25px);
+        background-image: none;
+        border:none;
+        border-bottom: 1px solid #f0f0f0;
+        @include font-dpr(16px);
+        color: #333333;
+        border-radius: 0;
+        background-color:none;
+        -webkit-appearance: none;
+    }
+}
+.loginxyw-caption{
+    @include font-dpr(22px);
+    text-align:center;
+    color:#393939;
+    margin-top:px2rem(100px);
+}
+.loginxyw-form{
+    margin:px2rem(80px) px2rem(30px) 0;
+    .item{
+        position:relative;
+        margin-bottom: px2rem(20px);
+        .para-icon{
+            position:absolute;
+            left:0;
+            top:50%;
+            &.login-icon{
+                width:px2rem(32px);
+                height:px2rem(36px);
+                overflow:hidden;
+                margin-top:px2rem(-18px);
+                background:url("../images/login_icon_1.png") no-repeat top center;
+                background-size:100% 100%;
+            }
+
+            &.pwd-icon{
+                width:px2rem(34px);
+                height:px2rem(39px);
+                overflow:hidden;
+                margin-top:px2rem(-20px);
+                background:url("../images/pwd_icon_1.png") no-repeat top center;
+                background-size:100% 100%;
+            }
+
+        }
+    }
+    .item-submit{
+        margin-top:px2rem(80px);
+        input{
+            @include font-dpr(18px);
+        }
+    }
+    .ipt-text{
+        display:block;
+        width: 100%;
+        height:px2rem(98px);
+        padding:px2rem(13px) px2rem(25px) px2rem(13px) px2rem(50px);
+        background-image: none;
+        border:none;
+        border-bottom: 1px solid #f0f0f0;
+        @include font-dpr(18px);
+        color: #333333;
+        border-radius: 0;
+        background-color:none;
+        -webkit-appearance: none;
+    }
+}
+
+.loginxyw-wx{
+    margin-top:px2rem(60px);
+    .caption{
+        position:relative;
+        text-align:center;
+        margin:0 px2rem(80px);
+        i{
+            height:2px;
+            background:#efefef;
+            position:absolute;
+            left:0;
+            top:50%;
+            width:100%;
+            margin-top:-1px;
+        }
+        span{
+            color:#c1c1c1;
+            @include font-dpr(16px);
+            padding:0 px2rem(20px);
+            background:#fff;
+            position:relative;
+        }
+    }
+    .pic{
+        width:px2rem(130px);
+        height:px2rem(130px);
+        overflow:hidden;
+        margin: px2rem(50px) auto 0;
+        display:block;
+        background:url("../images/wx_icon_1.png") no-repeat;
+        background-size:100% 100%;
+    }
+}
+
+.login-choice-item{
+    display: flex;
+    padding: px2rem(140px) px2rem(21px) 0;
+    li{
+        flex:1;
+        width: 50%;
+        padding: 0 px2rem(28px);
+    }
+    .item{
+        border:1px solid #c1c1c1;
+        display: block;
+        padding: px2rem(47px) 0 px2rem(50px);
+        .pic{
+            width:px2rem(109px);
+            height: px2rem(109px);
+            overflow: hidden;
+            background-position:center center;
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+        }
+        .txt{
+            margin-top:px2rem(30px); 
+            font-size:px2rem(32px); 
+            text-align: center;
+            color:#333333; 
+        }
+
+        &.item-1{
+            .pic{
+             background-image: url("../images/wechat_logo_1.png");
+            }
+        }
+
+        &.item-2{
+            .pic{
+                background-image: url("../images/xiaoyu_logo.png");
+            }
+            
+        }
+
+    }
+
+}
+
+
+.lrform-avatar{
+    margin-top:px2rem(87px); 
+    .pic{
+        width: px2rem(138px);
+        height:px2rem(138px);
+        overflow:hidden;
+        border-radius:100%; 
+        margin: 0 auto;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .txt{
+        text-align: center;
+        margin-top:px2rem(15px); 
+        @include font-dpr(16px);
+    }
+}
+
+.lr-zh-form{
+    margin-top:px2rem(100px); 
+    padding: 0 px2rem(30px);
+    .item{
+        position: relative;
+        .cicon{
+                position: absolute;
+                left:0;
+                top: 50%;
+                -webkit-transform: translate(0,-50%);
+                -ms-transform: translate(0,-50%);
+                -moz-transform: translate(0,-50%);
+                margin-top:px2rem(-3px); 
+        }
+        .ipt-text{
+            border: none;
+            border-bottom: 1px solid #c1c1c1;
+            display: block;
+            width: 100%;
+            height:px2rem(88px);
+            padding:px2rem(8px) px2rem(25px) px2rem(8px) px2rem(50px);
+            background-image: none;
+           
+            @include font-dpr(16px);
+            color:#333333;
+            border-radius:0;
+           
+            -webkit-appearance:none;
+        }
+        &.item-1{
+           .cicon{
+                width:px2rem(32px);
+                height: px2rem(36px);
+                background: url("../images/login_icon_1.png") no-repeat;
+                background-size: 100% 100%;
+           } 
+        }
+        &.item-2{
+            margin-top:px2rem(15px); 
+           .cicon{
+                width:px2rem(34px);
+                height: px2rem(39px);
+                background: url("../images/pwd_icon_1.png") no-repeat;
+                background-size: 100% 100%;
+           } 
+        }
+    }
+    .item-submit{
+        margin-top:px2rem(80px); 
+        .coms-cbtn{
+            background:#ff8403;
+            color:#fff; 
+            &:active{
+                background-color: darken(#ff8403,5%);
+            }
+        }
+    }
+}
+.lr-zh-item-tip{
+        color:#666666;
+        white-space: nowrap;
+        @include font-dpr(16px);
+        position: absolute; 
+        left:50%;
+        bottom: 10%;        
+        -webkit-transform: translate(-50%,0);
+        -ms-transform: translate(-50%,0);
+        -moz-transform: translate(-50%,0);
+        
+    }
+
+.lr-form-dialog{
+    width:70%;
+    position: fixed;
+    left:15%;
+    top:40%;
+    margin-top: 0;
+    background:#fff;
+    border-radius: px2rem(20px);
+    padding:px2rem(30px); 
+    z-index:1001;
+    @include font-dpr(16px);
+    visibility: hidden;
+    transition:all 0.15s ease-out;
+    transform: scale3d(0, 0, 0);
+    &.dia-in{
+        visibility:visible;
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+    .soma-hd{
+        color:#333333;
+        @include font-dpr(18px);
+        text-align: center; 
+    }
+    .soma-bd{
+        text-align: center;
+        color:#7c7c7c;
+        @include font-dpr(16px);
+        padding-top:px2rem(30px);  
+    }
+    .soma-ft{
+        padding-top:px2rem(50px); 
+        a{
+            background-image: -webkit-gradient(linear,100% 100%, 0% 0%, from(#FF6A6C), to(#ff9911), color-stop(1.0,#FF6A6C));
+            color:#fff;
+            @include font-dpr(16px); 
+        }
+    }
+    .close{
+        position: absolute;
+        right: 0;
+        top:0;
+        width: px2rem(50px);
+        height: px2rem(50px);
+        margin-right:  px2rem(-25px);
+        margin-top:  px2rem(-25px);
+        overflow: hidden;
+        background:url("../images/close_btn_1.png") no-repeat top center;
+        background-size: 100% 100%;
+
+    }
+}
+
+.lrform-choice-2{
+    margin-top:px2rem(100px); 
+    padding: 0 px2rem(30px);
+    .btnwx,.btnzh{
+        background:#009ddb;
+        color:#fff;  
+    }
+    .list{
+        margin-top:px2rem(45px); 
+        li{
+            position: relative;
+            line-height: 1.4;
+            padding-left:  px2rem(50px);
+            font-size: px2rem(26px);
+            color:#7c7c7c;
+            margin-bottom:px2rem(15px);  
+        }
+        .num{
+            width: px2rem(32px);
+            height:px2rem(32px);
+            line-height:px2rem(32px);
+            font-size: px2rem(24px);
+            text-align: center; 
+            color:#7c7c7c; 
+            background:#f3f3f3;
+            border:1px solid #dbdbdb;
+            position:absolute; 
+            left:0;
+            top:0;
+        }
+    }
+}
+
+.lrform-nc{
+    margin-top: px2rem(100px);
+    padding: 0 px2rem(30px);
+    .ipt-text{
+         border: none;
+            border-bottom: 1px solid #c1c1c1;
+            display: block;
+            width: 100%;
+            height:px2rem(88px);
+            padding:px2rem(8px) 0;
+            background-image: none;
+           
+            @include font-dpr(18px);
+            color:#333333;
+            border-radius:0;
+           
+            -webkit-appearance:none;
+    }
+    .item-tip{
+        color:#7c7c7c; 
+         @include font-dpr(14px);
+         margin-top:px2rem(10px); 
+    }
+    .item-submit{
+        margin-top:px2rem(160px); 
+    }
+    .ipt-submit{
+        background-color:#e8333a;
+        color: #fff;
+        @include font-dpr(18px);
+        &:active{
+            background-color:daken(#e8333a,5%);
+        } 
+    }
+}

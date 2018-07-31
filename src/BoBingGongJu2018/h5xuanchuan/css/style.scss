@@ -1,0 +1,830 @@
+@import "./scss/_base.scss";
+@import "./scss/_funVar.scss";
+@import "./scss/_animate.scss";
+@import "./scss/_normalize.scss";
+html, body {
+    position: relative;
+   
+}
+
+.swiper-container {
+    width: 100%;
+   
+}
+.swiper-slide {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height:auto;
+}
+body{
+    background:#c60000;
+}
+
+
+
+.banner-top{
+   img{
+    width:100%;
+   }
+}
+.list-1{
+    padding: 0 px2rem(40px);
+    display: flex;
+    position:relative;
+    top:px2rem(-80px);
+    li{
+        flex:1;
+        width:px2rem(323px);
+        height:px2rem(333px);
+        margin: 0 px2rem(7px);
+        overflow: hidden;
+        img{
+            width:100%;
+        }
+    }
+}
+
+.list-2{
+   
+
+    position:relative;
+    z-index: 1;
+    img{
+        width:100%;
+    }
+}
+.list-3{
+    position:relative;
+    margin-top:px2rem(-50px);
+    img{
+        width:100%;
+    }
+    .pic2{
+        width:px2rem(280px);
+        height:px2rem(160px);
+        overflow:hidden;
+        position:absolute;
+        left:50%;
+        margin-left:px2rem(-140px);
+        bottom: px2rem(30px); 
+        img{
+            width:100%;
+        }
+    }
+}
+
+.list-4{
+    img{
+        width:100%;
+    }
+}
+
+.list-5{
+    img{
+        width:100%;
+    }
+}
+.list-6{
+    img{
+        width:100%;
+    }
+}
+
+.footer-holder{
+    height:px2rem(117px);
+}
+
+.fixed-bottom-bar{
+    position:fixed;
+    left:0;
+    bottom: 0;
+    right: 0;
+    background:url("../images/footer_bg.jpg") repeat-x top center;
+    background-size:auto 100%;
+    height:px2rem(117px);
+    line-height:px2rem(117px);
+    z-index:10;
+    font-size:px2rem(36px);
+    li{
+        float: left;
+        text-align: center;
+        &.item-1{
+            width:45%;
+            background:url("../images/footer_bg_2.jpg") repeat-x top center;
+            background-size:auto 100%;
+            color:#5d0d04;
+        }
+        &.item-2{
+            width:55%;
+            color:#ffe8b8; 
+        }
+    }
+}
+
+
+/******************************************************************
+ * mDialog 默认的动画效果
+ */
+
+/**
+ * 淡入效果
+ * shade 默认的样式
+ */
+@keyframes mDialogFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.mDialogFadeIn{
+    animation-name: mDialogFadeIn;
+}
+
+
+/**
+ * 淡出效果
+ * shade 默认的样式
+ */
+@keyframes mDialogFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.mDialogFadeOut{
+    animation-name: mDialogFadeOut;
+}
+
+@keyframes mDialogZoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.mDialogZoomIn{
+    animation-name: mDialogZoomIn;
+}
+
+@keyframes mDialogZoomOut {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.mDialogZoomOut{
+    animation-name: mDialogZoomOut;
+}
+
+
+@keyframes mDialogBigIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        opacity: 1;
+        transform:scale(1, 1);
+    }
+}
+
+.mDialogBigIn{
+    animation-name: mDialogBigIn;
+}
+
+@keyframes mDialogBigOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform:scale(1.2, 1.2);
+    }
+}
+
+.mDialogBigOut{
+    animation-name: mDialogBigOut;
+}
+
+
+
+
+
+
+
+
+/******************************************************************
+ * mDialog container 容器
+ */
+
+.mDialog-layer-container{
+    visibility: hidden;
+    position: fixed;
+    animation-timing-function:ease-out;
+    box-sizing:border-box;
+    *{
+        box-sizing:border-box;
+    }
+    //窗口是占满屏幕的时候,那么就不需要圆角
+    &.mDialog-layer-container-full{
+        >.mDialog-layer-title{
+            border-radius:0;
+        }
+        >.mDialog-layer-main{
+            border-radius:0;
+        }
+        >.mDialog-layer-btns{
+            border-radius:0;
+        }
+    }
+}
+
+/******************************************************************
+ * mDialog title 标题
+ */
+.mDialog-layer-title{
+    border-radius:px2rem(20px) px2rem(20px) 0 0;
+    background:#F5f5f5;
+    clear:both; 
+    border-bottom:1px solid #d5d5d5;
+    padding:px2rem(20px);
+    @include font-dpr(18px);
+}
+
+
+/******************************************************************
+ * mDialog main 主题内容
+ */
+.mDialog-layer-main{
+    word-break:break-all;
+    word-wrap:break-word;
+    overflow:hidden;
+    @include font-dpr(16px);
+    &:after{
+        content:"";
+        display:table;
+        clear:both;
+    }
+    &.mDialog-layer-main-full{
+        padding-bottom:px2rem(20px);
+        background:#fff;
+        >div{
+            padding-bottom: 0;
+            height: 100%;
+            overflow: hidden;
+        }  
+    }
+
+    >div{
+        position: relative;
+    }
+}
+
+/******************************************************************
+ * mDialog btns 底部按钮集
+ */
+.mDialog-layer-btns{
+    clear:both; 
+    height:px2rem(80px);
+    line-height:px2rem(80px);
+    border-top:1px solid #e8e8e8;
+    display: flex;
+    background:#fff;
+    border-radius:0 0 px2rem(20px) px2rem(20px);
+    >.mDialog-btn{
+        flex:1;
+        text-align: center;
+        position:relative;
+        color:#007aff;  
+        @include font-dpr(18px);
+        &:after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            border-left: 1px solid #d5d5d5;
+            color: #d5d5d5;
+           
+        }
+        &:active{
+            background-color:rgba(0,0,0,0.05);  
+        }
+        &:first-child{
+            &:after{
+                border-left:0;
+            }  
+        }
+    }  
+}
+
+
+/******************************************************************
+ * mDialog close 关闭按钮
+ */
+
+.mDialog-close{
+    position: absolute;
+    width: px2rem(65px);
+    height:px2rem(65px);
+    overflow: hidden;  
+    right:0;
+    top:0;
+    margin-top:px2rem(-65px/2);
+    margin-right:px2rem(-65px/2);  
+    border-radius:100%;
+    background-color:rgba(0,0,0,1);
+    &:before{
+        transform: rotate(45deg);
+        content: '';
+        position: absolute;
+        top: 50%;
+        left:px2rem(10px);
+        right:px2rem(10px);
+        background: #fff;
+        height:px2rem(6px);
+        margin-top:px2rem(-6px/2);
+        border-radius:px2rem(8px); 
+    }
+    &:after{
+        transform: rotate(-45deg);
+        content: '';
+        position: absolute;
+        top: 50%;
+        left:px2rem(10px);
+        right:px2rem(10px);
+        background: #fff;
+        height:px2rem(6px);
+        margin-top:px2rem(-6px/2);
+        border-radius:px2rem(8px); 
+    }   
+}
+
+
+
+/******************************************************************
+ * mDialog 遮罩层
+ */
+.mDialog-shade {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+    &.in{
+        animation-name: mDialogFadeIn;
+    }
+    &.out{
+        animation-name: mDialogFadeOut;
+    }
+}
+
+
+
+
+/******************************************************************
+ * mDialog open方法 content是内容
+ */
+
+.mDialog-default-section{
+    background:#fff;
+    @include font-dpr(16px);
+    padding:px2rem(20px);
+}
+
+
+
+/******************************************************************
+ * mDialog msg 信息提示框
+ */
+
+.mDialog-msg-section{
+    background-color:rgba(0,0,0,0.9);
+    border-radius:px2rem(20px);
+    padding:px2rem(30px);
+    color:#fff; 
+}
+
+/******************************************************************
+ * mDialog 加载提示框 
+ */
+@-webkit-keyframes line-spin-fade-loader {
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes line-spin-fade-loader {
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.mDialog-loading-section {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius:px2rem(15px);
+    padding:px2rem(30px) px2rem(60px);
+    overflow:hidden;
+    .loading-txt{
+        @include font-dpr(16px);
+        color:#fff;
+        text-align:center;
+        margin-top:px2rem(20px);
+        white-space: nowrap;
+    }
+    .loading-icon {
+        position: relative;
+        width:px2rem(124px);
+        height: px2rem(124px);
+        margin:0 auto;
+        >div {
+            background-color: #fff;
+            border-radius: px2rem(4px);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            position: absolute;
+            width: px2rem(8px);
+            height: px2rem(36px);
+            margin-left: px2rem(-4px);
+            &:nth-child(1) {
+                top:px2rem(88px);
+                left:50%;
+                
+                -webkit-animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+            }
+            &:nth-child(2) {
+                top:px2rem(80.38px);
+                left:px2rem(80.38px);
+                
+                -webkit-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                transform-origin:top center;
+                -webkit-animation: line-spin-fade-loader 1.2s 0.24s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.24s infinite ease-in-out;
+            }
+            &:nth-child(3) {
+                top:px2rem(64px);
+                left:px2rem(88px);       
+                transform-origin:top center; 
+                transform: rotate(-90deg);
+                -webkit-animation: line-spin-fade-loader 1.2s 0.36s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.36s infinite ease-in-out;
+            }
+            &:nth-child(4) {
+                top:px2rem(43.62px);
+                left:px2rem(88px);
+               
+                transform: rotate(-135deg);
+                
+                transform-origin:top center; 
+                -webkit-animation: line-spin-fade-loader 1.2s 0.48s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.48s infinite ease-in-out;
+            }
+            &:nth-child(5) {
+                top: 0px;
+                 left:50%;
+               
+                -webkit-animation: line-spin-fade-loader 1.2s 0.6s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.6s infinite ease-in-out;
+            }
+            &:nth-child(6) {
+                top:px2rem(43.62px);
+                left:px2rem(43.62px);
+                transform-origin:top center; 
+                transform: rotate(135deg);
+                
+                -webkit-animation: line-spin-fade-loader 1.2s 0.72s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.72s infinite ease-in-out;
+            }
+            &:nth-child(7) {
+                top:px2rem(62px);
+                left:px2rem(36px);
+               margin-left: px2rem(-4px);
+                transform: rotate(90deg);
+                transform-origin:top center; 
+                -webkit-animation: line-spin-fade-loader 1.2s 0.84s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.84s infinite ease-in-out;
+            }
+            &:nth-child(8) {
+                top:px2rem(80.38px);
+                left:px2rem(43.62px);
+                margin-left: px2rem(-4px);
+                transform: rotate(45deg);
+                transform-origin:top center; 
+                -webkit-animation: line-spin-fade-loader 1.2s 0.96s infinite ease-in-out;
+                animation: line-spin-fade-loader 1.2s 0.96s infinite ease-in-out;
+            }
+        }
+    }
+    &.loading-notext{
+        padding:px2rem(60px);
+    }
+}
+
+/******************************************************************
+ * mDialog confirm 确认框 
+ */
+
+.mDialog-confirm-section{
+    background:#fff;
+    padding:px2rem(40px) px2rem(30px);
+    border-radius:px2rem(20px) px2rem(20px) 0 0;
+    @include font-dpr(16px);
+}
+
+
+
+
+
+
+
+    
+
+
+/**
+ * 垂直水平居中
+ */
+.mDialog-cc{
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+}
+
+.mDialog-tc{
+    left: 50%;
+    top:px2rem(50px);
+    -webkit-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+}
+
+
+.mDialog-bc{
+    left: 50%;
+    bottom:px2rem(20px);
+    -webkit-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+}
+
+/**
+ * 表单验证样式
+ */
+
+.field-invalid {
+    border-color: #a94442;
+}
+
+.field-invalidmsg {
+    color: #a94442;
+}
+
+.field-validmsg {
+    color: #3c763d;
+}
+
+.field-tooltipWrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999999999999;
+}
+
+.field-tooltipInner {
+    pointer-events: none;
+    display: table;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.field-tooltip {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.field-tooltip .field-invalidmsg,
+.field-tooltip .field-validmsg {
+    color: #fff;
+}
+
+.field-tooltip .zvalid-resultformat {
+    display: inline-block;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: px2rem(30px) px2rem(50px);
+    @include font-dpr(18px);
+    border-radius: px2rem(20px);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+    pointer-events: auto;
+    animation-name: fieldTipBounceIn;
+    -webkit-animation-name: fieldTipBounceIn;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .18s;
+    animation-duration: .18s;
+}
+
+@-webkit-keyframes fieldTipBounceIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.phone-dialog{
+    background:#ffffff;
+    padding:px2rem(30px);
+    border-radius:px2rem(20px);
+    visibility:hidden;
+    display:none;
+    .hd-tit{
+        text-align:center;
+        color:#1a1a1a;
+        font-size:px2rem(32px);
+        text-align:center;
+    }
+    .list{
+        margin-top:px2rem(18px);
+        li{
+            padding:px2rem(17px) px2rem(200px) px2rem(17px) 0;
+            border-bottom:1px solid #c7c7c7;
+            position: relative;
+            &:last-child{
+                border-bottom:none;
+            }
+            .hyname{
+                color:#333333;
+                font-size:px2rem(30px);
+                display: block;
+                line-height: 1.5; 
+               
+               
+            }
+            .username{
+                color:#666666;
+                font-size:px2rem(26px);
+                line-height: 1.2; 
+               display: block;
+               
+            }
+            .phone{
+                width:px2rem(194px);
+                height:px2rem(60px);
+                line-height:px2rem(60px);
+                position: absolute;
+                right: 0;
+                top: 50%;
+                -webkit-transform: translate(0,-50%);
+                transform: translate(0,-50%);
+                text-align:center;
+                color:#ffffff;
+                font-size:px2rem(28px);
+                border-radius:px2rem(6px);
+                background-image:-webkit-gradient(linear,0% 0%, 100% 0%, from(#FF9912), to(#FF6A6C), color-stop(1.0,#FF6A6C));
+                i{
+                    width:px2rem(33px);
+                    height:px2rem(32px);
+                    overflow:hidden;
+                    background:url("../images/phone.png") no-repeat top center;
+                    background-size: 100% 100%;
+                    display:inline-block;
+                    margin-right:px2rem(10px);
+                    vertical-align: middle;
+                }
+                &:active{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.customer-dialog{
+    background:#fff;
+    padding:px2rem(30px);
+    border-radius:px2rem(20px);
+    display:none;
+    visibility:hidden;
+    .hd-tit{
+        font-size:px2rem(32px);
+        text-align:center;
+    }
+    .tip-txt-1{
+        font-size:px2rem(24px);
+        color:#666666;
+        text-align:center;
+        margin-top:px2rem(10px);
+    }
+    .forms-box{
+        margin-top:px2rem(20px);
+        .item{
+            padding-bottom:px2rem(20px);
+        }
+        .ipt-text{
+            width: 100%;
+        height:px2rem(88px);
+        padding:px2rem(8px) px2rem(25px);
+        background-image: none;
+        border: 1px solid #f5f5f5;
+        @include font-dpr(16px);
+        color:#333333;
+        background-color:#f5f5f5;
+        -webkit-appearance:none;
+        border-radius:px2rem(8px);
+        }
+        .sel-item{
+            -webkit-appearance: none !important;
+            -webkit-border-radius:px2rem(8px);
+            border-radius:px2rem(8px);
+            border:1px solid #f5f5f5;
+            padding:px2rem(20px) px2rem(60px) px2rem(20px) px2rem(10px);
+            width: 100%;
+            color: #666;
+            @include font-dpr(16px);
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            background: #f5f5f5 url(../images/sel_arrow.png) no-repeat 100% center;
+            @extend %text-overflow;
+        }
+        .ipt-submit{
+            -webkit-appearance: none !important;
+            background-image:-webkit-gradient(linear,0% 0%, 100% 0%, from(#FF9912), to(#FF6A6C), color-stop(1.0,#FF6A6C));
+            border:none;
+            display:block;
+            width:100%;
+            height:px2rem(80px);
+            line-height:px2rem(80px);
+            font-size:px2rem(36px);
+            color:#fff;
+        }
+    }
+}
+
+.fz-line-1{
+    width:px2rem(170px);
+    height:px2rem(91px);
+    overflow:hidden;
+    background:url("../images/fz_1.png") no-repeat top center;
+    background-size:100% 100%;
+    position:absolute;
+    right:0;
+    top:px2rem(890px);
+}
